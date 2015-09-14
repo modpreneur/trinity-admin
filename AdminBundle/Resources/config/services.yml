@@ -1,0 +1,5 @@
+services:
+
+  trinity.admin.menu_builder:
+    class: Trinity\AdminBundle\Menu\MenuBuilder
+    arguments: ["@event_dispatcher", "@knp_menu.factory", "@doctrine.orm.entity_manager", "@white_october_breadcrumbs", "@service_container"]
