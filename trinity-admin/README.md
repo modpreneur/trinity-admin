@@ -1,8 +1,0 @@
-# README
-
-Trinity Admin Bundle
-====================
-
-
-
-
