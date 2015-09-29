@@ -29,7 +29,8 @@
     "knplabs/knp-menu":             "~2.0@alpha",
     "knplabs/knp-menu-bundle":      "~2.0@alpha",
     "knplabs/knp-paginator-bundle": "dev-master",
-    "mockery/mockery":              "0.9.*"
+    "mockery/mockery":              "0.9.*",
+    "whiteoctober/breadcrumbs-bundle": "dev-master"
   },
 
 
