@@ -7,8 +7,6 @@ use Doctrine\ORM\EntityManager;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\MenuItem;
-use Trinity\AdminBundle\Event\AppEvents;
-use Trinity\AdminBundle\Event\MenuEvent;
 use Symfony\Component\DependencyInjection\ContainerAware;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
@@ -16,6 +14,8 @@ use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Validator\Constraints\Expression;
+use Trinity\AdminBundle\Event\AppEvents;
+use Trinity\AdminBundle\Event\MenuEvent;
 
 class MenuBuilder extends ContainerAware
 {

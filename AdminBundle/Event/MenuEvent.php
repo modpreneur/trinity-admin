@@ -20,7 +20,7 @@ class MenuEvent extends Event
         $this->factory = $factory;
     }
 
-    /**W
+    /**
      * @return \Knp\Menu\FactoryInterface
      */
     public function getFactory()
