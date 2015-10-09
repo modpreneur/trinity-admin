@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class ControllerActionExtension
- * @package Necktie\AppBundle\Twig
+ * @package Trinity\AdminBundle\Twig
  */
 class ControllerActionExtension extends \Twig_Extension
 {
