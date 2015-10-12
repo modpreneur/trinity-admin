@@ -31,3 +31,10 @@ services:
       - ['setAppVersion', [%app_version%]]
     tags:
       - {name: twig.extension}
+
+  trinity.twig.extensions.controller:
+    class: Trinity\AdminBundle\Twig\ControllerActionExtension
+    calls:
+      - [setRequest, ["@?request="]]
+    tags:
+      - { name: twig.extension }
