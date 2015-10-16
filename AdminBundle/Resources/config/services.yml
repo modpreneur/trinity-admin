@@ -29,6 +29,7 @@ services:
     class: Trinity\AdminBundle\Twig\AdminHelperExtension
     calls:
       - ['setAppVersion', [%app_version%]]
+      - ['setAppClass', [%app_class%]]
     tags:
       - {name: twig.extension}
 
