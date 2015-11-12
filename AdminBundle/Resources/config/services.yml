@@ -5,7 +5,15 @@ services:
     arguments: ["@event_dispatcher", "@knp_menu.factory", "@doctrine.orm.entity_manager", "@white_october_breadcrumbs", "@service_container"]
 
 
-  trinity.admin.service.adminManager:
+  trinity.admin.service.admin_manager:
     class: Trinity\AdminBundle\Service\AdminManager
     arguments:
       - @service_container
+
+
+  trinity.twig.extensions.controller:
+          class: Trinity\AdminBundle\Twig\ControllerActionExtension
+          calls:
+              - [setRequest, ["@?request="]]
+          tags:
+              - { name: twig.extension }
