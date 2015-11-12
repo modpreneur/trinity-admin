@@ -31,21 +31,9 @@
         </div>
 
         <div id="sidebar-tab2-content">
-            <h3 class="tab-title">
-                {{ app.user.getFullName() }}
-                {{ app.user.firstName }}
-            </h3>
+            {% block sidebar_user %}
 
-            <ul class="tab-list">
-                <li>
-                    <i class="trinity trinity-mail"></i>
-                    <a href="mailto:{{ app.user.email }}">{{ app.user.email }}</a>
-                </li>
-                <li>
-                    <i class="trinity trinity-calendar"></i>
-                    <strong>Registrated: </strong> - {{ app.user.createdAt|date("m/d/Y") }}
-                </li>
-            </ul>
+            {% endblock %}
         </div>
 
         <div id="sidebar-tab3-content">
