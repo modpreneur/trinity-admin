@@ -1,0 +1,86 @@
+{% extends "TrinityAdminBundle::layout.html.twig" %}
+
+{# sidebar #}
+{% block sidebar %}
+
+    <div class="sidebar-tabs">
+        <input name="sidebar-tab" type="radio" id="sidebar-tab1" checked>
+        <label class="sidebar-tab-label" for="sidebar-tab1"><i class="trinity trinity-folder"></i></label>
+
+        <input name="sidebar-tab" type="radio" id="sidebar-tab2">
+        <label class="sidebar-tab-label" for="sidebar-tab2"><i class="trinity trinity-user"></i></label>
+
+        <input name="sidebar-tab" type="radio" id="sidebar-tab3">
+        <label class="sidebar-tab-label" for="sidebar-tab3">
+            <i class="trinity trinity-bell"></i>
+            {% if (app.session.flashbag.peekAll) %}
+                {%  set count=0 %}
+                <i class="number-info">
+                    {% for messages in app.session.flashBag.peekall() %}
+                        {% for message in messages %}
+                            {% set count = count+1 %}
+                        {% endfor %}
+                    {% endfor %}
+                    {{ count }}
+                </i>
+            {% endif %}
+        </label>
+
+        <div id="sidebar-tab1-content">
+            {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}
+        </div>
+
+        <div id="sidebar-tab2-content">
+            <h3 class="tab-title">
+                {{ app.user.getFullName() }}
+                {{ app.user.firstName }}
+            </h3>
+
+            <ul class="tab-list">
+                <li>
+                    <i class="trinity trinity-mail"></i>
+                    <a href="mailto:{{ app.user.email }}">{{ app.user.email }}</a>
+                </li>
+                <li>
+                    <i class="trinity trinity-calendar"></i>
+                    <strong>Registrated: </strong> - {{ app.user.createdAt|date("m/d/Y") }}
+                </li>
+            </ul>
+        </div>
+
+        <div id="sidebar-tab3-content">
+            {% block FlashbagHistory %}
+                {% for type, messages in app.session.flashbag.peekall() %}
+                    {% for message in messages %}
+                        <ul class="tab-list list-rows">
+                            {% if type == "success" %}
+                                <li class="success new">
+                                    <i class="tiecons tiecons-info-circle"></i>
+                                    <span>{{ message }}</span>
+                                </li>
+                            {% elseif type == "warning" %}
+                                <li class="warning new">
+                                    <i class="tiecons tiecons-exclamation-mark-circle"></i>
+                                    <span>{{ message }}</span>
+                                </li>
+                            {% elseif type == "danger" %}
+                                <li class="danger new">
+                                    <i class="tiecons tiecons-exclamation-mark-triangle"></i>
+                                    <span>{{ message }}</span>
+                                </li>
+                            {% elseif type == "info" %}
+                                <li class="info new">
+                                    <i class="tiecons tiecons-info-circle"></i>
+                                    <span>{{ message }}</span>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    {% endfor %}
+                {% endfor %}
+            {% endblock %}
+
+        </div>
+    </div>
+
+{% endblock %}
+{# sidebar #}

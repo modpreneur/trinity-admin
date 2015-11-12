@@ -1,0 +1,89 @@
+/**
+
+    !!! This less file is only for error page. !!!
+    (400, 404, 500, ...)
+
+*/
+
+@import "bowtie";
+@import "helper";
+
+body, html{
+    height: 100%;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    position: relative;
+    background: #696969;
+    color: #fff;
+
+    h1{
+        text-align: center;
+        width: 100%;
+        font-size: 90px;
+        margin-bottom: 50px;
+    }
+
+    .title{
+        font-size: 50px;
+        font-weight: 300;
+        text-shadow: 1px 1px 1px #000000;
+
+        span{
+            font-weight: 300;
+        }
+        i{
+            color: #c30000;
+        }
+    }
+
+    .message{
+        text-shadow: 1px 1px 1px #000000;
+    }
+
+    .content{
+        .abs-center();
+        color: #fff;
+        z-index: 3;
+        text-align: center;
+        font-size: 20px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-weight: 300;
+    }
+
+
+    .button{
+        margin-top: 70px;
+        background: #17aa56;
+        text-transform: uppercase;
+        color: #fff;
+        border: none;
+        font-weight: 500;
+        box-shadow: 0 5px #119e4d;
+        width: 230px;
+        border-radius: 7px;
+
+        &:hover{
+            background: #17aa56;
+        }
+    }
+}
+
+.bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: block;
+    background-size: contain;
+    height: 100%;
+
+    background: #696969 url("../img/error.png") no-repeat center center fixed;
+    background-size: cover;
+
+    .brightness(30%);
+    z-index: 1;
+}
+

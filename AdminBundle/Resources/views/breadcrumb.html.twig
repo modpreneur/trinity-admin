@@ -1,7 +1,7 @@
 {% block root %}
     {% if item.childrenAttributes %}
         {%- for  link in item.childrenAttributes %}
-            {%- if loop.index == 1 %}<a href="/" title="Go to Home" class="tip-bottom"><i class="fa fa-home"></i> Home </a>
+            {%- if loop.index == 1 %}<a href="/" title="Go to Home" class="tip-bottom">Home </a>
             {%- elseif not loop.last %}<a href="{{ link.uri }}">{{ link.label | trans }}</a>
             {%- else %}
                 <a href="{{ link.uri }}" class="current">{{ link.label | trans }}</a>

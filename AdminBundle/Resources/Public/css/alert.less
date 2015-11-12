@@ -1,0 +1,188 @@
+/**
+    Page alert - box with right position.
+*/
+
+@import "variables";
+@import "helper";
+
+// @todo
+
+body.trinity-admin{
+
+    .ajax-checkbox, .ajax-alert{
+        display: none !important;
+    }
+
+    .alert {
+        padding: 20px 10px;
+        margin: 10px 0;
+        opacity: 1;
+        left: 0px;
+        position: relative;
+        pointer-events: all;
+        color: #34708e;
+        border-radius: 0;
+        background: #bbf1fe;
+
+        .tiecons{
+            margin-top: 5px;
+        }
+
+
+        &:hover {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+
+        &:hover .progress-line {
+            -webkit-animation-play-state: paused;
+            animation-play-state: paused;
+        }
+
+        .show-alert p {
+            font-weight: 300;
+            word-break: break-word;
+            font-size: 13px;
+            line-height: 20px;
+            margin-top: 5px;
+        }
+
+        .alert-label {
+            position: absolute;
+            right: -20px;
+            top: -38px;
+            padding: 17px 15px 12px 15px;
+        }
+
+        .alert-label:hover .tiecons{
+            -ms-transform: scale(1.3); /* IE 9 */
+            -webkit-transform: scale(1.3); /* Safari */
+            transform: scale(1.3);
+        }
+
+        .alert-label i.ff-cross2 {
+            color: #34708e;
+            font-size: 8px;
+            font-weight: bold;
+        }
+
+        .tiecons.alert-close-icon {
+            color: #34708e;
+            font-size: 9px;
+            font-weight: bold;
+            top: 5px;
+        }
+    }
+
+    .alert.alert-danger i {
+        color: #c01f25;
+    }
+    .alert.alert-warning i {
+        color: #FF6600;
+    }
+    .alert.alert-success i {
+        color: #23a737;
+    }
+    .alert.alert-info i {
+        color: #2BA6CB;
+    }
+    #flashMessages {
+        position: fixed;
+        width: 300px;
+        height: 100%;
+        top: 50px;
+        right: 10px;
+        z-index: 999999;
+        pointer-events: none;
+    }
+
+    .progressAnimate(){
+        0% {
+            width: 0;
+            opacity: 0.7;
+        }
+        99% {
+            opacity: 0.7;
+            width: 100%;
+        }
+        100% {
+            opacity: 0;
+            width: 100%;
+        }
+    }
+
+    @-webkit-keyframes progressAnimate {
+        .progressAnimate();
+    }
+    @-moz-keyframes progressAnimate {
+        .progressAnimate();
+    }
+    @-ms-keyframes progressAnimate {
+        .progressAnimate();
+    }
+    @-o-keyframes progressAnimate {
+        .progressAnimate();
+    }
+    @keyframes progressAnimate {
+        .progressAnimate();
+    }
+    .progres {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }
+    .progres .progress-line {
+        width: 0;
+        background-color: #c01f25;
+        height: 2px;
+        -webkit-animation: progressAnimate 4.2s 1.5s linear;
+        -moz-animation: progressAnimate 4.2s 1.5s linear;
+        -ms-animation: progressAnimate 4.2s 1.5s linear;
+        -o-animation: progressAnimate 4.2s 1.5s linear;
+        animation: progressAnimate 4.2s 1.5s linear;
+    }
+
+    .keyframes(@left: 400px){
+        0% {
+            opacity: 0;
+            left: @left;
+        }
+        10% {
+            opacity: 1;
+            left: 0;
+        }
+        80% {
+            opacity: 1;
+            left: 0;
+        }
+        85% {
+            opacity: 0;
+            left: 0;
+        }
+        100% {
+            left: @left;
+        }
+    }
+
+    @-webkit-keyframes alert {
+        .keyframes();
+    }
+    @-moz-keyframes alert {
+        .keyframes();
+    }
+    @-ms-keyframes alert {
+        .keyframes();
+    }
+    @-o-keyframes alert {
+        .keyframes();
+    }
+    @keyframes alert {
+        .keyframes();
+    }
+
+
+}
+
+
+

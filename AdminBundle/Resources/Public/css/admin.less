@@ -1,3 +1,25 @@
 body{
-  background: @primary-color;
+    padding-top: @navbar-height;
+    font-family: 'Roboto', sans-serif;
+}
+
+@import "trinity-font";
+@import "navbar";
+@import "page-header";
+@import "sidebar";
+@import "helper";
+@import "default";
+@import "alert";
+@import "tabs";
+@import "widgets";
+@import "form";
+@import "page-items";
+@import "modal";
+@import "grid";
+
+
+/** fix **/
+
+.modal-a.button.button-secondary{
+    display: none !important;
 }

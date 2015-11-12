@@ -4,38 +4,8 @@ services:
     class: Trinity\AdminBundle\Menu\MenuBuilder
     arguments: ["@event_dispatcher", "@knp_menu.factory", "@doctrine.orm.entity_manager", "@white_october_breadcrumbs", "@service_container"]
 
-  trinity.main_menu:
-    class: Knp\Menu\MenuItem
-    factory: ["@trinity.admin.menu_builder", createMainMenu]
-    arguments: ["@request_stack"]
-    tags:
-        - { name: knp_menu.menu, alias: sidebar }
 
-  trinity.quick_menu:
-    class: Knp\Menu\MenuItem
-    factory: ["@trinity.admin.menu_builder", createQuickMenu]
-    arguments: ["@request_stack"]
-    tags:
-        - { name: knp_menu.menu, alias: quick_menu }
-
-  trinity.user_menu:
-    class: Knp\Menu\MenuItem
-    factory: ["@trinity.admin.menu_builder", createUserMenu]
-    arguments: ["@request_stack"]
-    tags:
-        - { name: knp_menu.menu, alias: user_menu }
-
-  trinity.extension.admin.helper:
-    class: Trinity\AdminBundle\Twig\AdminHelperExtension
-    calls:
-      - ['setAppVersion', [%app_version%]]
-      - ['setAppClass', [%app_class%]]
-    tags:
-      - {name: twig.extension}
-
-  trinity.twig.extensions.controller:
-    class: Trinity\AdminBundle\Twig\ControllerActionExtension
-    calls:
-      - [setRequest, ["@?request="]]
-    tags:
-      - { name: twig.extension }
+  trinity.admin.service.adminManager:
+    class: Trinity\AdminBundle\Service\AdminManager
+    arguments:
+      - @service_container

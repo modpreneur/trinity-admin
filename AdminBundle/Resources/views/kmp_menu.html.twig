@@ -122,6 +122,7 @@
                 {% endfor %}
 
                 {% if break == 0 %}
+                    <span class="dropdown-icon plus"><i class="tiecons tiecons-plus-light"></i></span>
                     {{ block('linkElement') }}
                 {% endif %}
 
@@ -163,6 +164,11 @@
             {% if item.attribute('icon') is not empty %}
             {% endif %}{{ block('label') }}
         </span>
+
+        {% if is_dropdown %}
+            <span class="dropdown-icon">
+            </span>
+        {% endif %}
     </a>
 {% endblock %}
 
@@ -185,6 +191,9 @@
         <label for="show-drop-{{ itemId }}" class="show-drop">
             <i class="{{ item.attribute('icon') }}"></i>
             <span class="sidebar-link-drop">{{ block('label') }}</span>
+            <span class="dropdown-icon">
+                <i class="tiecons tiecons-minus-light"></i>
+            </span>
         </label>
         <input type="checkbox" id="show-drop-{{ itemId }}" role="button" checked="checked" disabled="disabled">
         <ul id="dropdown" class="drop">

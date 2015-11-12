@@ -1,0 +1,134 @@
+/**
+    Box with page name, breadcrumbs, page icon.
+*/
+
+@import "variables";
+@import "helper";
+
+
+body.trinity-admin{
+
+    .head-content{
+        font-family: "Roboto", sans-serif;
+        color: @global-font-color;
+
+
+        background: #fff;
+        margin-left: 20px;
+        margin-right: 20px;
+        margin-bottom: 15px;
+        float: none;
+        height: auto !important;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        min-height: @header-min-height;
+        clear: both;
+        font-weight: 400;
+
+        div[class^="span"]{
+            height: 83px;
+            position: relative;
+        }
+
+        .content-header{
+            line-height: 32px !important;
+            color: @color-primary !important;
+            margin-top: 10px;
+            font-weight: 300;
+        }
+
+        span, i{
+            color: @color-primary;
+            line-height: 40px;
+            font-weight: 300;
+
+            font-size: 60px !important;
+        }
+
+        i{
+            color: #24afc9;
+            .abs-center();
+        }
+
+        &:first-child{
+            margin-top: 20px;
+        }
+
+        .header-add-button{
+            background: @button-color;
+            display: block;
+            border-radius: 50px;
+            width: 50px;
+            height: 50px;
+            border: 1px solid transparent;
+            transition: background @hover-timing ease-in-out;
+            position: relative;
+            .abs-center();
+
+            i{
+                color: #fff;
+                font-size: 25px !important;
+                margin: 0;
+                padding: 0;
+                .abs-center();
+            }
+
+            &:hover{
+                background: @button-color-hover;
+            }
+        }
+
+        .breadcrumbs{
+            float: left;
+            width: 100%;
+            margin-left: -10px;
+            line-height: 20px !important;
+            background: none;
+            display: block !important;
+
+            span{
+                font-size: 12px !important;
+                color: #4c4c4c;
+            }
+
+            li{
+                line-height: 20px !important;
+                &:after{
+                    content: '\e656';
+                    font-family: 'tiecons';
+                    font-size: 8px;
+                    color: #ccc;
+                    padding-left: 5px;
+                }
+
+                &:last-child:after{
+                    content: '';
+                }
+            }
+
+            p{
+                font-size: 12px;
+                font-weight: 400;
+                color: #4c4c4c;
+                line-height: 20px;
+            }
+
+            a, span{
+                color: #4c4c4c;
+                line-height: 18px;
+                display: inline-block;
+                padding: 0 !important;
+                padding-left: 5px !important;
+            }
+
+            a{
+                &:hover{
+                    span{
+                        color: @color-primary;
+                        text-decoration: underline !important;}
+                }
+            }
+        }
+    }
+
+}
