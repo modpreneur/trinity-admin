@@ -154,6 +154,7 @@ body.trinity-admin{
             left: 50%;
             text-align: center;
         }
+
         .bar:nth-child(1) {
             background-color: #493470;
             animation: loading 3s linear 1s infinite;
@@ -162,6 +163,12 @@ body.trinity-admin{
             background-color: #f5d346;
             animation: loading 3s linear 2s infinite;
         }
+
+        .bar-end{
+            background-color: #fff !important;
+            transition: background-color 2s linear;
+        }
+
         @keyframes loading {
             from {left: 50%; width: 0;z-index:100;}
             33.3333% {left: 0; width: 100%;z-index: 10;}

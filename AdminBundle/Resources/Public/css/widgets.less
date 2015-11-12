@@ -34,7 +34,7 @@ body.trinity-admin{
             font-size: 20px;
             padding: 15px;
             font-weight: 300;
-            color: @color-primary;
+            color: #2f2f2f;
         }
     }
 
@@ -43,9 +43,8 @@ body.trinity-admin{
     }
 
     .trinity-widget .data-grid{
-        border: 1px transparent solid !important;
+        border: 0px transparent solid !important;
     }
-
 
     .trinity-widget .close{
         margin-right: 15px;
@@ -77,20 +76,28 @@ body.trinity-admin{
 
     .trinity-widget .data-grid tr{
         border-bottom: 1px #dedede solid !important;
-        white-space: nowrap
-    }
+        white-space: nowrap;
 
-    .trinity-widget .data-grid tr:last-child{
-        border-bottom: 1px transparent solid !important;
+
+        td, th{
+            &:first-child{
+                padding-left: 20px;
+            }
+
+            &:last-child{
+                padding-left: 20px;
+            }
+        }
     }
 
     .trinity-widget .data-grid tr td{
         font-weight: 400;
+        vertical-align: middle;
     }
 
     .widget-chart{
-        margin-left: -15px;
-        margin-right: -15px;
+        //margin-left: -15px;
+        //margin-right: -15px;
     }
 
     .trinity-widget .content-box{
@@ -103,8 +110,6 @@ body.trinity-admin{
         z-index: 10;
         padding-top: 10px;
         .content{
-            padding-left: 15px;
-            padding-right: 15px;
             width: 100%;
         }
     }
