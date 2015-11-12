@@ -11,6 +11,7 @@ body.trinity-admin{
     .head-content{
         font-family: "Roboto", sans-serif;
         color: @global-font-color;
+        position: relative;
 
 
         background: #fff;
@@ -128,6 +129,43 @@ body.trinity-admin{
                         text-decoration: underline !important;}
                 }
             }
+        }
+    }
+
+    .header-loader{
+        position: absolute;
+        width: 100%;
+        bottom: 0px;
+        left: 0;
+
+        .load-bar {
+            position: relative;
+            margin-top: 20px;
+            width: 100%;
+            height: 2px;
+            background-color: #fdba2c;
+        }
+        .bar {
+            content: "";
+            display: inline;
+            position: absolute;
+            width: 0;
+            height: 100%;
+            left: 50%;
+            text-align: center;
+        }
+        .bar:nth-child(1) {
+            background-color: #493470;
+            animation: loading 3s linear 1s infinite;
+        }
+        .bar:nth-child(2) {
+            background-color: #f5d346;
+            animation: loading 3s linear 2s infinite;
+        }
+        @keyframes loading {
+            from {left: 50%; width: 0;z-index:100;}
+            33.3333% {left: 0; width: 100%;z-index: 10;}
+            to {left: 0; width: 100%;}
         }
     }
 

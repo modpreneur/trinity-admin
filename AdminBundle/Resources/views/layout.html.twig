@@ -50,6 +50,9 @@
         <input class="hidden" type="checkbox" name="fav" id="fav">
 
         <div class="navbar-container">
+            <div>
+                loading
+            </div>
             <div class="navbar-logo pull-left">
                 {% block navbar_logo %} <i> Logo zde </i> {% endblock %}
                 <span class="version">{{ admin_manager.getAppVersion() }}</span>
@@ -128,6 +131,15 @@
                        </span>
                    </div>
 
+                   {% block page_loading %}
+                   <div class="header-loader">
+                       <div class="load-bar">
+                           <div class="bar"></div>
+                           <div class="bar"></div>
+                           <div class="bar"></div>
+                       </div>
+                   </div>
+                   {% endblock %}
                </div>
             </div>
         </div>
