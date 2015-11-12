@@ -1,5 +1,5 @@
 <?php
-namespace Necktie\AppBundle\Twig;
+namespace Trinity\AdminBundle\Twig;
 
 use Symfony\Component\HttpFoundation\Request;
 
