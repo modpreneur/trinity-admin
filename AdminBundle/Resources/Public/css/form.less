@@ -88,6 +88,7 @@ body.trinity-admin{
         input[type="number"],
         input[type="email"],
         input[type="datetime"],
+        input[type="file"],
         input[type="password"],
         input[type="url"],
         input[type="search"],
@@ -116,9 +117,6 @@ body.trinity-admin{
 
         input[type="checkbox"]{;
             display: none;
-        }
-        input[type="file"]{
-//todo style for load file
         }
 
         .checkbox(@display: block){
@@ -261,41 +259,6 @@ body.trinity-admin{
                 box-shadow: 0 6px #17aa56;
             }
         }
-    }
-
-    .delete-form  input.delete{
-        background-color: #cb4e4e !important;
-        color: #fff;
-        border: 1px solid  transparent !important;
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-bottom: 5px;
-        border-bottom: 1px solid #b02828 !important;
-        text-shadow: 1px 1px 3px #ab3c3c;
-        box-shadow: 0 6px #b02828;
-        border-radius: 5px;
-
-
-        display: block;
-        float: none !important;
-        margin-left: 45%; //todo center button without form
-        margin-right: auto;
-        margin-top: 10px;
-        text-transform: uppercase;
-        font-size: 18px;
-
-        &:hover{
-            text-shadow: 1px 1px 3px #b02828;
-            background-color: #d32d2d !important;
-            border-bottom: 1px solid #b02828 !important;
-            box-shadow: 0 6px #b02828;
-        }
-    }
-    .delete-form{
-        width: 100%;
-        text-align: center;
-        margin-left: auto ;
-        margin-right: auto ;
     }
 }
 

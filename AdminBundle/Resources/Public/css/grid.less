@@ -1,0 +1,137 @@
+/**
+    APY grid
+*/
+
+@import "variables";
+@import "helper";
+
+body.trinity-admin{
+
+    .show-filters{
+        display: none;
+    }
+
+    .wrapper-grid{
+        .box();
+
+        font-family: "Roboto", sans-serif;
+        margin-bottom: 20px;
+        padding: 10px 10px 20px;
+        color: @global-font-color;
+
+        .grid-search{
+            margin-top: 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            .title{
+                color: #2f2f2f;
+                font-weight: 300;
+                font-size: 20px;
+                margin-left: 10px;
+            }
+
+            form{
+
+                min-width: 400px;
+
+                input[type="text"]{
+                    border: 1px solid #ccc;
+                    height: @grid-search-height;
+                    border-radius: 5px;
+                    padding: 10px;
+                    width: 80%;
+                    outline: none;
+                    font-size: @search-font-size;
+                    float: left;
+                    transition: border @search-time ease-in;
+                    color: @color-primary;
+
+                    &:focus{
+                        border: 1px solid @color-primary;
+                    }
+
+                    &:focus + button{
+                        background: @color-primary;
+                        color: #fff;
+                        border: 1px solid @color-primary;
+                    }
+                }
+
+                button[type="submit"]{
+                    background: #ccc;
+                    color: #fff;
+                    border-radius: 5px;
+                    margin-left: -20px;
+                    height: @grid-search-height;
+                    border: 2px solid #ccc;
+                    outline: none;
+                    text-align: center;
+                    font-size: 14px;
+                    float: left;
+                    width: 50px;
+
+                    transition: border @search-time ease-in,
+                                background @search-time ease-in,
+                                color @search-time ease-in;
+
+                    &:hover{
+                        background: @color-primary-hover;
+                        cursor: pointer;
+                    }
+                }
+            }
+        }
+    }
+
+    .grid{
+        .grid-row-filters{
+            display: none;
+        }
+
+        .grid-row-titles th{
+            background: #fff;
+            color: @color-primary;
+            font-weight: 400;
+            a{
+                color: @color-primary;
+                text-transform: uppercase;
+            }
+        }
+
+        .grid_body{
+            width: 100%;
+            font-weight: 300;
+            table{
+                width: 100%;
+                border: none;
+
+                tbody{
+
+                    td, tr{
+                        background: transparent;
+                        vertical-align: middle;
+                    }
+
+                    tr{
+                        border-bottom: 1px solid #ededed;
+                        &:hover{
+                            background: #f8f8f8;
+                        }
+                        a{
+                            color: @color-primary;
+                            &:hover{
+                                color: @color-primary-hover;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        td[class*="column-id"]{
+            width: 3rem;
+        }
+    }
+
+}
+

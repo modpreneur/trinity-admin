@@ -1,0 +1,67 @@
+@import "helper";
+
+body.trinity-admin{
+    background: #edecec !important;
+
+
+    .new-entry{
+        position: fixed;
+        z-index: 999;
+        border-radius: 40px;
+        width: 50px;
+        height: 50px;
+        background: #22baa0;
+        transition: background @hover-timing ease-in-out;
+        .abs-center();
+        .shadow();
+
+        &:hover{
+            background: #279d88;
+        }
+
+        i, span{
+            color: #fff;
+            font-size: 20px !important;
+            .shadow();
+            background: transparent;
+            .abs-center();
+            box-shadow: none !important;
+        }
+
+        // @remove
+        .hover-text{
+            display: none !important;
+        }
+    }
+
+    .version{
+        position: absolute;
+        top: 32px;
+        left: 85px;
+        color: #fff;
+        font-size: 8px;
+    }
+
+    .modal-dialog{
+        background: rgba(255, 255, 255, 0.8);
+    }
+
+
+    .page-actions{
+        margin-top: -16px;
+        .item{
+            border-top: none !important;
+            .box();
+            &:hover{
+                a{
+                    background: #24afc9 !important;
+                    color: #fff;
+                }
+            }
+        }
+    }
+
+}
+
+
+
