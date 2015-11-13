@@ -19,7 +19,7 @@ body.trinity-admin{
     .edit-form, .modal-dialog form{
 
         width: 100%;
-
+        margin-bottom: 10px;
         .row{
             margin-left: auto;
             margin-right: auto;
@@ -88,7 +88,6 @@ body.trinity-admin{
         input[type="number"],
         input[type="email"],
         input[type="datetime"],
-        input[type="file"],
         input[type="password"],
         input[type="url"],
         input[type="search"],
@@ -117,6 +116,10 @@ body.trinity-admin{
 
         input[type="checkbox"]{;
             display: none;
+        }
+
+        input[type="file"]{
+          //todo style for chosse file/load
         }
 
         .checkbox(@display: block){
@@ -164,7 +167,6 @@ body.trinity-admin{
                 label{
                     display: block;
                     max-width: 100%;
-
                 }
             }
 
@@ -217,7 +219,6 @@ body.trinity-admin{
             }
         }
 
-
         textarea{
             height: 100px;
             padding-top: 10px;
@@ -241,7 +242,8 @@ body.trinity-admin{
         }
 
         // button update - green color.
-        input.update, input.save{
+        //todo divide inputs by colors
+        input.update, input.save, input.create{
             background-color: #17aa56 !important;
             color: #fff;
             border: 1px solid  transparent !important;
@@ -260,6 +262,48 @@ body.trinity-admin{
             }
         }
     }
+
+    //delete form - delete button
+    .delete-form input[type="submit"]{
+        background-color: #cb4e4e !important;
+        color: #fff;
+        border: 1px solid  transparent !important;
+        border-bottom: 1px solid #b02828 !important;
+        text-shadow: 1px 1px 3px #ab3c3c;
+        box-shadow: 0 6px #b02828;
+        border-radius: 5px;
+
+        width: 100%;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        margin-top: 10px;
+
+        display: block;
+        text-transform: uppercase;
+        font-size: 18px;
+
+        -webkit-appearance:none;
+        transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in;
+
+        &:hover{
+            text-shadow: 1px 1px 3px #b02828;
+            background-color: #d32d2d !important;
+            border-bottom: 1px solid #b02828 !important;
+            box-shadow: 0 6px #b02828;
+        }
+    }
+    .delete-form{
+        width: 100%;
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+
+        .font-200{
+          font-size: 200px;
+        }
+    }
+
+    .form-title{
+      padding: 15px;
+    }
 }
-
-
