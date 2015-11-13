@@ -1,0 +1,265 @@
+/**
+    Forms for trinity admin.
+*/
+
+@import "variables";
+@import "helper";
+@medium-width: 768px;
+@medium-height: 35px;
+
+body.trinity-admin{
+
+    // dialog fix
+    .modal-dialog form{
+        label{
+            width: 100%;
+        }
+    }
+
+    .edit-form, .modal-dialog form{
+
+        width: 100%;
+
+        .row{
+            margin-left: auto;
+            margin-right: auto;
+            border-bottom: 1px solid #ededed;
+            padding-bottom: 10px;
+            padding-top: 10px;
+            width: 100%;
+            margin-bottom: 0px;
+
+            &:last-of-type{
+                border-bottom: none;
+            }
+
+            &:hover{
+                background: #f8f8f8;
+            }
+        }
+
+        .form-left{
+            text-align: right;
+        }
+
+        .form-right{
+
+            .checkbox + .description{
+                float: left;
+                margin-top: -25px;
+                margin-left: 25px;
+            }
+
+            .description{
+                font-size: 12px;
+                color: #727272;
+            }
+        }
+
+        @media screen and(max-width: @medium-width){
+            .form-left{
+                text-align: left;
+
+            }
+        }
+
+        label{
+            color: @color-font;
+            padding: 0;
+            padding-right: 20% ;
+            line-height: 35px;
+
+            &.required:after{
+                content: "*";
+                color: @color-primary;
+                font-weight: 600;
+            }
+        }
+
+        .form-content-center{
+            margin-left: auto;
+            margin-right: auto;
+            display: block !important;
+            position: static !important;
+            float: none !important;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="datetime"],
+        input[type="file"],
+        input[type="password"],
+        input[type="url"],
+        input[type="search"],
+        select,
+        textarea{
+            width: 100%;
+            border-radius: 5px;
+            height: 35px;
+            line-height: 20px;
+            font-size: 14px;
+            padding-left: 10px;
+            padding-right: 10px;
+            outline-width: 0;
+            border: 1px solid @color-border;
+            background: #fff;
+            -webkit-appearance:none;
+            transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in;
+            font-weight: 300;
+            color: @color-font;
+
+            &:focus{
+                border: 1px solid @color-primary;
+                background: #fafafc;
+            }
+        }
+
+        input[type="checkbox"]{;
+            display: none;
+        }
+
+        .checkbox(@display: block){
+
+            label{
+                display: @display;
+                margin-right: 15px;
+                position: relative;
+                cursor: pointer;
+                padding: 0;
+                text-align: left;
+                overflow: hidden;
+                max-width: 15px;
+                white-space: nowrap;
+
+                &:before{
+                    content: "\e70f";
+                    font-size: 15px;
+                    color: @color-primary;
+                    padding-right: 10px;
+                    font-family: "tiecons";
+                }
+            }
+
+            input[type="checkbox"]:checked + label:after{
+                content: "\e926";
+                font-size: 13px;
+                color: #fff;
+                padding-right: 10px;
+                font-family: "trinity";
+                position: absolute;
+                left: 1px;
+                top: 1px;
+            }
+
+            input[type="checkbox"]:checked + label:before{
+                content: "\e70e";
+            }
+
+        }
+
+        .widget-expanded{
+
+            .checkbox{
+                label{
+                    display: block;
+                    max-width: 100%;
+
+                }
+            }
+
+            .checkbox + label{
+                display: none;
+            }
+        }
+
+        .checkbox{
+            .checkbox(block);
+        }
+
+        .checkbox-inline{
+            .checkbox(inline-block);
+            label{
+                float: left;
+                position: relative;
+            }
+        }
+
+        //select drop-down fix and hide default
+        .select-style{
+
+            select{
+                -webkit-appearance:none;
+                -moz-appearance:none;
+                appearance:none;
+                cursor:pointer;
+            }
+
+            &:after{
+                content: "\e654";
+                font-family: "tiecons";
+                font-size: 12px;
+                color: @color-tab-label;
+                position: absolute;
+                right: 10px;
+                top: 12px;
+                pointer-events:none;
+            }
+
+            &:before{
+                content: " ";
+                right:10px;
+                top:10px;
+                width:15px;
+                height:15px;
+                position: absolute;
+                pointer-events:none;
+            }
+        }
+
+
+        textarea{
+            height: 100px;
+            padding-top: 10px;
+            line-height: 20px;
+            padding-bottom: 10px;
+        }
+
+        .tiecons-postfix{
+            position: absolute;
+            right: 10px;
+            top: 7px;
+        }
+
+        input[type="submit"]{
+            margin-left: auto;
+            display: block;
+            float: none !important;
+            margin-right: auto;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+
+        // button update - green color.
+        input.update, input.save{
+            background-color: #17aa56 !important;
+            color: #fff;
+            border: 1px solid  transparent !important;
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid #119e4d !important;
+            text-shadow: 1px 1px 3px #117d3e;
+            box-shadow: 0 6px #119e4d;
+
+            &:hover{
+                text-shadow: 1px 1px 3px #17aa56;
+                background-color: #18c46c !important;
+                border-bottom: 1px solid #17aa56 !important;
+                box-shadow: 0 6px #17aa56;
+            }
+        }
+    }
+}
+
+

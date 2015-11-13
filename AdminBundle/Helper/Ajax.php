@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: fisa
- * Date: 8/28/15
- * Time: 3:29 PM
- */
 
 namespace Trinity\AdminBundle\Helper;
 

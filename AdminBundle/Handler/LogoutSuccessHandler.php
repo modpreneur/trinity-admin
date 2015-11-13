@@ -1,4 +1,7 @@
 <?php
+/**
+ * Trinity project
+ */
 
 namespace Trinity\AdminBundle\Handler;
 
@@ -9,7 +12,7 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Class LogoutSuccessHandler
- * @package Necktie\AppBundle\Handler
+ * @package Trinity\AdminBundle\Handler
  */
 class LogoutSuccessHandler implements LogoutSuccessHandlerInterface
 {

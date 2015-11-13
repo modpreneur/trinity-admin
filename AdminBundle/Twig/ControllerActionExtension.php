@@ -1,5 +1,4 @@
 <?php
-
 namespace Trinity\AdminBundle\Twig;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -7,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class ControllerActionExtension
- * @package Trinity\AdminBundle\Twig
+ * @package Necktie\AppBundle\Twig
  */
 class ControllerActionExtension extends \Twig_Extension
 {
@@ -15,7 +14,6 @@ class ControllerActionExtension extends \Twig_Extension
      * @var Request
      */
     protected $request;
-
     /**
      * @var \Twig_Environment
      */
@@ -58,15 +56,13 @@ class ControllerActionExtension extends \Twig_Extension
      */
     public function getControllerName()
     {
-        if(null !== $this->request)
-        {
+        if (null !== $this->request) {
             $pattern = "#Controller\\\([a-zA-Z]*)Controller#";
             $matches = array();
             preg_match($pattern, $this->request->get('_controller'), $matches);
 
             return strtolower($matches[1]);
         }
-
     }
 
 
@@ -76,8 +72,7 @@ class ControllerActionExtension extends \Twig_Extension
      */
     public function getActionName()
     {
-        if(null !== $this->request)
-        {
+        if (null !== $this->request) {
             $pattern = "#::([a-zA-Z]*)Action#";
             $matches = array();
             preg_match($pattern, $this->request->get('_controller'), $matches);

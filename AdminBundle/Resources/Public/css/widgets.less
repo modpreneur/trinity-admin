@@ -1,0 +1,160 @@
+/**
+    Primary for dashboard widgets.
+*/
+
+@import "variables";
+@import "helper";
+
+
+body.trinity-admin{
+
+    // wrapper
+    .dashboard-widgets{
+        margin-top: 10px;
+
+        div[class^="span"]:nth-child(even){
+            padding-left: @widget-space / 2;
+        }
+
+        div[class^="span"]:nth-child(odd){
+            padding-right: @widget-space / 2;
+        }
+    }
+
+    .trinity-widget{
+        font-family: 'Roboto', sans-serif;
+        height: 430px;
+        overflow: hidden;
+        margin-bottom: @widget-space;
+        color: @global-font-color;
+
+        .box();
+
+        .widget-title{
+            font-size: 20px;
+            padding: 15px;
+            font-weight: 300;
+            color: #2f2f2f;
+        }
+    }
+
+    .trinity-widget header{
+
+    }
+
+    .trinity-widget .data-grid{
+        border: 0px transparent solid !important;
+    }
+
+    .trinity-widget .close{
+        margin-right: 15px;
+        margin-top:   15px;
+        display: none;
+    }
+
+    .trinity-widget:hover .close{
+        display: block;
+    }
+
+    .trinity-widget .close:hover{
+        color: #942a25;
+    }
+
+    .trinity-widget .data-grid{
+        background: #fff;
+        width: 100%;
+    }
+
+    .trinity-widget .data-grid thead, .trinity-widget .data-grid tr,  .trinity-widget .data-grid th{
+        background: #fff !important;
+        color: #000;
+    }
+
+    .trinity-widget .data-grid tr:hover{
+        background: #f0eeef !important;
+    }
+
+    .trinity-widget .data-grid tr{
+        border-bottom: 1px #dedede solid !important;
+        white-space: nowrap;
+
+
+        td, th{
+            &:first-child{
+                padding-left: 20px;
+            }
+
+            &:last-child{
+                padding-left: 20px;
+            }
+        }
+    }
+
+    .trinity-widget .data-grid tr td{
+        font-weight: 400;
+        vertical-align: middle;
+    }
+
+    .widget-chart{
+        //margin-left: -15px;
+        //margin-right: -15px;
+    }
+
+    .trinity-widget .content-box{
+        height: 350px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+
+        position: relative;
+        z-index: 10;
+        padding-top: 10px;
+        .content{
+            width: 100%;
+        }
+    }
+
+    .trinity-widget a{
+        color: #6b6b6b;
+    }
+
+    .trinity-widget a:hover{
+        color: #4c4c4c;
+    }
+
+    .trinity-widget .tags li{
+        font-size: 12px;
+        margin-right: 5px;
+        padding: 5px;
+        background: #e1e1e1;
+        border-radius: 5px;
+        line-height: 16px;
+        margin-bottom: 5px;
+    }
+
+    .trinity-widget .datetime{
+        font-size: 12px;
+        line-height: 16px;
+    }
+
+    .trinity-widget .content{
+
+    }
+
+    .trinity-widget .short-cell{
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .box-widget{
+        .box();
+        padding: 20px;
+        margin-bottom: 20px;
+
+        .header-h2{
+            font-weight: 300;
+            color: @color-primary;
+        }
+    }
+
+}

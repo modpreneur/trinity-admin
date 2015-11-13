@@ -18,11 +18,20 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('necktie_admin');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $rootNode = $treeBuilder->root('trinity');
+
+        $rootNode
+            ->children()
+                ->arrayNode('admin')
+                    ->children()
+                        ->scalarNode('app_version')->end()
+                        ->scalarNode('search_text')->end()
+                    ->end()
+                ->end()
+            ->end();
+
+
 
         return $treeBuilder;
     }

@@ -2,91 +2,99 @@
 
 namespace Trinity\AdminBundle\Menu;
 
-use BehaviorFixtures\ORM\UserEntity;
 use Doctrine\ORM\EntityManager;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\MenuItem;
 use Symfony\Component\DependencyInjection\ContainerAware;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\Validator\Constraints\Expression;
-use Trinity\AdminBundle\Event\AppEvents;
+use Trinity\AdminBundle\Event\AdminEvents;
 use Trinity\AdminBundle\Event\MenuEvent;
+use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
+
 
 class MenuBuilder extends ContainerAware
 {
-    /** @var FactoryInterface  */
+    /** @var FactoryInterface */
     private $factory;
 
-    /** @var EntityManager  */
+    /** @var EntityManager */
     private $em;
 
-    /** @var Breadcrumbs  */
+    /** @var Breadcrumbs */
     private $breadcrumbsService;
 
-    /** @var EventDispatcher  */
+    /** @var EventDispatcher */
     private $eventDispatcher;
 
     /** @var ItemInterface[] */
     private $navs = [];
 
-    /** @var MenuEvent  */
+    /** @var MenuEvent */
     private $menuEvent;
 
-    /** @var ContainerInterface  */
+    /** @var ContainerInterface */
     protected $container;
 
 
     /**
-     * @param EventDispatcher                                   $eventDispatcher
-     * @param FactoryInterface                                  $factory
-     * @param EntityManager                                     $entityManager
+     * @param EventDispatcher $eventDispatcher
+     * @param FactoryInterface $factory
+     * @param EntityManager $entityManager
      * @param \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs $breadcrumbs
-     * @param ContainerInterface                                $container
+     * @param ContainerInterface $container
      */
     public function __construct(
         $eventDispatcher,
         FactoryInterface $factory,
         EntityManager $entityManager,
         Breadcrumbs $breadcrumbs,
-        ContainerInterface $container)
-    {
+        ContainerInterface $container
+    ) {
         $this->factory = $factory;
         $this->em = $entityManager;
         $this->breadcrumbsService = $breadcrumbs;
         $this->eventDispatcher = $eventDispatcher;
         $this->container = $container;
 
-        $sidebar_menu = $this->factory->createItem('root', array(
-            'childrenAttributes' => array(
-                'class' => 'sidebar',
-            ),
-        ));
+        $sidebar_menu = $this->factory->createItem(
+            'root',
+            array(
+                'childrenAttributes' => array(
+                    'class' => 'sidebar',
+                ),
+            )
+        );
         $this->navs['sidebar'] = $sidebar_menu;
 
-        $quick_menu = $this->factory->createItem('root', array(
-            'childrenAttributes' => array(
-                'class' => 'show-quick-add',
-            ),
-        ));
+        $quick_menu = $this->factory->createItem(
+            'root',
+            array(
+                'childrenAttributes' => array(
+                    'class' => 'show-quick-add',
+                ),
+            )
+        );
         $this->navs['quick-menu'] = $quick_menu;
 
-        $user_menu = $this->factory->createItem('root', array(
-            'childrenAttributes' => array(
-                'class' => 'show-drop-login',
-            ),
-        ));
+        $user_menu = $this->factory->createItem(
+            'root',
+            array(
+                'childrenAttributes' => array(
+                    'class' => 'show-drop-login',
+                ),
+            )
+        );
         $this->navs['user_menu'] = $user_menu;
 
         $this->menuEvent = new MenuEvent($this->factory);
-        $this->menuEvent
-            ->addNav('sidebar', $sidebar_menu)
-            ->addNav('quick-menu', $quick_menu)
-            ->addNav('user_menu', $user_menu);
+        $this->menuEvent->addNav('sidebar', $sidebar_menu)->addNav('quick-menu', $quick_menu)->addNav(
+                'user_menu',
+                $user_menu
+            );
     }
 
 
@@ -101,49 +109,7 @@ class MenuBuilder extends ContainerAware
         $menu->setUri($requestStack->getCurrentRequest()->getRequestUri());
 
         $this->eventDispatcher->dispatch(
-            AppEvents::MENU_CREATE,
-            $this->menuEvent
-        );
-
-        $this->orderMenu($menu);
-
-        return $menu;
-    }
-
-
-    /**
-     * @param RequestStack $requestStack
-     *
-     * @return ItemInterface
-     */
-    public function createQuickMenu(RequestStack $requestStack)
-    {
-        $menu = $this->navs['quick-menu'];
-        $menu->setUri($requestStack->getCurrentRequest()->getRequestUri());
-
-        $this->eventDispatcher->dispatch(
-            AppEvents::QUICK_MENU_CREATE,
-            $this->menuEvent
-        );
-
-        $this->orderMenu($menu);
-
-        return $menu;
-    }
-
-
-    /**
-     * @param RequestStack $requestStack
-     *
-     * @return ItemInterface
-     */
-    public function createUserMenu(RequestStack $requestStack)
-    {
-        $menu = $this->navs['user_menu'];
-        $menu->setUri($requestStack->getCurrentRequest()->getRequestUri());
-
-        $this->eventDispatcher->dispatch(
-            AppEvents::USER_MENU_CREATE,
+            AdminEvents::MENU_CREATE,
             $this->menuEvent
         );
 
@@ -185,8 +151,12 @@ class MenuBuilder extends ContainerAware
 
             $orderNumber = $menuItem->getExtra('orderNumber');
 
-            if ($orderNumber && !is_numeric($orderNumber)) throw new \Exception('Order number must be an integer.');
-            if ($orderNumber < 0) throw new \Exception('Order number must be higher or equal to 0.');
+            if ($orderNumber && !is_numeric($orderNumber)) {
+                throw new \Exception('Order number must be an integer.');
+            }
+            if ($orderNumber < 0) {
+                throw new \Exception('Order number must be higher or equal to 0.');
+            }
 
             if ($menuItem->getChildren() != null) {
                 $this->orderMenu($menuItem);
@@ -195,7 +165,7 @@ class MenuBuilder extends ContainerAware
             if ($orderNumber == null) {
                 $unorderedNames[] = $menuItem->getName();
 
-                if (!$this->userHasPermissions($menuItem)){
+                if (!$this->userHasPermissions($menuItem)) {
                     $hiddenItems[] = $menuItem->getName();
                 }
             }
@@ -213,7 +183,7 @@ class MenuBuilder extends ContainerAware
                 $userIndexes[$idx] = $orderNumber;
                 $names[$idx] = $menuItem->getName();
 
-                if (!$this->userHasPermissions($menuItem)){
+                if (!$this->userHasPermissions($menuItem)) {
                     $hiddenItems[] = $menuItem->getName();
                 }
             }
@@ -224,7 +194,7 @@ class MenuBuilder extends ContainerAware
 
         $menu->reorderChildren($names);
 
-        foreach ($hiddenItems as $hiddenItem){
+        foreach ($hiddenItems as $hiddenItem) {
             $menu->removeChild($hiddenItem);
         }
     }
@@ -238,17 +208,20 @@ class MenuBuilder extends ContainerAware
      */
     private function orderArray(array $names, array $userIndexes, $currOrderNumber)
     {
-        for ($i = 0; $i <= $currOrderNumber + count($names); $i ++){
+        for ($i = 0; $i <= $currOrderNumber + count($names); $i++) {
             if (!empty($names[$i])) {
                 if ($userIndexes[$i] > $currOrderNumber) {
                     $names = $this->shiftArray($names, $i, 1);
 
                     $userIndexes = $this->shiftArray($userIndexes, $i, 1);
+
                     return array($i, $names, $userIndexes);
                 }
+            } else {
+                return array($i, $names, $userIndexes);
             }
-            else return array($i, $names, $userIndexes);
         }
+
         return array(-1, $names, $userIndexes);
     }
 
@@ -261,8 +234,8 @@ class MenuBuilder extends ContainerAware
      */
     private function shiftArray(array $shiftArray, $fromElement, $shiftSize)
     {
-        for ($i = count($shiftArray) + $shiftSize - 1; $i > $fromElement; $i --){
-            $shiftArray[$i] = $shiftArray[$i-$shiftSize];
+        for ($i = count($shiftArray) + $shiftSize - 1; $i > $fromElement; $i--) {
+            $shiftArray[$i] = $shiftArray[$i - $shiftSize];
         }
 
         return $shiftArray;
@@ -276,12 +249,15 @@ class MenuBuilder extends ContainerAware
     private function userHasPermissions(MenuItem $menuItem)
     {
         $roles = $menuItem->getExtra('roles');
-        if ($roles != null){
-            foreach ($roles as $role){
-                if ($this->container->get('security.authorization_checker')->isGranted($role)) return true;
+        if ($roles != null) {
+            foreach ($roles as $role) {
+                if ($this->container->get('security.authorization_checker')->isGranted($role)) {
+                    return true;
+                }
             }
+        } else {
+            return true;
         }
-        else return true;
 
         return false;
     }

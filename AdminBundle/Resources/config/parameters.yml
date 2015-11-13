@@ -1,0 +1,5 @@
+parameters:
+  trinity.admin.app_version: 0.1.0
+  trinity.admin.search_text: "Search in application..."
+
+
