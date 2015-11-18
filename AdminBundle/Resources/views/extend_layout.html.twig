@@ -38,6 +38,7 @@
 
         <div id="sidebar-tab3-content">
             {% block FlashbagHistory %}
+                {% set count=0 %}
                 {% for type, messages in app.session.flashbag.peekall() %}
                     {% for message in messages %}
                         <ul class="tab-list list-rows">
@@ -63,8 +64,19 @@
                                 </li>
                             {% endif %}
                         </ul>
+                            {% set count = count+1 %}
                     {% endfor %}
                 {% endfor %}
+
+                {% if count==0 %}
+                    <ul class="tab-list list-rows">
+                        <li class="info noaction">
+                            <i class="tiecons tiecons-info-circle"></i>
+                            <span>You don't have any new notification.</span>
+                        </li>
+                    </ul>
+                {% endif %}
+
             {% endblock %}
 
         </div>
