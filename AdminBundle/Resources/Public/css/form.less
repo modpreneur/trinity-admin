@@ -29,7 +29,7 @@ body.trinity-admin{
             width: 100%;
             margin-bottom: 0px;
 
-            &:last-of-type{
+            &:last-of-type, &:nth-last-of-type(2){
                 border-bottom: none;
             }
 
@@ -247,63 +247,79 @@ body.trinity-admin{
             background-color: #17aa56 !important;
             color: #fff;
             border: 1px solid  transparent !important;
-            padding-left: 50px;
-            padding-right: 50px;
-            padding-bottom: 5px;
+            padding: 5px 50px 5px 50px;
             border-bottom: 1px solid #119e4d !important;
             text-shadow: 1px 1px 3px #117d3e;
-            box-shadow: 0 6px #119e4d;
+            box-shadow: 0 4px #119e4d;
 
             &:hover{
                 text-shadow: 1px 1px 3px #17aa56;
                 background-color: #18c46c !important;
                 border-bottom: 1px solid #17aa56 !important;
-                box-shadow: 0 6px #17aa56;
+                box-shadow: 0 5px #17aa56;
             }
         }
     }
 
-    //delete form - delete button
-    .delete-form input[type="submit"]{
-        background-color: #cb4e4e !important;
-        color: #fff;
-        border: 1px solid  transparent !important;
-        border-bottom: 1px solid #b02828 !important;
-        text-shadow: 1px 1px 3px #ab3c3c;
-        box-shadow: 0 6px #b02828;
-        border-radius: 5px;
-
-        width: 100%;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        margin-top: 10px;
-
-        display: block;
-        text-transform: uppercase;
-        font-size: 18px;
-
-        -webkit-appearance:none;
-        transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in;
-
-        &:hover{
-            text-shadow: 1px 1px 3px #b02828;
-            background-color: #d32d2d !important;
-            border-bottom: 1px solid #b02828 !important;
-            box-shadow: 0 6px #b02828;
-        }
+    .form-title{
+        padding: 15px;
     }
+
+    //delete form - delete button
     .delete-form{
         width: 100%;
         text-align: center;
         margin-left: auto;
         margin-right: auto;
 
-        .font-200{
-          font-size: 200px;
+        input[type="submit"]{
+            margin-left: auto;
+            display: block;
+            float: none !important;
+            margin-right: auto;
+            text-transform: uppercase;
+            font-size: 18px;
+
+            -webkit-appearance:none;
+            transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in, box-shadow @form-tr-time ease-in;
+        }
+        i.trinity-warning:before{
+            font-size: 150px;
+            color: orange;
+        }
+        h2.warning{
+            font-weight: 200;
+            font-size: 60px;
+        }
+        p{
+            font-size: 20px;
+            color: #8e8e8e;
+        }
+        .row{
+            margin: 10px 0 20px 0;
         }
     }
 
-    .form-title{
-      padding: 15px;
+    .delete-form input.delete{
+        background-color: #cb4e4e !important;
+        color: #fff;
+        border: 1px solid  transparent !important;
+        border-bottom: 1px solid #b02828 !important;
+        text-shadow: 1px 1px 3px #ab3c3c;
+        box-shadow: 0 4px #b02828;
+        border-radius: 5px;
+        padding: 5px 50px 5px 50px;
+        margin-top: 10px;
+
+        &:hover{
+            text-shadow: 1px 1px 3px #b02828;
+            background-color: #d32d2d !important;
+            border-bottom: 1px solid #b02828 !important;
+            box-shadow: 0 5px #b02828;
+        }
+    }
+
+    .box-new-form{
+        padding-bottom: 15px;
     }
 }
