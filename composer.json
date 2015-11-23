@@ -18,7 +18,7 @@
     "symfony/console":          "~2.6",
     "symfony/finder":           "~2.6",
     "nette/utils": "~2.3",
-    "modpreneur/bowtie"  : "1.*",
+    "modpreneur/bowtie"  : "dev-master",
     "whiteoctober/breadcrumbs-bundle": "~1.2"
   },
 
