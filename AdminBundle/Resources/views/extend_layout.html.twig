@@ -13,15 +13,15 @@
         <input name="sidebar-tab" type="radio" id="sidebar-tab3">
         <label class="sidebar-tab-label" for="sidebar-tab3">
             <i class="trinity trinity-bell"></i>
-            {% if (app.session.flashbag.peekAll) %}
-                {%  set count=0 %}
+            {% set redis= app.user.getId() %}
+            {% set response = redis|getSidebarMsgs %}
+            {% set messages = response[0] %}
+            {% set countNew = response[1] %}
+
+            {% if countNew != 0 %}
                 <i class="number-info">
-                    {% for messages in app.session.flashBag.peekall() %}
-                        {% for message in messages %}
-                            {% set count = count+1 %}
-                        {% endfor %}
-                    {% endfor %}
-                    {{ count }}
+
+                    {{ countNew }}
                 </i>
             {% endif %}
         </label>
@@ -39,33 +39,46 @@
         <div id="sidebar-tab3-content">
             {% block FlashbagHistory %}
                 {% set count=0 %}
-                {% for type, messages in app.session.flashbag.peekall() %}
-                    {% for message in messages %}
-                        <ul class="tab-list list-rows">
-                            {% if type == "success" %}
-                                <li class="success new">
-                                    <i class="tiecons tiecons-info-circle"></i>
+                {#{% for type, messages in app.session.flashbag.peekall() %}#}
+                {#{% for type, messages in redis|getSidebarMsgs %}#}
+                {% for msg in messages %}
+                    {% set temp = msg|split(';;') %}
+                    {% set type = temp[0] %}
+                    {% set message = temp[1] %}
+                    {% set path = temp[2] %}
+
+                    <ul class="tab-list list-rows">
+                        {% if type == "success" %}
+                            <li class="success new">
+                                <i class="tiecons tiecons-info-circle"></i>
+                                {% if path == "" %}
                                     <span>{{ message }}</span>
-                                </li>
-                            {% elseif type == "warning" %}
-                                <li class="warning new">
-                                    <i class="tiecons tiecons-exclamation-mark-circle"></i>
-                                    <span>{{ message }}</span>
-                                </li>
-                            {% elseif type == "danger" %}
-                                <li class="danger new">
-                                    <i class="tiecons tiecons-exclamation-mark-triangle"></i>
-                                    <span>{{ message }}</span>
-                                </li>
-                            {% elseif type == "info" %}
-                                <li class="info new">
-                                    <i class="tiecons tiecons-info-circle"></i>
-                                    <span>{{ message }}</span>
-                                </li>
-                            {% endif %}
-                        </ul>
-                            {% set count = count+1 %}
-                    {% endfor %}
+                                {% else %}
+                                    {% set tmp= path|split(';') %}
+                                    {% set route = tmp[0] %}
+                                    {% set params = tmp[1]|json_decode %}
+                                    <a href="{{ path(route, params) }}"><span>{{ message }}</span></a>
+                                {% endif %}
+                            </li>
+                        {% elseif type == "warning" %}
+                            <li class="warning new">
+                                <i class="tiecons tiecons-exclamation-mark-circle"></i>
+                                <span>{{ message }}</span>
+                            </li>
+                        {% elseif type == "danger" %}
+                            <li class="danger new">
+                                <i class="tiecons tiecons-exclamation-mark-triangle"></i>
+                                <span>{{ message }}</span>
+                            </li>
+                        {% elseif type == "info" %}
+                            <li class="info new">
+                                <i class="tiecons tiecons-info-circle"></i>
+                                <span>{{ message }}</span>
+                            </li>
+                        {% endif %}
+                    </ul>
+                        {% set count = count+1 %}
+                    {#{% endfor %}#}
                 {% endfor %}
 
                 {% if count==0 %}
