@@ -6,7 +6,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class ControllerActionExtension
- * @package Necktie\AppBundle\Twig
+ * @package Trinity\AdminBundle\Twig
  */
 class ControllerActionExtension extends \Twig_Extension
 {
@@ -57,7 +57,7 @@ class ControllerActionExtension extends \Twig_Extension
     public function getControllerName()
     {
         if (null !== $this->request) {
-            $pattern = "#Controller\\\([a-zA-Z]*)Controller#";
+            $pattern = "#Controller\\([a-zA-Z]*)Controller#";
             $matches = array();
             preg_match($pattern, $this->request->get('_controller'), $matches);
 
