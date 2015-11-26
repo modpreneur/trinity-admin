@@ -87,19 +87,17 @@ body.trinity-admin{
             .sidebar-tab-content(@n, (@i + 1));
             #sidebar-tab@{i}-content{
                 display: none;
-
                 height: 100%;
-                overflow-y: auto;
-                overflow-x: hidden;
+                position: relative;
             }
 
             #sidebar-tab@{i}-body{
-                position: relative;
                 width: 100%;
                 height: auto;
-                left: 0;
-                top: 0;
-                z-index: 9999;
+            }
+
+            #sidebar-tab1-content.sidebar-tab-content{
+                overflow-y: auto;
             }
         }
 
