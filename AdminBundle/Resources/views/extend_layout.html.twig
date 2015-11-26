@@ -61,8 +61,7 @@
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
-                                    <span>{{ users[count] }}</span>
-                                    <span>{{ times[count] }}</span>
+                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
 
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -70,8 +69,7 @@
                                     {% set params = tmp[1]|json_decode %}
                                     <a href="{{ path(route, params) }}">
                                         <span>{{ message }}</span>
-                                        <span>{{ users[count] }}</span>
-                                        <span>{{ times[count] }}</span>
+                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
                                     </a>
                                 {% endif %}
                             </li>
@@ -80,8 +78,7 @@
                                 <i class="tiecons tiecons-exclamation-mark-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
-                                    <span>{{ users[count] }}</span>
-                                    <span>{{ times[count] }}</span>
+                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
 
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -89,7 +86,7 @@
                                     {% set params = tmp[1]|json_decode %}
                                     <a href="{{ path(route, params) }}">
                                         <span>{{ message }}</span>
-                                        <span>{{ users[count] }}</span>
+                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
                                     </a>
                                 {% endif %}
                             </li>
@@ -98,8 +95,7 @@
                                 <i class="tiecons tiecons-exclamation-mark-triangle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
-                                    <span>{{ users[count] }}</span>
-                                    <span>{{ times[count] }}</span>
+                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
 
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -107,7 +103,7 @@
                                     {% set params = tmp[1]|json_decode %}
                                     <a href="{{ path(route, params) }}">
                                         <span>{{ message }}</span>
-                                        <span>{{ users[count] }}</span>
+                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
                                     </a>
                                 {% endif %}
                             </li>
@@ -116,8 +112,7 @@
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
-                                    <span>{{ users[count] }}</span>
-                                    <span>{{ times[count] }}</span>
+                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
 
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -125,7 +120,7 @@
                                     {% set params = tmp[1]|json_decode %}
                                     <a href="{{ path(route, params) }}">
                                         <span>{{ message }}</span>
-                                        <span>{{ users[count] }}</span>
+                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
                                     </a>
                                 {% endif %}
                             </li>

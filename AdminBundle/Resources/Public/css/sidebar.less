@@ -27,7 +27,7 @@ body.trinity-admin{
             padding: 4px 3px;
             background: #f0575a;
             color: #fff;
-            font-size: 9px;
+            font-size: 11px;
             display: inline-block;
             width: 22px;
             height: 22px;
@@ -206,6 +206,10 @@ body.trinity-admin{
                     color: @sidebar-link-color;
                 }
 
+                .detail-info{
+                    visibility: hidden;
+                }
+
                 &:hover{
                     background: @sidebar-row-hover-color;
                     overflow: visible;
@@ -214,6 +218,13 @@ body.trinity-admin{
                         background: @sidebar-row-hover-color;
                         border-top: 1px solid #faf0f8;
                         border-bottom: 1px solid #faf0f8;
+                    }
+                    .detail-info{
+                        visibility: visible;
+                        font-size: 12px;
+                        color: #838383;
+                        display: block;
+                        line-height: 2;
                     }
                 }
 
@@ -241,7 +252,7 @@ body.trinity-admin{
 
 
         .sidebar{
-            margin-top: 0px;
+            margin-top: 0;
             li{
                 width: 100%;
                 min-height: @sidebar-row-height;
@@ -311,7 +322,6 @@ body.trinity-admin{
                 li{
                     a{
                         padding-left: 54px !important;
-                        line-height: 22px;
                         color: @sidebar-link-color;
                         font-weight: normal;
                         background: #fff;
