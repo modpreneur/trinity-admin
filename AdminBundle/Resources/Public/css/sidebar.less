@@ -89,7 +89,7 @@ body.trinity-admin{
                 display: none;
 
                 height: 100%;
-                overflow-y: scroll;
+                overflow-y: auto;
             }
 
             #sidebar-tab@{i}-body{
@@ -308,12 +308,15 @@ body.trinity-admin{
                 width: 100%;
                 margin: 0;
                 padding: 0;
+                background: #fff;
                 li{
                     a{
                         padding-left: 54px !important;
                         line-height: 22px;
                         color: @sidebar-link-color;
                         font-weight: normal;
+                        background: #fff;
+                        line-height: @sidebar-row-height;
                         i{
                             display: none;
                         }
@@ -323,12 +326,14 @@ body.trinity-admin{
                         a{
                             font-weight: 500;
                             color: #000000;
+                            background: @sidebar-row-hover-color;
                         }
                     }
 
                     &:hover{
                         a{
                             color: #000000;
+                            background: @sidebar-row-hover-color;
                         }
                     }
 
