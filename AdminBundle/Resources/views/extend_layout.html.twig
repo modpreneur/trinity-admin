@@ -24,17 +24,19 @@
             {% endif %}
         </label>
 
-        <div id="sidebar-tab1-content">
-            {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}
+        <div id="sidebar-tab1-content" class="sidebar-tab-content">
+            <div id="sidebar-tab1-body">
+                {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}
+            </div>
         </div>
 
-        <div id="sidebar-tab2-content">
+        <div id="sidebar-tab2-content" class="sidebar-tab-content">
             {% block sidebar_user %}
 
             {% endblock %}
         </div>
 
-        <div id="sidebar-tab3-content">
+        <div id="sidebar-tab3-content" class="sidebar-tab-content">
             {% block FlashbagHistory %}
                 {% set count=0 %}
 
@@ -46,8 +48,8 @@
                     {% set new = countNew %}
 
                     {% if countNew > 0 %}
-                    <span>NEW!</span>
-                    {% set countNew=countNew-1 %}
+                        <span>NEW!</span>
+                        {% set countNew=countNew-1 %}
                     {% endif %}
                     <ul class="tab-list list-rows">
 
@@ -101,7 +103,7 @@
                             </li>
                         {% endif %}
                     </ul>
-                        {% set count = count+1 %}
+                    {% set count = count+1 %}
 
                     {% if countNew == 0 and new !=0 %}
                         {% set countNew = -1 %}<br>

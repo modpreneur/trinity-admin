@@ -43,9 +43,9 @@
 
 </head>
 
-<body class="trinity-admin navbar-fixed controller_{{ get_controller_name() }} action_{{ get_action_name() }}">
+<body onresize='q("#sidebar-tab1-content").style.height = q("body").scrollHeight+"px";' class="trinity-admin navbar-fixed controller_{{ get_controller_name() }} action_{{ get_action_name() }}">
 
-    {% block navbar %}
+{% block navbar %}
     <nav class="navbar row">
         <input class="hidden" type="checkbox" name="fav" id="fav">
 
@@ -64,14 +64,14 @@
                     <div class="navbar-search navbar-actions-item">
                         {% block navbar_seach_form_start %}
                         <form action="{% block search_action %}{% endblock %}" autocomplete="on">
-                        {% endblock %}
+                            {% endblock %}
                             <label for="search">
                                 <input  placeholder="{{ admin_manager.serchText }}" class="navbar-search-input" type="text" name="search" id="search">
                                 <button type="submit">
                                     <i class="trinity trinity-search"></i>
                                 </button>
                             </label>
-                        {% block navbar_search_form_end %}
+                            {% block navbar_search_form_end %}
                         </form>
                         {% endblock %}
                     </div>
@@ -94,34 +94,34 @@
             {% endblock %}
         </div>
     </nav>
-    {% endblock %}
+{% endblock %}
 
-    {% block element_sidebar %}
+{% block element_sidebar %}
     <div id="sidebar">
         {% block sidebar %}
         {% endblock %}
     </div>
-    {% endblock %}
+{% endblock %}
 
-    <div class="container-fluid container-with-sidebar">
-        <div class="row">
-            <div class="head-content box">
-               <div class="row">
+<div class="container-fluid container-with-sidebar">
+    <div class="row">
+        <div class="head-content box">
+            <div class="row">
 
-                   <div class="span-none-padding-small-2 span-none-padding-medium-4 span-none-padding-large-3 span-none-padding-xlarge-3">
+                <div class="span-none-padding-small-2 span-none-padding-medium-4 span-none-padding-large-3 span-none-padding-xlarge-3">
                        <span class="abs-center">
                            {% block pageIcon %} {% endblock %}
                        </span>
-                   </div>
+                </div>
 
-                   <div class="span-none-padding-small-14 span-none-padding-medium-17 span-none-padding-large-18 span-none-padding-xlarge-19">
-                       <h2 class="content-header">{% block pageTitle %} Dashboard {% endblock %}</h2>
-                       <div class="breadcrumbs">
-                           {{ wo_render_breadcrumbs() }}
-                       </div>
-                   </div>
+                <div class="span-none-padding-small-14 span-none-padding-medium-17 span-none-padding-large-18 span-none-padding-xlarge-19">
+                    <h2 class="content-header">{% block pageTitle %} Dashboard {% endblock %}</h2>
+                    <div class="breadcrumbs">
+                        {{ wo_render_breadcrumbs() }}
+                    </div>
+                </div>
 
-                   <div class="span-none-padding-small-2 span-none-padding-medium-3 span-none-padding-large-3 span-none-padding-xlarge-2">
+                <div class="span-none-padding-small-2 span-none-padding-medium-3 span-none-padding-large-3 span-none-padding-xlarge-2">
                        <span class="abs-center">
                            {% block actions %} {% endblock %}
                        </span>
@@ -129,21 +129,21 @@
                        <span class="abs-center">
                            {% block pageAction %} {% endblock %}
                        </span>
-                   </div>
+                </div>
 
-                   {% block page_loading %}
-                   <div class="header-loader">
-                       <div class="load-bar">
-                           <div class="bar"></div>
-                           <div class="bar"></div>
-                       </div>
-                   </div>
-                   {% endblock %}
-               </div>
+                {% block page_loading %}
+                    <div class="header-loader">
+                        <div class="load-bar">
+                            <div class="bar"></div>
+                            <div class="bar"></div>
+                        </div>
+                    </div>
+                {% endblock %}
             </div>
         </div>
+    </div>
 
-        {% block flashMessages %}
+    {% block flashMessages %}
         <div id="flashMessages">
 
             <input id="close-alert-{type}-{id}" type="radio" class="ajax-checkbox checkbox-none">
@@ -209,21 +209,21 @@
             {% endblock %}
 
         </div>
-        {% endblock %}
+    {% endblock %}
 
-        <div class="row">
-            <div class="span-large-24">
-                {% block pageBody %}
-                {% endblock %}
-            </div>
-        </div>
-
-        {% block trinity_admin_script_footer %}
-            {% block javascripts %}
+    <div class="row">
+        <div class="span-large-24">
+            {% block pageBody %}
             {% endblock %}
-        {% endblock %}
-
+        </div>
     </div>
+
+    {% block trinity_admin_script_footer %}
+        {% block javascripts %}
+        {% endblock %}
+    {% endblock %}
+
+</div>
 </body>
 </html>
 
