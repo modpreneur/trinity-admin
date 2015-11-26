@@ -22,7 +22,7 @@ class FakeExtension extends \Twig_Extension
 
     public function getRedisMsgs()
     {
-        return [[$out], [], [], 0];
+        return [[], [], [], 0];
     }
 
 
