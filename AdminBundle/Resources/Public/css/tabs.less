@@ -114,3 +114,59 @@ body.trinity-admin{
 
 }
 
+// tabs
+body.trinity-admin{
+
+    .harmonica{
+
+        .main-panel{
+
+            min-height: 51px;
+
+            label[for^="harmonica-global"]{
+                text-align: left;
+                font-weight: 300;
+                padding-left: 20px;
+                padding-right: 20px;
+                color: @color-font;
+                line-height: 30px;
+                border-bottom: 1px solid #d7d7d7;
+                border-top: 1px solid transparent;
+                margin-bottom: 15px;
+
+                i{
+                    margin-right: 10px;
+                    font-size: 16px;
+                    line-height: 30px;
+                    float: left;
+                }
+
+                &:hover{
+                    background: @global-row-hover;
+                }
+            }
+
+            .show-harmonica{
+                background: none;
+                padding: 0px;
+                margin-bottom: 20px;
+
+                label{
+                    color: @color-font;
+                    font-weight: 300;
+                    font-size: 14px;
+                }
+            }
+        }
+
+        input[id^="harmonica-global"]:checked + .main-panel{
+            label[for^="harmonica-global"]{
+                font-weight: 400;
+                background: @global-row-hover;
+                color: @color-primary;
+                border-top: 1px solid #d7d7d7;
+            }
+        }
+    }
+
+}
