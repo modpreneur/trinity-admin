@@ -123,7 +123,8 @@ body.trinity-admin{
 
             min-height: 51px;
 
-            label[for^="harmonica-global"]{
+            label[for^="harmonica"]{
+                font-size: 14px;
                 text-align: left;
                 font-weight: 300;
                 padding-left: 20px;
@@ -131,8 +132,11 @@ body.trinity-admin{
                 color: @color-font;
                 line-height: 30px;
                 border-bottom: 1px solid #d7d7d7;
-                border-top: 1px solid transparent;
                 margin-bottom: 15px;
+
+                border-top: 1px solid @global-row-hover;
+                border-bottom: 1px solid transparent;
+                text-transform: uppercase;
 
                 i{
                     margin-right: 10px;
@@ -159,12 +163,13 @@ body.trinity-admin{
             }
         }
 
-        input[id^="harmonica-global"]:checked + .main-panel{
-            label[for^="harmonica-global"]{
+        input[id^="harmonica"]:checked + .main-panel{
+            label[for^="harmonica"]{
                 font-weight: 400;
                 background: @global-row-hover;
                 color: @color-primary;
                 border-top: 1px solid #d7d7d7;
+                border-bottom: 1px solid #ccc;
             }
         }
     }
