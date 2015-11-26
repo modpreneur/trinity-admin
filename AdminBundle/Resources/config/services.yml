@@ -11,6 +11,11 @@ services:
       - @service_container
 
 
+  trinity.twig.extension.fake:
+      class: Trinity\AdminBundle\Twig\ControllerActionExtension
+      tags:
+          - { name: twig.extension }
+
   trinity.twig.extensions.controller:
           class: Trinity\AdminBundle\Twig\ControllerActionExtension
           calls:
