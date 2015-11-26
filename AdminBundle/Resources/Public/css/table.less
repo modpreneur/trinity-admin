@@ -1,0 +1,54 @@
+/**
+
+    Simple table layout.
+
+*/
+
+.tabs-wrapper{
+    table.grid{
+        margin: 0 !important;
+    }
+}
+
+table.grid{
+
+    thead{
+        tr{
+            background: @global-row-hover;
+            border-bottom: 1px solid #ededed;
+
+            th, td{
+                color: @color-primary;
+                font-weight: 500;
+            }
+        }
+    }
+
+    tr{
+
+        background: #fff;
+        border-bottom: 1px solid #ededed;
+
+        &:hover{
+            background: @global-row-hover;
+        }
+    }
+
+    th{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 24px;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+
+    td{
+        font-size: 12px;
+        vertical-align: middle;
+    }
+
+    th:first-child, td:first-child{
+        padding-left: 20px;
+    }
+
+}
