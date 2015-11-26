@@ -16,7 +16,7 @@ body.trinity-admin{
 
         font-family: "Roboto", sans-serif;
         margin-bottom: 20px;
-        padding: 10px 10px 20px;
+        padding: 10px 0px 20px;
         color: @global-font-color;
 
         .grid-search{
@@ -71,8 +71,8 @@ body.trinity-admin{
                     width: 50px;
 
                     transition: border @search-time ease-in,
-                                background @search-time ease-in,
-                                color @search-time ease-in;
+                    background @search-time ease-in,
+                    color @search-time ease-in;
 
                     &:hover{
                         background: @color-primary-hover;
@@ -107,9 +107,25 @@ body.trinity-admin{
 
                 tbody{
 
-                    td, tr{
+                    th{
+                        font-size: 16px;
+                    }
+
+                    td, tr, th{
                         background: transparent;
                         vertical-align: middle;
+                        line-height: 26px;
+                    }
+
+
+                    td, th{
+                        &:first-child{
+                            padding-left: 20px;
+                        }
+
+                        &:last-child{
+                            padding-right: 20px;
+                        }
                     }
 
                     tr{
