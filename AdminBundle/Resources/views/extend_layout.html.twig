@@ -15,7 +15,10 @@
             {% set redis= app.user.getId() %}
             {% set response = redis|getSidebarMsgs %}
             {% set messages = response[0] %}
-            {% set countNew = response[1] %}
+            {% set users = response[1] %}
+            {% set times = response[2] %}
+            {% set countNew = response[3] %}
+
             {% if countNew != 0 %}
                 <i class="number-info">
 
@@ -58,11 +61,18 @@
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
+                                    <span>{{ users[count] }}</span>
+                                    <span>{{ times[count] }}</span>
+
                                 {% else %}
                                     {% set tmp= path|split(';') %}
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}"><span>{{ message }}</span></a>
+                                    <a href="{{ path(route, params) }}">
+                                        <span>{{ message }}</span>
+                                        <span>{{ users[count] }}</span>
+                                        <span>{{ times[count] }}</span>
+                                    </a>
                                 {% endif %}
                             </li>
                         {% elseif type == "warning" %}
@@ -70,11 +80,17 @@
                                 <i class="tiecons tiecons-exclamation-mark-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
+                                    <span>{{ users[count] }}</span>
+                                    <span>{{ times[count] }}</span>
+
                                 {% else %}
                                     {% set tmp= path|split(';') %}
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}"><span>{{ message }}</span></a>
+                                    <a href="{{ path(route, params) }}">
+                                        <span>{{ message }}</span>
+                                        <span>{{ users[count] }}</span>
+                                    </a>
                                 {% endif %}
                             </li>
                         {% elseif type == "danger" %}
@@ -82,11 +98,17 @@
                                 <i class="tiecons tiecons-exclamation-mark-triangle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
+                                    <span>{{ users[count] }}</span>
+                                    <span>{{ times[count] }}</span>
+
                                 {% else %}
                                     {% set tmp= path|split(';') %}
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}"><span>{{ message }}</span></a>
+                                    <a href="{{ path(route, params) }}">
+                                        <span>{{ message }}</span>
+                                        <span>{{ users[count] }}</span>
+                                    </a>
                                 {% endif %}
                             </li>
                         {% elseif type == "info" %}
@@ -94,11 +116,17 @@
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
+                                    <span>{{ users[count] }}</span>
+                                    <span>{{ times[count] }}</span>
+
                                 {% else %}
                                     {% set tmp= path|split(';') %}
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}"><span>{{ message }}</span></a>
+                                    <a href="{{ path(route, params) }}">
+                                        <span>{{ message }}</span>
+                                        <span>{{ users[count] }}</span>
+                                    </a>
                                 {% endif %}
                             </li>
                         {% endif %}
