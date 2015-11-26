@@ -50,18 +50,27 @@
                     {% set path = temp[2] %}
                     {% set new = countNew %}
 
+
                     {% if countNew > 0 %}
                         <span>NEW!</span>
-                        {% set countNew=countNew-1 %}
+
                     {% endif %}
+
                     <ul class="tab-list list-rows">
 
                         {% if type == "success" %}
-                            <li class="success new">
+                            <li class="
+                            {% if countNew > 0 %}
+                               success new
+                               {% set countNew=countNew-1 %}
+                            {% else %}
+                               success
+                            {% endif %}
+                            ">
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
-                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
+                                    <span class="detail-info">{{ users[count] }}   |   {{ times[count] }}</span>
 
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -69,16 +78,23 @@
                                     {% set params = tmp[1]|json_decode %}
                                     <a href="{{ path(route, params) }}">
                                         <span>{{ message }}</span>
-                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
+                                        <span class="detail-info">{{ users[count] }}   |   {{ times[count] }}</span>
                                     </a>
                                 {% endif %}
                             </li>
                         {% elseif type == "warning" %}
-                            <li class="warning new">
+                            <li class="
+                            {% if countNew > 0 %}
+                               warning new
+                               {% set countNew=countNew-1 %}
+                            {% else %}
+                               warning
+                            {% endif %}
+                            ">
                                 <i class="tiecons tiecons-exclamation-mark-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
-                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
+                                    <span class="detail-info">{{ users[count] }}   |   {{ times[count] }}</span>
 
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -91,7 +107,14 @@
                                 {% endif %}
                             </li>
                         {% elseif type == "danger" %}
-                            <li class="danger new">
+                            <li class="
+                            {% if countNew > 0 %}
+                               danger new
+                               {% set countNew=countNew-1 %}
+                            {% else %}
+                               danger
+                            {% endif %}
+                            ">
                                 <i class="tiecons tiecons-exclamation-mark-triangle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
@@ -108,7 +131,14 @@
                                 {% endif %}
                             </li>
                         {% elseif type == "info" %}
-                            <li class="info new">
+                            <li class="
+                            {% if countNew > 0 %}
+                               info new
+                               {% set countNew=countNew-1 %}
+                            {% else %}
+                               info
+                            {% endif %}
+                            ">
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <span>{{ message }}</span>
@@ -129,7 +159,7 @@
                     {% set count = count+1 %}
 
                     {% if countNew == 0 and new !=0 %}
-                        {% set countNew = -1 %}<br>
+                        {% set countNew = -1 %}
                     {% endif %}
                 {% endfor %}
 
