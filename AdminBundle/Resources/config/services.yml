@@ -12,7 +12,7 @@ services:
 
 
   trinity.twig.extension.fake:
-      class: Trinity\AdminBundle\Twig\ControllerActionExtension
+      class: Trinity\AdminBundle\Twig\FakeExtension
       tags:
           - { name: twig.extension }
 
