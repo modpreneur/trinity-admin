@@ -78,7 +78,7 @@ body.trinity-admin{
     }
 
     .tab-body{
-        padding: 0px 0px 10px;
+        padding: 0px 0px 0px;
     }
 
     .tab-body-wrapper{
@@ -176,4 +176,49 @@ body.trinity-admin{
         }
     }
 
+}
+
+
+// content
+body.trinity-admin{
+    .tab-content{
+
+        color: @color-font;
+
+        .tab-header{
+            margin-bottom: 15px;
+            border-bottom: 2px solid #24afc9;
+            padding: 20px;
+        }
+
+        .tab-title{
+            text-transform: uppercase;
+            font-size: 20px;
+            color: @color-primary;
+            font-weight: 400;
+        }
+
+        .tab-sub-title{
+            font-size: 16px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 20px;
+            text-transform: uppercase;
+            font-weight: 400;
+            i{
+                color: #24afc9 !important;
+                padding-right: 5px;
+            }
+        }
+
+        .tab-description{
+            margin-top: 10px;
+            color: @color-tab-label;
+            font-size: 14px !important;
+            padding-left: 0px;
+            padding-right: 0px;
+            margin-left: 0px !important;
+            margin-right: 0px !important;
+        }
+    }
 }
