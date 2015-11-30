@@ -42,121 +42,111 @@
         <div id="sidebar-tab3-content" class="sidebar-tab-content">
             {% block FlashbagHistory %}
                 {% set count=0 %}
-
+                <ul class="tab-list list-rows">
+                    <div id="container1">
+                        <div id="container2">
                 {% for msg in messages %}
                     {% set temp = msg|split(';;') %}
                     {% set type = temp[0] %}
                     {% set message = temp[1] %}
                     {% set path = temp[2] %}
                     {% set new = countNew %}
-
-                    <ul class="tab-list list-rows">
-
                         {% if type == "success" %}
-                            <li class="
                             {% if countNew > 0 %}
-                               success new
-                               {% set countNew=countNew-1 %}
+                                <li class="success new">
+                                {% set countNew=countNew-1 %}
                             {% else %}
-                               success
+                                <li class="success">
                             {% endif %}
-                            ">
-                                <i class="tiecons tiecons-info-circle"></i>
-                                {% if path == ";" %}
-                                    <span>{{ message }}</span>
-                                    <span class="detail-info">{{ users[count] }}   |   {{ times[count] }}</span>
-
-                                {% else %}
-                                    {% set tmp= path|split(';') %}
-                                    {% set route = tmp[0] %}
-                                    {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}">
+                                    <i class="tiecons tiecons-info-circle"></i>
+                                    {% if path == ";" %}
                                         <span>{{ message }}</span>
-                                        <span class="detail-info">{{ users[count] }}   |   {{ times[count] }}</span>
-                                    </a>
-                                {% endif %}
-                            </li>
+                                        <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+                                    {% else %}
+                                        {% set tmp= path|split(';') %}
+                                        {% set route = tmp[0] %}
+                                        {% set params = tmp[1]|json_decode %}
+                                        <a href="{{ path(route, params) }}">
+                                            <span>{{ message }}</span>
+                                            <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+                                        </a>
+                                    {% endif %}
+                                </li>
                         {% elseif type == "warning" %}
-                            <li class="
                             {% if countNew > 0 %}
-                               warning new
+                                <li class="warning new">
                                {% set countNew=countNew-1 %}
                             {% else %}
-                               warning
+                                <li class="warning">
                             {% endif %}
-                            ">
-                                <i class="tiecons tiecons-exclamation-mark-circle"></i>
-                                {% if path == ";" %}
-                                    <span>{{ message }}</span>
-                                    <span class="detail-info">{{ users[count] }}   |   {{ times[count] }}</span>
-
-                                {% else %}
-                                    {% set tmp= path|split(';') %}
-                                    {% set route = tmp[0] %}
-                                    {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}">
+                                    <i class="tiecons tiecons-exclamation-mark-circle"></i>
+                                    {% if path == ";" %}
                                         <span>{{ message }}</span>
-                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
-                                    </a>
-                                {% endif %}
-                            </li>
+                                        <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+                                    {% else %}
+                                        {% set tmp= path|split(';') %}
+                                        {% set route = tmp[0] %}
+                                        {% set params = tmp[1]|json_decode %}
+                                        <a href="{{ path(route, params) }}">
+                                            <span>{{ message }}</span>
+                                            <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+                                        </a>
+                                    {% endif %}
+                                </li>
                         {% elseif type == "danger" %}
-                            <li class="
                             {% if countNew > 0 %}
-                               danger new
+                                <li class="danger new">
                                {% set countNew=countNew-1 %}
                             {% else %}
-                               danger
+                                <li class="danger">
                             {% endif %}
-                            ">
-                                <i class="tiecons tiecons-exclamation-mark-triangle"></i>
-                                {% if path == ";" %}
-                                    <span>{{ message }}</span>
-                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
-
-                                {% else %}
-                                    {% set tmp= path|split(';') %}
-                                    {% set route = tmp[0] %}
-                                    {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}">
+                                    <i class="tiecons tiecons-exclamation-mark-triangle"></i>
+                                    {% if path == ";" %}
                                         <span>{{ message }}</span>
-                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
-                                    </a>
-                                {% endif %}
-                            </li>
+                                        <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+
+                                    {% else %}
+                                        {% set tmp= path|split(';') %}
+                                        {% set route = tmp[0] %}
+                                        {% set params = tmp[1]|json_decode %}
+                                        <a href="{{ path(route, params) }}">
+                                            <span>{{ message }}</span>
+                                            <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+                                        </a>
+                                    {% endif %}
+                                </li>
                         {% elseif type == "info" %}
-                            <li class="
                             {% if countNew > 0 %}
-                               info new
+                                <li class="info new">
                                {% set countNew=countNew-1 %}
                             {% else %}
-                               info
+                                <li class="info">
                             {% endif %}
-                            ">
-                                <i class="tiecons tiecons-info-circle"></i>
-                                {% if path == ";" %}
-                                    <span>{{ message }}</span>
-                                    <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
-
-                                {% else %}
-                                    {% set tmp= path|split(';') %}
-                                    {% set route = tmp[0] %}
-                                    {% set params = tmp[1]|json_decode %}
-                                    <a href="{{ path(route, params) }}">
+                                    <i class="tiecons tiecons-info-circle"></i>
+                                    {% if path == ";" %}
                                         <span>{{ message }}</span>
-                                        <span class="detail-info">{{ users[count] }} | {{ times[count] }}</span>
-                                    </a>
-                                {% endif %}
-                            </li>
+                                        <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+                                    {% else %}
+                                        {% set tmp= path|split(';') %}
+                                        {% set route = tmp[0] %}
+                                        {% set params = tmp[1]|json_decode %}
+                                        <a href="{{ path(route, params) }}">
+                                            <span>{{ message }}</span>
+                                            <span class="detail-info">{{ users[count] }} &nbsp | &nbsp {{ times[count] }}</span>
+                                        </a>
+                                    {% endif %}
+                                </li>
                         {% endif %}
-                    </ul>
+
                     {% set count = count+1 %}
 
                     {% if countNew == 0 and new !=0 %}
                         {% set countNew = -1 %}
                     {% endif %}
                 {% endfor %}
-
+                    </div>
+                    </div>
+                </ul>
                 {% if count==0 %}
                     <ul class="tab-list list-rows">
                         <li class="info noaction">

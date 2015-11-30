@@ -98,6 +98,7 @@ body.trinity-admin{
 
             #sidebar-tab1-content.sidebar-tab-content{
                 overflow-y: auto;
+                overflow-x: hidden;
             }
         }
 
@@ -122,27 +123,24 @@ body.trinity-admin{
         }
 
         ul.tab-list{
-
             &.list-rows{
                 background: #f7f7f7;
             }
 
             li{
-                min-height: @sidebar-row-height;
                 font-size: @sidebar-font-size;
                 color: #000;
                 font-weight: 300;
                 display: block;
                 position: relative;
                 padding: 15px 50px 15px 50px;
-                border-bottom: 1px solid #faf0f8;
-                border-top: 1px solid #faf0f8;
+                border-top: 1px solid #f1f1f1;
                 white-space: nowrap;
                 overflow: hidden;
-                -o-text-overflow: ellipsis;   /* Opera */
-                text-overflow:    ellipsis;   /* IE, Safari (WebKit) */
+                text-overflow: ellipsis;   /* IE, Safari (WebKit) */
                 z-index: 999;
                 min-width: @sidebar-width;
+                min-height: @sidebar-row-height;
 
                 span{
                     background: transparent;
@@ -151,8 +149,7 @@ body.trinity-admin{
                     margin-top: -15px;
                     margin-bottom: -15px;
                     padding-right: 15px;
-                    border-top: 1px solid transparent;
-                    border-bottom: 1px solid transparent;
+                    border-top: 1px solid #f4f4f4;
                     border-right: 1px solid transparent;
                 }
 
@@ -216,9 +213,10 @@ body.trinity-admin{
                     width: auto;
                     span{
                         background: @sidebar-row-hover-color;
-                        border-top: 1px solid #faf0f8;
-                        border-bottom: 1px solid #faf0f8;
                         outline: 0;
+                    }
+                    span:first-child{
+                        padding-bottom: 35px;
                     }
                     //info at notification user name and date
                     .detail-info{
@@ -235,7 +233,7 @@ body.trinity-admin{
                     font-size: @sidebar-icon-font-size + 5px;
                     position: absolute;
                     left: 15px;
-                    top: 12px;
+                    top: 10px;
                 }
 
                 @-webkit-keyframes pulse {
@@ -252,14 +250,14 @@ body.trinity-admin{
 
         }
 
-        //dotted border on focus remove
+        //remove dotted border on focus - moz
         a, span:focus, span::-moz-focus-inner {
             border: 0;
             outline: 0;
         }
         .sidebar{
             margin-top: 0;
-            li{
+            li {
                 width: 100%;
                 min-height: @sidebar-row-height;
                 position: relative;
@@ -268,7 +266,7 @@ body.trinity-admin{
                 border-top: 1px transparent solid;
                 cursor: pointer;
 
-                a, div{
+                a, div {
                     display: block;
                     width: 100%;
                     min-height: @sidebar-row-height;
@@ -278,7 +276,7 @@ body.trinity-admin{
                     font-weight: normal;
                 }
 
-                i{
+                i {
                     padding-left: 20px;
                     padding-right: 30px;
                     width: 14px;
@@ -286,23 +284,26 @@ body.trinity-admin{
                     font-size: @sidebar-icon-font-size;
                 }
 
-                &.active{
+                &.active {
                     border-bottom: 1px #ebebeb solid;
                     border-top: 1px #ebebeb solid;
-                    a, div{
+                    a, div {
                         font-weight: 500;
                     }
                 }
 
-                &.active, &:hover{
+                &.active, &:hover {
 
                     border-bottom: 1px #ebebeb solid;
                     border-top: 1px #ebebeb solid;
-                    a, div{
+                    a, div {
                         background: @sidebar-row-hover-color;
                         color: @color-primary;
                     }
                 }
+            }
+            .first {
+                border-top: 1px #f4f4f4 solid;
             }
 
             .dropdown-main-sidebar, .li-dropdown{
