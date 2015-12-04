@@ -89,11 +89,14 @@ body.trinity-admin{
 
         .grid-row-titles th{
             background: #fff;
-            color: @color-primary;
+            color: @global-font-color;
             font-weight: 400;
+            &:first-letter{
+                text-transform: uppercase;
+            }
+
             a{
                 color: @color-primary;
-                text-transform: uppercase;
             }
         }
 
@@ -139,12 +142,19 @@ body.trinity-admin{
                             }
                         }
                     }
+
+                    td.grid-column-description{
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        max-width: 200px;
+                    }
                 }
             }
         }
 
         td[class*="column-id"]{
-            width: 3rem;
+            width: 4rem;
         }
     }
 
