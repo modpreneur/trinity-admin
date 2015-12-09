@@ -3,7 +3,7 @@
 namespace Trinity\AdminBundle\Twig;
 
 
-class FakeExtension extends \Twig_Extension
+class SidebarExtension extends \Twig_Extension
 {
     /**
      *

@@ -11,8 +11,8 @@ services:
       - @service_container
 
 
-  trinity.twig.extension.fake:
-      class: Trinity\AdminBundle\Twig\FakeExtension
+  trinity.twig.extension.side_bar:
+      class: Trinity\AdminBundle\Twig\SidebarExtension
       tags:
           - { name: twig.extension }
 
