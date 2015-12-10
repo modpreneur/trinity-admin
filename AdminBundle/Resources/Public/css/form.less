@@ -241,7 +241,24 @@ body.trinity-admin{
 
         // button update - green color.
         //todo divide inputs by colors
-        input.update, input.save, input.create{
+        input.update, a.update{
+            background-color: #e4991c !important;
+            color: #fff;
+            border: 1px solid  transparent !important;
+            padding: 5px 50px 5px 50px;
+            text-shadow: 1px 1px 3px #906c1d;
+            box-shadow: 0 4px #a47b21;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+
+            &:hover{
+                background-color: #18c46c !important;
+                box-shadow: 0 5px #139854;
+            }
+        }
+
+        input.save, input.create, a.save, a.create{
             background-color: #17aa56 !important;
             color: #fff;
             border: 1px solid  transparent !important;
@@ -250,6 +267,7 @@ body.trinity-admin{
             box-shadow: 0 4px #119e4d;
             margin-top: 10px;
             margin-bottom: 15px;
+            text-transform: uppercase;
 
             &:hover{
                 background-color: #18c46c !important;
@@ -309,7 +327,7 @@ body.trinity-admin{
         }
     }
 
-    .delete-form input.delete{
+    .delete-form input.delete, a.delete{
         background-color: #cb4e4e !important;
         color: #fff;
         border: 1px solid  transparent !important;
@@ -319,6 +337,8 @@ body.trinity-admin{
         border-radius: 5px;
         padding: 5px 50px 5px 50px;
         margin-top: 10px;
+        margin-bottom: 15px;
+        text-transform: uppercase;
 
         &:hover{
             background-color: #d32d2d !important;
