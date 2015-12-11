@@ -76,8 +76,14 @@
       {% set label = name|humanize %}
     {%- endif -%}
   {%- endif -%}
-  <input type="{{ type|default('button') }}" {{ block('button_attributes') }}
-         value="{{ label|trans({}, translation_domain) }}"/>
+
+  {% if type == "submit" %}
+    <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</button>
+  {% else %}
+    <input type="{{ type|default('button') }}" {{ block('button_attributes') }}
+           value="{{ label|trans({}, translation_domain) }}"/>
+  {% endif %}
+
 {%- endblock button_widget -%}
 
 {% block checkbox_widget -%}
