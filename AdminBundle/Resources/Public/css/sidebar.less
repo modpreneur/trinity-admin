@@ -205,13 +205,13 @@ body.trinity-admin{
 
                 .detail-info{
                     visibility: hidden;
-                    background: @sidebar-row-hover-color;
                 }
 
                 &:hover{
                     background: @sidebar-row-hover-color;
                     overflow: visible;
                     width: auto;
+
                     span{
                         background: @sidebar-row-hover-color;
                         outline: 0;
@@ -219,15 +219,24 @@ body.trinity-admin{
                     span:first-child{
                         padding-bottom: 35px;
                     }
+                    span.detail-info{
+                        visibility: visible;
+                        font-size: 12px;
+                        color: #838383;
+                        display: block;
+
+                        line-height: 2;
+                        width: 100%;
+                    }
                     //info at notification user name and date
-                    .detail-info{
+                    /*.detail-info{
                         visibility: visible;
                         font-size: 12px;
                         color: #838383;
                         display: block;
                         line-height: 2;
-                        background: @sidebar-row-hover-color;
-                    }
+                        width: 100%;
+                    }*/
                 }
 
                 i{

@@ -242,19 +242,20 @@ body.trinity-admin{
         // button update - green color.
         //todo divide inputs by colors
         input.update, a.update, button.update{
-            background-color: #e4991c !important;
+            background-color: #e9ae47 !important;
             color: #fff;
             border: 1px solid  transparent !important;
             padding: 5px 50px 5px 50px;
-            text-shadow: 1px 1px 3px #906c1d;
-            box-shadow: 0 4px #a47b21;
-            margin-top: 10px;
+            text-shadow: 1px 1px 3px #b68825;
+            box-shadow: 0 4px #ba8c25;
+
             margin-bottom: 15px;
             text-transform: uppercase;
 
 
             &:hover{
                 background-color: #18c46c !important;
+                box-shadow: 0 4px #18c261;
             }
         }
 
@@ -284,6 +285,23 @@ body.trinity-admin{
         padding: 15px;
     }
 
+    .addNew {
+        color: #2f2f2f;
+        text-transform: uppercase;
+        background: transparent;
+        padding: 5px 40px 5px 40px;
+        border: 1px dashed #2f2f2f;
+        font-size: 18px;
+        transition: all @form-tr-time;
+        margin-top: 10px;
+        margin-bottom: 15px;
+
+        &:hover{
+            background-color: #dbdbdb;
+            border: 1px solid #2f2f2f;
+        }
+    }
+
     //delete form - delete button
     .delete-form{
         width: 100%;
@@ -302,6 +320,26 @@ body.trinity-admin{
             -webkit-appearance:none;
             transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in, box-shadow @form-tr-time ease-in;
         }
+        input.delete, button.delete, a.delete{
+            background-color: #cb4e4e !important;
+            color: #fff;
+            border: 1px solid  transparent !important;
+            border-radius: 5px;
+            padding: 5px 50px 5px 50px;
+            margin-top: 10px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-size: 18px;
+
+            box-shadow: inset 0 -3px 0 0 #c1080b;
+            -webkit-transition: all ease 1.2s;
+            -moz-transition: all ease 1.2s;
+            transition: all ease 1.2s;
+            &:hover {
+                box-shadow: inset 0 100px 0 0 #c1080b;
+            }
+        }
+
         i.trinity-warning:before{
             font-size: 150px;
             color: orange;
@@ -327,26 +365,6 @@ body.trinity-admin{
         }
     }
 
-    .delete-form input.delete, button.delete a.delete{
-        background-color: #cb4e4e !important;
-        color: #fff;
-        border: 1px solid  transparent !important;
-        border-bottom: 1px solid #b02828 !important;
-        text-shadow: 1px 1px 3px #ab3c3c;
-        box-shadow: 0 4px #b02828;
-        border-radius: 5px;
-        padding: 5px 50px 5px 50px;
-        margin-top: 10px;
-        margin-bottom: 15px;
-        text-transform: uppercase;
-
-        &:hover{
-            background-color: #d32d2d !important;
-            border-bottom: 1px solid #c52828 !important;
-            box-shadow: 0 4px #c32c2c;
-        }
-    }
-
     //info empty billing plans
     .info-empty-form{
         width: 100%;
@@ -355,12 +373,12 @@ body.trinity-admin{
         margin-right: auto;
 
         i.trinity-info:before{
-            font-size: 150px;
+            font-size: 140px;
             color: deepskyblue;
         }
         h2.warning{
             font-weight: 200;
-            font-size: 60px;
+            font-size: 50px;
         }
         p{
             font-size: 20px;
