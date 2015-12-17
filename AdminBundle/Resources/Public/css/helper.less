@@ -98,6 +98,27 @@
     background: #fff;
 }
 
+.animation(@name, @time, @s, @e){
+    -webkit-animation: @name @time @s @e;
+    -moz-animation: @name @time @s @e;
+    animation: @name @time @s @e;
+}
+
+.radius(@size){
+    -moz-border-radius-topleft: @size;
+    -moz-border-radius-topright:@size;
+    -moz-border-radius-bottomleft:@size;
+    -moz-border-radius-bottomright:@size;
+    -webkit-border-top-left-radius:@size;
+    -webkit-border-top-right-radius:@size;
+    -webkit-border-bottom-left-radius:@size;
+    -webkit-border-bottom-right-radius:@size;
+    border-top-left-radius:@size;
+    border-top-right-radius:@size;
+    border-bottom-left-radius:@size;
+    border-bottom-right-radius:@size;
+}
+
 
 /** fixes */
 

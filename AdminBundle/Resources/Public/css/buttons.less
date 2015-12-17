@@ -1,0 +1,90 @@
+@import "variables";
+@import "helper";
+
+@font-size-button: 16px;
+
+.trinity-form{
+
+    .disabled(){
+        &:disabled{
+            cursor: not-allowed !important;
+        }
+    }
+
+    .button(){
+        .disabled();
+        .radius(2px);
+        max-height: 40px;
+
+        border: none;
+        border-bottom: 2px solid #1f95ab;
+        padding: 10px 22px;
+        color: white;
+        font-size: @font-size-button;
+        text-decoration: none;
+        vertical-align: middle;
+        text-transform: uppercase;
+    }
+
+    .icon(@font){
+        content: @font;
+        font-family: 'tiecons';
+        speak: none;
+        min-width: 16px;
+        font-size: @font-size-button;
+        display: inline-block;
+    }
+
+
+    &-loading{
+        .button();
+        background: #24afc9 !important;
+
+        &:after {
+            .icon("\e6a9");
+            .animation(spin, 3s,linear, infinite);
+
+            @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+            @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+            @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
+        }
+    }
+
+
+    &-success{
+        .button();
+
+        background: #22baa0;
+        border-bottom: 2px solid #279d88;
+
+        &:after{
+            .icon('\e68d');
+        }
+    }
+
+
+    &-error{
+        .button();
+        .disabled();
+
+        background: #f0575a !important;
+        border-bottom: 2px solid #cc4a4d;
+
+        &:after{
+            .icon('\e65d');
+        }
+    }
+
+
+    &-ready{
+        .button();
+        .disabled();
+
+        background: #7a71bc;
+        border-bottom: 2px solid #6860a0;
+
+        &:after{
+            .icon('\e6fc');
+        }
+    }
+}
