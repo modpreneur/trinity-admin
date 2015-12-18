@@ -4,13 +4,13 @@
 @font-size-button: 16px;
 
 .button(){
-    .radius(2px);
+    .radius(0px);
     height: 40px;
     line-height: 40px;
     text-align: center;
 
     border: none;
-    border-bottom: 2px solid #1f95ab;
+    border-bottom: 4px solid #1f95ab;
     padding: 0 20px;
     color: white;
     font-size: @font-size-button;
@@ -25,7 +25,12 @@
 
 .button{
     .button();
-    border-bottom: 2px solid #878787;
+    border: none !important;
+    border-bottom: 4px solid #878787;
+
+    &:hover{
+        border: none !important;
+    }
 
     &-medium{
         max-height: 33px;
@@ -43,24 +48,59 @@
 
     &-success{
         background: #17aa56;
-        border-bottom: 2px solid #17964d !important;
+        border-bottom: 4px solid #17964d !important;
     }
 
     &-info{
-        border-bottom: 2px solid #2a95b9 !important;
+        border-bottom: 4px solid #2a95b9 !important;
     }
 
     &-primary{
-        border-bottom: 2px solid #281537 !important;
+        background-color: @color-primary !important;
+        border-bottom: 4px solid darken(@color-primary, 30%) !important;
+
+        &:hover{
+            background-color: darken(@color-primary, 30%) !important;
+            border-bottom: 4px solid darken(@color-primary, 60%) !important;
+        }
+    }
+
+    &-secondary{
+        border: none;
+        background-color: @color-secondary !important;
+        border-bottom: 4px solid darken(@color-secondary, 30%) !important;
+
+        &:hover{
+            background-color: darken(@color-secondary, 30%) !important;
+            border-bottom: 4px solid darken(@color-secondary, 60%) !important;
+        }
+    }
+
+    &-tertiary{
+        background: @color-tertiary !important;
+        border-bottom: 4px solid darken(@color-tertiary, 30%) !important;
+
+        &:hover{
+            background: darken(@color-tertiary, 30%);
+            border-bottom: 4px solid darken(@color-tertiary, 60%) !important;
+        }
+    }
+
+    &-warning{
+        border-bottom: 4px solid #d75700 !important;
+
+        &:hover{
+            border-bottom: 4px solid #9a4800 !important;
+        }
     }
 
     &-danger{
         background: #f00;
-        border-bottom: 2px solid #9d0000 !important;
+        border-bottom: 4px solid #9d0000 !important;
 
         &:hover{
             background: #c30000 !important;
-            border-bottom: 2px solid #9d0000 !important;
+            border-bottom: 4px solid #9d0000 !important;
         }
     }
 
@@ -110,7 +150,7 @@
         .button();
 
         background: #22baa0;
-        border-bottom: 2px solid #279d88;
+        border-bottom: 4px solid #279d88;
 
         &:after{
             .icon('\e68d');
@@ -123,7 +163,7 @@
         .disabled();
 
         background: #f0575a !important;
-        border-bottom: 2px solid #cc4a4d;
+        border-bottom: 4px solid #cc4a4d;
 
         &:after{
             .icon('\e65d');
@@ -135,7 +175,7 @@
         .button();
 
         background: #7a71bc;
-        border-bottom: 2px solid #6860a0;
+        border-bottom: 4px solid #6860a0;
 
         &:after{
             .icon('\e6fc');
