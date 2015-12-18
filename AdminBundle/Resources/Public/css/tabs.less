@@ -201,7 +201,253 @@ body.trinity-admin{
         }
 
         .tab-title{
-            text-transform: uppercase;
+            text-transform: uppercase;/**
+    Tabs
+     _______________
+    | Edit | Delete |____
+    |                    |
+    |       Content      |
+    |____________________|
+*/
+
+
+            @import "variables";
+            @import "helper";
+
+
+            body.trinity-admin{
+
+                .tabs-wrapper{
+                    background: #fff;
+                    margin-top: 40px;
+                    font-family: "Roboto", sans-serif;
+                    font-weight: 300;
+                    margin-bottom: 20px;
+
+                    .shadow();
+                    border: 1px #eaeceb solid;
+
+
+                    .tab-head:checked + label{
+                        background: #fff !important;
+                        border-bottom: 2px solid @color-primary;
+                        color: @color-font !important;
+                        top: 0px !important;
+                        border-top: 1px solid transparent !important;
+                    }
+
+                    label[for^="tab"]{
+                        border: none;
+                        border-top: none;
+                        border-bottom: 2px solid #b5b5b5;
+                        color: @color-tab-label;
+                        counter-increment: tabs;
+                        padding: 18px 50px 18px 50px;
+                        font-weight: 300;
+                        z-index: 3;
+                        position: relative;
+                        font-family: "Roboto", sans-serif;
+                        font-size: 14px;
+                        text-transform: uppercase;
+
+                        &:hover{
+                            color: @color-font !important;
+                        }
+                    }
+
+                    .tab-body-wrapper{
+                        border: none;
+                        border-top: 2px solid #b5b5b5;
+                        margin-top: -2px;
+                        min-height: 300px;
+
+                        .tab-body p{
+                            font-size: 18px;
+                            margin-left: 10px;
+                            margin-right: 10px;
+                            margin-top: 10px;
+                        }
+                    }
+
+                    .header-h2{
+                        display: none;
+                    }
+
+                }
+
+                .tabs-wrapper .tab-body-wrapper label{
+                    border: none;
+                    background: transparent;
+                }
+
+                .tab-body{
+                    padding: 0px 0px 0px;
+                }
+
+                .tab-body-wrapper{
+                    overflow-x: hidden;
+                    position: relative;
+                }
+
+                .tab-body-wrapper .widget{
+                    border: none !important;
+                }
+
+                .tab-body-wrapper .grid{
+                    border-radius: 0 !important;
+                    margin-left: -5px;
+                    width: 100%;
+                }
+
+                .tab-body-wrapper table{
+                    border: none;
+                }
+
+                .tabs-wrapper div.tab-loader{
+                    position: absolute;
+                    width: 100%;
+                    height: inherit;
+                    display: block;
+                    text-align: center;
+                    min-height: 300px;
+                    background: rgba(1, 1, 1, 0.15);
+
+                    i{
+                        .abs-center();
+                    }
+                }
+
+            }
+
+            // tabs
+            body.trinity-admin{
+
+                .harmonica{
+
+                    .main-panel{
+
+                        min-height: 51px;
+
+                        label[for^="harmonica"]{
+                            font-size: 14px;
+                            text-align: left;
+                            font-weight: 300;
+                            padding-left: 15px;
+                            padding-right: 15px;
+                            color: @color-font;
+                            line-height: 30px;
+                            border-bottom: 1px solid #d7d7d7;
+
+                            border-top: 1px solid @color-tab-label;
+                            border-bottom: 1px solid @color-tab-label;
+                            text-transform: uppercase;
+
+                            i{
+                                margin-right: 10px;
+                                font-size: 16px;
+                                line-height: 30px;
+                                float: left;
+                                color: @color-primary;
+                            }
+
+                            &:hover{
+                                background: @global-row-hover;
+                            }
+                        }
+
+                        .show-harmonica{
+                            background: none;
+                            padding: 0px;
+                            margin-bottom: 20px;
+                            color: @color-font;
+                            max-height: 400px;
+                            overflow-y: auto;
+
+                            .harmonica-content{
+                                color: @color-font;
+                                padding-left: 15px;
+                                padding-right: 15px;
+                            }
+
+                            label{
+                                color: @color-font;
+                                font-weight: 300;
+                                font-size: 14px;
+                            }
+                        }
+                    }
+
+                    input[id^="harmonica"]:checked + .main-panel{
+                        label[for^="harmonica"]{
+                            font-weight: 400;
+                            background: @global-row-hover;
+                            color: @color-primary;
+                            border-top: 1px solid #d7d7d7;
+                            border-bottom: 1px solid #ccc;
+                        }
+                    }
+                }
+
+            }
+
+
+            // content
+            body.trinity-admin{
+                .tab-content{
+
+                    color: @color-font;
+
+                    .tab-header{
+                        margin-bottom: 15px;
+                        border-bottom: 2px solid #24afc9;
+                        padding: 20px;
+                    }
+
+                    .tab-title{
+                        text-transform: uppercase;
+                        font-size: 20px;
+                        color: @color-primary;
+                        font-weight: 400;
+                    }
+
+                    .tab-sub-title{
+                        font-size: 16px;
+                        padding-left: 20px;
+                        padding-right: 20px;
+                        padding-bottom: 20px;
+                        text-transform: uppercase;
+                        font-weight: 400;
+                        i{
+                            color: #24afc9 !important;
+                            padding-right: 5px;
+                        }
+                    }
+
+                    .tab-description{
+                        margin-top: 10px;
+                        color: @color-tab-label;
+                        font-size: 14px !important;
+                        padding-left: 0px;
+                        padding-right: 0px;
+                        margin-left: 0px !important;
+                        margin-right: 0px !important;
+                    }
+
+                    .tab-info-text{
+                        margin: 0 !important;
+                        padding-left: 15px;
+                        padding-right: 15px;
+                        padding-bottom: 15px;
+                        font-size: 14px !important;
+                        font-weight: 300;
+                        color: @color-font;
+                        i{
+                            color: @color-tab-label;
+                        }
+                    }
+                }
+            }
+
             font-size: 20px;
             color: @color-primary;
             font-weight: 400;

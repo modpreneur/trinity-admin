@@ -11,12 +11,47 @@ body.trinity-admin{
         display: none;
     }
 
-    .wrapper-grid{
+    .wrapper-grid, .box{
         .box();
 
         font-family: "Roboto", sans-serif;
         padding: 10px 0px 00px;
         color: @global-font-color;
+
+        .header{
+            min-height: 40px;
+            color: @color-font;
+            margin-bottom: 20px;
+            margin-top: -10px;
+            font-size: 20px;
+            padding-left: 20px;
+            padding-top: 20px;
+            padding-right: 20px;
+            font-weight: 300;
+        }
+
+        .box-body{
+            padding-bottom: 20px;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+
+        .box-table-body{
+            .grid{
+                width: 100%;
+                border-left: none;
+                border-right: none;
+            }
+        }
+
+        .footer{
+            border-top: 1px solid @color-border;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            font-size: 12px;
+        }
 
         .grid-search{
             margin-top: 20px;
@@ -24,9 +59,9 @@ body.trinity-admin{
             text-align: center;
             .title{
                 color: #2f2f2f;
-                font-weight: 300;
                 font-size: 20px;
                 margin-left: 10px;
+                font-weight: 300;
             }
 
             form{

@@ -3,27 +3,70 @@
 
 @font-size-button: 16px;
 
+.button(){
+    .radius(2px);
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+
+    border: none;
+    border-bottom: 2px solid #1f95ab;
+    padding: 0 20px;
+    color: white;
+    font-size: @font-size-button;
+    text-decoration: none;
+    vertical-align: middle;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+
+    text-shadow: 0px 0px 10px rgb(105, 105, 105) !important ;
+}
+
+.button{
+    .button();
+    border-bottom: 2px solid #878787;
+
+    &-medium{
+        max-height: 33px;
+        line-height: 33px;
+        font-size: 80%;
+        padding: 0px 18px;
+    }
+
+    &-small{
+        max-height: 25px;
+        line-height: 25px;
+        font-size: 80%;
+        padding: 0px 14px;
+    }
+
+    &-success{
+        background: #17aa56;
+        border-bottom: 2px solid #17964d !important;
+    }
+
+    &-info{
+        border-bottom: 2px solid #2a95b9 !important;
+    }
+
+    &-primary{
+        border-bottom: 2px solid #281537 !important;
+    }
+
+    &:disabled{
+        cursor: not-allowed !important;
+        color: #dddddd;
+    }
+}
+
 .trinity-form{
 
     .disabled(){
         &:disabled{
             cursor: not-allowed !important;
+            color: #fff;
         }
-    }
-
-    .button(){
-        .disabled();
-        .radius(2px);
-        max-height: 40px;
-
-        border: none;
-        border-bottom: 2px solid #1f95ab;
-        padding: 10px 22px;
-        color: white;
-        font-size: @font-size-button;
-        text-decoration: none;
-        vertical-align: middle;
-        text-transform: uppercase;
     }
 
     .icon(@font){
@@ -33,11 +76,13 @@
         min-width: 16px;
         font-size: @font-size-button;
         display: inline-block;
+        margin-left: 5px
     }
 
 
     &-loading{
         .button();
+        .disabled();
         background: #24afc9 !important;
 
         &:after {
@@ -78,7 +123,6 @@
 
     &-ready{
         .button();
-        .disabled();
 
         background: #7a71bc;
         border-bottom: 2px solid #6860a0;
