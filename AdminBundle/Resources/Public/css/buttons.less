@@ -4,12 +4,12 @@
 @font-size-button: 16px;
 
 .button(){
-    .radius(0px);
+    .radius(5px);
     height: 40px;
     line-height: 40px;
     text-align: center;
 
-    border: none;
+    //border: none !important;
     border-bottom: 4px solid #1f95ab;
     padding: 0 20px;
     color: white;
@@ -48,59 +48,68 @@
 
     &-success{
         background: #17aa56;
-        border-bottom: 4px solid #17964d !important;
+        border: 1px solid #17964d !important;
+
+        &:hover{
+            background-color: darken(#17aa56, 20%) !important;
+            border: 1px solid darken(#17aa56, 20%) !important;
+        }
     }
 
     &-info{
-        border-bottom: 4px solid #2a95b9 !important;
+        border: 1px solid #2a95b9 !important;
+
+        &:hover{
+            background-color: darken(#2a95b9, 20%) !important;
+            border: 1px solid darken(@color-primary, 20%) !important;
+        }
     }
 
     &-primary{
         background-color: @color-primary !important;
-        border-bottom: 4px solid darken(@color-primary, 30%) !important;
+        border: 1px solid darken(@color-primary, 30%) !important;
 
         &:hover{
-            background-color: darken(@color-primary, 30%) !important;
-            border-bottom: 4px solid darken(@color-primary, 60%) !important;
+            background-color: darken(@color-primary, 20%) !important;
+            border: 1px solid darken(@color-primary, 20%) !important;
         }
     }
 
     &-secondary{
-        border: none;
         background-color: @color-secondary !important;
-        border-bottom: 4px solid darken(@color-secondary, 30%) !important;
+        border: 1px solid darken(@color-secondary, 30%) !important;
 
         &:hover{
-            background-color: darken(@color-secondary, 30%) !important;
-            border-bottom: 4px solid darken(@color-secondary, 60%) !important;
+            background-color: darken(@color-secondary, 20%) !important;
+            border: 1px solid darken(@color-secondary, 20%) !important;
         }
     }
 
     &-tertiary{
         background: @color-tertiary !important;
-        border-bottom: 4px solid darken(@color-tertiary, 30%) !important;
+        border: 1px solid darken(@color-tertiary, 10%) !important;
 
         &:hover{
-            background: darken(@color-tertiary, 30%);
-            border-bottom: 4px solid darken(@color-tertiary, 60%) !important;
+            background: darken(@color-tertiary, 20%) !important;
+            border: 1px solid darken(@color-tertiary, 20%) !important;
         }
     }
 
     &-warning{
-        border-bottom: 4px solid #d75700 !important;
+        border: 1px solid #d75700 !important;
 
         &:hover{
-            border-bottom: 4px solid #9a4800 !important;
+            border: 1px solid #9a4800 !important;
         }
     }
 
     &-danger{
         background: #f00;
-        border-bottom: 4px solid #9d0000 !important;
+        border: 1px solid #9d0000 !important;
 
         &:hover{
             background: #c30000 !important;
-            border-bottom: 4px solid #9d0000 !important;
+            border: 1px solid #9d0000 !important;
         }
     }
 
