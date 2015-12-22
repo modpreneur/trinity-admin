@@ -14,12 +14,17 @@ table.grid{
 
     thead{
         tr{
-            background: @global-row-hover;
-            border-bottom: 1px solid #ededed;
+            background: darken(@global-row-hover, 5%);
+            border-bottom: 1px solid #ddd;
+
+            &:hover{
+                background: darken(@global-row-hover, 5%);
+            }
 
             th, td{
                 color: @color-primary;
                 font-weight: 500;
+                vertical-align: middle;
             }
         }
     }

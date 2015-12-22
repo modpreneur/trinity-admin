@@ -16,14 +16,12 @@ body.trinity-admin{
 
     .tabs-wrapper{
         background: #fff;
-        margin-top: 40px;
+        //margin-top: 40px;
         font-family: "Roboto", sans-serif;
         font-weight: 300;
         margin-bottom: 20px;
 
-        .shadow();
-        border: 1px #eaeceb solid;
-
+        //border: 1px #eaeceb solid;
 
         .tab-head:checked + label{
             background: #fff !important;
@@ -60,9 +58,10 @@ body.trinity-admin{
 
             .tab-body p{
                 font-size: 18px;
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-top: 10px;
+                margin-left: 20px;
+                margin-right: 20px;
+                margin-top: 20px;
+                margin-bottom: 20px;
             }
         }
 
@@ -115,81 +114,6 @@ body.trinity-admin{
 
 }
 
-// tabs
-body.trinity-admin{
-
-    .harmonica{
-
-        .main-panel{
-
-            min-height: 51px;
-
-            input{
-                display: block !important;
-            }
-
-            label[for^="harmonica"]{
-                font-size: 14px;
-                text-align: left;
-                font-weight: 300;
-                padding-left: 15px;
-                padding-right: 15px;
-                color: @color-font;
-                line-height: 30px;
-                border-bottom: 1px solid #d7d7d7;
-                border-top: 1px solid @color-tab-label;
-                border-bottom: 1px solid @color-tab-label;
-                text-transform: uppercase;
-
-                i{
-                    margin-right: 10px;
-                    font-size: 16px;
-                    line-height: 30px;
-                    float: left;
-                    color: @color-primary;
-                }
-
-                &:hover{
-                    background: @global-row-hover;
-                }
-            }
-
-            .show-harmonica{
-                background: none;
-                padding: 0px;
-                margin-bottom: 20px;
-                color: @color-font;
-                max-height: 400px;
-                overflow-y: auto;
-
-                .harmonica-content{
-                    color: @color-font;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-
-                label{
-                    color: @color-font;
-                    font-weight: 300;
-                    font-size: 14px;
-                    line-height: 20px;
-                    padding-top: 5px;
-                }
-            }
-        }
-
-        input[id^="harmonica"]:checked + .main-panel{
-            label[for^="harmonica"]{
-                font-weight: 400;
-                background: darken(@global-row-hover, 5%);
-                color: @color-primary;
-                border-top: 1px solid #d7d7d7;
-                border-bottom: 1px solid #ccc;
-            }
-        }
-    }
-
-}
 
 
 // content
