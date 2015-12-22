@@ -1,115 +1,98 @@
 @import "variables";
 @import "helper";
 
-@font-size-button: 16px;
+@font-size-button: 18px;
 
 .button(){
     .radius(5px);
-    height: 40px;
-    line-height: 40px;
     text-align: center;
-
-    //border: none !important;
-    border-bottom: 4px solid #1f95ab;
-    padding: 0 20px;
-    color: white;
     font-size: @font-size-button;
     text-decoration: none;
     vertical-align: middle;
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-
     text-shadow: 0px 0px 10px rgb(105, 105, 105) !important ;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .button{
     .button();
-    border: none !important;
-    border-bottom: 4px solid #878787;
-
-    &:hover{
-        border: none !important;
-    }
+    padding: 6px 50px 7px 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    line-height: 1;
+    border: none;
 
     &-medium{
         max-height: 33px;
-        line-height: 33px;
+        line-height: 31px;
         font-size: 80%;
         padding: 0px 18px;
     }
 
     &-small{
         max-height: 25px;
-        line-height: 25px;
+        line-height: 22px;
         font-size: 80%;
         padding: 0px 14px;
     }
 
     &-success{
-        background: #17aa56;
-        border: 1px solid #17964d !important;
-
-        &:hover{
-            background-color: darken(#17aa56, 20%) !important;
-            border: 1px solid darken(#17aa56, 20%) !important;
-        }
+        box-shadow: 0px -3px 0px 0px #457A1A inset;
     }
 
     &-info{
-        border: 1px solid #2a95b9 !important;
-
-        &:hover{
-            background-color: darken(#2a95b9, 20%) !important;
-            border: 1px solid darken(@color-primary, 20%) !important;
-        }
+        box-shadow: 0px -3px 0px 0px #2284A1 inset;
     }
 
     &-primary{
         background-color: @color-primary !important;
-        border: 1px solid darken(@color-primary, 30%) !important;
-
+        box-shadow: 0px -3px 0px 0px darken(@color-primary, 10%) inset;
         &:hover{
-            background-color: darken(@color-primary, 20%) !important;
-            border: 1px solid darken(@color-primary, 20%) !important;
+            background-color: darken(@color-primary, 10%) !important;
+
         }
     }
 
     &-secondary{
         background-color: @color-secondary !important;
-        border: 1px solid darken(@color-secondary, 30%) !important;
+        border: none !important;
 
         &:hover{
             background-color: darken(@color-secondary, 20%) !important;
-            border: 1px solid darken(@color-secondary, 20%) !important;
+            border: none !important;
         }
     }
 
     &-tertiary{
         background: @color-tertiary !important;
-        border: 1px solid darken(@color-tertiary, 10%) !important;
+        border: none !important;
+        box-shadow: 0px -3px 0px 0px darken(@color-tertiary, 10%) inset;
 
         &:hover{
             background: darken(@color-tertiary, 20%) !important;
-            border: 1px solid darken(@color-tertiary, 20%) !important;
+            border: none !important;
         }
     }
 
     &-warning{
-        border: 1px solid #d75700 !important;
-
+        background-color: #ff8939 !important;
+        box-shadow: 0px -3px 0px 0px darken(#ff8939, 20%) inset;
+        border: none !important;
         &:hover{
-            border: 1px solid #9a4800 !important;
+            background-color: #FD6601 !important;
+            border: none !important;
         }
     }
 
     &-danger{
-        background: #f00;
-        border: 1px solid #9d0000 !important;
-
-        &:hover{
-            background: #c30000 !important;
-            border: 1px solid #9d0000 !important;
+        background-color: rgb(203, 78, 78) !important;
+        box-shadow: 0px -3px 0px 0px darken(rgb(203, 78, 78), 20%) inset;
+        border: none !important;
+        &:hover {
+            border: none !important;
         }
     }
 
@@ -142,7 +125,6 @@
     &-loading{
         .button();
         .disabled();
-        background: #24afc9 !important;
 
         &:after {
             .icon("\e6a9");
@@ -156,15 +138,6 @@
 
 
     &-success{
-        .button();
-
-        background: #22baa0;
-        border-bottom: 4px solid #279d88;
-
-        &:hover{
-            background: darken(#22baa0, 10%);
-        }
-
         &:after{
             .icon('\e68d');
         }
@@ -172,11 +145,7 @@
 
 
     &-error{
-        .button();
         .disabled();
-
-        background: #f0575a !important;
-        border-bottom: 4px solid #cc4a4d;
 
         &:after{
             .icon('\e65d');
@@ -185,15 +154,6 @@
 
 
     &-ready{
-        .button();
-
-        background: #7a71bc;
-        border-bottom: 4px solid #6860a0;
-
-        &:hover{
-            background: darken(#7a71bc, 10%);
-        }
-
         &:after{
             .icon('\e6fc');
         }
