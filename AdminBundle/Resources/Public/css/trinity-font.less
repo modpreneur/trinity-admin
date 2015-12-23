@@ -10,7 +10,8 @@
 }
 
 [class^="trinity-"], [class*=" trinity-"] {
-    font-family: 'trinity';
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'trinity' !important;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -23,6 +24,9 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
+.trinity-trash:before {
+    content: "\e92a";
+}
 .trinity-page-list:before {
     content: "\e900";
 }
@@ -149,4 +153,3 @@
 .trinity-yes:before {
     content: "\e929";
 }
-
