@@ -66,6 +66,7 @@ body.trinity-admin{
             padding: 0;
             padding-right: 20% ;
             line-height: 35px;
+            font-weight: 400;
 
             &.required:after{
                 content: "*";
@@ -102,13 +103,13 @@ body.trinity-admin{
             border: 1px solid @color-border;
             background: #fff;
             -webkit-appearance:none;
-            transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in;
+            //transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in;
             font-weight: 300;
             color: @color-font;
 
             &:focus{
-                border: 1px solid @color-primary;
-                background: #fafafc;
+                border: 1px solid darken(@color-primary, 20%);
+                background: #fff !important;
             }
         }
 
@@ -429,12 +430,11 @@ body.trinity-admin{
         }
 
         .form-left{
-            text-align: left !important;
-            height: 30px;
+            display: none !important;
         }
 
         .delete-collection-item{
-            .tiecons{
+            .tiecons, .trinity{
                 color: #c22a00;
                 position: absolute;
                 right: -20px;
