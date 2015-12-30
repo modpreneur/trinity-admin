@@ -198,15 +198,37 @@ body.trinity-admin{
                 text-overflow: ellipsis;   /* IE, Safari (WebKit) */
 
                 span{
-                   /* background: transparent;*/
-                    padding-top: 13px;
-                    padding-bottom: 13px;
-                    margin-top: -15px;
-                    margin-bottom: -15px;
-                    padding-right: 15px;
                     border-top: 1px solid #f4f4f4;
                     border-right: 1px solid transparent;
+                    margin: -15px 0 -15px 0;
+                    padding: 13px 10px 13px 0;
+                    background-color: @sidebar-row-hover-color;
+
+                    &:first-of-type{
+                        padding-bottom: 23px;
+                    }
                 }
+                .detail-info{
+                    display: none;
+                }
+
+                &:hover{
+                      overflow: visible;
+                      width: auto;
+
+                    .detail-info{
+                        display: block;
+                        font-size: 12px;
+                        line-height: 2;
+                        color: #838383;
+                        padding-bottom: 0;
+
+                        white-space: normal;
+                        word-break: normal;
+                        min-width: @sidebar-detail-width;
+                        max-width: @sidebar-detail-width;
+                    }
+                  }
 
                 &.new:before{
                     content: " ";
@@ -258,42 +280,6 @@ body.trinity-admin{
                     color: @sidebar-link-color;
                 }
 
-                .detail-info{
-                    visibility: hidden;
-                }
-
-                &:hover{
-                    background: @sidebar-row-hover-color;
-                    overflow: visible;
-                    width: auto;
-
-                    span{
-                        background: @sidebar-row-hover-color;
-                        outline: 0;
-                    }
-                    span:first-child{
-                        padding-bottom: 35px;
-                    }
-                    span.detail-info{
-                        visibility: visible;
-                        font-size: 12px;
-                        color: #838383;
-                        display: block;
-
-                        line-height: 2;
-                        width: 100%;
-                    }
-                    //info at notification user name and date
-                    /*.detail-info{
-                        visibility: visible;
-                        font-size: 12px;
-                        color: #838383;
-                        display: block;
-                        line-height: 2;
-                        width: 100%;
-                    }*/
-                }
-
                 i{
                     padding-right: 5px;
                     font-size: @sidebar-icon-font-size + 5px;
@@ -313,7 +299,6 @@ body.trinity-admin{
                     100% { transform: scale(1, 1); }
                 }
             }
-
         }
 
         //remove dotted border on focus - moz
