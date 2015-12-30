@@ -17,11 +17,20 @@
     padding-bottom: 10px;
 }
 
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+@-moz-document url-prefix() {
+    .button {
+        font-family: 'Roboto', sans-serif !important;
+    }
+}
+
 .button{
     .button();
     padding: 6px 50px 7px 50px;
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 25px;
     line-height: 1;
     border: none;
 
@@ -62,7 +71,7 @@
 
         &:hover{
             background-color: darken(@color-secondary, 20%) !important;
-            border: none !important;
+            border: none !important; ///---------------------------------
         }
     }
 
@@ -99,6 +108,9 @@
     &:disabled{
         cursor: not-allowed !important;
         color: #dddddd;
+    }
+    .addnew{
+        text-shadow: none;
     }
 }
 
