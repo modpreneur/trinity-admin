@@ -113,10 +113,12 @@ body.trinity-admin{
                 bottom: -5px;
 
                 a{
-                    color: @color-tertiary;
+                    color: lighten(@sidebar-link-color,15%);
                     font-weight: 400;
+                    text-decoration: underline;
                     &:hover{
-                        text-decoration: underline;
+                        color: @color-tertiary;
+                        text-decoration: none;
                     }
                 }
             }
