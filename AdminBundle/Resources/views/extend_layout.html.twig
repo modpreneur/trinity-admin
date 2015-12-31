@@ -60,16 +60,23 @@
                             {% endif %}
                                     <i class="tiecons tiecons-info-circle"></i>
                                     {% if path == ";" %}
-                                        <span>{{ message }}</span>
-                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
+                                        {{ message }}
+                                        <span class="marque">{{ message }}</span>
+                                        <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                        <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
+                                        {# @TODO Set for this icon link(wrap it into 'a link') to remove notification #}
+                                        <i class="trinity-close"></i>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
                                         {% set params = tmp[1]|json_decode %}
                                         <a href="{{ path(route, params) }}">
-                                            <span>{{ message }}</span>
-                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
+                                            <span class="marque">{{ message }}</span>
+                                            <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
+                                        {# and for this icon#}
+                                        <i class="trinity-close"></i>
                                     {% endif %}
                                 </li>
                         {% elseif type == "warning" %}
@@ -81,16 +88,22 @@
                             {% endif %}
                                     <i class="tiecons tiecons-exclamation-mark-circle"></i>
                                     {% if path == ";" %}
-                                        <span>{{ message }}</span>
-                                        <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
+                                        <span class="marque">{{ message }}</span>
+                                        <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                        <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
+                                        {# and this icon #}
+                                        <i class="trinity-close"></i>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
                                         {% set params = tmp[1]|json_decode %}
                                         <a href="{{ path(route, params) }}">
-                                            <span>{{ message }}</span>
-                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
+                                            <span class="marque">{{ message }}</span>
+                                            <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
+                                        {# and this #}
+                                        <i class="trinity-close"></i>
                                     {% endif %}
                                 </li>
                         {% elseif type == "danger" %}
@@ -102,17 +115,22 @@
                             {% endif %}
                                     <i class="tiecons tiecons-exclamation-mark-triangle"></i>
                                     {% if path == ";" %}
-                                        <span>{{ message }}</span>
-                                        <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
-
+                                        <span class="marque">{{ message }}</span>
+                                        <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                        <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
+                                        {# and this#}
+                                        <i class="trinity-close"></i>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
                                         {% set params = tmp[1]|json_decode %}
                                         <a href="{{ path(route, params) }}">
-                                            <span>{{ message }}</span>
-                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
+                                            <span class="marque">{{ message }}</span>
+                                            <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
+                                        {# and here #}
+                                        <i class="trinity-close"></i>
                                     {% endif %}
                                 </li>
                         {% elseif type == "info" %}
@@ -124,16 +142,22 @@
                             {% endif %}
                                     <i class="tiecons tiecons-info-circle"></i>
                                     {% if path == ";" %}
-                                        <span>{{ message }}</span>
-                                        <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
+                                        <span class="marque">{{ message }}</span>
+                                        <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                        <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
+                                        {# yea it looks like the last one #}
+                                        <i class="trinity-close"></i>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
                                         {% set params = tmp[1]|json_decode %}
                                         <a href="{{ path(route, params) }}">
-                                            <span>{{ message }}</span>
-                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} &nbsp | &nbsp{% endif %} {{ times[count] }}</span>
+                                            <span class="marque">{{ message }}</span>
+                                            <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
+                                            <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
+                                        {# but this should be the last :D #}
+                                        <i class="trinity-close"></i>
                                     {% endif %}
                                 </li>
                         {% endif %}

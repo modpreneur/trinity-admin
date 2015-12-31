@@ -1,8 +1,6 @@
 @import "variables";
 @import "helper";
 
-@font-size-button: 18px;
-
 .button(){
     .radius(5px);
     text-align: center;
@@ -87,18 +85,18 @@
     }
 
     &-warning{
-        background-color: #ff8939 !important;
-        box-shadow: 0px -3px 0px 0px darken(#ff8939, 20%) inset;
+        background-color: @warning-color !important;
+        box-shadow: 0px -3px 0px 0px darken(@warning-color, 20%) inset;
         border: none !important;
         &:hover{
-            background-color: #FD6601 !important;
+            background-color: saturate(@warning-color,15%) !important;
             border: none !important;
         }
     }
 
     &-danger{
-        background-color: rgb(203, 78, 78) !important;
-        box-shadow: 0px -3px 0px 0px darken(rgb(203, 78, 78), 20%) inset;
+        background-color: @danger-color !important;
+        box-shadow: 0px -3px 0px 0px darken(@danger-color, 20%) inset;
         border: none !important;
         &:hover {
             border: none !important;
