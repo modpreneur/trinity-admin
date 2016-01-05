@@ -4,70 +4,73 @@
 
 */
 
-.tabs-wrapper{
-    table.grid{
-        margin: 0 !important;
-    }
+body.trinity-admin{
 
+    .tabs-wrapper{
+        table.grid{
+            margin: 0 !important;
+        }
 
-    table.grid{
+        table.grid{
 
-        thead{
+            thead{
+                tr{
+                    background: darken(@global-row-hover, 5%);
+                    border-bottom: 1px solid #ddd;
+
+                    &:hover{
+                        background: darken(@global-row-hover, 5%);
+                    }
+
+                    th{
+                        line-height: 26px;
+                        font-size: 16px;
+                    }
+
+                    th, td{
+                        color: @color-primary;
+                        font-weight: 500;
+                        vertical-align: middle;
+                    }
+                }
+            }
+
             tr{
-                background: darken(@global-row-hover, 5%);
-                border-bottom: 1px solid #ddd;
+
+                background: #fff;
+                border-bottom: 1px solid #ededed;
 
                 &:hover{
-                    background: darken(@global-row-hover, 5%);
+                    background: @global-row-hover;
                 }
+            }
 
-                th{
-                    line-height: 26px;
+            th{
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 24px;
+                text-transform: uppercase;
+                vertical-align: middle;
+            }
+
+            td{
+                font-size: 14px;
+                vertical-align: top;
+                line-height: 26px;
+                font-weight: 300;
+            }
+
+            th:first-child, td:first-child{
+                padding-left: 20px;
+            }
+
+            .row-actions{
+
+                a{
                     font-size: 16px;
+                    padding-right: 5px;
                 }
 
-                th, td{
-                    color: @color-primary;
-                    font-weight: 500;
-                    vertical-align: middle;
-                }
-            }
-        }
-
-        tr{
-
-            background: #fff;
-            border-bottom: 1px solid #ededed;
-
-            &:hover{
-                background: @global-row-hover;
-            }
-        }
-
-        th{
-            font-weight: 400;
-            font-size: 14px;
-            line-height: 24px;
-            text-transform: uppercase;
-            vertical-align: middle;
-        }
-
-        td{
-            font-size: 14px;
-            vertical-align: top;
-            line-height: 26px;
-            font-weight: 300;
-        }
-
-        th:first-child, td:first-child{
-            padding-left: 20px;
-        }
-
-        .row-actions{
-
-            a{
-                font-size: 16px;
-                padding-right: 5px;
             }
 
         }
@@ -104,5 +107,4 @@
             }
         }
     }
-
 }
