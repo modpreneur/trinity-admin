@@ -64,8 +64,10 @@
                                         <span class="marque">{{ message }}</span>
                                         <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
                                         <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
-                                        {# @TODO Set for this icon link(wrap it into 'a link') to remove notification #}
-                                        <i class="trinity-close"></i>
+                                        {# @TODO Set for this link function to remove notification #}
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
@@ -76,7 +78,9 @@
                                             <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
                                         {# and for this icon#}
-                                        <i class="trinity-close"></i>
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% endif %}
                                 </li>
                         {% elseif type == "warning" %}
@@ -92,7 +96,9 @@
                                         <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
                                         <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         {# and this icon #}
-                                        <i class="trinity-close"></i>
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
@@ -103,7 +109,9 @@
                                             <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
                                         {# and this #}
-                                        <i class="trinity-close"></i>
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% endif %}
                                 </li>
                         {% elseif type == "danger" %}
@@ -119,7 +127,9 @@
                                         <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
                                         <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         {# and this#}
-                                        <i class="trinity-close"></i>
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
@@ -130,7 +140,9 @@
                                             <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
                                         {# and here #}
-                                        <i class="trinity-close"></i>
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% endif %}
                                 </li>
                         {% elseif type == "info" %}
@@ -146,7 +158,9 @@
                                         <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"  onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">{{ message }}</marquee>
                                         <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         {# yea it looks like the last one #}
-                                        <i class="trinity-close"></i>
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% else %}
                                         {% set tmp= path|split(';') %}
                                         {% set route = tmp[0] %}
@@ -157,12 +171,12 @@
                                             <span class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</span>
                                         </a>
                                         {# but this should be the last :D #}
-                                        <i class="trinity-close"></i>
+                                        <a href="#" id="">
+                                            <i class="trinity-close"></i>
+                                        </a>
                                     {% endif %}
                                 </li>
                         {% endif %}
-
-                    {% set count = count+1 %}
 
                     {% if countNew == 0 and new !=0 %}
                         {% set countNew = -1 %}

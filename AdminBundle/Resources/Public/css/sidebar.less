@@ -215,6 +215,18 @@ body.trinity-admin{
                     padding: 15px 10px 13px 0;
                     background-color: @sidebar-row-hover-color;
                 }
+
+
+                i{
+                    font-size: @sidebar-icon-font-size + 4px;
+                    position: absolute;
+                    left: 15px;
+                    top: 10px;
+                }
+
+                .trinity-close{
+                    visibility: hidden;
+                }
                 marquee{
                     visibility: hidden;
                 }
@@ -250,9 +262,11 @@ body.trinity-admin{
                     }
 
                     .trinity-close{
+                        visibility: visible;
                         position: absolute;
                         top: 26px;
                         right: 10px;
+                        left: auto;
                         font-size: 10px;
                         color: @sidebar-detail-color;
                     }
@@ -261,7 +275,7 @@ body.trinity-admin{
                 &.new:before{
                     content: " ";
                     float: left;
-                    margin-left: -45px;
+                    margin-left: -40px;
                     margin-top: 5px;
                     background: saturate(@info-color, 10%);
                     border-radius: 5px;
@@ -272,13 +286,6 @@ body.trinity-admin{
 
                 a{
                     color: @sidebar-link-color;
-                }
-
-                i:first-of-type{
-                    font-size: @sidebar-icon-font-size + 5px;
-                    position: absolute;
-                    left: 15px;
-                    top: 10px;
                 }
 
                 &.info{
@@ -327,7 +334,7 @@ body.trinity-admin{
             }
         }
 
-        .container1{
+/*        .container1{
             background-color:black;
             border:2px solid #666;
             color:white;
@@ -340,7 +347,7 @@ body.trinity-admin{
             overflow:auto;
             margin:15px -300px 15px 15px;
             padding-right:300px;
-        }
+        }*/
 
         //remove dotted border on focus - moz
         a, span:focus, span::-moz-focus-inner {
@@ -353,7 +360,6 @@ body.trinity-admin{
                 width: 100%;
                 min-height: @sidebar-row-height;
                 position: relative;
-                border-left: 0;
                 border-bottom: 1px transparent solid;
                 border-top: 1px transparent solid;
                 cursor: pointer;
@@ -369,18 +375,26 @@ body.trinity-admin{
                 }
 
                 i {
-                    padding-left: 20px;
-                    padding-right: 30px;
+                    margin: 12px 20px 0 15px;
                     width: 14px;
                     display: inline-block;
                     font-size: @sidebar-icon-font-size;
                 }
+
+/*                span{
+                    position: absolute;
+                    top: 13px;
+                }*/
 
                 &.active {
                     border-bottom: 1px #ebebeb solid;
                     border-top: 1px #ebebeb solid;
                     a, div {
                         font-weight: 500;
+                    }
+
+                    i{
+                        font-weight: 600;
                     }
                 }
 
