@@ -75,29 +75,30 @@
     &-tertiary{
         background: @color-tertiary !important;
         border: none !important;
-        box-shadow: 0px -3px 0px 0px darken(@color-tertiary, 10%) inset;
+        box-shadow: 0px -3px 0px 0px darken(@color-tertiary, 15%) inset;
 
         &:hover{
-            background: darken(@color-tertiary, 20%) !important;
+            background: darken(@color-tertiary, 15%) !important;
             border: none !important;
         }
     }
 
     &-warning{
-        background-color: @warning-color !important;
+        background-color: @warning-color ;
         box-shadow: 0px -3px 0px 0px darken(@warning-color, 20%) inset;
         border: none !important;
         &:hover{
-            background-color: saturate(@warning-color,15%) !important;
+            background-color: darken(@warning-color, 20%) ;
             border: none !important;
         }
     }
 
     &-danger{
         background-color: @danger-color !important;
-        box-shadow: 0px -3px 0px 0px darken(@danger-color, 20%) inset;
+        box-shadow: 0px -3px 0px 0px darken(@danger-color, 15%) inset;
         border: none !important;
         &:hover {
+            background-color: darken(@danger-color, 15%) !important;
             border: none !important;
         }
     }
