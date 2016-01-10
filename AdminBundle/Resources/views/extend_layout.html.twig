@@ -184,16 +184,16 @@
                 {% endfor %}
                     </div>
                     </div>
-                </ul>
-                {% if count==0 %}
-                    <ul class="tab-list list-rows">
+
+                {% if count-1==0 %}
                         <li class="info noaction">
                             <i class="tiecons tiecons-info-circle"></i>
-                            <span>You don't have any new notification.</span>
+                            <span class="marque">You don't have any new notification.</span>
+                            <marquee behavior="scroll"  direction="left" scrollamount="0"  onMouseOver="this.setAttribute('scrollamount', 6, 0);"
+                                     onmouseout="this.scrollAmount = 6" onmouseout="this.scrollAmount = 0">You don't have any new notification.</marquee>
                         </li>
-                    </ul>
                 {% endif %}
-
+                </ul>
             {% endblock %}
 
         </div>
