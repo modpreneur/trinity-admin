@@ -17,33 +17,17 @@ body.trinity-admin{
             right: 0;
 
             .item{
-
-                border: 1px #e8e9ea solid;
-                font-size: 10px;
-                margin-left: 1px;
-                background: #fff;
-                border-bottom-left-radius:  3px;
-                border-bottom-right-radius: 3px;
+                padding: 5px 15px 5px 15px;
+                font-size: 11px;
+                background-color: @color-primary;
 
                 a{
-                    padding: 5px 10px;
+                    color: #ffffff;
                     display: block;
-
-                    &:hover{
-                        background: #e8e9ea;
-                    }
                 }
 
-                &.item-dark {
-                    background: #5F117C;
-                    border: 1px #290735 solid;
-
-                    a {
-                        color: #fff;
-                        &:hover {
-                            background: #290735 !important;
-                        }
-                    }
+                &:hover{
+                    background-color: @color-primary-hover;
                 }
             }
         }
