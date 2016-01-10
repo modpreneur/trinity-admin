@@ -63,9 +63,27 @@ body.trinity-admin{
                             background: #f8f8f8;
                         }
                         a{
-                            color: @color-primary;
+                            color: darken(@color-grey-link,25%);
                             &:hover{
-                                color: @color-primary-hover;
+                                color: @color-tertiary;
+                            }
+                            &:visited{
+                                color: #551A8B;
+                                &:hover{
+                                    color: @color-tertiary;
+                                }
+                            }
+                        }
+                        .actions a{
+                            color: @color-grey-link;
+                            &:hover{
+                                color: @color-tertiary;
+                            }
+                            &:visited{
+                                color: #551A8B;
+                                &:hover{
+                                    color: @color-tertiary;
+                                }
                             }
                         }
                     }
