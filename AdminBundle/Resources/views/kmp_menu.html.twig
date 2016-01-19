@@ -122,8 +122,31 @@
                 {% endfor %}
 
                 {% if break == 0 %}
-                    <span class="dropdown-icon plus"><i class="font-14 tiecons tiecons-plus-light margin-top-5"></i></span>
-                    {{ block('linkElement') }}
+                    {% block dropdownElement %}
+                        <div class="dropdown-main sidebar-drop">
+                            {% set itemId = random() %}
+                            <label for="show-drop-{{ itemId }}" class="show-drop">
+                                <i class="{{ item.attribute('icon') }}"></i>
+                                <span class="sidebar-link-drop">{{ block('label') }}</span>
+                                <span class="trinity-dropdown-icon">
+                                    <i class="tiecons tiecons-plus-light"></i>
+                                </span>
+                            </label>
+                            <input type="checkbox" id="show-drop-{{ itemId }}" role="button">
+                            <ul id="dropdown" class="drop">
+                                <label for="show-drop-{{ itemId }}" class="show-drop">
+                                    <span class="trinity-dropdown-icon minus">
+                                        <i class="tiecons tiecons-minus-light"></i>
+                                    </span>
+                                </label>
+                                {%- set childrenClasses = item.childrenAttribute('class') is not empty ? [item.childrenAttribute('class')] : [] %}
+                                {%- set childrenClasses = childrenClasses|merge(['drop menu_level_' ~ item.level]) %}
+                                {%- set listAttributes  = item.childrenAttributes|merge({'class': childrenClasses|join(' ') }) %}
+                                {{ block('listdropdown') }}
+                            </ul>
+                        </div>
+                    {% endblock %}
+                {#{{ block('linkElement') }}#}
                 {% endif %}
 
             {%- elseif item.uri is not empty and (not matcher.isCurrent(item) or options.currentAsLink) %}
@@ -184,7 +207,7 @@
 
 {% block label %}{% if options.allow_safe_labels and item.getExtra('safe_label', false) %}{{ item.label|raw }}{% else %}{{ item.label }}{% endif %}{% endblock %}
 
-{% block dropdownElement %}
+{#{% block dropdownElement %}
 
     <div class="dropdown-main-sidebar">
         {% set itemId = random() %}
@@ -204,7 +227,7 @@
         </ul>
     </div>
 
-{% endblock %}
+{% endblock %}#}
 
 {% block listdropdown %}
     {% if item.hasChildren and options.depth is not sameas(0) and item.displayChildren %}
