@@ -17,17 +17,19 @@ body.trinity-admin{
             right: 0;
 
             .item{
-                padding: 5px 15px 5px 15px;
-                font-size: 11px;
-                background-color: @color-primary;
+                padding: 5px 25px 5px 25px;
+                font-size: 12px;
+                background-color: @color-tab-label;
+                text-align: center;
+                cursor: pointer;
+                font-weight: 300;
 
                 a{
                     color: #ffffff;
-                    display: block;
                 }
 
                 &:hover{
-                    background-color: @color-primary-hover;
+                    background: darken(@color-tab-label, 10%) !important;
                 }
             }
         }
