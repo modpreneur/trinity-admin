@@ -33,6 +33,10 @@ body.trinity-admin{
                 border-bottom: none;
             }
 
+            &:first-of-type{
+                margin-top: 22px;
+            }
+
             &:hover{
                 background: #f8f8f8;
             }
@@ -40,6 +44,10 @@ body.trinity-admin{
 
         .advanced-settings .row{
             border-bottom: 1px solid #ededed !important;
+
+            &:first-of-type{
+                margin-top: 0px;
+            }
         }
 
         .form-left{
@@ -110,13 +118,18 @@ body.trinity-admin{
             border: 1px solid @color-border;
             background: #fff;
             -webkit-appearance:none;
-            //transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in;
             font-weight: 300;
             color: @color-font;
 
             &:focus{
                 border: 1px solid darken(@color-primary, 20%);
                 background: #fff !important;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            label {
+                text-align: left;
             }
         }
 
@@ -303,6 +316,10 @@ body.trinity-admin{
         .row{
             margin: 10px 0 20px 0;
         }
+    }
+
+    h2.warning{
+        background-color: transparent !important;
     }
 
     //info empty billing plans
