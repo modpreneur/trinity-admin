@@ -5,19 +5,18 @@
 @import "variables";
 @import "helper";
 
-
 body.trinity-admin{
 
     // wrapper
     .dashboard-widgets{
         margin-top: 10px;
-
-        div[class^="span"]:nth-child(even){
-            padding-left: @widget-space / 2;
-        }
-
-        div[class^="span"]:nth-child(odd){
-            padding-right: @widget-space / 2;
+        @media screen and (min-width: 1023px) {
+            div[class^="span"]:nth-child(even){
+                padding-left: @widget-space / 2;
+            }
+            div[class^="span"]:nth-child(odd){
+                padding-right: @widget-space / 2;
+            }
         }
     }
 
@@ -43,7 +42,7 @@ body.trinity-admin{
     }
 
     .trinity-widget .data-grid{
-        border: 0px transparent solid !important;
+        border: 0 transparent solid !important;
     }
 
     .trinity-widget .close{
