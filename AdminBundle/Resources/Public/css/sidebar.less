@@ -177,45 +177,33 @@ body.trinity-admin{
             }
         }
 
+
         ul.tab-list{
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 600px;
+
             &.list-rows{
                 background: #f7f7f7;
             }
-            height: 800px;
-            overflow-y: scroll;
-            overflow-x: hidden;
-            &::-webkit-scrollbar {
-                width: 0;
-                height: 0;
-            }
-            ms-overflow-style: none;
-            overflow: -moz-scrollbars-none !important;
-
 
             li{
                 font-size: @sidebar-font-size;
-                color: #000;
                 font-weight: 300;
-                display: block;
+
                 position: relative;
+                display: block;
                 padding: 15px 25px 15px 45px;
                 border-top: 1px solid #f1f1f1;
-                white-space: nowrap;
+
                 z-index: 999;
-                min-width: @sidebar-width;
+
                 min-height: @sidebar-row-height;
-                overflow: hidden;
-                text-overflow: ellipsis;   /* IE, Safari (WebKit) */
-                -ms-text-overflow: ellipsis;	/* required for IE8, allegedly */
-                -moz-binding: url('ellipsis.xml#ellipsis'); /* Firefox */
+                background-color: @sidebar-row-hover-color;
 
-                span{
-                    border-top: 1px solid #f4f4f4;
-                    border-right: 1px solid transparent;
-                    padding: 15px 10px 13px 0;
-                    background-color: @sidebar-row-hover-color;
-                }
-
+                -webkit-transition: min-height 0.8s;
+                -moz-transition: min-height 0.8s;
+                transition: min-height 0.8s;
 
                 i{
                     font-size: @sidebar-icon-font-size + 4px;
@@ -224,60 +212,72 @@ body.trinity-admin{
                     top: 10px;
                 }
 
-                .trinity-close{
-                    visibility: hidden;
+                .message-group{
+                    position: relative;
+                    span{
+                        transition: all 0.5s ease;
+                        line-height: 15px;
+                        background-color: @sidebar-row-hover-color;
+                    }
                 }
-                marquee{
+
+                i.trinity-close{
+                    opacity: 0;
                     visibility: hidden;
+                    transition: opacity 1s linear;
+                    -moz-transition: opacity 1s linear;
+                    -webkit-transition: opacity 1s linear;
                 }
+
                 .detail-info{
-                    display: none;
+                    height: 0;
+                    width: 190px;
+                    font-size: 12px;
+                    opacity: 0;
+
+                    transition: all 0.5s linear;
+                    -moz-transition: all 0.5s linear;
+                    -webkit-transition: all 0.5s linear;
                 }
 
                 &:hover{
-                    overflow: visible;
-                    width: auto;
+                    min-height: 58px;
 
-                    marquee{
+                    i.trinity-close{
                         visibility: visible;
-                    }
-                    .marque{
-                        display: none;
+                        opacity: 1;
+                        position: absolute;
+                        top: 10px;
+                        right: 5px;
+                        left: auto;
+                        padding: 2px 2px 2px 0;
+                        font-size: 10px;
+                        color: @sidebar-detail-color;
+
+                        animation: none;
+                        -webkit-animation: none;
+                        &:hover{
+                            color: @color-tertiary;
+                        }
                     }
 
                     .detail-info{
+                        position: relative;
                         display: block;
-                        font-size: 12px;
-                        margin-top: -20px;
-                        line-height: 2;
-                        color: @sidebar-detail-color;
-                        padding-bottom: 0;
-                        background: none;
-                        border: none;
-
+                        height: auto;
+                        opacity: 1;
                         white-space: normal;
                         word-break: normal;
-                        min-width: @sidebar-detail-width;
-                        max-width: @sidebar-detail-width;
+                        color: @color-grey-link;
                     }
-
-                    .trinity-close{
-                        visibility: visible;
-                        position: absolute;
-                        top: 26px;
-                        right: 10px;
-                        left: auto;
-                        font-size: 10px;
-                        color: @sidebar-detail-color;
-                    }
-                  }
+                }
 
                 &.new:before{
                     content: " ";
                     float: left;
                     margin-left: -40px;
                     margin-top: 5px;
-                    background: saturate(@info-color, 10%);
+                    background: saturate(@color-info, 10%);
                     border-radius: 5px;
                     width: 5px;
                     height: 5px;
@@ -290,19 +290,19 @@ body.trinity-admin{
 
                 &.info{
                     i{
-                        color: @info-color;
+                        color: @color-info;
                     }
                 }
 
                 &.warning{
                     i{
-                        color: @warning-color;
+                        color: @color-warning;
                     }
                 }
 
                 &.success{
                     i{
-                        color: @success-notification-color;
+                        color: @color-success-notification;
                     }
                 }
                 &.noaction{
@@ -315,7 +315,7 @@ body.trinity-admin{
 
                 &.danger{
                     i{
-                        color: @danger-color;
+                        color: @color-danger;
                         animation: pulse 1s infinite linear;
                         -webkit-animation: pulse 1s infinite linear;
                     }
@@ -333,21 +333,11 @@ body.trinity-admin{
                 }
             }
         }
-
-/*        .container1{
-            background-color:black;
-            border:2px solid #666;
-            color:white;
-            overflow:hidden;
-            text-align:justify;
-
+        #sidebar-tab2-content{
+            li:hover{
+                min-height: 45px;
+            }
         }
-        .container2{
-            height:200px;
-            overflow:auto;
-            margin:15px -300px 15px 15px;
-            padding-right:300px;
-        }*/
 
         //remove dotted border on focus - moz
         a, span:focus, span::-moz-focus-inner {
@@ -381,11 +371,6 @@ body.trinity-admin{
                     font-size: @sidebar-icon-font-size;
                 }
 
-/*                span{
-                    position: absolute;
-                    top: 13px;
-                }*/
-
                 &.active {
                     border-bottom: 1px #ebebeb solid;
                     border-top: 1px #ebebeb solid;
@@ -412,33 +397,40 @@ body.trinity-admin{
                 border-top: 1px #f4f4f4 solid;
             }
 
-            .dropdown-main-sidebar, .li-dropdown{
+            .sidebar-drop, .li-dropdown{
                 position: relative;
 
-                .dropdown-icon{
+                .trinity-dropdown-icon{
                     position: absolute;
-                    right: -5px;
+                    right: 15px;
                     top: 0;
                     font-size: @sidebar-icon-font-size;
-
-                    &.plus{
-                        top: 8px;
-                    }
                 }
+
+                .minus{
+                    position: absolute;
+                    right: 15px;
+                    top: -40px;
+                    background-color: @sidebar-row-hover-color;
+                }
+            }
+
+            label.show-drop{
+                min-width: 200px;
             }
 
             .drop{
                 width: 100%;
-                margin: 0;
+                margin: 15px 0 0 0;
                 padding: 0;
                 background: #fff;
                 li{
+                    max-height: @sidebar-row-height;
                     a{
-                        padding-left: 54px !important;
+                        padding: 0 0 0 54px ;
                         color: @sidebar-link-color;
                         font-weight: normal;
                         background: #fff;
-                        line-height: @sidebar-row-height;
                         i{
                             display: none;
                         }
@@ -465,6 +457,10 @@ body.trinity-admin{
                 pointer-events: none;
             }
         }
+    }
+
+    .sidebar-tabs {
+        height: 100%;
     }
 
 }
