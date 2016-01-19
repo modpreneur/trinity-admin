@@ -20,7 +20,7 @@ body.trinity-admin{
         font-family: "Roboto", sans-serif;
         font-weight: 300;
         margin-bottom: 20px;
-        background: url("/img/line52.png") ;
+        border-bottom: 2px solid @color-tab-label;
 
         //border: 1px #eaeceb solid;
 
@@ -28,7 +28,7 @@ body.trinity-admin{
             background: #fff !important;
             border-bottom: 2px solid @color-primary;
             color: @color-font !important;
-            top: 0px !important;
+            top: 0 !important;
             border-top: none !important;
         }
 
@@ -38,18 +38,52 @@ body.trinity-admin{
             border-bottom: 2px solid #b5b5b5;
             color: @color-tab-label;
             counter-increment: tabs;
-            padding: 18px 40px 18px 40px;
+            padding: 18px 35px 18px 35px;
             font-weight: 300;
             z-index: 3;
             position: relative;
             font-family: "Roboto", sans-serif;
             font-size: 14px;
             text-transform: uppercase;
+            min-width: 150px;
 
             &:hover{
                 color: @color-font !important;
             }
         }
+
+        @media screen and(min-width: 768px) and (max-width: 890px){
+            label[for^="tab"]{
+                width: 100/3%+0.1;
+            }
+        }
+
+        @media screen and(min-width: 890px) and (max-width: 1040px){
+            label[for^="tab"]{
+                width: 100/4%+0.1;
+            }
+        }
+
+        @media screen and(min-width: 1040px) and (max-width: 1195px){
+            label[for^="tab"]{
+                width: 100/5%+0.1;
+            }
+        }
+
+        @media screen and(min-width: 1195px) and (max-width: 1365px){
+            label[for^="tab"]{
+                width: 100/6%+0.05;
+            }
+        }
+        @media screen and(min-width: 1365px){
+            label[for^="tab"]{
+                width: auto;
+            }
+        }
+        label[for^="tab"]:last-of-type{
+            width: auto;
+        }
+
 
         .tab-body-wrapper{
             border: none;
@@ -84,11 +118,12 @@ body.trinity-admin{
                 top: 0;
 
                 .item{
-                    padding: 5px;
+                    padding: 5px 20px 5px 20px;
                     background: @color-tab-label;
                     color: #fff;
                     text-align: center;
                     cursor: pointer;
+                    font-size: 12px;
 
                     &:hover{
                         background: darken(@color-tab-label, 10%) !important;
