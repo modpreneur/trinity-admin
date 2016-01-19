@@ -46,7 +46,7 @@ body.trinity-admin{
         background: rgba(255, 255, 255, 0.8);
     }
 
-    .tab-actions{
+    /*.tab-actions{
         position: absolute;
         top: 0;
         right: 0;
@@ -54,7 +54,6 @@ body.trinity-admin{
 
         .item{
             padding: 5px 0 5px 0;
-            width: 120px;
             font-size: 12px;
             .box();
             &:hover{
@@ -64,10 +63,10 @@ body.trinity-admin{
                 }
             }
             a:visited{
-                color: #2929c9;
+                color: #7412c9;
             }
         }
-    }
+    }*/
 
 
 
@@ -114,6 +113,51 @@ body.trinity-admin{
     }
 
     /* ---- end debug  ---- */
+
+
+    //Default classes for colors
+
+    .info{
+        background-color: @color-info;
+    }
+    .color-info{
+        color: @color-info;
+    }
+
+    .warning{
+        background-color: @color-warning;
+    }
+    .color-warning{
+        color: @color-warning;
+    }
+
+    .danger{
+        background-color: @color-danger;
+    }
+    .color-danger{
+        color: @color-danger;
+    }
+
+    .primary{
+        background-color: @color-primary;
+    }
+    .color-primary{
+        color:@color-primary
+    }
+
+    .secondary{
+        background-color: @color-secondary;
+    }
+    .color-secondary{
+        color: @color-secondary;
+    }
+
+    .tertiary{
+        background-color: @color-tertiary;
+    }
+    .color-tertiary{
+        color: @color-tertiary;;
+    }
 
 }
 
