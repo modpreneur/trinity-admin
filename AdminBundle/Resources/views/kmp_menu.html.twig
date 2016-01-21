@@ -123,28 +123,26 @@
 
                 {% if break == 0 %}
                     {% block dropdownElement %}
-                        <div class="dropdown-main sidebar-drop">
-                            {% set itemId = random() %}
-                            <label for="show-drop-{{ itemId }}" class="show-drop">
-                                <i class="{{ item.attribute('icon') }}"></i>
-                                <span class="sidebar-link-drop">{{ block('label') }}</span>
-                                <span class="trinity-dropdown-icon">
-                                    <i class="tiecons tiecons-plus-light"></i>
-                                </span>
-                            </label>
-                            <input type="checkbox" id="show-drop-{{ itemId }}" role="button">
-                            <ul id="dropdown" class="drop">
-                                <label for="show-drop-{{ itemId }}" class="show-drop">
-                                    <span class="trinity-dropdown-icon minus">
-                                        <i class="tiecons tiecons-minus-light"></i>
+                        {% set itemId = random() %}
+                        <label for="show-drop-{{ itemId }}" class="show-drop">
+                            <div class="dropdown-main sidebar-drop">
+                                    <i class="{{ item.attribute('icon') }}"></i>
+                                    <span class="sidebar-link-drop">{{ block('label') }}</span>
+                                    <span class="trinity-dropdown-icon">
+                                        <i class="tiecons tiecons-plus-light"></i>
                                     </span>
-                                </label>
-                                {%- set childrenClasses = item.childrenAttribute('class') is not empty ? [item.childrenAttribute('class')] : [] %}
-                                {%- set childrenClasses = childrenClasses|merge(['drop menu_level_' ~ item.level]) %}
-                                {%- set listAttributes  = item.childrenAttributes|merge({'class': childrenClasses|join(' ') }) %}
-                                {{ block('listdropdown') }}
-                            </ul>
-                        </div>
+                                <input type="checkbox" id="show-drop-{{ itemId }}" role="button">
+                                <ul id="dropdown" class="drop">
+                                        <span class="trinity-dropdown-icon minus">
+                                            <i class="tiecons tiecons-minus-light"></i>
+                                        </span>
+                                    {%- set childrenClasses = item.childrenAttribute('class') is not empty ? [item.childrenAttribute('class')] : [] %}
+                                    {%- set childrenClasses = childrenClasses|merge(['drop menu_level_' ~ item.level]) %}
+                                    {%- set listAttributes  = item.childrenAttributes|merge({'class': childrenClasses|join(' ') }) %}
+                                    {{ block('listdropdown') }}
+                                </ul>
+                            </div>
+                        </label>
                     {% endblock %}
                 {#{{ block('linkElement') }}#}
                 {% endif %}

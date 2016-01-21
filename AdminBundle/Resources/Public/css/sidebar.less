@@ -181,7 +181,7 @@ body.trinity-admin{
         ul.tab-list{
             overflow-y: auto;
             overflow-x: hidden;
-            max-height: 600px;
+            max-height: 850px;
 
             &.list-rows{
                 background: #f7f7f7;
@@ -197,13 +197,8 @@ body.trinity-admin{
                 border-top: 1px solid #f1f1f1;
 
                 z-index: 999;
-
                 min-height: @sidebar-row-height;
                 background-color: @sidebar-row-hover-color;
-
-                -webkit-transition: min-height 0.8s;
-                -moz-transition: min-height 0.8s;
-                transition: min-height 0.8s;
 
                 i{
                     font-size: @sidebar-icon-font-size + 4px;
@@ -230,7 +225,6 @@ body.trinity-admin{
                 }
 
                 .detail-info{
-                    height: 0;
                     width: 190px;
                     font-size: 12px;
                     opacity: 0;
@@ -241,7 +235,6 @@ body.trinity-admin{
                 }
 
                 &:hover{
-                    min-height: 58px;
 
                     i.trinity-close{
                         visibility: visible;
@@ -316,21 +309,21 @@ body.trinity-admin{
                 &.danger{
                     i{
                         color: @color-danger;
-                        animation: pulse 1s infinite linear;
-                        -webkit-animation: pulse 1s infinite linear;
+                        //animation: pulse 1s infinite linear;
+                        //-webkit-animation: pulse 1s infinite linear;
                     }
                 }
-
-                @-webkit-keyframes pulse {
-                    0% { transform: scale(1, 1); }
-                    50% { transform: scale(1.1, 1.1); }
-                    100% { transform: scale(1, 1); }
-                }
-                @keyframes pulse {
-                    0% { transform: scale(1, 1); }
-                    50% { transform: scale(1.1, 1.1); }
-                    100% { transform: scale(1, 1); }
-                }
+                //
+                //@-webkit-keyframes pulse {
+                //    0% { transform: scale(1, 1); }
+                //    50% { transform: scale(1.1, 1.1); }
+                //    100% { transform: scale(1, 1); }
+                //}
+                //@keyframes pulse {
+                //    0% { transform: scale(1, 1); }
+                //    50% { transform: scale(1.1, 1.1); }
+                //    100% { transform: scale(1, 1); }
+                //}
             }
         }
         #sidebar-tab2-content{
@@ -338,6 +331,9 @@ body.trinity-admin{
                 min-height: 45px;
             }
         }
+        //#sidebar-tab2-content{
+        //    overflow: hidden;
+        //}
 
         //remove dotted border on focus - moz
         a, span:focus, span::-moz-focus-inner {
@@ -391,6 +387,12 @@ body.trinity-admin{
                         background: @sidebar-row-hover-color;
                         color: @color-primary;
                     }
+                    .sidebar-drop, .li-dropdown{
+                        .minus{
+                            background-color: @sidebar-row-hover-color;
+                        }
+
+                    }
                 }
             }
             .first {
@@ -399,7 +401,12 @@ body.trinity-admin{
 
             .sidebar-drop, .li-dropdown{
                 position: relative;
-
+                ul{
+                    box-shadow: none;
+                }
+                li{
+                    transition: none;
+                }
                 .trinity-dropdown-icon{
                     position: absolute;
                     right: 15px;
@@ -411,12 +418,14 @@ body.trinity-admin{
                     position: absolute;
                     right: 15px;
                     top: -40px;
-                    background-color: @sidebar-row-hover-color;
+                    background-color: white;
                 }
-            }
 
-            label.show-drop{
-                min-width: 200px;
+                &:hover{
+                    .minus{
+                        background-color: @sidebar-row-hover-color;
+                    }
+                }
             }
 
             .drop{
@@ -425,12 +434,12 @@ body.trinity-admin{
                 padding: 0;
                 background: #fff;
                 li{
-                    max-height: @sidebar-row-height;
                     a{
                         padding: 0 0 0 54px ;
                         color: @sidebar-link-color;
                         font-weight: normal;
-                        background: #fff;
+                        background-color: #fafafa;
+                        border: none;
                         i{
                             display: none;
                         }

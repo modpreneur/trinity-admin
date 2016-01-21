@@ -195,6 +195,7 @@
                                         </a>
                                         <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                     {% endif %}
+
                                 </li>
                         {% endif %}
 
@@ -203,12 +204,12 @@
                     {% endif %}
                 {% endfor %}
 
-                {% if count-1==0 %}
-                        <li class="info noaction">
-                            <i class="tiecons tiecons-info-circle"></i>
-                            <span class="marque">You don't have any new notification.</span>
-                        </li>
-                {% endif %}
+                {#{% if count==0 %}#}
+                        {#<li class="info noaction">#}
+                            {#<i class="tiecons tiecons-info-circle"></i>#}
+                            {#<span>You don't have any new notification.{{ countNew }}  {{ count }} {{ countNew }}</span>#}
+                        {#</li>#}
+                {#{% endif %}#}
                 </ul>
             </div>
             {% endblock %}
