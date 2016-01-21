@@ -184,7 +184,7 @@ body.trinity-admin{
             max-height: 850px;
 
             &.list-rows{
-                background: #f7f7f7;
+                background: lighten(@sidebar-row-hover-color,5%);
             }
 
             li{
@@ -194,11 +194,15 @@ body.trinity-admin{
                 position: relative;
                 display: block;
                 padding: 15px 25px 15px 45px;
-                border-top: 1px solid #f1f1f1;
+                border-top: 1px solid darken(@sidebar-row-hover-color,5%);
 
                 z-index: 999;
                 min-height: @sidebar-row-height;
                 background-color: @sidebar-row-hover-color;
+
+                -webkit-transition: min-height 0.7s;
+                -moz-transition: min-height 0.7s;
+                transition: min-height 0.7s;
 
                 i{
                     font-size: @sidebar-icon-font-size + 4px;
@@ -225,17 +229,19 @@ body.trinity-admin{
                 }
 
                 .detail-info{
+                    height: 0;
                     width: 190px;
                     font-size: 12px;
                     opacity: 0;
+                    padding-top: 2px;
 
-                    transition: all 0.5s linear;
-                    -moz-transition: all 0.5s linear;
-                    -webkit-transition: all 0.5s linear;
+                    transition: all 1s linear;
+                    -moz-transition: all 1s linear;
+                    -webkit-transition: all 1s linear;
                 }
 
                 &:hover{
-
+                    min-height: 58px;
                     i.trinity-close{
                         visibility: visible;
                         opacity: 1;
@@ -247,8 +253,6 @@ body.trinity-admin{
                         font-size: 10px;
                         color: @sidebar-detail-color;
 
-                        animation: none;
-                        -webkit-animation: none;
                         &:hover{
                             color: @color-tertiary;
                         }
@@ -257,7 +261,7 @@ body.trinity-admin{
                     .detail-info{
                         position: relative;
                         display: block;
-                        height: auto;
+                        height: 13px;
                         opacity: 1;
                         white-space: normal;
                         word-break: normal;
@@ -309,21 +313,8 @@ body.trinity-admin{
                 &.danger{
                     i{
                         color: @color-danger;
-                        //animation: pulse 1s infinite linear;
-                        //-webkit-animation: pulse 1s infinite linear;
                     }
                 }
-                //
-                //@-webkit-keyframes pulse {
-                //    0% { transform: scale(1, 1); }
-                //    50% { transform: scale(1.1, 1.1); }
-                //    100% { transform: scale(1, 1); }
-                //}
-                //@keyframes pulse {
-                //    0% { transform: scale(1, 1); }
-                //    50% { transform: scale(1.1, 1.1); }
-                //    100% { transform: scale(1, 1); }
-                //}
             }
         }
         #sidebar-tab2-content{
@@ -331,9 +322,6 @@ body.trinity-admin{
                 min-height: 45px;
             }
         }
-        //#sidebar-tab2-content{
-        //    overflow: hidden;
-        //}
 
         //remove dotted border on focus - moz
         a, span:focus, span::-moz-focus-inner {
@@ -368,8 +356,8 @@ body.trinity-admin{
                 }
 
                 &.active {
-                    border-bottom: 1px #ebebeb solid;
-                    border-top: 1px #ebebeb solid;
+                    border-bottom: 1px darken(@sidebar-row-hover-color,10%) solid;
+                    border-top: 1px darken(@sidebar-row-hover-color,10%) solid;
                     a, div {
                         font-weight: 500;
                     }
