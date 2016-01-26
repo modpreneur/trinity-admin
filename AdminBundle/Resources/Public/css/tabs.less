@@ -16,30 +16,30 @@ body.trinity-admin{
 
     .tabs-wrapper{
         background: #fff;
-        margin-top: 40px;
         font-family: "Roboto", sans-serif;
         font-weight: 300;
         margin-bottom: 20px;
 
-        .shadow();
-        border: 1px #eaeceb solid;
 
-
-        .tab-head:checked + label{
-            background: #fff !important;
-            border-bottom: 2px solid @color-primary;
-            color: @color-font !important;
-            top: 0px !important;
-            border-top: 1px solid transparent !important;
+        .tab-loop (@i) when (@i > 0) {
+            #tab@{i}:checked + label{
+                background: #fff;
+                border-bottom: 2px solid @color-primary;
+                color: @color-font;
+                border-top: none;
+                top: 0;
+            }
+            .tab-loop(@i - 1);
         }
+        .tab-loop (15);
 
         label[for^="tab"]{
             border: none;
             border-top: none;
-            border-bottom: 2px solid #b5b5b5;
+            border-bottom: 2px solid lighten(@color-tab-label,15%);
             color: @color-tab-label;
             counter-increment: tabs;
-            padding: 18px 50px 18px 50px;
+            padding: 13px 35px 13px 35px;
             font-weight: 300;
             z-index: 3;
             position: relative;
@@ -48,22 +48,112 @@ body.trinity-admin{
             text-transform: uppercase;
 
             &:hover{
-                color: @color-font !important;
+                color: @color-font;
+            }
+
+            &:after{
+                content: '';
+                display: block;
+                margin: auto;
+                height: 2px;
+                width: 0;
+                background: transparent;
+                transition: width .5s ease, background-color .5s ease;
+
+                position: absolute;
+                bottom: -2px;
+                left: 0;
+                right: 0;
+            }
+
+            &:hover:after{
+                width: 100%;
+                background-color: @color-tertiary;
             }
         }
 
+        @media screen and(max-width: 800px){
+            label[for^="tab"]{
+                width: 100% !important;
+            }
+        }
+        @media screen and(min-width: 800px) and (max-width: 965px){
+            label[for^="tab"]{
+                width: 100/3%+0.1;
+            }
+        }
+        @media screen and(min-width: 966px) and (max-width: 1130px){
+            label[for^="tab"]{
+                width: 100/4%+0.1;
+            }
+        }
+        @media screen and(min-width: 1131px) and (max-width: 1295px){
+            label[for^="tab"]{
+                width: 100/5%+0.1;
+            }
+        }
+        @media screen and(min-width: 1296px) and (max-width: 1335px){
+            label[for^="tab"]{
+                width: 100/6%;
+            }
+        }
+        @media screen and(min-width: 1336px){
+            label[for^="tab"]{
+                width: auto;
+            }
+        }
+        label[for^="tab"]:last-of-type{
+            width: auto;
+        }
+
+
+
         .tab-body-wrapper{
             border: none;
-            border-top: 2px solid #b5b5b5;
+            border-top: 2px solid lighten(@color-tab-label,15%);
             margin-top: -2px;
             min-height: 300px;
+            background: #fff;
 
-            .tab-body p{
-                font-size: 18px;
-                margin-left: 10px;
-                margin-right: 10px;
-                margin-top: 10px;
+            .tab-body {
+
+                p{
+                    font-size: 18px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                }
+
+                .list{
+                    font-size: 18px;
+                    margin-left: 20px;
+                    margin-right: 20px;
+                    margin-top: 20px;
+                    margin-bottom: 20px;
+                    line-height: 120%;
+                }
             }
+
+            .tab-actions{
+                position: absolute;
+                right: 0;
+                top: 0;
+
+                .item{
+                    padding: 5px 20px 5px 20px;
+                    background: @color-tab-label;
+                    color: #fff;
+                    text-align: center;
+                    cursor: pointer;
+                    font-size: 12px;
+
+                    &:hover{
+                        background: darken(@color-tab-label, 10%) !important;
+                    }
+                }
+            }
+
         }
 
     }
@@ -77,7 +167,7 @@ body.trinity-admin{
     }
 
     .tab-body{
-        padding: 0px 0px 0px;
+        padding: 0 0 0;
     }
 
     .tab-body-wrapper{
@@ -115,81 +205,6 @@ body.trinity-admin{
 
 }
 
-// tabs
-body.trinity-admin{
-
-    .harmonica{
-
-        .main-panel{
-
-            min-height: 51px;
-
-            input{
-                display: block !important;
-            }
-
-            label[for^="harmonica"]{
-                font-size: 14px;
-                text-align: left;
-                font-weight: 300;
-                padding-left: 15px;
-                padding-right: 15px;
-                color: @color-font;
-                line-height: 30px;
-                border-bottom: 1px solid #d7d7d7;
-                border-top: 1px solid @color-tab-label;
-                border-bottom: 1px solid @color-tab-label;
-                text-transform: uppercase;
-
-                i{
-                    margin-right: 10px;
-                    font-size: 16px;
-                    line-height: 30px;
-                    float: left;
-                    color: @color-primary;
-                }
-
-                &:hover{
-                    background: @global-row-hover;
-                }
-            }
-
-            .show-harmonica{
-                background: none;
-                padding: 0px;
-                margin-bottom: 20px;
-                color: @color-font;
-                max-height: 400px;
-                overflow-y: auto;
-
-                .harmonica-content{
-                    color: @color-font;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-
-                label{
-                    color: @color-font;
-                    font-weight: 300;
-                    font-size: 14px;
-                    line-height: 20px;
-                    padding-top: 5px;
-                }
-            }
-        }
-
-        input[id^="harmonica"]:checked + .main-panel{
-            label[for^="harmonica"]{
-                font-weight: 400;
-                background: darken(@global-row-hover, 5%);
-                color: @color-primary;
-                border-top: 1px solid #d7d7d7;
-                border-bottom: 1px solid #ccc;
-            }
-        }
-    }
-
-}
 
 
 // content
@@ -236,7 +251,7 @@ body.trinity-admin{
                         background: #fff !important;
                         border-bottom: 2px solid @color-primary;
                         color: @color-font !important;
-                        top: 0px !important;
+                        top: 0 !important;
                         border-top: 1px solid transparent !important;
                     }
 
@@ -246,7 +261,7 @@ body.trinity-admin{
                         border-bottom: 2px solid #b5b5b5;
                         color: @color-tab-label;
                         counter-increment: tabs;
-                        padding: 18px 50px 18px 50px;
+                        padding: 15px 40px 15px 40px;
                         font-weight: 300;
                         z-index: 3;
                         position: relative;
@@ -271,6 +286,7 @@ body.trinity-admin{
                             margin-right: 10px;
                             margin-top: 10px;
                         }
+
                     }
 
                 }
@@ -281,7 +297,7 @@ body.trinity-admin{
                 }
 
                 .tab-body{
-                    padding: 0px 0px 0px;
+                    padding: 0;
                 }
 
                 .tab-body-wrapper{
@@ -336,7 +352,6 @@ body.trinity-admin{
                             padding-right: 15px;
                             color: @color-font;
                             line-height: 30px;
-                            border-bottom: 1px solid #d7d7d7;
 
                             border-top: 1px solid @color-tab-label;
                             border-bottom: 1px solid @color-tab-label;
@@ -357,7 +372,7 @@ body.trinity-admin{
 
                         .show-harmonica{
                             background: none;
-                            padding: 0px;
+                            padding: 0;
                             margin-bottom: 20px;
                             color: @color-font;
                             max-height: 400px;

@@ -114,151 +114,213 @@ body.trinity-admin{
 
         .tab-title{
             width: 100%;
-            color: @sidebar-link-color;
             text-align: center;
             font-size: 20px;
             line-height: 30px;
             font-weight: 400;
             margin-bottom: 10px;
+            color: @color-primary;
         }
 
+        h4{
+            padding: 15px;
+            padding-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .alert{
+            border: none;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            .alert-icon{
+                font-size: 20px;
+            }
+
+            .alert-content{
+                width: 87%;
+            }
+        }
+
+        .body-text{
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+
+            a{
+                color: @color-tertiary;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+            .user-photo{
+                text-align: center;
+                margin-bottom: 15px;
+                position: relative;
+                .trinity{
+                    font-size: 50px;
+                    border: 3px solid #ccc89a;
+                    border-radius: 50px;
+                    padding: 15px;
+                    display: inline-block;
+                    background:  rgb(255, 252, 194);
+                    color: @color-primary;
+                }
+
+                img.red{
+                    position: absolute;
+                    width: 30px;
+                    left: 110px;
+                    top: 5px
+                }
+            }
+        }
+
+
         ul.tab-list{
+            overflow-y: auto;
+            overflow-x: hidden;
+            max-height: 850px;
+
             &.list-rows{
-                background: #f7f7f7;
+                background: lighten(@sidebar-row-hover-color,5%);
             }
 
             li{
                 font-size: @sidebar-font-size;
-                color: #000;
                 font-weight: 300;
-                display: block;
-                position: relative;
-                padding: 15px 50px 15px 50px;
-                border-top: 1px solid #f1f1f1;
-                white-space: nowrap;
-                overflow: hidden;
-                text-overflow: ellipsis;   /* IE, Safari (WebKit) */
-                z-index: 999;
-                min-width: @sidebar-width;
-                min-height: @sidebar-row-height;
 
-                span{
-                   /* background: transparent;*/
-                    padding-top: 13px;
-                    padding-bottom: 13px;
-                    margin-top: -15px;
-                    margin-bottom: -15px;
-                    padding-right: 15px;
-                    border-top: 1px solid #f4f4f4;
-                    border-right: 1px solid transparent;
+                position: relative;
+                display: block;
+                padding: 15px 25px 15px 45px;
+                border-top: 1px solid darken(@sidebar-row-hover-color,5%);
+
+                z-index: 999;
+                min-height: @sidebar-row-height;
+                background-color: @sidebar-row-hover-color;
+
+                -webkit-transition: min-height 0.7s;
+                -moz-transition: min-height 0.7s;
+                transition: min-height 0.7s;
+
+                i{
+                    font-size: @sidebar-icon-font-size + 4px;
+                    position: absolute;
+                    left: 15px;
+                    top: 10px;
+                }
+
+                .message-group{
+                    position: relative;
+                    span{
+                        transition: all 0.5s ease;
+                        line-height: 15px;
+                        background-color: @sidebar-row-hover-color;
+                    }
+                }
+
+                i.trinity-close{
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 1s linear;
+                    -moz-transition: opacity 1s linear;
+                    -webkit-transition: opacity 1s linear;
+                }
+
+                .detail-info{
+                    height: 0;
+                    width: 190px;
+                    font-size: 12px;
+                    opacity: 0;
+                    padding-top: 2px;
+
+                    transition: all 1s linear;
+                    -moz-transition: all 1s linear;
+                    -webkit-transition: all 1s linear;
+                }
+
+                &:hover{
+                    min-height: 58px;
+                    i.trinity-close{
+                        visibility: visible;
+                        opacity: 1;
+                        position: absolute;
+                        top: 10px;
+                        right: 5px;
+                        left: auto;
+                        padding: 2px 2px 2px 0;
+                        font-size: 10px;
+                        color: @sidebar-detail-color;
+
+                        &:hover{
+                            color: @color-tertiary;
+                        }
+                    }
+
+                    .detail-info{
+                        position: relative;
+                        display: block;
+                        height: 13px;
+                        opacity: 1;
+                        white-space: normal;
+                        word-break: normal;
+                        color: @color-grey-link;
+                    }
                 }
 
                 &.new:before{
                     content: " ";
                     float: left;
-                    margin-left: -45px;
+                    margin-left: -40px;
                     margin-top: 5px;
-                    background: #12afcb;
+                    background: saturate(@color-info, 10%);
                     border-radius: 5px;
                     width: 5px;
                     height: 5px;
                     position: absolute;
                 }
 
+                a{
+                    color: @sidebar-link-color;
+                }
+
                 &.info{
                     i{
-                        color: #61ccba;
+                        color: @color-info;
                     }
                 }
 
                 &.warning{
                     i{
-                        color: #f37c7c;
+                        color: @color-warning;
                     }
                 }
 
                 &.success{
                     i{
-                        color: #f6dd78;
+                        color: @color-success-notification;
                     }
                 }
                 &.noaction{
-                    color: #4c4c4c;
+                    color: @sidebar-link-color;
                     background: #ffffff;
-
                     i{
-                        color: #838383;
+                        color: lighten(@sidebar-link-color,10%);
                     }
                 }
 
                 &.danger{
                     i{
-                        color: #e03b3b;
-                        animation: pulse 1s infinite linear;
-                        -webkit-animation: pulse 1s infinite linear;
+                        color: @color-danger;
                     }
-                }
-
-                a{
-                    color: @sidebar-link-color;
-                }
-
-                .detail-info{
-                    visibility: hidden;
-                }
-
-                &:hover{
-                    background: @sidebar-row-hover-color;
-                    overflow: visible;
-                    width: auto;
-
-                    span{
-                        background: @sidebar-row-hover-color;
-                        outline: 0;
-                    }
-                    span:first-child{
-                        padding-bottom: 35px;
-                    }
-                    span.detail-info{
-                        visibility: visible;
-                        font-size: 12px;
-                        color: #838383;
-                        display: block;
-
-                        line-height: 2;
-                        width: 100%;
-                    }
-                    //info at notification user name and date
-                    /*.detail-info{
-                        visibility: visible;
-                        font-size: 12px;
-                        color: #838383;
-                        display: block;
-                        line-height: 2;
-                        width: 100%;
-                    }*/
-                }
-
-                i{
-                    padding-right: 5px;
-                    font-size: @sidebar-icon-font-size + 5px;
-                    position: absolute;
-                    left: 15px;
-                    top: 10px;
-                }
-
-                @-webkit-keyframes pulse {
-                    0% { transform: scale(1, 1); }
-                    50% { transform: scale(1.1, 1.1); }
-                    100% { transform: scale(1, 1); }
-                }
-                @keyframes pulse {
-                    0% { transform: scale(1, 1); }
-                    50% { transform: scale(1.1, 1.1); }
-                    100% { transform: scale(1, 1); }
                 }
             }
-
+        }
+        #sidebar-tab2-content{
+            li:hover{
+                min-height: 45px;
+            }
         }
 
         //remove dotted border on focus - moz
@@ -272,7 +334,6 @@ body.trinity-admin{
                 width: 100%;
                 min-height: @sidebar-row-height;
                 position: relative;
-                border-left: 0;
                 border-bottom: 1px transparent solid;
                 border-top: 1px transparent solid;
                 cursor: pointer;
@@ -288,18 +349,21 @@ body.trinity-admin{
                 }
 
                 i {
-                    padding-left: 20px;
-                    padding-right: 30px;
+                    margin: 12px 20px 0 15px;
                     width: 14px;
                     display: inline-block;
                     font-size: @sidebar-icon-font-size;
                 }
 
                 &.active {
-                    border-bottom: 1px #ebebeb solid;
-                    border-top: 1px #ebebeb solid;
+                    border-bottom: 1px darken(@sidebar-row-hover-color,10%) solid;
+                    border-top: 1px darken(@sidebar-row-hover-color,10%) solid;
                     a, div {
                         font-weight: 500;
+                    }
+
+                    i{
+                        font-weight: 600;
                     }
                 }
 
@@ -311,39 +375,59 @@ body.trinity-admin{
                         background: @sidebar-row-hover-color;
                         color: @color-primary;
                     }
+                    .sidebar-drop, .li-dropdown{
+                        .minus{
+                            background-color: @sidebar-row-hover-color;
+                        }
+
+                    }
                 }
             }
             .first {
                 border-top: 1px #f4f4f4 solid;
             }
 
-            .dropdown-main-sidebar, .li-dropdown{
+            .sidebar-drop, .li-dropdown{
                 position: relative;
-
-                .dropdown-icon{
+                ul{
+                    box-shadow: none;
+                }
+                li{
+                    transition: none;
+                }
+                .trinity-dropdown-icon{
                     position: absolute;
-                    right: -5px;
+                    right: 15px;
                     top: 0;
                     font-size: @sidebar-icon-font-size;
+                }
 
-                    &.plus{
-                        top: 8px;
+                .minus{
+                    position: absolute;
+                    right: 15px;
+                    top: -40px;
+                    background-color: white;
+                }
+
+                &:hover{
+                    .minus{
+                        background-color: @sidebar-row-hover-color;
                     }
                 }
             }
 
             .drop{
                 width: 100%;
-                margin: 0;
+                margin: 15px 0 0 0;
                 padding: 0;
                 background: #fff;
                 li{
                     a{
-                        padding-left: 54px !important;
+                        padding: 0 0 0 54px ;
                         color: @sidebar-link-color;
                         font-weight: normal;
-                        background: #fff;
-                        line-height: @sidebar-row-height;
+                        background-color: #fafafa;
+                        border: none;
                         i{
                             display: none;
                         }
@@ -370,6 +454,10 @@ body.trinity-admin{
                 pointer-events: none;
             }
         }
+    }
+
+    .sidebar-tabs {
+        height: 100%;
     }
 
 }

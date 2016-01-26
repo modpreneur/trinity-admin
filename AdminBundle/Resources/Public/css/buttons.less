@@ -1,8 +1,6 @@
 @import "variables";
 @import "helper";
 
-@font-size-button: 18px;
-
 .button(){
     .radius(5px);
     text-align: center;
@@ -12,14 +10,24 @@
     text-transform: uppercase;
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
-    text-shadow: 0px 0px 10px rgb(105, 105, 105) !important ;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+:focus {outline:none;}
+::-moz-focus-inner {border:0;}
+
+@-moz-document url-prefix() {
+    .button {
+        font-family: 'Roboto', sans-serif !important;
+    }
 }
 
 .button{
     .button();
     padding: 6px 50px 7px 50px;
-    margin-top: 10px;
-    margin-bottom: 15px;
+    margin-top: 5px;
+    margin-bottom: 25px;
     line-height: 1;
     border: none;
 
@@ -36,8 +44,6 @@
         font-size: 80%;
         padding: 0px 14px;
     }
-
-
 
     &-success{
         box-shadow: 0px -3px 0px 0px #457A1A inset;
@@ -58,39 +64,41 @@
 
     &-secondary{
         background-color: @color-secondary !important;
-        border: 1px solid darken(@color-secondary, 30%) !important;
+        border: none !important;
 
         &:hover{
             background-color: darken(@color-secondary, 20%) !important;
-            border: 1px solid darken(@color-secondary, 20%) !important;
+            border: none !important; ///---------------------------------
         }
     }
 
     &-tertiary{
         background: @color-tertiary !important;
-        border: 1px solid darken(@color-tertiary, 10%) !important;
+        border: none !important;
+        box-shadow: 0px -3px 0px 0px darken(@color-tertiary, 15%) inset;
 
         &:hover{
-            background: darken(@color-tertiary, 20%) !important;
-            border: 1px solid darken(@color-tertiary, 20%) !important;
+            background: darken(@color-tertiary, 15%) !important;
+            border: none !important;
         }
     }
 
     &-warning{
-        background-color: #ff8939 !important;
-        box-shadow: 0px -3px 0px 0px #FF6600 inset;
+        background-color: @color-warning ;
+        box-shadow: 0px -3px 0px 0px darken(@color-warning, 20%) inset;
         border: none !important;
         &:hover{
-            background-color: #FD6601 !important;
+            background-color: darken(@color-warning, 20%) ;
             border: none !important;
         }
     }
 
     &-danger{
-        background-color: rgb(203, 78, 78) !important;
-        box-shadow: 0px -3px 0px 0px rgb(193, 8, 11) inset;
+        background-color: @color-danger !important;
+        box-shadow: 0px -3px 0px 0px darken(@color-danger, 15%) inset;
         border: none !important;
         &:hover {
+            background-color: darken(@color-danger, 15%) !important;
             border: none !important;
         }
     }
@@ -98,6 +106,25 @@
     &:disabled{
         cursor: not-allowed !important;
         color: #dddddd;
+    }
+    &-addNew{
+        color: #2f2f2f;
+        background: transparent;
+        border: 1px dashed #2f2f2f;
+        transition: all @form-tr-time;
+        &:hover{
+            background-color: #dbdbdb;
+            border: 1px solid #2f2f2f;
+        }
+    }
+    &-red{
+        color: #fff;
+        background-color: #b35445  ;
+        border: 1px dashed #642f26  ;
+        &:hover{
+            background-color: #8a4134  ;
+            border: 1px solid #3d1d17  ;
+        }
     }
 }
 
@@ -124,7 +151,6 @@
     &-loading{
         .button();
         .disabled();
-        background: #24afc9 !important;
 
         &:after {
             .icon("\e6a9");
@@ -138,11 +164,6 @@
 
 
     &-success{
-        .button();
-
-        background: #22baa0;
-        border-bottom: 4px solid #279d88;
-
         &:after{
             .icon('\e68d');
         }
@@ -150,11 +171,7 @@
 
 
     &-error{
-        .button();
-        .disabled();
-
-        background: #f0575a !important;
-        border-bottom: 4px solid #cc4a4d;
+        //.disabled();
 
         &:after{
             .icon('\e65d');
@@ -163,13 +180,15 @@
 
 
     &-ready{
-        .button();
-
-        background: #7a71bc;
-        border-bottom: 4px solid #6860a0;
-
         &:after{
             .icon('\e6fc');
+        }
+
+        &.button-danger{
+            &:after{
+                .icon('\e92a');
+                font-family: 'trinity';
+            }
         }
     }
 }

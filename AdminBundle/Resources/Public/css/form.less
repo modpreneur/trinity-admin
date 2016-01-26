@@ -16,6 +16,8 @@ body.trinity-admin{
         }
     }
 
+
+
     .edit-form, .new-form, .modal-dialog form{
         width: 100%;
         .row{
@@ -27,12 +29,24 @@ body.trinity-admin{
             width: 100%;
             margin-bottom: 0px;
 
-            &:last-of-type, &:nth-last-of-type(2){
+            &:last-of-type{
                 border-bottom: none;
+            }
+
+            &:first-of-type{
+                margin-top: 22px;
             }
 
             &:hover{
                 background: #f8f8f8;
+            }
+        }
+
+        .advanced-settings .row{
+            border-bottom: 1px solid #ededed !important;
+
+            &:first-of-type{
+                margin-top: 0px;
             }
         }
 
@@ -66,6 +80,7 @@ body.trinity-admin{
             padding: 0;
             padding-right: 20% ;
             line-height: 35px;
+            font-weight: 400;
 
             &.required:after{
                 content: "*";
@@ -85,6 +100,7 @@ body.trinity-admin{
         input[type="text"],
         input[type="number"],
         input[type="email"],
+        input[type="date"],
         input[type="datetime"],
         input[type="password"],
         input[type="url"],
@@ -102,13 +118,18 @@ body.trinity-admin{
             border: 1px solid @color-border;
             background: #fff;
             -webkit-appearance:none;
-            transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in;
             font-weight: 300;
             color: @color-font;
 
             &:focus{
-                border: 1px solid @color-primary;
-                background: #fafafc;
+                border: 1px solid darken(@color-primary, 20%);
+                background: #fff !important;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            label {
+                text-align: left;
             }
         }
 
@@ -150,7 +171,7 @@ body.trinity-admin{
                 font-family: "trinity";
                 position: absolute;
                 left: 1px;
-                top: 1px;
+                //top: 1px;
             }
 
             input[type="checkbox"]:checked + label:before{
@@ -185,7 +206,7 @@ body.trinity-admin{
             }
         }
 
-        //select drop-down fix and hide default
+        //select drop-down fix and hide default drop icon
         .select-style{
 
             select{
@@ -215,6 +236,11 @@ body.trinity-admin{
                 position: absolute;
                 pointer-events:none;
             }
+
+            select:-moz-focusring {
+                color: transparent;
+                text-shadow: 0 0 0 #000;
+            }
         }
 
         textarea{
@@ -239,43 +265,6 @@ body.trinity-admin{
             font-size: 18px;
         }
 
-        // button update - green color.
-        //todo divide inputs by colors
-        //input.update, a.update, button.update{
-        //    background-color: #e9ae47 !important;
-        //    color: #fff;
-        //    border: 1px solid  transparent !important;
-        //    //padding: 5px 50px 5px 50px;
-        //    text-shadow: 1px 1px 3px #b68825;
-        //    box-shadow: 0 4px #ba8c25;
-        //
-        //    margin-bottom: 15px;
-        //    text-transform: uppercase;
-        //
-        //
-        //    &:hover{
-        //        background-color: #18c46c !important;
-        //        box-shadow: 0 4px #18c261;
-        //    }
-        //}
-        //
-        //input.save, input.create, a.save, a.create, button.save, button.create{
-        //    background-color: #17aa56 !important;
-        //    color: #fff;
-        //    border: 1px solid  transparent !important;
-        //    //padding: 5px 50px 5px 50px;
-        //    text-shadow: 1px 1px 3px #117d3e;
-        //    box-shadow: 0 4px #119e4d;
-        //    margin-top: 10px;
-        //    margin-bottom: 15px;
-        //    text-transform: uppercase;
-        //
-        //    &:hover{
-        //        background-color: #18c46c !important;
-        //        box-shadow: 0 4px #18c261;
-        //    }
-        //}
-
         input.error {
             border: solid 1px red !important;
         }
@@ -285,25 +274,7 @@ body.trinity-admin{
         padding: 15px;
     }
 
-    .addNew {
-        color: #2f2f2f;
-        text-transform: uppercase;
-        background: transparent;
-        padding: 5px 40px 5px 40px;
-        border: 1px dashed #2f2f2f !important;
-        font-size: 18px;
-        transition: all @form-tr-time;
-        margin-top: 10px;
-        margin-bottom: 15px;
-        font-weight: 200 !important;
-
-        &:hover{
-            background-color: #dbdbdb;
-            border: 1px solid #2f2f2f;
-        }
-    }
-
-    //delete form - delete button
+    //delete form layout
     .delete-form{
         width: 100%;
         text-align: center;
@@ -320,25 +291,6 @@ body.trinity-admin{
 
             -webkit-appearance:none;
             transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in, box-shadow @form-tr-time ease-in;
-        }
-        input.delete, button.delete, a.delete{
-            background-color: #cb4e4e !important;
-            color: #fff;
-            border: 1px solid  transparent !important;
-            border-radius: 5px;
-            //padding: 5px 50px 5px 50px;
-            margin-top: 10px;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            font-size: 18px;
-
-            box-shadow: inset 0 -3px 0 0 #c1080b;
-            -webkit-transition: all ease 1.2s;
-            -moz-transition: all ease 1.2s;
-            transition: all ease 1.2s;
-            &:hover {
-                box-shadow: inset 0 100px 0 0 #c1080b;
-            }
         }
 
         i.trinity-warning:before{
@@ -366,6 +318,10 @@ body.trinity-admin{
         }
     }
 
+    h2.warning{
+        background-color: transparent !important;
+    }
+
     //info empty billing plans
     .info-empty-form{
         width: 100%;
@@ -388,29 +344,36 @@ body.trinity-admin{
         .row{
             margin: 10px 0 20px 0;
         }
-
-        .create{
-            background-color: #17aa56 !important;
-            color: #fff;
-            border: 1px solid  transparent !important;
-            padding: 5px 50px 5px 50px;
-            border-bottom: 1px solid #119e4d !important;
-            text-shadow: 1px 1px 3px #117d3e;
-            box-shadow: 0 4px #119e4d;
-            text-transform: uppercase;
-            font-size: 18px;
-
-            &:hover{
-                text-shadow: 1px 1px 3px #17aa56;
-                background-color: #18c46c !important;
-                border-bottom: 1px solid #17aa56 !important;
-                box-shadow: 0 5px #17aa56;
-            }
-        }
-
     }
 
     .box-new-form{
         padding-bottom: 15px;
+    }
+
+
+    // fixes - collections
+    .collection-widget{
+        div{
+            width: 100% !important;
+            padding: 0px !important;
+            margin: 0px !important;
+        }
+
+        .form-right{
+            margin-bottom: 5px !important;
+        }
+
+        .form-left{
+            display: none !important;
+        }
+
+        .delete-collection-item{
+            .tiecons, .trinity{
+                color: #c22a00;
+                position: absolute;
+                right: -20px;
+                top: 10px
+            }
+        }
     }
 }

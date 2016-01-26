@@ -11,112 +11,6 @@ body.trinity-admin{
         display: none;
     }
 
-    .wrapper-grid, .box{
-        .box();
-
-        font-family: "Roboto", sans-serif;
-        padding: 10px 0px 00px;
-        color: @global-font-color;
-
-        .header{
-            min-height: 40px;
-            color: @color-font;
-            margin-bottom: 20px;
-            margin-top: -10px;
-            font-size: 20px;
-            padding-left: 20px;
-            padding-top: 20px;
-            padding-right: 20px;
-            font-weight: 300;
-        }
-
-        .box-body{
-            padding-bottom: 20px;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-
-        .box-table-body{
-            .grid{
-                width: 100%;
-                border-left: none;
-                border-right: none;
-            }
-        }
-
-        .footer{
-            border-top: 1px solid @color-border;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-top: 10px;
-            padding-bottom: 10px;
-            font-size: 12px;
-        }
-
-        .grid-search{
-            margin-top: 20px;
-            margin-bottom: 30px;
-            text-align: center;
-            .title{
-                color: #2f2f2f;
-                font-size: 20px;
-                margin-left: 10px;
-                font-weight: 300;
-            }
-
-            form{
-
-                min-width: 400px;
-
-                input[type="text"]{
-                    border: 1px solid #ccc;
-                    height: @grid-search-height;
-                    border-radius: 5px;
-                    padding: 10px;
-                    width: 80%;
-                    outline: none;
-                    font-size: @search-font-size;
-                    float: left;
-                    transition: border @search-time ease-in;
-                    color: @color-primary;
-
-                    &:focus{
-                        border: 1px solid @color-primary;
-                    }
-
-                    &:focus + button{
-                        background: @color-primary;
-                        color: #fff;
-                        border: 1px solid @color-primary;
-                    }
-                }
-
-                button[type="submit"]{
-                    background: #ccc;
-                    color: #fff;
-                    border-radius: 5px;
-                    margin-left: -20px;
-                    height: @grid-search-height;
-                    border: 2px solid #ccc;
-                    outline: none;
-                    text-align: center;
-                    font-size: 14px;
-                    float: left;
-                    width: 50px;
-
-                    transition: border @search-time ease-in,
-                    background @search-time ease-in,
-                    color @search-time ease-in;
-
-                    &:hover{
-                        background: @color-primary-hover;
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-    }
-
     .grid{
         .grid-row-filters{
             display: none;
@@ -143,14 +37,12 @@ body.trinity-admin{
                 border: none;
 
                 tbody{
-
                     th{
                         font-size: 16px;
                     }
-
                     td, tr, th{
                         background: transparent;
-                        vertical-align: middle;
+                        vertical-align: top;
                         line-height: 26px;
                     }
 
@@ -171,9 +63,27 @@ body.trinity-admin{
                             background: #f8f8f8;
                         }
                         a{
-                            color: @color-primary;
+                            color: darken(@color-grey-link,25%);
                             &:hover{
-                                color: @color-primary-hover;
+                                color: @color-tertiary;
+                            }
+                            &:visited{
+                                color: #551A8B;
+                                &:hover{
+                                    color: @color-tertiary;
+                                }
+                            }
+                        }
+                        .actions a{
+                            color: @color-grey-link;
+                            &:hover{
+                                color: @color-tertiary;
+                            }
+                            &:visited{
+                                color: #551A8B;
+                                &:hover{
+                                    color: @color-tertiary;
+                                }
                             }
                         }
                     }
@@ -185,6 +95,19 @@ body.trinity-admin{
                         max-width: 200px;
                     }
                 }
+            }
+        }
+
+        tr:hover{
+            .action-cell .actions{
+                visibility: visible !important;
+            }
+        }
+
+        .grid-list{
+            li{
+                line-height: 18px;
+                font-size: 10px;
             }
         }
 
