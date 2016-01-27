@@ -8,13 +8,14 @@ services:
   trinity.admin.service.admin_manager:
     class: Trinity\AdminBundle\Service\AdminManager
     arguments:
-      - @service_container
+      - "@service_container"
 
 
   trinity.twig.extension.side_bar:
       class: Trinity\AdminBundle\Twig\SidebarExtension
       tags:
           - { name: twig.extension }
+
 
   trinity.twig.extensions.controller:
           class: Trinity\AdminBundle\Twig\ControllerActionExtension
