@@ -1,3 +1,6 @@
+@import "variables";
+@import "helper";
+
 /**
 *
 * Page content, widget, etc.
@@ -12,16 +15,16 @@
 *
 */
 
-body.trinity-admin{
+body.trinity-admin {
 
-    .wrapper-grid, .box{
+    .wrapper-grid, .box {
         .box();
 
         font-family: "Roboto", sans-serif;
         padding: 10px 0px 00px;
         color: @global-font-color;
 
-        .header{
+        .header {
             min-height: 40px;
             color: @color-font;
             margin-bottom: 20px;
@@ -33,42 +36,42 @@ body.trinity-admin{
             font-weight: 400;
         }
 
-        a{
+        a {
             color: @color-tertiary;
         }
 
-        .box-body{
+        .box-body {
             padding-bottom: 20px;
             padding-left: 20px;
             padding-right: 20px;
 
-            p{
+            p {
                 margin-bottom: 10px;
                 margin-top: 10px;
             }
         }
 
-        .box-table-body{
-            .grid{
+        .box-table-body {
+            .grid {
                 width: 100%;
                 border-left: none;
                 border-right: none;
             }
         }
 
-        .box-harmonica-body{
-            .show-harmonica{
+        .box-harmonica-body {
+            .show-harmonica {
                 padding: 20px !important;
                 margin-bottom: 0px;
                 color: @color-font;
             }
         }
 
-        .box-form-body{
+        .box-form-body {
             padding-bottom: 15px;
         }
 
-        .footer{
+        .footer {
             border-top: 1px solid @color-border;
             padding-left: 20px;
             padding-right: 20px;
@@ -77,20 +80,20 @@ body.trinity-admin{
             font-size: 12px;
         }
 
-        .grid-search{
+        .grid-search {
             margin-top: 20px;
             margin-bottom: 30px;
             text-align: center;
-            .title{
+            .title {
                 color: #2f2f2f;
                 font-size: 20px;
                 margin-left: 10px;
                 font-weight: 300;
             }
 
-            form{
+            form {
                 min-width: 400px;
-                input[type="text"]{
+                input[type="text"] {
                     border: 1px solid #ccc;
                     height: @grid-search-height;
                     border-radius: 5px;
@@ -102,18 +105,18 @@ body.trinity-admin{
                     transition: border @search-time ease-in;
                     color: @color-primary;
 
-                    &:focus{
+                    &:focus {
                         border: 1px solid @color-primary;
                     }
 
-                    &:focus + button{
+                    &:focus + button {
                         background: @color-primary;
                         color: #fff;
                         border: 1px solid @color-primary;
                     }
                 }
 
-                button[type="submit"]{
+                button[type="submit"] {
                     background: #ccc;
                     color: #fff;
                     border-radius: 5px;
@@ -130,12 +133,33 @@ body.trinity-admin{
                     background @search-time ease-in,
                     color @search-time ease-in;
 
-                    &:hover{
+                    &:hover {
                         background: @color-primary-hover;
                         cursor: pointer;
                     }
                 }
             }
+        }
+    }
+
+    .help-box {
+        width: 100%;
+
+        .label {
+            text-align: right;
+            padding-left: 15px;
+        }
+
+        .help-content {
+            display: none;
+        }
+
+        input[type="checkbox"]:checked ~ .help-content {
+            display: block;
+        }
+
+        input[type="checkbox"]:checked ~ .label {
+            display: none;
         }
     }
 
