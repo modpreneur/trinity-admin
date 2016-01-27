@@ -60,12 +60,8 @@
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <div class="message-group">
-                                            <span> {# todo @kure #}
-                                                {% if route is defined %}
-                                                    <a href="{{ path(route, params) }}">
-                                                        {{ message }}
-                                                    </a>
-                                                {% endif %}
+                                            <span>
+                                                {{ message }}
                                             </span>
                                     </div>
                                     {# @TODO Set for this link function to remove notification #}
@@ -102,9 +98,7 @@
                                 {% if path == ";" %}
                                     <div class="message-group">
                                             <span>
-                                                <a href="{{ path(route, params) }}">
                                                     {{ message }}
-                                                </a>
                                             </span>
                                     </div>
                                     <a href="#">
