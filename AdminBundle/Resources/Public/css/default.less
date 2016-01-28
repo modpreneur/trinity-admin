@@ -4,7 +4,8 @@ body.trinity-admin{
     background: #edecec !important;
 
 
-    .new-entry{
+    .navigation-icons(){
+
         position: fixed;
         z-index: 999;
         border-radius: 40px;
@@ -32,7 +33,38 @@ body.trinity-admin{
         .hover-text{
             display: none !important;
         }
+
     }
+
+    .new-entry{
+        .navigation-icons();
+    }
+
+    .go-up-single{
+        .navigation-icons();
+        background: @color-primary;
+
+        i, span{
+            font-weight: 900;
+        }
+        &:hover{
+            background: @color-primary;
+        }
+    }
+
+    .go-up{
+        .navigation-icons();
+        left: -75px;
+        background: @color-primary;
+
+        i, span{
+            font-weight: 900;
+        }
+        &:hover{
+            background: @color-primary;
+        }
+    }
+
 
     .version{
         position: absolute;
