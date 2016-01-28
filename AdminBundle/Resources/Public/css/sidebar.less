@@ -83,6 +83,10 @@ body.trinity-admin{
             top: 0;
         }
 
+        .sidebar-tab-content{
+            border-top: 1px solid darken(@sidebar-row-hover-color,5%);
+        }
+
         .sidebar-tab-content(@n, @i : 1) when (@i =< @n){
             .sidebar-tab-content(@n, (@i + 1));
             #sidebar-tab@{i}-content{
@@ -363,7 +367,7 @@ body.trinity-admin{
                     }
 
                     i{
-                        font-weight: 600;
+                        font-weight: 500;
                     }
                 }
 
