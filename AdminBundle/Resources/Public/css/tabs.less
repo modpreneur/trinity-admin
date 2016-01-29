@@ -20,7 +20,6 @@ body.trinity-admin{
         font-weight: 300;
         margin-bottom: 20px;
 
-
         .tab-loop (@i) when (@i > 0) {
             #tab@{i}:checked + label{
                 background: #fff;
@@ -71,42 +70,6 @@ body.trinity-admin{
                 background-color: @color-tertiary;
             }
         }
-
-        @media screen and(max-width: 800px){
-            label[for^="tab"]{
-                width: 100% !important;
-            }
-        }
-        @media screen and(min-width: 800px) and (max-width: 965px){
-            label[for^="tab"]{
-                width: 100/3%+0.1;
-            }
-        }
-        @media screen and(min-width: 966px) and (max-width: 1130px){
-            label[for^="tab"]{
-                width: 100/4%+0.1;
-            }
-        }
-        @media screen and(min-width: 1131px) and (max-width: 1295px){
-            label[for^="tab"]{
-                width: 100/5%+0.1;
-            }
-        }
-        @media screen and(min-width: 1296px) and (max-width: 1335px){
-            label[for^="tab"]{
-                width: 100/6%;
-            }
-        }
-        @media screen and(min-width: 1336px){
-            label[for^="tab"]{
-                width: auto;
-            }
-        }
-        label[for^="tab"]:last-of-type{
-            width: auto;
-        }
-
-
 
         .tab-body-wrapper{
             border: none;
@@ -502,6 +465,45 @@ body.trinity-admin{
             i{
                 color: @color-tab-label;
             }
+        }
+    }
+}
+
+body.trinity-admin {
+
+    .tabs-wrapper {
+        @media screen and(max-width: 800px) {
+            label[for^="tab"] {
+                width: 100% !important;
+            }
+        }
+        @media screen and(min-width: 800px) and (max-width: 965px) {
+            label[for^="tab"] {
+                width: 100/3%+0.1;
+            }
+        }
+        @media screen and(min-width: 966px) and (max-width: 1130px) {
+            label[for^="tab"] {
+                width: 100/4%+0.1;
+            }
+        }
+        @media screen and(min-width: 1131px) and (max-width: 1295px) {
+            label[for^="tab"] {
+                width: 100/5%+0.1;
+            }
+        }
+        @media screen and(min-width: 1296px) and (max-width: 1335px) {
+            label[for^="tab"] {
+                width: 100/6%;
+            }
+        }
+        @media screen and(min-width: 1336px) {
+            label[for^="tab"] {
+                width: auto;
+            }
+        }
+        label[for^="tab"]:last-of-type {
+            width: auto;
         }
     }
 }
