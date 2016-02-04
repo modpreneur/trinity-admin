@@ -71,7 +71,20 @@ body.trinity-admin{
             cursor: pointer;
             border-top: none;
             background: #fff;
-            border-bottom: 2px transparent solid;
+            border-bottom: 2px solid transparent;
+
+            &:after{
+                content: '';
+                margin-top: 13px;
+                display: block;
+                width: @sidebar-width/@sidebar-tabs;
+                height: 1px;
+                background: #EAEAEA;
+                z-index: -5;
+            }
+            &:last-of-type:after{
+                width: @sidebar-width/@sidebar-tabs - 1px;
+            }
         }
 
         input[name="sidebar-tab"]:checked+label{
@@ -190,7 +203,6 @@ body.trinity-admin{
             li{
                 font-size: @sidebar-font-size;
                 font-weight: 300;
-
                 position: relative;
                 display: block;
                 padding: 15px 25px 15px 45px;
@@ -304,7 +316,6 @@ body.trinity-admin{
                 }
                 &.noaction{
                     color: @sidebar-link-color;
-                    background: #ffffff;
                     i{
                         color: lighten(@sidebar-link-color,10%);
                     }
@@ -317,11 +328,19 @@ body.trinity-admin{
                 }
             }
         }
-        #sidebar-tab2-content{
-            li:hover{
-                min-height: 45px;
+
+
+        //remove animation height from other tab list
+        .sidebar-tab-content:not(#sidebar-tab3-content){
+            ul.tab-list{
+                li{
+                    &:hover{
+                        min-height: @sidebar-row-height;
+                    }
+                }
             }
         }
+
 
         //remove dotted border on focus - moz
         a, span:focus, span::-moz-focus-inner {
@@ -363,7 +382,7 @@ body.trinity-admin{
                     }
 
                     i{
-                        font-weight: 600;
+                        font-weight: 500;
                     }
                 }
 
@@ -459,7 +478,6 @@ body.trinity-admin{
     .sidebar-tabs {
         height: 100%;
     }
-
 }
 
 

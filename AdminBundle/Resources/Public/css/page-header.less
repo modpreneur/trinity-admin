@@ -13,11 +13,8 @@ body.trinity-admin{
         color: @global-font-color;
         position: relative;
 
-
         background: #fff;
-        margin-left: 20px;
-        margin-right: 20px;
-        margin-bottom: 15px;
+        margin: 20px;
         float: none;
         height: auto !important;
         padding-top: 10px;
@@ -130,12 +127,49 @@ body.trinity-admin{
                 }
             }
         }
+
+        .tooltip{
+            .tooltip-bottom{
+                top: 36px;
+                right: -20px;
+                padding: 0;
+                line-height: 30px;
+                font-size: 13px;
+                font-weight: 300;
+                background: rgba(0,0,0,0.7);
+
+                -webkit-transition: all 1s ease;
+                 transition: all 1s ease;
+
+                -webkit-transition-delay: 1s;
+                transition-delay: 1s;
+
+                &:hover{
+                    font-weight: 300;
+                }
+
+                &:before{
+                    right: 10px;
+                    border-color: rgba(0,0,0,0.7) transparent;
+                }
+            }
+            &:nth-of-type(2){
+                .tooltip-bottom{
+                    right: 55px;
+                }
+            }
+            &:nth-of-type(3){
+                .tooltip-bottom{
+                    right: 130px;
+                }
+            }
+        }
     }
 
     .header-loader{
         position: absolute;
         width: 100%;
-        bottom: 0px;
+        bottom: 0;
         left: 0;
 
         .load-bar {
