@@ -58,9 +58,9 @@ body.trinity-admin{
 
             .show-harmonica{
                 background: none;
-                padding: 0px;
+                padding: 0;
                 color: @color-font;
-                max-height: 300px;
+                max-height: 600px;
                 overflow-y: auto;
                 overflow-x: hidden;
 
@@ -86,6 +86,8 @@ body.trinity-admin{
         }
 
         input[id^="harmonica"]:checked + .main-panel{
+            max-height: 650px;
+
             label[for^="harmonica"]{
                 font-weight: 400;
                 background: darken(@global-row-hover, 5%);
