@@ -33,11 +33,12 @@ class SidebarExtension extends \Twig_Extension
          *  array of origin times of each message
          *  array of user who invoked message
          *  int count of new(yet not showed) messages
+         *  array of keys for given message (for removing)
          *
          * count of elements for each sub-array has to be same
          * (Or at least fist array has to be bigger)
          */
-        return [[], [], [], 0];
+        return [[], [], [], 0, []];
     }
 
 

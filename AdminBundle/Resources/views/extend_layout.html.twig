@@ -18,6 +18,7 @@
             {% set users = response[1] %}
             {% set times = response[2] %}
             {% set countNew = response[3] %}
+            {% set message_keys = response[4] %}
 
             {% if countNew != 0 %}
                 <i class="number-info">
@@ -43,7 +44,7 @@
             {% block FlashbagHistory %}
                 {% set count=0 %}
                 <div id="container1">
-                    <ul class="tab-list list-rows">
+                    <ul id=redis-list class="tab-list list-rows">
                         {% for msg in messages %}
                             {% set temp = msg|split(';;') %}
                             {% set type = temp[0] %}
@@ -65,7 +66,8 @@
                                             </span>
                                     </div>
                                     {# @TODO Set for this link function to remove notification #}
-                                    <a href="#">
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                        <input type="hidden" value="{{ message_keys[count]}}"/>
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -81,7 +83,8 @@
                                             </span>
                                     </div>
                                     {# @TODO Set for this link function to remove notification #}
-                                    <a href="#">
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                        <input type="hidden" value="{{ message_keys[count]}}"/>
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -101,7 +104,7 @@
                                                     {{ message }}
                                             </span>
                                     </div>
-                                    <a href="#">
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -116,7 +119,8 @@
                                                 </a>
                                             </span>
                                     </div>
-                                    <a href="#">
+                                    {# @TODO Set for this link function to remove notification #}
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -136,7 +140,8 @@
                                                 {{ message }}
                                             </span>
                                     </div>
-                                    <a href="#">
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                        <input type="hidden" value="{{ message_keys[count]}}"/>
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -151,7 +156,8 @@
                                                 </a>
                                             </span>
                                     </div>
-                                    <a href="#">
+                                    {# @TODO Set for this link function to remove notification #}
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -171,7 +177,8 @@
                                                 {{ message }}
                                             </span>
                                     </div>
-                                    <a href="#">
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                        <input type="hidden" value="{{ message_keys[count]}}"/>
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -186,7 +193,7 @@
                                                 </a>
                                             </span>
                                     </div>
-                                    <a href="#">
+                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
                                         <i class="trinity-close"></i>
                                     </a>
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
