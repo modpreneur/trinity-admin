@@ -268,6 +268,32 @@ body.trinity-admin{
         input.error {
             border: solid 1px red !important;
         }
+
+        /* Just for webkit browsers */
+        input[type="date"]::-webkit-inner-spin-button,
+        input[type="date"]::-webkit-outer-spin-button {
+            height: 100%;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator{
+            position: relative;
+            display: block;
+            width: 14px;
+            height: 30px;
+            right: -6px;
+            color: transparent;
+
+            &:after{
+                content: "\e654";
+                font-family: "tiecons";
+                font-size: 12px;
+                color: @color-tab-label;
+                position: absolute;
+                right: 5px;
+                top: 7px;
+                pointer-events:none;
+            }
+        }
     }
 
     .form-title{
