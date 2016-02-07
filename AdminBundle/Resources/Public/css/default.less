@@ -3,62 +3,19 @@
 body.trinity-admin{
     background: #edecec !important;
 
-
-    .navigation-icons(){
-
-        position: fixed;
-        z-index: 999;
-        border-radius: 40px;
-        width: 50px;
-        height: 50px;
-        background: #22baa0;
-        transition: background @hover-timing ease-in-out;
-        .abs-center();
-        .shadow();
-
-        &:hover{
-            background: #279d88;
-        }
-
-        i, span{
-            color: #fff;
-            font-size: 20px !important;
-            .shadow();
-            background: transparent;
-            .abs-center();
-            box-shadow: none !important;
-        }
-
+    .version{
+        position: absolute;
+        top: 32px;
+        left: 85px;
+        color: #fff;
+        font-size: 8px;
     }
 
-    .new-entry{
-        .navigation-icons();
+    .modal-dialog{
+        background: rgba(255, 255, 255, 0.8);
     }
 
-    .go-up-single{
-        .navigation-icons();
-        background: @color-primary;
 
-        i, span{
-            font-weight: 900;
-        }
-        &:hover{
-            background: @color-primary;
-        }
-    }
-
-    .go-up{
-        .navigation-icons();
-        left: -75px;
-        background: @color-primary;
-
-        i, span{
-            font-weight: 900;
-        }
-        &:hover{
-            background: @color-primary;
-        }
-    }
 
     .reload{
         .navigation-icons();
@@ -72,46 +29,11 @@ body.trinity-admin{
         }
     }
 
-    .version{
-        position: absolute;
-        top: 32px;
-        left: 85px;
-        color: #fff;
-        font-size: 8px;
-    }
-
-    .modal-dialog{
-        background: rgba(255, 255, 255, 0.8);
-    }
-
-    /*.tab-actions{
-        position: absolute;
-        top: 0;
-        right: 0;
-        color: #000000;
-
-        .item{
-            padding: 5px 0 5px 0;
-            font-size: 12px;
-            .box();
-            &:hover{
-                background: #24afc9 !important;
-                a{
-                    color: #fff !important;
-                }
-            }
-            a:visited{
-                color: #7412c9;
-            }
-        }
-    }*/
-
-
-
     //----------------where the hell with this??------------------------------
     .validation-error{
         color: red;
     }
+
     /* --- debug --- */
 
     /* by Fisa */

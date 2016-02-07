@@ -117,6 +117,24 @@
     border-bottom-right-radius:@size;
 }
 
+.navigation-icons() {
+    position: relative;
+    display: inline-block;
+    z-index: 999;
+    border-radius: 40px;
+    width: 50px;
+    height: 50px;
+    transition: background @hover-timing ease-in-out;
+    .shadow();
 
-/** fixes */
+    i, span {
+        color: #fff;
+        font-weight: 900;
+        font-size: 20px;
+        .shadow();
+        .abs-center();
+        background: transparent;
+        box-shadow: none !important;
+    }
+}
 

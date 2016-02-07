@@ -37,43 +37,18 @@ body.trinity-admin{
 
         span, i{
             color: @color-primary;
-            line-height: 40px;
             font-weight: 300;
-
-            font-size: 60px !important;
+            line-height: 40px;
+            font-size: 60px;
         }
 
         i{
-            color: #24afc9;
+            color: @color-tertiary;
             .abs-center();
         }
 
         &:first-child{
             margin-top: 20px;
-        }
-
-        .header-add-button{
-            background: @button-color;
-            display: block;
-            border-radius: 50px;
-            width: 50px;
-            height: 50px;
-            border: 1px solid transparent;
-            transition: background @hover-timing ease-in-out;
-            position: relative;
-            .abs-center();
-
-            i{
-                color: #fff;
-                font-size: 25px !important;
-                margin: 0;
-                padding: 0;
-                .abs-center();
-            }
-
-            &:hover{
-                background: @button-color-hover;
-            }
         }
 
         .breadcrumbs{
@@ -128,42 +103,6 @@ body.trinity-admin{
             }
         }
 
-        .tooltip{
-            .tooltip-bottom{
-                top: 36px;
-                right: -20px;
-                padding: 0;
-                line-height: 30px;
-                font-size: 13px;
-                font-weight: 300;
-                background: rgba(0,0,0,0.7);
-
-                -webkit-transition: all 1s ease;
-                 transition: all 1s ease;
-
-                -webkit-transition-delay: 1s;
-                transition-delay: 1s;
-
-                &:hover{
-                    font-weight: 300;
-                }
-
-                &:before{
-                    right: 10px;
-                    border-color: rgba(0,0,0,0.7) transparent;
-                }
-            }
-            &:nth-of-type(2){
-                .tooltip-bottom{
-                    right: 55px;
-                }
-            }
-            &:nth-of-type(3){
-                .tooltip-bottom{
-                    right: 130px;
-                }
-            }
-        }
     }
 
     .header-loader{

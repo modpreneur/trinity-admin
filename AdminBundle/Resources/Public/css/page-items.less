@@ -5,18 +5,18 @@
 @import "variables";
 @import "helper";
 
-body.trinity-admin{
+body.trinity-admin {
 
-    .box-new-form{
+    .box-new-form {
         position: relative;
 
-        .page-actions{
+        .page-actions {
             margin-top: 0;
             position: absolute;
             top: 0;
             right: 0;
 
-            .item{
+            .item {
                 padding: 5px 25px 5px 25px;
                 font-size: 12px;
                 background-color: @color-tab-label;
@@ -24,17 +24,64 @@ body.trinity-admin{
                 cursor: pointer;
                 font-weight: 300;
 
-                a{
+                a {
                     color: #ffffff;
                 }
 
-                &:hover{
+                &:hover {
                     background: darken(@color-tab-label, 10%) !important;
                 }
             }
         }
+    }
 
+    .navigation-box {
+        height: 100%;
 
+        .tooltip {
+            float: right;
+            margin: 16.5px 20px auto 0;
+            .tooltip-bottom {
+                top: 67px;
+                right: 0;
+                padding: 0;
+                line-height: 30px;
+                font-size: 13px;
+                font-weight: 300;
+                background: rgba(0, 0, 0, 0.7);
+
+                -webkit-transition: all 1s ease;
+                transition: all 1s ease;
+
+                -webkit-transition-delay: 1s;
+                transition-delay: 1s;
+
+                /*                    &:hover{
+                                        font-weight: 300;
+                                    }*/
+
+                &:before {
+                    right: 15px;
+                    border-color: rgba(0, 0, 0, 0.7) transparent;
+                }
+            }
+        }
+
+        .new-entry {
+            .navigation-icons();
+            background: @color-info;
+            &:hover {
+                background: darken(@color-info, 15%);
+            }
+        }
+
+        .go-up {
+            .navigation-icons();
+            background: @color-primary;
+            &:hover {
+                background: darken(@color-primary, 15%);
+            }
+        }
     }
 }
 

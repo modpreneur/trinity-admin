@@ -108,27 +108,29 @@
         <div class="head-content box">
             <div class="row">
 
-                <div class="span-none-padding-small-2 span-none-padding-medium-4 span-none-padding-large-3 span-none-padding-xlarge-3">
+                <div class="span-none-padding-small-2 span-none-padding-medium-4 span-none-padding-large-4 span-none-padding-xlarge-2">
                        <span class="abs-center">
                            {% block pageIcon %} {% endblock %}
                        </span>
                 </div>
 
-                <div class="span-none-padding-small-14 span-none-padding-medium-17 span-none-padding-large-18 span-none-padding-xlarge-19">
+                <div class="span-none-padding-small-14 span-none-padding-medium-14 span-none-padding-large-16 span-none-padding-xlarge-18">
                     <h2 class="content-header">{% block pageTitle %} Dashboard {% endblock %}</h2>
                     <div class="breadcrumbs">
                         {{ wo_render_breadcrumbs() }}
                     </div>
                 </div>
 
-                <div class="span-none-padding-small-2 span-none-padding-medium-3 span-none-padding-large-3 span-none-padding-xlarge-2">
-                       <span class="abs-center">
-                           {% block actions %} {% endblock %}
-                       </span>
+                <div class="span-none-padding-small-4 span-none-padding-medium-6 span-none-padding-large-4 span-none-padding-xlarge-4">
 
-                       <span class="abs-center">
-                           {% block pageAction %} {% endblock %}
-                       </span>
+{#                       <span class="abs-center">
+                           {% block actions %} {% endblock %}
+                       </span>#}
+
+                    <div class="navigation-box row">
+                       {% block pageAction %} {% endblock %}
+                    </div>
+                    <div class="clearfix"></div>
                 </div>
 
                 {% block page_loading %}
