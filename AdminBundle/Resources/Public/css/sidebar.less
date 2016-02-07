@@ -361,7 +361,7 @@ body.trinity-admin{
                     display: block;
                     width: 100%;
                     min-height: @sidebar-row-height;
-                    line-height: @sidebar-row-height;
+                    line-height: @sidebar-row-height + 2px;
                     color: @sidebar-link-color;
                     font-size: @sidebar-font-size;
                     font-weight: normal;
@@ -378,10 +378,6 @@ body.trinity-admin{
                     border-bottom: 1px darken(@sidebar-row-hover-color,10%) solid;
                     border-top: 1px darken(@sidebar-row-hover-color,10%) solid;
                     a, div {
-                        font-weight: 500;
-                    }
-
-                    i{
                         font-weight: 500;
                     }
                 }
