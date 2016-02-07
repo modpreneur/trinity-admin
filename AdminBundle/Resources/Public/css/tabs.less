@@ -116,9 +116,7 @@ body.trinity-admin{
                     }
                 }
             }
-
         }
-
     }
 
     .tabs-wrapper .tab-body-wrapper label{
@@ -467,6 +465,18 @@ body.trinity-admin{
             }
         }
     }
+
+    .reload{
+        .navigation-icons();
+        background: @color-primary;
+
+        i, span{
+            font-weight: 900;
+        }
+        &:hover{
+            background: @color-primary;
+        }
+    }
 }
 
 body.trinity-admin {
@@ -492,12 +502,12 @@ body.trinity-admin {
                 width: 100/5%+0.1;
             }
         }
-        @media screen and(min-width: 1296px) and (max-width: 1335px) {
+        @media screen and(min-width: 1296px) and (max-width: 1460px) {
             label[for^="tab"] {
                 width: 100/6%;
             }
         }
-        @media screen and(min-width: 1336px) {
+        @media screen and(min-width: 1461px) {
             label[for^="tab"] {
                 width: auto;
             }
