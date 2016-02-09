@@ -42,6 +42,11 @@
 
         <div id="sidebar-tab3-content" class="sidebar-tab-content">
             {% block FlashbagHistory %}
+                {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                    {% if "ajax_remove-redis-msg"|routeExists %}
+                        <input type="hidden" id="api-remove-redis-msg" value="{{ path("ajax_remove-redis-msg") }}"/>
+                    {% endif %}
+                {% endif %}
                 {% set count=0 %}
                 <div id="container1">
                     <ul id=redis-list class="tab-list list-rows">
@@ -65,11 +70,12 @@
                                                 {{ message }}
                                             </span>
                                     </div>
-                                    {# @TODO Set for this link function to remove notification #}
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <input type="hidden" value="{{ message_keys[count]}}"/>
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -82,11 +88,12 @@
                                                 </a>
                                             </span>
                                     </div>
-                                    {# @TODO Set for this link function to remove notification #}
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <input type="hidden" value="{{ message_keys[count]}}"/>
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% endif %}
                                 </li>
@@ -104,9 +111,12 @@
                                                     {{ message }}
                                             </span>
                                     </div>
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -119,10 +129,12 @@
                                                 </a>
                                             </span>
                                     </div>
-                                    {# @TODO Set for this link function to remove notification #}
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% endif %}
                                 </li>
@@ -140,10 +152,12 @@
                                                 {{ message }}
                                             </span>
                                     </div>
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <input type="hidden" value="{{ message_keys[count]}}"/>
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -156,10 +170,12 @@
                                                 </a>
                                             </span>
                                     </div>
-                                    {# @TODO Set for this link function to remove notification #}
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% endif %}
                                 </li>
@@ -177,10 +193,12 @@
                                                 {{ message }}
                                             </span>
                                     </div>
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <input type="hidden" value="{{ message_keys[count]}}"/>
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% else %}
                                     {% set tmp= path|split(';') %}
@@ -193,9 +211,12 @@
                                                 </a>
                                             </span>
                                     </div>
-                                    <a id="sidebar_remove_btn_{{ count }}"href="#">
-                                        <i class="trinity-close"></i>
-                                    </a>
+                                    {% if is_granted(ROLE_ADMIN_SIDEBAR_MSG_REMOVE) %}
+                                        <a id="sidebar_remove_btn_{{ count }}"href="#">
+                                            <input type="hidden" value="{{ message_keys[count]}}"/>
+                                            <i class="trinity-close"></i>
+                                        </a>
+                                    {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
                                 {% endif %}
 
