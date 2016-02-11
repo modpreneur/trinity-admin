@@ -5,6 +5,12 @@ namespace Trinity\AdminBundle\Twig;
 
 class SidebarExtension extends \Twig_Extension
 {
+    private $router;
+
+    public function __construct($router) {
+        $this->router = $router;
+    }
+
     /**
      *
      * In master application (as Necktie,Venice,etc)
@@ -17,6 +23,7 @@ class SidebarExtension extends \Twig_Extension
         return array(
             new \Twig_SimpleFilter('getSidebarMsgs', array($this, 'getRedisMsgs')),
             new \Twig_SimpleFilter('json_decode', array($this, 'jsonDecode')),
+            new \Twig_SimpleFilter('routeExists', array($this, 'routeExists'))
         );
     }
 
@@ -39,6 +46,13 @@ class SidebarExtension extends \Twig_Extension
          * (Or at least fist array has to be bigger)
          */
         return [[], [], [], 0, []];
+    }
+
+    function routeExists($name)
+    {
+        // I assume that you have a link to the container in your twig extension class
+
+        return (null === $this->router->getRouteCollection()->get($name)) ? false : true;
     }
 
 
