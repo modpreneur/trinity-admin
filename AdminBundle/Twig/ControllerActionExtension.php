@@ -44,8 +44,8 @@ class ControllerActionExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'get_controller_name' => new \Twig_SimpleFunction($this, 'getControllerName'),
-            'get_action_name' => new \Twig_SimpleFunction($this, 'getActionName'),
+            new \Twig_SimpleFunction('get_controller_name', [$this, 'getControllerName']),
+            new \Twig_SimpleFunction('get_action_name', [$this, 'getActionName']),
         );
     }
 
