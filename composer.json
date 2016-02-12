@@ -15,7 +15,8 @@
     "symfony/framework-bundle": "~2.8 | ~3.0",
     "nette/utils": "~2.3",
     "modpreneur/bowtie"  : "dev-master",
-    "whiteoctober/breadcrumbs-bundle": "~1.2"
+    "whiteoctober/breadcrumbs-bundle": "~1.2",
+    "twig/twig": "~1.0"
   },
 
   "require-dev": {
