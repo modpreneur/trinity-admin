@@ -154,12 +154,24 @@ body.trinity-admin {
             display: none;
         }
 
+        .hide{
+            display: none;
+        }
+        p{
+            font-size: 12px;
+        }
+
         input[type="checkbox"]:checked ~ .help-content {
             display: block;
         }
 
         input[type="checkbox"]:checked ~ .label {
-            display: none;
+            .show{
+                display: none;
+            }
+            .hide{
+                display: block;
+            }
         }
     }
 
