@@ -143,10 +143,59 @@ body.trinity-admin{
                 background: transparent;
             }
         }
+
+        tbody{
+
+            tr{
+                background: #fff;
+                border-bottom: 1px solid #ededed;
+                &:hover{
+                    background: @global-row-hover;
+                }
+
+                td{
+                    a{
+                        color: #4f4f4f;
+                        &:hover{
+                            color: @color-tertiary;
+                        }
+                        &:visited{
+                            color: #551A8B;
+                        }
+                    }
+                }
+            }
+        }
+
+        th:first-child, td:first-child{
+            padding-left: 20px;
+        }
+
     }
     .pagination{
+
         li.previous a{
             margin-left: 8px;
+        }
+        li a{
+            color: #FFFFFF;
+            border-radius: 4px;
+            border: none;
+            background: #cbcbcb;
+            padding: 2px 10px;
+            margin-right: 2px;
+            transition: background 0.4s;
+
+            &:hover{
+                background: @color-tertiary;
+            }
+        }
+
+        li.active a{
+            background: @color-primary;
+            &:hover{
+                background: @color-tertiary;
+            }
         }
     }
 
