@@ -393,12 +393,24 @@ body.trinity-admin{
             display: none !important;
         }
 
+        .add-collection-item{
+            &:hover{
+                color: darken(@color-tertiary,5%);
+            }
+        }
+
         .delete-collection-item{
             .tiecons, .trinity{
                 color: #c22a00;
                 position: absolute;
                 right: -20px;
-                top: 10px
+                top: 10px;
+                transition: all 0.1s;
+                &:hover{
+                    -ms-transform: scale(1.2); /* IE 9 */
+                    -webkit-transform: scale(1.2); /* Safari */
+                    transform: scale(1.2);
+                }
             }
         }
     }
