@@ -1,0 +1,76 @@
+// CORE.less -> core, main file, imports in the correct order
+
+// font-Proxima Nova
+@import "tiecons";
+// default variable set
+@import "variables-default";
+// custom variables
+@import "variables";
+// grid system
+//@import "grid";
+//awesome grid
+@import "awesome-grid";
+// spacing - padding, margin
+@import "spacing";
+// alerts
+@import "alerts";
+// navbar
+@import "navbar";
+// tabs
+//@import "tabs";
+// modals
+@import "modals";
+@import "tabs";
+// menu
+//@import "menu";
+// dropdown
+@import "dropdown";
+// tables
+@import "tables";
+// ios checkbox
+@import "ios-checkbox";
+// circle checkbox 01
+@import "checkbox-01";
+//rating
+@import "rating";
+//filter-01
+@import "filter-checkbox";
+//filter-02
+@import "filter-radio";
+//Before and After widget
+@import "bna-widget";
+// pre code
+@import "pre-code";
+// Tooltip
+@import "tooltip";
+// Tags
+@import "tags";
+// Slider
+@import "slider";
+// Popover
+@import "popover";
+// Images
+@import "images";
+// menu
+@import "awesome-menu";
+// Log In / Register
+@import "login-page";
+// Pagination
+@import "pagination";
+// Forms
+// Widget
+@import "widget-box";
+// Notifications
+@import "notifications";
+// Timeline
+@import "timeline";
+// List - Harmonica
+@import "harmonica";
+
+//@import "administration";
+// borders
+@import "borders";
+// buttons
+@import "buttons";
+// font manipulation
+@import "font";
