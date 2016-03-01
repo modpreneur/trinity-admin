@@ -29,9 +29,11 @@
         </label>
 
         <div id="sidebar-tab1-content" class="sidebar-tab-content">
+            {% cache 'v1/summary' {time: 300} %}
             <div id="sidebar-tab1-body">
                 {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}
             </div>
+            {% endcache %}
         </div>
 
         <div id="sidebar-tab2-content" class="sidebar-tab-content">
@@ -231,12 +233,12 @@
                         {% endfor %}
 
                         {% if count==0 %}
-                        <li class="info noaction">
-                            <i class="tiecons tiecons-info-circle"></i>
-                            <div class="message-group">
-                                <span>You don't have any new notification.</span>
-                            </div>
-                        </li>
+                            <li class="info noaction">
+                                <i class="tiecons tiecons-info-circle"></i>
+                                <div class="message-group">
+                                    <span>You don't have any new notification.</span>
+                                </div>
+                            </li>
                         {% endif %}
                     </ul>
                 </div>
