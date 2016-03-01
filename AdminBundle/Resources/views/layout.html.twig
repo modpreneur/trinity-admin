@@ -29,8 +29,11 @@
         {% endblock %}
 
         {% block bowtie %}
-            {% stylesheets '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css' %}
-            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% stylesheets
+                '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
+                '@TrinityAdminBundle/Resources/Public/css/trinity-font.css'
+            %}
+                <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
             {% endstylesheets %}
         {% endblock %}
 
