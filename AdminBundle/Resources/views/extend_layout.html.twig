@@ -29,11 +29,9 @@
         </label>
 
         <div id="sidebar-tab1-content" class="sidebar-tab-content">
-            {% cache 'v1/summary' {time: 300} %}
             <div id="sidebar-tab1-body">
                 {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}
             </div>
-            {% endcache %}
         </div>
 
         <div id="sidebar-tab2-content" class="sidebar-tab-content">
