@@ -2,17 +2,14 @@
 
 namespace Trinity\AdminBundle\Menu;
 
-use Doctrine\ORM\EntityManager;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\MenuItem;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Trinity\AdminBundle\Event\AdminEvents;
 use Trinity\AdminBundle\Event\MenuEvent;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 
 class MenuBuilder
@@ -23,14 +20,8 @@ class MenuBuilder
     /** @var FactoryInterface */
     private $factory;
 
-    /** @var EntityManager */
-    private $em;
-
     /** @var AuthorizationCheckerInterface  */
     private $authorizationChecker;
-
-    /** @var Breadcrumbs */
-    private $breadcrumbs;
 
     /** @var ItemInterface[] */
     private $navs = [];
@@ -42,23 +33,16 @@ class MenuBuilder
     /**
      * @param EventDispatcherInterface $eventDispatcher
      * @param FactoryInterface $factory
-     * @param EntityManager $em
      * @param AuthorizationCheckerInterface $authorizationChecker
-     * @param Breadcrumbs $breadcrumbs
      */
     public function __construct(
         EventDispatcherInterface $eventDispatcher,
         FactoryInterface $factory,
-        EntityManager $em,
-        AuthorizationCheckerInterface $authorizationChecker,
-        Breadcrumbs $breadcrumbs
+        AuthorizationCheckerInterface $authorizationChecker
     ) {
         $this->eventDispatcher = $eventDispatcher;
         $this->factory = $factory;
-        $this->em = $em;
         $this->authorizationChecker = $authorizationChecker;
-        $this->breadcrumbs = $breadcrumbs;
-
 
         $sidebar_menu = $this->factory->createItem(
             'root',
@@ -114,19 +98,6 @@ class MenuBuilder
         );
 
         $this->orderMenu($menu);
-
-        return $menu;
-    }
-
-
-    /**
-     * @param Request $request
-     *
-     * @return \Knp\Menu\ItemInterface
-     */
-    public function createBreadcrumbsMenu(Request $request)
-    {
-        $menu = $this->factory->createItem('root');
 
         return $menu;
     }

@@ -5,10 +5,7 @@ services:
     arguments:
       - "@event_dispatcher"
       - "@knp_menu.factory"
-      - "@doctrine.orm.entity_manager"
       - "@security.authorization_checker"
-      - "@white_october_breadcrumbs"
-
 
   trinity.admin.service.admin_manager:
     class: Trinity\AdminBundle\Service\AdminManager
