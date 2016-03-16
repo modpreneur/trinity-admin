@@ -7,7 +7,7 @@ services:
       - "@knp_menu.factory"
       - "@doctrine.orm.entity_manager"
       - "@security.authorization_checker"
-      - "@white_october_breadcrumbs",
+      - "@white_october_breadcrumbs"
 
 
   trinity.admin.service.admin_manager:
