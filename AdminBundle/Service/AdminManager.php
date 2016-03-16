@@ -3,10 +3,6 @@
 
 namespace Trinity\AdminBundle\Service;
 
-
-use Symfony\Component\DependencyInjection\ContainerInterface;
-
-
 /**
  * Class AdminManager
  * @package Trinity\AdminBundle\Service
@@ -14,24 +10,30 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class AdminManager
 {
 
-    /** @var  ContainerInterface */
-    protected $container;
+    /** @var  string */
+    private $searchText;
+
+    /** @var  string */
+    private $appVersion;
+
 
     /**
      * AdminManager constructor.
-     * @param ContainerInterface $container
+     * @param string $searchText
+     * @param string $appVersion
      */
-    public function __construct(ContainerInterface $container)
+    public function __construct($searchText, $appVersion)
     {
-        $this->container = $container;
+        $this->searchText = $searchText;
+        $this->appVersion = $appVersion;
     }
 
 
     /**
      * @return string
      */
-    public function getSerchText(){
-        return $this->container->getParameter('trinity.admin.search_text');
+    public function getSearchText(){
+        return $this->searchText;
     }
 
 
@@ -39,6 +41,6 @@ class AdminManager
      * @return string
      */
     public function getAppVersion(){
-        return $this->container->getParameter('trinity.admin.app_version');
+        return $this->appVersion;
     }
 }

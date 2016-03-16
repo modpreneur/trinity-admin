@@ -10,7 +10,8 @@ services:
   trinity.admin.service.admin_manager:
     class: Trinity\AdminBundle\Service\AdminManager
     arguments:
-      - "@service_container"
+      - "%trinity.admin.search_text%"
+      - "%trinity.admin.app_version%"
 
 
   trinity.twig.extension.side_bar:
