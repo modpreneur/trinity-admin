@@ -6,7 +6,7 @@ use Doctrine\ORM\EntityManager;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\MenuItem;
-use Symfony\Component\EventDispatcher\EventDispatcher;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
@@ -17,7 +17,7 @@ use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 class MenuBuilder
 {
-    /** @var EventDispatcher */
+    /** @var EventDispatcherInterface */
     private $eventDispatcher;
 
     /** @var FactoryInterface */
@@ -40,14 +40,14 @@ class MenuBuilder
 
 
     /**
-     * @param EventDispatcher $eventDispatcher
+     * @param EventDispatcherInterface $eventDispatcher
      * @param FactoryInterface $factory
      * @param EntityManager $em
      * @param AuthorizationCheckerInterface $authorizationChecker
      * @param Breadcrumbs $breadcrumbs
      */
     public function __construct(
-        EventDispatcher $eventDispatcher,
+        EventDispatcherInterface $eventDispatcher,
         FactoryInterface $factory,
         EntityManager $em,
         AuthorizationCheckerInterface $authorizationChecker,
