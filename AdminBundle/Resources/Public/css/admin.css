@@ -57,6 +57,9 @@ body {
   box-shadow: 1px 1px 5px #d7d5d5;
   background: #fff;
 }
+.pointer {
+  cursor: pointer;
+}
 body.trinity-admin.navbar-fixed {
   padding-top: 50px !important;
 }
