@@ -2,6 +2,7 @@
 namespace Trinity\AdminBundle\Twig;
 
 use Symfony\Component\HttpFoundation\Request;
+use Twig_Extension_InitRuntimeInterface;
 
 
 /**
@@ -14,10 +15,6 @@ class ControllerActionExtension extends \Twig_Extension
      * @var Request
      */
     protected $request;
-    /**
-     * @var \Twig_Environment
-     */
-    protected $environment;
 
 
     /**
@@ -28,14 +25,6 @@ class ControllerActionExtension extends \Twig_Extension
         $this->request = $request;
     }
 
-
-    /**
-     * @param \Twig_Environment $environment
-     */
-    public function initRuntime(\Twig_Environment $environment)
-    {
-        $this->environment = $environment;
-    }
 
 
     /**
