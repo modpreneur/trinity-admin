@@ -2,35 +2,26 @@
 
 namespace Trinity\AdminBundle\Menu;
 
-use Doctrine\ORM\EntityManager;
 use Knp\Menu\FactoryInterface;
 use Knp\Menu\ItemInterface;
 use Knp\Menu\MenuItem;
-use Symfony\Component\DependencyInjection\ContainerAwareTrait;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Symfony\Component\EventDispatcher\EventDispatcher;
-use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
+use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Trinity\AdminBundle\Event\AdminEvents;
 use Trinity\AdminBundle\Event\MenuEvent;
-use WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs;
 
 
 class MenuBuilder
 {
-    use ContainerAwareTrait;
+    /** @var EventDispatcherInterface */
+    private $eventDispatcher;
 
     /** @var FactoryInterface */
     private $factory;
 
-    /** @var EntityManager */
-    private $em;
-
-    /** @var Breadcrumbs */
-    private $breadcrumbsService;
-
-    /** @var EventDispatcher */
-    private $eventDispatcher;
+    /** @var AuthorizationCheckerInterface  */
+    private $authorizationChecker;
 
     /** @var ItemInterface[] */
     private $navs = [];
@@ -38,29 +29,20 @@ class MenuBuilder
     /** @var MenuEvent */
     private $menuEvent;
 
-    /** @var ContainerInterface */
-    protected $container;
-
 
     /**
-     * @param EventDispatcher $eventDispatcher
+     * @param EventDispatcherInterface $eventDispatcher
      * @param FactoryInterface $factory
-     * @param EntityManager $entityManager
-     * @param \WhiteOctober\BreadcrumbsBundle\Model\Breadcrumbs $breadcrumbs
-     * @param ContainerInterface $container
+     * @param AuthorizationCheckerInterface $authorizationChecker
      */
     public function __construct(
-        $eventDispatcher,
+        EventDispatcherInterface $eventDispatcher,
         FactoryInterface $factory,
-        EntityManager $entityManager,
-        Breadcrumbs $breadcrumbs,
-        ContainerInterface $container
+        AuthorizationCheckerInterface $authorizationChecker
     ) {
-        $this->factory = $factory;
-        $this->em = $entityManager;
-        $this->breadcrumbsService = $breadcrumbs;
         $this->eventDispatcher = $eventDispatcher;
-        $this->container = $container;
+        $this->factory = $factory;
+        $this->authorizationChecker = $authorizationChecker;
 
         $sidebar_menu = $this->factory->createItem(
             'root',
@@ -116,19 +98,6 @@ class MenuBuilder
         );
 
         $this->orderMenu($menu);
-
-        return $menu;
-    }
-
-
-    /**
-     * @param Request $request
-     *
-     * @return \Knp\Menu\ItemInterface
-     */
-    public function createBreadcrumbsMenu(Request $request)
-    {
-        $menu = $this->factory->createItem('root');
 
         return $menu;
     }
@@ -253,7 +222,7 @@ class MenuBuilder
         $roles = $menuItem->getExtra('roles');
         if ($roles != null) {
             foreach ($roles as $role) {
-                if ($this->container->get('security.authorization_checker')->isGranted($role)) {
+                if ($this->authorizationChecker->isGranted($role)) {
                     return true;
                 }
             }
