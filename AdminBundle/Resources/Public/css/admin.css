@@ -2784,6 +2784,14 @@ body.trinity-admin .action-cell .actions a:hover {
   color: #24afc9;
   text-decoration: none;
 }
+body.trinity-admin .edit-grid .edit-input:disabled {
+  border: 1px solid transparent;
+  color: #000000;
+}
+body.trinity-admin .edit-grid .edit-input {
+  border: 1px solid #A9A9A9;
+  padding: 5px;
+}
 :focus {
   outline: none;
 }
