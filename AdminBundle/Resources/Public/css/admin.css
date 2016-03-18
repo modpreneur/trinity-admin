@@ -10,56 +10,6 @@ body {
     - logout
     - etc
 */
-.margin-left-auto {
-  margin-left: auto;
-}
-.margin-right-auto {
-  margin-right: auto;
-}
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.clearfix {
-  display: inline-block;
-}
-* html .clearfix {
-  height: 1%;
-}
-.clearfix {
-  display: block;
-}
-.hidden {
-  display: none !important;
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.abs-center {
-  position: absolute;
-  left: 50%;
-  top: 51%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  transform: translateY(-50%) translateX(-50%);
-}
-.box {
-  -moz-box-shadow: 0 1px 5px #cdcbcc;
-  -webkit-box-shadow: 0 1px 5px #cdcbcc;
-  box-shadow: 0 1px 5px #cdcbcc;
-  -moz-box-shadow: 1px 1px 5px #d7d5d5;
-  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
-  box-shadow: 1px 1px 5px #d7d5d5;
-  background: #fff;
-}
-.pointer {
-  cursor: pointer;
-}
 body.trinity-admin.navbar-fixed {
   padding-top: 50px !important;
 }
@@ -73,7 +23,7 @@ body.trinity-admin .navbar {
   background: #493470;
   min-height: 50px;
   width: 100%;
-  color: #ffffff;
+  color: #fff;
   padding-bottom: 0px !important;
   padding-top: 0px !important;
   overflow-y: hidden;
@@ -102,13 +52,12 @@ body.trinity-admin .navbar .navbar-container {
   margin-right: 20px;
 }
 body.trinity-admin .navbar .navbar-logo {
-  color: #ffffff;
-  font-size: 25px;
   height: 50px;
   position: relative;
   width: 70px;
 }
 body.trinity-admin .navbar .navbar-logo i {
+  margin-left: 10px;
   position: absolute;
   left: 50%;
   top: 51%;
@@ -117,8 +66,12 @@ body.trinity-admin .navbar .navbar-logo i {
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
 }
+body.trinity-admin .navbar .navbar-logo a {
+  font-size: 32px;
+  color: #fff;
+}
 body.trinity-admin .navbar .navbar-actions {
-  color: #ffffff;
+  color: #fff;
   font-size: 20px;
   float: right;
   font-weight: 300;
@@ -618,7 +571,7 @@ body.trinity-admin #sidebar ul.tab-list {
   height: 800px;
 }
 body.trinity-admin #sidebar ul.tab-list.list-rows {
-  background: #fdfdfd;
+  background: #ffffff;
 }
 body.trinity-admin #sidebar ul.tab-list li {
   font-size: 14px;
@@ -626,10 +579,10 @@ body.trinity-admin #sidebar ul.tab-list li {
   position: relative;
   display: block;
   padding: 15px 25px 15px 45px;
-  border-top: 1px solid #e3e3e3;
+  border-top: 1px solid #e8e8e8;
   z-index: 999;
   min-height: 40px;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
   -webkit-transition: min-height 0.7s;
   -moz-transition: min-height 0.7s;
   transition: min-height 0.7s;
@@ -646,7 +599,7 @@ body.trinity-admin #sidebar ul.tab-list li .message-group {
 body.trinity-admin #sidebar ul.tab-list li .message-group span {
   transition: all 0.5s ease;
   line-height: 15px;
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
 }
 body.trinity-admin #sidebar ul.tab-list li i.trinity-close {
   opacity: 0;
@@ -721,7 +674,7 @@ body.trinity-admin #sidebar ul.tab-list li.noaction i {
   color: #666666;
 }
 body.trinity-admin #sidebar ul.tab-list li.danger i {
-  color: #c94041;
+  color: #C94041;
 }
 body.trinity-admin #sidebar .sidebar-tab-content:not(#sidebar-tab3-content) ul.tab-list li:hover {
   min-height: 40px;
@@ -739,8 +692,8 @@ body.trinity-admin #sidebar .sidebar li {
   width: 100%;
   min-height: 40px;
   position: relative;
-  border-bottom: 1px transparent solid;
-  border-top: 1px transparent solid;
+  /*                border-bottom: 1px transparent solid;
+                border-top: 1px transparent solid;*/
   cursor: pointer;
 }
 body.trinity-admin #sidebar .sidebar li a,
@@ -760,8 +713,8 @@ body.trinity-admin #sidebar .sidebar li i {
   font-size: 18px;
 }
 body.trinity-admin #sidebar .sidebar li.active {
-  border-bottom: 1px #d7d7d7 solid;
-  border-top: 1px #d7d7d7 solid;
+  /* border-bottom: 1px darken(@sidebar-row-hover-color,10%) solid;
+                    border-top: 1px darken(@sidebar-row-hover-color,10%) solid;*/
 }
 body.trinity-admin #sidebar .sidebar li.active a,
 body.trinity-admin #sidebar .sidebar li.active div {
@@ -769,21 +722,15 @@ body.trinity-admin #sidebar .sidebar li.active div {
 }
 body.trinity-admin #sidebar .sidebar li.active,
 body.trinity-admin #sidebar .sidebar li:hover {
-  border-bottom: 1px #ebebeb solid;
-  border-top: 1px #ebebeb solid;
+  /*                    border-bottom: 1px #ebebeb solid;
+                    border-top: 1px #ebebeb solid;*/
 }
 body.trinity-admin #sidebar .sidebar li.active a,
 body.trinity-admin #sidebar .sidebar li:hover a,
 body.trinity-admin #sidebar .sidebar li.active div,
 body.trinity-admin #sidebar .sidebar li:hover div {
-  background: #f0f0f0;
+  background: #f5f5f5;
   color: #493470;
-}
-body.trinity-admin #sidebar .sidebar li.active .sidebar-drop .minus,
-body.trinity-admin #sidebar .sidebar li:hover .sidebar-drop .minus,
-body.trinity-admin #sidebar .sidebar li.active .li-dropdown .minus,
-body.trinity-admin #sidebar .sidebar li:hover .li-dropdown .minus {
-  background-color: #f0f0f0;
 }
 body.trinity-admin #sidebar .sidebar .first {
   border-top: 1px #f4f4f4 solid;
@@ -816,7 +763,7 @@ body.trinity-admin #sidebar .sidebar .li-dropdown .minus {
 }
 body.trinity-admin #sidebar .sidebar .sidebar-drop:hover .minus,
 body.trinity-admin #sidebar .sidebar .li-dropdown:hover .minus {
-  background-color: #f0f0f0;
+  background-color: #f5f5f5;
 }
 body.trinity-admin #sidebar .sidebar .drop {
   width: 100%;
@@ -837,17 +784,67 @@ body.trinity-admin #sidebar .sidebar .drop li a i {
 body.trinity-admin #sidebar .sidebar .drop li.active a {
   font-weight: 500;
   color: #000000;
-  background: #f0f0f0;
+  background: #f5f5f5;
 }
 body.trinity-admin #sidebar .sidebar .drop li:hover a {
   color: #000000;
-  background: #f0f0f0;
+  background: #f5f5f5;
 }
 body.trinity-admin #sidebar .sidebar .dropdown-icon {
   pointer-events: none;
 }
 body.trinity-admin .sidebar-tabs {
   height: 100%;
+}
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  -moz-box-shadow: 0 1px 5px #cdcbcc;
+  -webkit-box-shadow: 0 1px 5px #cdcbcc;
+  box-shadow: 0 1px 5px #cdcbcc;
+  -moz-box-shadow: 1px 1px 5px #d7d5d5;
+  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
+  box-shadow: 1px 1px 5px #d7d5d5;
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
 }
 body.trinity-admin {
   background: #edecec !important;
@@ -955,10 +952,10 @@ body.trinity-admin .color-warning {
   color: #ff8939;
 }
 body.trinity-admin .danger {
-  background-color: #c94041;
+  background-color: #C94041;
 }
 body.trinity-admin .color-danger {
-  color: #c94041;
+  color: #C94041;
 }
 body.trinity-admin .primary {
   background-color: #493470;
@@ -1235,123 +1232,153 @@ body.trinity-admin .tabs-wrapper {
 }
 body.trinity-admin .tabs-wrapper #tab15:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab15:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab14:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab14:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab13:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab13:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab12:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab12:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab11:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab11:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab10:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab10:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab9:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab9:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab8:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab8:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab7:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab7:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab6:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab6:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab5:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab5:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab4:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab4:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab3:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab3:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper #tab2:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
 }
+body.trinity-admin .tabs-wrapper #tab2:checked + label:hover:after {
+  display: none;
+}
 body.trinity-admin .tabs-wrapper #tab1:checked + label {
   background: #fff;
-  text-shadow: 1px 1px 3px #807d84;
   border-bottom: 2px solid #493470;
   color: #303030;
   border-top: none;
   top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab1:checked + label:hover:after {
+  display: none;
 }
 body.trinity-admin .tabs-wrapper label[for^="tab"] {
   border: none;
@@ -1360,7 +1387,7 @@ body.trinity-admin .tabs-wrapper label[for^="tab"] {
   color: #7e7e7e;
   counter-increment: tabs;
   padding: 13px 35px 13px 35px;
-  font-weight: 300;
+  font-weight: 400;
   z-index: 3;
   position: relative;
   font-family: "Roboto", sans-serif;
@@ -1368,7 +1395,7 @@ body.trinity-admin .tabs-wrapper label[for^="tab"] {
   text-transform: uppercase;
 }
 body.trinity-admin .tabs-wrapper label[for^="tab"]:hover {
-  color: #303030;
+  color: #24afc9;
 }
 body.trinity-admin .tabs-wrapper label[for^="tab"]:after {
   content: '';
@@ -1377,7 +1404,7 @@ body.trinity-admin .tabs-wrapper label[for^="tab"]:after {
   height: 2px;
   width: 0;
   background: transparent;
-  transition: width 0.5s ease, background-color 0.5s ease;
+  transition: width 0.7s ease, background-color 0.7s ease;
   position: absolute;
   bottom: -2px;
   left: 0;
@@ -1433,7 +1460,7 @@ body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item .open {
 body.trinity-admin .tabs-wrapper .tab-body-wrapper label {
   border: none;
   background: transparent;
-  font-weight: 300;
+  font-weight: 00;
   color: #303030 !important;
   font-size: 14px !important;
 }
@@ -1523,7 +1550,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper labe
   color: #7e7e7e;
   counter-increment: tabs;
   padding: 15px 40px 15px 40px;
-  font-weight: 300;
+  font-weight: 400;
   z-index: 3;
   position: relative;
   font-family: "Roboto", sans-serif;
@@ -1921,6 +1948,25 @@ body.trinity-admin .box-widget .header-h2 {
   font-weight: 300;
   color: #493470;
 }
+/*
+body.trinity-admin:not(#show-widgets-form){
+    -webkit-filter:blur(8px);
+    -moz-filter:blur(8px);
+    -ms-filter:blur(8px);
+    filter:blur(8px);
+    -webkit-perspective:1000;
+    -webkit-backface-visibility:hidden;
+    -webkit-transform-style:preserve-3d;
+    -webkit-transform:translateZ(0);
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+}
+#show-widgets-form{
+    filter:blur(0) !important;
+    -webkit-filter:blur(0) !important;
+}*/
 /**
     Forms for trinity admin.
 */
@@ -2145,12 +2191,12 @@ body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:a
 body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:after,
 body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked + label:after {
   content: "\e929";
-  font-size: 13px;
+  font-size: 11px;
   color: #fff;
   padding-right: 10px;
   font-family: "trinity";
   position: absolute;
-  left: 1px;
+  left: 2px;
 }
 body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:before,
 body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:before,
@@ -2183,12 +2229,12 @@ body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + 
 body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:after,
 body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:after {
   content: "\e929";
-  font-size: 13px;
+  font-size: 11px;
   color: #fff;
   padding-right: 10px;
   font-family: "trinity";
   position: absolute;
-  left: 1px;
+  left: 2px;
 }
 body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + label:before,
 body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:before,
@@ -2436,27 +2482,44 @@ body.trinity-admin .box-new-form .page-actions .item:hover {
 body.trinity-admin .navigation-box {
   height: 100%;
 }
+body.trinity-admin .navigation-box span.tooltip:nth-child(5) {
+  z-index: 25;
+}
+body.trinity-admin .navigation-box span.tooltip:nth-child(4) {
+  z-index: 26;
+}
+body.trinity-admin .navigation-box span.tooltip:nth-child(3) {
+  z-index: 27;
+}
+body.trinity-admin .navigation-box span.tooltip:nth-child(2) {
+  z-index: 28;
+}
+body.trinity-admin .navigation-box span.tooltip:nth-child(1) {
+  z-index: 29;
+}
 body.trinity-admin .navigation-box .tooltip {
   float: right;
   margin: 16.5px 20px auto 0;
 }
-body.trinity-admin .navigation-box .tooltip .tooltip-bottom {
-  top: 67px;
-  right: 0;
+body.trinity-admin .navigation-box .tooltip .tooltip-left {
   padding: 0;
   line-height: 30px;
   font-size: 13px;
   font-weight: 300;
-  background: rgba(0, 0, 0, 0.7);
+  right: 67px;
+  top: 15px;
+  background: #333333;
+  background: rgba(0, 0, 0, 0.95);
   -moz-transform: translateX(-15px);
-  -webkit-transition: all 1s ease;
-  transition: all 1s ease;
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
 }
-body.trinity-admin .navigation-box .tooltip .tooltip-bottom:before {
-  right: 15px;
-  border-color: rgba(0, 0, 0, 0.7) transparent;
+body.trinity-admin .navigation-box .tooltip .tooltip-left:before {
+  top: 7px;
+  left: auto;
+  right: -16px;
+  border-top: 7px solid transparent;
+  border-left: 16px solid #333333;
+  border-left: 16px solid rgba(0, 0, 0, 0.95);
+  border-bottom: 7px solid transparent;
 }
 body.trinity-admin .navigation-box .new-entry {
   position: relative;
@@ -2845,10 +2908,10 @@ body.trinity-admin .edit-grid .edit-input {
   padding: 0px 14px;
 }
 .button-success {
-  box-shadow: 0px -3px 0px 0px #457a1a inset;
+  box-shadow: 0px -3px 0px 0px #457A1A inset;
 }
 .button-info {
-  box-shadow: 0px -3px 0px 0px #2284a1 inset;
+  box-shadow: 0px -3px 0px 0px #2284A1 inset;
 }
 .button-primary {
   background-color: #493470 !important;
@@ -2884,7 +2947,7 @@ body.trinity-admin .edit-grid .edit-input {
   border: none !important;
 }
 .button-danger {
-  background-color: #c94041 !important;
+  background-color: #C94041 !important;
   box-shadow: 0px -3px 0px 0px #932a2a inset;
   border: none !important;
 }
@@ -2956,10 +3019,10 @@ body.trinity-admin .edit-grid .edit-input {
   padding: 0px 14px;
 }
 .trinity-form-loading-success {
-  box-shadow: 0px -3px 0px 0px #457a1a inset;
+  box-shadow: 0px -3px 0px 0px #457A1A inset;
 }
 .trinity-form-loading-info {
-  box-shadow: 0px -3px 0px 0px #2284a1 inset;
+  box-shadow: 0px -3px 0px 0px #2284A1 inset;
 }
 .trinity-form-loading-primary {
   background-color: #493470 !important;
@@ -2995,7 +3058,7 @@ body.trinity-admin .edit-grid .edit-input {
   border: none !important;
 }
 .trinity-form-loading-danger {
-  background-color: #c94041 !important;
+  background-color: #C94041 !important;
   box-shadow: 0px -3px 0px 0px #932a2a inset;
   border: none !important;
 }
