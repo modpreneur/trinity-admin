@@ -38,28 +38,36 @@ body.trinity-admin {
     .navigation-box {
         height: 100%;
 
+        .tooltip-loop (@i) when (@i > 0) {
+            span.tooltip:nth-child(@{i}){
+                z-index: 30-@i;
+            }
+            .tooltip-loop(@i - 1);
+        }
+        .tooltip-loop(5);
+
         .tooltip {
             float: right;
             margin: 16.5px 20px auto 0;
-            .tooltip-bottom {
-                top: 67px;
-                right: 0;
+
+            .tooltip-left{
                 padding: 0;
                 line-height: 30px;
                 font-size: 13px;
                 font-weight: 300;
-                background: rgba(0, 0, 0, 0.7);
-                -moz-transform: translateX(-15px);
-
-                -webkit-transition: all 1s ease;
-                transition: all 1s ease;
-
-                -webkit-transition-delay: 1s;
-                transition-delay: 1s;
-
-                &:before {
-                    right: 15px;
-                    border-color: rgba(0, 0, 0, 0.7) transparent;
+                right: 67px;
+                top: 15px;
+                background: #333333; //fallback
+                background: rgba(0, 0, 0, 0.95);
+                -moz-transform: translateX(-15px);//firefox fix,bad position
+                &:before{
+                    top: 7px;
+                    left: auto;
+                    right: -16px;
+                    border-top: 7px solid transparent;
+                    border-left: 16px solid #333333; //fallback
+                    border-left: 16px solid rgba(0,0,0,0.95);
+                    border-bottom: 7px solid transparent
                 }
             }
         }
