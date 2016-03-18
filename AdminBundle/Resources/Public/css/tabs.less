@@ -23,11 +23,13 @@ body.trinity-admin{
         .tab-loop (@i) when (@i > 0) {
             #tab@{i}:checked + label{
                 background: #fff;
-                text-shadow: 1px 1px 3px rgb(128, 125, 132);
                 border-bottom: 2px solid @color-primary;
                 color: @color-font;
                 border-top: none;
                 top: 0;
+                &:hover:after{
+                    display: none;
+                }
             }
             .tab-loop(@i - 1);
         }
@@ -40,7 +42,7 @@ body.trinity-admin{
             color: @color-tab-label;
             counter-increment: tabs;
             padding: 13px 35px 13px 35px;
-            font-weight: 300;
+            font-weight: 400;
             z-index: 3;
             position: relative;
             font-family: "Roboto", sans-serif;
@@ -48,7 +50,7 @@ body.trinity-admin{
             text-transform: uppercase;
 
             &:hover{
-                color: @color-font;
+                color: @color-tertiary;
             }
 
             &:after{
@@ -58,7 +60,7 @@ body.trinity-admin{
                 height: 2px;
                 width: 0;
                 background: transparent;
-                transition: width .5s ease, background-color .5s ease;
+                transition: width .7s ease, background-color .7s ease;
 
                 position: absolute;
                 bottom: -2px;
@@ -129,7 +131,7 @@ body.trinity-admin{
     .tabs-wrapper .tab-body-wrapper label{
         border: none;
         background: transparent;
-        font-weight: 300;
+        font-weight: 00;
         color: @color-font !important;
         font-size: 14px !important;
     }
@@ -172,8 +174,6 @@ body.trinity-admin{
     }
 
 }
-
-
 
 // content
 body.trinity-admin{
@@ -223,6 +223,7 @@ body.trinity-admin{
                         border-top: 1px solid transparent !important;
                     }
 
+
                     label[for^="tab"]{
                         border: none;
                         border-top: none;
@@ -230,7 +231,7 @@ body.trinity-admin{
                         color: @color-tab-label;
                         counter-increment: tabs;
                         padding: 15px 40px 15px 40px;
-                        font-weight: 300;
+                        font-weight: 400;
                         z-index: 3;
                         position: relative;
                         font-family: "Roboto", sans-serif;
@@ -240,6 +241,8 @@ body.trinity-admin{
                         &:hover{
                             color: @color-font !important;
                         }
+
+
                     }
 
                     .tab-body-wrapper{
