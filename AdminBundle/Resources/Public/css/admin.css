@@ -10,56 +10,6 @@ body {
     - logout
     - etc
 */
-.margin-left-auto {
-  margin-left: auto;
-}
-.margin-right-auto {
-  margin-right: auto;
-}
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.clearfix {
-  display: inline-block;
-}
-* html .clearfix {
-  height: 1%;
-}
-.clearfix {
-  display: block;
-}
-.hidden {
-  display: none !important;
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.abs-center {
-  position: absolute;
-  left: 50%;
-  top: 51%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  transform: translateY(-50%) translateX(-50%);
-}
-.box {
-  -moz-box-shadow: 0 1px 5px #cdcbcc;
-  -webkit-box-shadow: 0 1px 5px #cdcbcc;
-  box-shadow: 0 1px 5px #cdcbcc;
-  -moz-box-shadow: 1px 1px 5px #d7d5d5;
-  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
-  box-shadow: 1px 1px 5px #d7d5d5;
-  background: #fff;
-}
-.pointer {
-  cursor: pointer;
-}
 body.trinity-admin.navbar-fixed {
   padding-top: 50px !important;
 }
@@ -845,6 +795,56 @@ body.trinity-admin #sidebar .sidebar .dropdown-icon {
 }
 body.trinity-admin .sidebar-tabs {
   height: 100%;
+}
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  -moz-box-shadow: 0 1px 5px #cdcbcc;
+  -webkit-box-shadow: 0 1px 5px #cdcbcc;
+  box-shadow: 0 1px 5px #cdcbcc;
+  -moz-box-shadow: 1px 1px 5px #d7d5d5;
+  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
+  box-shadow: 1px 1px 5px #d7d5d5;
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
 }
 body.trinity-admin {
   background: #edecec !important;
@@ -1823,7 +1823,6 @@ body.trinity-admin .tabs-wrapper label[for^="tab"]:last-of-type {
     Primary for dashboard widgets.
 */
 body.trinity-admin .dashboard-widgets {
-  margin-top: 10px;
   margin-right: -10px;
   width: 101%;
 }
