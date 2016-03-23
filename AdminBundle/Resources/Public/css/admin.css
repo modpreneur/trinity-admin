@@ -1824,7 +1824,8 @@ body.trinity-admin .tabs-wrapper label[for^="tab"]:last-of-type {
 */
 body.trinity-admin .dashboard-widgets {
   margin-top: 10px;
-  margin-right: -5px;
+  margin-right: -10px;
+  width: 101%;
 }
 @media screen and (min-width: 1023px) {
   body.trinity-admin .dashboard-widgets div[class^="span"]:nth-child(even) {
