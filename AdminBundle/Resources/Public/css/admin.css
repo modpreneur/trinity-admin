@@ -10,6 +10,52 @@ body {
     - logout
     - etc
 */
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  border: 1px solid;
+  border-color: #e5e6e9 #dddee2 #cccdd1;
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
 body.trinity-admin.navbar-fixed {
   padding-top: 50px !important;
 }
@@ -795,56 +841,6 @@ body.trinity-admin #sidebar .sidebar .dropdown-icon {
 }
 body.trinity-admin .sidebar-tabs {
   height: 100%;
-}
-.margin-left-auto {
-  margin-left: auto;
-}
-.margin-right-auto {
-  margin-right: auto;
-}
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.clearfix {
-  display: inline-block;
-}
-* html .clearfix {
-  height: 1%;
-}
-.clearfix {
-  display: block;
-}
-.hidden {
-  display: none !important;
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.abs-center {
-  position: absolute;
-  left: 50%;
-  top: 51%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  transform: translateY(-50%) translateX(-50%);
-}
-.box {
-  -moz-box-shadow: 0 1px 5px #cdcbcc;
-  -webkit-box-shadow: 0 1px 5px #cdcbcc;
-  box-shadow: 0 1px 5px #cdcbcc;
-  -moz-box-shadow: 1px 1px 5px #d7d5d5;
-  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
-  box-shadow: 1px 1px 5px #d7d5d5;
-  background: #fff;
-}
-.pointer {
-  cursor: pointer;
 }
 body.trinity-admin {
   background: #edecec !important;
@@ -1837,16 +1833,47 @@ body.trinity-admin .dashboard-widgets {
 body.trinity-admin .trinity-widget {
   font-family: 'Roboto', sans-serif;
   height: 430px;
-  overflow: hidden;
   margin-bottom: 20px;
   color: #303030;
-  -moz-box-shadow: 0 1px 5px #cdcbcc;
-  -webkit-box-shadow: 0 1px 5px #cdcbcc;
-  box-shadow: 0 1px 5px #cdcbcc;
-  -moz-box-shadow: 1px 1px 5px #d7d5d5;
-  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
-  box-shadow: 1px 1px 5px #d7d5d5;
+  position: relative;
+  border: 1px solid;
+  border-color: #e5e6e9 #dddee2 #cccdd1;
   background: #fff;
+}
+body.trinity-admin .trinity-widget:hover .widgetResizer,
+body.trinity-admin .trinity-widget:hover .widgetCloser {
+  display: block;
+  opacity: 0.3;
+}
+body.trinity-admin .trinity-widget .widgetResizer,
+body.trinity-admin .trinity-widget .widgetCloser {
+  position: absolute;
+  right: -40px;
+  bottom: -20px;
+  background: #30bcd2;
+  color: #fff;
+  border-radius: 30px;
+  padding: 10px;
+  font-size: 20px;
+  display: none;
+  z-index: 99;
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  -webkit-transition: opacity 0.5s ease-in-out;
+  -moz-transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
+}
+body.trinity-admin .trinity-widget .widgetResizer:hover,
+body.trinity-admin .trinity-widget .widgetCloser:hover {
+  opacity: 1;
+  color: #fff !important;
+}
+body.trinity-admin .trinity-widget .widgetCloser {
+  background: #f37070;
+  bottom: auto;
+  top: -30px;
+  color: #fff;
 }
 body.trinity-admin .trinity-widget .widget-title {
   font-size: 20px;
@@ -1900,7 +1927,7 @@ body.trinity-admin .trinity-widget .data-grid tr td {
 body.trinity-admin .trinity-widget .content-box {
   height: 350px;
   overflow-x: hidden;
-  overflow-y: auto;
+  overflow-y: hidden;
   width: 100%;
   position: relative;
   z-index: 10;
@@ -1936,12 +1963,8 @@ body.trinity-admin .trinity-widget .short-cell {
   overflow-x: auto;
 }
 body.trinity-admin .box-widget {
-  -moz-box-shadow: 0 1px 5px #cdcbcc;
-  -webkit-box-shadow: 0 1px 5px #cdcbcc;
-  box-shadow: 0 1px 5px #cdcbcc;
-  -moz-box-shadow: 1px 1px 5px #d7d5d5;
-  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
-  box-shadow: 1px 1px 5px #d7d5d5;
+  border: 1px solid;
+  border-color: #e5e6e9 #dddee2 #cccdd1;
   background: #fff;
   margin-bottom: 20px;
 }
@@ -1977,6 +2000,11 @@ body.trinity-admin .widget-small-description {
 }
 body.trinity-admin .widget-small-icon {
   color: #ababab;
+}
+body.trinity-admin .handle {
+  cursor: move;
+  height: 50px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 /**
     Forms for trinity admin.
@@ -2618,12 +2646,8 @@ body.trinity-admin .navigation-box .go-up:hover {
 */
 body.trinity-admin .modal-dialog > div {
   background: #fff !important;
-  -moz-box-shadow: 0 1px 5px #cdcbcc;
-  -webkit-box-shadow: 0 1px 5px #cdcbcc;
-  box-shadow: 0 1px 5px #cdcbcc;
-  -moz-box-shadow: 1px 1px 5px #d7d5d5;
-  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
-  box-shadow: 1px 1px 5px #d7d5d5;
+  border: 1px solid;
+  border-color: #e5e6e9 #dddee2 #cccdd1;
   background: #fff;
 }
 body.trinity-admin .modal-dialog header {
@@ -3295,13 +3319,10 @@ body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label
 */
 body.trinity-admin .wrapper-grid,
 body.trinity-admin .box {
-  -moz-box-shadow: 0 1px 5px #cdcbcc;
-  -webkit-box-shadow: 0 1px 5px #cdcbcc;
-  box-shadow: 0 1px 5px #cdcbcc;
-  -moz-box-shadow: 1px 1px 5px #d7d5d5;
-  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
-  box-shadow: 1px 1px 5px #d7d5d5;
+  border: 1px solid;
+  border-color: #e5e6e9 #dddee2 #cccdd1;
   background: #fff;
+  position: relative;
   font-family: "Roboto", sans-serif;
   padding: 10px 0px 00px;
   color: #303030;

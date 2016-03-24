@@ -25,11 +25,51 @@ body.trinity-admin{
     .trinity-widget{
         font-family: 'Roboto', sans-serif;
         height: 430px;
-        overflow: hidden;
         margin-bottom: @widget-space;
         color: @global-font-color;
+        position: relative;
 
         .box();
+
+        &:hover{
+            .widgetResizer, .widgetCloser{
+                display: block;
+                opacity: 0.3;
+            }
+        }
+
+        .widgetResizer, .widgetCloser{
+            position: absolute;
+            right: -40px;
+            bottom: -20px;
+            background: #30bcd2;
+            color: #fff;
+            border-radius: 30px;
+            padding: 10px;
+            font-size: 20px;
+            display: none;
+            z-index: 99;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+
+
+            -webkit-transition: opacity 0.5s ease-in-out;
+            -moz-transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.5s ease-in-out;
+
+            &:hover{
+                opacity: 1;
+                color: #fff !important;
+            }
+        }
+
+        .widgetCloser{
+            background: #f37070;
+            bottom: auto;
+            top: -30px;
+            color: #fff;
+        }
 
         .widget-title{
             font-size: 20px;
@@ -103,7 +143,7 @@ body.trinity-admin{
     .trinity-widget .content-box{
         height: 350px;
         overflow-x: hidden;
-        overflow-y: auto;
+        overflow-y: hidden;
         width: 100%;
 
         position: relative;
@@ -196,5 +236,10 @@ body.trinity-admin{
         color: #ababab;
     }
 
+    .handle{
+        cursor: move;
+        height: 50px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    }
 
 }
