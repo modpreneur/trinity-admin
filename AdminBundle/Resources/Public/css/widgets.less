@@ -9,8 +9,7 @@ body.trinity-admin{
 
     // wrapper
     .dashboard-widgets{
-        margin-right: -10px;
-        width: 101%;
+        width: 102%;
 
         @media screen and (min-width: 1023px) {
             div[class^="span"]:nth-child(even){
@@ -28,6 +27,7 @@ body.trinity-admin{
         margin-bottom: @widget-space;
         color: @global-font-color;
         position: relative;
+        margin-right: 10px;
 
         .box();
 
@@ -40,17 +40,17 @@ body.trinity-admin{
 
         .widgetResizer, .widgetCloser{
             position: absolute;
-            right: -40px;
+            right: -35px;
             bottom: -20px;
             background: #30bcd2;
             color: #fff;
             border-radius: 30px;
             padding: 10px;
-            font-size: 20px;
+            font-size: 15px;
             display: none;
             z-index: 99;
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
             text-align: center;
 
 
@@ -67,7 +67,7 @@ body.trinity-admin{
         .widgetCloser{
             background: #f37070;
             bottom: auto;
-            top: -30px;
+            top: -35px;
             color: #fff;
         }
 

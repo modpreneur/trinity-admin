@@ -1819,8 +1819,7 @@ body.trinity-admin .tabs-wrapper label[for^="tab"]:last-of-type {
     Primary for dashboard widgets.
 */
 body.trinity-admin .dashboard-widgets {
-  margin-right: -10px;
-  width: 101%;
+  width: 102%;
 }
 @media screen and (min-width: 1023px) {
   body.trinity-admin .dashboard-widgets div[class^="span"]:nth-child(even) {
@@ -1836,6 +1835,7 @@ body.trinity-admin .trinity-widget {
   margin-bottom: 20px;
   color: #303030;
   position: relative;
+  margin-right: 10px;
   border: 1px solid;
   border-color: #e5e6e9 #dddee2 #cccdd1;
   background: #fff;
@@ -1848,17 +1848,17 @@ body.trinity-admin .trinity-widget:hover .widgetCloser {
 body.trinity-admin .trinity-widget .widgetResizer,
 body.trinity-admin .trinity-widget .widgetCloser {
   position: absolute;
-  right: -40px;
+  right: -35px;
   bottom: -20px;
   background: #30bcd2;
   color: #fff;
   border-radius: 30px;
   padding: 10px;
-  font-size: 20px;
+  font-size: 15px;
   display: none;
   z-index: 99;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   text-align: center;
   -webkit-transition: opacity 0.5s ease-in-out;
   -moz-transition: opacity 0.5s ease-in-out;
@@ -1872,7 +1872,7 @@ body.trinity-admin .trinity-widget .widgetCloser:hover {
 body.trinity-admin .trinity-widget .widgetCloser {
   background: #f37070;
   bottom: auto;
-  top: -30px;
+  top: -35px;
   color: #fff;
 }
 body.trinity-admin .trinity-widget .widget-title {
