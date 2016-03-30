@@ -3317,11 +3317,110 @@ body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label
 *  |--------------------------|
 *
 */
+body.trinity-admin .box {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  padding: 10px 0px 00px;
+  color: #303030;
+}
+body.trinity-admin .box .header {
+  min-height: 40px;
+  color: #303030;
+  margin-bottom: 20px;
+  margin-top: -10px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  font-weight: 400;
+}
+body.trinity-admin .box a {
+  color: #24afc9;
+}
+body.trinity-admin .box .box-body {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+body.trinity-admin .box .box-body p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+body.trinity-admin .box .box-table-body .grid {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+body.trinity-admin .box .box-harmonica-body .show-harmonica {
+  padding: 20px !important;
+  margin-bottom: 0px;
+  color: #303030;
+}
+body.trinity-admin .box .box-form-body {
+  padding-bottom: 15px;
+}
+body.trinity-admin .box .footer {
+  border-top: 1px solid #b5b5b5;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+body.trinity-admin .box .grid-search {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+body.trinity-admin .box .grid-search .title {
+  color: #2f2f2f;
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: 300;
+}
+body.trinity-admin .box .grid-search form {
+  min-width: 400px;
+}
+body.trinity-admin .box .grid-search form input[type="text"] {
+  border: 1px solid #ccc;
+  height: 34px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  outline: none;
+  font-size: 14px;
+  float: left;
+  transition: border 0.3s ease-in;
+  color: #493470;
+}
+body.trinity-admin .box .grid-search form input[type="text"]:focus {
+  border: 1px solid #493470;
+}
+body.trinity-admin .box .grid-search form input[type="text"]:focus + button {
+  background: #493470;
+  color: #fff;
+  border: 1px solid #493470;
+}
+body.trinity-admin .box .grid-search form button[type="submit"] {
+  background: #ccc;
+  color: #fff;
+  border-radius: 5px;
+  margin-left: -20px;
+  height: 34px;
+  border: 2px solid #ccc;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  float: left;
+  width: 50px;
+  transition: border 0.3s ease-in, background 0.3s ease-in, color 0.3s ease-in;
+}
+body.trinity-admin .box .grid-search form button[type="submit"]:hover {
+  background: #362555;
+  cursor: pointer;
+}
 body.trinity-admin .wrapper-grid,
 body.trinity-admin .box {
-  border: 1px solid;
-  border-color: #e5e6e9 #dddee2 #cccdd1;
-  background: #fff;
   position: relative;
   font-family: "Roboto", sans-serif;
   padding: 10px 0px 00px;
