@@ -1,0 +1,306 @@
+@import "variables";
+@import "helper";
+
+body.trinity-admin {
+
+  .navbar{
+    &:before{
+      z-index: 101;
+      transition: all .2s .5s;
+    }
+  }
+  .navbar-item-label {
+    transition: background @search-time ease-in;
+    display: inline-block;
+    cursor: pointer;
+    color: @color-secondary;
+    float: left;
+    i {
+      padding: 15px;
+    }
+    &:hover {
+      background: @color-primary-hover;
+    }
+  }
+  .navbar-item-input{
+    display: none;
+  }
+
+  .user-profile-info {
+    top: -500px;
+    transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    z-index: 99;
+    display: block;
+    position: fixed;
+    right: 120px;
+
+
+    -webkit-box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+    box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+
+      .user-photo {
+        margin: 15px;
+        position: relative;
+        .trinity {
+          font-size: 50px;
+          border-radius: 50px;
+          padding: 15px;
+          display: inline-block;
+          background: #9efdff;
+          color: @color-primary;
+
+          -webkit-box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+          -moz-box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+          box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+        }
+      }
+    }
+
+  .notifications {
+    top: -500px;
+    transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    z-index: 99;
+    display: block;
+    position: fixed;
+    right: 170px;
+
+    ul.tab-list {
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: 400px;
+
+      &.list-rows {
+        background: lighten(@sidebar-row-hover-color, 5%);
+      }
+
+      li {
+        font-size: @sidebar-font-size;
+        font-weight: 300;
+        position: relative;
+        display: block;
+        padding: 15px 25px 15px 45px;
+        border-top: 1px solid darken(@sidebar-row-hover-color, 5%);
+
+        z-index: 999;
+        min-height: @sidebar-row-height;
+        background-color: @sidebar-row-hover-color;
+
+        -webkit-transition: min-height 0.7s;
+        -moz-transition: min-height 0.7s;
+        transition: min-height 0.7s;
+
+        i {
+          font-size: @sidebar-icon-font-size + 4px;
+          position: absolute;
+          //left: 15px;
+          top: 5px;
+        }
+
+        .message-group {
+          position: relative;
+          span {
+            transition: all 0.5s ease;
+            line-height: 15px;
+            background-color: @sidebar-row-hover-color;
+          }
+        }
+
+        i.trinity-close {
+          opacity: 0;
+          visibility: hidden;
+          transition: opacity 1s linear;
+          -moz-transition: opacity 1s linear;
+          -webkit-transition: opacity 1s linear;
+        }
+
+        .detail-info {
+          height: 0;
+          width: 190px;
+          font-size: 12px;
+          opacity: 0;
+          padding-top: 2px;
+
+          transition: all 1s linear;
+          -moz-transition: all 1s linear;
+          -webkit-transition: all 1s linear;
+        }
+
+        &:hover {
+          min-height: 58px;
+          i.trinity-close {
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            left: auto;
+            padding: 2px 2px 2px 0;
+            font-size: 10px;
+            color: @sidebar-detail-color;
+
+            &:hover {
+              color: @color-tertiary;
+            }
+          }
+
+          .detail-info {
+            position: relative;
+            display: block;
+            height: 13px;
+            opacity: 1;
+            white-space: normal;
+            word-break: normal;
+            color: @color-grey-link;
+          }
+        }
+
+        &.new:before {
+          content: " ";
+          float: left;
+          margin-left: -43px;
+          margin-top: 8px;
+          background: saturate(@color-info, 10%);
+          border-radius: 5px;
+          width: 5px;
+          height: 5px;
+          position: absolute;
+        }
+
+        a {
+          color: @sidebar-link-color;
+        }
+
+        &.info {
+          i {
+            color: @color-info;
+          }
+        }
+
+        &.warning {
+          i {
+            color: @color-warning;
+          }
+        }
+
+        &.success {
+          i {
+            color: @color-success-notification;
+          }
+        }
+        &.noaction {
+          color: @sidebar-link-color;
+          i {
+            color: lighten(@sidebar-link-color, 10%);
+          }
+        }
+
+        &.danger {
+          i {
+            color: @color-danger;
+          }
+        }
+      }
+
+    }
+  }
+
+  .number-info{
+    padding: 0 !important;
+    border-radius: 20px;
+    background: #f0575a;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 900;
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    text-align: center;
+    top: 10px;
+    position: absolute;
+    right: 180px;
+    .shadow();
+  }
+
+  .navbar-popup {
+    width: 300px;
+    background: #fff;
+    border: 1px solid rgba(137, 137, 137, 0.45);
+    border-top: none;
+
+    h1 {
+      display: block;
+      padding: 5px 15px;
+
+      color: @color-primary;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 25px;
+
+      border-bottom: 1px solid #dfdfdf;
+    }
+    ul {
+      li {
+        position: relative;
+        display: block;
+        padding: 10px 10px 10px 40px;
+        border-top: 1px solid darken(@sidebar-row-hover-color, 5%);
+
+        background: #F5F5F5;
+        i {
+          position: absolute;
+          font-size: 20px;
+          padding: 10px;
+          color: #000;
+          left: 0px;
+          top: 0px;
+        }
+      }
+    }
+  }
+
+  #user-profile-input:checked ~ .navbar {
+    &:before {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      right: 138px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 20px solid #fff;
+    }
+    #user-profile--label{
+      color: @color-tertiary;
+    }
+  }
+
+  #user-profile-input:checked ~ .user-profile-info {
+    top: 50px;
+  }
+
+  #notifications-input:checked ~ .navbar {
+    &:before {
+      content: "";
+      color: #F5F5F5;
+      position: absolute;
+      bottom: -8px;
+      right: 188px;
+      width: 0;
+      height: 0;
+      border-left: 8px solid transparent;
+      border-right: 8px solid transparent;
+      border-bottom: 20px solid #fff;
+    }
+    #notifications-label{
+      color: @color-tertiary;
+    }
+  }
+
+  #notifications-input:checked ~ .notifications {
+    top: 50px;
+  }
+
+}
+

@@ -51,7 +51,7 @@ body.trinity-admin{
             100% {  transform: translate(-2px, 0px);  }
         }
 
-        input[name="sidebar-tab"]{
+/*        input[name="sidebar-tab"]{
             display: none;
             margin: 0;
             width: 0;
@@ -93,9 +93,9 @@ body.trinity-admin{
             margin: 0;
             background: #fff;
             top: 0;
-        }
+        }*/
 
-        .sidebar-tab-content(@n, @i : 1) when (@i =< @n){
+/*        .sidebar-tab-content(@n, @i : 1) when (@i =< @n){
             .sidebar-tab-content(@n, (@i + 1));
             #sidebar-tab@{i}-content{
                 display: none;
@@ -122,9 +122,25 @@ body.trinity-admin{
         }
 
         .sidebar-tab(@sidebar-tabs);
-        .sidebar-tab-content(@sidebar-tabs);
+        .sidebar-tab-content(@sidebar-tabs);*/
 
-        .tab-title{
+        #sidebar-tab1-content{
+            display: block;
+            height: 100%;
+            position: relative;
+        }
+
+        #sidebar-tab1-body{
+            width: 100%;
+            height: auto;
+        }
+
+        #sidebar-tab1-content.sidebar-tab-content{
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+/*        .tab-title{
             width: 100%;
             text-align: center;
             font-size: 20px;
@@ -152,9 +168,9 @@ body.trinity-admin{
             .alert-content{
                 width: 87%;
             }
-        }
+        }*/
 
-        .body-text{
+/*        .body-text{
             padding-left: 15px;
             padding-right: 15px;
             padding-top: 5px;
@@ -187,10 +203,10 @@ body.trinity-admin{
                     top: 5px
                 }
             }
-        }
+        }*/
 
 
-        ul.tab-list{
+/*        ul.tab-list{
             overflow-y: auto;
             overflow-x: hidden;
             height: 800px;
@@ -326,10 +342,10 @@ body.trinity-admin{
                     }
                 }
             }
-        }
+        }*/
 
 
-        //remove animation height from other tab list
+/*        //remove animation height from other tab list
         .sidebar-tab-content:not(#sidebar-tab3-content){
             ul.tab-list{
                 li{
@@ -338,7 +354,7 @@ body.trinity-admin{
                     }
                 }
             }
-        }
+        }*/
 
 
         //remove dotted border on focus - moz
@@ -378,6 +394,9 @@ body.trinity-admin{
                     border-top: 1px darken(@sidebar-row-hover-color,10%) solid;*/
                     a, div {
                         font-weight: 500;
+                    }
+                    i{
+                        color: @color-tertiary;
                     }
                 }
 
@@ -464,9 +483,9 @@ body.trinity-admin{
         }
     }
 
-    .sidebar-tabs {
+/*    .sidebar-tabs {
         height: 100%;
-    }
+    }*/
 }
 
 

@@ -230,6 +230,256 @@ body.trinity-admin .fav-navbar .exit {
   right: 10px;
   top: 15px;
 }
+body.trinity-admin .navbar:before {
+  z-index: 101;
+  transition: all .2s .5s;
+}
+body.trinity-admin .navbar-item-label {
+  transition: background 0.3s ease-in;
+  display: inline-block;
+  cursor: pointer;
+  color: #edecec;
+  float: left;
+}
+body.trinity-admin .navbar-item-label i {
+  padding: 15px;
+}
+body.trinity-admin .navbar-item-label:hover {
+  background: #362555;
+}
+body.trinity-admin .navbar-item-input {
+  display: none;
+}
+body.trinity-admin .user-profile-info {
+  top: -500px;
+  transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  z-index: 99;
+  display: block;
+  position: fixed;
+  right: 120px;
+  -webkit-box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+}
+body.trinity-admin .user-profile-info .user-photo {
+  margin: 15px;
+  position: relative;
+}
+body.trinity-admin .user-profile-info .user-photo .trinity {
+  font-size: 50px;
+  border-radius: 50px;
+  padding: 15px;
+  display: inline-block;
+  background: #9efdff;
+  color: #493470;
+  -webkit-box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 2px 10px 0px rgba(0, 0, 0, 0.35);
+}
+body.trinity-admin .notifications {
+  top: -500px;
+  transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+  z-index: 99;
+  display: block;
+  position: fixed;
+  right: 170px;
+}
+body.trinity-admin .notifications ul.tab-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 400px;
+}
+body.trinity-admin .notifications ul.tab-list.list-rows {
+  background: #ffffff;
+}
+body.trinity-admin .notifications ul.tab-list li {
+  font-size: 14px;
+  font-weight: 300;
+  position: relative;
+  display: block;
+  padding: 15px 25px 15px 45px;
+  border-top: 1px solid #e8e8e8;
+  z-index: 999;
+  min-height: 40px;
+  background-color: #f5f5f5;
+  -webkit-transition: min-height 0.7s;
+  -moz-transition: min-height 0.7s;
+  transition: min-height 0.7s;
+}
+body.trinity-admin .notifications ul.tab-list li i {
+  font-size: 22px;
+  position: absolute;
+  top: 5px;
+}
+body.trinity-admin .notifications ul.tab-list li .message-group {
+  position: relative;
+}
+body.trinity-admin .notifications ul.tab-list li .message-group span {
+  transition: all 0.5s ease;
+  line-height: 15px;
+  background-color: #f5f5f5;
+}
+body.trinity-admin .notifications ul.tab-list li i.trinity-close {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+}
+body.trinity-admin .notifications ul.tab-list li .detail-info {
+  height: 0;
+  width: 190px;
+  font-size: 12px;
+  opacity: 0;
+  padding-top: 2px;
+  transition: all 1s linear;
+  -moz-transition: all 1s linear;
+  -webkit-transition: all 1s linear;
+}
+body.trinity-admin .notifications ul.tab-list li:hover {
+  min-height: 58px;
+}
+body.trinity-admin .notifications ul.tab-list li:hover i.trinity-close {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  left: auto;
+  padding: 2px 2px 2px 0;
+  font-size: 10px;
+  color: #838383;
+}
+body.trinity-admin .notifications ul.tab-list li:hover i.trinity-close:hover {
+  color: #24afc9;
+}
+body.trinity-admin .notifications ul.tab-list li:hover .detail-info {
+  position: relative;
+  display: block;
+  height: 13px;
+  opacity: 1;
+  white-space: normal;
+  word-break: normal;
+  color: #8f8f8f;
+}
+body.trinity-admin .notifications ul.tab-list li.new:before {
+  content: " ";
+  float: left;
+  margin-left: -43px;
+  margin-top: 8px;
+  background: #57d6c1;
+  border-radius: 5px;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+}
+body.trinity-admin .notifications ul.tab-list li a {
+  color: #4c4c4c;
+}
+body.trinity-admin .notifications ul.tab-list li.info i {
+  color: #61ccba;
+}
+body.trinity-admin .notifications ul.tab-list li.warning i {
+  color: #ff8939;
+}
+body.trinity-admin .notifications ul.tab-list li.success i {
+  color: #f6e064;
+}
+body.trinity-admin .notifications ul.tab-list li.noaction {
+  color: #4c4c4c;
+}
+body.trinity-admin .notifications ul.tab-list li.noaction i {
+  color: #666666;
+}
+body.trinity-admin .notifications ul.tab-list li.danger i {
+  color: #C94041;
+}
+body.trinity-admin .number-info {
+  padding: 0 !important;
+  border-radius: 20px;
+  background: #f0575a;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+  top: 10px;
+  position: absolute;
+  right: 180px;
+  -moz-box-shadow: 0 1px 5px #cdcbcc;
+  -webkit-box-shadow: 0 1px 5px #cdcbcc;
+  box-shadow: 0 1px 5px #cdcbcc;
+  -moz-box-shadow: 1px 1px 5px #d7d5d5;
+  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
+  box-shadow: 1px 1px 5px #d7d5d5;
+}
+body.trinity-admin .navbar-popup {
+  width: 300px;
+  background: #fff;
+  border: 1px solid rgba(137, 137, 137, 0.45);
+  border-top: none;
+}
+body.trinity-admin .navbar-popup h1 {
+  display: block;
+  padding: 5px 15px;
+  color: #493470;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 25px;
+  border-bottom: 1px solid #dfdfdf;
+}
+body.trinity-admin .navbar-popup ul li {
+  position: relative;
+  display: block;
+  padding: 10px 10px 10px 40px;
+  border-top: 1px solid #e8e8e8;
+  background: #F5F5F5;
+}
+body.trinity-admin .navbar-popup ul li i {
+  position: absolute;
+  font-size: 20px;
+  padding: 10px;
+  color: #000;
+  left: 0px;
+  top: 0px;
+}
+body.trinity-admin #user-profile-input:checked ~ .navbar:before {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  right: 138px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 20px solid #fff;
+}
+body.trinity-admin #user-profile-input:checked ~ .navbar #user-profile--label {
+  color: #24afc9;
+}
+body.trinity-admin #user-profile-input:checked ~ .user-profile-info {
+  top: 50px;
+}
+body.trinity-admin #notifications-input:checked ~ .navbar:before {
+  content: "";
+  color: #F5F5F5;
+  position: absolute;
+  bottom: -8px;
+  right: 188px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 20px solid #fff;
+}
+body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label {
+  color: #24afc9;
+}
+body.trinity-admin #notifications-input:checked ~ .notifications {
+  top: 50px;
+}
 /**
     Box with page name, breadcrumbs, page icon.
 */
@@ -372,6 +622,9 @@ body.trinity-admin .header-loader .bar-end {
 }
 body.trinity-admin {
   /** fix */
+  /*    .sidebar-tabs {
+        height: 100%;
+    }*/
 }
 body.trinity-admin .container-with-sidebar {
   padding-left: 260px !important;
@@ -384,6 +637,287 @@ body.trinity-admin #sidebar {
   height: 100%;
   position: fixed;
   color: #4c4c4c;
+  /*        input[name="sidebar-tab"]{
+            display: none;
+            margin: 0;
+            width: 0;
+            height: 0;
+        }
+
+        label.sidebar-tab-label{
+            display: inline-block;
+            width: @sidebar-width/@sidebar-tabs - 3px;
+            text-align: center;
+            font-size: 25px;
+            color: @sidebar-link-color;
+            padding-top: 10px;
+            height: 50px;
+            margin: 0;
+            cursor: pointer;
+            border-top: none;
+            background: #fff;
+            border-bottom: 2px solid transparent;
+
+            &:after{
+                content: '';
+                //margin-top: 13px;
+                display: block;
+                width: @sidebar-width/@sidebar-tabs;
+                height: 1px;
+                background: #EAEAEA;
+                z-index: -5;
+            }
+            &:last-of-type:after{
+                width: @sidebar-width/@sidebar-tabs - 1px;
+            }
+        }
+
+        input[name="sidebar-tab"]:checked+label{
+            color: @color-primary;
+            cursor: pointer;
+            border-bottom: 2px @color-primary solid;
+            margin: 0;
+            background: #fff;
+            top: 0;
+        }*/
+  /*        .sidebar-tab-content(@n, @i : 1) when (@i =< @n){
+            .sidebar-tab-content(@n, (@i + 1));
+            #sidebar-tab@{i}-content{
+                display: none;
+                height: 100%;
+                position: relative;
+            }
+
+            #sidebar-tab@{i}-body{
+                width: 100%;
+                height: auto;
+            }
+
+            #sidebar-tab1-content.sidebar-tab-content{
+                overflow-y: auto;
+                overflow-x: hidden;
+            }
+        }
+
+        .sidebar-tab(@n, @i : 1) when (@i =< @n){
+            .sidebar-tab(@n, (@i + 1));
+            #sidebar-tab@{i}:checked ~ #sidebar-tab@{i}-content{
+                display: block;
+            }
+        }
+
+        .sidebar-tab(@sidebar-tabs);
+        .sidebar-tab-content(@sidebar-tabs);*/
+  /*        .tab-title{
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            line-height: 30px;
+            font-weight: 400;
+            margin-bottom: 10px;
+            color: @color-primary;
+        }
+
+        h4{
+            padding: 15px;
+            padding-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .alert{
+            border: none;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+
+            .alert-icon{
+                font-size: 20px;
+            }
+
+            .alert-content{
+                width: 87%;
+            }
+        }*/
+  /*        .body-text{
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 5px;
+
+            a{
+                color: @color-tertiary;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+
+            .user-photo{
+                text-align: center;
+                margin-bottom: 15px;
+                position: relative;
+                .trinity{
+                    font-size: 50px;
+                    border: 3px solid #ccc89a;
+                    border-radius: 50px;
+                    padding: 15px;
+                    display: inline-block;
+                    background:  rgb(255, 252, 194);
+                    color: @color-primary;
+                }
+
+                img.red{
+                    position: absolute;
+                    width: 30px;
+                    left: 110px;
+                    top: 5px
+                }
+            }
+        }*/
+  /*        ul.tab-list{
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 800px;
+
+            &.list-rows{
+                background: lighten(@sidebar-row-hover-color,5%);
+            }
+
+            li{
+                font-size: @sidebar-font-size;
+                font-weight: 300;
+                position: relative;
+                display: block;
+                padding: 15px 25px 15px 45px;
+                border-top: 1px solid darken(@sidebar-row-hover-color,5%);
+
+                z-index: 999;
+                min-height: @sidebar-row-height;
+                background-color: @sidebar-row-hover-color;
+
+                -webkit-transition: min-height 0.7s;
+                -moz-transition: min-height 0.7s;
+                transition: min-height 0.7s;
+
+                i{
+                    font-size: @sidebar-icon-font-size + 4px;
+                    position: absolute;
+                    left: 15px;
+                    top: 10px;
+                }
+
+                .message-group{
+                    position: relative;
+                    span{
+                        transition: all 0.5s ease;
+                        line-height: 15px;
+                        background-color: @sidebar-row-hover-color;
+                    }
+                }
+
+                i.trinity-close{
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: opacity 1s linear;
+                    -moz-transition: opacity 1s linear;
+                    -webkit-transition: opacity 1s linear;
+                }
+
+                .detail-info{
+                    height: 0;
+                    width: 190px;
+                    font-size: 12px;
+                    opacity: 0;
+                    padding-top: 2px;
+
+                    transition: all 1s linear;
+                    -moz-transition: all 1s linear;
+                    -webkit-transition: all 1s linear;
+                }
+
+                &:hover{
+                    min-height: 58px;
+                    i.trinity-close{
+                        visibility: visible;
+                        opacity: 1;
+                        position: absolute;
+                        top: 10px;
+                        right: 5px;
+                        left: auto;
+                        padding: 2px 2px 2px 0;
+                        font-size: 10px;
+                        color: @sidebar-detail-color;
+
+                        &:hover{
+                            color: @color-tertiary;
+                        }
+                    }
+
+                    .detail-info{
+                        position: relative;
+                        display: block;
+                        height: 13px;
+                        opacity: 1;
+                        white-space: normal;
+                        word-break: normal;
+                        color: @color-grey-link;
+                    }
+                }
+
+                &.new:before{
+                    content: " ";
+                    float: left;
+                    margin-left: -40px;
+                    margin-top: 5px;
+                    background: saturate(@color-info, 10%);
+                    border-radius: 5px;
+                    width: 5px;
+                    height: 5px;
+                    position: absolute;
+                }
+
+                a{
+                    color: @sidebar-link-color;
+                }
+
+                &.info{
+                    i{
+                        color: @color-info;
+                    }
+                }
+
+                &.warning{
+                    i{
+                        color: @color-warning;
+                    }
+                }
+
+                &.success{
+                    i{
+                        color: @color-success-notification;
+                    }
+                }
+                &.noaction{
+                    color: @sidebar-link-color;
+                    i{
+                        color: lighten(@sidebar-link-color,10%);
+                    }
+                }
+
+                &.danger{
+                    i{
+                        color: @color-danger;
+                    }
+                }
+            }
+        }*/
+  /*        //remove animation height from other tab list
+        .sidebar-tab-content:not(#sidebar-tab3-content){
+            ul.tab-list{
+                li{
+                    &:hover{
+                        min-height: @sidebar-row-height;
+                    }
+                }
+            }
+        }*/
 }
 body.trinity-admin #sidebar input {
   display: none;
@@ -422,82 +956,8 @@ body.trinity-admin #sidebar .number-info {
     transform: translate(-2px, 0px);
   }
 }
-body.trinity-admin #sidebar input[name="sidebar-tab"] {
-  display: none;
-  margin: 0;
-  width: 0;
-  height: 0;
-}
-body.trinity-admin #sidebar label.sidebar-tab-label {
-  display: inline-block;
-  width: 83.66666667px;
-  text-align: center;
-  font-size: 25px;
-  color: #4c4c4c;
-  padding-top: 10px;
-  height: 50px;
-  margin: 0;
-  cursor: pointer;
-  border-top: none;
-  background: #fff;
-  border-bottom: 2px solid transparent;
-}
-body.trinity-admin #sidebar label.sidebar-tab-label:after {
-  content: '';
-  display: block;
-  width: 86.66666667px;
-  height: 1px;
-  background: #EAEAEA;
-  z-index: -5;
-}
-body.trinity-admin #sidebar label.sidebar-tab-label:last-of-type:after {
-  width: 85.66666667px;
-}
-body.trinity-admin #sidebar input[name="sidebar-tab"]:checked + label {
-  color: #493470;
-  cursor: pointer;
-  border-bottom: 2px #493470 solid;
-  margin: 0;
-  background: #fff;
-  top: 0;
-}
-body.trinity-admin #sidebar #sidebar-tab3:checked ~ #sidebar-tab3-content {
-  display: block;
-}
-body.trinity-admin #sidebar #sidebar-tab2:checked ~ #sidebar-tab2-content {
-  display: block;
-}
-body.trinity-admin #sidebar #sidebar-tab1:checked ~ #sidebar-tab1-content {
-  display: block;
-}
-body.trinity-admin #sidebar #sidebar-tab3-content {
-  display: none;
-  height: 100%;
-  position: relative;
-}
-body.trinity-admin #sidebar #sidebar-tab3-body {
-  width: 100%;
-  height: auto;
-}
-body.trinity-admin #sidebar #sidebar-tab1-content.sidebar-tab-content {
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-body.trinity-admin #sidebar #sidebar-tab2-content {
-  display: none;
-  height: 100%;
-  position: relative;
-}
-body.trinity-admin #sidebar #sidebar-tab2-body {
-  width: 100%;
-  height: auto;
-}
-body.trinity-admin #sidebar #sidebar-tab1-content.sidebar-tab-content {
-  overflow-y: auto;
-  overflow-x: hidden;
-}
 body.trinity-admin #sidebar #sidebar-tab1-content {
-  display: none;
+  display: block;
   height: 100%;
   position: relative;
 }
@@ -508,176 +968,6 @@ body.trinity-admin #sidebar #sidebar-tab1-body {
 body.trinity-admin #sidebar #sidebar-tab1-content.sidebar-tab-content {
   overflow-y: auto;
   overflow-x: hidden;
-}
-body.trinity-admin #sidebar .tab-title {
-  width: 100%;
-  text-align: center;
-  font-size: 20px;
-  line-height: 30px;
-  font-weight: 400;
-  margin-bottom: 10px;
-  color: #493470;
-}
-body.trinity-admin #sidebar h4 {
-  padding: 15px;
-  padding-bottom: 5px;
-  font-size: 14px;
-}
-body.trinity-admin #sidebar .alert {
-  border: none;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
-}
-body.trinity-admin #sidebar .alert .alert-icon {
-  font-size: 20px;
-}
-body.trinity-admin #sidebar .alert .alert-content {
-  width: 87%;
-}
-body.trinity-admin #sidebar .body-text {
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 5px;
-}
-body.trinity-admin #sidebar .body-text a {
-  color: #24afc9;
-}
-body.trinity-admin #sidebar .body-text a:hover {
-  text-decoration: underline;
-}
-body.trinity-admin #sidebar .body-text .user-photo {
-  text-align: center;
-  margin-bottom: 15px;
-  position: relative;
-}
-body.trinity-admin #sidebar .body-text .user-photo .trinity {
-  font-size: 50px;
-  border: 3px solid #ccc89a;
-  border-radius: 50px;
-  padding: 15px;
-  display: inline-block;
-  background: #fffcc2;
-  color: #493470;
-}
-body.trinity-admin #sidebar .body-text .user-photo img.red {
-  position: absolute;
-  width: 30px;
-  left: 110px;
-  top: 5px;
-}
-body.trinity-admin #sidebar ul.tab-list {
-  overflow-y: auto;
-  overflow-x: hidden;
-  height: 800px;
-}
-body.trinity-admin #sidebar ul.tab-list.list-rows {
-  background: #ffffff;
-}
-body.trinity-admin #sidebar ul.tab-list li {
-  font-size: 14px;
-  font-weight: 300;
-  position: relative;
-  display: block;
-  padding: 15px 25px 15px 45px;
-  border-top: 1px solid #e8e8e8;
-  z-index: 999;
-  min-height: 40px;
-  background-color: #f5f5f5;
-  -webkit-transition: min-height 0.7s;
-  -moz-transition: min-height 0.7s;
-  transition: min-height 0.7s;
-}
-body.trinity-admin #sidebar ul.tab-list li i {
-  font-size: 22px;
-  position: absolute;
-  left: 15px;
-  top: 10px;
-}
-body.trinity-admin #sidebar ul.tab-list li .message-group {
-  position: relative;
-}
-body.trinity-admin #sidebar ul.tab-list li .message-group span {
-  transition: all 0.5s ease;
-  line-height: 15px;
-  background-color: #f5f5f5;
-}
-body.trinity-admin #sidebar ul.tab-list li i.trinity-close {
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s linear;
-  -moz-transition: opacity 1s linear;
-  -webkit-transition: opacity 1s linear;
-}
-body.trinity-admin #sidebar ul.tab-list li .detail-info {
-  height: 0;
-  width: 190px;
-  font-size: 12px;
-  opacity: 0;
-  padding-top: 2px;
-  transition: all 1s linear;
-  -moz-transition: all 1s linear;
-  -webkit-transition: all 1s linear;
-}
-body.trinity-admin #sidebar ul.tab-list li:hover {
-  min-height: 58px;
-}
-body.trinity-admin #sidebar ul.tab-list li:hover i.trinity-close {
-  visibility: visible;
-  opacity: 1;
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  left: auto;
-  padding: 2px 2px 2px 0;
-  font-size: 10px;
-  color: #838383;
-}
-body.trinity-admin #sidebar ul.tab-list li:hover i.trinity-close:hover {
-  color: #24afc9;
-}
-body.trinity-admin #sidebar ul.tab-list li:hover .detail-info {
-  position: relative;
-  display: block;
-  height: 13px;
-  opacity: 1;
-  white-space: normal;
-  word-break: normal;
-  color: #8f8f8f;
-}
-body.trinity-admin #sidebar ul.tab-list li.new:before {
-  content: " ";
-  float: left;
-  margin-left: -40px;
-  margin-top: 5px;
-  background: #57d6c1;
-  border-radius: 5px;
-  width: 5px;
-  height: 5px;
-  position: absolute;
-}
-body.trinity-admin #sidebar ul.tab-list li a {
-  color: #4c4c4c;
-}
-body.trinity-admin #sidebar ul.tab-list li.info i {
-  color: #61ccba;
-}
-body.trinity-admin #sidebar ul.tab-list li.warning i {
-  color: #ff8939;
-}
-body.trinity-admin #sidebar ul.tab-list li.success i {
-  color: #f6e064;
-}
-body.trinity-admin #sidebar ul.tab-list li.noaction {
-  color: #4c4c4c;
-}
-body.trinity-admin #sidebar ul.tab-list li.noaction i {
-  color: #666666;
-}
-body.trinity-admin #sidebar ul.tab-list li.danger i {
-  color: #C94041;
-}
-body.trinity-admin #sidebar .sidebar-tab-content:not(#sidebar-tab3-content) ul.tab-list li:hover {
-  min-height: 40px;
 }
 body.trinity-admin #sidebar a,
 body.trinity-admin #sidebar span:focus,
@@ -719,6 +1009,9 @@ body.trinity-admin #sidebar .sidebar li.active {
 body.trinity-admin #sidebar .sidebar li.active a,
 body.trinity-admin #sidebar .sidebar li.active div {
   font-weight: 500;
+}
+body.trinity-admin #sidebar .sidebar li.active i {
+  color: #24afc9;
 }
 body.trinity-admin #sidebar .sidebar li.active,
 body.trinity-admin #sidebar .sidebar li:hover {
@@ -792,9 +1085,6 @@ body.trinity-admin #sidebar .sidebar .drop li:hover a {
 }
 body.trinity-admin #sidebar .sidebar .dropdown-icon {
   pointer-events: none;
-}
-body.trinity-admin .sidebar-tabs {
-  height: 100%;
 }
 .margin-left-auto {
   margin-left: auto;

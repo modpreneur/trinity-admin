@@ -48,56 +48,12 @@
 
 <body onresize='q("#sidebar-tab1-content").style.height = q("body").scrollHeight+"px";' class="trinity-admin navbar-fixed controller_{{ get_controller_name() }} action_{{ get_action_name() }}">
 
+
+
 {% block navbar %}
-    <nav class="navbar row">
-        <input class="hidden" type="checkbox" name="fav" id="fav">
 
-        <div class="navbar-container">
-            <div>
-                loading
-            </div>
-            <div class="navbar-logo pull-left">
-                {% block navbar_logo %} <i> Logo zde </i> {% endblock %}
-                <span class="version">{{ admin_manager.getAppVersion() }}</span>
-            </div>
-
-            <div class="pull-right navbar-actions">
-
-                {% block navbar_search %}
-                    <div class="navbar-search navbar-actions-item">
-                        {% block navbar_seach_form_start %}
-                        <form action="{% block search_action %}{% endblock %}" autocomplete="on">
-                            {% endblock %}
-                            <label for="search">
-                                <input  placeholder="Search..." class="navbar-search-input" type="text" name="search" id="search">
-                                <button type="submit">
-                                    <i class="trinity trinity-search"></i>
-                                </button>
-                            </label>
-                            {% block navbar_search_form_end %}
-                        </form>
-                        {% endblock %}
-                    </div>
-                {% endblock %}
-
-                {% block navbar_actions %}
-                {% endblock %}
-
-                {% block navbar_logout %}
-                    <a class="navbar-actions-item size-2" title="Logout me" href="{{ path("fos_user_security_logout") }}">
-                        <div class="navbar-actions-item-center">
-                            <span class="pull-left margin-right-5 font-14">Logout</span>
-                            <i class="trinity trinity-logout"></i>
-                        </div>
-                    </a>
-                {% endblock %}
-            </div>
-
-            {% block fav %}
-            {% endblock %}
-        </div>
-    </nav>
 {% endblock %}
+
 
 {% block element_sidebar %}
     <div id="sidebar">
