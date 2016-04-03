@@ -156,7 +156,7 @@
                             </label>
                             <div class="row">
                                 <div class="show-alert">
-                                    <div class="span-none-padding-mini-2">
+                                    <div class="span-none-padding-mini-4">
                                         <i class="{icon}"></i>
                                     </div>
                                     <div class="span-none-padding-mini-20">
@@ -184,16 +184,18 @@
                                         </label>
                                         <div class="row">
                                             <div class="show-alert">
-                                                <div class="span-none-padding-mini-5">
+                                                <div class="span-none-padding-mini-4">
                                                     {% if type == "success" %}
                                                         <i class="trinity trinity-ok"></i>
-                                                    {% elseif type == "warning" or type == "danger" %}
+                                                    {% elseif type == "warning" %}
                                                         <i class="trinity trinity-warning"></i>
+                                                    {% elseif type == "danger" %}
+                                                        <i class="tiecons tiecons-exclamation-mark-circle"></i>
                                                     {% elseif type == "info" %}
-                                                        <i class="trinity trinity-home"></i>
+                                                        <i class="trinity trinity-info"></i>
                                                     {% endif %}
                                                 </div>
-                                                <div class="span-none-padding-mini-19">
+                                                <div class="span-none-padding-mini-20">
                                                     <p class="margin-left-10">
                                                         {{ message }}
                                                     </p>
