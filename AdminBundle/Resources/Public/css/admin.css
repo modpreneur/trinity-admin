@@ -1876,7 +1876,6 @@ body.trinity-admin .trinity-widget .widgetCloser {
   color: #fff;
   border-radius: 30px;
   font-size: 15px;
-  font-weight: 600;
   display: none;
   z-index: 99;
   width: 30px;
@@ -1894,6 +1893,7 @@ body.trinity-admin .trinity-widget .widgetCloser:hover {
 body.trinity-admin .trinity-widget .widgetResizer i,
 body.trinity-admin .trinity-widget .widgetCloser i {
   position: absolute;
+  font-weight: 600;
   top: 7.5px;
   left: 7.5px;
 }

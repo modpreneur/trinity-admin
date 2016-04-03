@@ -10,24 +10,28 @@ body.trinity-admin{
     // wrapper
     .dashboard-widgets{
         width: 102%;
+        margin-left: -5px;
 
-        @media screen and (min-width: 1023px) {
+    /*  @media screen and (min-width: 1023px) {
             div[class^="span"]:nth-child(even){
                 padding-left: @widget-space / 2;
             }
             div[class^="span"]:nth-child(odd){
                 padding-right: @widget-space / 2;
             }
-        }
+        }*/
     }
 
+    //need to fix margins 25px-left, other 20px between widgets
+    .widget-field{
+        padding-right: 20px;
+    }
     .trinity-widget{
         font-family: 'Roboto', sans-serif;
         height: 430px;
-        margin-bottom: @widget-space;
         color: @global-font-color;
         position: relative;
-        margin-right: 10px;
+        margin: 10px;
 
         .box();
 
@@ -40,19 +44,17 @@ body.trinity-admin{
 
         .widgetResizer, .widgetCloser{
             position: absolute;
-            right: -35px;
-            bottom: -20px;
+            right: -15px;
             background: #30bcd2;
             color: #fff;
             border-radius: 30px;
-            padding: 10px;
+            //padding: 10px;
             font-size: 15px;
             display: none;
             z-index: 99;
-            width: 40px;
-            height: 40px;
+            width: 30px;
+            height: 30px;
             text-align: center;
-
 
             -webkit-transition: opacity 0.5s ease-in-out;
             -moz-transition: opacity 0.5s ease-in-out;
@@ -62,13 +64,21 @@ body.trinity-admin{
                 opacity: 1;
                 color: #fff !important;
             }
+            i{
+                position: absolute;
+                font-weight: 600;
+                top: 7.5px;
+                left: 7.5px;
+            }
         }
 
         .widgetCloser{
-            background: #f37070;
-            bottom: auto;
-            top: -35px;
-            color: #fff;
+            background: red;
+            top: -15px;
+        }
+        .widgetResizer{;
+            background: @color-tertiary;
+            bottom: -15px;
         }
 
         .widget-title{
@@ -88,8 +98,8 @@ body.trinity-admin{
     }
 
     .trinity-widget .close{
-        margin-right: 15px;
-        margin-top:   15px;
+        //margin-right: 15px;
+        //margin-top:   15px;
         display: none;
     }
 
@@ -152,6 +162,9 @@ body.trinity-admin{
         .content{
             width: 100%;
         }
+    }
+    .trinity-widget:first-child .content-box{
+        height: auto;
     }
 
     .trinity-widget a{
