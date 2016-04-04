@@ -519,9 +519,9 @@ body.trinity-admin #notifications-input:checked ~ .navbar:before {
   right: 188px;
   width: 0;
   height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 20px solid #fff;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #fff;
 }
 body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label {
   color: #24afc9;
