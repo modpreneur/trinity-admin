@@ -9,7 +9,7 @@
 
 
     <nav class="navbar row">
-       {# <input class="hidden" type="checkbox" name="fav" id="fav">#}
+        {# <input class="hidden" type="checkbox" name="fav" id="fav">#}
 
         <div class="navbar-container">
             <div>
@@ -43,7 +43,7 @@
                 {% endblock %}
 
                 <label class="navbar-item-label" for="notifications-input" id="notificationsuser-profile--label">
-                    <i class="tiecons tiecons-world"></i>
+                    <i class="trinity trinity-bell"></i>
                     {% set redis= app.user.getId() %}
                     {% set response = redis|getSidebarMsgs %}
                     {% set messages = response[0] %}
@@ -60,7 +60,7 @@
                 </label>
 
                 <label class="navbar-item-label" for="user-profile-input" id="user-profile--label">
-                    <i class="tiecons tiecons-user-negative"></i>
+                    <i class="trinity trinity-user"></i>
                 </label>
 
 
