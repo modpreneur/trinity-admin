@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 
-
+//@todo @TomasJancar Je to k něčemu?
 trait Ajax
 {
     public static $AjaxSuccess = 200;
