@@ -6,13 +6,13 @@
  * Time: 15:35
  */
 
-namespace Trinity\AdminBundle\Form\DateTime;
+namespace Trinity\AdminBundle\Form\DateTimeLocal;
 
 
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 
-class DateTimeType extends \Symfony\Component\Form\Extension\Core\Type\DateTimeType
+class DateTimeLocalType extends \Symfony\Component\Form\Extension\Core\Type\DateTimeType
 {
     /**
      * {@inheritdoc}
