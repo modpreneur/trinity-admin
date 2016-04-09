@@ -255,4 +255,132 @@ body.trinity-admin{
         border-bottom: 1px solid rgba(0, 0, 0, 0.08);
     }
 
+    #show-widgets-form{
+        .row{
+            width: 650px;
+            border: none;
+
+            -webkit-box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 30px -2px rgba(0,0,0,0.75);
+            .row{
+                box-shadow: none;
+            }
+        }
+    }
+    #dashboard{
+        .choice{
+            border: none;
+            &:hover{
+                background: none;
+            }
+            &:first-child{
+                width: 100%;
+                display: inline-block;
+                .form-content-center{
+                    width: 100%;
+                    .form-left{
+                        width: 0;
+                    }
+                    .form-right{
+                        width: 100%;
+                        label{
+                            padding-left: 10px;
+                            border-bottom: 1px solid #e5e5e5;
+                            &:hover{
+                                background: #EFEFEF
+                            }
+                            &:after{
+                                left: 12px;
+                                padding-right: 15px;
+                            }
+
+                        }
+                    }
+                }
+            }
+            &:nth-child(2){
+                width: 0;
+                position: absolute;
+                top: 90px;
+                right: 85px;
+                .form-content-center{
+                    width: 100%;
+                    .form-left{
+                        width: 0;
+                    }
+                    .form-right{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+    #dashboard_widgets{
+        label{
+            color: #747474;
+        }
+        input[type=checkbox]:checked + label{
+            color: #303030;
+        }
+    }
+    #dashboard_expandedWidgets{
+        label{
+            position: static;
+            display: block;
+        }
+        .checkbox{
+            position: relative;
+            display: block;
+            height: 38px;
+            label{
+                position: static;
+                display: block;
+                height: 20px;
+                line-height: 1;
+                font-size:  20px;
+
+                &:before{
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    content: '';
+                    display: block;
+                    width: 38px;
+                    height: 18px;
+                    border: 1px solid #b9b9b9;
+                    padding: 0;
+                }
+                &:after{
+                    position: absolute;
+                    top: 10px;
+                    left: 0;
+                    content: "\e901";
+                    font-family: trinity;
+                    font-size: 13px;
+                    line-height: 20px;
+                    display: block;
+                    width: 16px;
+                    padding-left: 2px;
+                    height: 18px;
+                    border: 1px solid #3f3f3f;
+                    transition: left .4s;
+                }
+            }
+            input[type=checkbox]:checked + label{
+                &:before{
+                    border: 1px solid #3f3f3f;
+                }
+                &:after{
+                    padding: 0;
+                    color: #303030;
+                    left: 20px;
+                    transform: rotate(180deg);
+                    border: none;
+                    border-right: 1px solid #b9b9b9;
+                }
+            }
+        }
+    }
+
 }

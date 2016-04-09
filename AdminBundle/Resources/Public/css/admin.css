@@ -10,52 +10,6 @@ body {
     - logout
     - etc
 */
-.margin-left-auto {
-  margin-left: auto;
-}
-.margin-right-auto {
-  margin-right: auto;
-}
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
-}
-.clearfix {
-  display: inline-block;
-}
-* html .clearfix {
-  height: 1%;
-}
-.clearfix {
-  display: block;
-}
-.hidden {
-  display: none !important;
-}
-.overflow-hidden {
-  overflow: hidden;
-}
-.abs-center {
-  position: absolute;
-  left: 50%;
-  top: 51%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  transform: translateY(-50%) translateX(-50%);
-}
-.box {
-  border: 1px solid;
-  border-color: #e5e6e9 #dddee2 #cccdd1;
-  background: #fff;
-}
-.pointer {
-  cursor: pointer;
-}
 body.trinity-admin.navbar-fixed {
   padding-top: 50px !important;
 }
@@ -69,7 +23,7 @@ body.trinity-admin .navbar {
   background: #493470;
   min-height: 50px;
   width: 100%;
-  color: #ffffff;
+  color: #fff;
   padding-bottom: 0px !important;
   padding-top: 0px !important;
   overflow-y: hidden;
@@ -114,10 +68,10 @@ body.trinity-admin .navbar .navbar-logo i {
 }
 body.trinity-admin .navbar .navbar-logo a {
   font-size: 32px;
-  color: #ffffff;
+  color: #fff;
 }
 body.trinity-admin .navbar .navbar-actions {
-  color: #ffffff;
+  color: #fff;
   font-size: 20px;
   float: right;
   font-weight: 300;
@@ -441,7 +395,7 @@ body.trinity-admin .notifications ul.tab-list li.noaction i {
   color: #666666;
 }
 body.trinity-admin .notifications ul.tab-list li.danger i {
-  color: #c94041;
+  color: #C94041;
 }
 body.trinity-admin .number-info {
   padding: 0 !important;
@@ -1135,6 +1089,52 @@ body.trinity-admin #sidebar .sidebar .drop li:hover a {
 body.trinity-admin #sidebar .sidebar .dropdown-icon {
   pointer-events: none;
 }
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+* html .clearfix {
+  height: 1%;
+}
+.clearfix {
+  display: block;
+}
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  border: 1px solid;
+  border-color: #e5e6e9 #dddee2 #cccdd1;
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
 body.trinity-admin {
   background: #edecec !important;
   /* --- debug --- */
@@ -1241,10 +1241,10 @@ body.trinity-admin .color-warning {
   color: #ff8939;
 }
 body.trinity-admin .danger {
-  background-color: #c94041;
+  background-color: #C94041;
 }
 body.trinity-admin .color-danger {
-  color: #c94041;
+  color: #C94041;
 }
 body.trinity-admin .primary {
   background-color: #493470;
@@ -2330,6 +2330,120 @@ body.trinity-admin .handle {
   height: 50px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
+body.trinity-admin #show-widgets-form .row {
+  width: 650px;
+  border: none;
+  -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.75);
+}
+body.trinity-admin #show-widgets-form .row .row {
+  box-shadow: none;
+}
+body.trinity-admin #dashboard .choice {
+  border: none;
+}
+body.trinity-admin #dashboard .choice:hover {
+  background: none;
+}
+body.trinity-admin #dashboard .choice:first-child {
+  width: 100%;
+  display: inline-block;
+}
+body.trinity-admin #dashboard .choice:first-child .form-content-center {
+  width: 100%;
+}
+body.trinity-admin #dashboard .choice:first-child .form-content-center .form-left {
+  width: 0;
+}
+body.trinity-admin #dashboard .choice:first-child .form-content-center .form-right {
+  width: 100%;
+}
+body.trinity-admin #dashboard .choice:first-child .form-content-center .form-right label {
+  padding-left: 10px;
+  border-bottom: 1px solid #e5e5e5;
+}
+body.trinity-admin #dashboard .choice:first-child .form-content-center .form-right label:hover {
+  background: #EFEFEF;
+}
+body.trinity-admin #dashboard .choice:first-child .form-content-center .form-right label:after {
+  left: 12px;
+  padding-right: 15px;
+}
+body.trinity-admin #dashboard .choice:nth-child(2) {
+  width: 0;
+  position: absolute;
+  top: 90px;
+  right: 85px;
+}
+body.trinity-admin #dashboard .choice:nth-child(2) .form-content-center {
+  width: 100%;
+}
+body.trinity-admin #dashboard .choice:nth-child(2) .form-content-center .form-left {
+  width: 0;
+}
+body.trinity-admin #dashboard .choice:nth-child(2) .form-content-center .form-right {
+  width: 100%;
+}
+body.trinity-admin #dashboard_widgets label {
+  color: #747474;
+}
+body.trinity-admin #dashboard_widgets input[type=checkbox]:checked + label {
+  color: #303030;
+}
+body.trinity-admin #dashboard_expandedWidgets label {
+  position: static;
+  display: block;
+}
+body.trinity-admin #dashboard_expandedWidgets .checkbox {
+  position: relative;
+  display: block;
+  height: 38px;
+}
+body.trinity-admin #dashboard_expandedWidgets .checkbox label {
+  position: static;
+  display: block;
+  height: 20px;
+  line-height: 1;
+  font-size: 20px;
+}
+body.trinity-admin #dashboard_expandedWidgets .checkbox label:before {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: '';
+  display: block;
+  width: 38px;
+  height: 18px;
+  border: 1px solid #b9b9b9;
+  padding: 0;
+}
+body.trinity-admin #dashboard_expandedWidgets .checkbox label:after {
+  position: absolute;
+  top: 10px;
+  left: 0;
+  content: "\e901";
+  font-family: trinity;
+  font-size: 13px;
+  line-height: 20px;
+  display: block;
+  width: 16px;
+  padding-left: 2px;
+  height: 18px;
+  border: 1px solid #3f3f3f;
+  transition: left .4s;
+}
+body.trinity-admin #dashboard_expandedWidgets .checkbox input[type=checkbox]:checked + label:before {
+  border: 1px solid #3f3f3f;
+}
+body.trinity-admin #dashboard_expandedWidgets .checkbox input[type=checkbox]:checked + label:after {
+  padding: 0;
+  color: #303030;
+  left: 20px;
+  transform: rotate(180deg);
+  border: none;
+  border-right: 1px solid #b9b9b9;
+}
 /**
     Forms for trinity admin.
 */
@@ -2845,19 +2959,19 @@ body.trinity-admin .box-new-form .page-actions .item:hover {
 body.trinity-admin .navigation-box {
   height: 100%;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child( 5) {
+body.trinity-admin .navigation-box span.tooltip:nth-child(5) {
   z-index: 25;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child( 4) {
+body.trinity-admin .navigation-box span.tooltip:nth-child(4) {
   z-index: 26;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child( 3) {
+body.trinity-admin .navigation-box span.tooltip:nth-child(3) {
   z-index: 27;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child( 2) {
+body.trinity-admin .navigation-box span.tooltip:nth-child(2) {
   z-index: 28;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child( 1) {
+body.trinity-admin .navigation-box span.tooltip:nth-child(1) {
   z-index: 29;
 }
 body.trinity-admin .navigation-box .tooltip {
@@ -3267,10 +3381,10 @@ body.trinity-admin .edit-grid .edit-input {
   padding: 0px 14px;
 }
 .button-success {
-  box-shadow: 0px -3px 0px 0px #457a1a inset;
+  box-shadow: 0px -3px 0px 0px #457A1A inset;
 }
 .button-info {
-  box-shadow: 0px -3px 0px 0px #2284a1 inset;
+  box-shadow: 0px -3px 0px 0px #2284A1 inset;
 }
 .button-primary {
   background-color: #493470 !important;
@@ -3306,7 +3420,7 @@ body.trinity-admin .edit-grid .edit-input {
   border: none !important;
 }
 .button-danger {
-  background-color: #c94041 !important;
+  background-color: #C94041 !important;
   box-shadow: 0px -3px 0px 0px #932a2a inset;
   border: none !important;
 }
@@ -3378,10 +3492,10 @@ body.trinity-admin .edit-grid .edit-input {
   padding: 0px 14px;
 }
 .trinity-form-loading-success {
-  box-shadow: 0px -3px 0px 0px #457a1a inset;
+  box-shadow: 0px -3px 0px 0px #457A1A inset;
 }
 .trinity-form-loading-info {
-  box-shadow: 0px -3px 0px 0px #2284a1 inset;
+  box-shadow: 0px -3px 0px 0px #2284A1 inset;
 }
 .trinity-form-loading-primary {
   background-color: #493470 !important;
@@ -3417,7 +3531,7 @@ body.trinity-admin .edit-grid .edit-input {
   border: none !important;
 }
 .trinity-form-loading-danger {
-  background-color: #c94041 !important;
+  background-color: #C94041 !important;
   box-shadow: 0px -3px 0px 0px #932a2a inset;
   border: none !important;
 }
