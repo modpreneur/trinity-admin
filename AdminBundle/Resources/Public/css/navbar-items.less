@@ -16,10 +16,15 @@ body.trinity-admin {
     color: @color-secondary;
     float: left;
     i {
+      color: @color-navbar-icon;
       padding: 15px;
+      transition: .4s;
     }
     &:hover {
       background: @color-primary-hover;
+      i{
+        color: @color-tertiary;
+      }
     }
   }
   .navbar-item-input{
@@ -222,6 +227,22 @@ body.trinity-admin {
     .shadow();
   }
 
+  /*.dropdown {
+    top: -300px;
+    transition: top 1s cubic-bezier(0.17, 0.04, 0.03, 0.94);
+    z-index: 99;
+    display: block;
+    position: fixed;
+    right: 20px;
+
+    -webkit-box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+    -moz-box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+    box-shadow: -1px 2px 10px 0px rgba(0,0,0,0.35);
+    .navbar-popup{
+      width: 100px;
+    }
+  }*/
+
   .navbar-popup {
     width: 400px;
     background: #fff;
@@ -271,8 +292,8 @@ body.trinity-admin {
       border-right: 10px solid transparent;
       border-bottom: 15px solid #fff;
     }
-    #user-profile--label{
-      color: @color-tertiary;
+    #user-profile-label i{
+      color: @color-secondary;
     }
   }
 
@@ -293,14 +314,63 @@ body.trinity-admin {
       border-right: 10px solid transparent;
       border-bottom: 15px solid #fff;
     }
-    #notifications-label{
-      color: @color-tertiary;
+    #notifications-label i{
+      color: @color-secondary;
     }
   }
 
   #notifications-input:checked ~ .notifications {
     top: 50px;
   }
+
+  /*
+  #dropdown-input:checked ~ .navbar {
+    &:before {
+      content: "";
+      color: #F5F5F5;
+      position: absolute;
+      bottom: -8px;
+      right: 35px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 15px solid #fff;
+    }
+    #dropdown-label i{
+      color: @color-secondary;
+    }
+    .navbar-actions-item{
+      float: left;
+      min-width:  @navbar-height;
+      height: @navbar-height;
+      text-align: center;
+      line-height: @navbar-height;
+      color: #fff;
+      margin: 0 0 0 1px;
+
+      &.size-2{
+        width: 2*@navbar-height;
+      }
+
+      &:hover{
+        background: @color-primary-hover;
+      }
+
+      .navbar-actions-item-center{
+        display: inline-block;
+      }
+
+      .link{
+        cursor: pointer !important;
+      }
+    }
+  }
+
+  #dropdown-input:checked ~ .dropdown {
+    top: 50px;
+  }
+  */
 
 }
 

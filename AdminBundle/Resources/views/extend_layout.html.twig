@@ -1,46 +1,97 @@
 {% extends "TrinityAdminBundle::layout.html.twig" %}
 
-{% block sidebar %}
+{% block navbar %}
 
-    <div class="sidebar-tabs">
-        <input name="sidebar-tab" type="radio" id="sidebar-tab1" checked>
-       {# <label class="sidebar-tab-label" for="sidebar-tab1"><i class="trinity trinity-folder"></i></label>#}
+    <input name="user-profile" type="checkbox" id="user-profile-input" class="navbar-item-input">
+    <input name="notifications" type="checkbox" id="notifications-input" class="navbar-item-input">
+{#    <input name="dropdown" type="checkbox" id="dropdown-input" class="navbar-item-input">#}
 
-        {#<input name="sidebar-tab" type="radio" id="sidebar-tab2">
-        <label class="sidebar-tab-label" for="sidebar-tab2"><i class="trinity trinity-user"></i></label>
+    <nav class="navbar row">
 
-        <input name="sidebar-tab" type="radio" id="sidebar-tab3">
-        <label class="sidebar-tab-label" for="sidebar-tab3">
-            <i class="trinity trinity-bell"></i>
-            {% set redis= app.user.getId() %}
-            {% set response = redis|getSidebarMsgs %}
-            {% set messages = response[0] %}
-            {% set users = response[1] %}
-            {% set times = response[2] %}
-            {% set countNew = response[3] %}
-            {% set message_keys = response[4] %}
-
-            {% if countNew != 0 %}
-                <i class="number-info">
-
-                    {{ countNew }}
-                </i>
-            {% endif %}
-        </label>#}
-
-        <div id="sidebar-tab1-content" class="sidebar-tab-content">
-            <div id="sidebar-tab1-body">
-                {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}
+        <div class="navbar-container">
+            <div>
+                loading
             </div>
+            <div class="navbar-logo pull-left">
+                {% block navbar_logo %} <i> Logo zde </i> {% endblock %}
+                <span class="version">{{ admin_manager.getAppVersion() }}</span>
+            </div>
+
+            <div class="pull-right navbar-actions">
+
+                {% block navbar_search %}
+                    <div class="navbar-search navbar-actions-item">
+                        {% block navbar_seach_form_start %}
+                        <form action="{% block search_action %}{% endblock %}" autocomplete="on">
+                            {% endblock %}
+                            <label for="search">
+                                <input  placeholder="Search..." class="navbar-search-input" type="text" name="search" id="search">
+                                <button type="submit">
+                                    <i class="trinity trinity-search"></i>
+                                </button>
+                            </label>
+                            {% block navbar_search_form_end %}
+                        </form>
+                        {% endblock %}
+                    </div>
+                {% endblock %}
+
+                {% block navbar_actions %}
+                {% endblock %}
+
+                <label class="navbar-item-label" for="notifications-input" id="notifications-label">
+                    <i class="trinity trinity-bell"></i>
+                    {% set redis= app.user.getId() %}
+                    {% set response = redis|getSidebarMsgs %}
+                    {% set messages = response[0] %}
+                    {% set users = response[1] %}
+                    {% set times = response[2] %}
+                    {% set countNew = response[3] %}
+                    {% set message_keys = response[4] %}
+
+                    {% if countNew != 0 %}
+                        <i class="number-info">
+                            {{ countNew }}
+                        </i>
+                    {% endif %}
+                </label>
+
+                <label class="navbar-item-label" for="user-profile-input" id="user-profile-label">
+                    <i class="trinity trinity-user"></i>
+                </label>
+
+{#                <label class="navbar-item-label" for="dropdown-input" id="dropdown-label">
+                    <i class="trinity trinity-select-down"></i>
+                </label>#}
+
+                {% block navbar_logout %}
+                    <a class="navbar-actions-item size-2" title="Logout me" href="{{ path("fos_user_security_logout") }}">
+                        <div class="navbar-actions-item-center">
+                            <span class="pull-left margin-right-5 font-14">Logout</span>
+                            <i class="trinity trinity-logout"></i>
+                        </div>
+                    </a>
+                {% endblock %}
+
+            </div>
+
         </div>
-{#
-        <div id="sidebar-tab2-content" class="sidebar-tab-content">
+    </nav>
+
+
+    {# Navbar popups - profile, notifications #}
+
+    <div class="user-profile-info">
+        <div class="navbar-popup">
+            <h1 class="headline">User profile</h1>
             {% block sidebar_user %}
-
             {% endblock %}
-        </div>#}
+        </div>
+    </div>
 
-        {#<div id="sidebar-tab3-content" class="sidebar-tab-content">
+    <div class="notifications">
+        <div class="navbar-popup">
+            <h1 class="headline">Notifications</h1>
             {% block FlashbagHistory %}
                 {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                     {% if "ajax_remove-redis-msg"|routeExists %}
@@ -66,9 +117,9 @@
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <div class="message-group">
-                                        <span>
-                                            {{ message }}
-                                        </span>
+                                                <span>
+                                                    {{ message }}
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -82,11 +133,11 @@
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
                                     <div class="message-group">
-                                        <span>
-                                            <a href="{{ path(route, params) }}">
-                                                {{ message }}
-                                            </a>
-                                        </span>
+                                                <span>
+                                                    <a href="{{ path(route, params) }}">
+                                                        {{ message }}
+                                                    </a>
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -107,9 +158,9 @@
                                 <i class="tiecons tiecons-exclamation-mark-circle"></i>
                                 {% if path == ";" %}
                                     <div class="message-group">
-                                        <span>
-                                            {{ message }}
-                                        </span>
+                                                <span>
+                                                    {{ message }}
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -123,11 +174,11 @@
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
                                     <div class="message-group">
-                                        <span>
-                                            <a href="{{ path(route, params) }}">
-                                                {{ message }}
-                                            </a>
-                                        </span>
+                                                <span>
+                                                    <a href="{{ path(route, params) }}">
+                                                        {{ message }}
+                                                    </a>
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -148,9 +199,9 @@
                                 <i class="tiecons tiecons-exclamation-mark-triangle"></i>
                                 {% if path == ";" %}
                                     <div class="message-group">
-                                        <span>
-                                            {{ message }}
-                                        </span>
+                                                <span>
+                                                    {{ message }}
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -164,11 +215,11 @@
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
                                     <div class="message-group">
-                                        <span>
-                                            <a href="{{ path(route, params) }}">
-                                                {{ message }}
-                                            </a>
-                                        </span>
+                                                <span>
+                                                    <a href="{{ path(route, params) }}">
+                                                        {{ message }}
+                                                    </a>
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -189,9 +240,9 @@
                                 <i class="tiecons tiecons-info-circle"></i>
                                 {% if path == ";" %}
                                     <div class="message-group">
-                                        <span>
-                                            {{ message }}
-                                        </span>
+                                                <span>
+                                                    {{ message }}
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -205,11 +256,11 @@
                                     {% set route = tmp[0] %}
                                     {% set params = tmp[1]|json_decode %}
                                     <div class="message-group">
-                                        <span>
-                                            <a href="{{ path(route, params) }}">
-                                                {{ message }}
-                                            </a>
-                                        </span>
+                                                <span>
+                                                    <a href="{{ path(route, params) }}">
+                                                        {{ message }}
+                                                    </a>
+                                                </span>
                                     </div>
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}"href="#">
@@ -241,8 +292,35 @@
                     </ul>
                 </div>
             {% endblock %}
-        </div>#}
+        </div>
+    </div>
+
+   {# <div class="dropdown">
+        <div class="navbar-popup">
+            #}{#<h1 class="headline">User profile</h1>#}{#
+            {% block navbar_logout %}
+                <a class="navbar-actions-item size-2" title="Logout me" href="{{ path("fos_user_security_logout") }}">
+                    <div class="navbar-actions-item-center">
+                        <span class="pull-left margin-right-5 font-14">Logout</span>
+                        <i class="trinity trinity-logout"></i>
+                    </div>
+                </a>
+            {% endblock %}
+        </div>
+    </div>#}
+
+{% endblock %}
+
+{% block sidebar %}
+
+    <div class="sidebar-tabs">
+
+        <div id="sidebar-tab1-content" class="sidebar-tab-content">
+            <div id="sidebar-tab1-body">
+                {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}
+            </div>
+        </div>
+
     </div>
 
 {% endblock %}
-{# sidebar #}
