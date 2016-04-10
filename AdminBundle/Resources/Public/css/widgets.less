@@ -9,29 +9,45 @@ body.trinity-admin{
 
     // wrapper
     .dashboard-widgets{
-        width: 102%;
-        margin-left: -5px;
+        width: 100.5%;
 
-    /*  @media screen and (min-width: 1023px) {
-            div[class^="span"]:nth-child(even){
-                padding-left: @widget-space / 2;
-            }
-            div[class^="span"]:nth-child(odd){
-                padding-right: @widget-space / 2;
-            }
-        }*/
+        .small-widgets{
+            margin-bottom: 20px;
+        }
+
     }
+
 
     //need to fix margins 25px-left, other 20px between widgets
     .widget-field{
-        padding-right: 20px;
+
+        & > div{
+            //padding-left: 10px;
+        }
+
+        &:first-child{
+            & > div{
+                padding-right: 0px;
+                padding-left: 0px;
+            }
+        }
+
     }
+
     .trinity-widget{
         font-family: 'Roboto', sans-serif;
         height: 430px;
         color: @global-font-color;
         position: relative;
-        margin: 10px;
+        margin: 0px 10px 20px;
+
+        &:first-child{
+            margin-left: 0px !important;
+        }
+
+        &:last-child{
+            margin-right: 5px !important;
+        }
 
         .box();
 
