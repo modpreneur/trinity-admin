@@ -1923,6 +1923,10 @@ body.trinity-admin .dashboard-widgets {
 body.trinity-admin .dashboard-widgets .small-widgets {
   margin-bottom: 20px;
 }
+body.trinity-admin .dashboard-widgets .small-widgets .small-widget > div {
+  padding-left: 10px;
+  padding-right: 0px;
+}
 body.trinity-admin .widget-field:first-child > div {
   padding-right: 10px;
   padding-left: 0px !important;
