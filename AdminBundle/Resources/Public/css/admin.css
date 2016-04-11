@@ -1945,7 +1945,7 @@ body.trinity-admin .trinity-widget:first-child {
   margin-left: 0px !important;
 }
 body.trinity-admin .trinity-widget:last-child {
-  margin-right: 5px !important;
+  margin-right: 0px !important;
 }
 body.trinity-admin .trinity-widget:hover .widgetResizer,
 body.trinity-admin .trinity-widget:hover .widgetCloser {
