@@ -1935,6 +1935,9 @@ body.trinity-admin .widget-field:last-child > div {
   padding-right: 0px !important;
   padding-left: 10px;
 }
+body.trinity-admin .widget-field.w-12:first-child > div {
+  padding-right: 10px !important;
+}
 body.trinity-admin .trinity-widget {
   font-family: 'Roboto', sans-serif;
   height: 430px;
