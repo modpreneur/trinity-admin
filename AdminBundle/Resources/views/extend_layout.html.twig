@@ -97,8 +97,8 @@
             <h1 class="headline">Notifications</h1>
             {% block FlashbagHistory %}
                 {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
-                    {% if "ajax_remove-redis-msg"|routeExists %}
-                        <input type="hidden" id="api-remove-redis-msg" value="{{ path("ajax_remove-redis-msg") }}"/>
+                    {% if "admin_api_remove-redis-msg"|routeExists %}
+                        <input type="hidden" id="api-remove-redis-msg" value="{{ path("admin_api_remove-redis-msg") }}"/>
                     {% endif %}
                 {% endif %}
                 {% set count=0 %}
