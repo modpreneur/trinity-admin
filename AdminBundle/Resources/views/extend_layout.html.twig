@@ -6,23 +6,6 @@
     <input name="lol" type="radio" id="notifications-input" class="navbar-item-input">
 {#    <input name="dropdown" type="checkbox" id="dropdown-input" class="navbar-item-input">#}
 
-    <script type="text/javascript">
-        var allRadios = document.getElementsByName('lol');
-        var booRadio;
-        var x = 0;
-        for(x = 0; x < allRadios.length; x++){
-
-            allRadios[x].onclick = function() {
-                if(booRadio == this){
-                    this.checked = false;
-                    booRadio = null;
-                }else{
-                    booRadio = this;
-                }
-            };
-        }
-    </script>
-
 
     <nav class="navbar row">
 
