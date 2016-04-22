@@ -10,6 +10,7 @@ body.trinity-admin {
     }
   }
   .navbar-item-label {
+    position: relative;
     transition: background @search-time ease-in;
     display: inline-block;
     cursor: pointer;
@@ -285,7 +286,7 @@ body.trinity-admin {
       content: "";
       position: absolute;
       bottom: -8px;
-      right: 138px;
+      right: 136px;
       width: 0;
       height: 0;
       border-left: 10px solid transparent;
@@ -307,7 +308,7 @@ body.trinity-admin {
       color: #F5F5F5;
       position: absolute;
       bottom: -8px;
-      right: 188px;
+      right: 186px;
       width: 0;
       height: 0;
       border-left: 10px solid transparent;
@@ -321,6 +322,20 @@ body.trinity-admin {
 
   #notifications-input:checked ~ .notifications {
     top: 50px;
+  }
+
+  //#headline-on-scroll
+  #header-for-nonvisible{
+    position: fixed;
+    height: 50px;
+    width: 100%;
+
+    font-size: 20px;
+    line-height: 50px;
+    /* color: green; */
+    display: block;
+    text-align: center;
+    /* margin: 0 auto; */
   }
 
   /*
