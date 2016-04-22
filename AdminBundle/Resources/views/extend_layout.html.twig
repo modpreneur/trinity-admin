@@ -2,8 +2,8 @@
 
 {% block navbar %}
 
-    <input name="lol" type="radio" id="user-profile-input" class="navbar-item-input">
-    <input name="lol" type="radio" id="notifications-input" class="navbar-item-input">
+    <input name="navbar-items" type="radio" id="user-profile-input" class="navbar-item-input">
+    <input name="navbar-items" type="radio" id="notifications-input" class="navbar-item-input">
 {#    <input name="dropdown" type="checkbox" id="dropdown-input" class="navbar-item-input">#}
 
 
@@ -17,9 +17,9 @@
                 {% block navbar_logo %} <i> Logo zde </i> {% endblock %}
                 <span class="version">{{ admin_manager.getAppVersion() }}</span>
             </div>
-            <div >
-                <span id="header-for-nonvisible"></span>
-            </div>
+
+                <div id="header-for-nonvisible"></div>
+
             <div class="pull-right navbar-actions">
 
                 {% block navbar_search %}
@@ -68,10 +68,10 @@
                 </label>#}
 
                 {% block navbar_logout %}
-                    <a class="navbar-actions-item size-2" title="Logout me" href="{{ path("fos_user_security_logout") }}">
+                    <a class="navbar-actions-item size-2 navbar-item-label" title="Logout me" href="{{ path("fos_user_security_logout") }}">
                         <div class="navbar-actions-item-center">
                             <span class="pull-left margin-right-5 font-14">Logout</span>
-                            <i class="trinity trinity-logout"></i>
+                            <i class="trinity trinity-logout padding-none-all"></i>
                         </div>
                     </a>
                 {% endblock %}
