@@ -125,12 +125,12 @@ body.trinity-admin {
                     border-radius: 5px;
                     margin-left: -20px;
                     height: @grid-search-height;
-                    border: 2px solid #ccc;
+                    border: none;//border: 2px solid #ccc;
                     outline: none;
                     text-align: center;
                     font-size: 14px;
                     float: left;
-                    width: 50px;
+                    width: 65px;
 
                     transition: border @search-time ease-in,
                     background @search-time ease-in,
@@ -139,6 +139,7 @@ body.trinity-admin {
                     &:hover {
                         background: @color-primary-hover;
                         cursor: pointer;
+                        border: none;
                     }
                 }
             }
