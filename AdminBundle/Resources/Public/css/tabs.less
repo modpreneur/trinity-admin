@@ -27,6 +27,7 @@ body.trinity-admin{
                 color: @color-font;
                 border-top: none;
                 top: 0;
+
                 &:hover:after{
                     display: none;
                 }
@@ -38,7 +39,8 @@ body.trinity-admin{
         label[for^="tab"]{
             border: none;
             border-top: none;
-            border-bottom: 2px solid lighten(@color-tab-label,15%);
+            border-bottom: 2px solid transparent;
+
             color: @color-tab-label;
             counter-increment: tabs;
             padding: 13px 35px 13px 35px;
@@ -76,10 +78,12 @@ body.trinity-admin{
 
         .tab-body-wrapper{
             border: none;
-            border-top: 2px solid lighten(@color-tab-label,15%);
-            margin-top: -2px;
+            //border-top: 2px solid lighten(@color-tab-label,15%);
+            //margin-top: -2px;
             min-height: 300px;
             background: #fff;
+            box-shadow: 0px 2px 9.5px 0.5px rgba(0, 0, 0, 0.15);
+            margin-top: 2px;
 
             .tab-body {
 
@@ -209,10 +213,10 @@ body.trinity-admin{
                     margin-top: 40px;
                     font-family: "Roboto", sans-serif;
                     font-weight: 300;
-                    margin-bottom: 20px;
+                    //margin-bottom: 20px;
 
                     .shadow();
-                    border: 1px #eaeceb solid;
+                    //border: 1px #eaeceb solid;
 
 
                     .tab-head:checked + label{
@@ -247,8 +251,8 @@ body.trinity-admin{
 
                     .tab-body-wrapper{
                         border: none;
-                        border-top: 2px solid #b5b5b5;
-                        margin-top: -2px;
+                        //border-top: 2px solid #b5b5b5;
+                        //margin-top: -2px;
                         min-height: 300px;
 
                         .tab-body p{

@@ -180,24 +180,34 @@ body.trinity-admin{
             margin-left: 8px;
         }
         li a{
-            color: #FFFFFF;
+            color: #7b7b7b;
             border-radius: 4px;
             border: none;
-            background: #cbcbcb;
+            background: #ededed;
             padding: 2px 10px;
             margin-right: 2px;
             transition: background 0.4s;
-
+            cursor: pointer;
             &:hover{
-                background: @color-tertiary;
+                background: #a5a5a5;
+            }
+
+        }
+
+        .previous a,.next a{
+            color: #BDBDBD;
+            &:hover{
+                color: #d3d3d3;
             }
         }
 
+
         li.active a{
             background: @color-primary;
-            &:hover{
+            color: #fff;
+/*            &:hover{
                 background: @color-tertiary;
-            }
+            }*/
         }
     }
 
