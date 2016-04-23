@@ -78,15 +78,15 @@ body.trinity-admin{
                     display: block;
                     width: 100%;
                     min-height: @sidebar-row-height;
-                    line-height: @sidebar-row-height + 2px;
+                    //line-height: @sidebar-row-height + 2px;
                     color: @sidebar-link-color;
                     font-size: @sidebar-font-size;
                     font-weight: normal;
                 }
 
                 i {
-                    margin: 12px 20px 0 15px;
-                    width: 14px;
+                    margin: 16px;
+                    width: @sidebar-icon-font-size;
                     display: inline-block;
                     font-size: @sidebar-icon-font-size;
                 }
@@ -106,6 +106,12 @@ body.trinity-admin{
                         color: @color-primary;
                     }
                 }
+/*                .sidebar-link{
+                    position: absolute;
+                    height: 15px;
+                    line-height: 1;
+                    margin: 17.5px 0;
+                }*/
             }
             .first {
                 border-top: 1px #f4f4f4 solid;
