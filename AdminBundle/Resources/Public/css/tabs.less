@@ -496,7 +496,12 @@ body.trinity-admin{
 body.trinity-admin {
 
     .tabs-wrapper {
-        @media screen and(max-width: 800px) {
+
+        label[for^="tab"] {
+            width: calc(100%/8);
+        }
+
+/*        @media screen and(max-width: 800px) {
             label[for^="tab"] {
                 width: 100% !important;
             }
@@ -528,6 +533,6 @@ body.trinity-admin {
         }
         label[for^="tab"]:last-of-type {
             width: auto;
-        }
+        }*/
     }
 }
