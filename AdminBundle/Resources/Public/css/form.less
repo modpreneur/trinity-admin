@@ -34,7 +34,7 @@ body.trinity-admin{
             }
 
             &:first-of-type{
-                margin-top: 22px;
+                margin-top: 15px;
             }
 
             &:hover{
@@ -117,12 +117,12 @@ body.trinity-admin{
             outline-width: 0;
             border: 1px solid @color-border;
             background: #fff;
-            -webkit-appearance:none;
+            -webkit-appearance: none;
             font-weight: 300;
             color: @color-font;
 
             &:focus{
-                border: 1px solid darken(@color-primary, 20%);
+                border: 1px solid @color-primary;
                 background: #fff !important;
             }
         }
@@ -151,31 +151,46 @@ body.trinity-admin{
                 padding: 0;
                 text-align: left;
                 overflow: hidden;
-                max-width: 15px;
+                max-width: 20px; //truncate text in checkbox labels
                 white-space: nowrap;
 
+
                 &:before{
-                    content: "\e70f";
-                    font-size: 15px;
-                    color: @color-primary;
-                    padding-right: 10px;
-                    font-family: "tiecons";
+                    content: '';
+                    display: inline-block;
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 10px;
+                    font-size: 16px;
+                    border: 1px solid #b9b9b9;
+                    vertical-align: middle;
+
+                    transition: .3s;
+                }
+                &:hover:before {
+                    border: 1px solid @color-primary;
                 }
             }
 
             input[type="checkbox"]:checked + label:after{
-                content: "\e929";
-                font-size: 11px;
-                color: #fff;
-                padding-right: 10px;
-                font-family: "trinity";
                 position: absolute;
-                left: 2px;
-                //top: 1px;
-            }
+                top: 9px;
+                left: 2.5px;
+                font-size: 16px;
+                line-height: 1;
+                font-family: "trinity";
+                color: #fff;
+                vertical-align: middle;
 
+                content: '\e929';
+                display: inline-block;
+                width: 17px;
+                height: 17px;
+                //margin: 2.5px 0;
+            }
             input[type="checkbox"]:checked + label:before{
-                content: "\e70e";
+                border: 1px solid @color-primary;
+                background: @color-primary;
             }
 
         }
@@ -376,6 +391,12 @@ body.trinity-admin{
         padding-bottom: 15px;
     }
 
+    #email-templates{
+        input:not([type="submit"]), select, textarea {
+            min-height: 300px;
+        }
+    }
+
 
     // fixes - collections
     .collection-widget{
@@ -402,6 +423,14 @@ body.trinity-admin{
             }
             &:hover{
                 color: darken(@color-tertiary,5%);
+            }
+            i{
+                padding: 10px;
+                &:after{
+                    font-family: 'Roboto', sans-serif;
+                    content: 'Add item';
+                    font-size: 16px;
+                }
             }
         }
 
