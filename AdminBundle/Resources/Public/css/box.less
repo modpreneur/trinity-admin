@@ -116,12 +116,16 @@ body.trinity-admin {
                         color: #fff;
                         border: 1px solid @color-primary;
                     }
+
+                    &::-webkit-input-placeholder, &::-moz-placeholder, &:-ms-input-placeholder{
+                        color: #dbdbdb;
+                    }
                 }
 
                 button[type="submit"] {
                     background: #ccc;
                     color: #fff;
-                    border-radius: 5px;
+                    border-radius: 0 5px 5px 0;
                     margin-left: -20px;
                     height: @grid-search-height;
                     border: none;//border: 2px solid #ccc;
