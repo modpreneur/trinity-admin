@@ -368,6 +368,10 @@ body.trinity-admin{
     #dashboard_widgets{
         label{
             color: #747474;
+            line-height: 39px;
+            &:after{
+                margin-top: 2px;
+            }
         }
         input[type=checkbox] + label:before{
             color: lighten(@color-primary,50%);
@@ -382,7 +386,9 @@ body.trinity-admin{
             color: #303030;
         }
     }
+
     #dashboard_expandedWidgets{
+        margin-top: -8px;
         label{
             position: static;
             display: block;
@@ -390,13 +396,15 @@ body.trinity-admin{
         .checkbox{
             position: relative;
             display: block;
-            height: 38px;
+            height: 40px;
+            width: 40px;
             label{
                 position: static;
                 display: block;
-                height: 20px;
-                line-height: 1;
+                height: 39px;
+                border-bottom: 1px solid transparent;
                 font-size:  20px;
+               // margin: 1px 0;
 
                 &:before{
                     position: absolute;
@@ -404,7 +412,7 @@ body.trinity-admin{
                     left: 0;
                     content: '';
                     display: block;
-                    width: 38px;
+                    width: 36px;
                     height: 18px;
                     border: 1px solid #b9b9b9;
                     padding: 0;
@@ -423,14 +431,18 @@ body.trinity-admin{
                     height: 18px;
                     border: 1px solid #3f3f3f;
                     transition: left .4s;
+                    //margin: 2.5px;
                 }
             }
             input[type=checkbox]:checked + label{
                 &:before{
+                    background: #fff;
                     border: 1px solid #3f3f3f;
                 }
                 &:after{
                     padding: 0;
+                    margin: 0;
+                    margin-left: -1px;
                     color: #303030;
                     top: 11px;
                     left: 20px;
