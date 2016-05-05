@@ -13,23 +13,11 @@ use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
- * Class DisabledImageType
+ * Class ImageType
  * @package Trinity\AdminBundle\Form\Image
  */
-class DisabledImageType extends AbstractType
+class ImageType extends AbstractType
 {
-        /**
-     * {@inheritDoc}
-     * @throws \Symfony\Component\OptionsResolver\Exception\AccessException
-     */
-    public function configureOptions(OptionsResolver $resolver)
-    {
-        $resolver->setDefaults([
-            'style' => 'cursor:default',
-            'disabled' => true,
-        ]);
-    }
-
     /**
      * {@inheritdoc}
      */
