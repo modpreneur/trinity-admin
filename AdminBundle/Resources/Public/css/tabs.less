@@ -47,7 +47,7 @@ body.trinity-admin{
 
             color: @color-tab-label;
             counter-increment: tabs;
-            padding: 13px 35px 13px 35px;
+            text-align: center;
             font-weight: 400;
             z-index: 3;
             position: relative;
@@ -117,10 +117,10 @@ body.trinity-admin{
             .tab-actions{
                 position: absolute;
                 right: 0;
-                top: 0;
+                top: -10px;
 
                 .item{
-                    padding: 5px 20px 5px 20px;
+                    display: flex;
                     background: @color-tab-label;
                     color: #fff;
                     text-align: center;
@@ -128,15 +128,25 @@ body.trinity-admin{
                     font-size: 12px;
 
                     &:hover{
-                        background: darken(@color-tab-label, 10%) !important;
+                        background: darken(@color-tab-label, 10%);
                     }
-
-                    .open{
-                        color: lighten(@color-tertiary,15%);
-                        text-decoration: underline;
-                        font-weight: 700;
+                    a{
+                        padding: 5px 15px;
                     }
                 }
+                .open{
+                    background: darken(@color-tertiary,5%);
+                    a{
+                        font-weight: 600;
+                    }
+                    &:hover{
+                        background: @color-tertiary;
+                    }
+                }
+            }
+
+            .advanced-settings{
+                transition: 5s;
             }
         }
     }
