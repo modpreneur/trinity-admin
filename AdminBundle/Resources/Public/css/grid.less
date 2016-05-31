@@ -129,7 +129,8 @@ body.trinity-admin{
             th{
                 font-size: 16px;
                 line-height: 26px;
-                font-weight: 400;
+                font-weight: 500;
+                cursor: pointer;
 
                 span{
                     cursor: pointer;
@@ -137,6 +138,21 @@ body.trinity-admin{
                         color: @color-tertiary;
                     }
                 }
+            }
+            .order-by-asc::after {
+                position: absolute;
+                padding-left: 7px;
+                font-family: 'trinity' !important;
+                content: "\e929";
+                font-size: 10px;
+            }
+
+            .order-by-desc::after {
+                position: absolute;
+                font-family: 'trinity' !important;
+                padding-left: 7px;
+                content:"\e928";
+                font-size: 10px;
             }
             tr:hover{
                 background: transparent;
@@ -189,13 +205,13 @@ body.trinity-admin{
 
 
         li a{
-            width: 40px;
+            min-width: 40px;
             height: 40px;
             margin: 2px;
 
             color: #7b7b7b;
             font-size: 16px;
-            font-weight: 600;
+            font-weight: 400;
             text-align: center;
 
             background: #ededed;
@@ -210,12 +226,27 @@ body.trinity-admin{
             }
 
         }
+        .break{
+            display: inline-block;
+            font-size: 40px;
+            color: #e8e8e8;
+            line-height: 1.1;
+        }
 
         .previous a,.next a{
-            color: #BDBDBD;
+            line-height: 34px;
             &:hover{
                 color: #d3d3d3;
             }
+            i:before{
+                padding-top: 5px;
+            }
+        }
+        .previous a{
+            transform: rotate(90deg);
+        }
+        .next a{
+            transform: rotate(-90deg);
         }
         /*.next{
             font-family: 'tiecons';
