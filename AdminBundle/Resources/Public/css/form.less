@@ -174,18 +174,18 @@ body.trinity-admin{
 
             input[type="checkbox"]:checked + label:after{
                 position: absolute;
-                top: 9px;
-                left: 2.5px;
-                font-size: 16px;
-                line-height: 1;
+                height: 100%;
+                left: 3px;
+                font-size: 15px;
+                //line-height: 1;
                 font-family: "trinity";
                 color: #fff;
                 vertical-align: middle;
 
-                content: '\e929';
+                content: '\e933';
                 display: inline-block;
-                width: 17px;
-                height: 17px;
+                //width: 17px;
+                //height: 17px;
                 //margin: 2.5px 0;
             }
             input[type="checkbox"]:checked + label:before{
@@ -238,14 +238,15 @@ body.trinity-admin{
                 color: @color-tab-label;
                 position: absolute;
                 right: 10px;
-                top: 12px;
+                top: 11px;
+                line-height: 1;
                 pointer-events:none;
             }
 
             &:before{
                 content: " ";
                 right:10px;
-                top:10px;
+                top:12px;
                 width:15px;
                 height:15px;
                 position: absolute;
@@ -425,9 +426,11 @@ body.trinity-admin{
                 color: darken(@color-tertiary,5%);
             }
             i{
+                font-size: 18px;
                 padding: 10px;
                 &:after{
                     font-family: 'Roboto', sans-serif;
+                    margin-left: 5px;
                     content: 'Add item';
                     font-size: 16px;
                 }
