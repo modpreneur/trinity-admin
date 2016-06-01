@@ -67,25 +67,24 @@
         <div class="head-content box">
             <div class="row">
 
-                <div class="span-none-padding-small-2 span-none-padding-medium-4 span-none-padding-large-4 span-none-padding-xlarge-2">
-                       <span class="abs-center">
-                           {% block pageIcon %} {% endblock %}
-                       </span>
+                <div class="page-icon">
+                   {% block pageIcon %} {% endblock %}
                 </div>
 
-                <div class="span-none-padding-small-14 span-none-padding-medium-14 span-none-padding-large-16 span-none-padding-xlarge-16">
-                    <h2 class="content-header">{% block pageTitle %} Dashboard {% endblock %}</h2>
-                    <div class="breadcrumbs">
-                        {{ wo_render_breadcrumbs() }}
+                <div class="">
+                    <div class="head-title">
+                        <h2 class="content-header">{% block pageTitle %} Dashboard {% endblock %}</h2>
+                        <div class="breadcrumbs">
+                            {{ wo_render_breadcrumbs() }}
+                        </div>
                     </div>
-                </div>
 
-                <div class="span-none-padding-small-4 span-none-padding-medium-6 span-none-padding-large-4 span-none-padding-xlarge-6">
                     <div class="navigation-box row">
-                       {% block pageAction %} {% endblock %}
+                        {% block pageAction %} {% endblock %}
                     </div>
-                    <div class="clearfix"></div>
+
                 </div>
+
 
                 {% block page_loading %}
                     <div class="header-loader">
