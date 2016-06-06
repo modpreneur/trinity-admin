@@ -9,7 +9,7 @@ body.trinity-admin {
 
     // wrapper
     .dashboard-widgets {
-        width: 100.5%;
+        //width: 100.5%;
 
         .small-widgets {
             margin-bottom: 20px;
@@ -25,7 +25,8 @@ body.trinity-admin {
     }
 
     //need to fix margins 25px-left, other 20px between widgets
-    .widget-field {
+    //classes left-,long-,right-widget is for that ready
+/*    .widget-field {
 
         & > div {
             //padding-left: 10px;
@@ -34,13 +35,13 @@ body.trinity-admin {
         &:first-child {
             & > div {
                 padding-right: 10px;
-                padding-left: 0px !important;
+                padding-left: 0px ;
             }
         }
 
         &:last-child {
             & > div {
-                padding-right: 0px !important;
+                padding-right: 0px ;
                 padding-left: 10px;
             }
         }
@@ -48,14 +49,13 @@ body.trinity-admin {
         // wrrrr
         &.w-12:first-child {
             & > div {
-                padding-right: 10px !important;
+                padding-right: 10px ;
             }
         }
-    }
-
+    }*/
     .trinity-widget {
         font-family: 'Roboto', sans-serif;
-        height: 430px;
+        height: 400px;//430px;
         color: @global-font-color;
         position: relative;
         margin: 0px 10px 20px;
@@ -68,7 +68,9 @@ body.trinity-admin {
             margin-right: 0px !important;
         }
 
-        .box();
+        .box();//todo box wtihout border
+        border: none;
+        box-shadow: 0px 6px 7.2px 0.8px rgba(0, 0, 0, 0.05);
 
         &:hover {
             .widgetResizer, .widgetCloser {
@@ -108,7 +110,7 @@ body.trinity-admin {
         }
 
         .widgetCloser {
-            background: red;
+            background: lighten(red, 10%);
             top: -15px;
         }
         .widgetResizer {;
@@ -117,7 +119,7 @@ body.trinity-admin {
         }
 
         .widget-title {
-            font-size: 20px;
+            font-size: 22px;
             //padding: 15px;
             font-weight: 300;
             color: #2f2f2f;
@@ -161,7 +163,7 @@ body.trinity-admin {
     }
 
     .trinity-widget .data-grid tr {
-        border-bottom: 1px #dedede solid !important;
+        border-bottom: 1px #f1f1f1 solid;
         white-space: nowrap;
 
         td, th {
@@ -199,7 +201,7 @@ body.trinity-admin {
         }
     }
     .trinity-widget:first-child .content-box {
-        height: auto;
+        //height: auto;
     }
 
     .trinity-widget a {
@@ -265,11 +267,13 @@ body.trinity-admin {
         filter: alpha(opacity=20);
     }
 
-
     .handle {
         cursor: move;
         height: 50px;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        margin-top: -20px;
+        &:hover{
+            background: #f7f7f7;
+        }
     }
 
     #show-widgets-form {
@@ -326,6 +330,12 @@ body.trinity-admin {
                                 left: 13px;
                                 padding-right: 15px;
                             }
+                        }
+
+                        #dashboard_widgets{
+                            .checkbox:last-of-type label{
+                                border-bottom: none;
+                            }
 
                         }
                     }
@@ -352,9 +362,6 @@ body.trinity-admin {
         label {
             color: #747474;
             line-height: 39px;
-            /*&:after{
-                margin-top: 2px;
-            }*/
         }
         input[type=checkbox] + label:before {
             color: lighten(@color-primary, 50%);
@@ -385,7 +392,7 @@ body.trinity-admin {
                 position: static;
                 display: block;
                 height: 39px;
-                border-bottom: 1px solid transparent;
+                //border-bottom: 1px solid transparent;
                 font-size: 20px;
                 // margin: 1px 0;
 
@@ -417,6 +424,9 @@ body.trinity-admin {
                     //margin: 2.5px;
                 }
             }
+            &:last-child label{
+                border-bottom: none;
+            }
             input[type=checkbox]:checked + label {
                 &:before {
                     background: #fff;
@@ -446,34 +456,153 @@ body.trinity-admin {
         }
     }
 
-    .small-widgets{
+    .trinity-widget {
+        padding: 20px;
+        .data-grid {
+            thead tr {
+                border-bottom: 2px solid #efefef;
+            }
+        }
 
-        .trinity-widget{
+    }
+    .small-widgets {
+
+        .trinity-widget {
             padding: 20px;
+            margin-bottom: 0;
 
-            .content-box{
+            .content-box {
+                height: auto;
                 padding-top: 0;
             }
-            .widget-small-description{
+            .widget-small-description {
                 font-size: 14px;
-                line-height: 36px;
+                line-height: 26px;
                 color: #b5b5b5;
                 font-weight: 400;
+                margin-bottom: 4px;
             }
-            .span-none-padding-large-6{
+            .span-none-padding-large-6 {
                 height: 115px;
             }
-            .widget-title{
+            .widget-title {
                 padding: 0;
                 line-height: 1;
                 font-size: 32px;
             }
-            .widget-small-icon{
+            .widget-small-icon {
+                display: block;
                 color: #d2d2d2;
                 font-size: 40px;
             }
         }
 
+        .small-widget{
+            &:first-child > div {
+                padding-left: 0;
+            }
+            &:last-child > div {
+                padding-right: 0;
+            }
+        }
+
+    }
+
+    //----------------- Added by JS classes for widget field-------------
+    .long-widget {
+        & > div{
+            padding: 0;
+        }
+    }
+    .right-widget {
+        & > div{
+            padding-right: 0;
+            padding-left: 10px;
+        }
+    }
+    .left-widget {
+        & > div{
+            padding-right: 10px;
+            padding-left: 0;
+        }
+    }
+
+    //-------------------------------------------------------------------
+
+
+    @media screen and (max-width: 1385px) {
+        .small-widgets {
+            .span-none-padding-large-6 {
+                //width: 50%;
+                .trinity-widget .widget-small-description{
+                    //margin-bottom: 20px;
+                    font-size: 12px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1280px) {
+        .small-widgets {
+            .span-none-padding-large-6 {
+                width: 50%;
+                .trinity-widget {
+                    margin-bottom: 20px;
+                    .widget-small-description{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+
+        .dashboard-widgets {
+            .small-widgets {
+                margin-bottom: 0;
+
+                .small-widget{
+                    & > div {
+                        padding: 0;
+                    }
+                }
+                .small-widget:nth-child(odd){
+                    & > div {
+                        padding-right: 10px;
+                    }
+                }
+                .small-widget:nth-child(even){
+                    & > div {
+                        padding-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+    @media screen and (max-width: 1024px) {
+        .container-with-sidebar{
+            margin-top: 0;
+        }
+
+        .small-widgets .span-none-padding-large-6 {
+            width: 100%;
+            .trinity-widget {
+                margin-bottom: 20px;
+            }
+        }
+
+        .dashboard-widgets {
+            .small-widgets {
+                .small-widget:nth-child(odd), .small-widget:nth-child(even){
+                    & > div {
+                        padding: 0;
+                    }
+                }
+            }
+        }
+
+        .long-widget, .right-widget, .left-widget  {
+            & > div{
+                padding: 0;
+            }
+        }
     }
 }
 
