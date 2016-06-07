@@ -71,20 +71,16 @@
                    {% block pageIcon %} {% endblock %}
                 </div>
 
-                <div class="">
-                    <div class="head-title">
-                        <h2 class="content-header">{% block pageTitle %} Dashboard {% endblock %}</h2>
-                        <div class="breadcrumbs">
-                            {{ wo_render_breadcrumbs() }}
-                        </div>
+                <div class="head-title">
+                    <h2 class="content-header">{% block pageTitle %} Dashboard {% endblock %}</h2>
+                    <div class="breadcrumbs">
+                        {{ wo_render_breadcrumbs() }}
                     </div>
-
-                    <div class="navigation-box row">
-                        {% block pageAction %} {% endblock %}
-                    </div>
-
                 </div>
 
+                <div class="navigation-box row">
+                    {% block pageAction %} {% endblock %}
+                </div>
 
                 {% block page_loading %}
                     <div class="header-loader">
@@ -115,7 +111,7 @@
                                         <i class="{icon}"></i>
                                     </div>
                                     <div class="span-none-padding-mini-20">
-                                        <p class="margin-left-10">
+                                        <p>
                                             {message}
                                         </p>
                                     </div>
@@ -151,7 +147,7 @@
                                                     {% endif %}
                                                 </div>
                                                 <div class="span-none-padding-mini-20">
-                                                    <p class="margin-left-10">
+                                                    <p>
                                                         {{ message }}
                                                     </p>
                                                 </div>
@@ -164,6 +160,31 @@
                     {% endfor %}
                 {% endfor %}
             {% endblock %}
+{#
+            <input id="close-alert-type-loop.index " type="radio" class="checkbox-none" />
+            <div class="alert alert-warning ">
+                <div class="container">
+                    <div class="row">
+                        <div class="span-none-padding-mini-24">
+                            <label for="close-alert-warning" class="alert-label">
+                                <i class="tiecons tiecons-cross-light alert-close-icon"></i>
+                            </label>
+                            <div class="row">
+                                <div class="show-alert">
+                                    <div class="span-none-padding-mini-4">
+                                        <i class="trinity trinity-warning"></i>
+                                    </div>
+                                    <div class="span-none-padding-mini-20">
+                                        <p>
+                                            message
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>#}
 
         </div>
     {% endblock %}
