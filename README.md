@@ -13,5 +13,9 @@ otherwise he will not see removing button.
 In the application (Necktie/Venice) has to be route for path 'ajax_remove-sidebar-msg'.
 This is called from JS, if none path exist button doesn't work.
 
+## styles compilation
+`npm install`
+`npm run styles`
+
 
 

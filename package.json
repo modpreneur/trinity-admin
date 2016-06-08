@@ -1,0 +1,27 @@
+{
+  "name": "trinity-admin",
+  "version": "1.0.0",
+  "description": "Trinity Admin bundle",
+  "main": "null",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "styles": "lessc AdminBundle/Resources/Public/css/admin.less AdminBundle/Resources/Public/css/admin.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/modpreneur/trinity-admin.git"
+  },
+  "keywords": [
+    "trinity",
+    "trinity-admin"
+  ],
+  "author": "modpreneur",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/modpreneur/trinity-admin/issues"
+  },
+  "homepage": "https://github.com/modpreneur/trinity-admin#readme",
+  "devDependencies": {
+    "less": "^2.7.1"
+  }
+}
