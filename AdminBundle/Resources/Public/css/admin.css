@@ -512,6 +512,10 @@ body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label i
 }
 body.trinity-admin #notifications-input:checked ~ .notifications {
   top: 60px;
+  -webkit-animation: move 2s 2s linear both;
+  -moz-animation: move 2s 2s linear both;
+  -o-animation: move 2s 2s linear both;
+  animation: move 2s 2s linear both;
 }
 body.trinity-admin #header-for-nonvisible {
   position: fixed;
@@ -744,21 +748,6 @@ body.trinity-admin #sidebar {
   top: 0;
   padding-top: 60px;
   /** end **/
-  /*#sidebar-tab1-content {
-      display: block;
-      height: 100%;
-      position: relative;
-    }
-
-    #sidebar-tab1-body {
-      width: 100%;
-      height: auto;
-    }
-
-    #sidebar-tab1-content.sidebar-tab-content {
-      //overflow-y: auto;
-      //overflow-x: hidden;
-    }*/
 }
 body.trinity-admin #sidebar input {
   display: none;
@@ -1115,6 +1104,33 @@ body.trinity-admin .table {
   display: table;
   width: 100%;
   height: 100%;
+}
+body.trinity-admin .rw-calendar-grid .rw-btn {
+  text-align: center;
+}
+body.trinity-admin .rw-calendar-grid th {
+  padding: 0;
+  text-align: center;
+}
+body.trinity-admin .rw-calendar-grid td .rw-btn {
+  padding: 0;
+}
+body.trinity-admin .rw-widget.rw-state-focus,
+body.trinity-admin .rw-widget.rw-state-focus:hover {
+  border: none;
+  box-shadow: none;
+}
+body.trinity-admin .rw-datetimepicker {
+  padding: 0;
+}
+body.trinity-admin .rw-widget {
+  border: none;
+}
+body.trinity-admin .rw-select {
+  border: none;
+}
+body.trinity-admin .rw-input {
+  font-family: "Arial", sans-serif;
 }
 /**
     Page alert - box with right position.
@@ -2820,6 +2836,21 @@ body.trinity-admin .new-form .select-style select:-moz-focusring,
 body.trinity-admin .modal-dialog form .select-style select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
+}
+body.trinity-admin .edit-form .select-style select[disabled],
+body.trinity-admin .new-form .select-style select[disabled],
+body.trinity-admin .modal-dialog form .select-style select[disabled] {
+  cursor: not-allowed;
+}
+body.trinity-admin .edit-form .select-style[disabled],
+body.trinity-admin .new-form .select-style[disabled],
+body.trinity-admin .modal-dialog form .select-style[disabled] {
+  cursor: not-allowed;
+}
+body.trinity-admin .edit-form .select-style[disabled]:after,
+body.trinity-admin .new-form .select-style[disabled]:after,
+body.trinity-admin .modal-dialog form .select-style[disabled]:after {
+  content: " ";
 }
 body.trinity-admin .edit-form textarea,
 body.trinity-admin .new-form textarea,
