@@ -18,6 +18,11 @@ body.trinity-admin{
         position: fixed;
         color: @sidebar-link-color;
 
+        /** window resize fix **/
+        top: 0;
+        padding-top: @navbar-height;
+        /** end **/
+
         input{
             display: none;
         }
@@ -67,6 +72,10 @@ body.trinity-admin{
             outline: 0;
         }
         .sidebar{
+            /** window resize fix **/
+            height: 100%;
+            overflow-y: auto;
+            /** end **/
             margin-top: 0;
             li {
                 width: 100%;
