@@ -1381,7 +1381,7 @@ body.trinity-admin .tabs-wrapper {
 body.trinity-admin .tabs-wrapper #tab15:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1391,7 +1391,7 @@ body.trinity-admin .tabs-wrapper #tab15:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab14:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1401,7 +1401,7 @@ body.trinity-admin .tabs-wrapper #tab14:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab13:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1411,7 +1411,7 @@ body.trinity-admin .tabs-wrapper #tab13:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab12:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1421,7 +1421,7 @@ body.trinity-admin .tabs-wrapper #tab12:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab11:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1431,7 +1431,7 @@ body.trinity-admin .tabs-wrapper #tab11:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab10:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1441,7 +1441,7 @@ body.trinity-admin .tabs-wrapper #tab10:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab9:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1451,7 +1451,7 @@ body.trinity-admin .tabs-wrapper #tab9:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab8:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1461,7 +1461,7 @@ body.trinity-admin .tabs-wrapper #tab8:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab7:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1471,7 +1471,7 @@ body.trinity-admin .tabs-wrapper #tab7:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab6:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1481,7 +1481,7 @@ body.trinity-admin .tabs-wrapper #tab6:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab5:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1491,7 +1491,7 @@ body.trinity-admin .tabs-wrapper #tab5:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab4:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1501,7 +1501,7 @@ body.trinity-admin .tabs-wrapper #tab4:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab3:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1511,7 +1511,7 @@ body.trinity-admin .tabs-wrapper #tab3:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab2:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1521,7 +1521,7 @@ body.trinity-admin .tabs-wrapper #tab2:checked + label:hover:after {
 body.trinity-admin .tabs-wrapper #tab1:checked + label {
   background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030;
+  color: #493470;
   border-top: none;
   top: 0;
 }
@@ -1698,9 +1698,9 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper {
   box-shadow: 1px 1px 5px #d7d5d5;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-head:checked + label {
-  background: #fff !important;
+  background: #fff;
   border-bottom: 2px solid #493470;
-  color: #303030 !important;
+  color: #493470;
   top: 0 !important;
   border-top: 1px solid transparent !important;
 }
@@ -2771,8 +2771,8 @@ body.trinity-admin .modal-dialog form .select-style select {
 body.trinity-admin .edit-form .select-style:after,
 body.trinity-admin .new-form .select-style:after,
 body.trinity-admin .modal-dialog form .select-style:after {
-  content: "\e654";
-  font-family: "tiecons";
+  content: "\e928";
+  font-family: trinity;
   font-size: 12px;
   color: #7e7e7e;
   position: absolute;
@@ -3967,6 +3967,10 @@ body.trinity-admin .wrapper-grid .box-body p,
 body.trinity-admin .box .box-body p {
   margin-bottom: 10px;
   margin-top: 10px;
+}
+body.trinity-admin .wrapper-grid .box-table-body,
+body.trinity-admin .box .box-table-body {
+  overflow-x: auto;
 }
 body.trinity-admin .wrapper-grid .box-table-body .grid,
 body.trinity-admin .box .box-table-body .grid {
