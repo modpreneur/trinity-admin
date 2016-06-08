@@ -1,72 +1,104 @@
 /**
     Primary for dashboard widgets.
 */
-
 @import "variables";
 @import "helper";
 
 body.trinity-admin {
 
-  #edit_user{
-    .row:first-child{
-      margin: 0;
-    }
-  }
-  .box{
-    padding: 0;
-    border: none;
-    .btn-cont{
-      width: 190px;
-      margin: 0 auto;
-    }
-  }
-  #profile-avatar{
-    label{
-      margin-top: 60px;
-    }
-    border-bottom: 1px solid #ededed;
+  /*  #edit_user {
+      .row:first-child {
+        margin: 0;
+      }
 
-  }
-  #picture{
+
+      #profile-avatar {
+        label {
+          margin-top: 60px;
+        }
+        border-bottom: 1px solid #ededed;
+
+      }*/
+  .avatar-picture {
     display: inline-block;
-    width: 125px;
-    img{
+    width: 82px;
+    height: 82px;
+    margin: 10px;
+    img {
+      width: 82px;
+      height: 82px;
+    }
+    .tiecons-arrow-previous, .trinity-delete {
       position: absolute;
-      top:0;
+      left: 76px;
+      top: 14px;
+      font-size: 13px;
+      color: #fff;
+      background: #979689;
+      text-shadow: 0 0 2px #000;
+      border-radius: 13px;
+      transition: .3s;
+      cursor: pointer;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+    //waiting for new revert icon
+    .tiecons-arrow-previous {
+      left: 10px;
+      top: 10px;
+      font-size: 20px;
+      background: none;
+    }
+    .trinity-profile {
+      font-size: 82px;
+      color: lighten(@color-primary, 25%);
     }
   }
-  #file-uploader{
+  .dropzone {
+    font-size: 16px;
+    color: #ababab;
+    height: 95px;
     display: inline-block;
-    width: calc(~"100% - 130px");
-    margin: 0 auto;
-    .dropzone{
-      //height: 95px;
-      width: 100%;
-      padding: 5px;
-      text-align: center;
-      border: dashed 3px @color-primary;
-      border-radius: 10px;
+    width: ~"calc(100% - 105px)";
+    margin: 5px auto;
+    float: right;
+    padding: 8px 15px;
+    text-align: center;
+    border: dashed 3px @color-tab-label;
+    border-radius: 10px;
+    .dropzone-content{
+      display: table-cell;
+      vertical-align: middle;
     }
     .button{
-      //width: 190px;
-      padding: 0 25px;
-      margin: 0 auto;
-      display: block;
+      margin-left: 5px;
     }
-    ul{
-      word-break: break-all;
-      display: block;
-      min-height: 60px;
-      padding: 10px;
-      padding-top: 2px;
-      margin: 5px;
-      z-index: 3;
-      position: absolute;
-      top: 0;
+    &:hover{
       background: #fff;
-
     }
 
-  }
+    i, span{
+      height: 14px;
+      display: inline-block;
+    }
+    span{
+      width: ~"calc(100% - 30px)";
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+      line-height: 1;
+    }
+    .progress-upload{
+      width: ~"calc(100% - 10px)";
+      height: 20px;
+      background: #C1C1C1;
+      border-radius: 4px;
+      margin: 0 5px;
 
+      div{
+        border-radius: 5px;
+      }
+    }
+  }
 }
