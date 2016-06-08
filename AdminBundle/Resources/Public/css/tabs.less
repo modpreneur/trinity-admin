@@ -28,7 +28,7 @@ body.trinity-admin{
             #tab@{i}:checked + label{
                 background: #fff;
                 border-bottom: 2px solid @color-primary;
-                color: @color-font;
+                color: @color-primary;
                 border-top: none;
                 top: 0;
 
@@ -42,18 +42,23 @@ body.trinity-admin{
 
         label[for^="tab"]{
             border: none;
-            border-top: none;
-            border-bottom: 2px solid transparent;
+            //border-top: none;
+            //border-bottom: 2px solid transparent;
 
             color: @color-tab-label;
-            counter-increment: tabs;
+
             text-align: center;
+            padding: 12px 0;
             font-weight: 400;
             z-index: 3;
             position: relative;
             font-family: "Roboto", sans-serif;
             font-size: 14px;
             text-transform: uppercase;
+
+            width: calc(100%/8);
+            max-width: 230px;
+            min-width: 150px;
 
             &:hover{
                 color: @color-tertiary;
@@ -89,10 +94,11 @@ body.trinity-admin{
             //box-shadow: 0px 2px 9.5px 0.5px rgba(0, 0, 0, 0.15);
             //margin-top: 2px;
 
+
             -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
             -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
             box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
-            padding-top: 10px;
+            //padding-top: 10px;
 
             .tab-body {
 
@@ -117,7 +123,7 @@ body.trinity-admin{
             .tab-actions{
                 position: absolute;
                 right: 0;
-                top: -10px;
+                top: 0;
 
                 .item{
                     display: flex;
@@ -143,6 +149,10 @@ body.trinity-admin{
                         background: @color-tertiary;
                     }
                 }
+            }
+
+            h3{
+                margin: 20px;
             }
 
             .advanced-settings{
@@ -239,9 +249,9 @@ body.trinity-admin{
 
 
                     .tab-head:checked + label{
-                        background: #fff !important;
+                        background: #fff;
                         border-bottom: 2px solid @color-primary;
-                        color: @color-font !important;
+                        color: @color-primary;
                         top: 0 !important;
                         border-top: 1px solid transparent !important;
                     }
@@ -264,8 +274,6 @@ body.trinity-admin{
                         &:hover{
                             color: @color-font !important;
                         }
-
-
                     }
 
                     .tab-body-wrapper{
@@ -516,42 +524,43 @@ body.trinity-admin {
 
     .tabs-wrapper {
 
-        label[for^="tab"] {
-            width: calc(100%/8);
-        }
+        /*//super cool loop if you looking
+        // for dynamic width as:
+        //  |       100        |
+        //  |   50   |   50    |
+        //  | 25 | 25| 25 | 25 |
+        // unfortunately not for our case...
 
-/*        @media screen and(max-width: 800px) {
+        .tab-loop-width (@i) when (@i > 0) {
+
+            label[for^="tab"]:first-of-type:nth-last-of-type(@{i}),
+            label[for^="tab"]:first-of-type:nth-last-of-type(@{i}) ~ label[for^="tab"]{
+                width: 100%/@i;
+            }
+
+            .tab-loop-width(@i - 1);
+        }
+        .tab-loop-width (15);*/
+
+
+        @media screen and(max-width: 980px) {
+            label[for^="tab"] {
+                width: 100%/3 !important;
+                max-width: none;
+            }
+        }
+        @media screen and(max-width: 880px){
+            label[for^="tab"] {
+                width: 100%/2 !important;
+                max-width: none;
+            }
+        }
+        @media screen and(max-width: 768px){
             label[for^="tab"] {
                 width: 100% !important;
+                max-width: none;
             }
         }
-        @media screen and(min-width: 800px) and (max-width: 965px) {
-            label[for^="tab"] {
-                width: 100/3%+0.1;
-            }
-        }
-        @media screen and(min-width: 966px) and (max-width: 1130px) {
-            label[for^="tab"] {
-                width: 100/4%+0.1;
-            }
-        }
-        @media screen and(min-width: 1131px) and (max-width: 1295px) {
-            label[for^="tab"] {
-                width: 100/5%+0.1;
-            }
-        }
-        @media screen and(min-width: 1296px) and (max-width: 1460px) {
-            label[for^="tab"] {
-                width: 100/6%;
-            }
-        }
-        @media screen and(min-width: 1461px) {
-            label[for^="tab"] {
-                width: auto;
-            }
-        }
-        label[for^="tab"]:last-of-type {
-            width: auto;
-        }*/
+
     }
 }
