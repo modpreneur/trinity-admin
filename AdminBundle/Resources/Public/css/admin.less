@@ -1,8 +1,8 @@
-body{
-    padding-top: @navbar-height;
-    font-family: 'Roboto', sans-serif;
+body {
+  //padding for content under navbar
+  padding-top: @navbar-height;
+  font-family: 'Roboto', sans-serif;
 }
-
 
 @import "navbar";
 @import "navbar-items";
@@ -24,39 +24,37 @@ body{
 @import "user-avatar";
 @import "checkboxes";
 
-
 /** fix **/
 
-.modal-a.button.button-secondary{
-    display: none !important;
+.modal-a.button.button-secondary {
+  display: none !important;
 }
 
+ul.list {
+  margin-top: 10px;
+  margin-bottom: 10px;
 
-ul.list{
-    margin-top: 10px;
-    margin-bottom: 10px;
-
-    li{
-        margin-left: 18px;
-        list-style-type: circle;
-    }
+  li {
+    margin-left: 18px;
+    list-style-type: circle;
+  }
 }
 
-ol.list{
-    margin-top: 10px;
-    margin-bottom: 10px;
+ol.list {
+  margin-top: 10px;
+  margin-bottom: 10px;
 
-    li{
-        margin-left: 18px;
-        list-style-type: decimal;
-    }
+  li {
+    margin-left: 18px;
+    list-style-type: decimal;
+  }
 }
 
-a:visited{
-    color: #551A8B;
+a:visited {
+  color: #551A8B;
 }
 
-.span-large-24:first-child{
-    padding-left: 25px;
-    padding-bottom: 20px;
+.span-large-24:first-child {
+  padding-left: 25px;
+  padding-bottom: 20px;
 }
