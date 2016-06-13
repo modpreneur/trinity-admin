@@ -16,7 +16,7 @@ body.trinity-admin {
             top: 0;
             right: 0;
 
-            .item {
+/*            .item {
                 padding: 5px 25px 5px 25px;
                 font-size: 12px;
                 background-color: @color-tab-label;
@@ -31,12 +31,41 @@ body.trinity-admin {
                 &:hover {
                     background: darken(@color-tab-label, 10%) !important;
                 }
+            }*/
+
+            .item{
+                display: flex;
+                background: @color-tab-label;
+                color: #fff;
+                text-align: center;
+                cursor: pointer;
+                font-size: 12px;
+
+                &:hover{
+                    background: darken(@color-tab-label, 10%);
+                }
+                a{
+                    padding: 5px 15px;
+                }
+                #expert-mode{
+                    color: #fff;
+                }
+            }
+            .open{
+                background: darken(@color-tertiary,5%);
+                a{
+                    font-weight: 600;
+                }
+                &:hover{
+                    background: @color-tertiary;
+                }
             }
         }
     }
 
     .navigation-box {
-        height: 100%;
+        height: 100px;
+        display: block;
 
         .tooltip-loop (@i) when (@i > 0) {
             span.tooltip:nth-child(@{i}){
@@ -48,7 +77,17 @@ body.trinity-admin {
 
         .tooltip {
             float: right;
-            margin: 25px 15px 25px 0;
+            height: 100%;
+            .tooltip-hover{
+                height: 50px;
+                width: 50px;
+                display: block;
+                margin: 25px 25px 25px 0;
+            }
+            a{
+                display: block;
+            }
+            //margin: 25px 15px 25px 0;
 
             .tooltip-left{
                 padding: 0;
@@ -56,10 +95,10 @@ body.trinity-admin {
                 font-size: 13px;
                 font-weight: 300;
                 right: 67px;
-                top: 15px;
+                top: 11px;
                 background: #333333; //fallback
                 background: rgba(0, 0, 0, 0.95);
-                -moz-transform: translateX(-15px);//firefox fix,bad position
+                //-moz-transform: translateX(-15px);//firefox fix,bad position
                 &:before{
                     top: 7px;
                     left: auto;
