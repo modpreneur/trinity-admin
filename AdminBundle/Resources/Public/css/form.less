@@ -1,455 +1,457 @@
 /**
     Forms for trinity admin.
 */
-
 @import "variables";
 @import "helper";
+
 @medium-width: 768px;
 @medium-height: 35px;
 
-body.trinity-admin{
+body.trinity-admin {
 
-    // dialog fix
-    .modal-dialog form{
-        label{
-            width: 100%;
-        }
+  // dialog fix
+  .modal-dialog form {
+    label {
+      width: 100%;
+    }
+  }
+
+  .edit-form, .new-form, .modal-dialog form {
+    width: 100%;
+    .row {
+      margin-left: auto;
+      margin-right: auto;
+      border-bottom: 1px solid #ededed;
+      padding-bottom: 15px;
+      padding-top: 15px;
+      width: 100%;
+      margin-bottom: 0px;
+
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &:first-of-type {
+        margin-top: 15px;
+      }
+
+      &:hover {
+        background: @global-row-hover;//red;//
+      }
     }
 
+    .advanced-settings .row {
+      border-bottom: 1px solid #ededed !important;
 
-
-    .edit-form, .new-form, .modal-dialog form{
-        width: 100%;
-        .row{
-            margin-left: auto;
-            margin-right: auto;
-            border-bottom: 1px solid #ededed;
-            padding-bottom: 15px;
-            padding-top: 15px;
-            width: 100%;
-            margin-bottom: 0px;
-
-            &:last-of-type{
-                border-bottom: none;
-            }
-
-            &:first-of-type{
-                margin-top: 15px;
-            }
-
-            &:hover{
-                background: #f8f8f8;
-            }
-        }
-
-        .advanced-settings .row{
-            border-bottom: 1px solid #ededed !important;
-
-            &:first-of-type{
-                margin-top: 0px;
-            }
-        }
-
-        .form-left{
-            text-align: right;
-        }
-
-        .form-right{
-
-            .checkbox + .description{
-                float: left;
-                margin-top: -25px;
-                margin-left: 25px;
-            }
-
-            .description{
-                font-size: 12px;
-                color: #727272;
-            }
-        }
-
-        @media screen and(max-width: @medium-width){
-            .form-left{
-                text-align: left;
-
-            }
-        }
-
-        label{
-            color: @color-font;
-            padding: 0;
-            padding-right: 20% ;
-            line-height: 35px;
-            font-weight: 400;
-
-            &.required:after{
-                content: "*";
-                color: @color-primary;
-                font-weight: 600;
-            }
-        }
-
-        .form-content-center{
-            margin-left: auto;
-            margin-right: auto;
-            display: block !important;
-            position: static !important;
-            float: none !important;
-        }
-
-        input[type="text"],
-        input[type="number"],
-        input[type="email"],
-        input[type="date"],
-        input[type="datetime"],
-        input[type="password"],
-        input[type="url"],
-        input[type="search"],
-        select,
-        textarea{
-            width: 100%;
-            border-radius: 5px;
-            height: 35px;
-            line-height: 20px;
-            font-size: 14px;
-            padding-left: 10px;
-            padding-right: 10px;
-            outline-width: 0;
-            border: 1px solid @color-border;
-            background: #fff;
-            -webkit-appearance: none;
-            font-weight: 300;
-            color: @color-font;
-
-            &:focus{
-                border: 1px solid @color-primary;
-                background: #fff !important;
-            }
-        }
-
-        @media screen and (max-width: 767px) {
-            label {
-                text-align: left;
-            }
-        }
-
-        input[type="checkbox"]{;
-            display: none;
-        }
-
-        input[type="file"]{
-            //todo style for chosse file/load
-        }
-
-        .checkbox(@display: block){
-
-            label{
-                display: @display;
-                margin-right: 15px;
-                position: relative;
-                cursor: pointer;
-                padding: 0;
-                text-align: left;
-                overflow: hidden;
-                max-width: 20px; //truncate text in checkbox labels
-                white-space: nowrap;
-
-
-                &:before{
-                    content: '';
-                    display: inline-block;
-                    width: 18px;
-                    height: 18px;
-                    margin-right: 10px;
-                    font-size: 16px;
-                    border: 1px solid #b9b9b9;
-                    vertical-align: middle;
-
-                    transition: .3s;
-                }
-                &:hover:before {
-                    border: 1px solid @color-primary;
-                }
-            }
-
-            input[type="checkbox"]:checked + label:after{
-                position: absolute;
-                height: 100%;
-                left: 3px;
-                font-size: 15px;
-                //line-height: 1;
-                font-family: "trinity";
-                color: #fff;
-                vertical-align: middle;
-
-                content: '\e933';
-                display: inline-block;
-                //width: 17px;
-                //height: 17px;
-                //margin: 2.5px 0;
-            }
-            input[type="checkbox"]:checked + label:before{
-                border: 1px solid @color-primary;
-                background: @color-primary;
-            }
-
-        }
-
-        .widget-expanded{
-
-            .checkbox{
-                label{
-                    display: block;
-                    max-width: 100%;
-                }
-            }
-
-            .checkbox + label{
-                display: none;
-            }
-        }
-
-        .checkbox{
-            .checkbox(block);
-        }
-
-        .checkbox-inline{
-            .checkbox(inline-block);
-            label{
-                float: left;
-                position: relative;
-            }
-        }
-
-        //select drop-down fix and hide default drop icon
-        .select-style{
-
-            select{
-                -webkit-appearance:none;
-                -moz-appearance:none;
-                appearance:none;
-                cursor:pointer;
-            }
-
-            &:after{
-                content: "\e654";
-                font-family: "tiecons";
-                font-size: 12px;
-                color: @color-tab-label;
-                position: absolute;
-                right: 10px;
-                top: 11px;
-                line-height: 1;
-                pointer-events:none;
-            }
-
-            &:before{
-                content: " ";
-                right:10px;
-                top:12px;
-                width:15px;
-                height:15px;
-                position: absolute;
-                pointer-events:none;
-            }
-
-            select:-moz-focusring {
-                color: transparent;
-                text-shadow: 0 0 0 #000;
-            }
-        }
-
-        textarea{
-            height: 100px;
-            padding-top: 10px;
-            line-height: 20px;
-            padding-bottom: 10px;
-        }
-
-        .tiecons-postfix{
-            position: absolute;
-            right: 10px;
-            top: 7px;
-        }
-
-        input[type="submit"], button[type="submit"]{
-            margin-left: auto;
-            display: block;
-            float: none !important;
-            margin-right: auto;
-            text-transform: uppercase;
-            font-size: 18px;
-        }
-
-        input.error {
-            border: solid 1px red !important;
-        }
-
-        /* Just for webkit browsers */
-        input[type="date"]::-webkit-inner-spin-button,
-        input[type="date"]::-webkit-outer-spin-button {
-            height: 100%;
-        }
-
-        input[type="date"]::-webkit-calendar-picker-indicator{
-            position: relative;
-            display: block;
-            width: 14px;
-            height: 30px;
-            right: -6px;
-            color: transparent;
-
-            &:after{
-                content: "\e654";
-                font-family: "tiecons";
-                font-size: 12px;
-                color: @color-tab-label;
-                position: absolute;
-                right: 5px;
-                top: 7px;
-                pointer-events:none;
-            }
-        }
+      &:first-of-type {
+        margin-top: 0px;
+      }
     }
 
-    .form-title{
-        padding: 15px;
+    .form-left {
+      text-align: right;
     }
 
-    //delete form layout
-    .delete-form{
-        width: 100%;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+    .form-right {
 
-        input[type="submit"]{
-            margin-left: auto;
-            display: block;
-            float: none !important;
-            margin-right: auto;
-            text-transform: uppercase;
-            font-size: 18px;
+      .checkbox + .description {
+        float: left;
+        margin-top: -25px;
+        margin-left: 25px;
+      }
 
-            -webkit-appearance:none;
-            transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in, box-shadow @form-tr-time ease-in;
-        }
-
-        i.trinity-warning:before{
-            font-size: 150px;
-            color: orange;
-        }
-        h2.warning{
-            font-weight: 200;
-            font-size: 60px;
-        }
-        p{
-            font-size: 20px;
-            color: #8e8e8e;
-        }
-        ul{
-            font-size: 20px;
-            color: #8e8e8e;
-            margin-top:3px;
-        }
-        li{
-            margin-top:5px;
-        }
-        .row{
-            margin: 10px 0 20px 0;
-        }
+      .description {
+        font-size: 12px;
+        color: #727272;
+      }
     }
 
-    h2.warning{
-        background-color: transparent !important;
+    @media screen and(max-width: @medium-width) {
+      .form-left {
+        text-align: left;
+
+      }
     }
 
-    //info empty billing plans
-    .info-empty-form{
-        width: 100%;
-        text-align: center;
-        margin-left: auto;
-        margin-right: auto;
+    label {
+      color: @color-font;
+      padding: 0;
+      padding-right: 20%;
+      line-height: 35px;
+      font-weight: 400;
 
-        i.trinity-info:before{
-            font-size: 140px;
-            color: deepskyblue;
-        }
-        h2.warning{
-            font-weight: 200;
-            font-size: 50px;
-        }
-        p{
-            font-size: 20px;
-            color: #8e8e8e;
-        }
-        .row{
-            margin: 10px 0 20px 0;
-        }
+      &.required:after {
+        content: "*";
+        color: @color-primary;
+        font-weight: 600;
+      }
     }
 
-    .box-new-form{
-        padding-bottom: 15px;
+    .form-content-center {
+      margin-left: auto;
+      margin-right: auto;
+      display: block !important;
+      position: static !important;
+      float: none !important;
     }
 
-    #email-templates{
-        input:not([type="submit"]), select, textarea {
-            min-height: 300px;
-        }
+    input[type="text"],
+    input[type="number"],
+    input[type="email"],
+    input[type="date"],
+    input[type="datetime"],
+    input[type="password"],
+    input[type="url"],
+    input[type="search"],
+    select,
+    textarea {
+      width: 100%;
+      border-radius: 5px;
+      height: 35px;
+      line-height: 20px;
+      font-size: 14px;
+      padding-left: 10px;
+      padding-right: 10px;
+      outline-width: 0;
+      border: 1px solid @color-border;
+      background: #fff;
+      -webkit-appearance: none;
+      font-weight: 300;
+      color: @color-font;
+
+      &:focus {
+        border: 1px solid @color-primary;
+        background: #fff !important;
+      }
     }
 
-
-    // fixes - collections
-    .collection-widget{
-        div{
-            width: 100% !important;
-            padding: 0px !important;
-            margin: 0px !important;
-        }
-
-        .form-right{
-            margin-bottom: 5px !important;
-        }
-
-        .form-left{
-            display: none !important;
-        }
-
-        .add-collection-item{
-            color: @color-tertiary;
-            p{
-                margin: 5px 0 !important;
-                font-weight: 500;
-
-            }
-            &:hover{
-                color: darken(@color-tertiary,5%);
-            }
-            i{
-                font-size: 18px;
-                padding: 10px;
-                &:after{
-                    font-family: 'Roboto', sans-serif;
-                    margin-left: 5px;
-                    content: 'Add item';
-                    font-size: 16px;
-                }
-            }
-        }
-
-        .delete-collection-item{
-            .tiecons, .trinity{
-                color: #c22a00;
-                position: absolute;
-                right: -20px;
-                top: 10px;
-                transition: all 0.1s;
-                &:hover{
-                    -ms-transform: scale(1.2); /* IE 9 */
-                    -webkit-transform: scale(1.2); /* Safari */
-                    transform: scale(1.2);
-                }
-            }
-        }
+    @media screen and (max-width: 767px) {
+      label {
+        text-align: left;
+      }
     }
+
+    input[type="checkbox"] {;
+      display: none;
+    }
+
+    input[type="file"] {
+      //todo style for chosse file/load
+    }
+
+    .checkbox(@display: block) {
+
+      label {
+        display: @display;
+        margin-right: 15px;
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        text-align: left;
+        overflow: hidden;
+        max-width: 20px; //truncate text in checkbox labels
+        white-space: nowrap;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          width: 18px;
+          height: 18px;
+          margin-right: 10px;
+          font-size: 16px;
+          border: 1px solid #b9b9b9;
+          vertical-align: middle;
+
+          transition: .3s;
+        }
+        &:hover:before {
+          border: 1px solid @color-primary;
+        }
+      }
+
+      input[type="checkbox"]:checked + label:after {
+        position: absolute;
+        height: 100%;
+        left: 3px;
+        font-size: 15px;
+        //line-height: 1;
+        font-family: "trinity";
+        color: #fff;
+        vertical-align: middle;
+
+        content: '\e933';
+        display: inline-block;
+        //width: 17px;
+        //height: 17px;
+        //margin: 2.5px 0;
+      }
+      input[type="checkbox"]:checked + label:before {
+        border: 1px solid @color-primary;
+        background: @color-primary;
+      }
+
+    }
+
+    .widget-expanded {
+
+      .checkbox {
+        label {
+          display: block;
+          max-width: 100%;
+        }
+      }
+
+      .checkbox + label {
+        display: none;
+      }
+    }
+
+    .checkbox {
+      .checkbox(block);
+    }
+
+    .checkbox-inline {
+      .checkbox(inline-block);
+      label {
+        float: left;
+        position: relative;
+      }
+    }
+
+    //select drop-down fix and hide default drop icon
+    .select-style {
+
+      select {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        cursor: pointer;
+      }
+
+      &:after {
+        content: "\e928";
+        font-family: trinity;
+        font-size: 12px;
+        color: @color-tab-label;
+        position: absolute;
+        right: 10px;
+        top: 11px;
+        line-height: 1;
+        pointer-events: none;
+      }
+
+      //todo why David?
+      &:before {
+        content: " ";
+        right: 10px;
+        top: 12px;
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        pointer-events: none;
+      }
+
+      select:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 #000;
+      }
+
+      select[disabled] {
+        cursor: not-allowed;
+        background: #ebf8ff;
+      }
+    }
+
+    textarea {
+      height: 100px;
+      padding-top: 10px;
+      line-height: 20px;
+      padding-bottom: 10px;
+    }
+
+    .tiecons-postfix {
+      position: absolute;
+      right: 10px;
+      top: 7px;
+    }
+
+    input[type="submit"], button[type="submit"] {
+      margin-left: auto;
+      display: block;
+      float: none !important;
+      margin-right: auto;
+      text-transform: uppercase;
+      font-size: 18px;
+    }
+
+    input.error {
+      border: solid 1px red !important;
+    }
+
+    /* Just for webkit browsers */
+    input[type="date"]::-webkit-inner-spin-button,
+    input[type="date"]::-webkit-outer-spin-button {
+      height: 100%;
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      position: relative;
+      display: block;
+      width: 14px;
+      height: 30px;
+      right: -6px;
+      color: transparent;
+
+      &:after {
+        content: "\e654";
+        font-family: "tiecons";
+        font-size: 12px;
+        color: @color-tab-label;
+        position: absolute;
+        right: 5px;
+        top: 7px;
+        pointer-events: none;
+      }
+    }
+  }
+
+  .form-title {
+    padding: 15px;
+  }
+
+  //delete form layout
+  .delete-form {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    input[type="submit"] {
+      margin-left: auto;
+      display: block;
+      float: none !important;
+      margin-right: auto;
+      text-transform: uppercase;
+      font-size: 18px;
+
+      -webkit-appearance: none;
+      transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in, box-shadow @form-tr-time ease-in;
+    }
+
+    i.trinity-warning:before {
+      font-size: 150px;
+      color: orange;
+    }
+    h2.warning {
+      font-weight: 200;
+      font-size: 60px;
+    }
+    p {
+      font-size: 20px;
+      color: #8e8e8e;
+    }
+    ul {
+      font-size: 20px;
+      color: #8e8e8e;
+      margin-top: 3px;
+    }
+    li {
+      margin-top: 5px;
+    }
+    .row {
+      margin: 10px 0 20px 0;
+    }
+  }
+
+  h2.warning {
+    background-color: transparent !important;
+  }
+
+  //info empty billing plans
+  .info-empty-form {
+    width: 100%;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    i.trinity-info:before {
+      font-size: 140px;
+      color: deepskyblue;
+    }
+    h2.warning {
+      font-weight: 200;
+      font-size: 50px;
+    }
+    p {
+      font-size: 20px;
+      color: #8e8e8e;
+    }
+    .row {
+      margin: 10px 0 20px 0;
+    }
+  }
+
+  .box-new-form {
+    padding-bottom: 15px;
+  }
+
+  #email-templates {
+    input:not([type="submit"]), select, textarea {
+      min-height: 300px;
+    }
+  }
+
+  // fixes - collections
+  .collection-widget {
+    div {
+      width: 100% !important;
+      padding: 0px !important;
+      margin: 0px !important;
+    }
+
+    .form-right {
+      margin-bottom: 5px !important;
+    }
+
+    .form-left {
+      display: none !important;
+    }
+
+    .add-collection-item {
+      color: @color-tertiary;
+      p {
+        margin: 5px 0 !important;
+        font-weight: 500;
+
+      }
+      &:hover {
+        color: darken(@color-tertiary, 5%);
+      }
+      i {
+        font-size: 18px;
+        padding: 10px;
+        &:after {
+          font-family: 'Roboto', sans-serif;
+          margin-left: 5px;
+          content: 'Add item';
+          font-size: 16px;
+        }
+      }
+    }
+
+    .delete-collection-item {
+      .tiecons, .trinity {
+        color: #c22a00;
+        position: absolute;
+        right: -20px;
+        top: 10px;
+        transition: all 0.1s;
+        &:hover {
+          -ms-transform: scale(1.2); /* IE 9 */
+          -webkit-transform: scale(1.2); /* Safari */
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
 }
