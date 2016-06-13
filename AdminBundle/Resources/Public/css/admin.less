@@ -26,36 +26,44 @@ body {
 @import "paySystem";
 
 /** fix **/
+body.trinity-admin {
 
-.modal-a.button.button-secondary {
-  display: none !important;
-}
-
-ul.list {
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-  li {
-    margin-left: 18px;
-    list-style-type: circle;
+  .modal-a.button.button-secondary {
+    display: none !important;
   }
-}
 
-ol.list {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  ul.list {
+    margin-top: 10px;
+    margin-bottom: 10px;
 
-  li {
-    margin-left: 18px;
-    list-style-type: decimal;
+    li {
+      margin-left: 18px;
+      list-style-type: circle;
+    }
   }
-}
 
-a:visited {
-  color: #551A8B;
-}
+  ol.list {
+    margin-top: 10px;
+    margin-bottom: 10px;
 
-.span-large-24:first-child {
-  padding-left: 25px;
-  padding-bottom: 20px;
+    li {
+      margin-left: 18px;
+      list-style-type: decimal;
+    }
+  }
+
+  a:visited {
+    color: #551A8B;
+  }
+
+  .span-large-24:first-child {
+    padding-left: 25px;
+    padding-bottom: 20px;
+  }
+
+  .no-hover-backg, .new-form .no-hover-backg, .edit-form .no-hover-backg, #row_group_rolesEntry {
+    &:hover {
+      background: transparent;
+    }
+  }
 }

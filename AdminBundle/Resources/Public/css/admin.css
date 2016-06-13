@@ -2574,7 +2574,7 @@ body.trinity-admin .new-form label,
 body.trinity-admin .modal-dialog form label {
   color: #303030;
   padding: 0;
-  padding-right: 20% ;
+  padding-right: 20%;
   line-height: 35px;
   font-weight: 400;
 }
@@ -3879,10 +3879,8 @@ body.trinity-admin .box .show-harmonica > form {
   width: 105%;
 }
 body.trinity-admin .harmonica .main-panel {
+  margin-bottom: 0;
   min-height: 51px;
-  /*      label[for^="harmonica-global-01"] {
-        border-top: 1px solid transparent;
-      }*/
 }
 body.trinity-admin .harmonica .main-panel input {
   display: block !important;
@@ -3899,6 +3897,7 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
   border-top: 1px solid #afafaf;
   border-bottom: 1px solid #afafaf;
   text-transform: uppercase;
+  margin: 0;
 }
 body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
   margin-right: 10px;
@@ -3922,6 +3921,9 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:before {
 }
 body.trinity-admin .harmonica .main-panel label[for^="default"] {
   text-align: left;
+}
+body.trinity-admin .harmonica .main-panel label[for^="harmonica-global-01"] {
+  border-top: 1px solid transparent;
 }
 body.trinity-admin .harmonica .main-panel .show-harmonica {
   background: none;
@@ -3948,13 +3950,27 @@ body.trinity-admin .harmonica .main-panel .show-harmonica label {
   background: transparent;
 }
 body.trinity-admin .harmonica .main-panel:first-of-type {
-  box-shadow: 0 -5px 6px rgba(255, 255, 255, 0.85);
-  /*label[for^="harmonica"] {
-          border-top: 1px solid transparent;
-        }*/
+  /*-webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+        -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+        box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);*/
+}
+body.trinity-admin .harmonica .main-panel:first-of-type label[for^="harmonica"] {
+  transition: box-shadow 0s, background 0.2s;
+  border-top: 1px solid transparent;
+}
+body.trinity-admin .harmonica .main-panel:first-of-type label[for^="harmonica"]:hover {
+  -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
 }
 body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel {
   max-height: 650px;
+  /*&:first-of-type {
+        box-shadow: 0 -5px 6px rgba(235, 235, 235, 0.85);
+        label[for^="harmonica"] {
+          border-top: 1px solid transparent;
+        }
+      }*/
 }
 body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
   font-weight: 400;
@@ -3975,12 +3991,6 @@ body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label
   color: #493470;
   float: left;
   margin-right: 10px;
-}
-body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel:first-of-type {
-  box-shadow: 0 -5px 6px rgba(235, 235, 235, 0.85);
-  /*        label[for^="harmonica"] {
-          border-top: 1px solid transparent;
-        }*/
 }
 body.trinity-admin .tab-body-wrapper .harmonica input[id^="harmonica"]:first-of-type:checked + .main-panel:first-of-type label[for^="harmonica"] {
   -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
@@ -4359,29 +4369,35 @@ input[type=checkbox].edit-input:checked + label span::before {
   transition: opacity 0.5s ease-in;
 }
 /** fix **/
-.modal-a.button.button-secondary {
+body.trinity-admin .modal-a.button.button-secondary {
   display: none !important;
 }
-ul.list {
+body.trinity-admin ul.list {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-ul.list li {
+body.trinity-admin ul.list li {
   margin-left: 18px;
   list-style-type: circle;
 }
-ol.list {
+body.trinity-admin ol.list {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-ol.list li {
+body.trinity-admin ol.list li {
   margin-left: 18px;
   list-style-type: decimal;
 }
-a:visited {
+body.trinity-admin a:visited {
   color: #551A8B;
 }
-.span-large-24:first-child {
+body.trinity-admin .span-large-24:first-child {
   padding-left: 25px;
   padding-bottom: 20px;
+}
+body.trinity-admin .no-hover-backg:hover,
+body.trinity-admin .new-form .no-hover-backg:hover,
+body.trinity-admin .edit-form .no-hover-backg:hover,
+body.trinity-admin #row_group_rolesEntry:hover {
+  background: transparent;
 }
