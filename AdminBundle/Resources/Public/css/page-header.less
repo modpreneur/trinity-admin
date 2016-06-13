@@ -8,6 +8,13 @@
 
 body.trinity-admin{
 
+    .head-title{
+        display: block;
+        float: left;
+        height: 100px;
+    }
+
+
     .head-content{
         font-family: "Roboto", sans-serif;
         color: @global-font-color;
@@ -23,37 +30,56 @@ body.trinity-admin{
         clear: both;
         font-weight: 400;
 
+        box-shadow: 0px 6px 7.2px 0.8px rgba(0, 0, 0, 0.05);
+
         div[class^="span"]{
             height: 100px;
             position: relative;
+            line-height: 1;
+        }
+
+        .page-icon{
+            position: relative;
+            height: 100px;
+            width: 95px;
+            display: block;
+            float: left;
+            i{
+                display: block;
+                margin: 25px 20px 20px 20px;
+                font-size: 55px;
+            }
+            img{
+                width: 65px;
+                height: 65px;
+                margin: 20px 10px 10px 20px;
+                border-radius: 55px;
+            }
         }
 
         .content-header{
             line-height: 32px !important;
             color: @color-primary !important;
-            margin-top: 20px;
+            margin-top: 25px;
             font-weight: 300;
+            b{
+                font-weight: 400;
+            }
         }
 
         span, i{
             color: @color-primary;
             font-weight: 300;
-            line-height: 40px;
-            font-size: 60px;
+            font-size: 55px;
         }
 
         i{
             color: @color-tertiary;
-            .abs-center();
         }
-
-/*        &:first-child{
-            margin-top: 20px;
-        }*/
 
         .breadcrumbs{
             float: left;
-            width: 100%;
+            width: auto;
             margin-left: -10px;
             line-height: 20px !important;
             background: none;
@@ -62,6 +88,9 @@ body.trinity-admin{
             span{
                 font-size: 12px !important;
                 color: #4c4c4c;
+            }
+            ul{
+                padding: 5px 0 10px 0;
             }
 
             li{
