@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Trinity\AdminBundle\Service;
 
 /**
@@ -32,7 +31,8 @@ class AdminManager
     /**
      * @return string
      */
-    public function getSearchText(){
+    public function getSearchText()
+    {
         return $this->searchText;
     }
 
@@ -40,7 +40,8 @@ class AdminManager
     /**
      * @return string
      */
-    public function getAppVersion(){
+    public function getAppVersion()
+    {
         return $this->appVersion;
     }
 }

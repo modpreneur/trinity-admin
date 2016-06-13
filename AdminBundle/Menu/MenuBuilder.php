@@ -11,7 +11,10 @@ use Symfony\Component\Security\Core\Authorization\AuthorizationCheckerInterface;
 use Trinity\AdminBundle\Event\AdminEvents;
 use Trinity\AdminBundle\Event\MenuEvent;
 
-
+/**
+ * Class MenuBuilder
+ * @package Trinity\AdminBundle\Menu
+ */
 class MenuBuilder
 {
     /** @var EventDispatcherInterface */
@@ -46,46 +49,47 @@ class MenuBuilder
 
         $sidebar_menu = $this->factory->createItem(
             'root',
-            array(
-                'childrenAttributes' => array(
+            [
+                'childrenAttributes' => [
                     'class' => 'sidebar',
-                ),
-            )
+                ],
+            ]
         );
         $this->navs['sidebar'] = $sidebar_menu;
 
         $quick_menu = $this->factory->createItem(
             'root',
-            array(
-                'childrenAttributes' => array(
+            [
+                'childrenAttributes' => [
                     'class' => 'show-quick-add',
-                ),
-            )
+                ],
+            ]
         );
         $this->navs['quick-menu'] = $quick_menu;
 
         $user_menu = $this->factory->createItem(
             'root',
-            array(
-                'childrenAttributes' => array(
+            [
+                'childrenAttributes' => [
                     'class' => 'show-drop-login',
-                ),
-            )
+                ],
+            ]
         );
         $this->navs['user_menu'] = $user_menu;
 
         $this->menuEvent = new MenuEvent($this->factory);
-        $this->menuEvent->addNav('sidebar', $sidebar_menu)->addNav('quick-menu', $quick_menu)->addNav(
-                'user_menu',
-                $user_menu
-            );
+        $this->menuEvent
+            ->addNav('sidebar', $sidebar_menu)
+            ->addNav('quick-menu', $quick_menu)
+            ->addNav('user_menu', $user_menu)
+        ;
     }
-
 
     /**
      * @param RequestStack $requestStack
      *
      * @return ItemInterface
+     * @throws \InvalidArgumentException
      */
     public function createMainMenu(RequestStack $requestStack)
     {
@@ -105,7 +109,7 @@ class MenuBuilder
 
     /**
      * @param ItemInterface $menu
-     * @throws \Exception when $orderNumber doesn't meet the requirements
+     * @throws \InvalidArgumentException when $orderNumber doesn't meet the requirements
      */
     private function orderMenu(ItemInterface $menu)
     {
@@ -119,21 +123,21 @@ class MenuBuilder
          * @var MenuItem $menuItem
          */
         foreach ($menu->getChildren() as $key => $menuItem) {
-
             $orderNumber = $menuItem->getExtra('orderNumber');
 
             if ($orderNumber && !is_numeric($orderNumber)) {
-                throw new \Exception('Order number must be an integer.');
-            }
-            if ($orderNumber < 0) {
-                throw new \Exception('Order number must be higher or equal to 0.');
+                throw new \InvalidArgumentException('Order number must be an integer.');
             }
 
-            if ($menuItem->getChildren() != null) {
+            if ($orderNumber < 0) {
+                throw new \InvalidArgumentException('Order number must be higher or equal to 0.');
+            }
+
+            if ($menuItem->getChildren() !== null) {
                 $this->orderMenu($menuItem);
             }
 
-            if ($orderNumber == null) {
+            if ($orderNumber === 0) {
                 $unorderedNames[] = $menuItem->getName();
 
                 if (!$this->userHasPermissions($menuItem)) {
@@ -145,11 +149,12 @@ class MenuBuilder
         foreach ($menu->getChildren() as $key => $menuItem) {
             $orderNumber = $menuItem->getExtra('orderNumber');
 
-            if ($orderNumber != null) {
+            if ($orderNumber !== 0) {
                 $orderArray = $this->orderArray($names, $userIndexes, $orderNumber);
-                $names = $orderArray[1];
-                $userIndexes = $orderArray[2];
-                $idx = $orderArray[0];
+//                $names = $orderArray[1];
+//                $userIndexes = $orderArray[2];
+//                $idx = $orderArray[0];
+                list($idx, $names, $userIndexes) = $orderArray;
 
                 $userIndexes[$idx] = $orderNumber;
                 $names[$idx] = $menuItem->getName();
@@ -186,14 +191,14 @@ class MenuBuilder
 
                     $userIndexes = $this->shiftArray($userIndexes, $i, 1);
 
-                    return array($i, $names, $userIndexes);
+                    return [$i, $names, $userIndexes];
                 }
             } else {
-                return array($i, $names, $userIndexes);
+                return [$i, $names, $userIndexes];
             }
         }
 
-        return array(-1, $names, $userIndexes);
+        return [-1, $names, $userIndexes];
     }
 
 
@@ -208,7 +213,6 @@ class MenuBuilder
         for ($i = count($shiftArray) + $shiftSize - 1; $i > $fromElement; $i--) {
             $shiftArray[$i] = $shiftArray[$i - $shiftSize];
         }
-
         return $shiftArray;
     }
 
@@ -220,7 +224,7 @@ class MenuBuilder
     private function userHasPermissions(MenuItem $menuItem)
     {
         $roles = $menuItem->getExtra('roles');
-        if ($roles != null) {
+        if ($roles !== null) {
             foreach ($roles as $role) {
                 if ($this->authorizationChecker->isGranted($role)) {
                     return true;

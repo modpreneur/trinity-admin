@@ -14,6 +14,7 @@ class Configuration implements ConfigurationInterface
 {
     /**
      * {@inheritdoc}
+     * @throws \RuntimeException
      */
     public function getConfigTreeBuilder()
     {
@@ -29,9 +30,8 @@ class Configuration implements ConfigurationInterface
                         ->scalarNode('search_text')->end()
                     ->end()
                 ->end()
-            ->end();
-
-
+            ->end()
+        ;
 
         return $treeBuilder;
     }

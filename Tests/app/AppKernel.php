@@ -14,15 +14,16 @@ class AppKernel extends Kernel
      */
     public function registerBundles()
     {
-        return array(
+        return [
             new \Symfony\Bundle\FrameworkBundle\FrameworkBundle()
 
-        );
+        ];
     }
-
 
     /**
      * @param LoaderInterface $loader
+     *
+     * @throws \Exception
      */
     public function registerContainerConfiguration(LoaderInterface $loader)
     {

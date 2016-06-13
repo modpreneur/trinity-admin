@@ -8,11 +8,11 @@
 
 namespace Trinity\AdminBundle\Form\DateTimeLocal;
 
-
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\FormInterface;
 use Symfony\Component\Form\FormView;
 
-class DateTimeLocalType extends \Symfony\Component\Form\Extension\Core\Type\DateTimeType
+class DateTimeLocalType extends DateTimeType
 {
     /**
      * {@inheritdoc}
@@ -21,10 +21,8 @@ class DateTimeLocalType extends \Symfony\Component\Form\Extension\Core\Type\Date
     {
         $view->vars['widget'] = $options['widget'];
 
-
         if ($options['html5'] && 'single_text' === $options['widget'] && self::HTML5_FORMAT === $options['format']) {
             $view->vars['type'] = 'datetime-local';
         }
     }
-
 }

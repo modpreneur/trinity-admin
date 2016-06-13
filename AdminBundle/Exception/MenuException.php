@@ -6,7 +6,6 @@
  */
 namespace Trinity\AdminBundle\Exception;
 
-
 /**
  * Class MenuException
  * @package Trinity\AdminBundle\Exception

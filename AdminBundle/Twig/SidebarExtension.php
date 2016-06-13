@@ -2,12 +2,22 @@
 
 namespace Trinity\AdminBundle\Twig;
 
-
+/**
+ * Class SidebarExtension
+ * @package Trinity\AdminBundle\Twig
+ */
 class SidebarExtension extends \Twig_Extension
 {
+    //@todo @GabrielBordovsky what type?
     private $router;
 
-    public function __construct($router) {
+    /**
+     * SidebarExtension constructor.
+     *
+     * @param $router
+     */
+    public function __construct($router)
+    {
         $this->router = $router;
     }
 
@@ -20,39 +30,49 @@ class SidebarExtension extends \Twig_Extension
      */
     public function getFilters()
     {
-        return array(
-            new \Twig_SimpleFilter('getSidebarMsgs', array($this, 'getRedisMsgs')),
-            new \Twig_SimpleFilter('json_decode', array($this, 'jsonDecode')),
-            new \Twig_SimpleFilter('routeExists', array($this, 'routeExists'))
-        );
+        return [
+            new \Twig_SimpleFilter('getSidebarMsgs', [$this, 'getRedisMsgs']),
+            new \Twig_SimpleFilter('json_decode', [$this, 'jsonDecode']),
+            new \Twig_SimpleFilter('routeExists', [$this, 'routeExists'])
+        ];
     }
 
+    /**
+     * @param $json
+     *
+     * @return mixed
+     */
     public function jsonDecode($json)
     {
-        return json_decode($json,true);
+        return json_decode($json, true);
     }
 
+    /**
+     * return array with:
+     *  array of messages (for format look at extend_layout.html.twig)
+     *  array of origin times of each message
+     *  array of user who invoked message
+     *  int count of new(yet not showed) messages
+     *  array of keys for given message (for removing)
+     *
+     * count of elements for each sub-array has to be same
+     * (Or at least fist array has to be bigger)
+     */
     public function getRedisMsgs()
     {
-        /**
-         * return array with:
-         *  array of messages (for format look at extend_layout.html.twig)
-         *  array of origin times of each message
-         *  array of user who invoked message
-         *  int count of new(yet not showed) messages
-         *  array of keys for given message (for removing)
-         *
-         * count of elements for each sub-array has to be same
-         * (Or at least fist array has to be bigger)
-         */
         return [[], [], [], 0, []];
     }
 
-    function routeExists($name)
+    /**
+     * @param $name
+     *
+     * @return bool
+     */
+    public function routeExists($name)
     {
         // I assume that you have a link to the container in your twig extension class
 
-        return (null === $this->router->getRouteCollection()->get($name)) ? false : true;
+        return null === $this->router->getRouteCollection()->get($name);
     }
 
 
