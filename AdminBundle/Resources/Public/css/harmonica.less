@@ -1,131 +1,160 @@
 @import "variables";
 @import "helper";
 
-body.trinity-admin{
+body.trinity-admin {
 
-    .box .show-harmonica > form{
-        margin-left: -20px;
-        margin-right: -20px;
-        width: 105%;
+  .box .show-harmonica > form {
+    margin-left: -20px;
+    margin-right: -20px;
+    width: 105%;
+  }
+
+  .harmonica {
+    //padding-top: 10px;
+
+    .main-panel {
+
+      min-height: 51px;
+
+      input {
+        display: block !important;
+      }
+
+      label[for^="harmonica"] {
+        font-size: 14px;
+        text-align: left;
+        font-weight: 300;
+        padding-left: 15px;
+        padding-right: 15px;
+        color: @color-font;
+        line-height: 30px;
+        border-bottom: 1px solid #d7d7d7;
+        border-top: 1px solid @color-tab-label;
+        border-bottom: 1px solid @color-tab-label;
+        text-transform: uppercase;
+
+        i {
+          margin-right: 10px;
+          font-size: 16px;
+          line-height: 30px;
+          float: left;
+          color: @color-primary;
+        }
+
+        &:hover {
+          background: @global-row-hover;
+        }
+
+        &:before {
+          content: "\e656";
+          display: block;
+          font-family: 'tiecons';
+          speak: none;
+          font-size: 11px;
+          color: @color-primary;
+          float: left;
+          margin-right: 10px;
+        }
+      }
+
+/*      label[for^="harmonica-global-01"] {
+        border-top: 1px solid transparent;
+      }*/
+
+      .show-harmonica {
+        background: none;
+        padding: 0;
+        color: @color-font;
+        max-height: 600px;
+        overflow-y: auto;
+        overflow-x: hidden;
+
+        .harmonica-content {
+          color: @color-font;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+
+        input[type="checkbox"] {
+          display: none !important;
+        }
+
+        label {
+          color: @color-font;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 20px;
+          padding-top: 5px;
+          background: transparent;
+        }
+      }
+      &:first-of-type {
+        box-shadow: 0 -5px 6px rgba(255, 255, 255, 0.85);
+        label[for^="harmonica"] {
+          border-top: 1px solid transparent;
+        }
+      }
     }
 
+    input[id^="harmonica"]:checked + .main-panel {
+      max-height: 650px;
+
+      label[for^="harmonica"] {
+        font-weight: 400;
+        background: darken(@global-row-hover, 5%);
+        color: @color-primary;
+        border-top: 1px solid #d7d7d7;
+        border-bottom: 1px solid #ccc;
+
+        .shadow(0px, 5px, 10px, rgba(219, 219, 219, 0.48));
+
+        &:before {
+          content: "\e654";
+          display: block;
+          font-family: 'tiecons';
+          speak: none;
+          font-size: 11px;
+          color: @color-primary;
+          float: left;
+          margin-right: 10px;
+        }
+      }
+      &:first-of-type {
+        box-shadow: 0 -5px 6px rgba(235, 235, 235, 0.85);
+        label[for^="harmonica"] {
+          border-top: 1px solid transparent;
+        }
+      }
+    }
+  }
+
+
+
+
+
+
+
+  .tab-body-wrapper{
+    .harmonica input[id^="harmonica"]:first-of-type:checked + .main-panel:first-of-type label[for^="harmonica"]{
+      -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+      -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+      box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+    }
+  }
+
+
+
+
+
+  /*.tab-body-wrapper{
     .harmonica{
-
-
-        .main-panel{
-
-            min-height: 51px;
-
-            input{
-                display: block !important;
-            }
-
-            label[for^="harmonica"]{
-                font-size: 14px;
-                text-align: left;
-                font-weight: 300;
-                padding-left: 15px;
-                padding-right: 15px;
-                color: @color-font;
-                line-height: 30px;
-                border-bottom: 1px solid #d7d7d7;
-                border-top: 1px solid @color-tab-label;
-                border-bottom: 1px solid @color-tab-label;
-                text-transform: uppercase;
-
-                i{
-                    margin-right: 10px;
-                    font-size: 16px;
-                    line-height: 30px;
-                    float: left;
-                    color: @color-primary;
-                }
-
-                &:hover{
-                    background: @global-row-hover;
-                }
-
-                &:before{
-                    content: "\e656";
-                    display: block;
-                    font-family: 'tiecons';
-                    speak: none;
-                    font-size: 11px;
-                    color: @color-primary;
-                    float: left;
-                    margin-right: 10px;
-                }
-            }
-
-            label[for^="harmonica-global-01"]{
-                border-top: 1px solid transparent;
-            }
-
-            .show-harmonica{
-                background: none;
-                padding: 0;
-                color: @color-font;
-                max-height: 600px;
-                overflow-y: auto;
-                overflow-x: hidden;
-
-                .harmonica-content{
-                    color: @color-font;
-                    padding-left: 15px;
-                    padding-right: 15px;
-                }
-
-                input[type="checkbox"]{
-                    display: none !important;
-                }
-
-                label{
-                    color: @color-font;
-                    font-weight: 300;
-                    font-size: 14px;
-                    line-height: 20px;
-                    padding-top: 5px;
-                    background: transparent;
-                }
-            }
-            &:first-of-type{
-                box-shadow: 0 -5px 6px rgba(255, 255, 255, 0.85);
-                label[for^="harmonica"]{
-                    border-top: 1px solid transparent;
-                }
-            }
+      .main-panel:first-of-type{
+        label{
+          -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+          -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+          box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
         }
-
-        input[id^="harmonica"]:checked + .main-panel{
-            max-height: 650px;
-
-            label[for^="harmonica"]{
-                font-weight: 400;
-                background: darken(@global-row-hover, 5%);
-                color: @color-primary;
-                border-top: 1px solid #d7d7d7;
-                border-bottom: 1px solid #ccc;
-
-                .shadow(0px, 5px, 10px, rgba(219, 219, 219, 0.48));
-
-                &:before{
-                    content: "\e654";
-                    display: block;
-                    font-family: 'tiecons';
-                    speak: none;
-                    font-size: 11px;
-                    color: @color-primary;
-                    float: left;
-                    margin-right: 10px;
-                }
-            }
-            &:first-of-type{
-                box-shadow: 0 -5px 6px rgba(235, 235, 235, 0.85);
-                label[for^="harmonica"]{
-                    border-top: 1px solid transparent;
-                }
-            }
-        }
+      }
     }
-
+  }*/
 }
