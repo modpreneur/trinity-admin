@@ -1566,7 +1566,7 @@ body.trinity-admin .tabs-wrapper #tab1:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper label[for^="tab"] {
   border: none;
-  color: #7e7e7e;
+  color: #afafaf;
   text-align: center;
   padding: 12px 0;
   font-weight: 400;
@@ -1629,14 +1629,14 @@ body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions {
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item {
   display: flex;
-  background: #7e7e7e;
+  background: #afafaf;
   color: #fff;
   text-align: center;
   cursor: pointer;
   font-size: 12px;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item:hover {
-  background: #656565;
+  background: #969696;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item a {
   padding: 5px 15px;
@@ -1651,7 +1651,7 @@ body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open:hover {
   background: #24afc9;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper h3 {
-  margin: 20px;
+  padding: 20px;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper .advanced-settings {
   transition: 5s;
@@ -1747,7 +1747,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper labe
   border: none;
   border-top: none;
   border-bottom: 2px solid #b5b5b5;
-  color: #7e7e7e;
+  color: #afafaf;
   counter-increment: tabs;
   padding: 15px 40px 15px 40px;
   font-weight: 400;
@@ -1821,8 +1821,8 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-p
   padding-right: 15px;
   color: #303030;
   line-height: 30px;
-  border-top: 1px solid #7e7e7e;
-  border-bottom: 1px solid #7e7e7e;
+  border-top: 1px solid #afafaf;
+  border-bottom: 1px solid #afafaf;
   text-transform: uppercase;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
@@ -1888,7 +1888,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-description {
   margin-top: 10px;
-  color: #7e7e7e;
+  color: #afafaf;
   font-size: 14px !important;
   padding-left: 0px;
   padding-right: 0px;
@@ -1905,7 +1905,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-
   color: #303030;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-info-text i {
-  color: #7e7e7e;
+  color: #afafaf;
 }
 body.trinity-admin .tab-content .tab-sub-title {
   font-size: 16px;
@@ -1921,7 +1921,7 @@ body.trinity-admin .tab-content .tab-sub-title i {
 }
 body.trinity-admin .tab-content .tab-description {
   margin-top: 10px;
-  color: #7e7e7e;
+  color: #afafaf;
   font-size: 14px !important;
   padding-left: 0px;
   padding-right: 0px;
@@ -1938,7 +1938,7 @@ body.trinity-admin .tab-content .tab-info-text {
   color: #303030;
 }
 body.trinity-admin .tab-content .tab-info-text i {
-  color: #7e7e7e;
+  color: #afafaf;
 }
 body.trinity-admin .reload {
   position: relative;
@@ -2813,7 +2813,7 @@ body.trinity-admin .modal-dialog form .select-style:after {
   content: "\e928";
   font-family: trinity;
   font-size: 12px;
-  color: #7e7e7e;
+  color: #afafaf;
   position: absolute;
   right: 10px;
   top: 11px;
@@ -2841,16 +2841,7 @@ body.trinity-admin .edit-form .select-style select[disabled],
 body.trinity-admin .new-form .select-style select[disabled],
 body.trinity-admin .modal-dialog form .select-style select[disabled] {
   cursor: not-allowed;
-}
-body.trinity-admin .edit-form .select-style[disabled],
-body.trinity-admin .new-form .select-style[disabled],
-body.trinity-admin .modal-dialog form .select-style[disabled] {
-  cursor: not-allowed;
-}
-body.trinity-admin .edit-form .select-style[disabled]:after,
-body.trinity-admin .new-form .select-style[disabled]:after,
-body.trinity-admin .modal-dialog form .select-style[disabled]:after {
-  content: " ";
+  background: #ebf8ff;
 }
 body.trinity-admin .edit-form textarea,
 body.trinity-admin .new-form textarea,
@@ -2909,7 +2900,7 @@ body.trinity-admin .modal-dialog form input[type="date"]::-webkit-calendar-picke
   content: "\e654";
   font-family: "tiecons";
   font-size: 12px;
-  color: #7e7e7e;
+  color: #afafaf;
   position: absolute;
   right: 5px;
   top: 7px;
@@ -3066,14 +3057,14 @@ body.trinity-admin .box-new-form .page-actions {
 }
 body.trinity-admin .box-new-form .page-actions .item {
   display: flex;
-  background: #7e7e7e;
+  background: #afafaf;
   color: #fff;
   text-align: center;
   cursor: pointer;
   font-size: 12px;
 }
 body.trinity-admin .box-new-form .page-actions .item:hover {
-  background: #656565;
+  background: #969696;
 }
 body.trinity-admin .box-new-form .page-actions .item a {
   padding: 5px 15px;
@@ -3863,16 +3854,29 @@ body.trinity-admin .edit-grid .edit-input {
   margin-left: 5px;
   font-family: 'trinity';
 }
+body.trinity-admin {
+  /*.tab-body-wrapper{
+    .harmonica{
+      .main-panel:first-of-type{
+        label{
+          -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+          -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+          box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
+        }
+      }
+    }
+  }*/
+}
 body.trinity-admin .box .show-harmonica > form {
   margin-left: -20px;
   margin-right: -20px;
   width: 105%;
 }
-body.trinity-admin .harmonica {
-  padding-top: 10px;
-}
 body.trinity-admin .harmonica .main-panel {
   min-height: 51px;
+  /*      label[for^="harmonica-global-01"] {
+        border-top: 1px solid transparent;
+      }*/
 }
 body.trinity-admin .harmonica .main-panel input {
   display: block !important;
@@ -3886,8 +3890,8 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
   color: #303030;
   line-height: 30px;
   border-bottom: 1px solid #d7d7d7;
-  border-top: 1px solid #7e7e7e;
-  border-bottom: 1px solid #7e7e7e;
+  border-top: 1px solid #afafaf;
+  border-bottom: 1px solid #afafaf;
   text-transform: uppercase;
 }
 body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
@@ -3909,9 +3913,6 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:before {
   color: #493470;
   float: left;
   margin-right: 10px;
-}
-body.trinity-admin .harmonica .main-panel label[for^="harmonica-global-01"] {
-  border-top: 1px solid transparent;
 }
 body.trinity-admin .harmonica .main-panel .show-harmonica {
   background: none;
@@ -3971,6 +3972,11 @@ body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel:first
 }
 body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel:first-of-type label[for^="harmonica"] {
   border-top: 1px solid transparent;
+}
+body.trinity-admin .tab-body-wrapper .harmonica input[id^="harmonica"]:first-of-type:checked + .main-panel:first-of-type label[for^="harmonica"] {
+  -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
 }
 /**
 *
@@ -4211,7 +4217,7 @@ body.trinity-admin .dropzone {
   float: right;
   padding: 8px 15px;
   text-align: center;
-  border: dashed 3px #7e7e7e;
+  border: dashed 3px #afafaf;
   border-radius: 10px;
 }
 body.trinity-admin .dropzone .dropzone-content {
