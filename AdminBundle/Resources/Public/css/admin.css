@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body {
   padding-top: 60px;
   font-family: 'Roboto', sans-serif;
@@ -4290,6 +4291,72 @@ body.trinity-admin .checkbox input[type="checkbox"]:checked + label[class=level2
 }
 body.trinity-admin .checkbox .level3 {
   margin-left: 60px;
+}
+.grid-table-body {
+  overflow-x: auto;
+  white-space: nowrap;
+}
+/*.custom-grid-column {
+    padding: 20px 5px 20px 5px;
+}*/
+/*body.trinity-admin .harmonica .main-panel .show-harmonica .grid input[type=checkbox].edit-input{*/
+/*display: block !important;*/
+/*}*/
+body.trinity-admin .harmonica .main-panel .show-harmonica .grid input.edit-input {
+  display: inline-block !important;
+}
+/*body.trinity-admin .harmonica .main-panel .show-harmonica .grid input[type=checkbox].edit-input:disabled {*/
+/*display:none!important;*/
+/*}*/
+body.trinity-admin .harmonica .main-panel .show-harmonica .grid input[type=checkbox].edit-input {
+  display: none!important;
+}
+input[type=checkbox].edit-input:disabled + label {
+  cursor: default;
+}
+input[type=checkbox].edit-input + label span {
+  display: inline-block;
+  background-color: #E0E0E0;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+.grid input[type=checkbox].edit-input + label span::before {
+  font-family: 'trinity';
+  text-align: left;
+  font-size: 14px;
+  content: '\0a0';
+}
+input[type=checkbox].edit-input:disabled + label span {
+  background: none;
+}
+input[type=checkbox].edit-input:checked + label span::before {
+  font-family: 'trinity';
+  content: '\e933';
+}
+.example-enter {
+  opacity: 0.01;
+}
+.example-enter.example-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.example-leave {
+  opacity: 1;
+}
+.example-leave.example-leave-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
+.example-appear {
+  opacity: 0.01;
+}
+.example-appear.example-appear-active {
+  opacity: 1;
+  transition: opacity 0.5s ease-in;
 }
 /** fix **/
 .modal-a.button.button-secondary {
