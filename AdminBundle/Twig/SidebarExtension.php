@@ -2,21 +2,23 @@
 
 namespace Trinity\AdminBundle\Twig;
 
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
+
 /**
  * Class SidebarExtension
  * @package Trinity\AdminBundle\Twig
  */
 class SidebarExtension extends \Twig_Extension
 {
-    //@todo @GabrielBordovsky what type?
+    /** @var  Router */
     private $router;
 
     /**
      * SidebarExtension constructor.
      *
-     * @param $router
+     * @param Router $router
      */
-    public function __construct($router)
+    public function __construct(Router $router)
     {
         $this->router = $router;
     }
