@@ -24,6 +24,7 @@
         {% import _self as knp_menu %}
 
         <ul{{ knp_menu.attributes(listAttributes) }}>
+            <li class="header">Navigation</li>
             {{ block('children') }}
         </ul>
     {% endif %}
@@ -181,11 +182,8 @@
 
     <a href="{{ url }}"{{ knp_menu.attributes(item.linkAttributes) }}>
         <i class="{{ item.attribute('icon') }}"></i>
-        <span class="sidebar-link">
             {% if item.attribute('icon') is not empty %}
             {% endif %}{{ block('label') }}
-        </span>
-
         {% if is_dropdown %}
             <span class="dropdown-icon">
             </span>

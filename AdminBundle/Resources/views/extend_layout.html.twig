@@ -5,47 +5,53 @@
     {# Inputs are as toggle, don't move them from top #}
     <input name="navbar-items" type="radio" id="user-profile-input" class="navbar-item-input">
     <input name="navbar-items" type="radio" id="notifications-input" class="navbar-item-input">
+    <input name="navbar-items" type="radio" id="settings-input" class="navbar-item-input">
 
     <nav class="navbar row">
 
+        <div class="navbar-logo">
+            {% block navbar_logo %} <i> Logo zde </i> {% endblock %}
+            <span class="version">{{ admin_manager.getAppVersion() }}</span>
+        </div>
+
         <div class="navbar-container">
+
             <div>
                 loading
             </div>
-            <div class="navbar-logo pull-left">
-                {% block navbar_logo %} <i> Logo zde </i> {% endblock %}
-                <span class="version">{{ admin_manager.getAppVersion() }}</span>
+
+
+            {#Headline on scroll in navbar #}
+            <div id="header-for-nonvisible">
+                <div id="scroll-header"></div>
             </div>
 
-            {# Headline on scroll in navbar #}
-            <div id="header-for-nonvisible"></div>
+            {% block navbar_search %}
+                <div class="navbar-search navbar-actions-item">
+                    {% block navbar_seach_form_start %}
+                    <form action="{% block search_action %}{% endblock %}" autocomplete="on">
+                        {% endblock %}
+                        <label for="search">
+                            <input placeholder="Search..." class="navbar-search-input" type="text" name="search"
+                                   id="search">
+                            <button type="submit">
+                                <i class="trinity trinity-search"></i>
+                            </button>
+                        </label>
+                        {% block navbar_search_form_end %}
+                    </form>
+                    {% endblock %}
+                </div>
+            {% endblock %}
 
             {# Navbar labels for popus #}
             <div class="pull-right navbar-actions">
-
-                {% block navbar_search %}
-                    <div class="navbar-search navbar-actions-item">
-                        {% block navbar_seach_form_start %}
-                        <form action="{% block search_action %}{% endblock %}" autocomplete="on">
-                            {% endblock %}
-                            <label for="search">
-                                <input placeholder="Search..." class="navbar-search-input" type="text" name="search"
-                                       id="search">
-                                <button type="submit">
-                                    <i class="trinity trinity-search"></i>
-                                </button>
-                            </label>
-                            {% block navbar_search_form_end %}
-                        </form>
-                        {% endblock %}
-                    </div>
-                {% endblock %}
 
                 {% block navbar_actions %}
                 {% endblock %}
 
                 <label class="navbar-item-label" for="notifications-input" id="notifications-label">
-                    <i class="trinity trinity-notification"></i>
+                    <i class="trinity trinity-bell"></i>
                     {% set redis= app.user.getId() %}
                     {% set response = redis|getSidebarMsgs %}
                     {% set messages = response[0] %}
@@ -61,19 +67,33 @@
                     {% endif %}
                 </label>
 
-                <label class="navbar-item-label" for="user-profile-input" id="user-profile-label">
-                    <i class="trinity trinity-profile"></i>
+                <label class="navbar-item-label" for="settings-input" id="settings-label">
+                    <i class="trinity-settings"></i>
                 </label>
 
-                {% block navbar_logout %}
-                    <a class="navbar-actions-item size-2 navbar-item-label" title="Logout me"
-                       href="{{ path("fos_user_security_logout") }}">
-                        <div class="navbar-actions-item-center">
-                            <span class="pull-left margin-right-5 font-16">Logout</span>
-                            <i class="trinity trinity-logout padding-none-all"></i>
-                        </div>
-                    </a>
-                {% endblock %}
+                <label class="navbar-item-label" for="user-profile-input" id="user-profile-label">
+                    {% block user_label %}
+                    {% endblock %}
+                </label>
+
+                <div class="navbar-right-items">
+                    <div class="item">
+                        <a title="Logout me" href="{{ path("fos_user_security_logout") }}">
+                            <i class="tiecons tiecons-power-button"></i>
+                        </a>
+                    </div>
+
+
+                    {#@todo#}
+                    <div class="item">
+                        <label class="display-inline-block pointer" for="quick-links" id="quick-links-label" title="See more">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </div>
+                </div>
+
 
             </div>
 
