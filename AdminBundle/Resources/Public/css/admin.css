@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-  padding-top: 60px;
+  padding-top: 90px;
   font-family: 'Roboto', sans-serif;
 }
 /**
@@ -13,59 +13,59 @@ body {
 */
 body.trinity-admin {
   /*.fav-navbar{
-        display: none;
-        float: right;
-        background: @color-primary;
-        z-index: 99;
-        width: 80%;
-        min-height: @navbar-height;
+      display: none;
+      float: right;
+      background: @color-primary;
+      z-index: 99;
+      width: 80%;
+      min-height: @navbar-height;
 
-        .item{
-            display: block;
-            float: left;
-            background: #fff;
-            border-radius: 5px;
-            border: 1px solid darken(@color-primary, 5%);
-            color: #000;
-            text-align: center;
-            padding-bottom: 5px;
-            margin-right: 15px;
-            width: 250px;
-            padding-top: 5px;
-            margin-top: 10px;
+      .item{
+          display: block;
+          float: left;
+          background: #fff;
+          border-radius: 5px;
+          border: 1px solid darken(@color-primary, 5%);
+          color: #000;
+          text-align: center;
+          padding-bottom: 5px;
+          margin-right: 15px;
+          width: 250px;
+          padding-top: 5px;
+          margin-top: 10px;
 
-            &:hover{
-                background: #ededed;
-            }
+          &:hover{
+              background: #ededed;
+          }
 
-            i{
-                display: none;
-            }
+          i{
+              display: none;
+          }
 
-            span{
-                color: #000000;
-                font-size: 14px;
-                font-weight: 300;
-                line-height: 20px;
-            }
+          span{
+              color: #000000;
+              font-size: 14px;
+              font-weight: 300;
+              line-height: 20px;
+          }
 
-            &:hover{
-                border: 1px solid lighten(@color-primary, 30%);
-            }
-        }
+          &:hover{
+              border: 1px solid lighten(@color-primary, 30%);
+          }
+      }
 
-        .exit{
-            display: block;
-            color: #fff;
-            font-size: 26px;
-            position: absolute;
-            right: 10px;
-            top: 15px;
-        }
-    }*/
+      .exit{
+          display: block;
+          color: #fff;
+          font-size: 26px;
+          position: absolute;
+          right: 10px;
+          top: 15px;
+      }
+  }*/
 }
 body.trinity-admin.navbar-fixed {
-  padding-top: 60px !important;
+  padding-top: 90px !important;
 }
 body.trinity-admin.navbar-fixed .navbar {
   position: fixed;
@@ -74,19 +74,138 @@ body.trinity-admin.navbar-fixed .navbar {
   z-index: 100;
 }
 body.trinity-admin .navbar {
-  background: #493470;
-  min-height: 60px;
+  padding: 0;
   width: 100%;
-  color: #fff;
-  padding-bottom: 0px !important;
-  padding-top: 0px !important;
-  overflow-y: hidden;
-  font-weight: 300;
+  background: #fff;
   font-family: "Roboto", sans-serif;
-  -webkit-box-shadow: 0 4px 9.4px 0.6px rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: 0 4px 9.4px 0.6px rgba(0, 0, 0, 0.25);
-  box-shadow: 0 4px 9.4px 0.6px rgba(0, 0, 0, 0.25);
-  /** @todo */
+  -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  /*
+    .navbar-actions {
+      color: @color-primary-inverse;
+      font-size: 20px;
+      float: right;
+      font-weight: 300;
+
+      i {
+        display: inline-block;
+      }
+    }
+
+    .navbar-actions-item {
+      float: left;
+      min-width: @navbar-height;
+      height: @navbar-height;
+      text-align: center;
+      line-height: @navbar-height;
+      color: @color-navbar-icon;
+      margin: 0 0 0 1px;
+
+      &.size-2 {
+        width: 2*@navbar-height;
+      }
+
+      &:hover {
+        background: @color-primary-hover;
+        color: @color-tertiary;
+      }
+
+      .navbar-actions-item-center {
+        display: inline-block;
+      }
+
+      .link {
+        cursor: pointer !important;
+      }
+    }*/
+  /*!** @todo *!
+    .navbar-search{
+        background: transparent !important;
+
+        form{
+            height: @navbar-height;
+            display: block;
+            clear: both;
+            position: relative;
+        }
+
+        button[type="submit"]{
+            height: @navbar-height;
+            width: @navbar-height;
+            background: @color-primary;
+            border: none;
+            text-align: center;
+            display: inline-block;
+            padding: 0;
+            margin: 0;
+            right: 0;
+            position: absolute;
+            transition: width @search-time ease-in, background @search-time ease-in;
+            cursor: pointer;
+            z-index: 1;
+
+            &:focus{
+                background: @color-primary-hover;
+            }
+
+            i{
+                color: @color-navbar-icon;
+                font-size: @navbar-font-icon;
+                line-height: @navbar-height;
+                display: inline-block;
+                width: @navbar-height;
+                text-align: center;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+
+        input[type="text"]{
+            font-size: 14px;
+            line-height: 20px;
+            border: none;
+            margin: 0;
+            float: left;
+            outline: 0;
+            color: #fff;
+            background: transparent;
+            height: @navbar-height;
+            width: @navbar-height;
+            transition: width @search-time ease-in;
+            position: absolute;
+            right: 0px;
+            top: 0px;
+            z-index: 3;
+            opacity: 0;;
+            cursor: pointer;
+
+            &:hover + button[type="submit"]{
+                background: @color-primary-hover;
+                cursor: pointer;
+                i{
+                    color: @color-tertiary;
+                }
+            }
+
+            &:focus{
+                background: @color-primary-hover !important;
+                width: @search-width !important;
+                opacity: 1;
+                .input-placeholder(#b2b2b2);
+            }
+
+            &:focus + button[type="submit"]{
+                background: @color-primary-hover;
+                width: @search-width + @navbar-height;
+            }
+            &:focus + button[type="submit"] i{
+                color: @color-secondary;
+            }
+        }
+
+    }*/
 }
 body.trinity-admin .navbar input:checked {
   background: red;
@@ -98,195 +217,158 @@ body.trinity-admin .navbar input:checked ~ .navbar-container .navbar-actions-ite
 body.trinity-admin .navbar input:checked ~ .navbar-container .fav-navbar {
   display: block;
 }
-body.trinity-admin .navbar .navbar-container {
-  margin-left: 10px;
-  margin-right: 20px;
-}
 body.trinity-admin .navbar .navbar-logo {
-  height: 60px;
-  position: relative;
-  width: 75px;
+  height: 90px;
+  width: 260px;
+  display: inline-block;
+  float: left;
   z-index: 999;
+  background: #d55a13;
+}
+body.trinity-admin .navbar .navbar-logo:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 body.trinity-admin .navbar .navbar-logo i {
-  margin-left: 10px;
-  position: absolute;
-  left: 50%;
-  top: 51%;
-  -webkit-transform: translateY(-50%) translateX(-50%);
-  -moz-transform: translateY(-50%) translateX(-50%);
-  -ms-transform: translateY(-50%) translateX(-50%);
-  transform: translateY(-50%) translateX(-50%);
+  margin: 26px;
+  display: block;
+  height: 38px;
+  width: 95px;
 }
 body.trinity-admin .navbar .navbar-logo a {
-  font-size: 32px;
+  font-size: 38px;
   display: inline-block;
   width: 100%;
   height: 100%;
   color: #fff;
 }
-body.trinity-admin .navbar .navbar-actions {
+body.trinity-admin .navbar .version {
+  position: absolute;
+  top: 55px;
+  left: 121px;
   color: #fff;
-  font-size: 20px;
-  float: right;
-  font-weight: 300;
+  font-size: 8px;
 }
-body.trinity-admin .navbar .navbar-actions i {
+body.trinity-admin .navbar .navbar-container {
   display: inline-block;
-}
-body.trinity-admin .navbar .navbar-actions-item {
   float: left;
-  min-width: 60px;
-  height: 60px;
-  text-align: center;
-  line-height: 60px;
-  color: #835bc1;
-  margin: 0 0 0 1px;
+  width: calc(100% -  260px );
+  height: 90px;
 }
-body.trinity-admin .navbar .navbar-actions-item.size-2 {
-  width: 120px;
-}
-body.trinity-admin .navbar .navbar-actions-item:hover {
-  background: #362555;
-  color: #24afc9;
-}
-body.trinity-admin .navbar .navbar-actions-item .navbar-actions-item-center {
-  display: inline-block;
-}
-body.trinity-admin .navbar .navbar-actions-item .link {
-  cursor: pointer !important;
+body.trinity-admin .navbar .navbar-container:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 body.trinity-admin .navbar .navbar-search {
-  background: transparent !important;
+  position: relative;
+  float: left;
+}
+body.trinity-admin .navbar .navbar-search:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 body.trinity-admin .navbar .navbar-search form {
-  height: 60px;
+  margin: 31px;
+}
+body.trinity-admin .navbar .navbar-search input {
+  font-family: "Roboto", sans-serif;
+  font-size: 22px;
+  border: none;
+  font-weight: 100;
+  width: 400px;
+}
+body.trinity-admin .navbar .navbar-search input:focus {
+  font-weight: 300;
+}
+body.trinity-admin .navbar .navbar-search input:focus + button {
+  top: 25px;
+  left: -20px;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  background: #5a544f;
+}
+body.trinity-admin .navbar .navbar-search input:focus + button i {
+  font-size: 22px;
+}
+body.trinity-admin .navbar .navbar-search button {
+  position: absolute;
+  left: -15px;
+  top: 30px;
   display: block;
-  clear: both;
-  position: relative;
-}
-body.trinity-admin .navbar .navbar-search button[type="submit"] {
-  height: 60px;
-  width: 60px;
-  background: #493470;
+  height: 30px;
+  width: 30px;
+  border-radius: 15px;
+  background: #fff;
   border: none;
-  text-align: center;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  right: 0;
-  position: absolute;
-  transition: width 0.3s ease-in, background 0.3s ease-in;
   cursor: pointer;
-  z-index: 1;
+  transition: .5s;
 }
-body.trinity-admin .navbar .navbar-search button[type="submit"]:focus {
-  background: #362555;
+body.trinity-admin .navbar .navbar-search button i {
+  transition: .5s;
+  font-size: 16px;
+  color: #cec5c0;
 }
-body.trinity-admin .navbar .navbar-search button[type="submit"] i {
-  color: #835bc1;
-  font-size: 26px;
-  line-height: 60px;
-  display: inline-block;
-  width: 60px;
-  text-align: center;
-  position: absolute;
-  left: 0;
-  top: 0;
+body.trinity-admin {
+  /*.navbar {
+   /* &:before, &:after {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      opacity: 0;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 15px solid #fff;
+    }
+  }
+  .navbar-item-label {
+    position: relative;
+    transition: background @search-time ease-in;
+    display: inline-block;
+    cursor: pointer;
+    color: @color-secondary;
+    float: left;
+    i {
+      color: @color-navbar-icon;
+      font-size: @navbar-font-icon;
+      padding: (60 - @navbar-font-icon)/2;
+      transition: .4s;
+    }
+    &:hover {
+      background: @color-primary-hover;
+      i {
+        color: @color-tertiary;
+        text-shadow: 1px 1px #000;
+      }
+      .number-info {
+        color: #fff;
+      }
+    }
+    .number-info {
+      padding: 0 !important;
+      border-radius: 20px;
+      background: #f0575a;
+      font-size: 12px;
+      line-height: 15px;
+      color: #fff;
+      font-weight: 900;
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      text-align: center;
+      top: 10px;
+      position: absolute;
+      right: 7px;
+      .shadow(@color-navbar-icon);
+    }
+  }*/
 }
-body.trinity-admin .navbar .navbar-search input[type="text"] {
-  font-size: 14px;
-  line-height: 20px;
-  border: none;
-  margin: 0;
-  float: left;
-  outline: 0;
-  color: #fff;
-  background: transparent;
-  height: 60px;
-  width: 60px;
-  transition: width 0.3s ease-in;
-  position: absolute;
-  right: 0px;
-  top: 0px;
-  z-index: 3;
-  opacity: 0;
-  cursor: pointer;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:hover + button[type="submit"] {
-  background: #362555;
-  cursor: pointer;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:hover + button[type="submit"] i {
-  color: #24afc9;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:focus {
-  background: #362555 !important;
-  width: 300px !important;
-  opacity: 1;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:focus::-webkit-input-placeholder {
-  /* WebKit, Blink, Edge */
-  color: #b2b2b2;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:focus:-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
-  color: #b2b2b2;
-  opacity: 1;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:focus::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
-  color: #b2b2b2;
-  opacity: 1;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:focus:-ms-input-placeholder {
-  /* Internet Explorer 10-11 */
-  color: #b2b2b2;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:focus + button[type="submit"] {
-  background: #362555;
-  width: 360px;
-}
-body.trinity-admin .navbar .navbar-search input[type="text"]:focus + button[type="submit"] i {
-  color: #edecec;
-}
-body.trinity-admin .navbar:before,
-body.trinity-admin .navbar:after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  opacity: 0;
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 15px solid #fff;
-}
-body.trinity-admin .navbar-item-label {
-  position: relative;
-  transition: background 0.3s ease-in;
-  display: inline-block;
-  cursor: pointer;
-  color: #edecec;
-  float: left;
-}
-body.trinity-admin .navbar-item-label i {
-  color: #835bc1;
-  font-size: 26px;
-  padding: 17px;
-  transition: .4s;
-}
-body.trinity-admin .navbar-item-label:hover {
-  background: #362555;
-}
-body.trinity-admin .navbar-item-label:hover i {
-  color: #24afc9;
-  text-shadow: 1px 1px #000;
-}
-body.trinity-admin .navbar-item-label:hover .number-info {
-  color: #fff;
-}
-body.trinity-admin .navbar-item-label .number-info {
+body.trinity-admin .number-info {
   padding: 0 !important;
   border-radius: 20px;
   background: #f0575a;
@@ -311,16 +393,123 @@ body.trinity-admin .navbar-item-label .number-info {
   -webkit-box-shadow: #835bc1 1px 5px #d7d5d5;
   box-shadow: #835bc1 1px 5px #d7d5d5;
 }
+body.trinity-admin .navbar-item-label {
+  position: relative;
+  display: inline-block;
+  height: 90px;
+  width: 45px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #97999c;
+  float: left;
+}
+body.trinity-admin .navbar-item-label:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin .navbar-item-label i {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin: 35px 12.5px;
+}
+body.trinity-admin .navbar-item-label:hover {
+  background: #fff8f4;
+}
 body.trinity-admin .navbar-item-input {
   display: none;
 }
+body.trinity-admin .navbar-right-items {
+  display: inline-block;
+  height: 90px;
+  width: 45px;
+  float: right;
+  background: #e4e4e4;
+}
+body.trinity-admin .navbar-right-items:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin .navbar-right-items .item {
+  transition: .3s;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+body.trinity-admin .navbar-right-items .item:first-of-type {
+  background: #44b6c2;
+}
+body.trinity-admin .navbar-right-items .item:first-of-type:hover {
+  background: #2e838c;
+}
+body.trinity-admin .navbar-right-items .item:first-of-type a {
+  display: inline-block;
+}
+body.trinity-admin .navbar-right-items .item:first-of-type i {
+  color: #fff;
+  font-size: 20px;
+  width: 45px;
+  height: 45px;
+  padding: 12.5px;
+}
+body.trinity-admin .navbar-right-items span {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  margin: 19.5px 2px;
+  background: #97999c;
+}
+body.trinity-admin .navbar-right-items span:first-child {
+  margin-left: 10px;
+}
+body.trinity-admin #user-profile-label {
+  width: auto;
+  font-size: 14px;
+  padding: 0 25px 0 50px;
+}
+body.trinity-admin #user-profile-label .user-photo,
+body.trinity-admin #user-profile-label .user-name {
+  display: inline-block;
+  line-height: 90px;
+  float: left;
+}
+body.trinity-admin #user-profile-label .user-photo:after,
+body.trinity-admin #user-profile-label .user-name:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin #user-profile-label img {
+  display: block;
+  margin: 23px 23px 23px 10px;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+}
+body.trinity-admin #user-profile-label .user-photo i {
+  font-size: 40px;
+  margin: 23px 23px 23px 10px;
+}
+body.trinity-admin #user-profile-label .user-name i {
+  width: 10px;
+  height: 10px;
+  font-size: 10px;
+  transform: rotate(90deg);
+}
+body.trinity-admin #user-profile-label i {
+  display: inline-block;
+  margin: 5px;
+}
 body.trinity-admin .user-profile-info {
-  top: -500px;
-  transition: 2s;
+  top: -1000px;
+  transition: 1s;
   z-index: 99;
   display: block;
   position: fixed;
-  right: 140px;
+  right: 44px;
 }
 body.trinity-admin .user-profile-info .user-photo {
   margin: 10px;
@@ -329,7 +518,7 @@ body.trinity-admin .user-profile-info .user-photo {
 body.trinity-admin .user-profile-info .user-photo .trinity {
   font-size: 100px;
   border-radius: 100px;
-  color: #866aba;
+  color: #f3a375;
 }
 body.trinity-admin .user-profile-info .user-photo img {
   width: 100px;
@@ -340,18 +529,18 @@ body.trinity-admin .user-profile-info .tab-list {
   margin-top: 10px;
 }
 body.trinity-admin .navbar-popup {
-  width: 400px;
+  width: 401px;
   background: #fff;
   border: 1px solid #a7a7a7;
   border-top: none;
-  -webkit-box-shadow: -2px 3px 6px 0 rgba(0, 0, 0, 0.25);
-  -moz-box-shadow: -2px 3px 6px 0 rgba(0, 0, 0, 0.25);
-  box-shadow: -2px 3px 6px 0 rgba(0, 0, 0, 0.25);
+  -webkit-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
 }
 body.trinity-admin .navbar-popup h1 {
   display: block;
   padding: 20px;
-  color: #493470;
+  color: #d55a13;
   font-size: 16px;
   font-weight: bold;
   line-height: 25px;
@@ -362,7 +551,6 @@ body.trinity-admin .navbar-popup ul li {
   display: block;
   padding: 10px 40px;
   border-top: 1px solid #e5e5e5;
-  background: #F5F5F5;
 }
 body.trinity-admin .navbar-popup ul li i {
   position: absolute;
@@ -374,22 +562,19 @@ body.trinity-admin .navbar-popup ul li i {
 }
 body.trinity-admin .notifications {
   top: -500px;
-  transition: all 2s, z-index 0s;
+  transition: all 1s, z-index 0s;
   z-index: 99;
   display: block;
   position: fixed;
-  right: 200px;
+  right: 340px;
 }
 body.trinity-admin .notifications .tab-list {
   overflow-y: auto;
   overflow-x: hidden;
   height: 400px;
 }
-body.trinity-admin .notifications .tab-list.list-rows {
-  background: #ffffff;
-}
 body.trinity-admin .notifications .tab-list li {
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 300;
   position: relative;
   display: block;
@@ -403,10 +588,10 @@ body.trinity-admin .notifications .tab-list li {
   transition: min-height 0.7s;
 }
 body.trinity-admin .notifications .tab-list li:hover {
-  background: #F5F3F0;
+  background: #fffbf8;
 }
 body.trinity-admin .notifications .tab-list li i {
-  font-size: 26px;
+  font-size: 21px;
   position: absolute;
   top: 5px;
 }
@@ -449,7 +634,7 @@ body.trinity-admin .notifications .tab-list li:hover i.trinity-close {
   color: #838383;
 }
 body.trinity-admin .notifications .tab-list li:hover i.trinity-close:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .notifications .tab-list li:hover .detail-info {
   position: relative;
@@ -472,103 +657,182 @@ body.trinity-admin .notifications .tab-list li.new:before {
   position: absolute;
 }
 body.trinity-admin .notifications .tab-list li a {
-  color: #595959;
+  color: #9b9b9b;
+}
+body.trinity-admin .notifications .tab-list li.info {
+  background: #fff;
 }
 body.trinity-admin .notifications .tab-list li.info i {
   color: #61ccba;
 }
+body.trinity-admin .notifications .tab-list li.warning {
+  background: #ffd6cf;
+}
 body.trinity-admin .notifications .tab-list li.warning i {
   color: #ff8939;
+}
+body.trinity-admin .notifications .tab-list li.success {
+  background: #fff;
 }
 body.trinity-admin .notifications .tab-list li.success i {
   color: #f6e064;
 }
 body.trinity-admin .notifications .tab-list li.noaction {
-  color: #595959;
+  background: #fff;
+  color: #9b9b9b;
 }
 body.trinity-admin .notifications .tab-list li.noaction i {
-  color: #727272;
+  color: #b4b4b4;
+}
+body.trinity-admin .notifications .tab-list li.noaction:hover {
+  min-height: 50px;
+}
+body.trinity-admin .notifications .tab-list li.danger {
+  background: #ffb2b0;
 }
 body.trinity-admin .notifications .tab-list li.danger i {
   color: #c94d3d;
 }
-body.trinity-admin #user-profile-input:checked ~ .navbar:before {
-  right: 161px;
-  animation: opa 1.5s 1s ease both;
+body.trinity-admin #user-profile-input:checked ~ .user-profile-info {
+  top: 90px;
+}
+body.trinity-admin .navbar #user-profile-label {
+  transition: .7s all;
+  top: 0;
+}
+body.trinity-admin #user-profile-input:checked ~ .navbar #user-profile-label {
+  top: -8px;
+  height: 98px;
+  color: #d55a13;
+  background: #fff8f4;
 }
 body.trinity-admin #user-profile-input:checked ~ .navbar #user-profile-label i {
-  color: #edecec;
-}
-body.trinity-admin #user-profile-input:checked ~ .user-profile-info {
-  top: 60px;
-  animation: move 2s 2s linear both;
-}
-body.trinity-admin #notifications-input:checked ~ .navbar:after {
-  bottom: -8px;
-  right: 221px;
-  animation: opa 1.5s 1s ease both;
-}
-body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label i {
-  color: #edecec;
+  color: #d55a13;
 }
 body.trinity-admin #notifications-input:checked ~ .notifications {
-  top: 60px;
-  -webkit-animation: move 2s 2s linear both;
-  -moz-animation: move 2s 2s linear both;
-  -o-animation: move 2s 2s linear both;
-  animation: move 2s 2s linear both;
+  top: 90px;
+}
+body.trinity-admin .navbar #notifications-label {
+  transition: .7s all;
+  top: 0;
+}
+body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label {
+  top: -8px;
+  height: 98px;
+  color: #d55a13;
+  background: #fff8f4;
+}
+body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label i {
+  color: #d55a13;
+}
+body.trinity-admin .navbar #settings-label {
+  transition: 1s all;
+  top: 0;
+}
+body.trinity-admin .navbar #settings-label:hover i {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body.trinity-admin #settings-input:checked ~ .navbar #settings-label {
+  top: -5px;
+  height: 95px;
+  color: #d55a13;
+  background: #fff8f4;
+}
+body.trinity-admin #settings-input:checked ~ .navbar #settings-label i {
+  color: #d55a13;
 }
 body.trinity-admin #header-for-nonvisible {
-  position: fixed;
+  position: absolute;
   left: 0;
-  height: 60px;
-  line-height: 60px;
+  height: 90px;
+  line-height: 90px;
   width: 100%;
-  font-size: 20px;
-  /* color: green; */
+  z-index: -9;
+  font-size: 26px;
+  color: #968378;
+  font-weight: 300;
+  overflow: hidden;
   display: block;
   text-align: center;
   /* margin: 0 auto; */
 }
-body.trinity-admin a[title="Logout me"] {
-  font-weight: 500;
-  transition: .4s;
+body.trinity-admin .slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
-body.trinity-admin a[title="Logout me"] i {
-  margin-top: 15px;
-}
-@keyframes opa {
-  from {
-    z-index: 99;
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
     opacity: 0;
   }
-  to {
-    z-index: 999;
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
     opacity: 1;
   }
 }
-@-webkit-keyframes move {
-  from {
-    z-index: 99;
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+    opacity: 0;
   }
-  to {
-    z-index: 999;
-  }
-}
-@-moz-keyframes move {
-  from {
-    z-index: 99;
-  }
-  to {
-    z-index: 999;
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
 }
-@keyframes move {
-  from {
-    z-index: 99;
+body.trinity-admin .slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
   }
-  to {
-    z-index: 999;
+  100% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
   }
 }
 /**
@@ -610,6 +874,7 @@ body.trinity-admin .head-content .page-icon i {
   display: block;
   margin: 25px 20px 20px 20px;
   font-size: 55px;
+  color: #97999c;
 }
 body.trinity-admin .head-content .page-icon img {
   width: 65px;
@@ -618,33 +883,30 @@ body.trinity-admin .head-content .page-icon img {
   border-radius: 55px;
 }
 body.trinity-admin .head-content .content-header {
-  line-height: 32px !important;
-  color: #493470 !important;
+  font-size: 30px;
+  color: #97999c;
+  text-transform: uppercase;
   margin-top: 25px;
-  font-weight: 300;
+  font-weight: 400;
 }
 body.trinity-admin .head-content .content-header b {
-  font-weight: 400;
+  font-weight: 500;
 }
 body.trinity-admin .head-content span,
 body.trinity-admin .head-content i {
-  color: #493470;
+  color: #d55a13;
   font-weight: 300;
   font-size: 55px;
-}
-body.trinity-admin .head-content i {
-  color: #24afc9;
 }
 body.trinity-admin .head-content .breadcrumbs {
   float: left;
   width: auto;
   margin-left: -10px;
-  line-height: 20px !important;
   background: none;
   display: block !important;
 }
 body.trinity-admin .head-content .breadcrumbs span {
-  font-size: 12px !important;
+  font-size: 14px;
   color: #4c4c4c;
 }
 body.trinity-admin .head-content .breadcrumbs ul {
@@ -678,7 +940,7 @@ body.trinity-admin .head-content .breadcrumbs span {
   padding-left: 5px !important;
 }
 body.trinity-admin .head-content .breadcrumbs a:hover span {
-  color: #493470;
+  color: #d55a13;
   text-decoration: underline !important;
 }
 body.trinity-admin .header-loader {
@@ -741,13 +1003,13 @@ body.trinity-admin #sidebar {
   z-index: 99;
   font-family: 'Roboto', sans-serif;
   width: 260px;
-  background: #fff;
+  background: #4c4743;
   height: 100%;
   position: fixed;
-  color: #595959;
+  color: #9b9b9b;
   /** window resize fix **/
   top: 0;
-  padding-top: 60px;
+  padding-top: 90px;
   /** end **/
 }
 body.trinity-admin #sidebar input {
@@ -765,75 +1027,75 @@ body.trinity-admin #sidebar .sidebar {
   overflow-y: auto;
   /** end **/
   /*
-      .first {
-        border-top: 1px #f4f4f4 solid;
-      }
-      */
+    .first {
+      border-top: 1px #f4f4f4 solid;
+    }
+    */
   /*      .sidebar-drop, .li-dropdown {
-              position: relative;
-              ul {
-                box-shadow: none;
+            position: relative;
+            ul {
+              box-shadow: none;
+            }
+            li {
+              transition: none;
+            }
+            .trinity-dropdown-icon {
+              position: absolute;
+              right: 15px;
+              top: 0;
+              font-size: @sidebar-icon-font-size;
+            }
+
+            .minus {
+              position: absolute;
+              right: 15px;
+              top: -40px;
+              background-color: #fff;
+            }
+
+            &:hover {
+              .minus {
+                background-color: @sidebar-row-hover-color;
               }
-              li {
-                transition: none;
-              }
-              .trinity-dropdown-icon {
-                position: absolute;
-                right: 15px;
-                top: 0;
-                font-size: @sidebar-icon-font-size;
+            }
+          }
+
+          .drop {
+            width: 100%;
+            margin: 15px 0 0 0;
+            padding: 0;
+            background: #fff;
+            li {
+              a {
+                padding: 0 0 0 54px;
+                color: @sidebar-link-color;
+                font-weight: normal;
+                background-color: #fafafa;
+                border: none;
+                i {
+                  display: none;
+                }
               }
 
-              .minus {
-                position: absolute;
-                right: 15px;
-                top: -40px;
-                background-color: #fff;
+              &.active {
+                a {
+                  font-weight: 500;
+                  color: #000000;
+                  background: @sidebar-row-hover-color;
+                }
               }
 
               &:hover {
-                .minus {
-                  background-color: @sidebar-row-hover-color;
-                }
-              }
-            }
-
-            .drop {
-              width: 100%;
-              margin: 15px 0 0 0;
-              padding: 0;
-              background: #fff;
-              li {
                 a {
-                  padding: 0 0 0 54px;
-                  color: @sidebar-link-color;
-                  font-weight: normal;
-                  background-color: #fafafa;
-                  border: none;
-                  i {
-                    display: none;
-                  }
-                }
-
-                &.active {
-                  a {
-                    font-weight: 500;
-                    color: #000000;
-                    background: @sidebar-row-hover-color;
-                  }
-                }
-
-                &:hover {
-                  a {
-                    color: #000000;
-                    background: @sidebar-row-hover-color;
-                  }
+                  color: #000000;
+                  background: @sidebar-row-hover-color;
                 }
               }
             }
-            .dropdown-icon {
-              pointer-events: none;
-            }*/
+          }
+          .dropdown-icon {
+            pointer-events: none;
+          }*/
 }
 body.trinity-admin #sidebar .sidebar li {
   width: 100%;
@@ -841,47 +1103,62 @@ body.trinity-admin #sidebar .sidebar li {
   height: 50px;
   position: relative;
   cursor: pointer;
+  /* .sidebar-link {
+        min-height: 50px;
+        padding: 13px 0;
+        float: left;
+      }*/
 }
 body.trinity-admin #sidebar .sidebar li a,
 body.trinity-admin #sidebar .sidebar li div {
+  text-transform: uppercase;
+  padding-left: 20px;
   display: inline-block;
   width: 100%;
   min-height: 50px;
-  color: #595959;
-  font-size: 15px;
-  font-weight: normal;
-  transition: .3s;
+  color: #9b9b9b;
+  font-size: 12px;
+  font-weight: 400;
+  transition: .4s;
+  line-height: 50px;
 }
 body.trinity-admin #sidebar .sidebar li i {
-  margin: 14px 18px;
+  margin: 0 35px;
   float: left;
-  color: #303030;
+  color: #9b9b9b;
   display: inline-block;
-  font-size: 22px;
+  font-size: 17px;
   transition: .3s;
+  line-height: 50px;
 }
 body.trinity-admin #sidebar .sidebar li.active a,
 body.trinity-admin #sidebar .sidebar li.active div {
   font-weight: 500;
+  color: #5a544f;
+  background: #f8f3f0;
 }
 body.trinity-admin #sidebar .sidebar li.active i {
-  color: #24afc9;
+  color: #5a544f;
+  font-weight: 600;
 }
-body.trinity-admin #sidebar .sidebar li.active a,
+body.trinity-admin #sidebar .sidebar li.active:hover a {
+  background: #f8f3f0;
+  padding-left: 20px;
+}
 body.trinity-admin #sidebar .sidebar li:hover a,
-body.trinity-admin #sidebar .sidebar li.active div,
 body.trinity-admin #sidebar .sidebar li:hover div {
-  background: #f2f2f2;
-  color: #493470;
+  background: #fff;
+  color: #5a544f;
+  padding-left: 50px;
 }
-body.trinity-admin #sidebar .sidebar li.active i,
 body.trinity-admin #sidebar .sidebar li:hover i {
-  color: #24afc9;
+  color: #5a544f;
 }
-body.trinity-admin #sidebar .sidebar li .sidebar-link {
-  min-height: 50px;
-  padding: 13px 0;
-  float: left;
+body.trinity-admin #sidebar .sidebar .header {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 40px 20px;
+  cursor: auto;
 }
 .margin-left-auto {
   margin-left: auto;
@@ -889,23 +1166,26 @@ body.trinity-admin #sidebar .sidebar li .sidebar-link {
 .margin-right-auto {
   margin-right: auto;
 }
+/*// float - fix
 .clearfix:after {
-  visibility: hidden;
-  display: block;
-  font-size: 0;
-  content: " ";
-  clear: both;
-  height: 0;
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
 }
+
 .clearfix {
-  display: inline-block;
+    display: inline-block;
 }
+
 * html .clearfix {
-  height: 1%;
+    height: 1%;
 }
 .clearfix {
-  display: block;
-}
+    display: block;
+}*/
 .hidden {
   display: none !important;
 }
@@ -927,18 +1207,16 @@ body.trinity-admin #sidebar .sidebar li .sidebar-link {
 .pointer {
   cursor: pointer;
 }
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 body.trinity-admin {
-  background: #edecec !important;
+  background: #f8f3f0 !important;
   /* --- debug --- */
   /* by Fisa */
   /* ---- end debug  ---- */
-}
-body.trinity-admin .version {
-  position: absolute;
-  top: 38px;
-  left: 85px;
-  color: #fff;
-  font-size: 8px;
 }
 body.trinity-admin .modal-dialog {
   background: rgba(255, 255, 255, 0.8);
@@ -960,7 +1238,7 @@ body.trinity-admin .reload {
   -moz-box-shadow: 1px 1px 5px #d7d5d5;
   -webkit-box-shadow: 1px 1px 5px #d7d5d5;
   box-shadow: 1px 1px 5px #d7d5d5;
-  background: #493470;
+  background: #d55a13;
 }
 body.trinity-admin .reload i,
 body.trinity-admin .reload span {
@@ -991,7 +1269,7 @@ body.trinity-admin .reload span {
   font-weight: 900;
 }
 body.trinity-admin .reload:hover {
-  background: #493470;
+  background: #d55a13;
 }
 body.trinity-admin .validation-error {
   color: red;
@@ -1045,10 +1323,10 @@ body.trinity-admin .color-danger {
   color: #c94d3d;
 }
 body.trinity-admin .primary {
-  background-color: #493470;
+  background-color: #d55a13;
 }
 body.trinity-admin .color-primary {
-  color: #493470 !important;
+  color: #d55a13 !important;
 }
 body.trinity-admin .secondary {
   background-color: #edecec;
@@ -1057,10 +1335,10 @@ body.trinity-admin .color-secondary {
   color: #edecec !important;
 }
 body.trinity-admin .tertiary {
-  background-color: #24afc9;
+  background-color: #44b6c2;
 }
 body.trinity-admin .color-tertiary {
-  color: #24afc9 !important;
+  color: #44b6c2 !important;
 }
 body.trinity-admin .tags li {
   width: 60px;
@@ -1086,7 +1364,7 @@ body.trinity-admin .tags .Changed {
   background: #24afc9;
 }
 body.trinity-admin .tags .Premium {
-  background: #493470;
+  background: #d55a13;
 }
 body.trinity-admin .tags .Blocked {
   background: #c94d3d;
@@ -1417,8 +1695,8 @@ body.trinity-admin .tabs-wrapper {
 }
 body.trinity-admin .tabs-wrapper #tab15:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1427,8 +1705,8 @@ body.trinity-admin .tabs-wrapper #tab15:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab14:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1437,8 +1715,8 @@ body.trinity-admin .tabs-wrapper #tab14:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab13:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1447,8 +1725,8 @@ body.trinity-admin .tabs-wrapper #tab13:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab12:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1457,8 +1735,8 @@ body.trinity-admin .tabs-wrapper #tab12:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab11:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1467,8 +1745,8 @@ body.trinity-admin .tabs-wrapper #tab11:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab10:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1477,8 +1755,8 @@ body.trinity-admin .tabs-wrapper #tab10:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab9:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1487,8 +1765,8 @@ body.trinity-admin .tabs-wrapper #tab9:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab8:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1497,8 +1775,8 @@ body.trinity-admin .tabs-wrapper #tab8:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab7:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1507,8 +1785,8 @@ body.trinity-admin .tabs-wrapper #tab7:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab6:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1517,8 +1795,8 @@ body.trinity-admin .tabs-wrapper #tab6:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab5:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1527,8 +1805,8 @@ body.trinity-admin .tabs-wrapper #tab5:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab4:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1537,8 +1815,8 @@ body.trinity-admin .tabs-wrapper #tab4:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab3:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1547,8 +1825,8 @@ body.trinity-admin .tabs-wrapper #tab3:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab2:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1557,8 +1835,8 @@ body.trinity-admin .tabs-wrapper #tab2:checked + label:hover:after {
 }
 body.trinity-admin .tabs-wrapper #tab1:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   border-top: none;
   top: 0;
 }
@@ -1581,7 +1859,7 @@ body.trinity-admin .tabs-wrapper label[for^="tab"] {
   min-width: 150px;
 }
 body.trinity-admin .tabs-wrapper label[for^="tab"]:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .tabs-wrapper label[for^="tab"]:after {
   content: '';
@@ -1598,7 +1876,7 @@ body.trinity-admin .tabs-wrapper label[for^="tab"]:after {
 }
 body.trinity-admin .tabs-wrapper label[for^="tab"]:hover:after {
   width: 100%;
-  background-color: #24afc9;
+  background-color: #44b6c2;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper {
   border: none;
@@ -1643,13 +1921,13 @@ body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item a {
   padding: 5px 15px;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open {
-  background: #209cb3;
+  background: #3aa7b2;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open a {
   font-weight: 600;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open:hover {
-  background: #24afc9;
+  background: #44b6c2;
 }
 body.trinity-admin .tabs-wrapper .tab-body-wrapper h3 {
   padding: 20px;
@@ -1661,7 +1939,7 @@ body.trinity-admin .tabs-wrapper .tab-body-wrapper label {
   border: none;
   background: transparent;
   font-weight: 00;
-  color: #303030 !important;
+  color: #97999c !important;
   font-size: 14px !important;
 }
 body.trinity-admin .tab-body {
@@ -1701,7 +1979,7 @@ body.trinity-admin .tabs-wrapper div.tab-loader i {
   transform: translateY(-50%) translateX(-50%);
 }
 body.trinity-admin .tab-content {
-  color: #303030;
+  color: #97999c;
 }
 body.trinity-admin .tab-content .tab-header {
   margin-bottom: 15px;
@@ -1719,7 +1997,7 @@ body.trinity-admin .tab-content .tab-title {
     |____________________|
 */
   font-size: 20px;
-  color: #493470;
+  color: #d55a13;
   font-weight: 400;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper {
@@ -1739,8 +2017,8 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper {
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-head:checked + label {
   background: #fff;
-  border-bottom: 2px solid #493470;
-  color: #493470;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
   top: 0 !important;
   border-top: 1px solid transparent !important;
 }
@@ -1759,7 +2037,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper labe
   text-transform: uppercase;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper label[for^="tab"]:hover {
-  color: #303030 !important;
+  color: #97999c !important;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-body-wrapper {
   border: none;
@@ -1820,7 +2098,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-p
   font-weight: 300;
   padding-left: 15px;
   padding-right: 15px;
-  color: #303030;
+  color: #97999c;
   line-height: 30px;
   border-top: 1px solid #afafaf;
   border-bottom: 1px solid #afafaf;
@@ -1831,7 +2109,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-p
   font-size: 16px;
   line-height: 30px;
   float: left;
-  color: #493470;
+  color: #d55a13;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:hover {
   background: #f8f8f8;
@@ -1840,29 +2118,29 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-p
   background: none;
   padding: 0;
   margin-bottom: 20px;
-  color: #303030;
+  color: #97999c;
   max-height: 400px;
   overflow-y: auto;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica .harmonica-content {
-  color: #303030;
+  color: #97999c;
   padding-left: 15px;
   padding-right: 15px;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica label {
-  color: #303030;
+  color: #97999c;
   font-weight: 300;
   font-size: 14px;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
   font-weight: 400;
   background: #ebebeb;
-  color: #493470;
+  color: #d55a13;
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #ccc;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content {
-  color: #303030;
+  color: #97999c;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-header {
   margin-bottom: 15px;
@@ -1872,7 +2150,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-title {
   text-transform: uppercase;
   font-size: 20px;
-  color: #493470;
+  color: #d55a13;
   font-weight: 400;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-sub-title {
@@ -1903,7 +2181,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-
   padding-bottom: 15px;
   font-size: 14px !important;
   font-weight: 300;
-  color: #303030;
+  color: #97999c;
 }
 body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-info-text i {
   color: #afafaf;
@@ -1936,7 +2214,7 @@ body.trinity-admin .tab-content .tab-info-text {
   padding-bottom: 15px;
   font-size: 14px !important;
   font-weight: 300;
-  color: #303030;
+  color: #97999c;
 }
 body.trinity-admin .tab-content .tab-info-text i {
   color: #afafaf;
@@ -1958,7 +2236,7 @@ body.trinity-admin .reload {
   -moz-box-shadow: 1px 1px 5px #d7d5d5;
   -webkit-box-shadow: 1px 1px 5px #d7d5d5;
   box-shadow: 1px 1px 5px #d7d5d5;
-  background: #493470;
+  background: #d55a13;
 }
 body.trinity-admin .reload i,
 body.trinity-admin .reload span {
@@ -1989,7 +2267,7 @@ body.trinity-admin .reload span {
   font-weight: 900;
 }
 body.trinity-admin .reload:hover {
-  background: #493470;
+  background: #d55a13;
 }
 body.trinity-admin .tabs-wrapper {
   /*//super cool loop if you looking
@@ -2122,7 +2400,7 @@ body.trinity-admin .trinity-widget .widgetCloser {
   top: -15px;
 }
 body.trinity-admin .trinity-widget .widgetResizer {
-  background: #24afc9;
+  background: #44b6c2;
   bottom: -15px;
 }
 body.trinity-admin .trinity-widget .widget-title {
@@ -2150,7 +2428,7 @@ body.trinity-admin .trinity-widget .data-grid thead,
 body.trinity-admin .trinity-widget .data-grid tr,
 body.trinity-admin .trinity-widget .data-grid th {
   background: #fff !important;
-  color: #000;
+  color: #2f2f2f;
 }
 body.trinity-admin .trinity-widget .data-grid tr:hover {
   background: #f8f8f8 !important;
@@ -2206,7 +2484,7 @@ body.trinity-admin .box-widget {
 }
 body.trinity-admin .box-widget .header-h2 {
   font-weight: 300;
-  color: #493470;
+  color: #d55a13;
 }
 body.trinity-admin .gu-mirror {
   position: fixed !important;
@@ -2316,13 +2594,13 @@ body.trinity-admin #dashboard_widgets label {
   line-height: 39px;
 }
 body.trinity-admin #dashboard_widgets input[type=checkbox] + label:before {
-  color: #cdc1e2;
+  color: #fdf1ea;
 }
 body.trinity-admin #dashboard_widgets input[type=checkbox] + label:hover:before {
-  color: #493470;
+  color: #d55a13;
 }
 body.trinity-admin #dashboard_widgets input[type=checkbox]:checked + label:before {
-  color: #493470;
+  color: #d55a13;
 }
 body.trinity-admin #dashboard_widgets input[type=checkbox]:checked + label {
   color: #303030;
@@ -2401,6 +2679,7 @@ body.trinity-admin .trinity-widget {
   padding: 20px;
 }
 body.trinity-admin .trinity-widget .data-grid thead tr {
+  color: #2f2f2f;
   border-bottom: 2px solid #efefef;
 }
 body.trinity-admin .small-widgets .trinity-widget {
@@ -2572,7 +2851,7 @@ body.trinity-admin .modal-dialog form .form-right .description {
 body.trinity-admin .edit-form label,
 body.trinity-admin .new-form label,
 body.trinity-admin .modal-dialog form label {
-  color: #303030;
+  color: #97999c;
   padding: 0;
   padding-right: 20%;
   line-height: 35px;
@@ -2582,7 +2861,7 @@ body.trinity-admin .edit-form label.required:after,
 body.trinity-admin .new-form label.required:after,
 body.trinity-admin .modal-dialog form label.required:after {
   content: "*";
-  color: #493470;
+  color: #d55a13;
   font-weight: 600;
 }
 body.trinity-admin .edit-form .form-content-center,
@@ -2636,7 +2915,7 @@ body.trinity-admin .modal-dialog form textarea {
   background: #fff;
   -webkit-appearance: none;
   font-weight: 300;
-  color: #303030;
+  color: #97999c;
 }
 body.trinity-admin .edit-form input[type="text"]:focus,
 body.trinity-admin .new-form input[type="text"]:focus,
@@ -2668,7 +2947,7 @@ body.trinity-admin .modal-dialog form select:focus,
 body.trinity-admin .edit-form textarea:focus,
 body.trinity-admin .new-form textarea:focus,
 body.trinity-admin .modal-dialog form textarea:focus {
-  border: 1px solid #493470;
+  border: 1px solid #d55a13;
   background: #fff !important;
 }
 @media screen and (max-width: 767px) {
@@ -2723,7 +3002,7 @@ body.trinity-admin .modal-dialog form .checkbox label:before {
 body.trinity-admin .edit-form .checkbox label:hover:before,
 body.trinity-admin .new-form .checkbox label:hover:before,
 body.trinity-admin .modal-dialog form .checkbox label:hover:before {
-  border: 1px solid #493470;
+  border: 1px solid #d55a13;
 }
 body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:after,
 body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:after,
@@ -2741,8 +3020,8 @@ body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked +
 body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:before,
 body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:before,
 body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked + label:before {
-  border: 1px solid #493470;
-  background: #493470;
+  border: 1px solid #d55a13;
+  background: #d55a13;
 }
 body.trinity-admin .edit-form .checkbox-inline label,
 body.trinity-admin .new-form .checkbox-inline label,
@@ -2773,7 +3052,7 @@ body.trinity-admin .modal-dialog form .checkbox-inline label:before {
 body.trinity-admin .edit-form .checkbox-inline label:hover:before,
 body.trinity-admin .new-form .checkbox-inline label:hover:before,
 body.trinity-admin .modal-dialog form .checkbox-inline label:hover:before {
-  border: 1px solid #493470;
+  border: 1px solid #d55a13;
 }
 body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + label:after,
 body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:after,
@@ -2791,8 +3070,8 @@ body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:ch
 body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + label:before,
 body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:before,
 body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:before {
-  border: 1px solid #493470;
-  background: #493470;
+  border: 1px solid #d55a13;
+  background: #d55a13;
 }
 body.trinity-admin .edit-form .checkbox-inline label,
 body.trinity-admin .new-form .checkbox-inline label,
@@ -2993,14 +3272,14 @@ body.trinity-admin .collection-widget .form-left {
   display: none !important;
 }
 body.trinity-admin .collection-widget .add-collection-item {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .collection-widget .add-collection-item p {
   margin: 5px 0 !important;
   font-weight: 500;
 }
 body.trinity-admin .collection-widget .add-collection-item:hover {
-  color: #209cb3;
+  color: #3aa7b2;
 }
 body.trinity-admin .collection-widget .add-collection-item i {
   font-size: 18px;
@@ -3074,13 +3353,13 @@ body.trinity-admin .box-new-form .page-actions .item #expert-mode {
   color: #fff;
 }
 body.trinity-admin .box-new-form .page-actions .open {
-  background: #209cb3;
+  background: #3aa7b2;
 }
 body.trinity-admin .box-new-form .page-actions .open a {
   font-weight: 600;
 }
 body.trinity-admin .box-new-form .page-actions .open:hover {
-  background: #24afc9;
+  background: #44b6c2;
 }
 body.trinity-admin .navigation-box {
   height: 100px;
@@ -3150,7 +3429,7 @@ body.trinity-admin .navigation-box .new-entry {
   -moz-box-shadow: 1px 1px 5px #d7d5d5;
   -webkit-box-shadow: 1px 1px 5px #d7d5d5;
   box-shadow: 1px 1px 5px #d7d5d5;
-  background: #61ccba;
+  background: #44b6c2;
 }
 body.trinity-admin .navigation-box .new-entry i,
 body.trinity-admin .navigation-box .new-entry span {
@@ -3177,7 +3456,7 @@ body.trinity-admin .navigation-box .new-entry span {
   box-shadow: none !important;
 }
 body.trinity-admin .navigation-box .new-entry:hover {
-  background: #37aa96;
+  background: #2e838c;
 }
 body.trinity-admin .navigation-box .go-up {
   position: relative;
@@ -3196,7 +3475,7 @@ body.trinity-admin .navigation-box .go-up {
   -moz-box-shadow: 1px 1px 5px #d7d5d5;
   -webkit-box-shadow: 1px 1px 5px #d7d5d5;
   box-shadow: 1px 1px 5px #d7d5d5;
-  background: #493470;
+  background: #d55a13;
 }
 body.trinity-admin .navigation-box .go-up i,
 body.trinity-admin .navigation-box .go-up span {
@@ -3223,7 +3502,7 @@ body.trinity-admin .navigation-box .go-up span {
   box-shadow: none !important;
 }
 body.trinity-admin .navigation-box .go-up:hover {
-  background: #271c3c;
+  background: #8f3c0d;
 }
 /**
     Modal dialog
@@ -3238,7 +3517,7 @@ body.trinity-admin .modal-dialog header {
   padding-bottom: 10px;
 }
 body.trinity-admin .modal-dialog header h2 {
-  color: #493470;
+  color: #d55a13;
   font-size: 32px;
   font-weight: 300;
 }
@@ -3270,7 +3549,7 @@ body.trinity-admin .grid .grid-row-titles th:first-letter {
   text-transform: uppercase;
 }
 body.trinity-admin .grid .grid-row-titles th a {
-  color: #493470;
+  color: #d55a13;
 }
 body.trinity-admin .grid .grid_body {
   width: 100%;
@@ -3308,25 +3587,25 @@ body.trinity-admin .grid .grid_body table tbody tr a {
   color: #4f4f4f;
 }
 body.trinity-admin .grid .grid_body table tbody tr a:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .grid .grid_body table tbody tr a:visited {
   color: #551A8B;
 }
 body.trinity-admin .grid .grid_body table tbody tr a:visited:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .grid .grid_body table tbody tr .actions a {
   color: #8f8f8f;
 }
 body.trinity-admin .grid .grid_body table tbody tr .actions a:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .grid .grid_body table tbody tr .actions a:visited {
   color: #551A8B;
 }
 body.trinity-admin .grid .grid_body table tbody tr .actions a:visited:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .grid .grid_body table tbody td.grid-column-description {
   text-overflow: ellipsis;
@@ -3365,7 +3644,7 @@ body.trinity-admin table.grid thead th span {
   cursor: pointer;
 }
 body.trinity-admin table.grid thead th span:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin table.grid thead .order-by-asc::after {
   position: absolute;
@@ -3395,13 +3674,13 @@ body.trinity-admin table.grid tbody tr td a {
   color: #4f4f4f;
 }
 body.trinity-admin table.grid tbody tr td a:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin table.grid tbody tr td a:visited {
   color: #551A8B;
 }
 body.trinity-admin table.grid tbody tr td a:visited:hover {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin table.grid th:first-child,
 body.trinity-admin table.grid td:first-child {
@@ -3470,7 +3749,7 @@ body.trinity-admin .pagination .next a {
   transform: rotate(-90deg);
 }
 body.trinity-admin .pagination li.active a {
-  background: #493470;
+  background: #d55a13;
   color: #fff;
 }
 body.trinity-admin .record_properties th {
@@ -3530,12 +3809,12 @@ body.trinity-admin .action-cell .actions {
   bottom: -5px;
 }
 body.trinity-admin .action-cell .actions a {
-  color: #7f7f7f;
+  color: #c1c1c1;
   font-weight: 400;
   text-decoration: underline;
 }
 body.trinity-admin .action-cell .actions a:hover {
-  color: #24afc9;
+  color: #44b6c2;
   text-decoration: none;
 }
 body.trinity-admin .edit-grid .edit-input:disabled {
@@ -3564,28 +3843,7 @@ body.trinity-admin .edit-grid label span:before {
   }
 }
 .button {
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  text-align: center;
-  font-size: 17px;
-  text-decoration: none;
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding: 6px 50px 7px 50px;
+  padding: 10px 35px;
   margin-top: 5px;
   margin-bottom: 25px;
   line-height: 1;
@@ -3610,12 +3868,12 @@ body.trinity-admin .edit-grid label span:before {
   box-shadow: 0px -3px 0px 0px #2284A1 inset;
 }
 .button-primary {
-  background-color: #493470 !important;
+  background-color: #d55a13 !important;
   border: none !important;
-  box-shadow: 0px -3px 0px 0px #32244d inset;
+  box-shadow: 0px -3px 0px 0px #a6460f inset;
 }
 .button-primary:hover {
-  background-color: #32244d !important;
+  background-color: #a6460f !important;
   border: none !important;
 }
 .button-secondary {
@@ -3627,12 +3885,12 @@ body.trinity-admin .edit-grid label span:before {
   border: none !important;
 }
 .button-tertiary {
-  background: #24afc9 !important;
+  background: #44b6c2 !important;
   border: none !important;
-  box-shadow: 0px -3px 0px 0px #187788 inset;
+  box-shadow: 0px -3px 0px 0px #2e838c inset;
 }
 .button-tertiary:hover {
-  background: #187788 !important;
+  background: #2e838c !important;
   border: none !important;
 }
 .button-warning {
@@ -3698,7 +3956,7 @@ body.trinity-admin .edit-grid label span:before {
   font-weight: 400;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding: 6px 50px 7px 50px;
+  padding: 10px 35px;
   margin-top: 5px;
   margin-bottom: 25px;
   line-height: 1;
@@ -3723,12 +3981,12 @@ body.trinity-admin .edit-grid label span:before {
   box-shadow: 0px -3px 0px 0px #2284A1 inset;
 }
 .trinity-form-loading-primary {
-  background-color: #493470 !important;
+  background-color: #d55a13 !important;
   border: none !important;
-  box-shadow: 0px -3px 0px 0px #32244d inset;
+  box-shadow: 0px -3px 0px 0px #a6460f inset;
 }
 .trinity-form-loading-primary:hover {
-  background-color: #32244d !important;
+  background-color: #a6460f !important;
   border: none !important;
 }
 .trinity-form-loading-secondary {
@@ -3740,12 +3998,12 @@ body.trinity-admin .edit-grid label span:before {
   border: none !important;
 }
 .trinity-form-loading-tertiary {
-  background: #24afc9 !important;
+  background: #44b6c2 !important;
   border: none !important;
-  box-shadow: 0px -3px 0px 0px #187788 inset;
+  box-shadow: 0px -3px 0px 0px #2e838c inset;
 }
 .trinity-form-loading-tertiary:hover {
-  background: #187788 !important;
+  background: #2e838c !important;
   border: none !important;
 }
 .trinity-form-loading-warning {
@@ -3881,6 +4139,9 @@ body.trinity-admin .box .show-harmonica > form {
 body.trinity-admin .harmonica .main-panel {
   margin-bottom: 0;
   min-height: 51px;
+  /*label[for^="harmonica-global-01"] {
+        border-top: 1px solid transparent;
+      }*/
 }
 body.trinity-admin .harmonica .main-panel input {
   display: block !important;
@@ -3891,7 +4152,7 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
   font-weight: 300;
   padding-left: 15px;
   padding-right: 15px;
-  color: #303030;
+  color: #97999c;
   line-height: 30px;
   border-bottom: 1px solid #d7d7d7;
   border-top: 1px solid #afafaf;
@@ -3904,7 +4165,7 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
   font-size: 16px;
   line-height: 30px;
   float: left;
-  color: #493470;
+  color: #d55a13;
 }
 body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:hover {
   background: #f8f8f8;
@@ -3915,26 +4176,23 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:before {
   font-family: 'tiecons';
   speak: none;
   font-size: 11px;
-  color: #493470;
+  color: #d55a13;
   float: left;
   margin-right: 10px;
 }
 body.trinity-admin .harmonica .main-panel label[for^="default"] {
   text-align: left;
 }
-body.trinity-admin .harmonica .main-panel label[for^="harmonica-global-01"] {
-  border-top: 1px solid transparent;
-}
 body.trinity-admin .harmonica .main-panel .show-harmonica {
   background: none;
   padding: 0;
-  color: #303030;
+  color: #97999c;
   max-height: 600px;
   overflow-y: auto;
   overflow-x: hidden;
 }
 body.trinity-admin .harmonica .main-panel .show-harmonica .harmonica-content {
-  color: #303030;
+  color: #97999c;
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -3942,7 +4200,7 @@ body.trinity-admin .harmonica .main-panel .show-harmonica input[type="checkbox"]
   display: none !important;
 }
 body.trinity-admin .harmonica .main-panel .show-harmonica label {
-  color: #303030;
+  color: #97999c;
   font-weight: 300;
   font-size: 14px;
   line-height: 20px;
@@ -3956,7 +4214,7 @@ body.trinity-admin .harmonica .main-panel:first-of-type {
 }
 body.trinity-admin .harmonica .main-panel:first-of-type label[for^="harmonica"] {
   transition: box-shadow 0s, background 0.2s;
-  border-top: 1px solid transparent;
+  border: none;
 }
 body.trinity-admin .harmonica .main-panel:first-of-type label[for^="harmonica"]:hover {
   -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
@@ -3975,7 +4233,7 @@ body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel {
 body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
   font-weight: 400;
   background: #ebebeb;
-  color: #493470;
+  color: #d55a13;
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #ccc;
   -moz-box-shadow: 0px 5px 10px rgba(219, 219, 219, 0.48);
@@ -3988,7 +4246,7 @@ body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label
   font-family: 'tiecons';
   speak: none;
   font-size: 11px;
-  color: #493470;
+  color: #d55a13;
   float: left;
   margin-right: 10px;
 }
@@ -4025,7 +4283,7 @@ body.trinity-admin .box {
 body.trinity-admin .wrapper-grid .header,
 body.trinity-admin .box .header {
   min-height: 40px;
-  color: #303030;
+  color: #97999c;
   margin: 0;
   font-size: 20px;
   padding: 20px;
@@ -4033,7 +4291,7 @@ body.trinity-admin .box .header {
 }
 body.trinity-admin .wrapper-grid a,
 body.trinity-admin .box a {
-  color: #24afc9;
+  color: #44b6c2;
 }
 body.trinity-admin .wrapper-grid .box-body,
 body.trinity-admin .box .box-body {
@@ -4060,7 +4318,7 @@ body.trinity-admin .wrapper-grid .box-harmonica-body .show-harmonica,
 body.trinity-admin .box .box-harmonica-body .show-harmonica {
   padding: 20px !important;
   margin-bottom: 0px;
-  color: #303030;
+  color: #97999c;
 }
 body.trinity-admin .wrapper-grid .box-form-body,
 body.trinity-admin .box .box-form-body {
@@ -4102,17 +4360,17 @@ body.trinity-admin .box .grid-search form input[type="text"] {
   font-size: 14px;
   float: left;
   transition: border 0.3s ease-in;
-  color: #493470;
+  color: #d55a13;
 }
 body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:focus,
 body.trinity-admin .box .grid-search form input[type="text"]:focus {
-  border: 1px solid #493470;
+  border: 1px solid #d55a13;
 }
 body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:focus + button,
 body.trinity-admin .box .grid-search form input[type="text"]:focus + button {
-  background: #493470;
+  background: #d55a13;
   color: #fff;
-  border: 1px solid #493470;
+  border: 1px solid #d55a13;
 }
 body.trinity-admin .wrapper-grid .grid-search form input[type="text"]::-webkit-input-placeholder,
 body.trinity-admin .box .grid-search form input[type="text"]::-webkit-input-placeholder,
@@ -4139,7 +4397,7 @@ body.trinity-admin .box .grid-search form button[type="submit"] {
 }
 body.trinity-admin .wrapper-grid .grid-search form button[type="submit"]:hover,
 body.trinity-admin .box .grid-search form button[type="submit"]:hover {
-  background: #362555;
+  background: #8f3c0d;
   cursor: pointer;
   border: none;
 }
@@ -4224,7 +4482,7 @@ body.trinity-admin .avatar-picture .tiecons-arrow-previous {
 }
 body.trinity-admin .avatar-picture .trinity-profile {
   font-size: 82px;
-  color: #866aba;
+  color: #f3a375;
 }
 body.trinity-admin .dropzone {
   font-size: 16px;
@@ -4291,7 +4549,7 @@ body.trinity-admin .checkbox input[type="checkbox"]:checked + label[class=level2
 }
 body.trinity-admin .checkbox input[type="checkbox"]:checked + label[class=level2]:after {
   content: '';
-  background: #493470;
+  background: #d55a13;
   border-radius: 10px;
   top: 11px;
   left: 3px;
