@@ -11,12 +11,12 @@ body.trinity-admin {
   // left sidebar menu items
   #sidebar {
     z-index: 99;
-    font-family: 'Roboto', sans-serif;
-    width: @sidebar-width;
-    background: #fff;
+    font-family: Roboto, sans-serif;
+    width: 260px;
+    background: #4c4743;
     height: 100%;
     position: fixed;
-    color: @sidebar-link-color;
+    color: #9b9b9b;
 
     /** window resize fix **/
     top: 0;
@@ -38,129 +38,69 @@ body.trinity-admin {
       overflow-y: auto;
       /** end **/
 
+      .header {
+        font-size: 12px;
+        font-weight: 500;
+        padding: 40px 20px;
+        cursor: auto;
+      }
       li {
         width: 100%;
-        min-height: @sidebar-row-height;
-        height: @sidebar-row-height;
+        min-height: 50px;
+        height: 50px;
         position: relative;
         cursor: pointer;
 
         a, div {
+          cursor: pointer;
+          text-transform: uppercase;
+          padding-left: 20px;
           display: inline-block;
           width: 100%;
-          min-height: @sidebar-row-height;
-          //line-height: @sidebar-row-height + 2px;
-          color: @sidebar-link-color;
-          font-size: @sidebar-font-size;
-          font-weight: normal;
-          transition: .3s;
+          min-height: 50px;
+          color: #9b9b9b;
+          font-size: 12px;
+          font-weight: 400;
+          transition: .4s;
+          line-height: 50px;
         }
 
         i {
-          margin: 14px 18px;
+          margin: 0 35px;
           float: left;
-          color: #303030;
-          //width: @sidebar-icon-font-size;
+          color: #9b9b9b;
           display: inline-block;
-          font-size: @sidebar-icon-font-size;
+          font-size: 17px;
           transition: .3s;
+          line-height: 50px;
         }
 
         &.active {
           a, div {
             font-weight: 500;
+            color: #5a544f;
+            background: #f8f3f0;
           }
           i {
-            color: @color-tertiary;
+            color: #5a544f;
+            font-weight: 600;
+          }
+          &:hover a {
+            background: #f8f3f0;
+            padding-left: 20px;
           }
         }
 
-        &.active, &:hover {
-          a, div {
-            background: @sidebar-row-hover-color;
-            color: @color-primary;
-          }
-          i {
-            color: @color-tertiary;
-          }
+        &:hover a{
+          background: #fff;
+          color: #5a544f;
+          padding-left: 45px;
         }
-        .sidebar-link {
-          min-height: 50px;
-          padding: 13px 0;
-          float: left;
+        &:hover i{
+          color: #5a544f;
         }
+
       }
-      /*
-      .first {
-        border-top: 1px #f4f4f4 solid;
-      }
-      */
-
-      /*      .sidebar-drop, .li-dropdown {
-              position: relative;
-              ul {
-                box-shadow: none;
-              }
-              li {
-                transition: none;
-              }
-              .trinity-dropdown-icon {
-                position: absolute;
-                right: 15px;
-                top: 0;
-                font-size: @sidebar-icon-font-size;
-              }
-
-              .minus {
-                position: absolute;
-                right: 15px;
-                top: -40px;
-                background-color: #fff;
-              }
-
-              &:hover {
-                .minus {
-                  background-color: @sidebar-row-hover-color;
-                }
-              }
-            }
-
-            .drop {
-              width: 100%;
-              margin: 15px 0 0 0;
-              padding: 0;
-              background: #fff;
-              li {
-                a {
-                  padding: 0 0 0 54px;
-                  color: @sidebar-link-color;
-                  font-weight: normal;
-                  background-color: #fafafa;
-                  border: none;
-                  i {
-                    display: none;
-                  }
-                }
-
-                &.active {
-                  a {
-                    font-weight: 500;
-                    color: #000000;
-                    background: @sidebar-row-hover-color;
-                  }
-                }
-
-                &:hover {
-                  a {
-                    color: #000000;
-                    background: @sidebar-row-hover-color;
-                  }
-                }
-              }
-            }
-            .dropdown-icon {
-              pointer-events: none;
-            }*/
     }
   }
 }
