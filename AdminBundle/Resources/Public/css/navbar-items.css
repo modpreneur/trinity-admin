@@ -140,7 +140,7 @@ body.trinity-admin .notifications .tab-list.list-rows {
   background: #ffffff;
 }
 body.trinity-admin .notifications .tab-list li {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   position: relative;
   display: block;
@@ -187,6 +187,7 @@ body.trinity-admin .notifications .tab-list li:hover {
   background: #fffbf8;
 }
 body.trinity-admin .notifications .tab-list li:hover i.trinity-close {
+  cursor: pointer;
   visibility: visible;
   opacity: 1;
   position: absolute;
@@ -212,7 +213,7 @@ body.trinity-admin .notifications .tab-list li:hover .detail-info {
 body.trinity-admin .notifications .tab-list li.new:before {
   content: " ";
   float: left;
-  margin-left: -43px;
+  margin-left: -46px;
   margin-top: 8px;
   background: #57d6c1;
   border-radius: 5px;
@@ -230,7 +231,7 @@ body.trinity-admin .notifications .tab-list li.info i {
   color: #61ccba;
 }
 body.trinity-admin .notifications .tab-list li.warning {
-  background: #ffd6cf;
+  background: #fff4e6;
 }
 body.trinity-admin .notifications .tab-list li.warning i {
   color: #ff8939;
@@ -249,7 +250,7 @@ body.trinity-admin .notifications .tab-list li.noaction i {
   color: #727272;
 }
 body.trinity-admin .notifications .tab-list li.danger {
-  background: #ffb2b0;
+  background: #ffefef;
 }
 body.trinity-admin .notifications .tab-list li.danger i {
   color: #c94d3d;

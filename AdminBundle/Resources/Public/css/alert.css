@@ -157,7 +157,7 @@ body.trinity-admin #flashMessages {
   position: fixed;
   width: 300px;
   height: 100%;
-  top: 115px;
+  top: 105px;
   right: 20px;
   z-index: 999999;
   pointer-events: none;

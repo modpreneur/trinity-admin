@@ -389,7 +389,7 @@ body.trinity-admin .notifications .tab-list.list-rows {
   background: #ffffff;
 }
 body.trinity-admin .notifications .tab-list li {
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 300;
   position: relative;
   display: block;
@@ -436,6 +436,7 @@ body.trinity-admin .notifications .tab-list li:hover {
   background: #fffbf8;
 }
 body.trinity-admin .notifications .tab-list li:hover i.trinity-close {
+  cursor: pointer;
   visibility: visible;
   opacity: 1;
   position: absolute;
@@ -461,7 +462,7 @@ body.trinity-admin .notifications .tab-list li:hover .detail-info {
 body.trinity-admin .notifications .tab-list li.new:before {
   content: " ";
   float: left;
-  margin-left: -43px;
+  margin-left: -46px;
   margin-top: 8px;
   background: #57d6c1;
   border-radius: 5px;
@@ -479,7 +480,7 @@ body.trinity-admin .notifications .tab-list li.info i {
   color: #61ccba;
 }
 body.trinity-admin .notifications .tab-list li.warning {
-  background: #ffd6cf;
+  background: #fff4e6;
 }
 body.trinity-admin .notifications .tab-list li.warning i {
   color: #ff8939;
@@ -498,7 +499,7 @@ body.trinity-admin .notifications .tab-list li.noaction i {
   color: #727272;
 }
 body.trinity-admin .notifications .tab-list li.danger {
-  background: #ffb2b0;
+  background: #ffefef;
 }
 body.trinity-admin .notifications .tab-list li.danger i {
   color: #c94d3d;
@@ -1337,7 +1338,7 @@ body.trinity-admin #flashMessages {
   position: fixed;
   width: 300px;
   height: 100%;
-  top: 115px;
+  top: 105px;
   right: 20px;
   z-index: 999999;
   pointer-events: none;
@@ -2524,7 +2525,7 @@ body.trinity-admin .left-widget > div {
     font-size: 12px;
   }
 }
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1366px) {
   body.trinity-admin .small-widgets .span-none-padding-large-6 {
     width: 50%;
   }
@@ -3620,32 +3621,15 @@ body.trinity-admin .edit-grid label span:before {
   }
 }
 .button {
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px;
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  text-align: center;
-  font-size: 17px;
-  text-decoration: none;
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding: 6px 50px 7px 50px;
+  padding: 9px 35px;
   margin-top: 5px;
   margin-bottom: 25px;
   line-height: 1;
   border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 .button-medium {
   max-height: 33px;
@@ -3660,6 +3644,7 @@ body.trinity-admin .edit-grid label span:before {
   padding: 0px 14px;
 }
 .button-success {
+  font-weight: 500;
   box-shadow: 0px -3px 0px 0px #457A1A inset;
 }
 .button-info {
@@ -3749,16 +3734,19 @@ body.trinity-admin .edit-grid label span:before {
   font-size: 17px;
   text-decoration: none;
   vertical-align: middle;
-  text-transform: uppercase;
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   padding-top: 10px;
   padding-bottom: 10px;
-  padding: 6px 50px 7px 50px;
+  padding: 9px 35px;
   margin-top: 5px;
   margin-bottom: 25px;
   line-height: 1;
   border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 .trinity-form-loading-medium {
   max-height: 33px;
@@ -3773,6 +3761,7 @@ body.trinity-admin .edit-grid label span:before {
   padding: 0px 14px;
 }
 .trinity-form-loading-success {
+  font-weight: 500;
   box-shadow: 0px -3px 0px 0px #457A1A inset;
 }
 .trinity-form-loading-info {
