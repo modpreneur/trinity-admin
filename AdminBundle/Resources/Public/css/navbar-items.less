@@ -3,69 +3,13 @@
 
 body.trinity-admin {
 
-  .navbar{
-    &:before, &:after{
-        content: "";
-        position: absolute;
-        bottom: -8px;
-        opacity: 0;
-        width: 0;
-        height: 0;
-        border-left: 10px solid transparent;
-        border-right: 10px solid transparent;
-        border-bottom: 15px solid #fff;
-    }
-  }
-  .navbar-item-label {
-    position: relative;
-    transition: background @search-time ease-in;
-    display: inline-block;
-    cursor: pointer;
-    color: @color-secondary;
-    float: left;
-    i {
-      color: @color-navbar-icon;
-      padding: 15px;
-      transition: .4s;
-    }
-    &:hover {
-      background: @color-primary-hover;
-      i{
-        color: @color-tertiary;
-      }
-      .number-info{
-        color: #fff;
-      }
-    }
-    .number-info{
-      padding: 0 !important;
-      border-radius: 20px;
-      background: #f0575a;
-      font-size: 12px;
-      line-height: 15px;
-      color: #fff;
-      font-weight: 900;
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      text-align: center;
-      top: 10px;
-      position: absolute;
-      right: 7px;
-      .shadow(@color-navbar-icon);
-    }
-  }
-  .navbar-item-input{
-    display: none;
-  }
-
   .user-profile-info {
-    top: -500px;
-    transition: 2s;
+    top: -1000px;
+    transition: 1s;
     z-index: 99;
     display: block;
     position: fixed;
-    right: 120px;
+    right: 44px;
 
     -webkit-box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
     -moz-box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
@@ -77,7 +21,7 @@ body.trinity-admin {
         .trinity {
           font-size: 100px;
           border-radius: 100px;
-          color: lighten(@color-primary, 25%);
+          color: #cdbeb5;
         }
         img{
           width: 100px;
@@ -91,19 +35,54 @@ body.trinity-admin {
     }
 
 //=================================================================
+
+
+
+  .navbar-popup {
+    width: 401px;
+    background: #fff;
+    border: 1px solid #a7a7a7;
+    border-top: none;
+    -webkit-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+    -moz-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+    box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+
+    h1 {
+      display: block;
+      padding: 20px;
+      color: #d55a13;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 25px;
+      border-bottom: 1px solid #dfdfdf;
+    }
+    ul {
+      li {
+        position: relative;
+        display: block;
+        padding: 10px 40px;
+        border-top: 1px solid #e5e5e5;
+        i {
+          position: absolute;
+          font-size: 20px;
+          padding: 10px 12px;
+          color: #000;
+          left: 0;
+          top: 0;
+        }
+      }
+    }
+  }
+
   .notifications {
-    top: -500px;
-    transition: 2s;
+    top: -1000px;
+    transition: all 1s, z-index 0s;
     z-index: 99;
     display: block;
     position: fixed;
-    right: 170px;
+    right: 320px;
 
-    -webkit-box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
-    -moz-box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
-    box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
-
-    ul.tab-list {
+    .tab-list {
       overflow-y: auto;
       overflow-x: hidden;
       height: 400px;
@@ -113,26 +92,22 @@ body.trinity-admin {
       }
 
       li {
-        font-size: @sidebar-font-size;
+        font-size: 13px;
         font-weight: 300;
         position: relative;
         display: block;
-        padding: 15px 25px 15px 45px;
-        border-top: 1px solid darken(@sidebar-row-hover-color, 5%);
-
+        padding: 15px 25px 15px 50px;
+        border-top: none;
+        border-bottom: 1px solid #f4efed;
         z-index: 999;
-        min-height: @sidebar-row-height;
-        // TODO: david
-        //background-color: @sdebar-navbar-notifi;
-
-        -webkit-transition: min-height 0.7s;
-        -moz-transition: min-height 0.7s;
-        transition: min-height 0.7s;
+        min-height: 50px;
+        -webkit-transition: min-height .7s;
+        -moz-transition: min-height .7s;
+        transition: min-height .7s;
 
         i {
-          font-size: @sidebar-icon-font-size + 4px;
+          font-size: 21px;
           position: absolute;
-          //left: 15px;
           top: 5px;
         }
 
@@ -141,7 +116,6 @@ body.trinity-admin {
           span {
             transition: all 0.5s ease;
             line-height: 15px;
-            //background-color: @sidebar-row-hover-color;
           }
         }
 
@@ -167,7 +141,9 @@ body.trinity-admin {
 
         &:hover {
           min-height: 58px;
+          background: #fffbf8;
           i.trinity-close {
+            cursor: pointer;
             visibility: visible;
             opacity: 1;
             position: absolute;
@@ -197,7 +173,7 @@ body.trinity-admin {
         &.new:before {
           content: " ";
           float: left;
-          margin-left: -43px;
+          margin-left: -46px;
           margin-top: 8px;
           background: saturate(@color-info, 10%);
           border-radius: 5px;
@@ -211,23 +187,27 @@ body.trinity-admin {
         }
 
         &.info {
+          background: #fff;
           i {
             color: @color-info;
           }
         }
 
         &.warning {
+          background: #fff4e6;
           i {
             color: @color-warning;
           }
         }
 
         &.success {
+          background: #fff;
           i {
             color: @color-success-notification;
           }
         }
         &.noaction {
+          background: #fff;
           color: @sidebar-link-color;
           i {
             color: lighten(@sidebar-link-color, 10%);
@@ -235,6 +215,7 @@ body.trinity-admin {
         }
 
         &.danger {
+          background: #ffefef;
           i {
             color: @color-danger;
           }
@@ -245,44 +226,7 @@ body.trinity-admin {
   }
 
 
-  .navbar-popup {
-    width: 400px;
-    background: #fff;
-    border: 1px solid rgba(137, 137, 137, 0.45);
-    border-top: none;
-
-    h1 {
-      display: block;
-      padding: 10px 15px;
-
-      color: @color-primary;
-      font-size: 16px;
-      font-weight: bold;
-      line-height: 25px;
-
-      border-bottom: 1px solid #dfdfdf;
-    }
-    ul {
-      li {
-        position: relative;
-        display: block;
-        padding: 10px 10px 10px 40px;
-        border-top: 1px solid darken(@sidebar-row-hover-color, 5%);
-
-        background: #F5F5F5;
-        i {
-          position: absolute;
-          font-size: 20px;
-          padding: 10px;
-          color: #000;
-          left: 0px;
-          top: 0px;
-        }
-      }
-    }
-  }
-
-  #user-profile-input:checked ~ .navbar {
+/*  #user-profile-input:checked ~ .navbar {
     &:before {
       right: 136px;
       animation: opa 1.5s 1s ease both;
@@ -290,59 +234,235 @@ body.trinity-admin {
     #user-profile-label i{
       color: @color-secondary;
     }
-  }
+  }*/
 
   #user-profile-input:checked ~ .user-profile-info {
-    top: 50px;
-    animation: move 2s 2s linear forwards;
+    top: @navbar-height;
   }
-
-  #notifications-input:checked ~ .navbar {
-    &:after {
-      bottom: -8px;
-      right: 186px;
-      animation: opa 1.5s 1s ease both;
+  #user-profile-label {
+    transition: .7s all;
+    top: 0;
+  }
+  #user-profile-input:checked~.navbar #user-profile-label {
+    top: -8px;
+    height: 98px;
+    color: #d55a13;
+    background: #fff8f4;
+    i {
+      color: #d55a13;
     }
-    #notifications-label i{
-      color: @color-secondary;
+  }
+
+
+  #notifications-input:checked~.notifications {
+    top: 90px;
+  }
+
+  #notifications-label {
+    transition: .7s all;
+    top: 0;
+  }
+  #notifications-input:checked~.navbar #notifications-label {
+    top: -8px;
+    height: 98px;
+    color: #d55a13;
+    background: #fff8f4;
+    i{
+      color: #d55a13;
     }
   }
 
-  #notifications-input:checked ~ .notifications {
-    top: 50px;
-    animation: move 2s 2s linear forwards;
+  #settings-label {
+    transition: 1s all;
+    top: 0;
   }
-
-  //#headline-on-scroll
-  #header-for-nonvisible{
-    position: fixed;
+  #settings-label:hover i {
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  @keyframes rotate {
+    from {
+      transform: rotate(0);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  #settings-input:checked~.navbar #settings-label {
+    top: -5px;
+    height: 95px;
+    color: #d55a13;
+    background: #fff8f4;
+    i {
+      color: #d55a13;
+    }
+  }
+  #header-for-nonvisible {
+    position: absolute;
     left: 0;
-    height: 50px;
+    height: 90px;
+    line-height: 90px;
     width: 100%;
-
-    font-size: 20px;
-    line-height: 50px;
-    /* color: green; */
+    z-index: -1;
+    font-size: 30px;
+    color: #968378;
+    font-weight: 300;
+    overflow: hidden;
     display: block;
     text-align: center;
-    /* margin: 0 auto; */
   }
-  a[title="Logout me"]{
-    font-weight: 500;
-    i{
-      margin-top: 15px;
+
+  .slideInUp {
+    -webkit-animation-name: slideInUp;
+    animation-name: slideInUp;
+    -webkit-animation-duration: 1.4s;
+    animation-duration: 1.4s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
+  @-webkit-keyframes slideInUp {
+    0% {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      visibility: visible;
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slideInUp {
+     0% {
+       -webkit-transform: translateY(100%);
+       transform: translateY(100%);
+       visibility: visible;
+       opacity: 0;
+     }
+     100% {
+       -webkit-transform: translateY(0);
+       transform: translateY(0);
+       opacity: 1;
+     }
+   }
+  .slideOutDown {
+      -webkit-animation-name: slideOutDown;
+      animation-name: slideOutDown;
+      -webkit-animation-duration: 1.4s;
+      animation-duration: 1.4s;
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+  @-webkit-keyframes slideOutDown {
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
+  @keyframes slideOutDown {
+     0% {
+       -webkit-transform: translateY(0);
+       transform: translateY(0);
+       opacity: 1;
+     }
+     100% {
+       -webkit-transform: translateY(100%);
+       transform: translateY(100%);
+       visibility: hidden;
+       opacity: 0;
+     }
+   }
+
+
+
+  .quick-links{
+    transition: .7s;
+    top: @navbar-height;
+    right: -500px;
+    position: fixed;
+    width: 200px;
+    display: block;
+    background: #fff;
+    border: 1px solid #a7a7a7;
+    border-top: none;
+    -webkit-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+    -moz-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+    box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+    z-index: 99;
+
+    li{
+      height: 40px;
+      font-size: 15px;
+      cursor: pointer;
+
+      &:hover{
+        background: lighten(@color-primary,40%);
+        a{
+          padding-left: 45px;
+        }
+      }
+      a{
+        transition: .3s;
+        display: block;
+        color: @global-font-color;
+        padding-left: 15px;
+        line-height: 40px;
+      }
+    }
+    .header{
+      font-weight: 400;
+      padding: 20px;
+      font-size: 14px;
+      color: @color-primary;
+      height: auto;
+      border-bottom: 2px solid @color-primary;
+      i{
+        font-size: 20px;
+      }
+      &:hover{
+        background-color: #fff;
+      }
+    }
+  }
+  #quick-links-input:checked ~ .quick-links{
+    right: 0;
+  }
+  #quick-links-input:checked ~ .navbar #quick-links-label{
+    width: @navbar-height/2;
+    height: @navbar-height/2;
+    span{
+      opacity: 0;
+    }
+    span{
+      &:nth-child(4),&:nth-child(5){
+        opacity: 1;
+      }
+    }
+    span:nth-child(4){
+      transform: rotate(-135deg);
+    }
+    span:nth-child(5){
+      transform: rotate(135deg);
     }
   }
 
-  @keyframes move {
-    from { z-index: 99;}
-    to { z-index: 999;}
+  @media screen and(max-width: 1280px) {
+    #header-for-nonvisible{
+      width: auto;
+      margin-left: 291px;
+      line-height: 1.6;
+      height: auto;
+    }
   }
-
-  @keyframes opa {
-    from { z-index: 99; opacity: 0;}
-    to { z-index: 999; opacity: 1; }
-  }
-
 }
 
