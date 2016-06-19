@@ -1,0 +1,586 @@
+/**
+    Forms for trinity admin.
+*/
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+/*
+// float - fix
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+*/
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin .modal-dialog form label {
+  width: 100%;
+}
+body.trinity-admin .edit-form,
+body.trinity-admin .new-form,
+body.trinity-admin .modal-dialog form {
+  width: 100%;
+  /* Just for webkit browsers */
+}
+body.trinity-admin .edit-form .row,
+body.trinity-admin .new-form .row,
+body.trinity-admin .modal-dialog form .row {
+  margin-left: auto;
+  margin-right: auto;
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 15px;
+  padding-top: 15px;
+  width: 100%;
+  margin-bottom: 0px;
+}
+body.trinity-admin .edit-form .row:last-of-type,
+body.trinity-admin .new-form .row:last-of-type,
+body.trinity-admin .modal-dialog form .row:last-of-type {
+  border-bottom: none;
+}
+body.trinity-admin .edit-form .row:first-of-type,
+body.trinity-admin .new-form .row:first-of-type,
+body.trinity-admin .modal-dialog form .row:first-of-type {
+  margin-top: 15px;
+}
+body.trinity-admin .edit-form .row:hover,
+body.trinity-admin .new-form .row:hover,
+body.trinity-admin .modal-dialog form .row:hover {
+  background: #f8f8f8;
+}
+body.trinity-admin .edit-form .advanced-settings .row,
+body.trinity-admin .new-form .advanced-settings .row,
+body.trinity-admin .modal-dialog form .advanced-settings .row {
+  border-bottom: 1px solid #ededed !important;
+}
+body.trinity-admin .edit-form .advanced-settings .row:first-of-type,
+body.trinity-admin .new-form .advanced-settings .row:first-of-type,
+body.trinity-admin .modal-dialog form .advanced-settings .row:first-of-type {
+  margin-top: 0px;
+}
+body.trinity-admin .edit-form .form-left,
+body.trinity-admin .new-form .form-left,
+body.trinity-admin .modal-dialog form .form-left {
+  text-align: right;
+}
+body.trinity-admin .edit-form .form-right .checkbox + .description,
+body.trinity-admin .new-form .form-right .checkbox + .description,
+body.trinity-admin .modal-dialog form .form-right .checkbox + .description {
+  float: left;
+  margin-top: -25px;
+  margin-left: 25px;
+}
+body.trinity-admin .edit-form .form-right .description,
+body.trinity-admin .new-form .form-right .description,
+body.trinity-admin .modal-dialog form .form-right .description {
+  font-size: 12px;
+  color: #727272;
+}
+@media screen and (max-width: 768px) {
+  body.trinity-admin .edit-form .form-left,
+  body.trinity-admin .new-form .form-left,
+  body.trinity-admin .modal-dialog form .form-left {
+    text-align: left;
+  }
+}
+body.trinity-admin .edit-form label,
+body.trinity-admin .new-form label,
+body.trinity-admin .modal-dialog form label {
+  color: #303030;
+  padding: 0;
+  padding-right: 20%;
+  line-height: 35px;
+  font-weight: 400;
+}
+body.trinity-admin .edit-form label.required:after,
+body.trinity-admin .new-form label.required:after,
+body.trinity-admin .modal-dialog form label.required:after {
+  content: "*";
+  color: #d55a13;
+  font-weight: 600;
+}
+body.trinity-admin .edit-form .form-content-center,
+body.trinity-admin .new-form .form-content-center,
+body.trinity-admin .modal-dialog form .form-content-center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block !important;
+  position: static !important;
+  float: none !important;
+}
+body.trinity-admin .edit-form input[type="text"],
+body.trinity-admin .new-form input[type="text"],
+body.trinity-admin .modal-dialog form input[type="text"],
+body.trinity-admin .edit-form input[type="number"],
+body.trinity-admin .new-form input[type="number"],
+body.trinity-admin .modal-dialog form input[type="number"],
+body.trinity-admin .edit-form input[type="email"],
+body.trinity-admin .new-form input[type="email"],
+body.trinity-admin .modal-dialog form input[type="email"],
+body.trinity-admin .edit-form input[type="date"],
+body.trinity-admin .new-form input[type="date"],
+body.trinity-admin .modal-dialog form input[type="date"],
+body.trinity-admin .edit-form input[type="datetime"],
+body.trinity-admin .new-form input[type="datetime"],
+body.trinity-admin .modal-dialog form input[type="datetime"],
+body.trinity-admin .edit-form input[type="password"],
+body.trinity-admin .new-form input[type="password"],
+body.trinity-admin .modal-dialog form input[type="password"],
+body.trinity-admin .edit-form input[type="url"],
+body.trinity-admin .new-form input[type="url"],
+body.trinity-admin .modal-dialog form input[type="url"],
+body.trinity-admin .edit-form input[type="search"],
+body.trinity-admin .new-form input[type="search"],
+body.trinity-admin .modal-dialog form input[type="search"],
+body.trinity-admin .edit-form select,
+body.trinity-admin .new-form select,
+body.trinity-admin .modal-dialog form select,
+body.trinity-admin .edit-form textarea,
+body.trinity-admin .new-form textarea,
+body.trinity-admin .modal-dialog form textarea {
+  width: 100%;
+  border-radius: 5px;
+  height: 35px;
+  line-height: 20px;
+  font-size: 14px;
+  padding-left: 10px;
+  padding-right: 10px;
+  outline-width: 0;
+  border: 1px solid #b5b5b5;
+  background: #fff;
+  -webkit-appearance: none;
+  font-weight: 300;
+  color: #303030;
+}
+body.trinity-admin .edit-form input[type="text"]:focus,
+body.trinity-admin .new-form input[type="text"]:focus,
+body.trinity-admin .modal-dialog form input[type="text"]:focus,
+body.trinity-admin .edit-form input[type="number"]:focus,
+body.trinity-admin .new-form input[type="number"]:focus,
+body.trinity-admin .modal-dialog form input[type="number"]:focus,
+body.trinity-admin .edit-form input[type="email"]:focus,
+body.trinity-admin .new-form input[type="email"]:focus,
+body.trinity-admin .modal-dialog form input[type="email"]:focus,
+body.trinity-admin .edit-form input[type="date"]:focus,
+body.trinity-admin .new-form input[type="date"]:focus,
+body.trinity-admin .modal-dialog form input[type="date"]:focus,
+body.trinity-admin .edit-form input[type="datetime"]:focus,
+body.trinity-admin .new-form input[type="datetime"]:focus,
+body.trinity-admin .modal-dialog form input[type="datetime"]:focus,
+body.trinity-admin .edit-form input[type="password"]:focus,
+body.trinity-admin .new-form input[type="password"]:focus,
+body.trinity-admin .modal-dialog form input[type="password"]:focus,
+body.trinity-admin .edit-form input[type="url"]:focus,
+body.trinity-admin .new-form input[type="url"]:focus,
+body.trinity-admin .modal-dialog form input[type="url"]:focus,
+body.trinity-admin .edit-form input[type="search"]:focus,
+body.trinity-admin .new-form input[type="search"]:focus,
+body.trinity-admin .modal-dialog form input[type="search"]:focus,
+body.trinity-admin .edit-form select:focus,
+body.trinity-admin .new-form select:focus,
+body.trinity-admin .modal-dialog form select:focus,
+body.trinity-admin .edit-form textarea:focus,
+body.trinity-admin .new-form textarea:focus,
+body.trinity-admin .modal-dialog form textarea:focus {
+  border: 1px solid #d55a13;
+  background: #fff !important;
+}
+@media screen and (max-width: 767px) {
+  body.trinity-admin .edit-form label,
+  body.trinity-admin .new-form label,
+  body.trinity-admin .modal-dialog form label {
+    text-align: left;
+  }
+}
+body.trinity-admin .edit-form input[type="checkbox"],
+body.trinity-admin .new-form input[type="checkbox"],
+body.trinity-admin .modal-dialog form input[type="checkbox"] {
+  display: none;
+}
+body.trinity-admin .edit-form .widget-expanded .checkbox label,
+body.trinity-admin .new-form .widget-expanded .checkbox label,
+body.trinity-admin .modal-dialog form .widget-expanded .checkbox label {
+  display: block;
+  max-width: 100%;
+}
+body.trinity-admin .edit-form .widget-expanded .checkbox + label,
+body.trinity-admin .new-form .widget-expanded .checkbox + label,
+body.trinity-admin .modal-dialog form .widget-expanded .checkbox + label {
+  display: none;
+}
+body.trinity-admin .edit-form .checkbox label,
+body.trinity-admin .new-form .checkbox label,
+body.trinity-admin .modal-dialog form .checkbox label {
+  display: block;
+  margin-right: 15px;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+  max-width: 20px;
+  white-space: nowrap;
+}
+body.trinity-admin .edit-form .checkbox label:before,
+body.trinity-admin .new-form .checkbox label:before,
+body.trinity-admin .modal-dialog form .checkbox label:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 1px solid #b9b9b9;
+  vertical-align: middle;
+  transition: .3s;
+}
+body.trinity-admin .edit-form .checkbox label:hover:before,
+body.trinity-admin .new-form .checkbox label:hover:before,
+body.trinity-admin .modal-dialog form .checkbox label:hover:before {
+  border: 1px solid #d55a13;
+}
+body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:after,
+body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:after,
+body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked + label:after {
+  position: absolute;
+  height: 100%;
+  left: 3px;
+  font-size: 15px;
+  font-family: "trinity";
+  color: #fff;
+  vertical-align: middle;
+  content: '\e933';
+  display: inline-block;
+}
+body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:before,
+body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:before,
+body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked + label:before {
+  border: 1px solid #d55a13;
+  background: #d55a13;
+}
+body.trinity-admin .edit-form .checkbox-inline label,
+body.trinity-admin .new-form .checkbox-inline label,
+body.trinity-admin .modal-dialog form .checkbox-inline label {
+  display: inline-block;
+  margin-right: 15px;
+  position: relative;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  overflow: hidden;
+  max-width: 20px;
+  white-space: nowrap;
+}
+body.trinity-admin .edit-form .checkbox-inline label:before,
+body.trinity-admin .new-form .checkbox-inline label:before,
+body.trinity-admin .modal-dialog form .checkbox-inline label:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+  font-size: 16px;
+  border: 1px solid #b9b9b9;
+  vertical-align: middle;
+  transition: .3s;
+}
+body.trinity-admin .edit-form .checkbox-inline label:hover:before,
+body.trinity-admin .new-form .checkbox-inline label:hover:before,
+body.trinity-admin .modal-dialog form .checkbox-inline label:hover:before {
+  border: 1px solid #d55a13;
+}
+body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + label:after,
+body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:after,
+body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:after {
+  position: absolute;
+  height: 100%;
+  left: 3px;
+  font-size: 15px;
+  font-family: "trinity";
+  color: #fff;
+  vertical-align: middle;
+  content: '\e933';
+  display: inline-block;
+}
+body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + label:before,
+body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:before,
+body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:before {
+  border: 1px solid #d55a13;
+  background: #d55a13;
+}
+body.trinity-admin .edit-form .checkbox-inline label,
+body.trinity-admin .new-form .checkbox-inline label,
+body.trinity-admin .modal-dialog form .checkbox-inline label {
+  float: left;
+  position: relative;
+}
+body.trinity-admin .edit-form .select-style select,
+body.trinity-admin .new-form .select-style select,
+body.trinity-admin .modal-dialog form .select-style select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+}
+body.trinity-admin .edit-form .select-style:after,
+body.trinity-admin .new-form .select-style:after,
+body.trinity-admin .modal-dialog form .select-style:after {
+  content: "\e928";
+  font-family: trinity;
+  font-size: 12px;
+  color: #afafaf;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+  line-height: 1;
+  pointer-events: none;
+}
+body.trinity-admin .edit-form .select-style:before,
+body.trinity-admin .new-form .select-style:before,
+body.trinity-admin .modal-dialog form .select-style:before {
+  content: " ";
+  right: 10px;
+  top: 12px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  pointer-events: none;
+}
+body.trinity-admin .edit-form .select-style select:-moz-focusring,
+body.trinity-admin .new-form .select-style select:-moz-focusring,
+body.trinity-admin .modal-dialog form .select-style select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+body.trinity-admin .edit-form .select-style select[disabled],
+body.trinity-admin .new-form .select-style select[disabled],
+body.trinity-admin .modal-dialog form .select-style select[disabled] {
+  cursor: not-allowed;
+  background: #ebf8ff;
+}
+body.trinity-admin .edit-form textarea,
+body.trinity-admin .new-form textarea,
+body.trinity-admin .modal-dialog form textarea {
+  height: 100px;
+  padding-top: 10px;
+  line-height: 20px;
+  padding-bottom: 10px;
+}
+body.trinity-admin .edit-form .tiecons-postfix,
+body.trinity-admin .new-form .tiecons-postfix,
+body.trinity-admin .modal-dialog form .tiecons-postfix {
+  position: absolute;
+  right: 10px;
+  top: 7px;
+}
+body.trinity-admin .edit-form input[type="submit"],
+body.trinity-admin .new-form input[type="submit"],
+body.trinity-admin .modal-dialog form input[type="submit"],
+body.trinity-admin .edit-form button[type="submit"],
+body.trinity-admin .new-form button[type="submit"],
+body.trinity-admin .modal-dialog form button[type="submit"] {
+  margin-left: auto;
+  display: block;
+  float: none !important;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+body.trinity-admin .edit-form input.error,
+body.trinity-admin .new-form input.error,
+body.trinity-admin .modal-dialog form input.error {
+  border: solid 1px red !important;
+}
+body.trinity-admin .edit-form input[type="date"]::-webkit-inner-spin-button,
+body.trinity-admin .new-form input[type="date"]::-webkit-inner-spin-button,
+body.trinity-admin .modal-dialog form input[type="date"]::-webkit-inner-spin-button,
+body.trinity-admin .edit-form input[type="date"]::-webkit-outer-spin-button,
+body.trinity-admin .new-form input[type="date"]::-webkit-outer-spin-button,
+body.trinity-admin .modal-dialog form input[type="date"]::-webkit-outer-spin-button {
+  height: 100%;
+}
+body.trinity-admin .edit-form input[type="date"]::-webkit-calendar-picker-indicator,
+body.trinity-admin .new-form input[type="date"]::-webkit-calendar-picker-indicator,
+body.trinity-admin .modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator {
+  position: relative;
+  display: block;
+  width: 14px;
+  height: 30px;
+  right: -6px;
+  color: transparent;
+}
+body.trinity-admin .edit-form input[type="date"]::-webkit-calendar-picker-indicator:after,
+body.trinity-admin .new-form input[type="date"]::-webkit-calendar-picker-indicator:after,
+body.trinity-admin .modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator:after {
+  content: "\e654";
+  font-family: "tiecons";
+  font-size: 12px;
+  color: #afafaf;
+  position: absolute;
+  right: 5px;
+  top: 7px;
+  pointer-events: none;
+}
+body.trinity-admin .form-title {
+  padding: 15px;
+}
+body.trinity-admin .delete-form {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.trinity-admin .delete-form input[type="submit"] {
+  margin-left: auto;
+  display: block;
+  float: none !important;
+  margin-right: auto;
+  text-transform: uppercase;
+  font-size: 18px;
+  -webkit-appearance: none;
+  transition: border 0.3s ease-in, background 0.3s ease-in, color 0.3s ease-in, box-shadow 0.3s ease-in;
+}
+body.trinity-admin .delete-form i.trinity-warning:before {
+  font-size: 150px;
+  color: orange;
+}
+body.trinity-admin .delete-form h2.warning {
+  font-weight: 200;
+  font-size: 60px;
+}
+body.trinity-admin .delete-form p {
+  font-size: 20px;
+  color: #8e8e8e;
+}
+body.trinity-admin .delete-form ul {
+  font-size: 20px;
+  color: #8e8e8e;
+  margin-top: 3px;
+}
+body.trinity-admin .delete-form li {
+  margin-top: 5px;
+}
+body.trinity-admin .delete-form .row {
+  margin: 10px 0 20px 0;
+}
+body.trinity-admin h2.warning {
+  background-color: transparent !important;
+}
+body.trinity-admin .info-empty-form {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+body.trinity-admin .info-empty-form i.trinity-info:before {
+  font-size: 140px;
+  color: deepskyblue;
+}
+body.trinity-admin .info-empty-form h2.warning {
+  font-weight: 200;
+  font-size: 50px;
+}
+body.trinity-admin .info-empty-form p {
+  font-size: 20px;
+  color: #8e8e8e;
+}
+body.trinity-admin .info-empty-form .row {
+  margin: 10px 0 20px 0;
+}
+body.trinity-admin .box-new-form {
+  padding-bottom: 15px;
+}
+body.trinity-admin #email-templates input:not([type="submit"]),
+body.trinity-admin #email-templates select,
+body.trinity-admin #email-templates textarea {
+  min-height: 300px;
+}
+body.trinity-admin .collection-widget div {
+  width: 100% !important;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+body.trinity-admin .collection-widget .form-right {
+  margin-bottom: 5px !important;
+}
+body.trinity-admin .collection-widget .form-left {
+  display: none !important;
+}
+body.trinity-admin .collection-widget .add-collection-item {
+  color: #40adc2;
+}
+body.trinity-admin .collection-widget .add-collection-item p {
+  margin: 5px 0 !important;
+  font-weight: 500;
+}
+body.trinity-admin .collection-widget .add-collection-item:hover {
+  color: #389db0;
+}
+body.trinity-admin .collection-widget .add-collection-item i {
+  font-size: 18px;
+  padding: 10px;
+}
+body.trinity-admin .collection-widget .add-collection-item i:after {
+  font-family: 'Roboto', sans-serif;
+  margin-left: 5px;
+  content: 'Add item';
+  font-size: 16px;
+}
+body.trinity-admin .collection-widget .delete-collection-item .tiecons,
+body.trinity-admin .collection-widget .delete-collection-item .trinity {
+  color: #c22a00;
+  position: absolute;
+  right: -20px;
+  top: 10px;
+  transition: all 0.1s;
+}
+body.trinity-admin .collection-widget .delete-collection-item .tiecons:hover,
+body.trinity-admin .collection-widget .delete-collection-item .trinity:hover {
+  -ms-transform: scale(1.2);
+  /* IE 9 */
+  -webkit-transform: scale(1.2);
+  /* Safari */
+  transform: scale(1.2);
+}

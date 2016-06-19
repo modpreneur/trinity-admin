@@ -1,0 +1,78 @@
+/**
+    Modal dialog
+    Dashboard - edit widgets (plus button)
+*/
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+/*
+// float - fix
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+*/
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin .modal-dialog > div {
+  background: #fff !important;
+  background: #fff;
+}
+body.trinity-admin .modal-dialog header {
+  border-bottom: 1px solid #ededed;
+  padding-bottom: 10px;
+}
+body.trinity-admin .modal-dialog header h2 {
+  color: #d55a13;
+  font-size: 32px;
+  font-weight: 300;
+}
+body.trinity-admin .modal-dialog header p {
+  color: #b5b5b5;
+  font-weight: 300;
+}
+body.trinity-admin .modal-dialog label.required {
+  display: none;
+}

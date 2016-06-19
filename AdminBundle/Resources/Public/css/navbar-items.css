@@ -1,0 +1,472 @@
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+/*
+// float - fix
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+*/
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin {
+  /*  #user-profile-input:checked ~ .navbar {
+    &:before {
+      right: 136px;
+      animation: opa 1.5s 1s ease both;
+    }
+    #user-profile-label i{
+      color: @color-secondary;
+    }
+  }*/
+}
+body.trinity-admin .user-profile-info {
+  top: -1000px;
+  transition: 1s;
+  z-index: 99;
+  display: block;
+  position: fixed;
+  right: 44px;
+  -webkit-box-shadow: -1px 3px 6px 0 rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: -1px 3px 6px 0 rgba(0, 0, 0, 0.35);
+  box-shadow: -1px 3px 6px 0 rgba(0, 0, 0, 0.35);
+}
+body.trinity-admin .user-profile-info .user-photo {
+  margin: 10px;
+  position: relative;
+}
+body.trinity-admin .user-profile-info .user-photo .trinity {
+  font-size: 100px;
+  border-radius: 100px;
+  color: #cdbeb5;
+}
+body.trinity-admin .user-profile-info .user-photo img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+body.trinity-admin .user-profile-info .tab-list {
+  margin-top: 10px;
+}
+body.trinity-admin .navbar-popup {
+  width: 401px;
+  background: #fff;
+  border: 1px solid #a7a7a7;
+  border-top: none;
+  -webkit-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+}
+body.trinity-admin .navbar-popup h1 {
+  display: block;
+  padding: 20px;
+  color: #d55a13;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 25px;
+  border-bottom: 1px solid #dfdfdf;
+}
+body.trinity-admin .navbar-popup ul li {
+  position: relative;
+  display: block;
+  padding: 10px 40px;
+  border-top: 1px solid #e5e5e5;
+}
+body.trinity-admin .navbar-popup ul li i {
+  position: absolute;
+  font-size: 20px;
+  padding: 10px 12px;
+  color: #000;
+  left: 0;
+  top: 0;
+}
+body.trinity-admin .notifications {
+  top: -1000px;
+  transition: all 1s, z-index 0s;
+  z-index: 99;
+  display: block;
+  position: fixed;
+  right: 320px;
+}
+body.trinity-admin .notifications .tab-list {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 400px;
+}
+body.trinity-admin .notifications .tab-list.list-rows {
+  background: #ffffff;
+}
+body.trinity-admin .notifications .tab-list li {
+  font-size: 12px;
+  font-weight: 300;
+  position: relative;
+  display: block;
+  padding: 15px 25px 15px 50px;
+  border-top: none;
+  border-bottom: 1px solid #f4efed;
+  z-index: 999;
+  min-height: 50px;
+  -webkit-transition: min-height 0.7s;
+  -moz-transition: min-height 0.7s;
+  transition: min-height 0.7s;
+}
+body.trinity-admin .notifications .tab-list li i {
+  font-size: 21px;
+  position: absolute;
+  top: 5px;
+}
+body.trinity-admin .notifications .tab-list li .message-group {
+  position: relative;
+}
+body.trinity-admin .notifications .tab-list li .message-group span {
+  transition: all 0.5s ease;
+  line-height: 15px;
+}
+body.trinity-admin .notifications .tab-list li i.trinity-close {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+}
+body.trinity-admin .notifications .tab-list li .detail-info {
+  height: 0;
+  width: 190px;
+  font-size: 12px;
+  opacity: 0;
+  padding-top: 2px;
+  transition: all .7s linear;
+  -moz-transition: all .7s linear;
+  -webkit-transition: all .7s linear;
+}
+body.trinity-admin .notifications .tab-list li:hover {
+  min-height: 58px;
+  background: #fffbf8;
+}
+body.trinity-admin .notifications .tab-list li:hover i.trinity-close {
+  visibility: visible;
+  opacity: 1;
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  left: auto;
+  padding: 2px 2px 2px 0;
+  font-size: 10px;
+  color: #838383;
+}
+body.trinity-admin .notifications .tab-list li:hover i.trinity-close:hover {
+  color: #40adc2;
+}
+body.trinity-admin .notifications .tab-list li:hover .detail-info {
+  position: relative;
+  display: block;
+  height: 13px;
+  opacity: 1;
+  white-space: normal;
+  word-break: normal;
+  color: #8f8f8f;
+}
+body.trinity-admin .notifications .tab-list li.new:before {
+  content: " ";
+  float: left;
+  margin-left: -43px;
+  margin-top: 8px;
+  background: #57d6c1;
+  border-radius: 5px;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+}
+body.trinity-admin .notifications .tab-list li a {
+  color: #595959;
+}
+body.trinity-admin .notifications .tab-list li.info {
+  background: #fff;
+}
+body.trinity-admin .notifications .tab-list li.info i {
+  color: #61ccba;
+}
+body.trinity-admin .notifications .tab-list li.warning {
+  background: #ffd6cf;
+}
+body.trinity-admin .notifications .tab-list li.warning i {
+  color: #ff8939;
+}
+body.trinity-admin .notifications .tab-list li.success {
+  background: #fff;
+}
+body.trinity-admin .notifications .tab-list li.success i {
+  color: #f6e064;
+}
+body.trinity-admin .notifications .tab-list li.noaction {
+  background: #fff;
+  color: #595959;
+}
+body.trinity-admin .notifications .tab-list li.noaction i {
+  color: #727272;
+}
+body.trinity-admin .notifications .tab-list li.danger {
+  background: #ffb2b0;
+}
+body.trinity-admin .notifications .tab-list li.danger i {
+  color: #c94d3d;
+}
+body.trinity-admin #user-profile-input:checked ~ .user-profile-info {
+  top: 90px;
+}
+body.trinity-admin #user-profile-label {
+  transition: .7s all;
+  top: 0;
+}
+body.trinity-admin #user-profile-input:checked ~ .navbar #user-profile-label {
+  top: -8px;
+  height: 98px;
+  color: #d55a13;
+  background: #fff8f4;
+}
+body.trinity-admin #user-profile-input:checked ~ .navbar #user-profile-label i {
+  color: #d55a13;
+}
+body.trinity-admin #notifications-input:checked ~ .notifications {
+  top: 90px;
+}
+body.trinity-admin #notifications-label {
+  transition: .7s all;
+  top: 0;
+}
+body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label {
+  top: -8px;
+  height: 98px;
+  color: #d55a13;
+  background: #fff8f4;
+}
+body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label i {
+  color: #d55a13;
+}
+body.trinity-admin #settings-label {
+  transition: 1s all;
+  top: 0;
+}
+body.trinity-admin #settings-label:hover i {
+  animation-name: rotate;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+body.trinity-admin #settings-input:checked ~ .navbar #settings-label {
+  top: -5px;
+  height: 95px;
+  color: #d55a13;
+  background: #fff8f4;
+}
+body.trinity-admin #settings-input:checked ~ .navbar #settings-label i {
+  color: #d55a13;
+}
+body.trinity-admin #header-for-nonvisible {
+  position: absolute;
+  left: 0;
+  height: 90px;
+  line-height: 90px;
+  width: 100%;
+  z-index: -1;
+  font-size: 30px;
+  color: #968378;
+  font-weight: 300;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+}
+body.trinity-admin .slideInUp {
+  -webkit-animation-name: slideInUp;
+  animation-name: slideInUp;
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slideInUp {
+  0% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: visible;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+body.trinity-admin .slideOutDown {
+  -webkit-animation-name: slideOutDown;
+  animation-name: slideOutDown;
+  -webkit-animation-duration: 1.4s;
+  animation-duration: 1.4s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+@-webkit-keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+@keyframes slideOutDown {
+  0% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+body.trinity-admin .quick-links {
+  transition: .7s;
+  top: 90px;
+  right: -500px;
+  position: fixed;
+  width: 200px;
+  display: block;
+  background: #fff;
+  border: 1px solid #a7a7a7;
+  border-top: none;
+  -webkit-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+  -moz-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, 0.25);
+  z-index: 99;
+}
+body.trinity-admin .quick-links li {
+  height: 40px;
+  font-size: 15px;
+  cursor: pointer;
+}
+body.trinity-admin .quick-links li:hover {
+  background: #f9d2bb;
+}
+body.trinity-admin .quick-links li:hover a {
+  padding-left: 45px;
+}
+body.trinity-admin .quick-links li a {
+  transition: .3s;
+  display: block;
+  color: #303030;
+  padding-left: 15px;
+  line-height: 40px;
+}
+body.trinity-admin .quick-links .header {
+  font-weight: 400;
+  padding: 20px;
+  font-size: 14px;
+  color: #d55a13;
+  height: auto;
+  border-bottom: 2px solid #d55a13;
+}
+body.trinity-admin .quick-links .header i {
+  font-size: 20px;
+}
+body.trinity-admin .quick-links .header:hover {
+  background-color: #fff;
+}
+body.trinity-admin #quick-links-input:checked ~ .quick-links {
+  right: 0;
+}
+body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label {
+  width: 45px;
+  height: 45px;
+}
+body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span {
+  opacity: 0;
+}
+body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(4),
+body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(5) {
+  opacity: 1;
+}
+body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(4) {
+  transform: rotate(-135deg);
+}
+body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(5) {
+  transform: rotate(135deg);
+}
+@media screen and (max-width: 1280px) {
+  body.trinity-admin #header-for-nonvisible {
+    width: auto;
+    margin-left: 291px;
+    line-height: 1.6;
+    height: auto;
+  }
+}

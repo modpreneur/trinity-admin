@@ -1,0 +1,154 @@
+/**
+    Primary for dashboard widgets.
+*/
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+/*
+// float - fix
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+*/
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin {
+  /*  #edit_user {
+      .row:first-child {
+        margin: 0;
+      }
+
+
+      #profile-avatar {
+        label {
+          margin-top: 60px;
+        }
+        border-bottom: 1px solid #ededed;
+
+      }*/
+}
+body.trinity-admin .avatar-picture {
+  display: inline-block;
+  width: 82px;
+  height: 82px;
+  margin: 10px;
+}
+body.trinity-admin .avatar-picture img {
+  width: 82px;
+  height: 82px;
+}
+body.trinity-admin .avatar-picture .tiecons-arrow-previous,
+body.trinity-admin .avatar-picture .trinity-delete {
+  position: absolute;
+  left: 76px;
+  top: 14px;
+  font-size: 13px;
+  color: #fff;
+  background: #979689;
+  text-shadow: 0 0 2px #000;
+  border-radius: 13px;
+  transition: .3s;
+  cursor: pointer;
+}
+body.trinity-admin .avatar-picture .tiecons-arrow-previous:hover,
+body.trinity-admin .avatar-picture .trinity-delete:hover {
+  transform: scale(1.2);
+}
+body.trinity-admin .avatar-picture .tiecons-arrow-previous {
+  left: 10px;
+  top: 10px;
+  font-size: 20px;
+  background: none;
+}
+body.trinity-admin .avatar-picture .trinity-profile {
+  font-size: 82px;
+  color: #f3a375;
+}
+body.trinity-admin .dropzone {
+  font-size: 16px;
+  color: #ababab;
+  height: 95px;
+  display: inline-block;
+  width: calc(100% - 105px);
+  margin: 5px auto;
+  float: right;
+  padding: 8px 15px;
+  text-align: center;
+  border: dashed 3px #afafaf;
+  border-radius: 10px;
+}
+body.trinity-admin .dropzone .dropzone-content {
+  display: table-cell;
+  vertical-align: middle;
+}
+body.trinity-admin .dropzone .button {
+  margin-left: 5px;
+}
+body.trinity-admin .dropzone:hover {
+  background: #fff;
+}
+body.trinity-admin .dropzone i,
+body.trinity-admin .dropzone span {
+  height: 14px;
+  display: inline-block;
+}
+body.trinity-admin .dropzone span {
+  width: calc(100% - 30px);
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 1;
+}
+body.trinity-admin .dropzone .progress-upload {
+  width: calc(100% - 10px);
+  height: 20px;
+  background: #C1C1C1;
+  border-radius: 4px;
+  margin: 0 5px;
+}
+body.trinity-admin .dropzone .progress-upload div {
+  border-radius: 5px;
+}

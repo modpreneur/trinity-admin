@@ -1,0 +1,228 @@
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+/*
+// float - fix
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+*/
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/**
+*
+* Page content, widget, etc.
+*
+*  |--------------------------|
+*  | header                   |
+*  |--------------------------|
+*  | content                  |
+*  |--------------------------|
+*  | footer                   |
+*  |--------------------------|
+*
+*/
+body.trinity-admin {
+  /*    .box{
+        .box();
+    }*/
+}
+body.trinity-admin .wrapper-grid,
+body.trinity-admin .box {
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  color: #303030;
+  padding: 0;
+}
+body.trinity-admin .wrapper-grid .header,
+body.trinity-admin .box .header {
+  min-height: 40px;
+  color: #303030;
+  margin: 0;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 400;
+}
+body.trinity-admin .wrapper-grid a,
+body.trinity-admin .box a {
+  color: #40adc2;
+}
+body.trinity-admin .wrapper-grid .box-body,
+body.trinity-admin .box .box-body {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+body.trinity-admin .wrapper-grid .box-body p,
+body.trinity-admin .box .box-body p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+body.trinity-admin .wrapper-grid .box-table-body,
+body.trinity-admin .box .box-table-body {
+  overflow-x: auto;
+}
+body.trinity-admin .wrapper-grid .box-table-body .grid,
+body.trinity-admin .box .box-table-body .grid {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+body.trinity-admin .wrapper-grid .box-harmonica-body .show-harmonica,
+body.trinity-admin .box .box-harmonica-body .show-harmonica {
+  padding: 20px !important;
+  margin-bottom: 0px;
+  color: #303030;
+}
+body.trinity-admin .wrapper-grid .box-form-body,
+body.trinity-admin .box .box-form-body {
+  padding-bottom: 15px;
+}
+body.trinity-admin .wrapper-grid .footer,
+body.trinity-admin .box .footer {
+  border-top: 1px solid #b5b5b5;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 12px;
+}
+body.trinity-admin .wrapper-grid .grid-search,
+body.trinity-admin .box .grid-search {
+  padding: 30px;
+  text-align: center;
+}
+body.trinity-admin .wrapper-grid .grid-search .title,
+body.trinity-admin .box .grid-search .title {
+  color: #2f2f2f;
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: 300;
+}
+body.trinity-admin .wrapper-grid .grid-search form,
+body.trinity-admin .box .grid-search form {
+  min-width: 400px;
+}
+body.trinity-admin .wrapper-grid .grid-search form input[type="text"],
+body.trinity-admin .box .grid-search form input[type="text"] {
+  border: 1px solid #ccc;
+  height: 32px;
+  border-radius: 5px;
+  padding: 10px;
+  width: 80%;
+  outline: none;
+  font-size: 14px;
+  float: left;
+  transition: border 0.3s ease-in;
+  color: #d55a13;
+}
+body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:focus,
+body.trinity-admin .box .grid-search form input[type="text"]:focus {
+  border: 1px solid #d55a13;
+}
+body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:focus + button,
+body.trinity-admin .box .grid-search form input[type="text"]:focus + button {
+  background: #d55a13;
+  color: #fff;
+  border: 1px solid #d55a13;
+}
+body.trinity-admin .wrapper-grid .grid-search form input[type="text"]::-webkit-input-placeholder,
+body.trinity-admin .box .grid-search form input[type="text"]::-webkit-input-placeholder,
+body.trinity-admin .wrapper-grid .grid-search form input[type="text"]::-moz-placeholder,
+body.trinity-admin .box .grid-search form input[type="text"]::-moz-placeholder,
+body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:-ms-input-placeholder,
+body.trinity-admin .box .grid-search form input[type="text"]:-ms-input-placeholder {
+  color: #dbdbdb;
+}
+body.trinity-admin .wrapper-grid .grid-search form button[type="submit"],
+body.trinity-admin .box .grid-search form button[type="submit"] {
+  background: #ccc;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  margin-left: -20px;
+  height: 32px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  float: left;
+  width: 65px;
+  transition: border 0.3s ease-in, background 0.3s ease-in, color 0.3s ease-in;
+}
+body.trinity-admin .wrapper-grid .grid-search form button[type="submit"]:hover,
+body.trinity-admin .box .grid-search form button[type="submit"]:hover {
+  background: #362555;
+  cursor: pointer;
+  border: none;
+}
+body.trinity-admin .wrapper-grid {
+  padding: 0 0 100px 0;
+}
+body.trinity-admin .help-box {
+  width: 100%;
+}
+body.trinity-admin .help-box .label {
+  text-align: right;
+  padding-left: 15px;
+}
+body.trinity-admin .help-box .help-content {
+  display: none;
+}
+body.trinity-admin .help-box .hide {
+  display: none;
+}
+body.trinity-admin .help-box p {
+  font-size: 12px;
+}
+body.trinity-admin .help-box input[type="checkbox"]:checked ~ .help-content {
+  display: block;
+}
+body.trinity-admin .help-box input[type="checkbox"]:checked ~ .label .show {
+  display: none;
+}
+body.trinity-admin .help-box input[type="checkbox"]:checked ~ .label .hide {
+  display: block;
+}

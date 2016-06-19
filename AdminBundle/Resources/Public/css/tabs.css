@@ -1,0 +1,684 @@
+/**
+    Tabs
+     _______________
+    | Edit | Delete |____
+    |                    |
+    |       Content      |
+    |____________________|
+*/
+.margin-left-auto {
+  margin-left: auto;
+}
+.margin-right-auto {
+  margin-right: auto;
+}
+/*
+// float - fix
+.clearfix:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+}
+
+.clearfix {
+    display: inline-block;
+}
+
+* html .clearfix {
+    height: 1%;
+}
+.clearfix {
+    display: block;
+}
+*/
+.hidden {
+  display: none !important;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.abs-center {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+.box {
+  background: #fff;
+}
+.pointer {
+  cursor: pointer;
+}
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin .tabs-wrapper {
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
+}
+body.trinity-admin .tabs-wrapper #tab15:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab15:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab14:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab14:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab13:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab13:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab12:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab12:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab11:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab11:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab10:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab10:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab9:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab9:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab8:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab8:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab7:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab7:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab6:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab6:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab5:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab5:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab4:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab4:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab3:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab3:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab2:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab2:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper #tab1:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  border-top: none;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper #tab1:checked + label:hover:after {
+  display: none;
+}
+body.trinity-admin .tabs-wrapper label[for^="tab"] {
+  border: none;
+  color: #afafaf;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 400;
+  z-index: 3;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  width: calc(12.5%);
+  max-width: 230px;
+  min-width: 150px;
+}
+body.trinity-admin .tabs-wrapper label[for^="tab"]:hover {
+  color: #40adc2;
+}
+body.trinity-admin .tabs-wrapper label[for^="tab"]:after {
+  content: '';
+  display: block;
+  margin: auto;
+  height: 2px;
+  width: 0;
+  background: transparent;
+  transition: width 0.7s ease, background-color 0.7s ease;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  right: 0;
+}
+body.trinity-admin .tabs-wrapper label[for^="tab"]:hover:after {
+  width: 100%;
+  background-color: #40adc2;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper {
+  border: none;
+  min-height: 300px;
+  background: #fff;
+  -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
+  -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
+  box-shadow: inset 0 2px 11.5px -5px rgba(0, 0, 0, 0.45);
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-body p {
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-body .list {
+  font-size: 18px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  line-height: 120%;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item {
+  display: flex;
+  background: #afafaf;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  font-size: 12px;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item:hover {
+  background: #969696;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item a {
+  padding: 5px 15px;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open {
+  background: #389db0;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open a {
+  font-weight: 600;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open:hover {
+  background: #40adc2;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper h3 {
+  padding: 20px;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper .advanced-settings {
+  transition: 5s;
+}
+body.trinity-admin .tabs-wrapper .tab-body-wrapper label {
+  border: none;
+  background: transparent;
+  font-weight: 00;
+  color: #303030 !important;
+  font-size: 14px !important;
+}
+body.trinity-admin .tab-body {
+  padding: 0 0 0;
+}
+body.trinity-admin .tab-body-wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+body.trinity-admin .tab-body-wrapper .widget {
+  border: none !important;
+}
+body.trinity-admin .tab-body-wrapper .grid {
+  border-radius: 0 !important;
+  margin-left: -5px;
+  width: 100%;
+}
+body.trinity-admin .tab-body-wrapper table {
+  border: none;
+}
+body.trinity-admin .tabs-wrapper div.tab-loader {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  display: block;
+  text-align: center;
+  min-height: 300px;
+  background: rgba(1, 1, 1, 0.15);
+}
+body.trinity-admin .tabs-wrapper div.tab-loader i {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+body.trinity-admin .tab-content {
+  color: #303030;
+}
+body.trinity-admin .tab-content .tab-header {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #24afc9;
+  padding: 20px;
+}
+body.trinity-admin .tab-content .tab-title {
+  text-transform: uppercase;
+  /**
+    Tabs
+     _______________
+    | Edit | Delete |____
+    |                    |
+    |       Content      |
+    |____________________|
+*/
+  font-size: 20px;
+  color: #d55a13;
+  font-weight: 400;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper {
+  background: #fff;
+  margin-top: 40px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  -moz-box-shadow: 0 1px 5px #cdcbcc;
+  -webkit-box-shadow: 0 1px 5px #cdcbcc;
+  box-shadow: 0 1px 5px #cdcbcc;
+  /*    -webkit-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);*/
+  -moz-box-shadow: 1px 1px 5px #d7d5d5;
+  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
+  box-shadow: 1px 1px 5px #d7d5d5;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-head:checked + label {
+  background: #fff;
+  border-bottom: 2px solid #d55a13;
+  color: #d55a13;
+  top: 0 !important;
+  border-top: 1px solid transparent !important;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper label[for^="tab"] {
+  border: none;
+  border-top: none;
+  border-bottom: 2px solid #b5b5b5;
+  color: #afafaf;
+  counter-increment: tabs;
+  padding: 15px 40px 15px 40px;
+  font-weight: 400;
+  z-index: 3;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper label[for^="tab"]:hover {
+  color: #303030 !important;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-body-wrapper {
+  border: none;
+  min-height: 300px;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-body p {
+  font-size: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-body-wrapper label {
+  border: none;
+  background: transparent;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body {
+  padding: 0;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper .widget {
+  border: none !important;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper .grid {
+  border-radius: 0 !important;
+  margin-left: -5px;
+  width: 100%;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper table {
+  border: none;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper div.tab-loader {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  display: block;
+  text-align: center;
+  min-height: 300px;
+  background: rgba(1, 1, 1, 0.15);
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper div.tab-loader i {
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel {
+  min-height: 51px;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
+  font-size: 14px;
+  text-align: left;
+  font-weight: 300;
+  padding-left: 15px;
+  padding-right: 15px;
+  color: #303030;
+  line-height: 30px;
+  border-top: 1px solid #afafaf;
+  border-bottom: 1px solid #afafaf;
+  text-transform: uppercase;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
+  margin-right: 10px;
+  font-size: 16px;
+  line-height: 30px;
+  float: left;
+  color: #d55a13;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:hover {
+  background: #f8f8f8;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica {
+  background: none;
+  padding: 0;
+  margin-bottom: 20px;
+  color: #303030;
+  max-height: 400px;
+  overflow-y: auto;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica .harmonica-content {
+  color: #303030;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica label {
+  color: #303030;
+  font-weight: 300;
+  font-size: 14px;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
+  font-weight: 400;
+  background: #ebebeb;
+  color: #d55a13;
+  border-top: 1px solid #d7d7d7;
+  border-bottom: 1px solid #ccc;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content {
+  color: #303030;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-header {
+  margin-bottom: 15px;
+  border-bottom: 2px solid #24afc9;
+  padding: 20px;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-title {
+  text-transform: uppercase;
+  font-size: 20px;
+  color: #d55a13;
+  font-weight: 400;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-sub-title {
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-sub-title i {
+  color: #24afc9 !important;
+  padding-right: 5px;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-description {
+  margin-top: 10px;
+  color: #afafaf;
+  font-size: 14px !important;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-info-text {
+  margin: 0 !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  font-size: 14px !important;
+  font-weight: 300;
+  color: #303030;
+}
+body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-info-text i {
+  color: #afafaf;
+}
+body.trinity-admin .tab-content .tab-sub-title {
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+body.trinity-admin .tab-content .tab-sub-title i {
+  color: #24afc9 !important;
+  padding-right: 5px;
+}
+body.trinity-admin .tab-content .tab-description {
+  margin-top: 10px;
+  color: #afafaf;
+  font-size: 14px !important;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+body.trinity-admin .tab-content .tab-info-text {
+  margin: 0 !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  font-size: 14px !important;
+  font-weight: 300;
+  color: #303030;
+}
+body.trinity-admin .tab-content .tab-info-text i {
+  color: #afafaf;
+}
+body.trinity-admin .reload {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+  border-radius: 40px;
+  width: 50px;
+  height: 50px;
+  transition: background 0.3s ease-in-out;
+  -moz-box-shadow: 0 1px 5px #cdcbcc;
+  -webkit-box-shadow: 0 1px 5px #cdcbcc;
+  box-shadow: 0 1px 5px #cdcbcc;
+  /*    -webkit-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);*/
+  -moz-box-shadow: 1px 1px 5px #d7d5d5;
+  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
+  box-shadow: 1px 1px 5px #d7d5d5;
+  background: #d55a13;
+}
+body.trinity-admin .reload i,
+body.trinity-admin .reload span {
+  color: #fff;
+  font-weight: 900;
+  font-size: 20px;
+  -moz-box-shadow: 0 1px 5px #cdcbcc;
+  -webkit-box-shadow: 0 1px 5px #cdcbcc;
+  box-shadow: 0 1px 5px #cdcbcc;
+  /*    -webkit-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
+    box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);*/
+  -moz-box-shadow: 1px 1px 5px #d7d5d5;
+  -webkit-box-shadow: 1px 1px 5px #d7d5d5;
+  box-shadow: 1px 1px 5px #d7d5d5;
+  position: absolute;
+  left: 50%;
+  top: 51%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+  -moz-transform: translateY(-50%) translateX(-50%);
+  -ms-transform: translateY(-50%) translateX(-50%);
+  transform: translateY(-50%) translateX(-50%);
+  background: transparent;
+  box-shadow: none !important;
+}
+body.trinity-admin .reload i,
+body.trinity-admin .reload span {
+  font-weight: 900;
+}
+body.trinity-admin .reload:hover {
+  background: #d55a13;
+}
+body.trinity-admin .tabs-wrapper {
+  /*//super cool loop if you looking
+        // for dynamic width as:
+        //  |       100        |
+        //  |   50   |   50    |
+        //  | 25 | 25| 25 | 25 |
+        // unfortunately not for our case...
+
+        .tab-loop-width (@i) when (@i > 0) {
+
+            label[for^="tab"]:first-of-type:nth-last-of-type(@{i}),
+            label[for^="tab"]:first-of-type:nth-last-of-type(@{i}) ~ label[for^="tab"]{
+                width: 100%/@i;
+            }
+
+            .tab-loop-width(@i - 1);
+        }
+        .tab-loop-width (15);*/
+}
+@media screen and (max-width: 980px) {
+  body.trinity-admin .tabs-wrapper label[for^="tab"] {
+    width: 33.33333333% !important;
+    max-width: none;
+  }
+}
+@media screen and (max-width: 880px) {
+  body.trinity-admin .tabs-wrapper label[for^="tab"] {
+    width: 50% !important;
+    max-width: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  body.trinity-admin .tabs-wrapper label[for^="tab"] {
+    width: 100% !important;
+    max-width: none;
+  }
+}
