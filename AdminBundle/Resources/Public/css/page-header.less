@@ -11,26 +11,25 @@ body.trinity-admin{
     .head-title{
         display: block;
         float: left;
+        .group-clearfix();
         height: 100px;
     }
 
 
     .head-content{
-        font-family: "Roboto", sans-serif;
-        color: @global-font-color;
+        font-family: Roboto, sans-serif;
+        color: #303030;
         position: relative;
-
         background: #fff;
         margin: 25px 20px 20px 25px;
         float: none;
-        height: auto !important;
+        height: auto!important;
         padding-top: 10px;
         padding-bottom: 10px;
-        min-height: @header-min-height;
+        min-height: 100px;
         clear: both;
         font-weight: 400;
-
-        box-shadow: 0px 6px 7.2px 0.8px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 6px 7.2px .8px rgba(0, 0, 0, .05);
 
         div[class^="span"]{
             height: 100px;
@@ -44,10 +43,12 @@ body.trinity-admin{
             width: 95px;
             display: block;
             float: left;
+            .group-clearfix();
             i{
                 display: block;
                 margin: 25px 20px 20px 20px;
                 font-size: 55px;
+                color: #97999c;
             }
             img{
                 width: 65px;
@@ -58,12 +59,13 @@ body.trinity-admin{
         }
 
         .content-header{
-            line-height: 32px !important;
-            color: @color-primary !important;
+            font-size: 30px;
+            color: #97999c;
+            text-transform: uppercase;
             margin-top: 25px;
-            font-weight: 300;
+            font-weight: 400;
             b{
-                font-weight: 400;
+                font-weight: 500;
             }
         }
 
@@ -73,20 +75,16 @@ body.trinity-admin{
             font-size: 55px;
         }
 
-        i{
-            color: @color-tertiary;
-        }
 
         .breadcrumbs{
             float: left;
             width: auto;
             margin-left: -10px;
-            line-height: 20px !important;
-            background: none;
-            display: block !important;
+            background: 0 0;
+            display: block!important;
 
             span{
-                font-size: 12px !important;
+                font-size: 14px;
                 color: #4c4c4c;
             }
             ul{
@@ -98,7 +96,7 @@ body.trinity-admin{
                 &:after{
                     content: '\e656';
                     font-family: 'tiecons';
-                    font-size: 8px;
+                    font-size: 10px;
                     color: #ccc;
                     padding-left: 5px;
                 }
