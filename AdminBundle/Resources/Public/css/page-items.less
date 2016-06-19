@@ -16,25 +16,9 @@ body.trinity-admin {
             top: 0;
             right: 0;
 
-/*            .item {
-                padding: 5px 25px 5px 25px;
-                font-size: 12px;
-                background-color: @color-tab-label;
-                text-align: center;
-                cursor: pointer;
-                font-weight: 300;
-
-                a {
-                    color: #ffffff;
-                }
-
-                &:hover {
-                    background: darken(@color-tab-label, 10%) !important;
-                }
-            }*/
 
             .item{
-                display: flex;
+                display: block;
                 background: @color-tab-label;
                 color: #fff;
                 text-align: center;
@@ -46,6 +30,7 @@ body.trinity-admin {
                 }
                 a{
                     padding: 5px 15px;
+                    display: inline-block;
                 }
                 #expert-mode{
                     color: #fff;
@@ -113,9 +98,9 @@ body.trinity-admin {
 
         .new-entry {
             .navigation-icons();
-            background: @color-info;
+            background: @color-tertiary;
             &:hover {
-                background: darken(@color-info, 15%);
+                background: darken(@color-tertiary, 15%);
             }
         }
 
