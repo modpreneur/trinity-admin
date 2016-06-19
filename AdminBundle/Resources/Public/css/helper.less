@@ -8,6 +8,7 @@
     margin-right: auto;
 }
 
+/*
 // float - fix
 .clearfix:after {
     visibility: hidden;
@@ -28,6 +29,7 @@
 .clearfix {
     display: block;
 }
+*/
 
 .hidden{
     display: none !important;
@@ -145,4 +147,12 @@
 
 .pointer{
     cursor: pointer;
+}
+
+.group-clearfix{
+    &:after{
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
