@@ -6,6 +6,7 @@
     <input name="navbar-items" type="radio" id="user-profile-input" class="navbar-item-input">
     <input name="navbar-items" type="radio" id="notifications-input" class="navbar-item-input">
     <input name="navbar-items" type="radio" id="settings-input" class="navbar-item-input">
+    <input name="navbar-items" type="radio" id="quick-links-input" class="navbar-item-input">
 
     <nav class="navbar row">
 
@@ -84,9 +85,10 @@
                     </div>
 
 
-                    {#@todo#}
                     <div class="item">
-                        <label class="display-inline-block pointer" for="quick-links" id="quick-links-label" title="See more">
+                        <label class="display-inline-block pointer" for="quick-links-input" id="quick-links-label" title="See more">
+                            <span></span>
+                            <span></span>
                             <span></span>
                             <span></span>
                             <span></span>
@@ -99,6 +101,12 @@
 
         </div>
     </nav>
+
+    {# Navbar popups - profile, notifications #}
+    <div class="quick-links">
+        {% block quick_links %}
+        {% endblock %}
+    </div>
 
     {# Navbar popups - profile, notifications #}
     <div class="user-profile-info">
