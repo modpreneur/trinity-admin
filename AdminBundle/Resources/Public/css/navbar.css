@@ -271,6 +271,12 @@ body.trinity-admin .navbar .navbar-right-items .item:first-of-type i {
   height: 45px;
   padding: 12.5px;
 }
+body.trinity-admin .navbar .navbar-right-items .item:last-of-type:hover {
+  background: #bebebe;
+}
+body.trinity-admin .navbar .navbar-right-items .item:last-of-type:hover span {
+  background: #6e7072;
+}
 body.trinity-admin .navbar .navbar-right-items span {
   transition: .7s all;
   display: inline-block;
