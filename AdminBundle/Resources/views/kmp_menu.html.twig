@@ -24,7 +24,6 @@
         {% import _self as knp_menu %}
 
         <ul{{ knp_menu.attributes(listAttributes) }}>
-            <li class="header">Navigation</li>
             {{ block('children') }}
         </ul>
     {% endif %}
