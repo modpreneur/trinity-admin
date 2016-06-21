@@ -1,0 +1,209 @@
+@import "variables";
+@import "helper";
+
+.button() {
+  .radius(5px);
+  text-align: center;
+  font-size: @font-size-button;
+  text-decoration: none;
+  vertical-align: middle;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+:focus {
+  outline: none;
+}
+
+::-moz-focus-inner {
+  border: 0;
+}
+
+@-moz-document url-prefix() {
+  .button {
+    font-family: 'Roboto', sans-serif !important;
+  }
+}
+
+.button {
+  padding: 9px 35px;
+  margin-top: 5px;
+  margin-bottom: 25px;
+  line-height: 1;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+
+  &-medium {
+    max-height: 33px;
+    line-height: 31px;
+    font-size: 80%;
+    padding: 0px 18px;
+  }
+
+  &-small {
+    max-height: 25px;
+    line-height: 22px;
+    font-size: 80%;
+    padding: 0px 14px;
+  }
+
+  &-success {
+    font-weight: 500;
+    box-shadow: 0px -3px 0px 0px #457A1A inset;
+  }
+
+  &-info {
+    box-shadow: 0px -3px 0px 0px #2284A1 inset;
+  }
+
+  &-primary {
+    background-color: @color-primary !important;
+    border: none !important;
+    box-shadow: 0px -3px 0px 0px darken(@color-primary, 10%) inset;
+    &:hover {
+      background-color: darken(@color-primary, 10%) !important;
+      border: none !important;
+    }
+  }
+
+  &-secondary {
+    background-color: @color-secondary !important;
+    border: none !important;
+
+    &:hover {
+      background-color: darken(@color-secondary, 20%) !important;
+      border: none !important; ///---------------------------------
+    }
+  }
+
+  &-tertiary {
+    background: @color-tertiary !important;
+    border: none !important;
+    box-shadow: 0px -3px 0px 0px darken(@color-tertiary, 15%) inset;
+
+    &:hover {
+      background: darken(@color-tertiary, 15%) !important;
+      border: none !important;
+    }
+  }
+
+  &-warning {
+    background-color: @color-warning;
+    box-shadow: 0px -3px 0px 0px darken(@color-warning, 20%) inset;
+    border: none !important;
+    &:hover {
+      background-color: darken(@color-warning, 20%);
+      border: none !important;
+    }
+  }
+
+  &-danger {
+    background-color: @color-danger !important;
+    box-shadow: 0px -3px 0px 0px darken(@color-danger, 15%) inset;
+    border: none !important;
+    &:hover {
+      background-color: darken(@color-danger, 15%) !important;
+      border: none !important;
+    }
+  }
+
+  &:disabled {
+    cursor: not-allowed !important;
+    color: #dddddd;
+  }
+   &-addNew, &-default{
+    color: #2f2f2f !important;
+    background: transparent;
+    border: 1px dashed #2f2f2f;
+    transition: all @form-tr-time;
+    &:hover {
+      background-color: #dbdbdb;
+      border: 1px solid #2f2f2f;
+    }
+  }
+  &-red {
+    color: #fff;
+    background-color: #b35445;
+    border: 1px dashed #642f26;
+    &:hover {
+      background-color: #8a4134;
+      border: 1px solid #3d1d17;
+    }
+  }
+
+}
+
+.trinity-form {
+
+  .disabled() {
+    &:disabled {
+      cursor: not-allowed !important;
+      color: #fff;
+    }
+  }
+
+  &-loading {
+    .button();
+    .disabled();
+
+    &:after {
+      .icon("\e6a9");
+      .animation(spin, 3s, linear, infinite);
+
+      @-moz-keyframes spin {
+        100% {
+          -moz-transform: rotate(360deg);
+        }
+      }
+      @-webkit-keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+      @keyframes spin {
+        100% {
+          -webkit-transform: rotate(360deg);
+          transform: rotate(360deg);
+        }
+      }
+    }
+  }
+
+  &-success {
+    &:after {
+      .icon('\e933');
+      font-family: 'trinity';
+    }
+  }
+
+  &-error {
+    //.disabled();
+
+    &:after {
+      .icon('\e932');
+      font-family: 'trinity';
+    }
+  }
+
+  &-ready {
+
+    &.button-save {
+      &:after {
+        .icon('\e6fc');
+      }
+    }
+
+    &.button-remove {
+      &:after {
+        .icon('\e934');
+        font-family: 'trinity';
+      }
+    }
+  }
+}
