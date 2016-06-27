@@ -9,13 +9,6 @@
 
 body.trinity-admin {
 
-  // dialog fix
-  .modal-dialog form {
-    label {
-      width: 100%;
-    }
-  }
-
   .edit-form, .new-form, .modal-dialog form {
     width: 100%;
     .row {
@@ -36,7 +29,7 @@ body.trinity-admin {
       }
 
       &:hover {
-        background: @global-row-hover;//red;//
+        background: @global-row-hover; //red;//
       }
     }
 
@@ -315,6 +308,16 @@ body.trinity-admin {
     }
   }
 
+  // dialog fix
+  .modal-dialog form {
+    label {
+      width: 100%;
+    }
+    .row:first-of-type {
+
+    }
+  }
+
   .form-title {
     padding: 15px;
   }
@@ -401,10 +404,10 @@ body.trinity-admin {
     }
   }
 
-  .help-buttons{
+  .help-buttons {
     right: 0;
     position: absolute;
-    i,button{
+    i, button {
       display: inline-block;
     }
   }
@@ -460,6 +463,12 @@ body.trinity-admin {
           transform: scale(1.2);
         }
       }
+    }
+  }
+
+  .form-width-100 {
+    .form-content-center {
+      width: 100%;
     }
   }
 }
