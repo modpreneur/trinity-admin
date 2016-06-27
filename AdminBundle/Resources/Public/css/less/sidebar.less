@@ -1,4 +1,4 @@
-@import "variables";
+
 @import "helper";
 
 body.trinity-admin {
@@ -13,14 +13,14 @@ body.trinity-admin {
     z-index: 99;
     font-family: Roboto, sans-serif;
     width: 260px;
-    background: #4c4743;
+    background: @sidebar-back-color; //#4c4743;
     height: 100%;
     position: fixed;
     color: #9b9b9b;
 
     /** window resize fix **/
     top: 0;
-    padding-top: @navbar-height;
+    padding-top: @navbar-height + 79px; //+height of sidebar-header
     /** end **/
 
     input {
@@ -32,75 +32,148 @@ body.trinity-admin {
       border: 0;
       outline: 0;
     }
-    .sidebar {
-      /** window resize fix **/
-      height: 100%;
-      overflow-y: auto;
-      /** end **/
+  }
+  .sidebar {
+    /** window resize fix **/
+    height: 100%;
+    overflow-y: auto;
+    /** end **/
 
-      .header {
-        font-size: 12px;
-        font-weight: 500;
-        padding: 40px 20px;
-        cursor: auto;
-      }
-      li {
+    li {
+      width: 100%;
+      min-height: 50px;
+      height: 50px;
+      position: relative;
+      cursor: pointer;
+
+      a, div {
+        cursor: pointer;
+        text-transform: uppercase;
+        padding-left: 20px;
+        display: inline-block;
         width: 100%;
         min-height: 50px;
-        height: 50px;
-        position: relative;
-        cursor: pointer;
-
-        a, div {
-          cursor: pointer;
-          text-transform: uppercase;
-          padding-left: 20px;
-          display: inline-block;
-          width: 100%;
-          min-height: 50px;
-          color: #9b9b9b;
-          font-size: 12px;
-          font-weight: 400;
-          transition: .4s;
-          line-height: 50px;
-        }
-
-        i {
-          margin: 0 35px;
-          float: left;
-          color: #9b9b9b;
-          display: inline-block;
-          font-size: 17px;
-          transition: .3s;
-          line-height: 50px;
-        }
-
-        &.active {
-          a, div {
-            font-weight: 500;
-            color: #5a544f;
-            background: #f8f3f0;
-          }
-          i {
-            color: #5a544f;
-            font-weight: 600;
-          }
-          &:hover a {
-            background: #f8f3f0;
-            padding-left: 20px;
-          }
-        }
-
-        &:hover a{
-          background: #fff;
-          color: #5a544f;
-          padding-left: 45px;
-        }
-        &:hover i{
-          color: #5a544f;
-        }
-
+        color: #adadad;
+        font-size: 12px;
+        font-weight: 400;
+        transition: .4s;
+        line-height: 50px;
       }
+
+      i {
+        margin: 0 35px;
+        float: left;
+        color: #adadad;
+        display: inline-block;
+        font-size: 17px;
+        transition: .3s;
+        line-height: 50px;
+      }
+
+      &.active {
+        a, div {
+          font-weight: 500;
+          color: #5a544f;
+          background: #f8f3f0;
+        }
+        i {
+          color: #5a544f;
+          font-weight: 600;
+        }
+        &:hover a {
+          background: #f8f3f0;
+          padding-left: 20px;
+        }
+      }
+
+      &:hover a {
+        background: #fff;
+        color: #5a544f;
+        padding-left: 45px;
+      }
+      &:hover i {
+        color: #5a544f;
+      }
+
+    }
+  }
+  .sidebar-header {
+
+    font-size: 12px;
+    font-weight: 500;
+    padding: 30px 20px;
+    cursor: auto;
+    color: #adadad;
+
+    display: block;
+    position: fixed;
+    width: @sidebar-width;
+    z-index: 999;
+  }
+
+  @media only screen and (max-width: 1366px) {
+
+    #sidebar {
+      padding-top: @navbar-height + 69px; //+height of sidebar-header
+    }
+
+    .sidebar-header {
+      padding: 25px 20px;
+      display: block;
+      position: fixed;
+      width: @sidebar-width;
+      z-index: 999;
+    }
+
+    .sidebar {
+      li {
+        min-height: 45px;
+        height: 45px;
+        a {
+          min-height: 45px;
+        }
+        i, a {
+          line-height: 45px;
+        }
+      }
+    }
+
+  }
+
+  @media only screen and (max-height: 755px) {
+
+    #sidebar {
+      padding-top: @navbar-height + 79px; //+height of sidebar-header
+    }
+
+    .sidebar-header {
+      padding: 25px 20px;
+      display: block;
+      position: fixed;
+      width: @sidebar-width;
+      z-index: 999;
+    }
+
+    .sidebar {
+      li {
+        min-height: 45px;
+        height: 45px;
+        a {
+          min-height: 45px;
+        }
+        i, a {
+          line-height: 45px;
+        }
+      }
+    }
+
+  }
+
+  @media only screen and (max-height: 740px) {
+    .sidebar {
+
+      padding-bottom: 50px;
+
     }
   }
 }
