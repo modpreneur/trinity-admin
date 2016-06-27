@@ -12,6 +12,17 @@
   font-weight: 400;
   padding-top: 10px;
   padding-bottom: 10px;
+
+  background: lighten(desaturate(@color-primary, 70%), 35%);
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
+
+  cursor: pointer;
+  transition: .3s;
+  &:hover {
+    color: #fff;
+    background: @color-primary;
+  }
 }
 
 :focus {
@@ -38,20 +49,7 @@
   font-weight: 500;
   font-size: 18px;
   text-transform: uppercase;
-
-  &-medium {
-    max-height: 33px;
-    line-height: 31px;
-    font-size: 80%;
-    padding: 0px 18px;
-  }
-
-  &-small {
-    max-height: 25px;
-    line-height: 22px;
-    font-size: 80%;
-    padding: 0px 14px;
-  }
+  .radius(5px);
 
   &-success {
     font-weight: 500;
@@ -61,6 +59,8 @@
   &-info {
     box-shadow: 0px -3px 0px 0px #2284A1 inset;
   }
+
+  /*  Yea, yea shitty importants bcs we are using bowtie   */
 
   &-primary {
     background-color: @color-primary !important;
@@ -78,7 +78,7 @@
 
     &:hover {
       background-color: darken(@color-secondary, 20%) !important;
-      border: none !important; ///---------------------------------
+      border: none !important;
     }
   }
 
@@ -117,16 +117,6 @@
     cursor: not-allowed !important;
     color: #dddddd;
   }
-   &-addNew{
-    color: #2f2f2f !important;
-    background: transparent;
-    border: 1px dashed #2f2f2f;
-    transition: all @form-tr-time;
-    &:hover {
-      background-color: #dbdbdb;
-      border: 1px solid #2f2f2f;
-    }
-  }
   &-red {
     color: #fff;
     background-color: #b35445;
@@ -136,12 +126,47 @@
       border: 1px solid #3d1d17;
     }
   }
-
-  &-default{
-
-  }
-
 }
+
+.button-medium {
+  .button();
+  max-height: 33px;
+  line-height: 31px;
+  font-size: 80%;
+  padding: 0px 18px;
+}
+
+.button-small {
+  .button();
+  max-height: 25px;
+  font-size: 11px;
+  padding: 6px 12px;
+
+  min-width: 90px;
+  display: inline-block;
+  line-height: 1;
+}
+
+.button-addNew {
+  color: #2f2f2f !important;
+  background: transparent;
+  border: 1px dashed #2f2f2f;
+  transition: all @form-tr-time;
+  &:hover {
+    background-color: #dbdbdb;
+    border: 1px solid #2f2f2f;
+  }
+}
+
+/*.button-goto{
+  background: none;
+  border: 1px solid #d55a13;
+  color: #d55a13;
+  &:hover{
+    background: @color-primary;
+    color: #fff;
+  }
+}*/
 
 .trinity-form {
 
