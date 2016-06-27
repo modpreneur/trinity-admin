@@ -1,117 +1,123 @@
 /**
     items under navbar.
 */
-
 @import "variables";
 @import "helper";
 
 body.trinity-admin {
 
-    .box-new-form {
-        position: relative;
+  .box-new-form {
+    position: relative;
 
-        .page-actions {
-            margin-top: 0;
-            position: absolute;
-            top: 0;
-            right: 0;
+    .page-actions {
+      margin-top: 0;
+      position: absolute;
+      top: 0;
+      right: 0;
 
-
-            .item{
-                display: block;
-                background: @color-tab-label;
-                color: #fff;
-                text-align: center;
-                cursor: pointer;
-                font-size: 12px;
-
-                &:hover{
-                    background: darken(@color-tab-label, 10%);
-                }
-                a{
-                    padding: 5px 15px;
-                    display: inline-block;
-                }
-                #expert-mode{
-                    color: #fff;
-                }
-            }
-            .open{
-                background: darken(@color-tertiary,5%);
-                a{
-                    font-weight: 600;
-                }
-                &:hover{
-                    background: @color-tertiary;
-                }
-            }
-        }
-    }
-
-    .navigation-box {
-        height: 100px;
+      .item {
         display: block;
+        background: @color-tab-label;
+        color: #fff;
+        text-align: center;
+        cursor: pointer;
+        font-size: 12px;
 
-        .tooltip-loop (@i) when (@i > 0) {
-            span.tooltip:nth-child(@{i}){
-                z-index: 30-@i;
-            }
-            .tooltip-loop(@i - 1);
+        &:hover {
+          background: darken(@color-tab-label, 10%);
         }
-        .tooltip-loop(5);
-
-        .tooltip {
-            float: right;
-            height: 100%;
-            .tooltip-hover{
-                height: 50px;
-                width: 50px;
-                display: block;
-                margin: 25px 25px 25px 0;
-            }
-            a{
-                display: block;
-            }
-            //margin: 25px 15px 25px 0;
-
-            .tooltip-left{
-                padding: 0;
-                line-height: 30px;
-                font-size: 13px;
-                font-weight: 300;
-                right: 67px;
-                top: 11px;
-                background: #333333; //fallback
-                background: rgba(0, 0, 0, 0.95);
-                //-moz-transform: translateX(-15px);//firefox fix,bad position
-                &:before{
-                    top: 7px;
-                    left: auto;
-                    right: -15px;
-                    border-top: 7px solid transparent;
-                    border-left: 16px solid #333333; //fallback
-                    border-left: 16px solid rgba(0,0,0,0.95);
-                    border-bottom: 7px solid transparent
-                }
-            }
+        a {
+          padding: 5px 15px;
+          display: inline-block;
         }
-
-        .new-entry {
-            .navigation-icons();
-            background: @color-tertiary;
-            &:hover {
-                background: darken(@color-tertiary, 15%);
-            }
+        #expert-mode {
+          color: #fff;
         }
-
-        .go-up {
-            .navigation-icons();
-            background: @color-primary;
-            &:hover {
-                background: darken(@color-primary, 15%);
-            }
+      }
+      .open {
+        background: darken(@color-tertiary, 5%);
+        a {
+          font-weight: 600;
         }
+        &:hover {
+          background: @color-tertiary;
+        }
+      }
     }
+  }
+
+  .navigation-box {
+    height: 100px;
+    display: block;
+
+    .tooltip-loop (@i) when (@i > 0) {
+      span.tooltip:nth-child(@{i}) {
+        z-index: 30-@i;
+      }
+      .tooltip-loop(@i - 1);
+    }
+    .tooltip-loop(5); //potential number of page-items
+
+    .tooltip {
+      float: right;
+      height: 100%;
+      .tooltip-hover {
+        height: 50px;
+        width: 50px;
+        display: block;
+        margin: 25px 25px 25px 0;
+      }
+      a {
+        display: block;
+      }
+
+      .tooltip-left {
+        padding: 0;
+        line-height: 30px;
+        font-size: 13px;
+        font-weight: 300;
+        right: 67px;
+        top: 11px;
+        background: rgba(0, 0, 0, 0.95);
+
+        &:before {
+          top: 7px;
+          left: auto;
+          right: -15px;
+          border-top: 7px solid transparent;
+          border-left: 16px solid rgba(0, 0, 0, 0.95);
+          border-bottom: 7px solid transparent
+        }
+      }
+    }
+
+    .new-entry {
+      .navigation-icons();
+      background: @color-tertiary;
+      &:hover {
+        background: darken(@color-tertiary, 15%);
+      }
+    }
+
+    .go-up {
+      .navigation-icons();
+      background: @color-primary;
+      &:hover {
+        background: darken(@color-primary, 15%);
+      }
+    }
+
+    .reload{
+      .navigation-icons();
+      background: @color-primary;
+      i, span {
+        font-weight: 100;
+      }
+      &:hover{
+        background: darken(@color-primary, 15%);
+      }
+    }
+  }
 }
 
 
