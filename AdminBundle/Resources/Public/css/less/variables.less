@@ -1,66 +1,101 @@
-@global-font-color: #303030;
 
-@color-primary: #d55a13;
-@color-primary-inverse: #fff;
 
-@color-secondary: #edecec;
-@color-tertiary: #40adc2;
 
-@navbar-height: 90px;
-@color-primary-hover: #362555;
-@search-width: 300px;
-@search-time: 0.2s;
-@widget-space: 20px;
-@hover-timing: 0.3s;
+
 @color-tab-label: #bababa;
-
-@sidebar-tabs: 3;
-@sidebar-row-height: 50px;
-@sidebar-icon-font-size: 22px;
-@sidebar-font-size: 15px;
-@sidebar-link-color: #595959;
-@sidebar-width: 260px;
-@sidebar-detail-width: 200px;
-@sidebar-row-hover-color: #f2f2f2;
-@sdebar-navbar-notifi: #ffffff;
-@sidebar-detail-color: #838383;
-
-@color-navbar-icon: #835bc1;//#966fd2; //#271c3c;
-@navbar-font-icon: 26px;
 
 @color-border: #b5b5b5;
 @color-font: #303030;
 @form-tr-time: 0.3s;
-@button-color: #22baa0;
-@button-color-hover: #279d88;
+
 @hover-timing: 0.3s;
 @header-min-height: 100px;
+
 @grid-search-height: 32px;
 @search-time: 0.3s;
 @search-font-size: 14px;
 
-@global-row-hover: #f8f8f8;
-
-@color-red: #f0575a;
-@color-red-hover: darken(@color-red, 5%);
-
-@color-green: #22baa0;
-@color-green-hover: darken(@color-green, 5%);
-
-@color-yellow: #f5d346;
-@color-yellow-hover: darken(@color-yellow, 5%);
-
-@color-pink: #7a71bc;
-@color-pink-hover: darken(@color-pink, 5%);
-
-@color-info: #61ccba;
-@color-warning: #ff8939;
-@color-danger: #c94d3d;
-@color-success-notification: #f6e064;
-@color-grey-link: #8f8f8f;
-
 @font-size-button: 17px;
 
+/**************************************
+  Global parameters
+**************************************/
 
-@header-font-color: #2f2f2f;
-@navbar-font-color: #a0a2a5;
+  /*  Colors - primary,secondary... */
+    @color-primary: #d55a13;
+    @color-primary-hover: darken(@color-primary, 10%);
+    @color-primary-inverse: inverse(@color-primary);
+
+    @color-secondary: #edecec;
+    @color-tertiary: #40adc2;
+
+    @global-row-hover: #f8f8f8;
+
+    /*  Used for e.g. button  */
+    @color-info: #61ccba;
+    @color-warning: #ff8939;
+    @color-danger: #c94d3d;
+    @color-success-notification: #f6e064;
+    @color-grey-link: #8f8f8f;
+
+  /*  Fonts  */
+  @global-font-color: #303030;
+  @global-header-color: #97999c;
+  //@header-font-color: #2f2f2f; //Removed to Grid section
+
+
+  /*  Tabs  */
+  @tabs-max-count: 8; //There are max, min width for tab and some media-queries for fit
+  @tabs-hover-color: @color-tertiary;
+
+
+  @widget-space: 20px; //Space between widgets in grid
+
+/**************************************
+  Navbar parameters
+**************************************/
+  @navbar-height: 90px;
+  @navbar-font-color: #a0a2a5;
+  @navbar-font-icon-size: 20px;
+
+  /*  Logo  */
+  @logo-width: 95px;
+  @logo-height: 38px;
+
+  /* Search */
+
+/**************************************
+  Sidebar parameters
+**************************************/
+
+  @sidebar-width: 260px;
+  @sidebar-back-color: darken( desaturate(@color-primary, 78%), 17%);
+
+  @sidebar-row-height: 50px;
+  @sidebar-icon-font-size: 22px;
+  @sidebar-font-size: 15px;
+  @sidebar-link-color: #595959;
+
+  @sidebar-detail-width: 200px;
+  @sidebar-row-hover-color: #f2f2f2;
+  @sdebar-navbar-notifi: #ffffff;
+  @sidebar-detail-color: #838383;
+
+
+/**************************************
+  Grid parameters
+**************************************/
+  @header-font-color: #2f2f2f;
+
+
+
+
+
+/**************************************
+  Roboto font-weight
+**************************************/
+  @roboto-thin: 100;
+  @roboto-light: 300;
+  @roboto-regular: 400;
+  @roboto-medium: 500;
+  @roboto-bold: 700;
