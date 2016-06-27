@@ -3,34 +3,32 @@
 
 body.trinity-admin {
 
-
-  .checkbox{
-
+  .checkbox {
 
     vertical-align: middle;
     //---------- Settings for groups
-    [class^=level]{
+    [class^=level] {
       transition: .4s;
     }
 
-    .level1{
+    .level1 {
       margin-left: 20px;
 
     }
-    input[type="checkbox"]:checked + label[class=level1]{
-      &:after{
-        content: '\e90e' ;
+    input[type="checkbox"]:checked + label[class=level1] {
+      &:after {
+        content: '\e90e';
       }
     }
 
-    .level2{
+    .level2 {
       margin-left: 40px;
     }
-    input[type="checkbox"]:checked + label[class=level2]{
-      &:before{
+    input[type="checkbox"]:checked + label[class=level2] {
+      &:before {
         background: #fff;
       }
-      &:after{
+      &:after {
         content: '';
         background: @color-primary;
         border-radius: 10px;
@@ -42,11 +40,9 @@ body.trinity-admin {
       }
     }
 
-
-    .level3{
+    .level3 {
       margin-left: 60px;
     }
-
 
   }
 }
