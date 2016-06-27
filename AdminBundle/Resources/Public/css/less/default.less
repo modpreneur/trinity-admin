@@ -1,23 +1,10 @@
 @import "helper";
 
 body.trinity-admin {
-  background: #f8f3f0!important;
-
+  background: #f8f3f0 !important;
 
   .modal-dialog {
     background: rgba(255, 255, 255, 0.8);
-  }
-
-  .reload {
-    .navigation-icons();
-    background: @color-primary;
-
-    i, span {
-      font-weight: 900;
-    }
-    &:hover {
-      background: @color-primary;
-    }
   }
 
   //----------------where the hell with this??------------------------------
@@ -110,7 +97,8 @@ body.trinity-admin {
 
   .tags {
     li {
-      width: 60px;
+      width: auto;
+      min-width: 60px;
       height: auto;
       margin: 2.5px;
       line-height: 20px;
@@ -176,7 +164,7 @@ body.trinity-admin {
     box-shadow: none;
   }
 
-  .rw-datetimepicker{
+  .rw-datetimepicker {
     padding: 0;
   }
   .rw-widget {
