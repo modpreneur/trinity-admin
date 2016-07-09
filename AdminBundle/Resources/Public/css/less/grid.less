@@ -1,6 +1,14 @@
-/**
-    APY grid
-*/
+/**************************************
+
+    Grid - layout
+      - table layout
+      - colors
+      - order icons
+      - goto buttons
+      - hover colors for links
+      - pagination
+
+**************************************/
 @import "helper";
 
 body.trinity-admin {
@@ -17,9 +25,11 @@ body.trinity-admin {
     thead {
       background: transparent;
       border-bottom: 2px solid #ededed;
+      tr{
+        height: 45px;
+      }
       th {
         font-size: 16px;
-        line-height: 40px;
         color: @header-font-color;
         font-weight: @roboto-medium;
       }
@@ -30,7 +40,6 @@ body.trinity-admin {
       td[class*=center] { // use text-align class
         text-align: center;
       }
-
       .order-by-asc:after {
         position: absolute;
         padding-left: 7px;
@@ -51,6 +60,10 @@ body.trinity-admin {
       }
     }
 
+    .cell-center{
+      text-align: center;
+    }
+
     tbody {
 
       tr {
@@ -60,27 +73,43 @@ body.trinity-admin {
           background: @global-row-hover;
         }
 
-        &:hover > td:last-of-type .button-small {
-          background: lighten(@color-primary, 25%);
-          color: #fff;
-          &:visited {
+        &:hover {
+          & > td:last-of-type .button-small {
+            background: lighten(@color-primary, 25%);
             color: #fff;
+            &:visited {
+              color: #fff;
+            }
+            &:hover {
+              background: lighten(@color-primary,5%);
+            }
           }
-          &:hover {
-            background: @color-primary;
+          & > td a{
+            color: darken(desaturate(@color-primary, 25%), 10%);
+            &:hover {
+              color: @color-primary;
+            }
+          }
+          & > td a li{
+            background: lighten(desaturate(@color-primary, 25%), 25%);
+            transition: .3s;
+            &:hover {
+              background: lighten(@color-primary,5%);
+            }
           }
         }
 
         td {
           vertical-align: middle;
+          white-space: nowrap;
+/*          overflow: hidden;
+          text-overflow: ellipsis*/;
         }
         a {
+          transition: .3s;
           color: darken(desaturate(@color-primary, 78%), 17%);
           &:hover {
             color: @color-primary;
-          }
-          &:visited {
-            color: #551A8B;
           }
         }
         .button-small {
@@ -99,19 +128,15 @@ body.trinity-admin {
       padding-left: 20px;
     }
 
+    // indicate for no-synchronized product
+    .trinity-warning{
+      color: lighten(@color-primary,20%);
+    }
   }
   .pagination {
-    margin: 35px;
-    margin-top: 10px;
+    margin: 10px 35px 35px 35px;;
     float: right;
-    &:before,
-    &:after {
-      content: " ";
-      display: table;
-    }
-    &:after {
-      clear: both;
-    }
+    .group-clearfix();
 
     li a {
       min-width: 40px;
