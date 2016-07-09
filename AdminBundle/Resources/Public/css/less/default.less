@@ -1,16 +1,15 @@
+/**************************************
+
+  Some default stuffs
+    - tags
+    - colors
+    - align datetime-picker
+    - animations classes
+
+**************************************/
 @import "helper";
 
 body.trinity-admin {
-  background: #f8f3f0 !important;
-
-  .modal-dialog {
-    background: rgba(255, 255, 255, 0.8);
-  }
-
-  //----------------where the hell with this??------------------------------
-  .validation-error {
-    color: red;
-  }
 
   /* --- debug --- */
 
@@ -51,7 +50,18 @@ body.trinity-admin {
 
   /* ---- end debug  ---- */
 
-  //Default classes for colors
+  /*  Some default stuffs e.g. colors   */
+  .modal-dialog {
+    background: rgba(255, 255, 255, 0.8);
+  }
+
+  .overflow-hidden {
+    overflow: hidden;
+  }
+
+  .validation-error {
+    color: red;
+  }
 
   .info {
     background-color: @color-info;
@@ -78,7 +88,7 @@ body.trinity-admin {
     background-color: @color-primary;
   }
   .color-primary {
-    color: @color-primary !important;
+    color: @color-primary !important; //yea again important bcs bowtie shit
   }
 
   .secondary {
@@ -144,8 +154,19 @@ body.trinity-admin {
     height: 100%;
   }
 
-  //-----------DateTime Picker
+  .margin-left-auto {
+    margin-left: auto;
+  }
 
+  .margin-right-auto {
+    margin-right: auto;
+  }
+
+  .hidden {
+    display: none !important;
+  }
+
+  /*  DatetimePicker - just align some elements */
   .rw-calendar-grid .rw-btn {
     text-align: center;
   }
@@ -179,6 +200,28 @@ body.trinity-admin {
     font-family: "Arial", sans-serif;
   }
 
+  /*  Animations - classes with keyframes */
+  .spin {
+    -webkit-animation: spin 2s linear infinite;
+    -moz-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  @-moz-keyframes spin {
+    100% {
+      -moz-transform: rotate(360deg);
+    }
+  }
+  @-webkit-keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+    }
+  }
+  @keyframes spin {
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
 }
 
 
