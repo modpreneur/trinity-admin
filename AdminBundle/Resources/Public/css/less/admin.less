@@ -27,6 +27,7 @@ body {
 
 /** fix **/
 body.trinity-admin {
+  background: @back-color !important;
 
   .modal-a.button.button-secondary {
     display: none !important;
@@ -52,9 +53,17 @@ body.trinity-admin {
     }
   }
 
-  a:visited {
-    color: #551A8B;
+
+  a{
+    color: darken(desaturate(@color-primary, 25%), 10%);
+    &:hover {
+      color: @color-primary;
+    }
   }
+
+/*  a:visited {
+    color: #551A8B;
+  }*/
 
   .span-large-24:first-child {
     padding-left: 25px;
