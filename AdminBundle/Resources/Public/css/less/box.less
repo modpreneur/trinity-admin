@@ -1,19 +1,10 @@
-@import "variables";
-@import "helper";
+/**************************************
 
-/**
-*
-* Page content, widget, etc.
-*
-*  |--------------------------|
-*  | header                   |
-*  |--------------------------|
-*  | content                  |
-*  |--------------------------|
-*  | footer                   |
-*  |--------------------------|
-*
-*/
+  Content wrappers
+    - use box without tabs wrappers for box-shadow
+
+**************************************/
+@import "helper";
 
 body.trinity-admin {
 
@@ -33,9 +24,9 @@ body.trinity-admin {
       font-weight: 400;
     }
 
-    a {
+/*    a {
       color: @color-tertiary;
-    }
+    }*/
 
     .box-body {
       padding-bottom: 20px;
@@ -86,7 +77,8 @@ body.trinity-admin {
       }
 
       form {
-        min-width: 500px;
+        width: 100%;
+        max-width: 600px;
         input[type="text"] {
           border: 1px solid #ccc;
           height: @grid-search-height;
