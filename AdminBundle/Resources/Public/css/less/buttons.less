@@ -1,29 +1,9 @@
-@import "variables";
+/**************************************
+
+  Default buttons for forms and others
+
+**************************************/
 @import "helper";
-
-.button() {
-  .radius(5px);
-  text-align: center;
-  font-size: @font-size-button;
-  text-decoration: none;
-  vertical-align: middle;
-  text-transform: uppercase;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  padding-top: 10px;
-  padding-bottom: 10px;
-
-  background: lighten(desaturate(@color-primary, 70%), 35%);
-  color: #fff;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.15);
-
-  cursor: pointer;
-  transition: .3s;
-  &:hover {
-    color: #fff;
-    background: @color-primary;
-  }
-}
 
 :focus {
   outline: none;
@@ -40,19 +20,43 @@
 }
 
 .button {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-weight: @roboto-medium;
+  font-size: @font-size-button;
+  text-decoration: none;
+  vertical-align: middle;
+  text-transform: uppercase;
+
   padding: 9px 35px;
   margin-top: 5px;
-  margin-bottom: 25px;
+  //margin-bottom: 25px;
   line-height: 1;
   border: none;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  text-transform: uppercase;
+
   .radius(5px);
 
+  background: lighten(desaturate(@color-primary, 75%), 30%);
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+
+  cursor: pointer;
+  transition: .3s;
+
+  &:hover {
+    color: #fff;
+    background: lighten(@color-primary, 15%);
+  }
+
+  &-medium {
+    max-height: 33px;
+    line-height: 31px;
+    font-size: 80%;
+    padding: 0 18px;
+  }
+
   &-success {
-    font-weight: 500;
+    font-weight: @roboto-medium;
     box-shadow: 0px -3px 0px 0px #457A1A inset;
   }
 
@@ -117,6 +121,7 @@
     cursor: not-allowed !important;
     color: #dddddd;
   }
+
   &-red {
     color: #fff;
     background-color: #b35445;
@@ -142,7 +147,7 @@
   font-size: 11px;
   padding: 6px 12px;
 
-  min-width: 90px;
+  min-width: 95px;
   display: inline-block;
   line-height: 1;
 }
@@ -152,22 +157,14 @@
   background: transparent;
   border: 1px dashed #2f2f2f;
   transition: all @form-tr-time;
+  text-shadow: none;
   &:hover {
     background-color: #dbdbdb;
     border: 1px solid #2f2f2f;
   }
 }
 
-/*.button-goto{
-  background: none;
-  border: 1px solid #d55a13;
-  color: #d55a13;
-  &:hover{
-    background: @color-primary;
-    color: #fff;
-  }
-}*/
-
+//  Buttons with icons and animations for form actions
 .trinity-form {
 
   .disabled() {
