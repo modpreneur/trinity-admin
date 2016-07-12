@@ -2184,7 +2184,42 @@ body.trinity-admin .trinity-widget {
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   /*  Icons for resize or close  */
-  /*  Grid in widgets  */
+  /*    !*  Grid in widgets  *!
+    .data-grid {
+      border: none;
+      background: #fff;
+      width: 100%;
+
+      thead, tr, th {
+        background: #fff;
+      }
+      tr {
+        border-bottom: 1px #f1f1f1 solid;
+        white-space: nowrap;
+
+        &:hover {
+          background: @global-row-hover;
+        }
+
+        td, th {
+          &:first-child {
+            padding-left: 20px;
+          }
+
+          &:last-child {
+            padding-left: 20px;
+          }
+        }
+
+        td {
+          font-weight: @roboto-regular;
+          vertical-align: middle;
+        }
+      }
+    }*/
+}
+body.trinity-admin .trinity-widget .grid thead tr {
+  height: auto;
 }
 body.trinity-admin .trinity-widget:first-child {
   margin-left: 0px !important;
@@ -2250,35 +2285,6 @@ body.trinity-admin .trinity-widget .widget-title {
   text-transform: uppercase;
   font-weight: 300;
   color: #2f2f2f;
-}
-body.trinity-admin .trinity-widget .data-grid {
-  border: none;
-  background: #fff;
-  width: 100%;
-}
-body.trinity-admin .trinity-widget .data-grid thead,
-body.trinity-admin .trinity-widget .data-grid tr,
-body.trinity-admin .trinity-widget .data-grid th {
-  background: #fff;
-}
-body.trinity-admin .trinity-widget .data-grid tr {
-  border-bottom: 1px #f1f1f1 solid;
-  white-space: nowrap;
-}
-body.trinity-admin .trinity-widget .data-grid tr:hover {
-  background: #f8f8f8;
-}
-body.trinity-admin .trinity-widget .data-grid tr td:first-child,
-body.trinity-admin .trinity-widget .data-grid tr th:first-child {
-  padding-left: 20px;
-}
-body.trinity-admin .trinity-widget .data-grid tr td:last-child,
-body.trinity-admin .trinity-widget .data-grid tr th:last-child {
-  padding-left: 20px;
-}
-body.trinity-admin .trinity-widget .data-grid tr td {
-  font-weight: 400;
-  vertical-align: middle;
 }
 body.trinity-admin .trinity-widget .content-box {
   height: 350px;
@@ -3445,6 +3451,7 @@ body.trinity-admin .show-filters {
 body.trinity-admin .grid {
   border: none;
   background: transparent;
+  width: 100%;
   font-family: 'Roboto', sans-serif;
 }
 body.trinity-admin .grid thead {
