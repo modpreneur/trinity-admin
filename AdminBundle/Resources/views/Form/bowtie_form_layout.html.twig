@@ -118,7 +118,12 @@
     {% endif %}
   {% endfor %}
 
-  <div class="row {% if choice %} choice{% endif %}" id="row_{{ id }}">
+  {% set rowClass = "" %}
+  {% if form.vars.attr.rowClass is defined %}
+    {% set rowClass = form.vars.attr.rowClass %}
+  {% endif %}
+
+  <div class="row {% if choice %} choice{% endif %} {{ rowClass }}" id="row_{{ id }}">
     <div class="form-content-center span-none-padding-mini-15 span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
       {% set class = "" %}
       {% if form.vars.attr.class is defined %}
