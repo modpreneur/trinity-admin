@@ -111,6 +111,9 @@ body.trinity-admin .navbar .navbar-container:after {
 body.trinity-admin .navbar .navbar-actions {
   z-index: 999;
 }
+body.trinity-admin .navbar .navbar-actions a {
+  color: #a0a2a5;
+}
 body.trinity-admin .navbar .navbar-item-label {
   top: 0;
   position: relative;
@@ -2151,6 +2154,18 @@ body.trinity-admin .tabs-wrapper {
     - classes for space between
 
 **************************************/
+body.trinity-admin {
+  /*  .trinity-widget a {
+    color: #6b6b6b;
+  }
+
+  .trinity-widget a:hover {
+    color: #4c4c4c;
+  }*/
+  /*  .trinity-widget a:visited {
+    color: #551A8B;
+  }*/
+}
 body.trinity-admin .dashboard-widgets .small-widgets {
   margin-bottom: 20px;
 }
@@ -2276,15 +2291,6 @@ body.trinity-admin .trinity-widget .content-box {
 }
 body.trinity-admin .trinity-widget .content-box .content {
   width: 100%;
-}
-body.trinity-admin .trinity-widget a {
-  color: #6b6b6b;
-}
-body.trinity-admin .trinity-widget a:hover {
-  color: #4c4c4c;
-}
-body.trinity-admin .trinity-widget a:visited {
-  color: #551A8B;
 }
 body.trinity-admin .trinity-widget .datetime {
   font-size: 12px;
@@ -2615,6 +2621,7 @@ body.trinity-admin .modal-dialog form .row {
   padding-top: 15px;
   width: 100%;
   margin-bottom: 0;
+  transition: .3;
 }
 body.trinity-admin .edit-form .row:last-of-type,
 body.trinity-admin .new-form .row:last-of-type,
@@ -2658,13 +2665,6 @@ body.trinity-admin .new-form .form-right .description,
 body.trinity-admin .modal-dialog form .form-right .description {
   font-size: 12px;
   color: #727272;
-}
-@media screen and (max-width: 768px) {
-  body.trinity-admin .edit-form .form-left,
-  body.trinity-admin .new-form .form-left,
-  body.trinity-admin .modal-dialog form .form-left {
-    text-align: left;
-  }
 }
 body.trinity-admin .edit-form label,
 body.trinity-admin .new-form label,
@@ -2726,7 +2726,7 @@ body.trinity-admin .edit-form textarea:focus,
 body.trinity-admin .new-form textarea:focus,
 body.trinity-admin .modal-dialog form textarea:focus {
   border: 1px solid #d55a13;
-  background: #fff !important;
+  background: #fff;
 }
 body.trinity-admin .edit-form input:not([type="submit"]):hover,
 body.trinity-admin .new-form input:not([type="submit"]):hover,
@@ -2738,6 +2738,46 @@ body.trinity-admin .edit-form textarea:hover,
 body.trinity-admin .new-form textarea:hover,
 body.trinity-admin .modal-dialog form textarea:hover {
   border: 1px solid #d55a13;
+}
+body.trinity-admin .edit-form .just-filter,
+body.trinity-admin .new-form .just-filter,
+body.trinity-admin .modal-dialog form .just-filter {
+  background: #f8f8f8;
+  transition: .3s;
+}
+body.trinity-admin .edit-form .just-filter:hover,
+body.trinity-admin .new-form .just-filter:hover,
+body.trinity-admin .modal-dialog form .just-filter:hover {
+  background: #fff;
+}
+body.trinity-admin .edit-form .just-filter input:not([type="submit"]),
+body.trinity-admin .new-form .just-filter input:not([type="submit"]),
+body.trinity-admin .modal-dialog form .just-filter input:not([type="submit"]),
+body.trinity-admin .edit-form .just-filter select,
+body.trinity-admin .new-form .just-filter select,
+body.trinity-admin .modal-dialog form .just-filter select,
+body.trinity-admin .edit-form .just-filter textarea,
+body.trinity-admin .new-form .just-filter textarea,
+body.trinity-admin .modal-dialog form .just-filter textarea {
+  background: #d4d4d4;
+}
+body.trinity-admin .edit-form .just-filter input:not([type="submit"]):focus,
+body.trinity-admin .new-form .just-filter input:not([type="submit"]):focus,
+body.trinity-admin .modal-dialog form .just-filter input:not([type="submit"]):focus,
+body.trinity-admin .edit-form .just-filter select:focus,
+body.trinity-admin .new-form .just-filter select:focus,
+body.trinity-admin .modal-dialog form .just-filter select:focus,
+body.trinity-admin .edit-form .just-filter textarea:focus,
+body.trinity-admin .new-form .just-filter textarea:focus,
+body.trinity-admin .modal-dialog form .just-filter textarea:focus {
+  background: #e7e7e7;
+}
+@media screen and (max-width: 768px) {
+  body.trinity-admin .edit-form .form-left,
+  body.trinity-admin .new-form .form-left,
+  body.trinity-admin .modal-dialog form .form-left {
+    text-align: left;
+  }
 }
 @media screen and (max-width: 767px) {
   body.trinity-admin .edit-form label,
@@ -2879,7 +2919,10 @@ body.trinity-admin .modal-dialog form .select-style select {
 }
 body.trinity-admin .edit-form .select-style:hover:after,
 body.trinity-admin .new-form .select-style:hover:after,
-body.trinity-admin .modal-dialog form .select-style:hover:after {
+body.trinity-admin .modal-dialog form .select-style:hover:after,
+body.trinity-admin .edit-form .select-style:focus:after,
+body.trinity-admin .new-form .select-style:focus:after,
+body.trinity-admin .modal-dialog form .select-style:focus:after {
   color: #d55a13;
 }
 body.trinity-admin .edit-form .select-style:after,
@@ -3472,6 +3515,12 @@ body.trinity-admin .grid tbody tr:hover > td a li {
 body.trinity-admin .grid tbody tr:hover > td a li:hover {
   background: #ea6417;
 }
+body.trinity-admin .grid tbody tr:hover > td:last-of-type .revelation:after {
+  background: #f3a375;
+}
+body.trinity-admin .grid tbody tr:hover > td:last-of-type .revelation:hover:after {
+  background: #ea6417;
+}
 body.trinity-admin .grid tbody tr td {
   vertical-align: middle;
   white-space: nowrap;
@@ -3662,7 +3711,6 @@ body.trinity-admin .edit-grid label span:before {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: .3s;
-  /*  Yea, yea shitty importants bcs we are using bowtie   */
 }
 .button:hover {
   color: #fff;
@@ -3766,7 +3814,6 @@ body.trinity-admin .edit-grid label span:before {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: .3s;
-  /*  Yea, yea shitty importants bcs we are using bowtie   */
   max-height: 33px;
   line-height: 31px;
   font-size: 80%;
@@ -3889,7 +3936,6 @@ body.trinity-admin .edit-grid label span:before {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: .3s;
-  /*  Yea, yea shitty importants bcs we are using bowtie   */
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -4013,7 +4059,6 @@ body.trinity-admin .edit-grid label span:before {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: .3s;
-  /*  Yea, yea shitty importants bcs we are using bowtie   */
 }
 .trinity-form-loading:hover {
   color: #fff;
@@ -4113,22 +4158,6 @@ body.trinity-admin .edit-grid label span:before {
   -moz-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
 .trinity-form-success:after {
   content: '\e933';
   font-family: 'tiecons';
@@ -4168,10 +4197,10 @@ body.trinity-admin .edit-grid label span:before {
   margin-left: 5px;
   font-family: 'trinity';
 }
-.relevantion {
+.revelation {
   position: relative;
 }
-.relevantion:after {
+.revelation:after {
   content: '';
   display: block;
   background: #82c6fb;
@@ -4181,8 +4210,9 @@ body.trinity-admin .edit-grid label span:before {
   top: 0;
   left: 0;
   border-radius: 3px;
+  transition: .3s;
 }
-.relevantion:before {
+.revelation:before {
   content: 'Get details';
   display: block;
   width: 100%;
@@ -4193,7 +4223,7 @@ body.trinity-admin .edit-grid label span:before {
   left: 0;
   z-index: 99;
 }
-.relevantion:hover {
+.revelation:hover {
   background: none;
 }
 /**************************************
@@ -4717,9 +4747,6 @@ input[type=checkbox].edit-input:checked + label span::before {
 /** fix **/
 body.trinity-admin {
   background: #f8f3f0 !important;
-  /*  a:visited {
-    color: #551A8B;
-  }*/
 }
 body.trinity-admin .modal-a.button.button-secondary {
   display: none !important;
@@ -4741,7 +4768,8 @@ body.trinity-admin ol.list li {
   list-style-type: decimal;
 }
 body.trinity-admin a {
-  color: #904c25;
+  transition: .3s;
+  color: #4e4743;
 }
 body.trinity-admin a:hover {
   color: #d55a13;
