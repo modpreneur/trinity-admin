@@ -58,12 +58,13 @@ body {
   -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
-}
-.navbar input:checked ~ .navbar-container .navbar-actions-item {
-  display: none !important;
-}
-.navbar input:checked ~ .navbar-container .fav-navbar {
-  display: block;
+  /*    input:checked ~ .navbar-container .navbar-actions-item {
+      display: none !important;
+    }
+
+    input:checked ~ .navbar-container .fav-navbar {
+      display: block;
+    }*/
 }
 .navbar .navbar-logo {
   height: 90px;
@@ -446,7 +447,7 @@ body {
 }
 .notifications .tab-list li:hover {
   min-height: 58px;
-  background: #fffbf8;
+  background: #fefefe;
 }
 .notifications .tab-list li:hover i.trinity-close {
   cursor: pointer;
@@ -486,38 +487,38 @@ body {
 .notifications .tab-list li a {
   color: #4f4742;
 }
-.notifications .tab-list .info {
+.notifications .info {
   background: #fff;
 }
-.notifications .tab-list .info i {
+.notifications .info i {
   color: #61ccba;
 }
-.notifications .tab-list .warning {
+.notifications .warning {
   background: #fff4e6;
 }
-.notifications .tab-list .warning i {
+.notifications .warning i {
   color: #ff8939;
 }
-.notifications .tab-list .success {
+.notifications .success {
   background: #fff;
 }
-.notifications .tab-list .success i {
+.notifications .success i {
   color: #f6e064;
 }
-.notifications .tab-list .noaction {
+.notifications .noaction {
   background: #fff;
   color: #595959;
 }
-.notifications .tab-list .noaction i {
+.notifications .noaction i {
   color: #727272;
 }
-.notifications .tab-list .danger {
+.notifications .danger {
   background: #ffefef;
 }
-.notifications .tab-list .danger i {
+.notifications .danger i {
   color: #c93236;
 }
-.notifications .tab-list .noaction:hover {
+.notifications .noaction:hover {
   min-height: 50px;
 }
 #user-profile-input:checked ~ .user-profile-info {
