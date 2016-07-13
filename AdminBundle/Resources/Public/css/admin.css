@@ -4395,8 +4395,8 @@ body.trinity-admin .box {
   color: #303030;
   padding: 0;
   /*    a {
-      color: @color-tertiary;
-    }*/
+          color: @color-tertiary;
+        }*/
 }
 body.trinity-admin .wrapper-grid .header,
 body.trinity-admin .box .header {
@@ -4444,73 +4444,6 @@ body.trinity-admin .box .footer {
   padding: 10px 20px;
   font-size: 12px;
 }
-body.trinity-admin .wrapper-grid .grid-search,
-body.trinity-admin .box .grid-search {
-  padding: 30px;
-  text-align: center;
-}
-body.trinity-admin .wrapper-grid .grid-search .title,
-body.trinity-admin .box .grid-search .title {
-  color: #2f2f2f;
-  font-size: 20px;
-  margin-left: 10px;
-  font-weight: 300;
-}
-body.trinity-admin .wrapper-grid .grid-search form,
-body.trinity-admin .box .grid-search form {
-  width: 100%;
-  max-width: 600px;
-}
-body.trinity-admin .wrapper-grid .grid-search form input[type="text"],
-body.trinity-admin .box .grid-search form input[type="text"] {
-  border: 1px solid #ccc;
-  height: 32px;
-  border-radius: 5px 0 0 5px;
-  padding: 0 10px;
-  width: calc(100% - 65px);
-  outline: none;
-  font-size: 14px;
-  float: left;
-  transition: .3s;
-  color: #d55a13;
-}
-body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:after,
-body.trinity-admin .box .grid-search form input[type="text"]:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:focus,
-body.trinity-admin .box .grid-search form input[type="text"]:focus {
-  border: 1px solid #d55a13;
-}
-body.trinity-admin .wrapper-grid .grid-search form input[type="text"]:focus + button,
-body.trinity-admin .box .grid-search form input[type="text"]:focus + button {
-  background: #d55a13;
-  color: #fff;
-  border: 1px solid #d55a13;
-}
-body.trinity-admin .wrapper-grid .grid-search form button[type="submit"],
-body.trinity-admin .box .grid-search form button[type="submit"] {
-  background: #ccc;
-  color: #fff;
-  border-radius: 0 5px 5px 0;
-  margin-left: -2px;
-  height: 32px;
-  border: none;
-  outline: none;
-  text-align: center;
-  font-size: 14px;
-  float: left;
-  width: 65px;
-  transition: 0.3s ease-in;
-}
-body.trinity-admin .wrapper-grid .grid-search form button[type="submit"]:hover,
-body.trinity-admin .box .grid-search form button[type="submit"]:hover {
-  background: #a6460f;
-  cursor: pointer;
-  border: none;
-}
 body.trinity-admin .wrapper-grid {
   padding: 0 0 100px 0;
 }
@@ -4544,8 +4477,66 @@ body.trinity-admin .box {
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
 }
+body.trinity-admin .grid-search {
+  padding: 30px;
+  text-align: center;
+}
+body.trinity-admin .grid-search .title {
+  color: #2f2f2f;
+  font-size: 20px;
+  margin-left: 10px;
+  font-weight: 300;
+}
+body.trinity-admin .grid-search form {
+  width: 100%;
+  max-width: 600px;
+}
+body.trinity-admin .grid-search input[type="text"] {
+  border: 1px solid #ccc;
+  height: 32px;
+  border-radius: 5px 0 0 5px;
+  padding: 0 10px;
+  width: calc(100% - 65px);
+  outline: none;
+  font-size: 14px;
+  float: left;
+  transition: .3s;
+  color: #d55a13;
+}
+body.trinity-admin .grid-search input[type="text"]:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body.trinity-admin .grid-search input[type="text"]:focus {
+  border: 1px solid #d55a13;
+}
+body.trinity-admin .grid-search input[type="text"]:focus + button {
+  background: #d55a13;
+  color: #fff;
+  border: 1px solid #d55a13;
+}
+body.trinity-admin .grid-search button[type="submit"] {
+  background: #ccc;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  margin-left: -2px;
+  height: 32px;
+  border: none;
+  outline: none;
+  text-align: center;
+  font-size: 14px;
+  float: left;
+  width: 65px;
+  transition: 0.3s ease-in;
+}
+body.trinity-admin .grid-search button[type="submit"]:hover {
+  background: #a6460f;
+  cursor: pointer;
+  border: none;
+}
 @media screen and (max-width: 1366px) {
-  body.trinity-admin .wrapper-grid .grid-search form {
+  body.trinity-admin .grid-search form {
     max-width: 450px;
   }
 }
