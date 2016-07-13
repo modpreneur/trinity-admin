@@ -2,6 +2,7 @@
 body {
   padding-top: 90px;
   font-family: 'Roboto', sans-serif;
+  background: #f8f3f0 !important;
 }
 /**
     Top sidebar
@@ -33,19 +34,19 @@ body {
 /**************************************
   Roboto font-weight
 **************************************/
-body.trinity-admin.navbar-fixed {
+.navbar-fixed {
   padding-top: 90px;
 }
-body.trinity-admin.navbar-fixed .navbar {
+.navbar-fixed .navbar {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
 }
-body.trinity-admin .navbar-item-input {
+.navbar-item-input {
   display: none;
 }
-body.trinity-admin .navbar {
+.navbar {
   background: #fff;
   min-height: 90px;
   width: 100%;
@@ -58,13 +59,13 @@ body.trinity-admin .navbar {
   -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
   box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.15);
 }
-body.trinity-admin .navbar input:checked ~ .navbar-container .navbar-actions-item {
+.navbar input:checked ~ .navbar-container .navbar-actions-item {
   display: none !important;
 }
-body.trinity-admin .navbar input:checked ~ .navbar-container .fav-navbar {
+.navbar input:checked ~ .navbar-container .fav-navbar {
   display: block;
 }
-body.trinity-admin .navbar .navbar-logo {
+.navbar .navbar-logo {
   height: 90px;
   width: 260px;
   display: inline-block;
@@ -72,49 +73,49 @@ body.trinity-admin .navbar .navbar-logo {
   z-index: 999;
   background: #d55a13;
 }
-body.trinity-admin .navbar .navbar-logo:after {
+.navbar .navbar-logo:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .navbar .navbar-logo i {
+.navbar .navbar-logo i {
   margin: 26px 0 26px 55px;
   display: block;
   height: 38px;
   width: 95px;
 }
-body.trinity-admin .navbar .navbar-logo a {
+.navbar .navbar-logo a {
   font-size: 38px;
   display: inline-block;
   width: 100%;
   height: 100%;
   color: #fff;
 }
-body.trinity-admin .navbar .version {
+.navbar .version {
   position: absolute;
   top: 55px;
   left: 140px;
   color: #fff;
   font-size: 8px;
 }
-body.trinity-admin .navbar .navbar-container {
+.navbar .navbar-container {
   display: inline-block;
   float: left;
   width: calc(100% - 260px );
   height: 90px;
 }
-body.trinity-admin .navbar .navbar-container:after {
+.navbar .navbar-container:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .navbar .navbar-actions {
+.navbar .navbar-actions {
   z-index: 999;
 }
-body.trinity-admin .navbar .navbar-actions a {
+.navbar .navbar-actions a {
   color: #a0a2a5;
 }
-body.trinity-admin .navbar .navbar-item-label {
+.navbar .navbar-item-label {
   top: 0;
   position: relative;
   display: inline-block;
@@ -124,21 +125,21 @@ body.trinity-admin .navbar .navbar-item-label {
   font-size: 20px;
   float: left;
 }
-body.trinity-admin .navbar .navbar-item-label:after {
+.navbar .navbar-item-label:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .navbar .navbar-item-label i {
+.navbar .navbar-item-label i {
   display: block;
   width: 20px;
   height: 20px;
   margin: 35px 12.5px;
 }
-body.trinity-admin .navbar .navbar-item-label:hover {
+.navbar .navbar-item-label:hover {
   background: #fdf7f4;
 }
-body.trinity-admin .navbar .navbar-item-label .number-info {
+.navbar .navbar-item-label .number-info {
   border-radius: 6px;
   background: #ef7e3e;
   text-align: center;
@@ -155,47 +156,47 @@ body.trinity-admin .navbar .navbar-item-label .number-info {
   right: 6px;
   padding: 0 2px;
 }
-body.trinity-admin .navbar .navbar-right-items {
+.navbar .navbar-right-items {
   display: inline-block;
   height: 90px;
   width: 45px;
   float: right;
   background: #e4e4e4;
 }
-body.trinity-admin .navbar .navbar-right-items:after {
+.navbar .navbar-right-items:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .navbar .navbar-right-items .item {
+.navbar .navbar-right-items .item {
   position: relative;
   transition: .3s;
   width: 45px;
   height: 45px;
 }
-body.trinity-admin .navbar .navbar-right-items .item:first-of-type {
+.navbar .navbar-right-items .item:first-of-type {
   background: #40adc2;
 }
-body.trinity-admin .navbar .navbar-right-items .item:first-of-type:hover {
+.navbar .navbar-right-items .item:first-of-type:hover {
   background: #2e838c;
 }
-body.trinity-admin .navbar .navbar-right-items .item:first-of-type a {
+.navbar .navbar-right-items .item:first-of-type a {
   display: inline-block;
 }
-body.trinity-admin .navbar .navbar-right-items .item:first-of-type i {
+.navbar .navbar-right-items .item:first-of-type i {
   color: #fff;
   font-size: 20px;
   width: 45px;
   height: 45px;
   padding: 12.5px;
 }
-body.trinity-admin .navbar .navbar-right-items .item:last-of-type:hover {
+.navbar .navbar-right-items .item:last-of-type:hover {
   background: #bebebe;
 }
-body.trinity-admin .navbar .navbar-right-items .item:last-of-type:hover span {
+.navbar .navbar-right-items .item:last-of-type:hover span {
   background: #606265;
 }
-body.trinity-admin .navbar .navbar-right-items span {
+.navbar .navbar-right-items span {
   transition: .7s all;
   display: inline-block;
   width: 6px;
@@ -204,11 +205,11 @@ body.trinity-admin .navbar .navbar-right-items span {
   margin: 19.5px 2px;
   background: #797c80;
 }
-body.trinity-admin .navbar .navbar-right-items span:first-child {
+.navbar .navbar-right-items span:first-child {
   margin-left: 10px;
 }
-body.trinity-admin .navbar .navbar-right-items span:nth-child(4),
-body.trinity-admin .navbar .navbar-right-items span:nth-child(5) {
+.navbar .navbar-right-items span:nth-child(4),
+.navbar .navbar-right-items span:nth-child(5) {
   position: absolute;
   top: 7px;
   left: 21px;
@@ -220,62 +221,62 @@ body.trinity-admin .navbar .navbar-right-items span:nth-child(5) {
   opacity: 0;
   transition: .6s;
 }
-body.trinity-admin .navbar #user-profile-label {
+.navbar #user-profile-label {
   width: auto;
   font-size: 14px;
   padding: 0 45px 0 33px;
 }
-body.trinity-admin .navbar #user-profile-label .user-name,
-body.trinity-admin .navbar #user-profile-label .user-photo {
+.navbar #user-profile-label .user-name,
+.navbar #user-profile-label .user-photo {
   display: inline-block;
   float: left;
 }
-body.trinity-admin .navbar #user-profile-label .user-name:after,
-body.trinity-admin .navbar #user-profile-label .user-photo:after {
+.navbar #user-profile-label .user-name:after,
+.navbar #user-profile-label .user-photo:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .navbar #user-profile-label img {
+.navbar #user-profile-label img {
   display: block;
   margin: 23px 5px;
   width: 44px;
   height: 44px;
   border-radius: 22px;
 }
-body.trinity-admin .navbar #user-profile-label .user-photo i {
+.navbar #user-profile-label .user-photo i {
   font-size: 40px;
   width: 40px;
   height: 40px;
   margin: 23px 5px;
 }
-body.trinity-admin .navbar #user-profile-label .user-name {
+.navbar #user-profile-label .user-name {
   line-height: 90px;
 }
-body.trinity-admin .navbar #user-profile-label .user-name i {
+.navbar #user-profile-label .user-name i {
   width: 10px;
   height: 10px;
   font-size: 10px;
   transform: rotate(90deg);
 }
-body.trinity-admin .navbar #user-profile-label i {
+.navbar #user-profile-label i {
   display: inline-block;
   margin: 5px;
 }
-body.trinity-admin .navbar-search {
+.navbar-search {
   position: relative;
   float: left;
   z-index: 9;
 }
-body.trinity-admin .navbar-search:after {
+.navbar-search:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .navbar-search form {
+.navbar-search form {
   margin: 31px;
 }
-body.trinity-admin .navbar-search input {
+.navbar-search input {
   background: transparent;
   font-family: Roboto, sans-serif;
   font-size: 22px;
@@ -283,10 +284,10 @@ body.trinity-admin .navbar-search input {
   font-weight: 100;
   width: auto;
 }
-body.trinity-admin .navbar-search input:focus {
+.navbar-search input:focus {
   font-weight: 300;
 }
-body.trinity-admin .navbar-search input:focus + button {
+.navbar-search input:focus + button {
   top: 25px;
   left: -20px;
   height: 40px;
@@ -294,10 +295,10 @@ body.trinity-admin .navbar-search input:focus + button {
   border-radius: 20px;
   background: #4d4845;
 }
-body.trinity-admin .navbar-search input:focus + button i {
+.navbar-search input:focus + button i {
   font-size: 22px;
 }
-body.trinity-admin .navbar-search button {
+.navbar-search button {
   position: absolute;
   left: -15px;
   top: 30px;
@@ -310,24 +311,24 @@ body.trinity-admin .navbar-search button {
   cursor: pointer;
   transition: .5s;
 }
-body.trinity-admin .navbar-search button i {
+.navbar-search button i {
   transition: .5s;
   font-size: 16px;
   color: #cec5c0;
 }
 @media screen and (max-width: 1280px) {
-  body.trinity-admin .navbar-search form {
+  .navbar-search form {
     transition: .4s;
     margin: 45px 0 0 31px;
   }
-  body.trinity-admin .navbar-search input:focus + button {
+  .navbar-search input:focus + button {
     top: 40px;
   }
-  body.trinity-admin .navbar-search button {
+  .navbar-search button {
     top: 45px;
   }
 }
-body.trinity-admin .user-profile-info {
+.user-profile-info {
   top: -1000px;
   transition: 1s;
   z-index: 99;
@@ -335,33 +336,33 @@ body.trinity-admin .user-profile-info {
   position: fixed;
   right: 44px;
 }
-body.trinity-admin .user-profile-info .user-photo {
+.user-profile-info .user-photo {
   margin: 10px;
   position: relative;
 }
-body.trinity-admin .user-profile-info .user-photo .trinity {
+.user-profile-info .user-photo .trinity {
   font-size: 100px;
   border-radius: 100px;
   color: #cdbeb5;
 }
-body.trinity-admin .user-profile-info .user-photo img {
+.user-profile-info .user-photo img {
   width: 100px;
   height: 100px;
   border-radius: 100px;
 }
-body.trinity-admin .user-profile-info .tab-list {
+.user-profile-info .tab-list {
   margin-top: 10px;
 }
-body.trinity-admin .navbar-popup {
+.navbar-popup {
   width: 401px;
   background: #fff;
-  border: 1px solid #c7c7c7;
+  border: 1px solid #e4e4e4;
   border-top: none;
   -webkit-box-shadow: -1px 4px 10px 0 rgba(0, 0, 0, 0.15);
   -moz-box-shadow: -1px 4px 10px 0 rgba(0, 0, 0, 0.15);
   box-shadow: -1px 4px 10px 0 rgba(0, 0, 0, 0.15);
 }
-body.trinity-admin .navbar-popup h1 {
+.navbar-popup h1 {
   display: block;
   padding: 20px;
   color: #d55a13;
@@ -370,13 +371,13 @@ body.trinity-admin .navbar-popup h1 {
   line-height: 25px;
   border-bottom: 1px solid #dfdfdf;
 }
-body.trinity-admin .navbar-popup ul li {
+.navbar-popup ul li {
   position: relative;
   display: block;
   padding: 10px 40px;
   border-top: 1px solid #e5e5e5;
 }
-body.trinity-admin .navbar-popup ul li i {
+.navbar-popup ul li i {
   position: absolute;
   font-size: 20px;
   padding: 10px 12px;
@@ -384,7 +385,7 @@ body.trinity-admin .navbar-popup ul li i {
   left: 0;
   top: 0;
 }
-body.trinity-admin .notifications {
+.notifications {
   top: -1000px;
   transition: all 1s, z-index 0s;
   z-index: 99;
@@ -392,15 +393,15 @@ body.trinity-admin .notifications {
   position: fixed;
   right: 315px;
 }
-body.trinity-admin .notifications .tab-list {
+.notifications .tab-list {
   overflow-y: auto;
   overflow-x: hidden;
   height: 400px;
 }
-body.trinity-admin .notifications .tab-list.list-rows {
+.notifications .tab-list.list-rows {
   background: #ffffff;
 }
-body.trinity-admin .notifications .tab-list li {
+.notifications .tab-list li {
   font-size: 13px;
   font-weight: 300;
   position: relative;
@@ -414,26 +415,26 @@ body.trinity-admin .notifications .tab-list li {
   -moz-transition: min-height 0.7s;
   transition: min-height 0.7s;
 }
-body.trinity-admin .notifications .tab-list li i {
+.notifications .tab-list li i {
   font-size: 21px;
   position: absolute;
   top: 5px;
 }
-body.trinity-admin .notifications .tab-list li .message-group {
+.notifications .tab-list li .message-group {
   position: relative;
 }
-body.trinity-admin .notifications .tab-list li .message-group span {
+.notifications .tab-list li .message-group span {
   transition: all 0.5s ease;
   line-height: 15px;
 }
-body.trinity-admin .notifications .tab-list li i.trinity-close {
+.notifications .tab-list li i.trinity-close {
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s linear;
   -moz-transition: opacity 1s linear;
   -webkit-transition: opacity 1s linear;
 }
-body.trinity-admin .notifications .tab-list li .detail-info {
+.notifications .tab-list li .detail-info {
   height: 0;
   width: 190px;
   font-size: 12px;
@@ -443,11 +444,11 @@ body.trinity-admin .notifications .tab-list li .detail-info {
   -moz-transition: all .7s linear;
   -webkit-transition: all .7s linear;
 }
-body.trinity-admin .notifications .tab-list li:hover {
+.notifications .tab-list li:hover {
   min-height: 58px;
   background: #fffbf8;
 }
-body.trinity-admin .notifications .tab-list li:hover i.trinity-close {
+.notifications .tab-list li:hover i.trinity-close {
   cursor: pointer;
   visibility: visible;
   opacity: 1;
@@ -459,10 +460,10 @@ body.trinity-admin .notifications .tab-list li:hover i.trinity-close {
   font-size: 10px;
   color: #838383;
 }
-body.trinity-admin .notifications .tab-list li:hover i.trinity-close:hover {
+.notifications .tab-list li:hover i.trinity-close:hover {
   color: #40adc2;
 }
-body.trinity-admin .notifications .tab-list li:hover .detail-info {
+.notifications .tab-list li:hover .detail-info {
   position: relative;
   display: block;
   height: 13px;
@@ -471,7 +472,7 @@ body.trinity-admin .notifications .tab-list li:hover .detail-info {
   word-break: normal;
   color: #8f8f8f;
 }
-body.trinity-admin .notifications .tab-list li.new:before {
+.notifications .tab-list li.new:before {
   content: " ";
   float: left;
   margin-left: -46px;
@@ -482,74 +483,77 @@ body.trinity-admin .notifications .tab-list li.new:before {
   height: 5px;
   position: absolute;
 }
-body.trinity-admin .notifications .tab-list li a {
-  color: #595959;
+.notifications .tab-list li a {
+  color: #4f4742;
 }
-body.trinity-admin .notifications .tab-list li.info {
+.notifications .tab-list .info {
   background: #fff;
 }
-body.trinity-admin .notifications .tab-list li.info i {
+.notifications .tab-list .info i {
   color: #61ccba;
 }
-body.trinity-admin .notifications .tab-list li.warning {
+.notifications .tab-list .warning {
   background: #fff4e6;
 }
-body.trinity-admin .notifications .tab-list li.warning i {
+.notifications .tab-list .warning i {
   color: #ff8939;
 }
-body.trinity-admin .notifications .tab-list li.success {
+.notifications .tab-list .success {
   background: #fff;
 }
-body.trinity-admin .notifications .tab-list li.success i {
+.notifications .tab-list .success i {
   color: #f6e064;
 }
-body.trinity-admin .notifications .tab-list li.noaction {
+.notifications .tab-list .noaction {
   background: #fff;
   color: #595959;
 }
-body.trinity-admin .notifications .tab-list li.noaction i {
+.notifications .tab-list .noaction i {
   color: #727272;
 }
-body.trinity-admin .notifications .tab-list li.danger {
+.notifications .tab-list .danger {
   background: #ffefef;
 }
-body.trinity-admin .notifications .tab-list li.danger i {
+.notifications .tab-list .danger i {
   color: #c93236;
 }
-body.trinity-admin #user-profile-input:checked ~ .user-profile-info {
+.notifications .tab-list .noaction:hover {
+  min-height: 50px;
+}
+#user-profile-input:checked ~ .user-profile-info {
   top: 90px;
 }
-body.trinity-admin #user-profile-label {
+#user-profile-label {
   transition: .7s all, background .4s;
 }
-body.trinity-admin #user-profile-input:checked ~ .navbar #user-profile-label {
+#user-profile-input:checked ~ .navbar #user-profile-label {
   top: -8px;
   height: 98px;
   color: #d55a13;
   background: #fdf1ea;
 }
-body.trinity-admin #user-profile-input:checked ~ .navbar #user-profile-label i {
+#user-profile-input:checked ~ .navbar #user-profile-label i {
   color: #d55a13;
 }
-body.trinity-admin #notifications-input:checked ~ .notifications {
+#notifications-input:checked ~ .notifications {
   top: 90px;
 }
-body.trinity-admin #notifications-label {
+#notifications-label {
   transition: .7s all, background .4s;
 }
-body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label {
+#notifications-input:checked ~ .navbar #notifications-label {
   top: -8px;
   height: 98px;
   color: #d55a13;
   background: #fdf1ea;
 }
-body.trinity-admin #notifications-input:checked ~ .navbar #notifications-label i {
+#notifications-input:checked ~ .navbar #notifications-label i {
   color: #d55a13;
 }
-body.trinity-admin #settings-label {
+#settings-label {
   transition: .7s all, background .4s;
 }
-body.trinity-admin #settings-label:hover i {
+#settings-label:hover i {
   animation-name: rotate;
   animation-duration: 2s;
   animation-iteration-count: infinite;
@@ -563,16 +567,16 @@ body.trinity-admin #settings-label:hover i {
     transform: rotate(360deg);
   }
 }
-body.trinity-admin #settings-input:checked ~ .navbar #settings-label {
+#settings-input:checked ~ .navbar #settings-label {
   top: -5px;
   height: 95px;
   color: #d55a13;
   background: #fdf1ea;
 }
-body.trinity-admin #settings-input:checked ~ .navbar #settings-label i {
+#settings-input:checked ~ .navbar #settings-label i {
   color: #d55a13;
 }
-body.trinity-admin #header-for-nonvisible {
+#header-for-nonvisible {
   position: absolute;
   left: 0;
   height: 90px;
@@ -586,7 +590,7 @@ body.trinity-admin #header-for-nonvisible {
   display: block;
   text-align: center;
 }
-body.trinity-admin .slideInUp {
+.slideInUp {
   -webkit-animation-name: slideInUp;
   animation-name: slideInUp;
   -webkit-animation-duration: 1s;
@@ -620,7 +624,7 @@ body.trinity-admin .slideInUp {
     opacity: 1;
   }
 }
-body.trinity-admin .slideOutDown {
+.slideOutDown {
   -webkit-animation-name: slideOutDown;
   animation-name: slideOutDown;
   -webkit-animation-duration: 1s;
@@ -654,7 +658,7 @@ body.trinity-admin .slideOutDown {
     opacity: 0;
   }
 }
-body.trinity-admin .quick-links {
+.quick-links {
   transition: .7s;
   top: 90px;
   right: -500px;
@@ -669,15 +673,15 @@ body.trinity-admin .quick-links {
   box-shadow: -2px 4px 8px 0 rgba(0, 0, 0, 0.25);
   z-index: 99;
 }
-body.trinity-admin .quick-links li {
+.quick-links li {
   height: 40px;
   font-size: 15px;
   cursor: pointer;
 }
-body.trinity-admin .quick-links li:hover {
+.quick-links li:hover {
   background: #fdf1ea;
 }
-body.trinity-admin .quick-links li:hover a {
+.quick-links li:hover a {
   padding-left: 45px;
   /*&:before{
             content: "\e90b";
@@ -686,14 +690,14 @@ body.trinity-admin .quick-links li:hover a {
             padding: 0 1
           }*/
 }
-body.trinity-admin .quick-links li a {
+.quick-links li a {
   transition: .3s;
   display: block;
   color: #303030;
   padding-left: 15px;
   line-height: 40px;
 }
-body.trinity-admin .quick-links .header {
+.quick-links .header {
   font-weight: 400;
   padding: 20px;
   font-size: 14px;
@@ -701,34 +705,34 @@ body.trinity-admin .quick-links .header {
   height: auto;
   border-bottom: 2px solid #d55a13;
 }
-body.trinity-admin .quick-links .header i {
+.quick-links .header i {
   font-size: 20px;
 }
-body.trinity-admin .quick-links .header:hover {
+.quick-links .header:hover {
   background-color: #fff;
 }
-body.trinity-admin #quick-links-input:checked ~ .quick-links {
+#quick-links-input:checked ~ .quick-links {
   right: 0;
 }
-body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label {
+#quick-links-input:checked ~ .navbar #quick-links-label {
   width: 45px;
   height: 45px;
 }
-body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span {
+#quick-links-input:checked ~ .navbar #quick-links-label span {
   opacity: 0;
 }
-body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(4),
-body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(5) {
+#quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(4),
+#quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(5) {
   opacity: 1;
 }
-body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(4) {
+#quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(4) {
   transform: rotate(-135deg);
 }
-body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(5) {
+#quick-links-input:checked ~ .navbar #quick-links-label span:nth-child(5) {
   transform: rotate(135deg);
 }
 @media screen and (max-width: 1280px) {
-  body.trinity-admin #header-for-nonvisible {
+  #header-for-nonvisible {
     width: auto;
     margin-left: 291px;
     line-height: 1.6;
@@ -736,24 +740,24 @@ body.trinity-admin #quick-links-input:checked ~ .navbar #quick-links-label span:
   }
 }
 @media screen and (max-width: 1024px) {
-  body.trinity-admin .navbar .navbar-item-label {
+  .navbar .navbar-item-label {
     display: none;
   }
 }
 /**
     Box with page name, breadcrumbs, page icon.
 */
-body.trinity-admin .head-title {
+.head-title {
   display: block;
   float: left;
   height: 100px;
 }
-body.trinity-admin .head-title:after {
+.head-title:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .head-content {
+.head-content {
   font-family: Roboto, sans-serif;
   color: #303030;
   position: relative;
@@ -766,111 +770,111 @@ body.trinity-admin .head-content {
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
 }
-body.trinity-admin .head-content div[class^="span"] {
+.head-content div[class^="span"] {
   height: 100px;
   position: relative;
   line-height: 1;
 }
-body.trinity-admin .head-content .page-icon {
+.head-content .page-icon {
   position: relative;
   height: 100px;
   width: 95px;
   display: block;
   float: left;
 }
-body.trinity-admin .head-content .page-icon:after {
+.head-content .page-icon:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .head-content .page-icon i {
+.head-content .page-icon i {
   display: block;
   margin: 25px 20px 20px 20px;
   font-size: 55px;
   color: #97999c;
 }
-body.trinity-admin .head-content .page-icon img {
+.head-content .page-icon img {
   width: 65px;
   height: 65px;
   margin: 20px 10px 10px 20px;
   border-radius: 55px;
 }
-body.trinity-admin .head-content .content-header {
+.head-content .content-header {
   font-size: 30px;
   color: #97999c;
   text-transform: uppercase;
   margin-top: 25px;
   font-weight: 400;
 }
-body.trinity-admin .head-content .content-header b {
+.head-content .content-header b {
   font-weight: 700;
 }
-body.trinity-admin .head-content span,
-body.trinity-admin .head-content i {
+.head-content span,
+.head-content i {
   color: #d55a13;
   font-weight: 300;
   font-size: 55px;
 }
-body.trinity-admin .head-content .breadcrumbs {
+.head-content .breadcrumbs {
   float: left;
   width: auto;
   margin-left: -10px;
   background: 0 0;
   display: block !important;
 }
-body.trinity-admin .head-content .breadcrumbs span {
+.head-content .breadcrumbs span {
   font-size: 14px;
   transition: .3s;
   color: #4c4c4c;
 }
-body.trinity-admin .head-content .breadcrumbs ul {
+.head-content .breadcrumbs ul {
   padding: 5px 0 10px 0;
 }
-body.trinity-admin .head-content .breadcrumbs li {
+.head-content .breadcrumbs li {
   line-height: 20px !important;
 }
-body.trinity-admin .head-content .breadcrumbs li:after {
+.head-content .breadcrumbs li:after {
   content: '\e656';
   font-family: 'tiecons';
   font-size: 10px;
   color: #ccc;
   padding-left: 5px;
 }
-body.trinity-admin .head-content .breadcrumbs li:last-child:after {
+.head-content .breadcrumbs li:last-child:after {
   content: '';
 }
-body.trinity-admin .head-content .breadcrumbs p {
+.head-content .breadcrumbs p {
   font-size: 12px;
   font-weight: 400;
   color: #4c4c4c;
   line-height: 20px;
 }
-body.trinity-admin .head-content .breadcrumbs a,
-body.trinity-admin .head-content .breadcrumbs span {
+.head-content .breadcrumbs a,
+.head-content .breadcrumbs span {
   color: #4c4c4c;
   line-height: 18px;
   display: inline-block;
   padding: 0 !important;
   padding-left: 5px !important;
 }
-body.trinity-admin .head-content .breadcrumbs a:hover span {
+.head-content .breadcrumbs a:hover span {
   color: #d55a13;
   text-decoration: underline !important;
 }
-body.trinity-admin .header-loader {
+.header-loader {
   position: absolute;
   width: 100%;
   bottom: 0;
   left: 0;
 }
-body.trinity-admin .header-loader .load-bar {
+.header-loader .load-bar {
   position: relative;
   margin-top: 20px;
   width: 100%;
   height: 2px;
   background-color: #fdba2c;
 }
-body.trinity-admin .header-loader .bar {
+.header-loader .bar {
   content: "";
   display: inline;
   position: absolute;
@@ -879,15 +883,15 @@ body.trinity-admin .header-loader .bar {
   left: 50%;
   text-align: center;
 }
-body.trinity-admin .header-loader .bar:nth-child(1) {
+.header-loader .bar:nth-child(1) {
   background-color: #493470;
   animation: loading 3s linear 1s infinite;
 }
-body.trinity-admin .header-loader .bar:nth-child(2) {
+.header-loader .bar:nth-child(2) {
   background-color: #f5d346;
   animation: loading 3s linear 2s infinite;
 }
-body.trinity-admin .header-loader .bar-end {
+.header-loader .bar-end {
   background-color: #fff !important;
   transition: background-color 2s linear;
 }
@@ -907,13 +911,11 @@ body.trinity-admin .header-loader .bar-end {
     width: 100%;
   }
 }
-body.trinity-admin {
-  /** fix */
-}
-body.trinity-admin .container-with-sidebar {
+/** fix */
+.container-with-sidebar {
   padding-left: 260px !important;
 }
-body.trinity-admin #sidebar {
+#sidebar {
   z-index: 99;
   font-family: Roboto, sans-serif;
   width: 260px;
@@ -926,30 +928,30 @@ body.trinity-admin #sidebar {
   padding-top: 169px;
   /** end **/
 }
-body.trinity-admin #sidebar input {
+#sidebar input {
   display: none;
 }
-body.trinity-admin #sidebar a,
-body.trinity-admin #sidebar span:focus,
-body.trinity-admin #sidebar span::-moz-focus-inner {
+#sidebar a,
+#sidebar span:focus,
+#sidebar span::-moz-focus-inner {
   border: 0;
   outline: 0;
 }
-body.trinity-admin .sidebar {
+.sidebar {
   /** window resize fix **/
   height: 100%;
   overflow-y: auto;
   /** end **/
 }
-body.trinity-admin .sidebar li {
+.sidebar li {
   width: 100%;
   min-height: 50px;
   height: 50px;
   position: relative;
   cursor: pointer;
 }
-body.trinity-admin .sidebar li a,
-body.trinity-admin .sidebar li div {
+.sidebar li a,
+.sidebar li div {
   cursor: pointer;
   text-transform: uppercase;
   padding-left: 20px;
@@ -962,7 +964,7 @@ body.trinity-admin .sidebar li div {
   transition: .4s;
   line-height: 50px;
 }
-body.trinity-admin .sidebar li i {
+.sidebar li i {
   margin: 0 35px;
   float: left;
   color: #adadad;
@@ -971,29 +973,29 @@ body.trinity-admin .sidebar li i {
   transition: .3s;
   line-height: 50px;
 }
-body.trinity-admin .sidebar li.active a,
-body.trinity-admin .sidebar li.active div {
+.sidebar li.active a,
+.sidebar li.active div {
   font-weight: 500;
   color: #5a544f;
   background: #f8f3f0;
 }
-body.trinity-admin .sidebar li.active i {
+.sidebar li.active i {
   color: #5a544f;
   font-weight: 600;
 }
-body.trinity-admin .sidebar li.active:hover a {
+.sidebar li.active:hover a {
   background: #f8f3f0;
   padding-left: 20px;
 }
-body.trinity-admin .sidebar li:hover a {
+.sidebar li:hover a {
   background: #fff;
   color: #5a544f;
   padding-left: 45px;
 }
-body.trinity-admin .sidebar li:hover i {
+.sidebar li:hover i {
   color: #5a544f;
 }
-body.trinity-admin .sidebar-header {
+.sidebar-header {
   font-size: 12px;
   font-weight: 500;
   padding: 30px 20px;
@@ -1005,53 +1007,53 @@ body.trinity-admin .sidebar-header {
   z-index: 999;
 }
 @media only screen and (max-width: 1400px) {
-  body.trinity-admin #sidebar {
+  #sidebar {
     padding-top: 159px;
   }
-  body.trinity-admin .sidebar-header {
+  .sidebar-header {
     padding: 25px 20px;
     display: block;
     position: fixed;
     width: 260px;
     z-index: 999;
   }
-  body.trinity-admin .sidebar li {
+  .sidebar li {
     min-height: 45px;
     height: 45px;
   }
-  body.trinity-admin .sidebar li a {
+  .sidebar li a {
     min-height: 45px;
   }
-  body.trinity-admin .sidebar li i,
-  body.trinity-admin .sidebar li a {
+  .sidebar li i,
+  .sidebar li a {
     line-height: 45px;
   }
 }
 @media only screen and (max-height: 755px) {
-  body.trinity-admin #sidebar {
+  #sidebar {
     padding-top: 169px;
   }
-  body.trinity-admin .sidebar-header {
+  .sidebar-header {
     padding: 25px 20px;
     display: block;
     position: fixed;
     width: 260px;
     z-index: 999;
   }
-  body.trinity-admin .sidebar li {
+  .sidebar li {
     min-height: 45px;
     height: 45px;
   }
-  body.trinity-admin .sidebar li a {
+  .sidebar li a {
     min-height: 45px;
   }
-  body.trinity-admin .sidebar li i,
-  body.trinity-admin .sidebar li a {
+  .sidebar li i,
+  .sidebar li a {
     line-height: 45px;
   }
 }
 @media only screen and (max-height: 740px) {
-  body.trinity-admin .sidebar {
+  .sidebar {
     padding-bottom: 50px;
   }
 }
@@ -1083,15 +1085,9 @@ body.trinity-admin .sidebar-header {
     - animations classes
 
 **************************************/
-body.trinity-admin {
-  /* --- debug --- */
-  /* by Fisa */
-  /* ---- end debug  ---- */
-  /*  Some default stuffs e.g. colors   */
-  /*  DatetimePicker - just align some elements */
-  /*  Animations - classes with keyframes */
-}
-body.trinity-admin .dump-area {
+/* --- debug --- */
+/* by Fisa */
+.dump-area {
   width: 100%;
   height: 100%;
   z-index: 99;
@@ -1099,7 +1095,7 @@ body.trinity-admin .dump-area {
   top: 0;
   left: 0;
 }
-body.trinity-admin #debug-service-icon {
+#debug-service-icon {
   background-color: #eae410;
   padding-top: 8px;
   border-radius: 50%;
@@ -1111,62 +1107,64 @@ body.trinity-admin #debug-service-icon {
   z-index: 1;
   cursor: pointer;
 }
-body.trinity-admin #debug-service-dump-area-header {
+#debug-service-dump-area-header {
   height: 20px;
   width: 100%;
   padding-top: 2px;
   background-color: #eae410;
   cursor: pointer;
 }
-body.trinity-admin #debug-service-dump-area-header i.tiecons:hover {
+#debug-service-dump-area-header i.tiecons:hover {
   font-size: 18px;
 }
-body.trinity-admin .modal-dialog {
+/* ---- end debug  ---- */
+/*  Some default stuffs e.g. colors   */
+.modal-dialog {
   background: rgba(255, 255, 255, 0.8);
 }
-body.trinity-admin .overflow-hidden {
+.overflow-hidden {
   overflow: hidden;
 }
-body.trinity-admin .validation-error {
+.validation-error {
   color: red;
 }
-body.trinity-admin .info {
+.info {
   background-color: #61ccba;
 }
-body.trinity-admin .color-info {
+.color-info {
   color: #61ccba;
 }
-body.trinity-admin .warning {
+.warning {
   background-color: #ff8939;
 }
-body.trinity-admin .color-warning {
+.color-warning {
   color: #ff8939;
 }
-body.trinity-admin .danger {
+.danger {
   background-color: #c93236;
 }
-body.trinity-admin .color-danger {
+.color-danger {
   color: #c93236;
 }
-body.trinity-admin .primary {
+.primary {
   background-color: #d55a13;
 }
-body.trinity-admin .color-primary {
+.color-primary {
   color: #d55a13 !important;
 }
-body.trinity-admin .secondary {
+.secondary {
   background-color: #edecec;
 }
-body.trinity-admin .color-secondary {
+.color-secondary {
   color: #edecec !important;
 }
-body.trinity-admin .tertiary {
+.tertiary {
   background-color: #40adc2;
 }
-body.trinity-admin .color-tertiary {
+.color-tertiary {
   color: #40adc2 !important;
 }
-body.trinity-admin .tags li {
+.tags li {
   width: auto;
   min-width: 60px;
   height: auto;
@@ -1178,106 +1176,108 @@ body.trinity-admin .tags li {
   color: #fff;
   border-radius: 2px;
 }
-body.trinity-admin .tags .Enabled {
+.tags .Enabled {
   background: #a4c590;
 }
-body.trinity-admin .tags .Disabled {
+.tags .Disabled {
   background: #b9b9b9;
 }
-body.trinity-admin .tags .Active {
+.tags .Active {
   background: #22baa0;
 }
-body.trinity-admin .tags .Changed,
-body.trinity-admin .tags .update {
+.tags .Changed,
+.tags .update {
   background: #24afc9;
 }
-body.trinity-admin .tags .Premium {
+.tags .Premium {
   background: #d55a13;
 }
-body.trinity-admin .tags .Banned,
-body.trinity-admin .tags .Blocked,
-body.trinity-admin .tags .Danger {
+.tags .Banned,
+.tags .Blocked,
+.tags .Danger {
   background: #c93236;
 }
-body.trinity-admin .tags .Pending {
+.tags .Pending {
   background: #fcf1c6;
   color: #ccc;
 }
-body.trinity-admin .tags .Locked {
+.tags .Locked {
   background: #b9ae86;
 }
-body.trinity-admin .tags .create,
-body.trinity-admin .tags .Success {
+.tags .create,
+.tags .Success {
   background: #5DA423;
 }
-body.trinity-admin .tags .Warning {
+.tags .Warning {
   background: #ff8939;
 }
-body.trinity-admin .table {
+.table {
   display: table;
   width: 100%;
   height: 100%;
 }
-body.trinity-admin .margin-left-auto {
+.margin-left-auto {
   margin-left: auto;
 }
-body.trinity-admin .margin-right-auto {
+.margin-right-auto {
   margin-right: auto;
 }
-body.trinity-admin .hidden {
+.hidden {
   display: none !important;
 }
-body.trinity-admin .rw-calendar-grid .rw-btn {
+/*  DatetimePicker - just align some elements */
+.rw-calendar-grid .rw-btn {
   text-align: center;
 }
-body.trinity-admin .rw-calendar-grid th {
+.rw-calendar-grid th {
   padding: 0;
   text-align: center;
 }
-body.trinity-admin .rw-calendar-grid td .rw-btn {
+.rw-calendar-grid td .rw-btn {
   padding: 0;
 }
-body.trinity-admin .rw-widget.rw-state-focus,
-body.trinity-admin .rw-widget.rw-state-focus:hover {
+.rw-widget.rw-state-focus,
+.rw-widget.rw-state-focus:hover {
   border: none;
   box-shadow: none;
 }
-body.trinity-admin .rw-datetimepicker {
+.rw-datetimepicker {
   padding: 0;
 }
-body.trinity-admin .rw-widget {
+.rw-widget {
   border: none;
 }
-body.trinity-admin .rw-select {
+.rw-select {
   color: #000;
   color: rgba(0, 0, 0, 0);
   text-shadow: 0 0 0 #000;
   border: none;
   width: 100%;
 }
-body.trinity-admin .rw-select .rw-btn {
+.rw-select .rw-btn {
   width: 100%;
 }
-body.trinity-admin .rw-select i {
+.rw-select i {
   float: right;
   padding-right: 10px;
   transition: .3s;
 }
-body.trinity-admin .rw-select:focus,
-body.trinity-admin .rw-select:hover {
+.rw-select:focus,
+.rw-select:hover {
   outline: none;
 }
-body.trinity-admin .rw-popup-container {
+.rw-popup-container {
   width: 100%;
 }
-body.trinity-admin .rw-input {
+.rw-input {
   font-family: "Arial", sans-serif;
 }
-body.trinity-admin .rw-input:focus + .rw-select i,
-body.trinity-admin .rw-input:hover + .rw-select i {
+.rw-input:focus + .rw-select i,
+.rw-input:hover + .rw-select i {
   color: #d55a13;
 }
-body.trinity-admin .spin {
+/*  Animations - classes with keyframes */
+.spin {
   -webkit-animation: spin 2s linear infinite;
   -moz-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
@@ -1303,11 +1303,11 @@ body.trinity-admin .spin {
   Alerts messages from flashBag or JS on right side
 
 **************************************/
-body.trinity-admin .ajax-checkbox,
-body.trinity-admin .ajax-alert {
+.ajax-checkbox,
+.ajax-alert {
   display: none !important;
 }
-body.trinity-admin .alert {
+.alert {
   padding: 0;
   margin: 10px 0;
   opacity: 1;
@@ -1317,27 +1317,27 @@ body.trinity-admin .alert {
   color: #34708e;
   border-radius: 0;
 }
-body.trinity-admin .alert:hover {
+.alert:hover {
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-body.trinity-admin .alert:hover .progress-line {
+.alert:hover .progress-line {
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-body.trinity-admin .alert .show-alert p {
+.alert .show-alert p {
   font-weight: 300;
   word-break: break-word;
   font-size: 16px;
   margin: 35px 15px 35px 25px;
 }
-body.trinity-admin .alert .show-alert .trinity,
-body.trinity-admin .alert .show-alert .tiecons {
+.alert .show-alert .trinity,
+.alert .show-alert .tiecons {
   display: block;
   padding: 24px 10px;
   font-size: 50px;
 }
-body.trinity-admin .alert .alert-label {
+.alert .alert-label {
   position: absolute;
   font-size: 10px;
   line-height: 10px;
@@ -1345,9 +1345,9 @@ body.trinity-admin .alert .alert-label {
   top: 0;
   padding: 10px;
 }
-body.trinity-admin .alert .alert-label i,
-body.trinity-admin .alert .alert-label .alert-label i.ff-cross2,
-body.trinity-admin .alert .alert-label .tiecons.alert-close-icon {
+.alert .alert-label i,
+.alert .alert-label .alert-label i.ff-cross2,
+.alert .alert-label .tiecons.alert-close-icon {
   color: #3f3f3f;
   font-size: 10px;
   font-weight: bold;
@@ -1355,53 +1355,53 @@ body.trinity-admin .alert .alert-label .tiecons.alert-close-icon {
   transition: all 1s;
   -webkit-transition: all 1s;
 }
-body.trinity-admin .alert .alert-label:hover .tiecons {
+.alert .alert-label:hover .tiecons {
   -ms-transform: scale(1.2);
   /* IE 9 */
   -webkit-transform: scale(1.2);
   /* Safari */
   transform: scale(1.2);
 }
-body.trinity-admin .alert.alert-info,
-body.trinity-admin .alert.alert {
+.alert.alert-info,
+.alert.alert {
   background: #b7faff;
   border: none;
   border-bottom: 2px solid #2BA6CB;
 }
-body.trinity-admin .alert.alert-success {
+.alert.alert-success {
   background: #d1ffc8;
   border: none;
   border-bottom: 2px solid #23a737;
 }
-body.trinity-admin .alert.alert-success p {
+.alert.alert-success p {
   color: #166722;
 }
-body.trinity-admin .alert.alert-warning {
+.alert.alert-warning {
   background: #ffe4bf;
   border: none;
   border-bottom: 2px solid #FF6600;
 }
-body.trinity-admin .alert.alert-danger {
+.alert.alert-danger {
   background: #FFD2D4;
   border: none;
   border-bottom: 2px solid #c01f25;
 }
-body.trinity-admin .alert i {
+.alert i {
   color: #2BA6CB;
 }
-body.trinity-admin .alert.alert-danger i {
+.alert.alert-danger i {
   color: #c01f25;
 }
-body.trinity-admin .alert.alert-warning i {
+.alert.alert-warning i {
   color: #FF6600;
 }
-body.trinity-admin .alert.alert-success i {
+.alert.alert-success i {
   color: #23a737;
 }
-body.trinity-admin .alert.alert-info i {
+.alert.alert-info i {
   color: #2BA6CB;
 }
-body.trinity-admin #flashMessages {
+#flashMessages {
   position: fixed;
   width: 300px;
   height: 100%;
@@ -1466,13 +1466,13 @@ body.trinity-admin #flashMessages {
     width: 100%;
   }
 }
-body.trinity-admin .progres {
+.progres {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
 }
-body.trinity-admin .progres .progress-line {
+.progres .progress-line {
   width: 0;
   background-color: #c01f25;
   height: 2px;
@@ -1573,7 +1573,7 @@ body.trinity-admin .progres .progress-line {
     |       Content      |
     |____________________|
 */
-body.trinity-admin .tabs-wrapper {
+.tabs-wrapper {
   background: #fff;
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -1582,157 +1582,157 @@ body.trinity-admin .tabs-wrapper {
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
 }
-body.trinity-admin .tabs-wrapper #tab15:checked + label {
+.tabs-wrapper #tab15:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab15:checked + label:hover:after {
+.tabs-wrapper #tab15:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab14:checked + label {
+.tabs-wrapper #tab14:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab14:checked + label:hover:after {
+.tabs-wrapper #tab14:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab13:checked + label {
+.tabs-wrapper #tab13:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab13:checked + label:hover:after {
+.tabs-wrapper #tab13:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab12:checked + label {
+.tabs-wrapper #tab12:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab12:checked + label:hover:after {
+.tabs-wrapper #tab12:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab11:checked + label {
+.tabs-wrapper #tab11:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab11:checked + label:hover:after {
+.tabs-wrapper #tab11:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab10:checked + label {
+.tabs-wrapper #tab10:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab10:checked + label:hover:after {
+.tabs-wrapper #tab10:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab9:checked + label {
+.tabs-wrapper #tab9:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab9:checked + label:hover:after {
+.tabs-wrapper #tab9:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab8:checked + label {
+.tabs-wrapper #tab8:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab8:checked + label:hover:after {
+.tabs-wrapper #tab8:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab7:checked + label {
+.tabs-wrapper #tab7:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab7:checked + label:hover:after {
+.tabs-wrapper #tab7:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab6:checked + label {
+.tabs-wrapper #tab6:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab6:checked + label:hover:after {
+.tabs-wrapper #tab6:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab5:checked + label {
+.tabs-wrapper #tab5:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab5:checked + label:hover:after {
+.tabs-wrapper #tab5:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab4:checked + label {
+.tabs-wrapper #tab4:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab4:checked + label:hover:after {
+.tabs-wrapper #tab4:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab3:checked + label {
+.tabs-wrapper #tab3:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab3:checked + label:hover:after {
+.tabs-wrapper #tab3:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab2:checked + label {
+.tabs-wrapper #tab2:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab2:checked + label:hover:after {
+.tabs-wrapper #tab2:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper #tab1:checked + label {
+.tabs-wrapper #tab1:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   border-top: none;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper #tab1:checked + label:hover:after {
+.tabs-wrapper #tab1:checked + label:hover:after {
   display: none;
 }
-body.trinity-admin .tabs-wrapper label[for^="tab"] {
+.tabs-wrapper label[for^="tab"] {
   border: none;
   border-bottom: 2px solid transparent;
   color: #7d7d7d;
@@ -1749,10 +1749,10 @@ body.trinity-admin .tabs-wrapper label[for^="tab"] {
   max-width: 230px;
   min-width: 150px;
 }
-body.trinity-admin .tabs-wrapper label[for^="tab"]:hover {
+.tabs-wrapper label[for^="tab"]:hover {
   color: #40adc2;
 }
-body.trinity-admin .tabs-wrapper label[for^="tab"]:after {
+.tabs-wrapper label[for^="tab"]:after {
   content: '';
   display: block;
   margin: auto;
@@ -1765,11 +1765,11 @@ body.trinity-admin .tabs-wrapper label[for^="tab"]:after {
   left: 0;
   right: 0;
 }
-body.trinity-admin .tabs-wrapper label[for^="tab"]:hover:after {
+.tabs-wrapper label[for^="tab"]:hover:after {
   width: 100%;
   background-color: #40adc2;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper {
+.tabs-wrapper .tab-body-wrapper {
   border: none;
   min-height: 300px;
   background: #fff;
@@ -1777,27 +1777,37 @@ body.trinity-admin .tabs-wrapper .tab-body-wrapper {
   -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-body p {
-  font-size: 16px;
+.tabs-wrapper .tab-body-wrapper .tab-body {
+  padding: 0;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-body .default-template {
+.tabs-wrapper .tab-body-wrapper .tab-body p {
+  font-size: 16px;
+  margin: 10px;
+}
+.tabs-wrapper .tab-body-wrapper .tab-body .default-template {
   background: #f3f3f3;
   margin: 0;
   padding: 20px;
   font-size: 14px;
   margin-top: 10px;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-body .list {
+.tabs-wrapper .tab-body-wrapper .tab-body .list {
   font-size: 18px;
   margin: 20px;
   line-height: 120%;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions {
+.tabs-wrapper .tab-body-wrapper h3 {
+  padding: 20px;
+}
+.tabs-wrapper .tab-body-wrapper .advanced-settings {
+  transition: 5s;
+}
+.tab-actions {
   position: absolute;
   right: 0;
   top: 0;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item {
+.tab-actions .item {
   display: block;
   background: #979797;
   color: #fff;
@@ -1806,57 +1816,52 @@ body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item {
   font-size: 12px;
   transition: .3s;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item:hover {
+.tab-actions .item:hover {
   background: #7d7d7d;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item a {
+.tab-actions .item a {
   padding: 5px 15px;
+  font-weight: 400;
   display: inline-block;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .item #expert-mode {
+.tab-actions .item #expert-mode {
   color: #fff;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open {
+.tab-actions .open {
   background: #389db0;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open a {
+.tab-actions .open a {
   font-weight: 600;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-actions .open:hover {
+.tab-actions .open:hover {
   background: #40adc2;
 }
-body.trinity-admin .tabs-wrapper .tab-body-wrapper h3 {
-  padding: 20px;
-}
-body.trinity-admin .tabs-wrapper .tab-body-wrapper .advanced-settings {
-  transition: 5s;
-}
-body.trinity-admin .tabs-wrapper .tab-body-wrapper label {
+.tabs-wrapper .tab-body-wrapper label {
   border: none;
   background: transparent;
-  font-weight: 00;
+  font-weight: 300;
   color: #303030;
   font-size: 14px !important;
 }
-body.trinity-admin .tab-body {
+.tab-body {
   padding: 0 0 0;
 }
-body.trinity-admin .tab-body-wrapper {
+.tab-body-wrapper {
   overflow-x: hidden;
   position: relative;
 }
-body.trinity-admin .tab-body-wrapper .widget {
+.tab-body-wrapper .widget {
   border: none !important;
 }
-body.trinity-admin .tab-body-wrapper .grid {
+.tab-body-wrapper .grid {
   border-radius: 0 !important;
   margin-left: -5px;
   width: 100%;
 }
-body.trinity-admin .tab-body-wrapper table {
+.tab-body-wrapper table {
   border: none;
 }
-body.trinity-admin .tabs-wrapper div.tab-loader {
+.tabs-wrapper div.tab-loader {
   position: absolute;
   width: 100%;
   height: inherit;
@@ -1865,7 +1870,7 @@ body.trinity-admin .tabs-wrapper div.tab-loader {
   min-height: 300px;
   background: rgba(1, 1, 1, 0.15);
 }
-body.trinity-admin .tabs-wrapper div.tab-loader i {
+.tabs-wrapper div.tab-loader i {
   position: absolute;
   left: 50%;
   top: 51%;
@@ -1874,15 +1879,18 @@ body.trinity-admin .tabs-wrapper div.tab-loader i {
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
 }
-body.trinity-admin .tab-content {
+.tab-content {
   color: #303030;
+  font-size: 20px;
+  color: #d55a13;
+  font-weight: 400;
 }
-body.trinity-admin .tab-content .tab-header {
+.tab-content .tab-header {
   margin-bottom: 15px;
   border-bottom: 2px solid #24afc9;
   padding: 20px;
 }
-body.trinity-admin .tab-content .tab-title {
+.tab-content .tab-title {
   text-transform: uppercase;
   /**
           Tabs
@@ -1892,11 +1900,8 @@ body.trinity-admin .tab-content .tab-title {
           |       Content      |
           |____________________|
       */
-  font-size: 20px;
-  color: #d55a13;
-  font-weight: 400;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper {
+.tab-content .tab-title .tabs-wrapper {
   background: #fff;
   margin-top: 40px;
   font-family: "Roboto", sans-serif;
@@ -1905,14 +1910,14 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper {
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-head:checked + label {
+.tab-content .tab-title .tabs-wrapper .tab-head:checked + label {
   background: #fff;
   border-bottom: 2px solid #d55a13;
   color: #d55a13;
   top: 0 !important;
   border-top: 1px solid transparent !important;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper label[for^="tab"] {
+.tab-content .tab-title .tabs-wrapper label[for^="tab"] {
   border: none;
   border-top: none;
   border-bottom: 2px solid #b5b5b5;
@@ -1926,42 +1931,42 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper labe
   font-size: 14px;
   text-transform: uppercase;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper label[for^="tab"]:hover {
+.tab-content .tab-title .tabs-wrapper label[for^="tab"]:hover {
   color: #303030;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-body-wrapper {
+.tab-content .tab-title .tabs-wrapper .tab-body-wrapper {
   border: none;
   min-height: 300px;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-body-wrapper .tab-body p {
+.tab-content .tab-title .tabs-wrapper .tab-body-wrapper .tab-body p {
   font-size: 18px;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: 10px;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper .tab-body-wrapper label {
+.tab-content .tab-title .tabs-wrapper .tab-body-wrapper label {
   border: none;
   background: transparent;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body {
+.tab-content .tab-title .tab-body {
   padding: 0;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper {
+.tab-content .tab-title .tab-body-wrapper {
   overflow-x: hidden;
   position: relative;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper .widget {
+.tab-content .tab-title .tab-body-wrapper .widget {
   border: none !important;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper .grid {
+.tab-content .tab-title .tab-body-wrapper .grid {
   border-radius: 0 !important;
   margin-left: -5px;
   width: 100%;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-body-wrapper table {
+.tab-content .tab-title .tab-body-wrapper table {
   border: none;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper div.tab-loader {
+.tab-content .tab-title .tabs-wrapper div.tab-loader {
   position: absolute;
   width: 100%;
   height: inherit;
@@ -1970,7 +1975,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper div.
   min-height: 300px;
   background: rgba(1, 1, 1, 0.15);
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper div.tab-loader i {
+.tab-content .tab-title .tabs-wrapper div.tab-loader i {
   position: absolute;
   left: 50%;
   top: 51%;
@@ -1979,10 +1984,10 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tabs-wrapper div.
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel {
+.tab-content body.trinity-admin .harmonica .main-panel {
   min-height: 51px;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
+.tab-content body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
   font-size: 14px;
   text-align: left;
   font-weight: 300;
@@ -1994,17 +1999,17 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-p
   border-bottom: 1px solid #7d7d7d;
   text-transform: uppercase;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
+.tab-content body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
   margin-right: 10px;
   font-size: 16px;
   line-height: 30px;
   float: left;
   color: #d55a13;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:hover {
+.tab-content body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:hover {
   background: #f8f8f8;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica {
+.tab-content body.trinity-admin .harmonica .main-panel .show-harmonica {
   background: none;
   padding: 0;
   margin-bottom: 20px;
@@ -2012,38 +2017,38 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-p
   max-height: 400px;
   overflow-y: auto;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica .harmonica-content {
+.tab-content body.trinity-admin .harmonica .main-panel .show-harmonica .harmonica-content {
   color: #303030;
   padding-left: 15px;
   padding-right: 15px;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica .main-panel .show-harmonica label {
+.tab-content body.trinity-admin .harmonica .main-panel .show-harmonica label {
   color: #303030;
   font-weight: 300;
   font-size: 14px;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
+.tab-content body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
   font-weight: 400;
   background: #ebebeb;
   color: #d55a13;
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #ccc;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content {
+.tab-content body.trinity-admin .tab-content {
   color: #303030;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-header {
+.tab-content body.trinity-admin .tab-content .tab-header {
   margin-bottom: 15px;
   border-bottom: 2px solid #24afc9;
   padding: 20px;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-title {
+.tab-content body.trinity-admin .tab-content .tab-title {
   text-transform: uppercase;
   font-size: 20px;
   color: #d55a13;
   font-weight: 400;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-sub-title {
+.tab-content body.trinity-admin .tab-content .tab-sub-title {
   font-size: 16px;
   padding-left: 20px;
   padding-right: 20px;
@@ -2051,11 +2056,11 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-
   text-transform: uppercase;
   font-weight: 400;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-sub-title i {
+.tab-content body.trinity-admin .tab-content .tab-sub-title i {
   color: #24afc9 !important;
   padding-right: 5px;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-description {
+.tab-content body.trinity-admin .tab-content .tab-description {
   margin-top: 10px;
   color: #7d7d7d;
   font-size: 14px !important;
@@ -2064,7 +2069,7 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-info-text {
+.tab-content body.trinity-admin .tab-content .tab-info-text {
   margin: 0 !important;
   padding-left: 15px;
   padding-right: 15px;
@@ -2073,10 +2078,10 @@ body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-
   font-weight: 300;
   color: #303030;
 }
-body.trinity-admin .tab-content .tab-title body.trinity-admin .tab-content .tab-info-text i {
+.tab-content body.trinity-admin .tab-content .tab-info-text i {
   color: #7d7d7d;
 }
-body.trinity-admin .tab-content .tab-sub-title {
+.tab-sub-title {
   font-size: 16px;
   padding-left: 20px;
   padding-right: 20px;
@@ -2084,11 +2089,11 @@ body.trinity-admin .tab-content .tab-sub-title {
   text-transform: uppercase;
   font-weight: 400;
 }
-body.trinity-admin .tab-content .tab-sub-title i {
+.tab-sub-title i {
   color: #24afc9 !important;
   padding-right: 5px;
 }
-body.trinity-admin .tab-content .tab-description {
+.tab-description {
   margin-top: 10px;
   color: #7d7d7d;
   font-size: 14px !important;
@@ -2097,7 +2102,7 @@ body.trinity-admin .tab-content .tab-description {
   margin-left: 0px !important;
   margin-right: 0px !important;
 }
-body.trinity-admin .tab-content .tab-info-text {
+.tab-info-text {
   margin: 0 !important;
   padding-left: 15px;
   padding-right: 15px;
@@ -2106,10 +2111,10 @@ body.trinity-admin .tab-content .tab-info-text {
   font-weight: 300;
   color: #303030;
 }
-body.trinity-admin .tab-content .tab-info-text i {
+.tab-info-text i {
   color: #7d7d7d;
 }
-body.trinity-admin .tabs-wrapper {
+.tabs-wrapper {
   /*//super cool loop if you looking
     // for dynamic width as:
     //  |       100        |
@@ -2129,19 +2134,19 @@ body.trinity-admin .tabs-wrapper {
     .tab-loop-width (15);*/
 }
 @media screen and (max-width: 980px) {
-  body.trinity-admin .tabs-wrapper label[for^="tab"] {
+  .tabs-wrapper label[for^="tab"] {
     width: 33.33333333% !important;
     max-width: none;
   }
 }
 @media screen and (max-width: 880px) {
-  body.trinity-admin .tabs-wrapper label[for^="tab"] {
+  .tabs-wrapper label[for^="tab"] {
     width: 50% !important;
     max-width: none;
   }
 }
 @media screen and (max-width: 768px) {
-  body.trinity-admin .tabs-wrapper label[for^="tab"] {
+  .tabs-wrapper label[for^="tab"] {
     width: 100% !important;
     max-width: none;
   }
@@ -2154,32 +2159,25 @@ body.trinity-admin .tabs-wrapper {
     - classes for space between
 
 **************************************/
-body.trinity-admin {
-  /*  .trinity-widget a {
-    color: #6b6b6b;
-  }
-
-  .trinity-widget a:hover {
-    color: #4c4c4c;
-  }*/
-  /*  .trinity-widget a:visited {
-    color: #551A8B;
-  }*/
-}
-body.trinity-admin .dashboard-widgets .small-widgets {
+.dashboard-widgets .small-widgets {
   margin-bottom: 20px;
 }
-body.trinity-admin .dashboard-widgets .small-widgets .small-widget > div {
+.dashboard-widgets .small-widgets .small-widget > div {
   padding-left: 10px;
   padding-right: 10px;
 }
-body.trinity-admin .trinity-widget {
+.trinity-widget {
   font-family: 'Roboto', sans-serif;
   height: 400px;
-  color: #303030;
-  position: relative;
   margin: 0 10px 20px;
   background: #fff;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  color: #303030;
+  padding: 0;
+  /*    a {
+          color: @color-tertiary;
+        }*/
   -webkit-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
@@ -2218,19 +2216,57 @@ body.trinity-admin .trinity-widget {
       }
     }*/
 }
-body.trinity-admin .trinity-widget .grid thead tr {
+.trinity-widget .grid thead tr {
   height: auto;
 }
-body.trinity-admin .trinity-widget:first-child {
+.trinity-widget:first-child {
   margin-left: 0px !important;
 }
-body.trinity-admin .trinity-widget:last-child {
+.trinity-widget:last-child {
   margin-right: 0px !important;
 }
-body.trinity-admin .trinity-widget:hover .close {
+.trinity-widget .header {
+  min-height: 40px;
+  color: #303030;
+  margin: 0;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 400;
+}
+.trinity-widget .box-body {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.trinity-widget .box-body p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.trinity-widget .box-table-body {
+  overflow-x: auto;
+}
+.trinity-widget .box-table-body .grid {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+.trinity-widget .box-harmonica-body .show-harmonica {
+  padding: 20px !important;
+  margin-bottom: 0px;
+  color: #303030;
+}
+.trinity-widget .box-form-body {
+  padding-bottom: 15px;
+}
+.trinity-widget .footer {
+  border-top: 1px solid #b5b5b5;
+  padding: 10px 20px;
+  font-size: 12px;
+}
+.trinity-widget:hover .close {
   display: block;
 }
-body.trinity-admin .trinity-widget .close {
+.trinity-widget .close {
   position: absolute;
   right: -15px;
   background: none;
@@ -2245,7 +2281,7 @@ body.trinity-admin .trinity-widget .close {
   transition: opacity 0.3s ease-in-out;
   cursor: pointer;
 }
-body.trinity-admin .trinity-widget .close i {
+.trinity-widget .close i {
   position: absolute;
   display: block;
   width: 30px;
@@ -2259,34 +2295,34 @@ body.trinity-admin .trinity-widget .close i {
   margin: 5px;
   font-weight: 600;
 }
-body.trinity-admin .trinity-widget .close:hover {
+.trinity-widget .close:hover {
   opacity: 1;
 }
-body.trinity-admin .trinity-widget .widgetCloser {
+.trinity-widget .widgetCloser {
   top: -15px;
 }
-body.trinity-admin .trinity-widget .widgetCloser i {
+.trinity-widget .widgetCloser i {
   background: #ff3333;
 }
-body.trinity-admin .trinity-widget .widgetCloser i:hover {
+.trinity-widget .widgetCloser i:hover {
   color: #fff;
 }
-body.trinity-admin .trinity-widget .widgetResizer {
+.trinity-widget .widgetResizer {
   bottom: -15px;
 }
-body.trinity-admin .trinity-widget .widgetResizer i {
+.trinity-widget .widgetResizer i {
   background: #40adc2;
 }
-body.trinity-admin .trinity-widget .widgetResizer i:hover {
+.trinity-widget .widgetResizer i:hover {
   color: #942a25;
 }
-body.trinity-admin .trinity-widget .widget-title {
+.trinity-widget .widget-title {
   font-size: 20px;
   text-transform: uppercase;
   font-weight: 300;
   color: #2f2f2f;
 }
-body.trinity-admin .trinity-widget .content-box {
+.trinity-widget .content-box {
   height: 350px;
   overflow-x: hidden;
   overflow-y: hidden;
@@ -2295,29 +2331,84 @@ body.trinity-admin .trinity-widget .content-box {
   z-index: 10;
   padding-top: 10px;
 }
-body.trinity-admin .trinity-widget .content-box .content {
+.trinity-widget .content-box .content {
   width: 100%;
 }
-body.trinity-admin .trinity-widget .datetime {
+/*  .trinity-widget a {
+    color: #6b6b6b;
+  }
+
+  .trinity-widget a:hover {
+    color: #4c4c4c;
+  }*/
+/*  .trinity-widget a:visited {
+    color: #551A8B;
+  }*/
+.trinity-widget .datetime {
   font-size: 12px;
   line-height: 16px;
 }
-body.trinity-admin .trinity-widget .short-cell {
+.trinity-widget .short-cell {
   width: 100%;
   overflow-x: auto;
 }
-body.trinity-admin .box-widget {
+.box-widget {
   background: #fff;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  color: #303030;
+  padding: 0;
+  /*    a {
+          color: @color-tertiary;
+        }*/
   -webkit-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
 }
-body.trinity-admin .box-widget .header-h2 {
+.box-widget .header {
+  min-height: 40px;
+  color: #303030;
+  margin: 0;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 400;
+}
+.box-widget .box-body {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.box-widget .box-body p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.box-widget .box-table-body {
+  overflow-x: auto;
+}
+.box-widget .box-table-body .grid {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+.box-widget .box-harmonica-body .show-harmonica {
+  padding: 20px !important;
+  margin-bottom: 0px;
+  color: #303030;
+}
+.box-widget .box-form-body {
+  padding-bottom: 15px;
+}
+.box-widget .footer {
+  border-top: 1px solid #b5b5b5;
+  padding: 10px 20px;
+  font-size: 12px;
+}
+.box-widget .header-h2 {
   font-weight: 300;
   color: #d55a13;
 }
-body.trinity-admin .gu-mirror {
+.gu-mirror {
   position: fixed !important;
   margin: 0 !important;
   z-index: 9999 !important;
@@ -2325,134 +2416,136 @@ body.trinity-admin .gu-mirror {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
 }
-body.trinity-admin .gu-hide {
+.gu-hide {
   display: none !important;
 }
-body.trinity-admin .gu-unselectable {
+.gu-unselectable {
   -webkit-user-select: none !important;
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   user-select: none !important;
 }
-body.trinity-admin .gu-transit {
+.gu-transit {
   opacity: 0.2;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
   filter: alpha(opacity=20);
 }
-body.trinity-admin .handle {
+.handle {
   cursor: move;
   height: 50px;
   margin-top: -20px;
 }
-body.trinity-admin .handle:hover {
+.handle:hover {
   background: #f7f7f7;
 }
-body.trinity-admin #show-widgets-form .row {
+#show-widgets-form .row {
   width: 650px;
   border: none;
   border-radius: 6px;
+  padding: 20px;
   -webkit-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
   -moz-box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.45);
 }
-body.trinity-admin #show-widgets-form .row .row {
+#show-widgets-form .row .row {
   box-shadow: none;
+  padding: 0 0 10px 0;
 }
-body.trinity-admin #show-widgets-form .row .cross-link {
+#show-widgets-form .row .cross-link {
   position: absolute;
   right: 15px;
   top: 15px;
   width: 22px;
 }
-body.trinity-admin #show-widgets-form .row .cross-link i {
+#show-widgets-form .row .cross-link i {
   padding: 10px;
   color: #b8b8b8;
   transition: .6s;
 }
-body.trinity-admin #show-widgets-form .row .cross-link i:hover {
+#show-widgets-form .row .cross-link i:hover {
   color: #585858;
 }
-body.trinity-admin #dashboard {
+#dashboard {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: 450px;
 }
-body.trinity-admin #dashboard .choice {
+#dashboard .choice {
   border: none;
   width: 100%;
   display: inline-block;
   float: left;
-  transition: .4s;
 }
-body.trinity-admin #dashboard .choice:after {
+#dashboard .choice:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin #dashboard .choice:hover {
+#dashboard .choice:hover {
   background: none;
 }
-body.trinity-admin #dashboard .choice:first-of-type {
+#dashboard .choice:first-of-type {
   margin-top: 0;
 }
-body.trinity-admin #dashboard .choice:first-of-type label {
+#dashboard .choice:first-of-type label {
   margin: 0 10px;
 }
-body.trinity-admin #dashboard .choice:first-of-type .checkbox {
+#dashboard .choice:first-of-type .checkbox {
+  transition: .3s;
   border-bottom: 1px solid #e5e5e5;
 }
-body.trinity-admin #dashboard .choice:first-of-type .checkbox:hover {
+#dashboard .choice:first-of-type .checkbox:hover {
   background: #EFEFEF;
 }
-body.trinity-admin #dashboard .choice:last-of-type {
+#dashboard .choice:last-of-type {
   width: 40px;
   margin-left: -50px;
 }
-body.trinity-admin #dashboard .choice:last-of-type .form-right label:hover {
+#dashboard .choice:last-of-type .form-right label:hover {
   background: none;
 }
-body.trinity-admin #dashboard .form-content-center {
+#dashboard .form-content-center {
   width: 100%;
   padding: 0;
 }
-body.trinity-admin #dashboard .form-content-center .form-left {
+#dashboard .form-content-center .form-left {
   width: 0;
 }
-body.trinity-admin #dashboard .form-content-center .form-right {
+#dashboard .form-content-center .form-right {
   width: 100%;
 }
-body.trinity-admin #dashboard_widgets label {
+#dashboard_widgets label {
   color: #747474;
   line-height: 40px;
 }
-body.trinity-admin #dashboard_widgets input[type=checkbox] + label:before {
+#dashboard_widgets input[type=checkbox] + label:before {
   color: #fdf1ea;
 }
-body.trinity-admin #dashboard_widgets input[type=checkbox] + label:hover:before {
+#dashboard_widgets input[type=checkbox] + label:hover:before {
   color: #d55a13;
 }
-body.trinity-admin #dashboard_widgets input[type=checkbox]:checked + label:before {
+#dashboard_widgets input[type=checkbox]:checked + label:before {
   color: #d55a13;
 }
-body.trinity-admin #dashboard_widgets input[type=checkbox]:checked + label {
+#dashboard_widgets input[type=checkbox]:checked + label {
   color: #303030;
 }
-body.trinity-admin #dashboard_expandedWidgets label {
+#dashboard_expandedWidgets label {
   position: static;
   display: block;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox {
+#dashboard_expandedWidgets .checkbox {
   position: relative;
   display: block;
   height: 41px;
   width: 40px;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox label {
+#dashboard_expandedWidgets .checkbox label {
   display: block;
   height: 41px;
   font-size: 20px;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox label:before {
+#dashboard_expandedWidgets .checkbox label:before {
   position: absolute;
   top: 10px;
   left: 0;
@@ -2463,7 +2556,7 @@ body.trinity-admin #dashboard_expandedWidgets .checkbox label:before {
   border: 1px solid #b9b9b9;
   padding: 0;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox label:after {
+#dashboard_expandedWidgets .checkbox label:after {
   position: absolute;
   top: 10px;
   left: 0;
@@ -2478,14 +2571,14 @@ body.trinity-admin #dashboard_expandedWidgets .checkbox label:after {
   border: 1px solid #3f3f3f;
   transition: left .3s;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox:last-child label {
+#dashboard_expandedWidgets .checkbox:last-child label {
   border-bottom: none;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox input[type=checkbox]:checked + label:before {
+#dashboard_expandedWidgets .checkbox input[type=checkbox]:checked + label:before {
   background: #fff;
   border: 1px solid #3f3f3f;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox input[type=checkbox]:checked + label:after {
+#dashboard_expandedWidgets .checkbox input[type=checkbox]:checked + label:after {
   padding: 0;
   margin: 0;
   margin-left: -1px;
@@ -2496,109 +2589,109 @@ body.trinity-admin #dashboard_expandedWidgets .checkbox input[type=checkbox]:che
   border: none;
   border-right: 1px solid #b9b9b9;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox input[type=checkbox]:disabled + label:before {
+#dashboard_expandedWidgets .checkbox input[type=checkbox]:disabled + label:before {
   border: 1px solid #D6D6D6;
 }
-body.trinity-admin #dashboard_expandedWidgets .checkbox input[type=checkbox]:disabled + label:after {
+#dashboard_expandedWidgets .checkbox input[type=checkbox]:disabled + label:after {
   content: '';
   border: 1px solid #D6D6D6;
 }
-body.trinity-admin .trinity-widget {
+.trinity-widget {
   padding: 20px;
 }
-body.trinity-admin .trinity-widget .data-grid thead tr {
+.trinity-widget .data-grid thead tr {
   border-bottom: 2px solid #efefef;
 }
-body.trinity-admin .small-widgets .trinity-widget {
+.small-widgets .trinity-widget {
   padding: 20px;
   margin-bottom: 0;
 }
-body.trinity-admin .small-widgets .trinity-widget .content-box {
+.small-widgets .trinity-widget .content-box {
   height: auto;
   padding-top: 0;
 }
-body.trinity-admin .small-widgets .trinity-widget .widget-small-description {
+.small-widgets .trinity-widget .widget-small-description {
   font-size: 14px;
   line-height: 1;
   color: #b5b5b5;
   font-weight: 400;
   margin-bottom: 18px;
 }
-body.trinity-admin .small-widgets .trinity-widget .span-none-padding-large-6 {
+.small-widgets .trinity-widget .span-none-padding-large-6 {
   height: 115px;
 }
-body.trinity-admin .small-widgets .trinity-widget .widget-title {
+.small-widgets .trinity-widget .widget-title {
   padding: 0;
   line-height: 1;
   font-size: 32px;
 }
-body.trinity-admin .small-widgets .trinity-widget .widget-small-icon {
+.small-widgets .trinity-widget .widget-small-icon {
   display: block;
   color: #d2d2d2;
   font-size: 40px;
 }
-body.trinity-admin .small-widgets .small-widget:first-child > div {
+.small-widgets .small-widget:first-child > div {
   padding-left: 0;
 }
-body.trinity-admin .small-widgets .small-widget:last-child > div {
+.small-widgets .small-widget:last-child > div {
   padding-right: 0;
 }
-body.trinity-admin .long-widget > div {
+.long-widget > div {
   padding: 0;
 }
-body.trinity-admin .right-widget > div {
+.right-widget > div {
   padding-right: 0;
   padding-left: 10px;
 }
-body.trinity-admin .left-widget > div {
+.left-widget > div {
   padding-right: 10px;
   padding-left: 0;
 }
 @media screen and (max-width: 1385px) {
-  body.trinity-admin .small-widgets .widget-small-description {
+  .small-widgets .widget-small-description {
     font-size: 12px;
   }
 }
 @media screen and (max-width: 1366px) {
-  body.trinity-admin .small-widgets .span-none-padding-large-6 {
+  .small-widgets .span-none-padding-large-6 {
     width: 50%;
   }
-  body.trinity-admin .small-widgets .span-none-padding-large-6 .trinity-widget {
+  .small-widgets .span-none-padding-large-6 .trinity-widget {
     margin-bottom: 20px;
   }
-  body.trinity-admin .small-widgets .span-none-padding-large-6 .trinity-widget .widget-small-description {
+  .small-widgets .span-none-padding-large-6 .trinity-widget .widget-small-description {
     font-size: 14px;
   }
-  body.trinity-admin .dashboard-widgets .small-widgets {
+  .dashboard-widgets .small-widgets {
     margin-bottom: 0;
   }
-  body.trinity-admin .dashboard-widgets .small-widgets .small-widget > div {
+  .dashboard-widgets .small-widgets .small-widget > div {
     padding: 0;
   }
-  body.trinity-admin .dashboard-widgets .small-widgets .small-widget:nth-child(odd) > div {
+  .dashboard-widgets .small-widgets .small-widget:nth-child(odd) > div {
     padding-right: 10px;
   }
-  body.trinity-admin .dashboard-widgets .small-widgets .small-widget:nth-child(even) > div {
+  .dashboard-widgets .small-widgets .small-widget:nth-child(even) > div {
     padding-left: 10px;
   }
 }
 @media screen and (max-width: 1024px) {
-  body.trinity-admin .container-with-sidebar {
+  .container-with-sidebar {
     margin-top: 0;
   }
-  body.trinity-admin .small-widgets .span-none-padding-large-6 {
+  .small-widgets .span-none-padding-large-6 {
     width: 100%;
   }
-  body.trinity-admin .small-widgets .span-none-padding-large-6 .trinity-widget {
+  .small-widgets .span-none-padding-large-6 .trinity-widget {
     margin-bottom: 20px;
   }
-  body.trinity-admin .dashboard-widgets .small-widgets .small-widget:nth-child(odd) > div,
-  body.trinity-admin .dashboard-widgets .small-widgets .small-widget:nth-child(even) > div {
+  .dashboard-widgets .small-widgets .small-widget:nth-child(odd) > div,
+  .dashboard-widgets .small-widgets .small-widget:nth-child(even) > div {
     padding: 0;
   }
-  body.trinity-admin .long-widget > div,
-  body.trinity-admin .right-widget > div,
-  body.trinity-admin .left-widget > div {
+  .long-widget > div,
+  .right-widget > div,
+  .left-widget > div {
     padding: 0;
   }
 }
@@ -2611,15 +2704,15 @@ body.trinity-admin .left-widget > div {
     - user js control messages for edit, new
 
 **************************************/
-body.trinity-admin .edit-form,
-body.trinity-admin .new-form,
-body.trinity-admin .modal-dialog form {
+.edit-form,
+.new-form,
+.modal-dialog form {
   width: 100%;
   /* Just for webkit browsers */
 }
-body.trinity-admin .edit-form .row,
-body.trinity-admin .new-form .row,
-body.trinity-admin .modal-dialog form .row {
+.edit-form .row,
+.new-form .row,
+.modal-dialog form .row {
   margin-left: auto;
   margin-right: auto;
   border-bottom: 1px solid #ededed;
@@ -2627,85 +2720,85 @@ body.trinity-admin .modal-dialog form .row {
   padding-top: 15px;
   width: 100%;
   margin-bottom: 0;
-  transition: .3;
+  transition: .3s;
 }
-body.trinity-admin .edit-form .row:last-of-type,
-body.trinity-admin .new-form .row:last-of-type,
-body.trinity-admin .modal-dialog form .row:last-of-type {
+.edit-form .row:last-of-type,
+.new-form .row:last-of-type,
+.modal-dialog form .row:last-of-type {
   border-bottom: none;
 }
-body.trinity-admin .edit-form .row:first-of-type,
-body.trinity-admin .new-form .row:first-of-type,
-body.trinity-admin .modal-dialog form .row:first-of-type {
+.edit-form .row:first-of-type,
+.new-form .row:first-of-type,
+.modal-dialog form .row:first-of-type {
   margin-top: 20px;
 }
-body.trinity-admin .edit-form .row:hover,
-body.trinity-admin .new-form .row:hover,
-body.trinity-admin .modal-dialog form .row:hover {
+.edit-form .row:hover,
+.new-form .row:hover,
+.modal-dialog form .row:hover {
   background: #f8f8f8;
 }
-body.trinity-admin .edit-form .advanced-settings .row,
-body.trinity-admin .new-form .advanced-settings .row,
-body.trinity-admin .modal-dialog form .advanced-settings .row {
+.edit-form .advanced-settings .row,
+.new-form .advanced-settings .row,
+.modal-dialog form .advanced-settings .row {
   border-bottom: 1px solid #ededed !important;
 }
-body.trinity-admin .edit-form .advanced-settings .row:first-of-type,
-body.trinity-admin .new-form .advanced-settings .row:first-of-type,
-body.trinity-admin .modal-dialog form .advanced-settings .row:first-of-type {
+.edit-form .advanced-settings .row:first-of-type,
+.new-form .advanced-settings .row:first-of-type,
+.modal-dialog form .advanced-settings .row:first-of-type {
   margin-top: 0px;
 }
-body.trinity-admin .edit-form .form-left,
-body.trinity-admin .new-form .form-left,
-body.trinity-admin .modal-dialog form .form-left {
+.edit-form .form-left,
+.new-form .form-left,
+.modal-dialog form .form-left {
   text-align: right;
 }
-body.trinity-admin .edit-form .form-right .checkbox + .description,
-body.trinity-admin .new-form .form-right .checkbox + .description,
-body.trinity-admin .modal-dialog form .form-right .checkbox + .description {
+.edit-form .form-right .checkbox + .description,
+.new-form .form-right .checkbox + .description,
+.modal-dialog form .form-right .checkbox + .description {
   float: left;
   margin-top: -25px;
   margin-left: 25px;
 }
-body.trinity-admin .edit-form .form-right .description,
-body.trinity-admin .new-form .form-right .description,
-body.trinity-admin .modal-dialog form .form-right .description {
+.edit-form .form-right .description,
+.new-form .form-right .description,
+.modal-dialog form .form-right .description {
   font-size: 12px;
   color: #727272;
 }
-body.trinity-admin .edit-form label,
-body.trinity-admin .new-form label,
-body.trinity-admin .modal-dialog form label {
+.edit-form label,
+.new-form label,
+.modal-dialog form label {
   color: #303030;
   padding: 0;
   padding-right: 20%;
   line-height: 35px;
   font-weight: 400;
 }
-body.trinity-admin .edit-form label.required:after,
-body.trinity-admin .new-form label.required:after,
-body.trinity-admin .modal-dialog form label.required:after {
+.edit-form label.required:after,
+.new-form label.required:after,
+.modal-dialog form label.required:after {
   content: "*";
   color: #d55a13;
   font-weight: 600;
 }
-body.trinity-admin .edit-form .form-content-center,
-body.trinity-admin .new-form .form-content-center,
-body.trinity-admin .modal-dialog form .form-content-center {
+.edit-form .form-content-center,
+.new-form .form-content-center,
+.modal-dialog form .form-content-center {
   margin-left: auto;
   margin-right: auto;
   display: block !important;
   position: static !important;
   float: none !important;
 }
-body.trinity-admin .edit-form input:not([type="submit"]),
-body.trinity-admin .new-form input:not([type="submit"]),
-body.trinity-admin .modal-dialog form input:not([type="submit"]),
-body.trinity-admin .edit-form select,
-body.trinity-admin .new-form select,
-body.trinity-admin .modal-dialog form select,
-body.trinity-admin .edit-form textarea,
-body.trinity-admin .new-form textarea,
-body.trinity-admin .modal-dialog form textarea {
+.edit-form input:not([type="submit"]),
+.new-form input:not([type="submit"]),
+.modal-dialog form input:not([type="submit"]),
+.edit-form select,
+.new-form select,
+.modal-dialog form select,
+.edit-form textarea,
+.new-form textarea,
+.modal-dialog form textarea {
   width: 100%;
   border-radius: 5px;
   height: 35px;
@@ -2722,95 +2815,95 @@ body.trinity-admin .modal-dialog form textarea {
   transition: .4s;
   cursor: pointer;
 }
-body.trinity-admin .edit-form input:not([type="submit"]):focus,
-body.trinity-admin .new-form input:not([type="submit"]):focus,
-body.trinity-admin .modal-dialog form input:not([type="submit"]):focus,
-body.trinity-admin .edit-form select:focus,
-body.trinity-admin .new-form select:focus,
-body.trinity-admin .modal-dialog form select:focus,
-body.trinity-admin .edit-form textarea:focus,
-body.trinity-admin .new-form textarea:focus,
-body.trinity-admin .modal-dialog form textarea:focus {
+.edit-form input:not([type="submit"]):focus,
+.new-form input:not([type="submit"]):focus,
+.modal-dialog form input:not([type="submit"]):focus,
+.edit-form select:focus,
+.new-form select:focus,
+.modal-dialog form select:focus,
+.edit-form textarea:focus,
+.new-form textarea:focus,
+.modal-dialog form textarea:focus {
   border: 1px solid #d55a13;
   background: #fff;
 }
-body.trinity-admin .edit-form input:not([type="submit"]):hover,
-body.trinity-admin .new-form input:not([type="submit"]):hover,
-body.trinity-admin .modal-dialog form input:not([type="submit"]):hover,
-body.trinity-admin .edit-form select:hover,
-body.trinity-admin .new-form select:hover,
-body.trinity-admin .modal-dialog form select:hover,
-body.trinity-admin .edit-form textarea:hover,
-body.trinity-admin .new-form textarea:hover,
-body.trinity-admin .modal-dialog form textarea:hover {
+.edit-form input:not([type="submit"]):hover,
+.new-form input:not([type="submit"]):hover,
+.modal-dialog form input:not([type="submit"]):hover,
+.edit-form select:hover,
+.new-form select:hover,
+.modal-dialog form select:hover,
+.edit-form textarea:hover,
+.new-form textarea:hover,
+.modal-dialog form textarea:hover {
   border: 1px solid #d55a13;
 }
-body.trinity-admin .edit-form .just-filter,
-body.trinity-admin .new-form .just-filter,
-body.trinity-admin .modal-dialog form .just-filter {
+.edit-form .just-filter,
+.new-form .just-filter,
+.modal-dialog form .just-filter {
   background: #f8f8f8;
   transition: .3s;
 }
-body.trinity-admin .edit-form .just-filter:hover,
-body.trinity-admin .new-form .just-filter:hover,
-body.trinity-admin .modal-dialog form .just-filter:hover {
+.edit-form .just-filter:hover,
+.new-form .just-filter:hover,
+.modal-dialog form .just-filter:hover {
   background: #fff;
 }
-body.trinity-admin .edit-form .just-filter input:not([type="submit"]),
-body.trinity-admin .new-form .just-filter input:not([type="submit"]),
-body.trinity-admin .modal-dialog form .just-filter input:not([type="submit"]),
-body.trinity-admin .edit-form .just-filter select,
-body.trinity-admin .new-form .just-filter select,
-body.trinity-admin .modal-dialog form .just-filter select,
-body.trinity-admin .edit-form .just-filter textarea,
-body.trinity-admin .new-form .just-filter textarea,
-body.trinity-admin .modal-dialog form .just-filter textarea {
+.edit-form .just-filter input:not([type="submit"]),
+.new-form .just-filter input:not([type="submit"]),
+.modal-dialog form .just-filter input:not([type="submit"]),
+.edit-form .just-filter select,
+.new-form .just-filter select,
+.modal-dialog form .just-filter select,
+.edit-form .just-filter textarea,
+.new-form .just-filter textarea,
+.modal-dialog form .just-filter textarea {
   background: #d4d4d4;
 }
-body.trinity-admin .edit-form .just-filter input:not([type="submit"]):focus,
-body.trinity-admin .new-form .just-filter input:not([type="submit"]):focus,
-body.trinity-admin .modal-dialog form .just-filter input:not([type="submit"]):focus,
-body.trinity-admin .edit-form .just-filter select:focus,
-body.trinity-admin .new-form .just-filter select:focus,
-body.trinity-admin .modal-dialog form .just-filter select:focus,
-body.trinity-admin .edit-form .just-filter textarea:focus,
-body.trinity-admin .new-form .just-filter textarea:focus,
-body.trinity-admin .modal-dialog form .just-filter textarea:focus {
+.edit-form .just-filter input:not([type="submit"]):focus,
+.new-form .just-filter input:not([type="submit"]):focus,
+.modal-dialog form .just-filter input:not([type="submit"]):focus,
+.edit-form .just-filter select:focus,
+.new-form .just-filter select:focus,
+.modal-dialog form .just-filter select:focus,
+.edit-form .just-filter textarea:focus,
+.new-form .just-filter textarea:focus,
+.modal-dialog form .just-filter textarea:focus {
   background: #e7e7e7;
 }
 @media screen and (max-width: 768px) {
-  body.trinity-admin .edit-form .form-left,
-  body.trinity-admin .new-form .form-left,
-  body.trinity-admin .modal-dialog form .form-left {
+  .edit-form .form-left,
+  .new-form .form-left,
+  .modal-dialog form .form-left {
     text-align: left;
   }
 }
 @media screen and (max-width: 767px) {
-  body.trinity-admin .edit-form label,
-  body.trinity-admin .new-form label,
-  body.trinity-admin .modal-dialog form label {
+  .edit-form label,
+  .new-form label,
+  .modal-dialog form label {
     text-align: left;
   }
 }
-body.trinity-admin .edit-form input[type="checkbox"],
-body.trinity-admin .new-form input[type="checkbox"],
-body.trinity-admin .modal-dialog form input[type="checkbox"] {
+.edit-form input[type="checkbox"],
+.new-form input[type="checkbox"],
+.modal-dialog form input[type="checkbox"] {
   display: none;
 }
-body.trinity-admin .edit-form .widget-expanded .checkbox label,
-body.trinity-admin .new-form .widget-expanded .checkbox label,
-body.trinity-admin .modal-dialog form .widget-expanded .checkbox label {
+.edit-form .widget-expanded .checkbox label,
+.new-form .widget-expanded .checkbox label,
+.modal-dialog form .widget-expanded .checkbox label {
   display: block;
   max-width: 100%;
 }
-body.trinity-admin .edit-form .widget-expanded .checkbox + label,
-body.trinity-admin .new-form .widget-expanded .checkbox + label,
-body.trinity-admin .modal-dialog form .widget-expanded .checkbox + label {
+.edit-form .widget-expanded .checkbox + label,
+.new-form .widget-expanded .checkbox + label,
+.modal-dialog form .widget-expanded .checkbox + label {
   display: none;
 }
-body.trinity-admin .edit-form .checkbox label,
-body.trinity-admin .new-form .checkbox label,
-body.trinity-admin .modal-dialog form .checkbox label {
+.edit-form .checkbox label,
+.new-form .checkbox label,
+.modal-dialog form .checkbox label {
   display: block;
   margin-right: 15px;
   position: relative;
@@ -2821,9 +2914,9 @@ body.trinity-admin .modal-dialog form .checkbox label {
   max-width: 20px;
   white-space: nowrap;
 }
-body.trinity-admin .edit-form .checkbox label:before,
-body.trinity-admin .new-form .checkbox label:before,
-body.trinity-admin .modal-dialog form .checkbox label:before {
+.edit-form .checkbox label:before,
+.new-form .checkbox label:before,
+.modal-dialog form .checkbox label:before {
   content: '';
   display: inline-block;
   width: 18px;
@@ -2834,14 +2927,14 @@ body.trinity-admin .modal-dialog form .checkbox label:before {
   vertical-align: middle;
   transition: .3s;
 }
-body.trinity-admin .edit-form .checkbox label:hover:before,
-body.trinity-admin .new-form .checkbox label:hover:before,
-body.trinity-admin .modal-dialog form .checkbox label:hover:before {
+.edit-form .checkbox label:hover:before,
+.new-form .checkbox label:hover:before,
+.modal-dialog form .checkbox label:hover:before {
   border: 1px solid #d55a13;
 }
-body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:after,
-body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:after,
-body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked + label:after {
+.edit-form .checkbox input[type="checkbox"]:checked + label:after,
+.new-form .checkbox input[type="checkbox"]:checked + label:after,
+.modal-dialog form .checkbox input[type="checkbox"]:checked + label:after {
   position: absolute;
   height: 100%;
   left: 3px;
@@ -2852,15 +2945,15 @@ body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked +
   content: '\e933';
   display: inline-block;
 }
-body.trinity-admin .edit-form .checkbox input[type="checkbox"]:checked + label:before,
-body.trinity-admin .new-form .checkbox input[type="checkbox"]:checked + label:before,
-body.trinity-admin .modal-dialog form .checkbox input[type="checkbox"]:checked + label:before {
+.edit-form .checkbox input[type="checkbox"]:checked + label:before,
+.new-form .checkbox input[type="checkbox"]:checked + label:before,
+.modal-dialog form .checkbox input[type="checkbox"]:checked + label:before {
   border: 1px solid #d55a13;
   background: #d55a13;
 }
-body.trinity-admin .edit-form .checkbox-inline label,
-body.trinity-admin .new-form .checkbox-inline label,
-body.trinity-admin .modal-dialog form .checkbox-inline label {
+.edit-form .checkbox-inline label,
+.new-form .checkbox-inline label,
+.modal-dialog form .checkbox-inline label {
   display: inline-block;
   margin-right: 15px;
   position: relative;
@@ -2871,9 +2964,9 @@ body.trinity-admin .modal-dialog form .checkbox-inline label {
   max-width: 20px;
   white-space: nowrap;
 }
-body.trinity-admin .edit-form .checkbox-inline label:before,
-body.trinity-admin .new-form .checkbox-inline label:before,
-body.trinity-admin .modal-dialog form .checkbox-inline label:before {
+.edit-form .checkbox-inline label:before,
+.new-form .checkbox-inline label:before,
+.modal-dialog form .checkbox-inline label:before {
   content: '';
   display: inline-block;
   width: 18px;
@@ -2884,14 +2977,14 @@ body.trinity-admin .modal-dialog form .checkbox-inline label:before {
   vertical-align: middle;
   transition: .3s;
 }
-body.trinity-admin .edit-form .checkbox-inline label:hover:before,
-body.trinity-admin .new-form .checkbox-inline label:hover:before,
-body.trinity-admin .modal-dialog form .checkbox-inline label:hover:before {
+.edit-form .checkbox-inline label:hover:before,
+.new-form .checkbox-inline label:hover:before,
+.modal-dialog form .checkbox-inline label:hover:before {
   border: 1px solid #d55a13;
 }
-body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + label:after,
-body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:after,
-body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:after {
+.edit-form .checkbox-inline input[type="checkbox"]:checked + label:after,
+.new-form .checkbox-inline input[type="checkbox"]:checked + label:after,
+.modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:after {
   position: absolute;
   height: 100%;
   left: 3px;
@@ -2902,38 +2995,38 @@ body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:ch
   content: '\e933';
   display: inline-block;
 }
-body.trinity-admin .edit-form .checkbox-inline input[type="checkbox"]:checked + label:before,
-body.trinity-admin .new-form .checkbox-inline input[type="checkbox"]:checked + label:before,
-body.trinity-admin .modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:before {
+.edit-form .checkbox-inline input[type="checkbox"]:checked + label:before,
+.new-form .checkbox-inline input[type="checkbox"]:checked + label:before,
+.modal-dialog form .checkbox-inline input[type="checkbox"]:checked + label:before {
   border: 1px solid #d55a13;
   background: #d55a13;
 }
-body.trinity-admin .edit-form .checkbox-inline label,
-body.trinity-admin .new-form .checkbox-inline label,
-body.trinity-admin .modal-dialog form .checkbox-inline label {
+.edit-form .checkbox-inline label,
+.new-form .checkbox-inline label,
+.modal-dialog form .checkbox-inline label {
   float: left;
   position: relative;
 }
-body.trinity-admin .edit-form .select-style select,
-body.trinity-admin .new-form .select-style select,
-body.trinity-admin .modal-dialog form .select-style select {
+.edit-form .select-style select,
+.new-form .select-style select,
+.modal-dialog form .select-style select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
   padding-right: 25px;
 }
-body.trinity-admin .edit-form .select-style:hover:after,
-body.trinity-admin .new-form .select-style:hover:after,
-body.trinity-admin .modal-dialog form .select-style:hover:after,
-body.trinity-admin .edit-form .select-style:focus:after,
-body.trinity-admin .new-form .select-style:focus:after,
-body.trinity-admin .modal-dialog form .select-style:focus:after {
+.edit-form .select-style:hover:after,
+.new-form .select-style:hover:after,
+.modal-dialog form .select-style:hover:after,
+.edit-form .select-style:focus:after,
+.new-form .select-style:focus:after,
+.modal-dialog form .select-style:focus:after {
   color: #d55a13;
 }
-body.trinity-admin .edit-form .select-style:after,
-body.trinity-admin .new-form .select-style:after,
-body.trinity-admin .modal-dialog form .select-style:after {
+.edit-form .select-style:after,
+.new-form .select-style:after,
+.modal-dialog form .select-style:after {
   transition: .4s;
   content: "\e928";
   font-family: trinity;
@@ -2945,9 +3038,9 @@ body.trinity-admin .modal-dialog form .select-style:after {
   line-height: 1;
   pointer-events: none;
 }
-body.trinity-admin .edit-form .select-style:before,
-body.trinity-admin .new-form .select-style:before,
-body.trinity-admin .modal-dialog form .select-style:before {
+.edit-form .select-style:before,
+.new-form .select-style:before,
+.modal-dialog form .select-style:before {
   content: " ";
   right: 10px;
   top: 12px;
@@ -2956,39 +3049,39 @@ body.trinity-admin .modal-dialog form .select-style:before {
   position: absolute;
   pointer-events: none;
 }
-body.trinity-admin .edit-form .select-style select:-moz-focusring,
-body.trinity-admin .new-form .select-style select:-moz-focusring,
-body.trinity-admin .modal-dialog form .select-style select:-moz-focusring {
+.edit-form .select-style select:-moz-focusring,
+.new-form .select-style select:-moz-focusring,
+.modal-dialog form .select-style select:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
 }
-body.trinity-admin .edit-form .select-style select[disabled],
-body.trinity-admin .new-form .select-style select[disabled],
-body.trinity-admin .modal-dialog form .select-style select[disabled] {
+.edit-form .select-style select[disabled],
+.new-form .select-style select[disabled],
+.modal-dialog form .select-style select[disabled] {
   cursor: not-allowed;
   background: #ebf8ff;
 }
-body.trinity-admin .edit-form textarea,
-body.trinity-admin .new-form textarea,
-body.trinity-admin .modal-dialog form textarea {
+.edit-form textarea,
+.new-form textarea,
+.modal-dialog form textarea {
   height: 100px;
   padding-top: 10px;
   line-height: 20px;
   padding-bottom: 10px;
 }
-body.trinity-admin .edit-form .tiecons-postfix,
-body.trinity-admin .new-form .tiecons-postfix,
-body.trinity-admin .modal-dialog form .tiecons-postfix {
+.edit-form .tiecons-postfix,
+.new-form .tiecons-postfix,
+.modal-dialog form .tiecons-postfix {
   position: absolute;
   right: 10px;
   top: 7px;
 }
-body.trinity-admin .edit-form input[type="submit"],
-body.trinity-admin .new-form input[type="submit"],
-body.trinity-admin .modal-dialog form input[type="submit"],
-body.trinity-admin .edit-form button[type="submit"],
-body.trinity-admin .new-form button[type="submit"],
-body.trinity-admin .modal-dialog form button[type="submit"] {
+.edit-form input[type="submit"],
+.new-form input[type="submit"],
+.modal-dialog form input[type="submit"],
+.edit-form button[type="submit"],
+.new-form button[type="submit"],
+.modal-dialog form button[type="submit"] {
   margin-left: auto;
   display: block;
   float: none !important;
@@ -2997,22 +3090,22 @@ body.trinity-admin .modal-dialog form button[type="submit"] {
   font-size: 18px;
   margin-bottom: 30px;
 }
-body.trinity-admin .edit-form input.error,
-body.trinity-admin .new-form input.error,
-body.trinity-admin .modal-dialog form input.error {
+.edit-form input.error,
+.new-form input.error,
+.modal-dialog form input.error {
   border: solid 1px red !important;
 }
-body.trinity-admin .edit-form input[type="date"]::-webkit-inner-spin-button,
-body.trinity-admin .new-form input[type="date"]::-webkit-inner-spin-button,
-body.trinity-admin .modal-dialog form input[type="date"]::-webkit-inner-spin-button,
-body.trinity-admin .edit-form input[type="date"]::-webkit-outer-spin-button,
-body.trinity-admin .new-form input[type="date"]::-webkit-outer-spin-button,
-body.trinity-admin .modal-dialog form input[type="date"]::-webkit-outer-spin-button {
+.edit-form input[type="date"]::-webkit-inner-spin-button,
+.new-form input[type="date"]::-webkit-inner-spin-button,
+.modal-dialog form input[type="date"]::-webkit-inner-spin-button,
+.edit-form input[type="date"]::-webkit-outer-spin-button,
+.new-form input[type="date"]::-webkit-outer-spin-button,
+.modal-dialog form input[type="date"]::-webkit-outer-spin-button {
   height: 100%;
 }
-body.trinity-admin .edit-form input[type="date"]::-webkit-calendar-picker-indicator,
-body.trinity-admin .new-form input[type="date"]::-webkit-calendar-picker-indicator,
-body.trinity-admin .modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator {
+.edit-form input[type="date"]::-webkit-calendar-picker-indicator,
+.new-form input[type="date"]::-webkit-calendar-picker-indicator,
+.modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator {
   position: relative;
   display: block;
   width: 14px;
@@ -3020,9 +3113,9 @@ body.trinity-admin .modal-dialog form input[type="date"]::-webkit-calendar-picke
   right: -6px;
   color: transparent;
 }
-body.trinity-admin .edit-form input[type="date"]::-webkit-calendar-picker-indicator:after,
-body.trinity-admin .new-form input[type="date"]::-webkit-calendar-picker-indicator:after,
-body.trinity-admin .modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator:after {
+.edit-form input[type="date"]::-webkit-calendar-picker-indicator:after,
+.new-form input[type="date"]::-webkit-calendar-picker-indicator:after,
+.modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator:after {
   content: "\e654";
   font-family: "tiecons";
   font-size: 12px;
@@ -3032,19 +3125,19 @@ body.trinity-admin .modal-dialog form input[type="date"]::-webkit-calendar-picke
   top: 7px;
   pointer-events: none;
 }
-body.trinity-admin .modal-dialog form label {
+.modal-dialog form label {
   width: 100%;
 }
-body.trinity-admin .form-title {
+.form-title {
   padding: 15px;
 }
-body.trinity-admin .delete-form {
+.delete-form {
   width: 100%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-body.trinity-admin .delete-form input[type="submit"] {
+.delete-form input[type="submit"] {
   margin-left: auto;
   display: block;
   float: none !important;
@@ -3054,143 +3147,143 @@ body.trinity-admin .delete-form input[type="submit"] {
   -webkit-appearance: none;
   transition: 0.3s ease-in;
 }
-body.trinity-admin .delete-form i.trinity-warning:before {
+.delete-form i.trinity-warning:before {
   font-size: 150px;
   color: orange;
 }
-body.trinity-admin .delete-form h2.warning {
+.delete-form h2.warning {
   font-weight: 200;
   font-size: 60px;
 }
-body.trinity-admin .delete-form p {
+.delete-form p {
   font-size: 20px;
   color: #8e8e8e;
 }
-body.trinity-admin .delete-form ul {
+.delete-form ul {
   font-size: 20px;
   color: #8e8e8e;
   margin-top: 3px;
 }
-body.trinity-admin .delete-form li {
+.delete-form li {
   margin-top: 5px;
 }
-body.trinity-admin .delete-form .row {
+.delete-form .row {
   margin: 15px 0;
 }
-body.trinity-admin h2.warning {
+h2.warning {
   background-color: transparent !important;
 }
-body.trinity-admin .info-empty-form {
+.info-empty-form {
   width: 100%;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
 }
-body.trinity-admin .info-empty-form i.trinity-info:before {
+.info-empty-form i.trinity-info:before {
   font-size: 140px;
   color: deepskyblue;
 }
-body.trinity-admin .info-empty-form h2.warning {
+.info-empty-form h2.warning {
   font-weight: 200;
   font-size: 50px;
 }
-body.trinity-admin .info-empty-form p {
+.info-empty-form p {
   font-size: 20px;
   color: #8e8e8e;
 }
-body.trinity-admin .info-empty-form .row {
+.info-empty-form .row {
   margin: 10px 0 20px 0;
 }
-body.trinity-admin .info-empty-form .button {
+.info-empty-form .button {
   margin-bottom: 30px;
 }
-body.trinity-admin .box-new-form {
+.box-new-form {
   padding-bottom: 15px;
 }
-body.trinity-admin .big-input input:not([type="submit"]),
-body.trinity-admin .big-input select,
-body.trinity-admin .big-input textarea {
+.big-input input:not([type="submit"]),
+.big-input select,
+.big-input textarea {
   min-height: 300px;
 }
-body.trinity-admin .help-buttons {
+.help-buttons {
   right: 0;
   position: absolute;
 }
-body.trinity-admin .help-buttons i,
-body.trinity-admin .help-buttons button {
+.help-buttons i,
+.help-buttons button {
   display: inline-block;
 }
-body.trinity-admin .collection-widget div {
+.collection-widget div {
   width: 100% !important;
   padding: 0px !important;
   margin: 0px !important;
 }
-body.trinity-admin .collection-widget .form-right {
+.collection-widget .form-right {
   margin-bottom: 5px !important;
 }
-body.trinity-admin .collection-widget .form-left {
+.collection-widget .form-left {
   display: none !important;
 }
-body.trinity-admin .collection-widget .add-collection-item {
+.collection-widget .add-collection-item {
   color: #40adc2;
 }
-body.trinity-admin .collection-widget .add-collection-item p {
+.collection-widget .add-collection-item p {
   margin: 5px 0 !important;
   font-weight: 500;
 }
-body.trinity-admin .collection-widget .add-collection-item:hover {
+.collection-widget .add-collection-item:hover {
   color: #389db0;
 }
-body.trinity-admin .collection-widget .add-collection-item i {
+.collection-widget .add-collection-item i {
   font-size: 18px;
   padding: 10px;
 }
-body.trinity-admin .collection-widget .add-collection-item i:after {
+.collection-widget .add-collection-item i:after {
   font-family: 'Roboto', sans-serif;
   margin-left: 5px;
   content: 'Add item';
   font-size: 16px;
 }
-body.trinity-admin .collection-widget .delete-collection-item .tiecons,
-body.trinity-admin .collection-widget .delete-collection-item .trinity {
+.collection-widget .delete-collection-item .tiecons,
+.collection-widget .delete-collection-item .trinity {
   color: #c22a00;
   position: absolute;
   right: -20px;
   top: 10px;
   transition: all 0.1s;
 }
-body.trinity-admin .collection-widget .delete-collection-item .tiecons:hover,
-body.trinity-admin .collection-widget .delete-collection-item .trinity:hover {
+.collection-widget .delete-collection-item .tiecons:hover,
+.collection-widget .delete-collection-item .trinity:hover {
   -ms-transform: scale(1.2);
   /* IE 9 */
   -webkit-transform: scale(1.2);
   /* Safari */
   transform: scale(1.2);
 }
-body.trinity-admin .form-width-100 .form-content-center {
+.form-width-100 .form-content-center {
   width: 100%;
 }
-body.trinity-admin div[class^="control-"] {
+div[class^="control-"] {
   padding: 0 5px;
   display: block;
   float: left;
   line-height: 35px;
   font-weight: 500;
 }
-body.trinity-admin div[class^="control-"] i {
+div[class^="control-"] i {
   font-weight: 600;
   float: left;
   padding: 5px;
   font-size: 18px;
   line-height: 24px;
 }
-body.trinity-admin .control-ok {
+.control-ok {
   color: #5da423;
 }
-body.trinity-admin .control-fail {
+.control-fail {
   color: #d2322b;
 }
-body.trinity-admin .help-on-hover:not(.lol) {
+.help-on-hover:not(.lol) {
   position: absolute;
   font-weight: 600;
   float: left;
@@ -3199,7 +3292,7 @@ body.trinity-admin .help-on-hover:not(.lol) {
   line-height: 24px;
   color: #4a94cc;
 }
-body.trinity-admin .lol {
+.lol {
   display: none;
   font-size: 14px;
   color: #303030;
@@ -3210,7 +3303,7 @@ body.trinity-admin .lol {
   left: 20px;
   font-family: 'Roboto', sans-serif;
 }
-body.trinity-admin .help-on-hover:hover .lol {
+.help-on-hover:hover .lol {
   display: block;
   width: 210px;
   background: #ffecc2;
@@ -3218,40 +3311,40 @@ body.trinity-admin .help-on-hover:hover .lol {
   position: absolute;
 }
 @media screen and (max-width: 1475px) {
-  body.trinity-admin .pad {
+  .pad {
     width: 29.5%;
     display: block;
     float: left;
     height: 1px;
   }
-  body.trinity-admin div[class^="control-"] i {
+  div[class^="control-"] i {
     padding-left: 0;
   }
 }
 @media screen and (max-width: 1200px) {
-  body.trinity-admin .lol {
+  .lol {
     right: 20px;
     left: auto;
   }
 }
 @media screen and (max-width: 1030px) {
-  body.trinity-admin .pad {
+  .pad {
     width: 37.5%;
   }
 }
 /**
     items under navbar.
 */
-body.trinity-admin .box-new-form {
+.box-new-form {
   position: relative;
 }
-body.trinity-admin .box-new-form .page-actions {
+.box-new-form .page-actions {
   margin-top: 0;
   position: absolute;
   top: 0;
   right: 0;
 }
-body.trinity-admin .box-new-form .page-actions .item {
+.box-new-form .page-actions .item {
   display: block;
   background: #979797;
   color: #fff;
@@ -3260,58 +3353,58 @@ body.trinity-admin .box-new-form .page-actions .item {
   font-size: 12px;
   transition: .3s;
 }
-body.trinity-admin .box-new-form .page-actions .item:hover {
+.box-new-form .page-actions .item:hover {
   background: #7d7d7d;
 }
-body.trinity-admin .box-new-form .page-actions .item a {
+.box-new-form .page-actions .item a {
   padding: 5px 15px;
   display: inline-block;
 }
-body.trinity-admin .box-new-form .page-actions .item #expert-mode {
+.box-new-form .page-actions .item #expert-mode {
   color: #fff;
 }
-body.trinity-admin .box-new-form .page-actions .open {
+.box-new-form .page-actions .open {
   background: #389db0;
 }
-body.trinity-admin .box-new-form .page-actions .open a {
+.box-new-form .page-actions .open a {
   font-weight: 600;
 }
-body.trinity-admin .box-new-form .page-actions .open:hover {
+.box-new-form .page-actions .open:hover {
   background: #40adc2;
 }
-body.trinity-admin .navigation-box {
+.navigation-box {
   height: 100px;
   display: block;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child(5) {
+.navigation-box span.tooltip:nth-child(5) {
   z-index: 25;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child(4) {
+.navigation-box span.tooltip:nth-child(4) {
   z-index: 26;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child(3) {
+.navigation-box span.tooltip:nth-child(3) {
   z-index: 27;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child(2) {
+.navigation-box span.tooltip:nth-child(2) {
   z-index: 28;
 }
-body.trinity-admin .navigation-box span.tooltip:nth-child(1) {
+.navigation-box span.tooltip:nth-child(1) {
   z-index: 29;
 }
-body.trinity-admin .navigation-box .tooltip {
+.navigation-box .tooltip {
   float: right;
   height: 100%;
 }
-body.trinity-admin .navigation-box .tooltip .tooltip-hover {
+.navigation-box .tooltip .tooltip-hover {
   height: 50px;
   width: 50px;
   display: block;
   margin: 25px 25px 25px 0;
 }
-body.trinity-admin .navigation-box .tooltip a {
+.navigation-box .tooltip a {
   display: block;
 }
-body.trinity-admin .navigation-box .tooltip .tooltip-left {
+.navigation-box .tooltip .tooltip-left {
   padding: 0;
   line-height: 30px;
   font-size: 13px;
@@ -3320,7 +3413,7 @@ body.trinity-admin .navigation-box .tooltip .tooltip-left {
   top: 11px;
   background: rgba(0, 0, 0, 0.95);
 }
-body.trinity-admin .navigation-box .tooltip .tooltip-left:before {
+.navigation-box .tooltip .tooltip-left:before {
   top: 7px;
   left: auto;
   right: -15px;
@@ -3328,7 +3421,7 @@ body.trinity-admin .navigation-box .tooltip .tooltip-left:before {
   border-left: 16px solid rgba(0, 0, 0, 0.95);
   border-bottom: 7px solid transparent;
 }
-body.trinity-admin .navigation-box .new-entry {
+.navigation-box .new-entry {
   position: relative;
   display: inline-block;
   z-index: 10;
@@ -3341,8 +3434,8 @@ body.trinity-admin .navigation-box .new-entry {
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   background: #40adc2;
 }
-body.trinity-admin .navigation-box .new-entry i,
-body.trinity-admin .navigation-box .new-entry span {
+.navigation-box .new-entry i,
+.navigation-box .new-entry span {
   color: #fff;
   font-weight: 900;
   font-size: 20px;
@@ -3350,10 +3443,10 @@ body.trinity-admin .navigation-box .new-entry span {
   padding: 15px;
   background: transparent;
 }
-body.trinity-admin .navigation-box .new-entry:hover {
+.navigation-box .new-entry:hover {
   background: #2c7a8a;
 }
-body.trinity-admin .navigation-box .go-up {
+.navigation-box .go-up {
   position: relative;
   display: inline-block;
   z-index: 10;
@@ -3366,8 +3459,8 @@ body.trinity-admin .navigation-box .go-up {
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   background: #d55a13;
 }
-body.trinity-admin .navigation-box .go-up i,
-body.trinity-admin .navigation-box .go-up span {
+.navigation-box .go-up i,
+.navigation-box .go-up span {
   color: #fff;
   font-weight: 900;
   font-size: 20px;
@@ -3375,10 +3468,10 @@ body.trinity-admin .navigation-box .go-up span {
   padding: 15px;
   background: transparent;
 }
-body.trinity-admin .navigation-box .go-up:hover {
+.navigation-box .go-up:hover {
   background: #8f3c0d;
 }
-body.trinity-admin .navigation-box .reload {
+.navigation-box .reload {
   position: relative;
   display: inline-block;
   z-index: 10;
@@ -3391,8 +3484,8 @@ body.trinity-admin .navigation-box .reload {
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   background: #d55a13;
 }
-body.trinity-admin .navigation-box .reload i,
-body.trinity-admin .navigation-box .reload span {
+.navigation-box .reload i,
+.navigation-box .reload span {
   color: #fff;
   font-weight: 900;
   font-size: 20px;
@@ -3400,38 +3493,83 @@ body.trinity-admin .navigation-box .reload span {
   padding: 15px;
   background: transparent;
 }
-body.trinity-admin .navigation-box .reload i,
-body.trinity-admin .navigation-box .reload span {
+.navigation-box .reload i,
+.navigation-box .reload span {
   font-weight: 100;
 }
-body.trinity-admin .navigation-box .reload:hover {
+.navigation-box .reload:hover {
   background: #8f3c0d;
 }
 /**
     Modal dialog
     Dashboard - edit widgets (plus button)
 */
-body.trinity-admin .modal-dialog > div {
+.modal-dialog > div {
   background: #fff !important;
   background: #fff;
+  position: relative;
+  font-family: "Roboto", sans-serif;
+  color: #303030;
+  padding: 0;
+  /*    a {
+          color: @color-tertiary;
+        }*/
   -webkit-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
 }
-body.trinity-admin .modal-dialog header {
+.modal-dialog > div .header {
+  min-height: 40px;
+  color: #303030;
+  margin: 0;
+  font-size: 20px;
+  padding: 20px;
+  font-weight: 400;
+}
+.modal-dialog > div .box-body {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.modal-dialog > div .box-body p {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+.modal-dialog > div .box-table-body {
+  overflow-x: auto;
+}
+.modal-dialog > div .box-table-body .grid {
+  width: 100%;
+  border-left: none;
+  border-right: none;
+}
+.modal-dialog > div .box-harmonica-body .show-harmonica {
+  padding: 20px !important;
+  margin-bottom: 0px;
+  color: #303030;
+}
+.modal-dialog > div .box-form-body {
+  padding-bottom: 15px;
+}
+.modal-dialog > div .footer {
+  border-top: 1px solid #b5b5b5;
+  padding: 10px 20px;
+  font-size: 12px;
+}
+.modal-dialog header {
   border-bottom: 1px solid #ededed;
   padding-bottom: 10px;
 }
-body.trinity-admin .modal-dialog header h2 {
+.modal-dialog header h2 {
   color: #d55a13;
   font-size: 32px;
   font-weight: 300;
 }
-body.trinity-admin .modal-dialog header p {
+.modal-dialog header p {
   color: #b5b5b5;
   font-weight: 300;
 }
-body.trinity-admin .modal-dialog label.required {
+.modal-dialog label.required {
   display: none;
 }
 /**************************************
@@ -3445,129 +3583,130 @@ body.trinity-admin .modal-dialog label.required {
       - pagination
 
 **************************************/
-body.trinity-admin .show-filters {
+.show-filters {
   display: none;
 }
-body.trinity-admin .grid {
+.grid {
   border: none;
   background: transparent;
   width: 100%;
   font-family: 'Roboto', sans-serif;
 }
-body.trinity-admin .grid thead {
+.grid thead {
   background: transparent;
   border-bottom: 2px solid #ededed;
 }
-body.trinity-admin .grid thead tr {
+.grid thead tr {
   height: 45px;
 }
-body.trinity-admin .grid thead th {
+.grid thead th {
   font-size: 16px;
   color: #2f2f2f;
   font-weight: 500;
 }
-body.trinity-admin .grid thead th[class*=order-] {
+.grid thead th[class*=order-] {
   cursor: pointer;
 }
-body.trinity-admin .grid thead td[class*=center] {
+.grid thead td[class*=center] {
   text-align: center;
 }
-body.trinity-admin .grid thead .order-by-asc:after {
+.grid thead .order-by-asc:after {
   position: absolute;
   padding-left: 7px;
   font-family: trinity;
   content: "\e929";
   font-size: 10px;
 }
-body.trinity-admin .grid thead .order-by-desc:after {
+.grid thead .order-by-desc:after {
   position: absolute;
   font-family: trinity;
   padding-left: 7px;
   content: "\e928";
   font-size: 10px;
 }
-body.trinity-admin .grid thead tr:hover {
+.grid thead tr:hover {
   background: transparent;
 }
-body.trinity-admin .grid .cell-center {
+.grid .cell-center {
   text-align: center;
 }
-body.trinity-admin .grid tbody tr {
+.grid tbody tr {
   background: #fff;
   border-bottom: 1px solid #ededed;
+  transition: .3s;
 }
-body.trinity-admin .grid tbody tr:hover {
+.grid tbody tr:hover {
   background: #f8f8f8;
 }
-body.trinity-admin .grid tbody tr:hover > td:last-of-type .button-small {
+.grid tbody tr:hover > td:last-of-type .button-small {
   background: #f3a375;
   color: #fff;
 }
-body.trinity-admin .grid tbody tr:hover > td:last-of-type .button-small:visited {
+.grid tbody tr:hover > td:last-of-type .button-small:visited {
   color: #fff;
 }
-body.trinity-admin .grid tbody tr:hover > td:last-of-type .button-small:hover {
+.grid tbody tr:hover > td:last-of-type .button-small:hover {
   background: #ea6417;
 }
-body.trinity-admin .grid tbody tr:hover > td a {
+.grid tbody tr:hover > td a {
   color: #904c25;
 }
-body.trinity-admin .grid tbody tr:hover > td a:hover {
+.grid tbody tr:hover > td a:hover {
   color: #d55a13;
 }
-body.trinity-admin .grid tbody tr:hover > td a li {
+.grid tbody tr:hover > td a li {
   background: #e0a888;
   transition: .3s;
 }
-body.trinity-admin .grid tbody tr:hover > td a li:hover {
+.grid tbody tr:hover > td a li:hover {
   background: #ea6417;
 }
-body.trinity-admin .grid tbody tr:hover > td:last-of-type .revelation:after {
+.grid tbody tr:hover > td:last-of-type .revelation:after {
   background: #f3a375;
 }
-body.trinity-admin .grid tbody tr:hover > td:last-of-type .revelation:hover:after {
+.grid tbody tr:hover > td:last-of-type .revelation:hover:after {
   background: #ea6417;
 }
-body.trinity-admin .grid tbody tr td {
+.grid tbody tr td {
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 20em;
 }
-body.trinity-admin .grid tbody tr a {
+.grid tbody tr a {
   transition: .3s;
   color: #4d4845;
 }
-body.trinity-admin .grid tbody tr a:hover {
+.grid tbody tr a:hover {
   color: #d55a13;
 }
-body.trinity-admin .grid tbody tr .button-small {
+.grid tbody tr .button-small {
   color: #fff;
 }
-body.trinity-admin .grid tbody tr .button-small:hover {
+.grid tbody tr .button-small:hover {
   color: #fff;
 }
-body.trinity-admin .grid tbody tr .button-small:visited {
+.grid tbody tr .button-small:visited {
   color: #fff;
 }
-body.trinity-admin .grid th:first-child,
-body.trinity-admin .grid td:first-child {
+.grid th:first-child,
+.grid td:first-child {
   padding-left: 20px;
 }
-body.trinity-admin .grid .trinity-warning {
+.grid .trinity-warning {
   color: #f1935d;
 }
-body.trinity-admin .pagination {
+.pagination {
   margin: 10px 35px 35px 35px;
   float: right;
 }
-body.trinity-admin .pagination:after {
+.pagination:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .pagination li a {
+.pagination li a {
   min-width: 40px;
   height: 40px;
   margin: 2px;
@@ -3581,57 +3720,57 @@ body.trinity-admin .pagination li a {
   transition: 0.4s;
   cursor: pointer;
 }
-body.trinity-admin .pagination li a:hover {
+.pagination li a:hover {
   background: #a5a5a5;
   color: #fff;
 }
-body.trinity-admin .pagination .break {
+.pagination .break {
   display: inline-block;
   float: left;
   font-size: 42px;
   color: #e8e8e8;
   line-height: 1;
 }
-body.trinity-admin .pagination .previous a,
-body.trinity-admin .pagination .next a {
+.pagination .previous a,
+.pagination .next a {
   line-height: 34px;
 }
-body.trinity-admin .pagination .previous a:hover,
-body.trinity-admin .pagination .next a:hover {
+.pagination .previous a:hover,
+.pagination .next a:hover {
   color: #d3d3d3;
 }
-body.trinity-admin .pagination .previous a i:before,
-body.trinity-admin .pagination .next a i:before {
+.pagination .previous a i:before,
+.pagination .next a i:before {
   padding-top: 5px;
 }
-body.trinity-admin .pagination .previous a {
+.pagination .previous a {
   transform: rotate(90deg);
 }
-body.trinity-admin .pagination .next a {
+.pagination .next a {
   transform: rotate(-90deg);
 }
-body.trinity-admin .pagination li.active a {
+.pagination li.active a {
   background: #d55a13;
   color: #fff;
 }
-body.trinity-admin .record_properties th {
+.record_properties th {
   width: 350px;
 }
-body.trinity-admin .ban-grid-filter {
+.ban-grid-filter {
   margin: 30px 0 0 20px;
   position: absolute;
   z-index: 99;
 }
-body.trinity-admin .ban-grid-filter select {
+.ban-grid-filter select {
   height: 32px;
 }
 @media screen and (max-width: 1366px) {
-  body.trinity-admin .grid tbody tr td {
+  .grid tbody tr td {
     max-width: 16em;
   }
 }
 @media screen and (max-width: 1140px) {
-  body.trinity-admin .ban-grid-filter {
+  .ban-grid-filter {
     display: none;
   }
 }
@@ -3640,18 +3779,18 @@ body.trinity-admin .ban-grid-filter select {
   Not sure if still used, mainly replaced by new grid
 
 **************************************/
-body.trinity-admin .tabs-wrapper table.grid {
+.tabs-wrapper table.grid {
   margin: 20px 0;
 }
-body.trinity-admin .action-cell {
+.action-cell {
   position: relative;
   min-height: 40px;
 }
-body.trinity-admin .action-cell .content a {
+.action-cell .content a {
   font-weight: 500;
   text-transform: uppercase;
 }
-body.trinity-admin .action-cell .actions {
+.action-cell .actions {
   display: block;
   font-size: 12px;
   visibility: hidden;
@@ -3659,27 +3798,27 @@ body.trinity-admin .action-cell .actions {
   left: 0;
   bottom: -5px;
 }
-body.trinity-admin .action-cell .actions a {
+.action-cell .actions a {
   color: #7f7f7f;
   font-weight: 400;
   text-decoration: underline;
 }
-body.trinity-admin .action-cell .actions a:hover {
+.action-cell .actions a:hover {
   color: #40adc2;
   text-decoration: none;
 }
-body.trinity-admin .edit-grid .edit-input:disabled {
+.edit-grid .edit-input:disabled {
   border: 1px solid transparent;
   color: #000000;
 }
-body.trinity-admin .edit-grid .edit-input {
+.edit-grid .edit-input {
   border: 1px solid #A9A9A9;
   background: transparent;
 }
-body.trinity-admin .edit-grid label {
+.edit-grid label {
   text-align: left;
 }
-body.trinity-admin .edit-grid label span:before {
+.edit-grid label span:before {
   padding: 4px;
 }
 /**************************************
@@ -3698,10 +3837,25 @@ body.trinity-admin .edit-grid label span:before {
     font-family: 'Roboto', sans-serif !important;
   }
 }
-.button {
+.button-parameters {
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+  text-decoration: none;
+  text-transform: uppercase;
+  line-height: 1;
+  border: none;
+  background: #c6bfbb;
+  color: #fff;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  transition: .3s;
+}
+.button-parameters:hover {
+  color: #fff;
+  background: #ee8446;
+}
+.button {
   font-size: 18px;
   text-decoration: none;
   vertical-align: middle;
@@ -3802,9 +3956,6 @@ body.trinity-admin .edit-grid label span:before {
   border: 1px solid #3d1d17;
 }
 .button-medium {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
   font-size: 18px;
   text-decoration: none;
   vertical-align: middle;
@@ -3925,9 +4076,6 @@ body.trinity-admin .edit-grid label span:before {
   box-shadow: 0px -2px 0px 0px #b94b00 inset;
 }
 .button-small {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
   font-size: 18px;
   text-decoration: none;
   vertical-align: middle;
@@ -3943,13 +4091,13 @@ body.trinity-admin .edit-grid label span:before {
   text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
   cursor: pointer;
   transition: .3s;
-  -moz-border-radius: 3px;
-  -webkit-border-radius: 3px;
-  border-radius: 3px;
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  border-radius: 4px;
   max-height: 25px;
-  font-size: .85em;
-  padding: 6px 12px;
-  min-width: 95px;
+  font-size: 12px;
+  padding: 6px 10px;
+  min-width: 90px;
   display: inline-block;
   line-height: 1;
 }
@@ -4047,9 +4195,6 @@ body.trinity-admin .edit-grid label span:before {
   border: 1px solid #2f2f2f;
 }
 .trinity-form-loading {
-  text-align: center;
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
   font-size: 18px;
   text-decoration: none;
   vertical-align: middle;
@@ -4158,7 +4303,7 @@ body.trinity-admin .edit-grid label span:before {
   font-family: 'tiecons';
   speak: none;
   min-width: 16px;
-  font-size: 18px;
+  font-size: 15px;
   display: inline-block;
   margin-left: 5px;
   -webkit-animation: spin 3s linear infinite;
@@ -4170,7 +4315,7 @@ body.trinity-admin .edit-grid label span:before {
   font-family: 'tiecons';
   speak: none;
   min-width: 16px;
-  font-size: 18px;
+  font-size: 15px;
   display: inline-block;
   margin-left: 5px;
   font-family: 'trinity';
@@ -4180,7 +4325,7 @@ body.trinity-admin .edit-grid label span:before {
   font-family: 'tiecons';
   speak: none;
   min-width: 16px;
-  font-size: 18px;
+  font-size: 15px;
   display: inline-block;
   margin-left: 5px;
   font-family: 'trinity';
@@ -4190,7 +4335,7 @@ body.trinity-admin .edit-grid label span:before {
   font-family: 'tiecons';
   speak: none;
   min-width: 16px;
-  font-size: 18px;
+  font-size: 15px;
   display: inline-block;
   margin-left: 5px;
 }
@@ -4199,7 +4344,7 @@ body.trinity-admin .edit-grid label span:before {
   font-family: 'tiecons';
   speak: none;
   min-width: 16px;
-  font-size: 18px;
+  font-size: 15px;
   display: inline-block;
   margin-left: 5px;
   font-family: 'trinity';
@@ -4240,25 +4385,19 @@ body.trinity-admin .edit-grid label span:before {
       - inner shadow as from tabs
 
 **************************************/
-body.trinity-admin {
-  /*  // Bowtie...
-  .harmonica input:checked+.main-panel label:hover{
-    color: inherit;
-  }*/
-}
-body.trinity-admin .box .show-harmonica > form {
+.box .show-harmonica > form {
   margin-left: -20px;
   margin-right: -20px;
   width: 105%;
 }
-body.trinity-admin .harmonica .main-panel {
+.harmonica .main-panel {
   margin-bottom: 0;
   min-height: 51px;
 }
-body.trinity-admin .harmonica .main-panel input {
+.harmonica .main-panel input {
   display: block !important;
 }
-body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
+.harmonica .main-panel label[for^="harmonica"] {
   font-size: 14px;
   text-align: left;
   font-weight: 300;
@@ -4269,17 +4408,17 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"] {
   text-transform: uppercase;
   margin: 0;
 }
-body.trinity-admin .harmonica .main-panel label[for^="harmonica"] i {
+.harmonica .main-panel label[for^="harmonica"] i {
   margin-right: 10px;
   font-size: 16px;
   line-height: 30px;
   float: left;
   color: #d55a13;
 }
-body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:hover {
+.harmonica .main-panel label[for^="harmonica"]:hover {
   background: #ebebeb;
 }
-body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:before {
+.harmonica .main-panel label[for^="harmonica"]:before {
   content: "\e656";
   display: block;
   font-family: 'tiecons';
@@ -4289,10 +4428,10 @@ body.trinity-admin .harmonica .main-panel label[for^="harmonica"]:before {
   float: left;
   margin-right: 10px;
 }
-body.trinity-admin .harmonica .main-panel label[for^="default"] {
+.harmonica .main-panel label[for^="default"] {
   text-align: left;
 }
-body.trinity-admin .harmonica .main-panel .show-harmonica {
+.harmonica .main-panel .show-harmonica {
   position: relative;
   background: none;
   padding: 0;
@@ -4301,15 +4440,15 @@ body.trinity-admin .harmonica .main-panel .show-harmonica {
   overflow-y: auto;
   overflow-x: hidden;
 }
-body.trinity-admin .harmonica .main-panel .show-harmonica .harmonica-content {
+.harmonica .main-panel .show-harmonica .harmonica-content {
   color: #303030;
   padding-left: 15px;
   padding-right: 15px;
 }
-body.trinity-admin .harmonica .main-panel .show-harmonica input[type="checkbox"] {
+.harmonica .main-panel .show-harmonica input[type="checkbox"] {
   display: none !important;
 }
-body.trinity-admin .harmonica .main-panel .show-harmonica label {
+.harmonica .main-panel .show-harmonica label {
   color: #303030;
   font-weight: 300;
   font-size: 14px;
@@ -4317,35 +4456,42 @@ body.trinity-admin .harmonica .main-panel .show-harmonica label {
   padding-top: 5px;
   background: transparent;
 }
-body.trinity-admin .harmonica .main-panel:first-of-type label[for^="harmonica"] {
+.harmonica .main-panel:first-of-type label[for^="harmonica"] {
   transition: box-shadow 0s, background 0.2s;
   border-top: 1px solid transparent;
 }
-body.trinity-admin .harmonica .main-panel:first-of-type label[for^="harmonica"]:hover {
+.harmonica .main-panel:first-of-type label[for^="harmonica"]:hover {
   -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
   -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
 }
-body.trinity-admin .harmonica label[for^="help-content"] {
+.harmonica label[for^="help-content"] {
   position: absolute;
   top: 0;
   right: 0;
   padding: 0;
 }
-body.trinity-admin .harmonica label[for^="help-content"] i {
+.harmonica label[for^="help-content"] i {
   display: block;
   font-size: 30px;
   padding: 15px;
   color: #40adc2;
 }
-body.trinity-admin .harmonica label[for^="help-content"] i:hover {
+.harmonica label[for^="help-content"] i:hover {
   color: #2c7a8a;
 }
-body.trinity-admin .harmonica input[id^="help-content"]:checked ~ .help-content {
+.harmonica input[id^="help-content"]:checked ~ .help-content {
   max-height: 500px;
   margin: 15px auto;
 }
-body.trinity-admin .harmonica .help-content {
+.harmonica input:checked + .main-panel label {
+  background: transparent;
+  font-weight: 300;
+}
+.harmonica input:checked + .main-panel label:hover {
+  color: #303030;
+}
+.harmonica .help-content {
   overflow: hidden;
   max-width: 400px;
   max-height: 0;
@@ -4353,20 +4499,20 @@ body.trinity-admin .harmonica .help-content {
   margin: 0 auto;
   transition: .7s;
 }
-body.trinity-admin .harmonica .help-content h4 {
+.harmonica .help-content h4 {
   margin: 5px 0;
 }
-body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel {
+.harmonica input[id^="harmonica"]:checked + .main-panel {
   max-height: 650px;
 }
-body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
+.harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
   font-weight: 400;
   background: #ebebeb;
   color: #d55a13;
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #ccc;
 }
-body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"]:before {
+.harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"]:before {
   content: "\e654";
   display: block;
   font-family: 'tiecons';
@@ -4376,20 +4522,24 @@ body.trinity-admin .harmonica input[id^="harmonica"]:checked + .main-panel label
   float: left;
   margin-right: 10px;
 }
-body.trinity-admin .tab-body-wrapper .harmonica input:checked + .main-panel:first-of-type label[for^=harmonica] {
+.tab-body-wrapper .harmonica input:checked + .main-panel:first-of-type label[for^=harmonica] {
   border-top: none;
   -webkit-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
   -moz-box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2) inset;
 }
+/*  // Bowtie...
+  .harmonica input:checked+.main-panel label:hover{
+    color: inherit;
+  }*/
 /**************************************
 
   Content wrappers
     - use box without tabs wrappers for box-shadow
 
 **************************************/
-body.trinity-admin .wrapper-grid,
-body.trinity-admin .box {
+.wrapper-grid,
+.box {
   position: relative;
   font-family: "Roboto", sans-serif;
   color: #303030;
@@ -4398,8 +4548,8 @@ body.trinity-admin .box {
           color: @color-tertiary;
         }*/
 }
-body.trinity-admin .wrapper-grid .header,
-body.trinity-admin .box .header {
+.wrapper-grid .header,
+.box .header {
   min-height: 40px;
   color: #303030;
   margin: 0;
@@ -4407,91 +4557,90 @@ body.trinity-admin .box .header {
   padding: 20px;
   font-weight: 400;
 }
-body.trinity-admin .wrapper-grid .box-body,
-body.trinity-admin .box .box-body {
+.wrapper-grid .box-body,
+.box .box-body {
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
 }
-body.trinity-admin .wrapper-grid .box-body p,
-body.trinity-admin .box .box-body p {
+.wrapper-grid .box-body p,
+.box .box-body p {
   margin-bottom: 10px;
   margin-top: 10px;
 }
-body.trinity-admin .wrapper-grid .box-table-body,
-body.trinity-admin .box .box-table-body {
+.wrapper-grid .box-table-body,
+.box .box-table-body {
   overflow-x: auto;
 }
-body.trinity-admin .wrapper-grid .box-table-body .grid,
-body.trinity-admin .box .box-table-body .grid {
+.wrapper-grid .box-table-body .grid,
+.box .box-table-body .grid {
   width: 100%;
   border-left: none;
   border-right: none;
 }
-body.trinity-admin .wrapper-grid .box-harmonica-body .show-harmonica,
-body.trinity-admin .box .box-harmonica-body .show-harmonica {
+.wrapper-grid .box-harmonica-body .show-harmonica,
+.box .box-harmonica-body .show-harmonica {
   padding: 20px !important;
   margin-bottom: 0px;
   color: #303030;
 }
-body.trinity-admin .wrapper-grid .box-form-body,
-body.trinity-admin .box .box-form-body {
+.wrapper-grid .box-form-body,
+.box .box-form-body {
   padding-bottom: 15px;
 }
-body.trinity-admin .wrapper-grid .footer,
-body.trinity-admin .box .footer {
+.wrapper-grid .footer,
+.box .footer {
   border-top: 1px solid #b5b5b5;
   padding: 10px 20px;
   font-size: 12px;
 }
-body.trinity-admin .wrapper-grid {
+.wrapper-grid {
   padding: 0 0 100px 0;
 }
-body.trinity-admin .help-box {
+.help-box {
   width: 100%;
 }
-body.trinity-admin .help-box .label {
+.help-box .label {
   text-align: right;
   padding-left: 15px;
 }
-body.trinity-admin .help-box .help-content {
+.help-box .help-content {
   display: none;
 }
-body.trinity-admin .help-box .hide {
+.help-box .hide {
   display: none;
 }
-body.trinity-admin .help-box p {
+.help-box p {
   font-size: 12px;
 }
-body.trinity-admin .help-box input[type="checkbox"]:checked ~ .help-content {
+.help-box input[type="checkbox"]:checked ~ .help-content {
   display: block;
 }
-body.trinity-admin .help-box input[type="checkbox"]:checked ~ .label .show {
+.help-box input[type="checkbox"]:checked ~ .label .show {
   display: none;
 }
-body.trinity-admin .help-box input[type="checkbox"]:checked ~ .label .hide {
+.help-box input[type="checkbox"]:checked ~ .label .hide {
   display: block;
 }
-body.trinity-admin .box {
+.box {
   -webkit-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
 }
-body.trinity-admin .grid-search {
-  padding: 30px;
+.grid-search {
+  margin: 30px 30px 10px 30px;
   text-align: center;
+  width: 100%;
+  max-width: 600px;
+  display: inline-block;
 }
-body.trinity-admin .grid-search .title {
+.grid-search .title {
   color: #2f2f2f;
   font-size: 20px;
   margin-left: 10px;
   font-weight: 300;
 }
-body.trinity-admin .grid-search form {
-  width: 100%;
-  max-width: 600px;
-}
-body.trinity-admin .grid-search input[type="text"] {
+.grid-search input[type="text"] {
   border: 1px solid #ccc;
   height: 32px;
   border-radius: 5px 0 0 5px;
@@ -4503,20 +4652,20 @@ body.trinity-admin .grid-search input[type="text"] {
   transition: .3s;
   color: #d55a13;
 }
-body.trinity-admin .grid-search input[type="text"]:after {
+.grid-search input[type="text"]:after {
   content: "";
   display: table;
   clear: both;
 }
-body.trinity-admin .grid-search input[type="text"]:focus {
+.grid-search input[type="text"]:focus {
   border: 1px solid #d55a13;
 }
-body.trinity-admin .grid-search input[type="text"]:focus + button {
+.grid-search input[type="text"]:focus + button {
   background: #d55a13;
   color: #fff;
   border: 1px solid #d55a13;
 }
-body.trinity-admin .grid-search button[type="submit"] {
+.grid-search button[type="submit"] {
   background: #ccc;
   color: #fff;
   border-radius: 0 5px 5px 0;
@@ -4530,46 +4679,31 @@ body.trinity-admin .grid-search button[type="submit"] {
   width: 65px;
   transition: 0.3s ease-in;
 }
-body.trinity-admin .grid-search button[type="submit"]:hover {
+.grid-search button[type="submit"]:hover {
   background: #a6460f;
   cursor: pointer;
   border: none;
 }
 @media screen and (max-width: 1366px) {
-  body.trinity-admin .grid-search form {
+  .grid-search form {
     max-width: 450px;
   }
 }
 /**
     Primary for dashboard widgets.
 */
-body.trinity-admin {
-  /*  #edit_user {
-      .row:first-child {
-        margin: 0;
-      }
-
-
-      #profile-avatar {
-        label {
-          margin-top: 60px;
-        }
-        border-bottom: 1px solid #ededed;
-
-      }*/
-}
-body.trinity-admin .avatar-picture {
+.avatar-picture {
   display: inline-block;
   width: 82px;
   height: 82px;
   margin: 10px;
 }
-body.trinity-admin .avatar-picture img {
+.avatar-picture img {
   width: 82px;
   height: 82px;
 }
-body.trinity-admin .avatar-picture .tiecons-arrow-previous,
-body.trinity-admin .avatar-picture .trinity-delete {
+.avatar-picture .tiecons-arrow-previous,
+.avatar-picture .trinity-delete {
   position: absolute;
   left: 76px;
   top: 14px;
@@ -4581,21 +4715,21 @@ body.trinity-admin .avatar-picture .trinity-delete {
   transition: .3s;
   cursor: pointer;
 }
-body.trinity-admin .avatar-picture .tiecons-arrow-previous:hover,
-body.trinity-admin .avatar-picture .trinity-delete:hover {
+.avatar-picture .tiecons-arrow-previous:hover,
+.avatar-picture .trinity-delete:hover {
   transform: scale(1.2);
 }
-body.trinity-admin .avatar-picture .tiecons-arrow-previous {
+.avatar-picture .tiecons-arrow-previous {
   left: 10px;
   top: 10px;
   font-size: 20px;
   background: none;
 }
-body.trinity-admin .avatar-picture .trinity-profile {
+.avatar-picture .trinity-profile {
   font-size: 82px;
   color: #f3a375;
 }
-body.trinity-admin .dropzone {
+.dropzone {
   font-size: 16px;
   color: #ababab;
   height: 95px;
@@ -4608,36 +4742,36 @@ body.trinity-admin .dropzone {
   border: dashed 3px #979797;
   border-radius: 10px;
 }
-body.trinity-admin .dropzone .dropzone-content {
+.dropzone .dropzone-content {
   display: table-cell;
   vertical-align: middle;
 }
-body.trinity-admin .dropzone .button {
+.dropzone .button {
   margin-left: 5px;
 }
-body.trinity-admin .dropzone:hover {
+.dropzone:hover {
   background: #fef4ef;
 }
-body.trinity-admin .dropzone i,
-body.trinity-admin .dropzone span {
+.dropzone i,
+.dropzone span {
   height: 14px;
   display: inline-block;
 }
-body.trinity-admin .dropzone span {
+.dropzone span {
   width: calc(100% - 30px);
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
   line-height: 1;
 }
-body.trinity-admin .dropzone .progress-upload {
+.dropzone .progress-upload {
   width: calc(100% - 10px);
   height: 20px;
   background: #C1C1C1;
   border-radius: 4px;
   margin: 0 5px;
 }
-body.trinity-admin .dropzone .progress-upload div {
+.dropzone .progress-upload div {
   border-radius: 5px;
 }
 /**************************************
@@ -4645,25 +4779,25 @@ body.trinity-admin .dropzone .progress-upload div {
   Checkboxes by after and before parts
 
 **************************************/
-body.trinity-admin .checkbox {
+.checkbox {
   vertical-align: middle;
 }
-body.trinity-admin .checkbox [class^=level] {
+.checkbox [class^=level] {
   transition: .4s;
 }
-body.trinity-admin .checkbox .level1 {
+.checkbox .level1 {
   margin-left: 20px;
 }
-body.trinity-admin .checkbox input[type="checkbox"]:checked + label[class=level1]:after {
+.checkbox input[type="checkbox"]:checked + label[class=level1]:after {
   content: '\e90e';
 }
-body.trinity-admin .checkbox .level2 {
+.checkbox .level2 {
   margin-left: 40px;
 }
-body.trinity-admin .checkbox input[type="checkbox"]:checked + label[class=level2]:before {
+.checkbox input[type="checkbox"]:checked + label[class=level2]:before {
   background: #fff;
 }
-body.trinity-admin .checkbox input[type="checkbox"]:checked + label[class=level2]:after {
+.checkbox input[type="checkbox"]:checked + label[class=level2]:after {
   content: '';
   background: #d55a13;
   border-radius: 10px;
@@ -4673,7 +4807,7 @@ body.trinity-admin .checkbox input[type="checkbox"]:checked + label[class=level2
   height: 14px;
   margin: 0;
 }
-body.trinity-admin .checkbox .level3 {
+.checkbox .level3 {
   margin-left: 60px;
 }
 .grid-table-body {
@@ -4743,48 +4877,45 @@ input[type=checkbox].edit-input:checked + label span::before {
   transition: opacity 0.5s ease-in;
 }
 /** fix **/
-body.trinity-admin {
-  background: #f8f3f0 !important;
-}
-body.trinity-admin .modal-a.button.button-secondary {
+.modal-a.button.button-secondary {
   display: none !important;
 }
-body.trinity-admin ul.list {
+ul.list {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-body.trinity-admin ul.list li {
+ul.list li {
   margin-left: 18px;
   list-style-type: circle;
 }
-body.trinity-admin ol.list {
+ol.list {
   margin-top: 10px;
   margin-bottom: 10px;
 }
-body.trinity-admin ol.list li {
+ol.list li {
   margin-left: 18px;
   list-style-type: decimal;
 }
-body.trinity-admin a {
+a {
   transition: .3s;
-  color: #4e4743;
+  color: #4f4742;
 }
-body.trinity-admin a:hover {
+a:hover {
   color: #d55a13;
 }
-body.trinity-admin .span-large-24:first-child {
+.span-large-24:first-child {
   padding-left: 25px;
   padding-bottom: 20px;
 }
-body.trinity-admin .no-hover-backg:hover,
-body.trinity-admin .new-form .no-hover-backg:hover,
-body.trinity-admin .edit-form .no-hover-backg:hover,
-body.trinity-admin #row_group_rolesEntry:hover {
+.no-hover-backg:hover,
+.new-form .no-hover-backg:hover,
+.edit-form .no-hover-backg:hover,
+#row_group_rolesEntry:hover {
   background: transparent;
 }
-body.trinity-admin .no-hover-backg .row:hover,
-body.trinity-admin .new-form .no-hover-backg .row:hover,
-body.trinity-admin .edit-form .no-hover-backg .row:hover,
-body.trinity-admin #row_group_rolesEntry .row:hover {
+.no-hover-backg .row:hover,
+.new-form .no-hover-backg .row:hover,
+.edit-form .no-hover-backg .row:hover,
+#row_group_rolesEntry .row:hover {
   background: transparent;
 }
