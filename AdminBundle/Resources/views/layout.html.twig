@@ -25,9 +25,6 @@
 
     {% block header_stylesheets %}
 
-        {% block stylesheets %}
-        {% endblock %}
-
         {% block bowtie %}
             {% stylesheets
                 '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
@@ -37,11 +34,16 @@
             {% endstylesheets %}
         {% endblock %}
 
+
         {% block admin %}
             {% stylesheets '@TrinityAdminBundle/Resources/Public/css/admin.css' %}
             <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
             {% endstylesheets %}
         {% endblock %}
+
+        {% block stylesheets %}
+        {% endblock %}
+
     {% endblock %}
 
 </head>
