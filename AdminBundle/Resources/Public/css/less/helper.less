@@ -1,168 +1,109 @@
+/**************************************
+
+    Functions - mixins
+
+**************************************/
 @import "variables";
 
-.margin-left-auto{
-    margin-left: auto;
+
+.shadow(@offset-x: 0, @offset-y: 2px, @blur-radius: 9.5px, @spread-radius: 2px, @color: rgba(0,0,0,.1)) {
+    -webkit-box-shadow: @offset-x @offset-y @blur-radius @spread-radius @color;
+    -moz-box-shadow: @offset-x @offset-y @blur-radius @spread-radius @color;
+    box-shadow: @offset-x @offset-y @blur-radius @spread-radius @color;
 }
 
-.margin-right-auto{
-    margin-right: auto;
-}
-
-/*
-// float - fix
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-}
-
-.clearfix {
-    display: inline-block;
-}
-
-* html .clearfix {
-    height: 1%;
-}
-.clearfix {
-    display: block;
-}
-*/
-
-.hidden{
-    display: none !important;
-}
-
-.shadow(@color: #cdcbcc){
-    -moz-box-shadow: 0 1px 5px @color;
-    -webkit-box-shadow: 0 1px 5px @color;
-    box-shadow: 0 1px 5px @color;
-/*    -webkit-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);
-    box-shadow: 0px 4px 9.4px 0.6px rgba(0,0,0,0.25);*/
-}
-
-// input placeholder color.
-.input-placeholder(@color: #fff){
-    &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
-        color: @color;
+    // input placeholder color.
+    .input-placeholder(@color: #ff0099) {
+        &::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+            color: @color;
+        }
+        &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+            color: @color;
+            opacity: 1;
+        }
+        &::-moz-placeholder { /* Mozilla Firefox 19+ */
+            color: @color;
+            opacity: 1;
+        }
+        &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+            color: @color;
+        }
     }
-    &:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-        color: @color;
-        opacity:  1;
+
+    // center element
+    .abs-center() {
+        position: absolute;
+        left: 50%;
+        top: 51%;
+        -webkit-transform: translateY(-50%) translateX(-50%);
+        -moz-transform: translateY(-50%) translateX(-50%);
+        -ms-transform: translateY(-50%) translateX(-50%);
+        transform: translateY(-50%) translateX(-50%);
     }
-    &::-moz-placeholder { /* Mozilla Firefox 19+ */
-        color: @color;
-        opacity: 1;
+
+    // darken image
+    .brightness(@percent) {
+        -webkit-filter: brightness(@percent);
+        -moz-filter: brightness(@percent);
+        -ms-filter: brightness(@percent);
+        filter: brightness(@percent);
     }
-    &:-ms-input-placeholder { /* Internet Explorer 10-11 */
-        color: @color;
-    }
-}
 
-// shadow for element
-.shadow(@a:1px, @b:1px, @c:5px, @color: #d7d5d5){
-    -moz-box-shadow: @a @b @c @color;
-    -webkit-box-shadow: @a @b @c @color;
-    box-shadow: @a @b @c @color;
-}
-
-.overflow-hidden {
-    overflow: hidden;
-}
-
-// center element
-.abs-center(){
-    position: absolute;
-    left: 50%;
-    top:  51%;
-    -webkit-transform: translateY(-50%) translateX(-50%);
-    -moz-transform: translateY(-50%) translateX(-50%);
-    -ms-transform: translateY(-50%) translateX(-50%);
-    transform: translateY(-50%) translateX(-50%);
-}
-
-.abs-center{
-    .abs-center();
-}
-
-// darken image
-.brightness(@percent){
-    -webkit-filter: brightness(@percent);
-    -moz-filter: brightness(@percent);
-    -ms-filter: brightness(@percent);
-    filter: brightness(@percent);
-}
-
-.box{
-    //border: 1px solid;
-    //border-color: #e5e6e9 #dddee2 #cccdd1;
-    background: #fff;
-}
-
-.animation(@name, @time, @s, @e){
-    -webkit-animation: @name @time @s @e;
-    -moz-animation: @name @time @s @e;
-    animation: @name @time @s @e;
-}
-
-.radius(@size){
-    -moz-border-radius-topleft: @size;
-    -moz-border-radius-topright:@size;
-    -moz-border-radius-bottomleft:@size;
-    -moz-border-radius-bottomright:@size;
-    -webkit-border-top-left-radius:@size;
-    -webkit-border-top-right-radius:@size;
-    -webkit-border-bottom-left-radius:@size;
-    -webkit-border-bottom-right-radius:@size;
-    border-top-left-radius:@size;
-    border-top-right-radius:@size;
-    border-bottom-left-radius:@size;
-    border-bottom-right-radius:@size;
-}
-
-.navigation-icons() {
-    position: relative;
-    display: inline-block;
-    z-index: 10;
-    border-radius: 40px;
-    width: 50px;
-    height: 50px;
-    transition: background @hover-timing ease-in-out;
-    .shadow();
-
-    i, span {
-        color: #fff;
-        font-weight: 900;
-        font-size: 20px;
+    .box {
+        background: #fff;
         .shadow();
-        .abs-center();
-        background: transparent;
-        box-shadow: none !important;
     }
-}
 
-
-.pointer{
-    cursor: pointer;
-}
-
-.group-clearfix{
-    &:after{
-        content: "";
-        display: table;
-        clear: both;
+    .animation(@name, @time, @s, @e) {
+        -webkit-animation: @name @time @s @e;
+        -moz-animation: @name @time @s @e;
+        animation: @name @time @s @e;
     }
-}
 
-.icon(@font) {
-    content: @font;
-    font-family: 'tiecons';
-    speak: none;
-    min-width: 16px;
-    font-size: @font-size-button;
-    display: inline-block;
-    margin-left: 5px
-}
+    .radius(@size) {
+        -moz-border-radius: @size;
+        -webkit-border-radius: @size;
+        border-radius: @size;
+    }
+
+    .navigation-icons() {
+        position: relative;
+        display: inline-block;
+        z-index: 10;
+        border-radius: 40px;
+        width: 50px;
+        height: 50px;
+        transition: background .3s ease-in-out;
+        .shadow();
+
+        i, span {
+            color: #fff;
+            font-weight: 900;
+            font-size: 20px;
+            display: block;
+            padding: 15px;
+            background: transparent;
+        }
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
+
+    .group-clearfix {
+        &:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    .icon(@font) {
+        content: @font;
+        font-family: 'tiecons';
+        speak: none;
+        min-width: 16px;
+        font-size: @font-size-button - 3;
+        display: inline-block;
+        margin-left: 5px;
+    }
