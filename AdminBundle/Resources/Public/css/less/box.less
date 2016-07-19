@@ -6,8 +6,6 @@
 **************************************/
 @import "helper";
 
-body.trinity-admin {
-
   .wrapper-grid, .box {
 
     position: relative;
@@ -24,9 +22,9 @@ body.trinity-admin {
       font-weight: 400;
     }
 
-/*    a {
-      color: @color-tertiary;
-    }*/
+    /*    a {
+          color: @color-tertiary;
+        }*/
 
     .box-body {
       padding-bottom: 20px;
@@ -64,68 +62,6 @@ body.trinity-admin {
       border-top: 1px solid @color-border;
       padding: 10px 20px;
       font-size: 12px;
-    }
-
-    .grid-search {
-      padding: 30px;
-      text-align: center;
-      .title {
-        color: @header-font-color;
-        font-size: 20px;
-        margin-left: 10px;
-        font-weight: 300;
-      }
-
-      form {
-        width: 100%;
-        max-width: 600px;
-        input[type="text"] {
-          border: 1px solid #ccc;
-          height: @grid-search-height;
-          border-radius: 5px 0 0 5px;
-          padding: 0 10px;
-          width: ~"calc(100% - 65px)"; //- width of button for search
-          outline: none;
-          font-size: @search-font-size;
-          float: left;
-          .group-clearfix();
-          transition: .3s;
-          color: @color-primary;
-
-          &:focus {
-            border: 1px solid @color-primary;
-          }
-
-          &:focus + button {
-            background: @color-primary;
-            color: #fff;
-            border: 1px solid @color-primary;
-          }
-
-        }
-
-        button[type="submit"] {
-          background: #ccc;
-          color: #fff;
-          border-radius: 0 5px 5px 0;
-          margin-left: -2px;
-          height: @grid-search-height;
-          border: none; //border: 2px solid #ccc;
-          outline: none;
-          text-align: center;
-          font-size: 14px;
-          float: left;
-          width: 65px;
-
-          transition: .3s ease-in;
-
-          &:hover {
-            background: @color-primary-hover;
-            cursor: pointer;
-            border: none;
-          }
-        }
-      }
     }
   }
 
@@ -170,4 +106,78 @@ body.trinity-admin {
     .shadow();
   }
 
-}
+  .grid-search {
+    margin: 30px 30px 10px 30px;
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    display: inline-block;
+
+    .title {
+      color: @header-font-color;
+      font-size: 20px;
+      margin-left: 10px;
+      font-weight: 300;
+    }
+
+    input[type="text"] {
+      border: 1px solid #ccc;
+      height: @grid-search-height;
+      border-radius: 5px 0 0 5px;
+      padding: 0 0 0 10px;
+      //width: 100%;
+      width: ~"calc(100% - 65px)"; //- width of button for search and margin of wrapper
+      outline: none;
+      font-size: @search-font-size;
+      float: left;
+      .group-clearfix();
+      transition: .3s;
+      color: @color-primary;
+
+      &:focus {
+        border: 1px solid @color-primary;
+      }
+
+      &:focus + button {
+        background: @color-primary;
+        color: #fff;
+        border: 1px solid @color-primary;
+      }
+    }
+    button[type="submit"] {
+      background: #ccc;
+      color: #fff;
+      border-radius: 0 5px 5px 0;
+      margin-left: -2px;
+      height: @grid-search-height;
+      border: none; //border: 2px solid #ccc;
+      outline: none;
+      text-align: center;
+      font-size: 14px;
+      float: left;
+      width: 65px;
+
+      transition: .3s ease-in;
+
+      &:hover {
+        background: @color-primary-hover;
+        cursor: pointer;
+        border: none;
+      }
+    }
+
+  }
+
+  @media screen and(max-width: 1366px) {
+    .grid-search {
+      max-width: 450px;
+    }
+  }
+
+@media screen and(max-width: 840px) {
+  .grid-search input[type="text"] {
+      width: ~"calc(100% - 125px)";
+    }
+  }
+
+
