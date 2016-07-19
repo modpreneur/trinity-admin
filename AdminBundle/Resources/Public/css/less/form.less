@@ -1,13 +1,17 @@
-/**
-    Forms for trinity admin.
-*/
-@import "variables";
-@import "helper";
+/**************************************
+
+  Forms stuff
+    - inputs
+    - rows
+    - advanced part
+    - user js control messages for edit, new
+
+**************************************/
 
 @medium-width: 768px;
 @medium-height: 35px;
 
-body.trinity-admin {
+
 
   .edit-form, .new-form, .modal-dialog form {
     width: 100%;
@@ -18,19 +22,21 @@ body.trinity-admin {
       padding-bottom: 15px;
       padding-top: 15px;
       width: 100%;
-      margin-bottom: 0px;
+      margin-bottom: 0;
+      transition: .3s;
 
       &:last-of-type {
         border-bottom: none;
       }
 
       &:first-of-type {
-        margin-top: 15px;
+        margin-top: 20px;
       }
 
       &:hover {
-        background: @global-row-hover; //red;//
+        background: @global-row-hover;
       }
+
     }
 
     .advanced-settings .row {
@@ -59,13 +65,6 @@ body.trinity-admin {
       }
     }
 
-    @media screen and(max-width: @medium-width) {
-      .form-left {
-        text-align: left;
-
-      }
-    }
-
     label {
       color: @color-font;
       padding: 0;
@@ -88,16 +87,7 @@ body.trinity-admin {
       float: none !important;
     }
 
-    input[type="text"],
-    input[type="number"],
-    input[type="email"],
-    input[type="date"],
-    input[type="datetime"],
-    input[type="password"],
-    input[type="url"],
-    input[type="search"],
-    select,
-    textarea {
+    input:not([type="submit"]), select, textarea {
       width: 100%;
       border-radius: 5px;
       height: 35px;
@@ -109,12 +99,40 @@ body.trinity-admin {
       border: 1px solid @color-border;
       background: #fff;
       -webkit-appearance: none;
-      font-weight: 300;
+      font-weight: @roboto-light;
       color: @color-font;
+      transition: .4s;
+      //cursor: pointer;
 
       &:focus {
         border: 1px solid @color-primary;
-        background: #fff !important;
+        background: #fff;
+      }
+      &:hover {
+        border: 1px solid @color-primary;
+      }
+    }
+
+    .just-filter {
+      background: @global-row-hover;
+      transition: .3s;
+      &:hover {
+        background: #fff;
+      }
+      input:not([type="submit"]), select, textarea {
+        background: #d4d4d4;
+        //border: 1px solid @color-border;
+        &:focus {
+          //border: 1px solid @color-border;
+          background: #e7e7e7;
+        }
+      }
+
+    }
+
+    @media screen and(max-width: @medium-width) {
+      .form-left {
+        text-align: left;
       }
     }
 
@@ -128,9 +146,6 @@ body.trinity-admin {
       display: none;
     }
 
-    input[type="file"] {
-      //todo style for chosse file/load
-    }
 
     .checkbox(@display: block) {
 
@@ -219,13 +234,20 @@ body.trinity-admin {
         -moz-appearance: none;
         appearance: none;
         cursor: pointer;
+        padding-right: 25px;
+      }
+      &:hover, &:focus {
+        &:after {
+          color: @color-primary;
+        }
       }
 
       &:after {
+        transition: .4s;
         content: "\e928";
         font-family: trinity;
         font-size: 12px;
-        color: @color-tab-label;
+        color: @tabs-color-label;
         position: absolute;
         right: 10px;
         top: 11px;
@@ -275,6 +297,7 @@ body.trinity-admin {
       margin-right: auto;
       text-transform: uppercase;
       font-size: 18px;
+      margin-bottom: 30px;
     }
 
     input.error {
@@ -299,7 +322,7 @@ body.trinity-admin {
         content: "\e654";
         font-family: "tiecons";
         font-size: 12px;
-        color: @color-tab-label;
+        color: @tabs-color-label;
         position: absolute;
         right: 5px;
         top: 7px;
@@ -338,7 +361,7 @@ body.trinity-admin {
       font-size: 18px;
 
       -webkit-appearance: none;
-      transition: border @form-tr-time ease-in, background @form-tr-time ease-in, color @form-tr-time ease-in, box-shadow @form-tr-time ease-in;
+      transition: .3s ease-in;
     }
 
     i.trinity-warning:before {
@@ -362,7 +385,7 @@ body.trinity-admin {
       margin-top: 5px;
     }
     .row {
-      margin: 10px 0 20px 0;
+      margin: 15px 0;
     }
   }
 
@@ -391,6 +414,9 @@ body.trinity-admin {
     }
     .row {
       margin: 10px 0 20px 0;
+    }
+    .button {
+      margin-bottom: 30px;
     }
   }
 
@@ -458,6 +484,7 @@ body.trinity-admin {
         top: 10px;
         transition: all 0.1s;
         &:hover {
+          will-change: transform;
           -ms-transform: scale(1.2); /* IE 9 */
           -webkit-transform: scale(1.2); /* Safari */
           transform: scale(1.2);
@@ -471,4 +498,101 @@ body.trinity-admin {
       width: 100%;
     }
   }
-}
+
+  div[class^="control-"] {
+    padding: 0 5px;
+    display: block;
+    float: left;
+    font-weight: 500;
+    margin-left: 25px;
+    margin-top: 10px;
+    position: relative;
+    i {
+      font-weight: 600;
+      float: left;
+      font-size: 18px;
+      line-height: 24px;
+      display: block;
+      position: absolute;
+      left: -20px;
+      top: 0;
+/*      width: 30px;
+      height: 30px;*/
+    }
+  }
+  .control-ok {
+    color: #5da423;
+  }
+  .control-loading{
+    color: #ffda28;
+  }
+  .control-fail {
+    color: #d2322b;
+  }
+
+  .help-on-hover:not(.help-block) {
+    position: absolute;
+    font-weight: 600;
+    float: left;
+    padding: 5px;
+    font-size: 18px;
+    line-height: 24px;
+    color: #4a94cc;
+  }
+
+  .help-block {
+    display: none;
+    font-size: 14px;
+    color: @global-font-color;
+    font-weight: @roboto-light;
+    line-height: 1.4;
+    padding: 6px;
+    z-index: 2;
+    left: 20px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .help-on-hover:hover .help-block {
+    display: block;
+    width: 210px;
+    background: #ffecc2;
+    border: 1px solid #9f9f9f;
+    position: absolute;
+  }
+
+
+  // service manager graph from google
+  #web-service-chart2{
+    g{
+      cursor: pointer;
+    }
+  }
+
+
+
+  @media screen and(max-width: 1475px) {
+    .pad {
+      width: 29.5%;
+      display: block;
+      float: left;
+      height: 1px;
+    }
+
+    div[class^="control-"] i {
+      padding-left: 0;
+    }
+  }
+
+  @media screen and(max-width: 1200px) {
+    .lol {
+      right: 20px;
+      left: auto;
+    }
+  }
+
+  @media screen and(max-width: 1030px) {
+    .pad {
+      width: 37.5%;
+    }
+  }
+
