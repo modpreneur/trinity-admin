@@ -9,7 +9,7 @@
 **************************************/
 @import "helper";
 
-body.trinity-admin {
+
 
   /* --- debug --- */
 
@@ -117,6 +117,7 @@ body.trinity-admin {
       font-weight: 500;
       color: #fff;
       border-radius: 2px;
+      padding: 0 4px;
     }
     .Enabled {
       background: #a4c590;
@@ -127,16 +128,13 @@ body.trinity-admin {
     .Active {
       background: #22baa0;
     }
-    .Changed {
+    .Changed, .update {
       background: #24afc9;
     }
     .Premium {
       background: @color-primary;
     }
-    .Blocked {
-      background: @color-danger;
-    }
-    .Banned {
+    .Banned, .Blocked, .Danger {
       background: @color-danger;
     }
     .Pending {
@@ -145,6 +143,12 @@ body.trinity-admin {
     }
     .Locked {
       background: #b9ae86;
+    }
+    .create, .Success{
+      background: #5DA423;
+    }
+    .Warning{
+      background: @color-warning;
     }
   }
 
@@ -193,11 +197,35 @@ body.trinity-admin {
   }
 
   .rw-select {
+    color: #000;
+    color: rgba(0,0,0,0);
+    text-shadow: 0 0 0 #000;
     border: none;
+    width: 100%;
+    .rw-btn{
+      width: 100%;
+    }
+    i{
+      float: right;
+      padding-right: 10px;
+      transition: .3s;
+    }
+    &:focus, &:hover{
+      outline: none;
+    }
+  }
+
+  .rw-popup-container{
+    width: 100%;
   }
 
   .rw-input {
     font-family: "Arial", sans-serif;
+    &:focus, &:hover{
+      + .rw-select i{
+        color: @color-primary;
+      }
+    }
   }
 
   /*  Animations - classes with keyframes */
@@ -222,7 +250,7 @@ body.trinity-admin {
       transform: rotate(360deg);
     }
   }
-}
+
 
 
 
