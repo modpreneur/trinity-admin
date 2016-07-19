@@ -11,189 +11,238 @@
 **************************************/
 @import "helper";
 
-body.trinity-admin {
+.show-filters {
+  display: none;
+}
 
-  .show-filters {
-    display: none;
-  }
+.grid {
+  border: none;
+  background: transparent;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
 
-  .grid {
-    border: none;
+  thead {
     background: transparent;
-    font-family: 'Roboto', sans-serif;
-
-    thead {
-      background: transparent;
-      border-bottom: 2px solid #ededed;
-      tr{
-        height: 45px;
-      }
-      th {
-        font-size: 16px;
-        color: @header-font-color;
-        font-weight: @roboto-medium;
-      }
-
-      th[class*=order-] {
-        cursor: pointer;
-      }
-      td[class*=center] { // use text-align class
-        text-align: center;
-      }
-      .order-by-asc:after {
-        position: absolute;
-        padding-left: 7px;
-        font-family: trinity;
-        content: "\e929";
-        font-size: 10px;
-      }
-
-      .order-by-desc:after {
-        position: absolute;
-        font-family: trinity;
-        padding-left: 7px;
-        content: "\e928";
-        font-size: 10px;
-      }
-      tr:hover {
-        background: transparent;
-      }
+    border-bottom: 2px solid #ededed;
+    tr {
+      height: 45px;
+    }
+    th {
+      font-size: 16px;
+      color: @header-font-color;
+      font-weight: @roboto-medium;
     }
 
-    .cell-center{
+    th[class*=order-] {
+      cursor: pointer;
+    }
+    td[class*=center] { // use text-align class
       text-align: center;
     }
+    .order-by-asc:after {
+      position: absolute;
+      padding-left: 7px;
+      font-family: trinity;
+      content: "\e929";
+      font-size: 10px;
+    }
 
-    tbody {
+    .order-by-desc:after {
+      position: absolute;
+      font-family: trinity;
+      padding-left: 7px;
+      content: "\e928";
+      font-size: 10px;
+    }
+    tr:hover {
+      background: transparent;
+    }
+  }
 
-      tr {
-        background: #fff;
-        border-bottom: 1px solid #ededed;
-        &:hover {
-          background: @global-row-hover;
-        }
+  .cell-center {
+    text-align: center;
+  }
 
-        &:hover {
-          & > td:last-of-type .button-small {
-            background: lighten(@color-primary, 25%);
+  tbody {
+
+    tr {
+      background: #fff;
+      border-bottom: 1px solid #ededed;
+      transition: .3s;
+      &:hover {
+        background: @global-row-hover;
+      }
+
+      &:hover {
+        & > td .button-small {
+          background: lighten(@color-primary, 25%);
+          color: #fff;
+          &:visited {
             color: #fff;
-            &:visited {
-              color: #fff;
-            }
-            &:hover {
-              background: lighten(@color-primary,5%);
-            }
           }
-          & > td a{
-            color: darken(desaturate(@color-primary, 25%), 10%);
-            &:hover {
-              color: @color-primary;
-            }
-          }
-          & > td a li{
-            background: lighten(desaturate(@color-primary, 25%), 25%);
-            transition: .3s;
-            &:hover {
-              background: lighten(@color-primary,5%);
-            }
+          &:hover {
+            background: lighten(@color-primary, 5%);
           }
         }
-
-        td {
-          vertical-align: middle;
-          white-space: nowrap;
-/*          overflow: hidden;
-          text-overflow: ellipsis*/;
-        }
-        a {
-          transition: .3s;
-          color: darken(desaturate(@color-primary, 78%), 17%);
+        & > td a {
+          color: darken(desaturate(@color-primary, 25%), 10%);
           &:hover {
             color: @color-primary;
           }
         }
-        .button-small {
-          color: #fff;
+        & > td a li {
+          background: lighten(desaturate(@color-primary, 25%), 25%);
+          transition: .3s;
           &:hover {
-            color: #fff;
+            background: lighten(@color-primary, 5%);
           }
-          &:visited {
-            color: #fff;
+        }
+        & > td:last-of-type .revelation {
+          &:after {
+            background: lighten(@color-primary, 25%);
+          }
+          &:hover:after {
+            background: lighten(@color-primary, 5%);
           }
         }
       }
-    }
-
-    th:first-child, td:first-child {
-      padding-left: 20px;
-    }
-
-    // indicate for no-synchronized product
-    .trinity-warning{
-      color: lighten(@color-primary,20%);
+      a {
+        transition: .3s;
+        color: darken(desaturate(@color-primary, 78%), 17%);
+        &:hover {
+          color: @color-primary;
+        }
+      }
+      .button-small {
+        color: #fff;
+        &:hover {
+          color: #fff;
+        }
+        &:visited {
+          color: #fff;
+        }
+      }
     }
   }
-  .pagination {
-    margin: 10px 35px 35px 35px;;
-    float: right;
-    .group-clearfix();
 
-    li a {
-      min-width: 40px;
-      height: 40px;
-      margin: 2px;
+  td {
+    vertical-align: middle;
+    white-space: nowrap;;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20em;
+  }
 
-      color: #7b7b7b;
-      font-size: 16px;
-      font-weight: 400;
-      text-align: center;
+  th:first-child, td:first-child {
+    padding-left: 20px;
+  }
 
-      background: #ededed;
-      border-radius: 5px;
-      border: none;
+  // indicate for no-synchronized product
+  .trinity-warning {
+    color: lighten(@color-primary, 20%);
+    cursor: context-menu;
+  }
+}
 
-      transition: 0.4s;
-      cursor: pointer;
-      &:hover {
-        background: #a5a5a5;
-        color: #fff;
-      }
+.pagination {
+  margin: 10px 35px 35px 35px;
+  float: right;
+  .group-clearfix();
 
-    }
-    .break {
-      display: inline-block;
-      float: left;
-      font-size: 42px;
-      color: #e8e8e8;
-      line-height: 1;
-    }
+  li a {
+    min-width: 40px;
+    height: 40px;
+    margin: 2px;
 
-    .previous a, .next a {
-      line-height: 34px;
-      &:hover {
-        color: #d3d3d3;
-      }
-      i:before {
-        padding-top: 5px;
-      }
-    }
-    .previous a {
-      transform: rotate(90deg);
-    }
-    .next a {
-      transform: rotate(-90deg);
-    }
+    color: #7b7b7b;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
 
-    li.active a {
-      background: @color-primary;
+    background: #ededed;
+    border-radius: 5px;
+    border: none;
+
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover {
+      background: #a5a5a5;
       color: #fff;
     }
+
+  }
+  .break {
+    display: inline-block;
+    float: left;
+    font-size: 42px;
+    color: #e8e8e8;
+    line-height: 1;
   }
 
-  .record_properties {
-    th {
-      width: 350px;
+  .previous a, .next a {
+    line-height: 34px;
+    &:hover {
+      color: #d3d3d3;
     }
+    i:before {
+      padding-top: 5px;
+    }
+  }
+  .previous a {
+    transform: rotate(90deg);
+  }
+  .next a {
+    transform: rotate(-90deg);
+  }
+
+  li.active a {
+    background: @color-primary;
+    color: #fff;
+  }
+}
+
+.record_properties {
+  th:first-child {
+    padding-left: 15px;
+  }
+  th {
+    width: 300px;
+  }
+  td {
+    word-break: break-all;
+    white-space: normal;
+    max-width: none;
+  }
+}
+
+.ban-grid-filter {
+  margin: 30px 0 0 20px;
+  position: absolute;
+  z-index: 99;
+  select {
+    height: 32px;
+  }
+}
+
+@media screen and(max-width: 1366px) {
+  .grid td {
+    max-width: 16em;
+  }
+}
+
+@media screen and(max-width: 1140px) {
+  .ban-grid-filter {
+    display: none;
+  }
+  .small-hidden {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .grid tbody tr td, .grid tbody tr th {
+    display: block;
+    padding-left: 15px;
   }
 }
 
