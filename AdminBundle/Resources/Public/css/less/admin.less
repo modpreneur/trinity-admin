@@ -2,6 +2,7 @@ body {
   //padding for content under navbar
   padding-top: @navbar-height;
   font-family: 'Roboto', sans-serif;
+  background: @back-color !important;
 }
 
 @import "navbar";
@@ -26,8 +27,6 @@ body {
 @import "paySystem";
 
 /** fix **/
-body.trinity-admin {
-  background: @back-color !important;
 
   .modal-a.button.button-secondary {
     display: none !important;
@@ -54,16 +53,13 @@ body.trinity-admin {
   }
 
 
-  a{
-    color: darken(desaturate(@color-primary, 25%), 10%);
+  a {
+    transition: .3s;
+    color: @link-font-color;
     &:hover {
       color: @color-primary;
     }
   }
-
-/*  a:visited {
-    color: #551A8B;
-  }*/
 
   .span-large-24:first-child {
     padding-left: 25px;
@@ -78,4 +74,3 @@ body.trinity-admin {
       background: transparent;
     }
   }
-}
