@@ -4,21 +4,6 @@
 @import "variables";
 @import "helper";
 
-body.trinity-admin {
-
-  /*  #edit_user {
-      .row:first-child {
-        margin: 0;
-      }
-
-
-      #profile-avatar {
-        label {
-          margin-top: 60px;
-        }
-        border-bottom: 1px solid #ededed;
-
-      }*/
   .avatar-picture {
     display: inline-block;
     width: 82px;
@@ -40,6 +25,7 @@ body.trinity-admin {
       transition: .3s;
       cursor: pointer;
       &:hover {
+        will-change: transform;
         transform: scale(1.2);
       }
     }
@@ -65,7 +51,7 @@ body.trinity-admin {
     float: right;
     padding: 8px 15px;
     text-align: center;
-    border: dashed 3px @color-tab-label;
+    border: dashed 3px lighten(@tabs-color-label, 10%);
     border-radius: 10px;
     .dropzone-content{
       display: table-cell;
@@ -75,7 +61,7 @@ body.trinity-admin {
       margin-left: 5px;
     }
     &:hover{
-      background: #fff;
+      background: lighten(@color-primary,51%);
     }
 
     i, span{
@@ -101,4 +87,3 @@ body.trinity-admin {
       }
     }
   }
-}
