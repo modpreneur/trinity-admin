@@ -5,7 +5,7 @@
 **************************************/
 @import "helper";
 
-body.trinity-admin {
+
 
   .ajax-checkbox, .ajax-alert {
     display: none !important;
@@ -64,6 +64,7 @@ body.trinity-admin {
     }
 
     .alert-label:hover .tiecons {
+      will-change: transform;
       -ms-transform: scale(1.2); /* IE 9 */
       -webkit-transform: scale(1.2); /* Safari */
       transform: scale(1.2);
@@ -112,6 +113,7 @@ body.trinity-admin {
   }
 
   #flashMessages {
+    will-change: contents;
     position: fixed;
     width: 300px;
     height: 100%;
@@ -198,7 +200,7 @@ body.trinity-admin {
   @keyframes alert {
     .keyframes();
   }
-}
+
 
 
 
