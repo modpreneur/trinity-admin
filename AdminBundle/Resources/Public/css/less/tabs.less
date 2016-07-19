@@ -1,552 +1,535 @@
-/**
-    Tabs
-     _______________
-    | Edit | Delete |____
-    |                    |
-    |       Content      |
-    |____________________|
-*/
+/**************************************
 
+  Tabs - wrapper and labels
+       _______________
+      | Edit | Delete |____
+      |                    |
+      |       Content      |
+      |____________________|
 
-@import "variables";
+**************************************/
 @import "helper";
 
 
-body.trinity-admin{
+.tabs-wrapper {
+  background: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  margin-bottom: 20px;
 
-    .tabs-wrapper{
-        background: #fff;
-        font-family: "Roboto", sans-serif;
-        font-weight: 300;
-        margin-bottom: 20px;
+  .shadow();
 
-        -webkit-box-shadow: 0 2px 9.5px 2px rgba(0,0,0,.1);
-        -moz-box-shadow: 0 2px 9.5px 2px rgba(0,0,0,.1);
-        box-shadow: 0 2px 9.5px 2px rgba(0,0,0,.1);
+  .tab-loop (@i) when (@i > 0) {
+    #tab@{i}:checked + label {
+      background: #fff;
+      border-bottom: 2px solid @color-primary;
+      color: @color-primary;
+      border-top: none;
+      top: 0;
 
-        .tab-loop (@i) when (@i > 0) {
-            #tab@{i}:checked + label{
-                background: #fff;
-                border-bottom: 2px solid @color-primary;
-                color: @color-primary;
-                border-top: none;
-                top: 0;
+      &:hover:after {
+        display: none;
+      }
+    }
+    .tab-loop(@i - 1);
+  }
+  .tab-loop (15);
 
-                &:hover:after{
-                    display: none;
-                }
-            }
-            .tab-loop(@i - 1);
-        }
-        .tab-loop (15);
+  label[for^="tab"] {
+    border: none;
+    border-bottom: 2px solid transparent; // smaller resolution need that, second lvl
 
-        label[for^="tab"]{
-            border: none;
-            //border-top: none;
-            //border-bottom: 2px solid transparent;
+    color: @tabs-color-label;
 
-            color: @color-tab-label;
+    text-align: center;
+    padding: 12px 0;
+    font-weight: 400;
+    z-index: 3;
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+    text-transform: uppercase;
+    transition: .3s;
 
-            text-align: center;
-            padding: 12px 0;
-            font-weight: 400;
-            z-index: 3;
-            position: relative;
-            font-family: "Roboto", sans-serif;
-            font-size: 14px;
-            text-transform: uppercase;
+    width: calc(100% / @tabs-max-count);
+    max-width: 230px;
+    min-width: 150px;
 
-            width: calc(100%/@tabs-max-count);
-            max-width: 230px;
-            min-width: 150px;
-
-            &:hover{
-                color: @tabs-hover-color;
-            }
-
-            &:after{
-                content: '';
-                display: block;
-                margin: auto;
-                height: 2px;
-                width: 0;
-                background: transparent;
-                transition: width .7s ease, background-color .7s ease;
-
-                position: absolute;
-                bottom: -2px;
-                left: 0;
-                right: 0;
-            }
-
-            &:hover:after{
-                width: 100%;
-                background-color: @color-tertiary;
-            }
-        }
-
-        .tab-body-wrapper{
-            border: none;
-            min-height: 300px;
-            background: #fff;
-
-
-            -webkit-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
-            -moz-box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
-            box-shadow: inset 0 2px 11.5px -5px rgba(0,0,0,0.45);
-            //padding-top: 10px;
-
-            .tab-body {
-
-                p{
-                    font-size: 18px;
-                    margin: 20px
-                }
-                .default-template{
-                    background: #f3f3f3;
-                    margin: 0;
-                    padding: 20px;
-                    font-size: 14px;
-                    margin-top: 10px;
-                }
-
-                .list{
-                    font-size: 18px;
-                    margin: 20px;
-                    line-height: 120%;
-                }
-            }
-
-            .tab-actions{
-                position: absolute;
-                right: 0;
-                top: 0;
-
-                .item{
-                    display: flex;
-                    background: @color-tab-label;
-                    color: #fff;
-                    text-align: center;
-                    cursor: pointer;
-                    font-size: 12px;
-
-                    &:hover{
-                        background: darken(@color-tab-label, 10%);
-                    }
-                    a{
-                        padding: 5px 15px;
-                    }
-                }
-                .open{
-                    background: darken(@color-tertiary,5%);
-                    a{
-                        font-weight: 600;
-                    }
-                    &:hover{
-                        background: @color-tertiary;
-                    }
-                }
-            }
-
-            h3{
-                padding: 20px;//margin: 20px;
-            }
-
-            .advanced-settings{
-                transition: 5s;
-            }
-        }
+    &:hover {
+      color: @tabs-hover-color;
     }
 
-    .tabs-wrapper .tab-body-wrapper label{
-        border: none;
-        background: transparent;
-        font-weight: 00;
-        color: @global-font-color;
-        font-size: 14px !important;
+    &:after {
+      content: '';
+      display: block;
+      margin: auto;
+      height: 2px;
+      width: 0;
+      background: transparent;
+      transition: .7s ease;
+
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
     }
 
-    .tab-body{
-        padding: 0 0 0;
+    &:hover:after {
+      width: 100%;
+      background-color: @color-tertiary;
+    }
+  }
+
+  .tab-body-wrapper {
+    border: none;
+    min-height: 300px;
+    background: #fff;
+
+    .shadow(0, 10px, 10px, -10px, rgba(0, 0, 0, .2) inset);
+
+    .tab-body {
+      padding: 0;
+
+      p {
+        font-size: 16px; //18px;
+        margin: 10px
+      }
+      .default-template {
+        background: #f3f3f3;
+        margin: 0;
+        padding: 20px;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+
+      .list {
+        font-size: 18px;
+        margin: 20px;
+        line-height: 120%;
+      }
     }
 
-    .tab-body-wrapper{
-        overflow-x: hidden;
-        position: relative;
+    h3 {
+      padding: 20px; //margin: 20px;
     }
 
-    .tab-body-wrapper .widget{
-        border: none !important;
+    .advanced-settings {
+      transition: 5s;
     }
+  }
+}
 
-    .tab-body-wrapper .grid{
-        border-radius: 0 !important;
-        margin-left: -5px;
-        width: 100%;
+.advanced-actions {
+  position: absolute;
+  right: 0;
+  top: 0;
+
+  .item {
+    display: block;
+    background: lighten(@tabs-color-label, 10%);
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    font-size: 12px;
+    transition: .3s;
+
+    &:hover {
+      background: @tabs-color-label;
     }
-
-    .tab-body-wrapper table{
-        border: none;
+    a {
+      padding: 5px 15px;
+      font-weight: @roboto-regular;
+      display: inline-block;
     }
-
-    .tabs-wrapper div.tab-loader{
-        position: absolute;
-        width: 100%;
-        height: inherit;
-        display: block;
-        text-align: center;
-        min-height: 300px;
-        background: rgba(1, 1, 1, 0.15);
-
-        i{
-            .abs-center();
-        }
+    #expert-mode {
+      color: #fff;
     }
+  }
+  .open {
+    background: darken(@color-tertiary, 5%);
+    a {
+      font-weight: 600;
+    }
+    &:hover {
+      background: @color-tertiary;
+    }
+  }
+}
 
+.tabs-wrapper .tab-body-wrapper label {
+  border: none;
+  background: transparent;
+  font-weight: 300;
+  color: @global-font-color;
+  font-size: 14px !important;
+}
+
+.tab-body {
+  padding: 0 0 0;
+}
+
+.tab-body-wrapper {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.tab-body-wrapper .widget {
+  border: none !important;
+}
+
+.tab-body-wrapper .grid {
+  border-radius: 0 !important;
+  margin-left: -5px;
+  width: 100%;
+}
+
+.tab-body-wrapper table {
+  border: none;
+}
+
+.tabs-wrapper div.tab-loader {
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  display: block;
+  text-align: center;
+  min-height: 300px;
+  background: rgba(1, 1, 1, 0.15);
+
+  i {
+    .abs-center();
+  }
 }
 
 // content
-body.trinity-admin{
-    .tab-content{
 
-        color: @global-font-color;
+.tab-content {
 
-        .tab-header{
-            margin-bottom: 15px;
-            border-bottom: 2px solid #24afc9;
-            padding: 20px;
-        }
+  color: @global-font-color;
 
-        .tab-title{
-            text-transform: uppercase;/**
-    Tabs
-     _______________
-    | Edit | Delete |____
-    |                    |
-    |       Content      |
-    |____________________|
-*/
+  .tab-header {
+    margin-bottom: 15px;
+    border-bottom: 2px solid #24afc9;
+    padding: 20px;
+  }
 
+  .tab-title {
+    text-transform: uppercase;
+    /**
+        Tabs
+         _______________
+        | Edit | Delete |____
+        |                    |
+        |       Content      |
+        |____________________|
+    */
 
-            @import "variables";
-            @import "helper";
-
-
-            body.trinity-admin{
-
-                .tabs-wrapper{
-                    background: #fff;
-                    margin-top: 40px;
-                    font-family: "Roboto", sans-serif;
-                    font-weight: 300;
-                    //margin-bottom: 20px;
-
-                    .shadow();
-                    //border: 1px #eaeceb solid;
-
-
-                    .tab-head:checked + label{
-                        background: #fff;
-                        border-bottom: 2px solid @color-primary;
-                        color: @color-primary;
-                        top: 0 !important;
-                        border-top: 1px solid transparent !important;
-                    }
-
-
-                    label[for^="tab"]{
-                        border: none;
-                        border-top: none;
-                        border-bottom: 2px solid #b5b5b5;
-                        color: @color-tab-label;
-                        counter-increment: tabs;
-                        padding: 15px 40px 15px 40px;
-                        font-weight: 400;
-                        z-index: 3;
-                        position: relative;
-                        font-family: "Roboto", sans-serif;
-                        font-size: 14px;
-                        text-transform: uppercase;
-
-                        &:hover{
-                            color: @global-font-color;
-                        }
-                    }
-
-                    .tab-body-wrapper{
-                        border: none;
-                        //border-top: 2px solid #b5b5b5;
-                        //margin-top: -2px;
-                        min-height: 300px;
-
-                        .tab-body p{
-                            font-size: 18px;
-                            margin-left: 10px;
-                            margin-right: 10px;
-                            margin-top: 10px;
-                        }
-
-                    }
-
-                }
-
-                .tabs-wrapper .tab-body-wrapper label{
-                    border: none;
-                    background: transparent;
-                }
-
-                .tab-body{
-                    padding: 0;
-                }
-
-                .tab-body-wrapper{
-                    overflow-x: hidden;
-                    position: relative;
-                }
-
-                .tab-body-wrapper .widget{
-                    border: none !important;
-                }
-
-                .tab-body-wrapper .grid{
-                    border-radius: 0 !important;
-                    margin-left: -5px;
-                    width: 100%;
-                }
-
-                .tab-body-wrapper table{
-                    border: none;
-                }
-
-                .tabs-wrapper div.tab-loader{
-                    position: absolute;
-                    width: 100%;
-                    height: inherit;
-                    display: block;
-                    text-align: center;
-                    min-height: 300px;
-                    background: rgba(1, 1, 1, 0.15);
-
-                    i{
-                        .abs-center();
-                    }
-                }
-
-            }
-
-            // tabs
-            body.trinity-admin{
-
-                .harmonica{
-
-                    .main-panel{
-
-                        min-height: 51px;
-
-                        label[for^="harmonica"]{
-                            font-size: 14px;
-                            text-align: left;
-                            font-weight: 300;
-                            padding-left: 15px;
-                            padding-right: 15px;
-                            color: @global-font-color;
-                            line-height: 30px;
-
-                            border-top: 1px solid @color-tab-label;
-                            border-bottom: 1px solid @color-tab-label;
-                            text-transform: uppercase;
-
-                            i{
-                                margin-right: 10px;
-                                font-size: 16px;
-                                line-height: 30px;
-                                float: left;
-                                color: @color-primary;
-                            }
-
-                            &:hover{
-                                background: @global-row-hover;
-                            }
-                        }
-
-                        .show-harmonica{
-                            background: none;
-                            padding: 0;
-                            margin-bottom: 20px;
-                            color: @global-font-color;
-                            max-height: 400px;
-                            overflow-y: auto;
-
-                            .harmonica-content{
-                                color: @global-font-color;
-                                padding-left: 15px;
-                                padding-right: 15px;
-                            }
-
-                            label{
-                                color: @global-font-color;
-                                font-weight: 300;
-                                font-size: 14px;
-                            }
-                        }
-                    }
-
-                    input[id^="harmonica"]:checked + .main-panel{
-                        label[for^="harmonica"]{
-                            font-weight: 400;
-                            background: darken(@global-row-hover, 5%);;
-                            color: @color-primary;
-                            border-top: 1px solid #d7d7d7;
-                            border-bottom: 1px solid #ccc;
-                        }
-                    }
-                }
-
-            }
-
-
-            // content
-            body.trinity-admin{
-                .tab-content{
-
-                    color: @global-font-color;
-
-                    .tab-header{
-                        margin-bottom: 15px;
-                        border-bottom: 2px solid #24afc9;
-                        padding: 20px;
-                    }
-
-                    .tab-title{
-                        text-transform: uppercase;
-                        font-size: 20px;
-                        color: @color-primary;
-                        font-weight: 400;
-                    }
-
-                    .tab-sub-title{
-                        font-size: 16px;
-                        padding-left: 20px;
-                        padding-right: 20px;
-                        padding-bottom: 20px;
-                        text-transform: uppercase;
-                        font-weight: 400;
-                        i{
-                            color: #24afc9 !important;
-                            padding-right: 5px;
-                        }
-                    }
-
-                    .tab-description{
-                        margin-top: 10px;
-                        color: @color-tab-label;
-                        font-size: 14px !important;
-                        padding-left: 0px;
-                        padding-right: 0px;
-                        margin-left: 0px !important;
-                        margin-right: 0px !important;
-                    }
-
-                    .tab-info-text{
-                        margin: 0 !important;
-                        padding-left: 15px;
-                        padding-right: 15px;
-                        padding-bottom: 15px;
-                        font-size: 14px !important;
-                        font-weight: 300;
-                        color: @global-font-color;
-                        i{
-                            color: @color-tab-label;
-                        }
-                    }
-                }
-            }
-
-            font-size: 20px;
-            color: @color-primary;
-            font-weight: 400;
-        }
-
-        .tab-sub-title{
-            font-size: 16px;
-            padding-left: 20px;
-            padding-right: 20px;
-            padding-bottom: 20px;
-            text-transform: uppercase;
-            font-weight: 400;
-            i{
-                color: #24afc9 !important;
-                padding-right: 5px;
-            }
-        }
-
-        .tab-description{
-            margin-top: 10px;
-            color: @color-tab-label;
-            font-size: 14px !important;
-            padding-left: 0px;
-            padding-right: 0px;
-            margin-left: 0px !important;
-            margin-right: 0px !important;
-        }
-
-        .tab-info-text{
-            margin: 0 !important;
-            padding-left: 15px;
-            padding-right: 15px;
-            padding-bottom: 15px;
-            font-size: 14px !important;
-            font-weight: 300;
-            color: @global-font-color;
-            i{
-                color: @color-tab-label;
-            }
-        }
-    }
-
-}
-
-body.trinity-admin {
+    @import "variables";
+    @import "helper";
 
     .tabs-wrapper {
+      background: #fff;
+      margin-top: 40px;
+      font-family: "Roboto", sans-serif;
+      font-weight: 300;
+      //margin-bottom: 20px;
 
-        /*//super cool loop if you looking
-        // for dynamic width as:
-        //  |       100        |
-        //  |   50   |   50    |
-        //  | 25 | 25| 25 | 25 |
-        // unfortunately not for our case...
+      .shadow();
+      //border: 1px #eaeceb solid;
 
-        .tab-loop-width (@i) when (@i > 0) {
+      .tab-head:checked + label {
+        background: #fff;
+        border-bottom: 2px solid @color-primary;
+        color: @color-primary;
+        top: 0 !important;
+        border-top: 1px solid transparent !important;
+      }
 
-            label[for^="tab"]:first-of-type:nth-last-of-type(@{i}),
-            label[for^="tab"]:first-of-type:nth-last-of-type(@{i}) ~ label[for^="tab"]{
-                width: 100%/@i;
-            }
+      label[for^="tab"] {
+        border: none;
+        border-top: none;
+        border-bottom: 2px solid #b5b5b5;
+        color: @tabs-color-label;
+        counter-increment: tabs;
+        padding: 15px 40px 15px 40px;
+        font-weight: 400;
+        z-index: 3;
+        position: relative;
+        font-family: "Roboto", sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
 
-            .tab-loop-width(@i - 1);
+        &:hover {
+          color: @global-font-color;
         }
-        .tab-loop-width (15);*/
+      }
 
+      .tab-body-wrapper {
+        border: none;
+        //border-top: 2px solid #b5b5b5;
+        //margin-top: -2px;
+        min-height: 300px;
 
-        @media screen and(max-width: 980px) {
-            label[for^="tab"] {
-                width: 100%/3 !important;
-                max-width: none;
-            }
+        .tab-body p {
+          font-size: 18px;
+          margin-left: 10px;
+          margin-right: 10px;
+          margin-top: 10px;
         }
-        @media screen and(max-width: 880px){
-            label[for^="tab"] {
-                width: 100%/2 !important;
-                max-width: none;
-            }
-        }
-        @media screen and(max-width: 768px){
-            label[for^="tab"] {
-                width: 100% !important;
-                max-width: none;
-            }
-        }
+
+      }
 
     }
+
+    .tabs-wrapper .tab-body-wrapper label {
+      border: none;
+      background: transparent;
+    }
+
+    .tab-body {
+      padding: 0;
+    }
+
+    .tab-body-wrapper {
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .tab-body-wrapper .widget {
+      border: none !important;
+    }
+
+    .tab-body-wrapper .grid {
+      border-radius: 0 !important;
+      margin-left: -5px;
+      width: 100%;
+    }
+
+    .tab-body-wrapper table {
+      border: none;
+    }
+
+    .tabs-wrapper div.tab-loader {
+      position: absolute;
+      width: 100%;
+      height: inherit;
+      display: block;
+      text-align: center;
+      min-height: 300px;
+      background: rgba(1, 1, 1, 0.15);
+
+      i {
+        .abs-center();
+      }
+    }
+
+  }
+
+  // tabs
+  body.trinity-admin {
+
+    .harmonica {
+
+      .main-panel {
+
+        min-height: 51px;
+
+        label[for^="harmonica"] {
+          font-size: 14px;
+          text-align: left;
+          font-weight: 300;
+          padding-left: 15px;
+          padding-right: 15px;
+          color: @global-font-color;
+          line-height: 30px;
+
+          border-top: 1px solid @tabs-color-label;
+          border-bottom: 1px solid @tabs-color-label;
+          text-transform: uppercase;
+
+          i {
+            margin-right: 10px;
+            font-size: 16px;
+            line-height: 30px;
+            float: left;
+            color: @color-primary;
+          }
+
+          &:hover {
+            background: @global-row-hover;
+          }
+        }
+
+        .show-harmonica {
+          background: none;
+          padding: 0;
+          margin-bottom: 20px;
+          color: @global-font-color;
+          max-height: 400px;
+          overflow-y: auto;
+
+          .harmonica-content {
+            color: @global-font-color;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+
+          label {
+            color: @global-font-color;
+            font-weight: 300;
+            font-size: 14px;
+          }
+        }
+      }
+
+      input[id^="harmonica"]:checked + .main-panel {
+        label[for^="harmonica"] {
+          font-weight: 400;
+          background: darken(@global-row-hover, 5%);;
+          color: @color-primary;
+          border-top: 1px solid #d7d7d7;
+          border-bottom: 1px solid #ccc;
+        }
+      }
+    }
+
+  }
+
+  // content
+  body.trinity-admin {
+    .tab-content {
+
+      color: @global-font-color;
+
+      .tab-header {
+        margin-bottom: 15px;
+        border-bottom: 2px solid #24afc9;
+        padding: 20px;
+      }
+
+      .tab-title {
+        text-transform: uppercase;
+        font-size: 20px;
+        color: @color-primary;
+        font-weight: 400;
+      }
+
+      .tab-sub-title {
+        font-size: 16px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 20px;
+        text-transform: uppercase;
+        font-weight: 400;
+        i {
+          color: #24afc9 !important;
+          padding-right: 5px;
+        }
+      }
+
+      .tab-description {
+        margin-top: 10px;
+        color: @tabs-color-label;
+        font-size: 14px !important;
+        padding-left: 0px;
+        padding-right: 0px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+      }
+
+      .tab-info-text {
+        margin: 0 !important;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        font-size: 14px !important;
+        font-weight: 300;
+        color: @global-font-color;
+        i {
+          color: @tabs-color-label;
+        }
+      }
+    }
+  }
+
+  font-size: 20px;
+  color: @color-primary;
+  font-weight: 400;
+}
+
+.tab-sub-title {
+  font-size: 16px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 400;
+  i {
+    color: #24afc9 !important;
+    padding-right: 5px;
+  }
+}
+
+.tab-description {
+  margin-top: 10px;
+  color: @tabs-color-label;
+  font-size: 14px !important;
+  padding-left: 0px;
+  padding-right: 0px;
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.tab-info-text {
+  margin: 0 !important;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  font-size: 14px !important;
+  font-weight: 300;
+  color: @global-font-color;
+  i {
+    color: @tabs-color-label;
+  }
+}
+
+.tabs-wrapper {
+
+  /*//super cool loop if you looking
+  // for dynamic width as:
+  //  |       100        |
+  //  |   50   |   50    |
+  //  | 25 | 25| 25 | 25 |
+  // unfortunately not for our case...
+
+  .tab-loop-width (@i) when (@i > 0) {
+
+      label[for^="tab"]:first-of-type:nth-last-of-type(@{i}),
+      label[for^="tab"]:first-of-type:nth-last-of-type(@{i}) ~ label[for^="tab"]{
+          width: 100%/@i;
+      }
+
+      .tab-loop-width(@i - 1);
+  }
+  .tab-loop-width (15);*/
+
+  @media screen and(max-width: 980px) {
+    label[for^="tab"] {
+      width: 100%/3 !important;
+      max-width: none;
+    }
+  }
+  @media screen and(max-width: 880px) {
+    label[for^="tab"] {
+      width: 100%/2 !important;
+      max-width: none;
+    }
+  }
+  @media screen and(max-width: 768px) {
+    label[for^="tab"] {
+      width: 100% !important;
+      max-width: none;
+    }
+  }
+
 }
