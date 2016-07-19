@@ -19,22 +19,16 @@
   }
 }
 
-.button {
+.button-parameters{
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: @roboto-medium;
-  font-size: @font-size-button;
   text-decoration: none;
-  vertical-align: middle;
+  //vertical-align: middle;
   text-transform: uppercase;
-
-  padding: 9px 35px;
-  margin-top: 5px;
-  //margin-bottom: 25px;
   line-height: 1;
   border: none;
-
-  .radius(5px);
+  margin: 5px;
 
   background: lighten(desaturate(@color-primary, 75%), 30%);
   color: #fff;
@@ -47,24 +41,32 @@
     color: #fff;
     background: lighten(@color-primary, 15%);
   }
+}
 
-  &-medium {
-    max-height: 33px;
-    line-height: 31px;
-    font-size: 80%;
-    padding: 0 18px;
-  }
+.button {
+  .button-parameters();
+  font-size: 18px;
+  padding: 9px 35px;
+  .radius(5px);
 
   &-success {
     font-weight: @roboto-medium;
+    border: none !important;
     box-shadow: 0px -3px 0px 0px #457A1A inset;
+    &:hover {
+      border: none !important;
+    }
   }
 
   &-info {
+    border: none !important;
     box-shadow: 0px -3px 0px 0px #2284A1 inset;
+    &:hover {
+      border: none !important;
+    }
   }
 
-  /*  Yea, yea shitty importants bcs we are using bowtie   */
+  //  Yea, yea shitty importants bcs we are using bowtie
 
   &-primary {
     background-color: @color-primary !important;
@@ -134,20 +136,36 @@
 }
 
 .button-medium {
-  .button();
-  max-height: 33px;
-  line-height: 31px;
-  font-size: 80%;
-  padding: 0px 18px;
+  .button-parameters();
+  .radius(4px);
+  font-size: 14px;
+  padding: 8px 14px;
+}
+
+.button-medium.button-danger, .button-small.button-danger {
+  box-shadow: 0px -2px 0px 0px darken(@color-danger, 15%) inset;
+}
+
+.button-medium.button-info, .button-small.button-info {
+  box-shadow: 0px -2px 0px 0px #2284A1 inset;
+}
+
+.button-medium.button-success, .button-small.button-success {
+  box-shadow: 0px -2px 0px 0px #457A1A inset;
+}
+
+.button-medium.button-warning, .button-small.button-warning {
+  box-shadow: 0px -2px 0px 0px darken(@color-warning, 25%) inset;
 }
 
 .button-small {
-  .button();
+  .button-parameters();
+  .radius(4px);
   max-height: 25px;
-  font-size: 11px;
-  padding: 6px 12px;
+  font-size: 12px;
+  padding: 6px 10px;
 
-  min-width: 95px;
+  min-width: 90px;
   display: inline-block;
   line-height: 1;
 }
@@ -163,6 +181,14 @@
     border: 1px solid #2f2f2f;
   }
 }
+
+.disabled {
+  cursor: not-allowed !important;
+  &:hover{
+    background: inherit !important;;
+  }
+}
+
 
 //  Buttons with icons and animations for form actions
 .trinity-form {
@@ -181,23 +207,6 @@
     &:after {
       .icon("\e6a9");
       .animation(spin, 3s, linear, infinite);
-
-      @-moz-keyframes spin {
-        100% {
-          -moz-transform: rotate(360deg);
-        }
-      }
-      @-webkit-keyframes spin {
-        100% {
-          -webkit-transform: rotate(360deg);
-        }
-      }
-      @keyframes spin {
-        100% {
-          -webkit-transform: rotate(360deg);
-          transform: rotate(360deg);
-        }
-      }
     }
   }
 
@@ -233,3 +242,37 @@
     }
   }
 }
+
+// Logger - active search sorting items by revelation and that's show as back of get detail button
+.revelation {
+  position: relative;
+  &:after {
+    content: '';
+    display: block;
+    background: #82c6fb;
+    position: absolute;
+    width: 100%;
+    height: 23px;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    transition: .3s;
+  }
+  &:before {
+    content: 'Get details';
+    display: block;
+    width: 100%;
+    height: 23px;
+    line-height: 23px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 99;
+  }
+  &:hover {
+    background: none;
+  }
+}
+
+
+
