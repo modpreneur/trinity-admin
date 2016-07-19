@@ -1,10 +1,13 @@
-/**
-    Primary for dashboard widgets.
-*/
-@import "variables";
+/**************************************
+
+  Dashboard widgets small and normal
+    - main layout
+    - some media queries
+    - classes for space between
+
+**************************************/
 @import "helper";
 
-body.trinity-admin {
 
   // wrapper
   .dashboard-widgets {
@@ -26,6 +29,10 @@ body.trinity-admin {
     color: @global-font-color;
     position: relative;
     margin: 0 @widget-space/2 @widget-space;
+
+    .grid thead tr{
+      height: auto;
+    }
 
     &:first-child {
       margin-left: 0px !important;
@@ -108,7 +115,7 @@ body.trinity-admin {
       color: @header-font-color;
     }
 
-    /*  Grid in widgets  */
+/*    !*  Grid in widgets  *!
     .data-grid {
       border: none;
       background: #fff;
@@ -140,7 +147,7 @@ body.trinity-admin {
           vertical-align: middle;
         }
       }
-    }
+    }*/
 
     .content-box {
       height: 350px;
@@ -158,25 +165,21 @@ body.trinity-admin {
 
   }
 
-  .trinity-widget a {
+/*  .trinity-widget a {
     color: #6b6b6b;
   }
 
   .trinity-widget a:hover {
     color: #4c4c4c;
-  }
+  }*/
 
-  .trinity-widget a:visited {
+/*  .trinity-widget a:visited {
     color: #551A8B;
-  }
+  }*/
 
   .trinity-widget .datetime {
     font-size: 12px;
     line-height: 16px;
-  }
-
-  .trinity-widget .content {
-
   }
 
   .trinity-widget .short-cell {
@@ -186,7 +189,6 @@ body.trinity-admin {
 
   .box-widget {
     .box();
-    //padding: 20px;
     margin-bottom: 20px;
 
     .header-h2 {
@@ -235,12 +237,13 @@ body.trinity-admin {
       width: 650px;
       border: none;
       border-radius: 6px;
+      padding: 20px;
 
-      -webkit-box-shadow: 0 0 20px 0px rgba(0, 0, 0, .45);
-      -moz-box-shadow: 0 0 20px 0px rgba(0, 0, 0, .45);
-      box-shadow: 0 0 20px 0px rgba(0, 0, 0, .45);
+      .shadow(0, 0, 20px, 0, rgba(0, 0, 0, .45));
+
       .row {
         box-shadow: none;
+        padding: 0 0 10px 0;
       }
       .cross-link {
         position: absolute;
@@ -258,6 +261,7 @@ body.trinity-admin {
       }
     }
   }
+
   #dashboard {
     overflow-y: auto;
     overflow-x: hidden;
@@ -266,10 +270,8 @@ body.trinity-admin {
       border: none;
       width: 100%;
       display: inline-block;
-
       float: left;
       .group-clearfix();
-      transition: .4s;
 
       &:hover {
         background: none;
@@ -280,6 +282,7 @@ body.trinity-admin {
           margin: 0 10px;
         }
         .checkbox {
+          transition: .3s;
           border-bottom: 1px solid #e5e5e5;
           &:hover {
             background: #EFEFEF
@@ -297,6 +300,7 @@ body.trinity-admin {
         }
       }
     }
+
     .form-content-center {
       width: 100%;
       padding: 0;
@@ -308,6 +312,7 @@ body.trinity-admin {
       }
     }
   }
+
   #dashboard_widgets {
     label {
       color: #747474;
@@ -408,8 +413,8 @@ body.trinity-admin {
         border-bottom: 2px solid #efefef;
       }
     }
-
   }
+
   .small-widgets {
 
     .trinity-widget {
@@ -453,7 +458,8 @@ body.trinity-admin {
 
   }
 
-  //----------------- Added by JS classes for widget field-------------
+  //  JS changing classes for widget field depending on their position in grid
+  // here are just space between them
   .long-widget {
     & > div {
       padding: 0;
@@ -472,12 +478,9 @@ body.trinity-admin {
     }
   }
 
-  //-------------------------------------------------------------------
-
   @media screen and (max-width: 1385px) {
     .small-widgets {
       .widget-small-description {
-
         font-size: 12px;
       }
     }
@@ -487,7 +490,7 @@ body.trinity-admin {
       .span-none-padding-large-6 {
         width: 50%;
         .trinity-widget {
-          margin-bottom: @widget-space/2;
+          margin-bottom: @widget-space;
           .widget-small-description {
             font-size: 14px;
           }
@@ -545,5 +548,5 @@ body.trinity-admin {
       }
     }
   }
-}
+
 
