@@ -9,11 +9,10 @@
 @import "variables";
 @import "helper";
 
-body.trinity-admin {
 
   // for body
   &.navbar-fixed {
-    padding-top: @navbar-height !important;
+    padding-top: @navbar-height;
     .navbar {
       position: fixed;
       top: 0;
@@ -30,42 +29,35 @@ body.trinity-admin {
     background: #fff;
     min-height: @navbar-height;
     width: 100%;
-    color: #fff;
+    color: @navbar-font-color;
     padding: 0;
     overflow-y: hidden;
-    font-weight: 300;
+    font-weight: @roboto-light;
     font-family: "Roboto", sans-serif;
 
-    -webkit-box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
-    -moz-box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
-    box-shadow: 0 0 10px 1px rgba(0, 0, 0, .1);
+    .shadow(0, 0, 10px, 1px, rgba(0, 0, 0, .15));
 
-    input:checked {
-      background: red;
-      border: 5px solid red;
-    }
-
-    input:checked ~ .navbar-container .navbar-actions-item {
+/*    input:checked ~ .navbar-container .navbar-actions-item {
       display: none !important;
     }
 
     input:checked ~ .navbar-container .fav-navbar {
       display: block;
-    }
+    }*/
 
     .navbar-logo {
       height: @navbar-height;
-      width: 260px;
+      width: @sidebar-width;
       display: inline-block;
       float: left;
       .group-clearfix();
       z-index: 999;
       background: @color-primary;
       i {
-        margin: 26px;
+        margin: (@navbar-height - @logo-height)/2 0 (@navbar-height - @logo-height)/2 (@sidebar-width - @logo-width)/3;
         display: block;
-        height: 38px;
-        width: 95px;
+        height: @logo-height;
+        width: @logo-width;
       }
       a {
         font-size: 38px;
@@ -78,7 +70,7 @@ body.trinity-admin {
     .version {
       position: absolute;
       top: 55px;
-      left: 121px;
+      left: 140px;
       color: #fff;
       font-size: 8px;
     }
@@ -90,78 +82,31 @@ body.trinity-admin {
       height: @navbar-height;
     }
 
-    .navbar-search {
-      position: relative;
-      float: left;
-      .group-clearfix();
-      z-index: 9;
-
-      form {
-        margin: 31px;
-      }
-      input {
-        background: transparent;
-        font-family: Roboto, sans-serif;
-        font-size: 22px;
-        border: none;
-        font-weight: 100;
-        width: auto;
-        &:focus {
-          font-weight: 300;
-          & + button {
-            top: 25px;
-            left: -20px;
-            height: 40px;
-            width: 40px;
-            border-radius: 20px;
-            background: #5a544f;
-            i {
-              font-size: 22px;
-            }
-          }
-        }
-      }
-      button {
-        position: absolute;
-        left: -15px;
-        top: 30px;
-        display: block;
-        height: 30px;
-        width: 30px;
-        border-radius: 15px;
-        background: #fff;
-        border: none;
-        cursor: pointer;
-        transition: .5s;
-        i {
-          transition: .5s;
-          font-size: 16px;
-          color: #cec5c0;
-        }
-      }
-    }
     .navbar-actions {
       z-index: 999;
+      a{
+        color: @navbar-font-color;
+      }
     }
     .navbar-item-label {
+      top: 0;
       position: relative;
       display: inline-block;
       height: 90px;
       width: 45px;
       cursor: pointer;
-      font-size: 20px;
-      color: @navbar-font-color;
+      font-size: @navbar-font-icon-size;
       float: left;
       .group-clearfix();
 
       i {
         display: block;
-        width: 20px;
-        height: 20px;
-        margin: 35px 12.5px;
+        width: @navbar-font-icon-size;
+        height: @navbar-font-icon-size;
+        margin: (@navbar-height - @navbar-font-icon-size)/2  (@navbar-height/2 - @navbar-font-icon-size)/2;
       }
       &:hover {
-        background: #fff8f4;
+        background: desaturate(lighten(@color-primary, 52%), 10%);
       }
       .number-info {
         border-radius: 6px;
@@ -186,6 +131,7 @@ body.trinity-admin {
       height: 90px;
       width: 45px;
       float: right;
+      
       .group-clearfix();
       background: #e4e4e4;
 
@@ -194,7 +140,6 @@ body.trinity-admin {
         transition: .3s;
         width: 45px;
         height: 45px;
-        cursor: pointer;
         &:first-of-type {
           background: @color-tertiary;
           &:hover {
@@ -211,10 +156,10 @@ body.trinity-admin {
             padding: 12.5px;
           }
         }
-        &:last-of-type:hover{
-          background: darken(#e4e4e4,15%);
-          span{
-            background: #6e7072;
+        &:last-of-type:hover {
+          background: darken(#e4e4e4, 15%);
+          span {
+            background: darken(@navbar-font-color, 25%);
           }
         }
       }
@@ -225,11 +170,11 @@ body.trinity-admin {
         height: 6px;
         border-radius: 3px;
         margin: 19.5px 2px;
-        background: #97999c;
+        background: darken(@navbar-font-color, 15%);
         &:first-child {
           margin-left: 10px;
         }
-        &:nth-child(4),&:nth-child(5){
+        &:nth-child(4), &:nth-child(5) {
           position: absolute;
           top: 7px;
           left: 21px;
@@ -239,11 +184,9 @@ body.trinity-admin {
           width: 3px;
           height: 31px;
 
-
           border-radius: 0;
           opacity: 0;
           transition: .6s;
-          //background: #fff;
         }
       }
     }
@@ -271,7 +214,7 @@ body.trinity-admin {
           margin: 23px 5px;
         }
       }
-      .user-name{
+      .user-name {
         line-height: 90px;
         i {
           width: 10px;
@@ -286,33 +229,77 @@ body.trinity-admin {
       }
     }
   }
+  .navbar-search {
+    position: relative;
+    float: left;
+    .group-clearfix();
+    z-index: 9;
 
-  @media screen and(max-width: 1280px) {
-
-    .navbar {
-      .navbar-search {
-
-        form{
-          transition: .4s;
-          margin: 45px 0 0 31px;
-        }
-        input:focus{
-          & + button{
-            top:40px
+    form {
+      margin: 31px;
+    }
+    input {
+      background: transparent;
+      font-family: Roboto, sans-serif;
+      font-size: 22px;
+      border: none;
+      font-weight: 100;
+      width: auto;
+      &:focus {
+        font-weight: 300;
+        & + button {
+          top: 25px;
+          left: -20px;
+          height: 40px;
+          width: 40px;
+          border-radius: 20px;
+          background: @sidebar-back-color;
+          i {
+            font-size: 22px;
           }
         }
-
-        button{
-          top: 45px;
-        }
+      }
+    }
+    button {
+      position: absolute;
+      left: -15px;
+      top: 30px;
+      display: block;
+      height: 30px;
+      width: 30px;
+      border-radius: 15px;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+      transition: .5s;
+      i {
+        transition: .5s;
+        font-size: 16px;
+        color: #cec5c0;
       }
     }
   }
 
-  @media only screen and (max-width : 992px) {
+  @media screen and(max-width: 1280px) {
 
+    .navbar-search {
+
+      form {
+        transition: .4s;
+        margin: 45px 0 0 31px;
+      }
+      input:focus {
+        & + button {
+          top: 40px
+        }
+      }
+
+      button {
+        top: 45px;
+      }
+    }
   }
-}
+
 
 
 
