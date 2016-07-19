@@ -1,15 +1,15 @@
-/**
-    items under navbar.
-*/
-@import "variables";
-@import "helper";
+/**************************************
 
-body.trinity-admin {
+  Navigation box for content in page header box
+  action e.g. go back, create new
+
+**************************************/
+@import "helper";
 
   .box-new-form {
     position: relative;
 
-    .page-actions {
+    /*.page-actions {
       margin-top: 0;
       position: absolute;
       top: 0;
@@ -17,14 +17,15 @@ body.trinity-admin {
 
       .item {
         display: block;
-        background: @color-tab-label;
+        background: lighten(@tabs-color-label, 10%);
         color: #fff;
         text-align: center;
         cursor: pointer;
         font-size: 12px;
+        transition: .3s;
 
         &:hover {
-          background: darken(@color-tab-label, 10%);
+          background: @tabs-color-label;
         }
         a {
           padding: 5px 15px;
@@ -43,7 +44,7 @@ body.trinity-admin {
           background: @color-tertiary;
         }
       }
-    }
+    }*/
   }
 
   .navigation-box {
@@ -118,6 +119,6 @@ body.trinity-admin {
       }
     }
   }
-}
+
 
 
