@@ -1,51 +1,49 @@
-@import "variables";
+/**************************************
+
+  Navbar popup elements
+    - labels, input and wrappers for popup contents
+    - notifications, user profile, quick links and 
+    - classes for space between
+
+**************************************/
 @import "helper";
 
-body.trinity-admin {
-
   .user-profile-info {
-    top: -1000px;
+    transform: translateY(-1000px);
     transition: 1s;
     z-index: 99;
     display: block;
     position: fixed;
     right: 44px;
 
-    -webkit-box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
-    -moz-box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
-    box-shadow: -1px 3px 6px 0  rgba(0,0,0,0.35);
 
-      .user-photo {
-        margin: 10px;
-        position: relative;
-        .trinity {
-          font-size: 100px;
-          border-radius: 100px;
-          color: #cdbeb5;
-        }
-        img{
-          width: 100px;
-          height: 100px;
-          border-radius: 100px;
-        }
+    .user-photo {
+      margin: 10px;
+      position: relative;
+      .trinity {
+        font-size: 100px;
+        border-radius: 100px;
+        color: #cdbeb5;
       }
-      .tab-list{
-        margin-top: 10px;
+      img {
+        width: 100px;
+        height: 100px;
+        border-radius: 100px;
       }
     }
+    .tab-list {
+      margin-top: 10px;
+    }
+  }
 
-//=================================================================
-
-
+  //=================================================================
 
   .navbar-popup {
     width: 401px;
     background: #fff;
-    border: 1px solid #a7a7a7;
+    border: 1px solid #e4e4e4;
     border-top: none;
-    -webkit-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
-    -moz-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
-    box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+    .shadow(-1px, 4px, 10px, 0, rgba(0, 0, 0, .15));
 
     h1 {
       display: block;
@@ -75,12 +73,12 @@ body.trinity-admin {
   }
 
   .notifications {
-    top: -1000px;
+    transform: translateY(-1000px);
     transition: all 1s, z-index 0s;
     z-index: 99;
     display: block;
     position: fixed;
-    right: 320px;
+    right: 315px;
 
     .tab-list {
       overflow-y: auto;
@@ -141,7 +139,7 @@ body.trinity-admin {
 
         &:hover {
           min-height: 58px;
-          background: #fffbf8;
+          background: #fefefe;
           i.trinity-close {
             cursor: pointer;
             visibility: visible;
@@ -183,98 +181,91 @@ body.trinity-admin {
         }
 
         a {
-          color: @sidebar-link-color;
+          color: @link-font-color;
         }
 
-        &.info {
-          background: #fff;
-          i {
-            color: @color-info;
-          }
-        }
-
-        &.warning {
-          background: #fff4e6;
-          i {
-            color: @color-warning;
-          }
-        }
-
-        &.success {
-          background: #fff;
-          i {
-            color: @color-success-notification;
-          }
-        }
-        &.noaction {
-          background: #fff;
-          color: @sidebar-link-color;
-          i {
-            color: lighten(@sidebar-link-color, 10%);
-          }
-        }
-
-        &.danger {
-          background: #ffefef;
-          i {
-            color: @color-danger;
-          }
-        }
       }
+    }
+    .info {
+      background: #fff;
+      i {
+        color: @color-info;
+      }
+    }
 
+    .warning {
+      background: #fff4e6;
+      i {
+        color: @color-warning;
+      }
+    }
+
+    .success {
+      background: #fff;
+      i {
+        color: @color-success-notification;
+      }
+    }
+    .noaction {
+      background: #fff;
+      color: @sidebar-link-color;
+      i {
+        color: lighten(@sidebar-link-color, 10%);
+      }
+    }
+
+    .danger {
+      background: #ffefef;
+      i {
+        color: @color-danger;
+      }
+    }
+    .noaction:hover{
+      min-height: 50px;
     }
   }
-
-
-/*  #user-profile-input:checked ~ .navbar {
-    &:before {
-      right: 136px;
-      animation: opa 1.5s 1s ease both;
-    }
-    #user-profile-label i{
-      color: @color-secondary;
-    }
-  }*/
 
   #user-profile-input:checked ~ .user-profile-info {
-    top: @navbar-height;
+    will-change: transform;
+    transform: translateY(0px);
   }
   #user-profile-label {
-    transition: .7s all;
-    top: 0;
+    transition: .7s all, background .4s;
   }
-  #user-profile-input:checked~.navbar #user-profile-label {
-    top: -8px;
-    height: 98px;
+  #user-profile-input:checked ~ .navbar #user-profile-label {
+    will-change: transform;
+    transform: translateY(-8px);
+
+    height: @navbar-height + 8;
     color: #d55a13;
-    background: #fff8f4;
+    background: lighten(@color-primary, 50%);
     i {
       color: #d55a13;
     }
   }
 
-
-  #notifications-input:checked~.notifications {
-    top: 90px;
+  #notifications-input:checked ~ .notifications {
+    will-change: transform;
+    transform: translateY(0px);
   }
 
   #notifications-label {
-    transition: .7s all;
-    top: 0;
+    transition: .7s all, background .4s;
   }
-  #notifications-input:checked~.navbar #notifications-label {
-    top: -8px;
-    height: 98px;
+  #notifications-input:checked ~ .navbar #notifications-label {
+    will-change: transform;
+    transform: translateY(-8px);
+
+    height: @navbar-height + 8;
     color: #d55a13;
-    background: #fff8f4;
-    i{
+    background: lighten(@color-primary, 50%);
+    i {
       color: #d55a13;
     }
   }
 
   #settings-label {
-    transition: 1s all;
-    top: 0;
+    transition: .7s all, background .4s;
   }
   #settings-label:hover i {
     animation-name: rotate;
@@ -290,11 +281,11 @@ body.trinity-admin {
       transform: rotate(360deg);
     }
   }
-  #settings-input:checked~.navbar #settings-label {
+  #settings-input:checked ~ .navbar #settings-label {
     top: -5px;
     height: 95px;
     color: #d55a13;
-    background: #fff8f4;
+    background: lighten(@color-primary, 50%);
     i {
       color: #d55a13;
     }
@@ -317,8 +308,8 @@ body.trinity-admin {
   .slideInUp {
     -webkit-animation-name: slideInUp;
     animation-name: slideInUp;
-    -webkit-animation-duration: 1.4s;
-    animation-duration: 1.4s;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
   }
@@ -336,26 +327,26 @@ body.trinity-admin {
     }
   }
   @keyframes slideInUp {
-     0% {
-       -webkit-transform: translateY(100%);
-       transform: translateY(100%);
-       visibility: visible;
-       opacity: 0;
-     }
-     100% {
-       -webkit-transform: translateY(0);
-       transform: translateY(0);
-       opacity: 1;
-     }
-   }
-  .slideOutDown {
-      -webkit-animation-name: slideOutDown;
-      animation-name: slideOutDown;
-      -webkit-animation-duration: 1.4s;
-      animation-duration: 1.4s;
-      -webkit-animation-fill-mode: both;
-      animation-fill-mode: both;
+    0% {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      visibility: visible;
+      opacity: 0;
     }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  .slideOutDown {
+    -webkit-animation-name: slideOutDown;
+    animation-name: slideOutDown;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+  }
   @-webkit-keyframes slideOutDown {
     0% {
       -webkit-transform: translateY(0);
@@ -370,48 +361,54 @@ body.trinity-admin {
     }
   }
   @keyframes slideOutDown {
-     0% {
-       -webkit-transform: translateY(0);
-       transform: translateY(0);
-       opacity: 1;
-     }
-     100% {
-       -webkit-transform: translateY(100%);
-       transform: translateY(100%);
-       visibility: hidden;
-       opacity: 0;
-     }
-   }
+    0% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      -webkit-transform: translateY(100%);
+      transform: translateY(100%);
+      visibility: hidden;
+      opacity: 0;
+    }
+  }
 
-
-
-  .quick-links{
+  .quick-links {
     transition: .7s;
     top: @navbar-height;
-    right: -500px;
+    right: 0;
+
+    will-change: transform;
+    transform: translateX(500px);
     position: fixed;
     width: 200px;
     display: block;
     background: #fff;
-    border: 1px solid #a7a7a7;
+    border: 1px solid #c7c7c7;
     border-top: none;
-    -webkit-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
-    -moz-box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
-    box-shadow: -2px 4px 6px 0 rgba(0, 0, 0, .25);
+    .shadow(-2px, 4px, 8px, 0, rgba(0, 0, 0, .25));
+
     z-index: 99;
 
-    li{
+    li {
       height: 40px;
       font-size: 15px;
       cursor: pointer;
 
-      &:hover{
-        background: lighten(@color-primary,40%);
-        a{
+      &:hover {
+        background: lighten(@color-primary, 50%);
+        a {
           padding-left: 45px;
+          /*&:before{
+            content: "\e90b";
+            font-family: trinity;
+            font-size: 15px;
+            padding: 0 1
+          }*/
         }
       }
-      a{
+      a {
         transition: .3s;
         display: block;
         color: @global-font-color;
@@ -419,50 +416,57 @@ body.trinity-admin {
         line-height: 40px;
       }
     }
-    .header{
+    .header {
       font-weight: 400;
       padding: 20px;
       font-size: 14px;
       color: @color-primary;
       height: auto;
       border-bottom: 2px solid @color-primary;
-      i{
+      i {
         font-size: 20px;
       }
-      &:hover{
+      &:hover {
         background-color: #fff;
       }
     }
   }
-  #quick-links-input:checked ~ .quick-links{
-    right: 0;
+  #quick-links-input:checked ~ .quick-links {
+    will-change: transform;
+    transform: translateX(0px);
   }
-  #quick-links-input:checked ~ .navbar #quick-links-label{
+  #quick-links-input:checked ~ .navbar #quick-links-label {
     width: @navbar-height/2;
     height: @navbar-height/2;
-    span{
+    span {
+      will-change: opacity, transform;
       opacity: 0;
     }
-    span{
-      &:nth-child(4),&:nth-child(5){
+    span {
+      &:nth-child(4), &:nth-child(5) {
         opacity: 1;
       }
     }
-    span:nth-child(4){
+    span:nth-child(4) {
       transform: rotate(-135deg);
     }
-    span:nth-child(5){
+    span:nth-child(5) {
       transform: rotate(135deg);
     }
   }
 
   @media screen and(max-width: 1280px) {
-    #header-for-nonvisible{
+    #header-for-nonvisible {
       width: auto;
       margin-left: 291px;
       line-height: 1.6;
       height: auto;
     }
   }
-}
+  @media screen and(max-width: 1024px) {
+    .navbar .navbar-item-label{
+      display: none;
+    }
+  }
+
 
