@@ -1,9 +1,4 @@
 
-
-
-
-@color-tab-label: #bababa;
-
 @color-border: #b5b5b5;
 @color-font: #303030;
 @form-tr-time: 0.3s;
@@ -15,13 +10,15 @@
 @search-time: 0.3s;
 @search-font-size: 14px;
 
-@font-size-button: 17px;
+@link-font-color: darken(desaturate(@color-primary, 75%), 17%);
 
 /**************************************
   Global parameters
 **************************************/
 
   /*  Colors - primary,secondary... */
+    @back-color: #f8f3f0 !important;
+
     @color-primary: #d55a13;
     @color-primary-hover: darken(@color-primary, 10%);
     @color-primary-inverse: inverse(@color-primary);
@@ -34,21 +31,23 @@
     /*  Used for e.g. button  */
     @color-info: #61ccba;
     @color-warning: #ff8939;
-    @color-danger: #c94d3d;
+    @color-danger: #c93236;
     @color-success-notification: #f6e064;
     @color-grey-link: #8f8f8f;
 
   /*  Fonts  */
   @global-font-color: #303030;
   @global-header-color: #97999c;
-  //@header-font-color: #2f2f2f; //Removed to Grid section
+  @font-size-button: 18px;
 
 
   /*  Tabs  */
   @tabs-max-count: 8; //There are max, min width for tab and some media-queries for fit
   @tabs-hover-color: @color-tertiary;
+  @tabs-color-label: #7d7d7d;
 
 
+  /*  Widgets  */
   @widget-space: 20px; //Space between widgets in grid
 
 /**************************************
