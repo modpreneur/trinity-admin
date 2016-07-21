@@ -41,7 +41,7 @@ body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 1001;
 }
 .navbar-item-input {
   display: none;
@@ -340,7 +340,7 @@ body {
 .user-profile-info {
   transform: translateY(-1000px);
   transition: 1s;
-  z-index: 99;
+  z-index: 101;
   display: block;
   position: fixed;
   right: 44px;
@@ -397,7 +397,7 @@ body {
 .notifications {
   transform: translateY(-1000px);
   transition: all 1s, z-index 0s;
-  z-index: 99;
+  z-index: 101;
   display: block;
   position: fixed;
   right: 315px;
@@ -686,7 +686,7 @@ body {
   -webkit-box-shadow: -2px 4px 8px 0 rgba(0, 0, 0, 0.25);
   -moz-box-shadow: -2px 4px 8px 0 rgba(0, 0, 0, 0.25);
   box-shadow: -2px 4px 8px 0 rgba(0, 0, 0, 0.25);
-  z-index: 99;
+  z-index: 101;
 }
 .quick-links li {
   height: 40px;
@@ -2317,7 +2317,7 @@ body {
   height: 40px;
   padding: 0;
   display: none;
-  z-index: 9;
+  z-index: 100;
   opacity: .35;
   -webkit-transition: opacity 0.3s ease-in-out;
   -moz-transition: opacity 0.3s ease-in-out;
@@ -3065,60 +3065,6 @@ body {
   float: left;
   position: relative;
 }
-.edit-form .select-style select,
-.new-form .select-style select,
-.modal-dialog form .select-style select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  padding-right: 25px;
-}
-.edit-form .select-style:hover:after,
-.new-form .select-style:hover:after,
-.modal-dialog form .select-style:hover:after,
-.edit-form .select-style:focus:after,
-.new-form .select-style:focus:after,
-.modal-dialog form .select-style:focus:after {
-  color: #d55a13;
-}
-.edit-form .select-style:after,
-.new-form .select-style:after,
-.modal-dialog form .select-style:after {
-  transition: .4s;
-  content: "\e928";
-  font-family: trinity;
-  font-size: 12px;
-  color: #7d7d7d;
-  position: absolute;
-  right: 10px;
-  top: 11px;
-  line-height: 1;
-  pointer-events: none;
-}
-.edit-form .select-style:before,
-.new-form .select-style:before,
-.modal-dialog form .select-style:before {
-  content: " ";
-  right: 10px;
-  top: 12px;
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  pointer-events: none;
-}
-.edit-form .select-style select:-moz-focusring,
-.new-form .select-style select:-moz-focusring,
-.modal-dialog form .select-style select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
-}
-.edit-form .select-style select[disabled],
-.new-form .select-style select[disabled],
-.modal-dialog form .select-style select[disabled] {
-  cursor: not-allowed;
-  background: #ebf8ff;
-}
 .edit-form textarea,
 .new-form textarea,
 .modal-dialog form textarea {
@@ -3182,6 +3128,49 @@ body {
   right: 5px;
   top: 7px;
   pointer-events: none;
+}
+.select-style {
+  position: relative;
+}
+.select-style select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  padding-right: 25px;
+}
+.select-style:hover:after,
+.select-style:focus:after {
+  color: #d55a13;
+}
+.select-style:after {
+  transition: .4s;
+  content: "\e928";
+  font-family: trinity;
+  font-size: 12px;
+  color: #7d7d7d;
+  position: absolute;
+  right: 10px;
+  top: 11px;
+  line-height: 1;
+  pointer-events: none;
+}
+.select-style:before {
+  content: " ";
+  right: 10px;
+  top: 12px;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  pointer-events: none;
+}
+.select-style select:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+.select-style select[disabled] {
+  cursor: not-allowed;
+  background: #ebf8ff;
 }
 .modal-dialog form label {
   width: 100%;
