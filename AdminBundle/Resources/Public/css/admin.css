@@ -4055,7 +4055,6 @@ div[class^="control-"] i {
 }
 .button-disabled:hover {
   color: #e7e7e7;
-  background-color: #989898 !important;
   border: none !important;
 }
 .button-medium {
@@ -4321,6 +4320,10 @@ div[class^="control-"] i {
 }
 .revelation:hover {
   background: none;
+}
+.button-search {
+  min-width: 200px;
+  background: #4d4845;
 }
 /**************************************
 
