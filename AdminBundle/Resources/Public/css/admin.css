@@ -2373,7 +2373,7 @@ body {
   bottom: 0;
   /* background: red; */
   z-index: 99;
-  box-shadow: 0 -25px 15px -15px red inset;
+  box-shadow: 0 -25px 15px -15px #ffffff inset;
 }
 .trinity-widget .content-box {
   height: 350px;
@@ -3702,6 +3702,9 @@ div[class^="control-"] i {
 }
 .grid thead tr:hover {
   background: transparent;
+}
+.grid .product-clients a:hover {
+  color: #d55a13 !important;
 }
 .grid .cell-center {
   text-align: center;

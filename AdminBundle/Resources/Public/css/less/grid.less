@@ -20,14 +20,16 @@
   background: transparent;
   width: 100%;
   font-family: 'Roboto', sans-serif;
+  margin: 20px 0;
 
   thead {
     background: transparent;
     border-bottom: 2px solid #ededed;
     tr {
-      height: 45px;
+      //height: 45px;
     }
     th {
+      padding: 15px 10px;
       font-size: 16px;
       color: @header-font-color;
       font-weight: @roboto-medium;
@@ -59,6 +61,12 @@
     }
   }
 
+  .product-clients{
+    a:hover{
+      color: @color-primary !important;
+    }
+  }
+
   .cell-center {
     text-align: center;
   }
@@ -82,6 +90,7 @@
           }
           &:hover {
             background: lighten(@color-primary, 5%);
+            color: #fff;
           }
         }
         & > td a {
@@ -143,7 +152,14 @@
     cursor: context-menu;
   }
 }
-
+.trinity-widget{
+  .grid{
+    margin: 0 0 20px 0;
+    thead th{
+      padding: 10px;
+    }
+  }
+}
 .pagination {
   margin: 10px 35px 35px 35px;
   float: right;
