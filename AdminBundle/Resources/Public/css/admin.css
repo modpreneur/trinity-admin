@@ -1250,6 +1250,18 @@ body {
 .rw-calendar-grid .rw-btn {
   text-align: center;
 }
+.rw-calendar-grid tr td {
+  padding: 0;
+}
+.rw-popup-container {
+  left: 0;
+}
+.rw-widget > .rw-select {
+  border: none;
+}
+.rw-popup-container.rw-calendar-popup {
+  width: 100%;
+}
 .rw-calendar-grid th {
   padding: 0;
   text-align: center;
@@ -2493,7 +2505,6 @@ body {
 #dashboard {
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 450px;
 }
 #dashboard .choice {
   border: none;
@@ -3634,15 +3645,14 @@ div[class^="control-"] i {
   background: transparent;
   width: 100%;
   font-family: 'Roboto', sans-serif;
+  margin: 20px 0;
 }
 .grid thead {
   background: transparent;
   border-bottom: 2px solid #ededed;
 }
-.grid thead tr {
-  height: 45px;
-}
 .grid thead th {
+  padding: 15px 10px;
   font-size: 16px;
   color: #2f2f2f;
   font-weight: 500;
@@ -4014,6 +4024,18 @@ div[class^="control-"] i {
 .button-red:hover {
   background-color: #8a4134;
   border: 1px solid #3d1d17;
+}
+.button-disabled {
+  background-color: #989898 !important;
+  box-shadow: 0px -3px 0px 0px #727272 inset;
+  border: none !important;
+  cursor: not-allowed !important;
+  color: #e7e7e7;
+}
+.button-disabled:hover {
+  color: #e7e7e7;
+  background-color: #989898 !important;
+  border: none !important;
 }
 .button-medium {
   text-align: center;
