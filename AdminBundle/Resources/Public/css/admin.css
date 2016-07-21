@@ -1072,7 +1072,7 @@ body {
     line-height: 45px;
   }
 }
-@media only screen and (max-height: 740px) {
+@media only screen and (max-height: 640px) {
   .sidebar {
     padding-bottom: 50px;
   }
@@ -3751,6 +3751,12 @@ div[class^="control-"] i {
 .grid .trinity-warning {
   color: #f1935d;
   cursor: context-menu;
+}
+.trinity-widget .grid {
+  margin: 0 0 20px 0;
+}
+.trinity-widget .grid thead th {
+  padding: 10px;
 }
 .pagination {
   margin: 10px 35px 35px 35px;
