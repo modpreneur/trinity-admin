@@ -9,261 +9,282 @@
 **************************************/
 @import "helper";
 
+/* --- debug --- */
 
+/* by Fisa */
 
-  /* --- debug --- */
+.dump-area {
+  width: 100%;
+  height: 100%;
+  z-index: 99;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
-  /* by Fisa */
+#debug-service-icon {
+  background-color: rgb(234, 228, 16);
+  padding-top: 8px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  cursor: pointer;
+}
 
-  .dump-area {
-    width: 100%;
-    height: 100%;
-    z-index: 99;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+#debug-service-dump-area-header {
+  height: 20px;
+  width: 100%;
+  padding-top: 2px;
+  background-color: rgb(234, 228, 16);
+  cursor: pointer;
+}
 
-  #debug-service-icon {
-    background-color: rgb(234, 228, 16);
-    padding-top: 8px;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    z-index: 1;
-    cursor: pointer;
-  }
+#debug-service-dump-area-header i.tiecons:hover {
+  font-size: 18px;
+}
 
-  #debug-service-dump-area-header {
-    height: 20px;
-    width: 100%;
-    padding-top: 2px;
-    background-color: rgb(234, 228, 16);
-    cursor: pointer;
-  }
-  #debug-service-dump-area-header i.tiecons:hover {
-    font-size: 18px;
-  }
+/* ---- end debug  ---- */
 
-  /* ---- end debug  ---- */
+/*  Some default stuffs e.g. colors   */
+.modal-dialog {
+  background: rgba(255, 255, 255, 0.8);
+}
 
-  /*  Some default stuffs e.g. colors   */
-  .modal-dialog {
-    background: rgba(255, 255, 255, 0.8);
-  }
+.overflow-hidden {
+  overflow: hidden;
+}
 
-  .overflow-hidden {
-    overflow: hidden;
-  }
+.validation-error {
+  color: red;
+}
 
-  .validation-error {
-    color: red;
-  }
+.info {
+  background-color: @color-info;
+}
 
-  .info {
-    background-color: @color-info;
-  }
-  .color-info {
-    color: @color-info;
-  }
+.color-info {
+  color: @color-info;
+}
 
-  .warning {
-    background-color: @color-warning;
-  }
-  .color-warning {
-    color: @color-warning;
-  }
+.warning {
+  background-color: @color-warning;
+}
 
-  .danger {
-    background-color: @color-danger;
-  }
-  .color-danger {
-    color: @color-danger;
-  }
+.color-warning {
+  color: @color-warning;
+}
 
-  .primary {
-    background-color: @color-primary;
-  }
-  .color-primary {
-    color: @color-primary !important; //yea again important bcs bowtie shit
-  }
+.danger {
+  background-color: @color-danger;
+}
 
-  .secondary {
-    background-color: @color-secondary;
-  }
-  .color-secondary {
-    color: @color-secondary !important;
-  }
+.color-danger {
+  color: @color-danger;
+}
 
-  .tertiary {
-    background-color: @color-tertiary;
-  }
-  .color-tertiary {
-    color: @color-tertiary !important;
-  }
+.primary {
+  background-color: @color-primary;
+}
 
-  .tags {
-    li {
-      width: auto;
-      min-width: 60px;
-      height: auto;
-      margin: 2.5px;
-      line-height: 20px;
-      text-align: center;
-      font-size: 11px;
-      font-weight: 500;
-      color: #fff;
-      border-radius: 2px;
-      padding: 0 4px;
-    }
-    .Enabled {
-      background: #a4c590;
-    }
-    .Disabled {
-      background: #b9b9b9;
-    }
-    .Active {
-      background: #22baa0;
-    }
-    .Changed, .update {
-      background: #24afc9;
-    }
-    .Premium {
-      background: @color-primary;
-    }
-    .Banned, .Blocked, .Danger {
-      background: @color-danger;
-    }
-    .Pending {
-      background: #fcf1c6;
-      color: #ccc;
-    }
-    .Locked {
-      background: #b9ae86;
-    }
-    .create, .Success{
-      background: #5DA423;
-    }
-    .Warning{
-      background: @color-warning;
-    }
-  }
+.color-primary {
+  color: @color-primary !important; //yea again important bcs bowtie shit
+}
 
-  .table {
-    display: table;
-    width: 100%;
-    height: 100%;
-  }
+.secondary {
+  background-color: @color-secondary;
+}
 
-  .margin-0-auto{
-    margin: 0 auto;
-  }
-  .margin-left-auto {
-    margin-left: auto;
-  }
+.color-secondary {
+  color: @color-secondary !important;
+}
 
-  .margin-right-auto {
-    margin-right: auto;
-  }
+.tertiary {
+  background-color: @color-tertiary;
+}
 
-  .hidden {
-    display: none !important;
-  }
+.color-tertiary {
+  color: @color-tertiary !important;
+}
 
-  /*  DatetimePicker - just align some elements */
-  .rw-calendar-grid .rw-btn {
+.tags {
+  li {
+    width: auto;
+    min-width: 60px;
+    height: auto;
+    margin: 2.5px;
+    line-height: 20px;
     text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 4px;
   }
-  .rw-calendar-grid tr td {
-    padding: 0;
+  .Enabled {
+    background: #a4c590;
   }
-  .rw-popup-container{
-    left: 0;
+  .Disabled {
+    background: #b9b9b9;
   }
-.rw-widget>.rw-select{
+  .Active {
+    background: #22baa0;
+  }
+  .Changed, .update {
+    background: #24afc9;
+  }
+  .Premium {
+    background: @color-primary;
+  }
+  .Banned, .Blocked, .Danger {
+    background: @color-danger;
+  }
+  .Pending {
+    background: #fcf1c6;
+    color: #ccc;
+  }
+  .Locked {
+    background: #b9ae86;
+  }
+  .create, .Success {
+    background: #5DA423;
+  }
+  .Warning {
+    background: @color-warning;
+  }
+}
+
+.table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+
+.margin-0-auto {
+  margin: 0 auto !important;
+}
+
+.margin-left-auto {
+  margin-left: auto;
+}
+
+.margin-top-5p {
+  margin-top: 5% !important;
+}
+
+
+
+.margin-right-auto {
+  margin-right: auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/*  DatetimePicker - just align some elements */
+.rw-calendar-grid .rw-btn {
+  text-align: center;
+}
+
+.rw-calendar-grid tr td {
+  padding: 0;
+}
+
+.rw-popup-container {
+  left: 0;
+}
+
+.rw-widget > .rw-select {
   border: none;
 }
-.rw-popup-container.rw-calendar-popup{
+
+.rw-popup-container.rw-calendar-popup {
+  width: 100%;
+}
+
+.rw-calendar-grid th {
+  padding: 0;
+  text-align: center;
+}
+
+.rw-calendar-grid td .rw-btn {
+  padding: 0;
+}
+
+.rw-widget.rw-state-focus, .rw-widget.rw-state-focus:hover {
+  border: none;
+  box-shadow: none;
+}
+
+.rw-datetimepicker {
+  padding: 0;
+}
+
+.rw-widget {
+  border: none;
+}
+
+.rw-select {
+  color: #000;
+  color: rgba(0, 0, 0, 0);
+  text-shadow: 0 0 0 #000;
+  border: none;
+  width: 100%;
+  .rw-btn {
     width: 100%;
   }
-  .rw-calendar-grid th {
-    padding: 0;
-    text-align: center;
+  i {
+    float: right;
+    padding-right: 10px;
+    transition: .3s;
   }
+  &:focus, &:hover {
+    outline: none;
+  }
+}
 
-  .rw-calendar-grid td .rw-btn {
-    padding: 0;
-  }
+.rw-popup-container {
+  width: 100%;
+}
 
-  .rw-widget.rw-state-focus, .rw-widget.rw-state-focus:hover {
-    border: none;
-    box-shadow: none;
-  }
-
-  .rw-datetimepicker {
-    padding: 0;
-  }
-  .rw-widget {
-    border: none;
-  }
-
-  .rw-select {
-    color: #000;
-    color: rgba(0,0,0,0);
-    text-shadow: 0 0 0 #000;
-    border: none;
-    width: 100%;
-    .rw-btn{
-      width: 100%;
-    }
-    i{
-      float: right;
-      padding-right: 10px;
-      transition: .3s;
-    }
-    &:focus, &:hover{
-      outline: none;
+.rw-input {
+  font-family: "Arial", sans-serif;
+  &:focus, &:hover {
+    + .rw-select i {
+      color: @color-primary;
     }
   }
+}
 
-  .rw-popup-container{
-    width: 100%;
-  }
+/*  Animations - classes with keyframes */
+.spin {
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
 
-  .rw-input {
-    font-family: "Arial", sans-serif;
-    &:focus, &:hover{
-      + .rw-select i{
-        color: @color-primary;
-      }
-    }
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
   }
+}
 
-  /*  Animations - classes with keyframes */
-  .spin {
-    -webkit-animation: spin 2s linear infinite;
-    -moz-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
   }
-  @-moz-keyframes spin {
-    100% {
-      -moz-transform: rotate(360deg);
-    }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-  @-webkit-keyframes spin {
-    100% {
-      -webkit-transform: rotate(360deg);
-    }
-  }
-  @keyframes spin {
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
+}
 
 
 

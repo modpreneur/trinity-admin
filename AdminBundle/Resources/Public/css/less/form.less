@@ -102,6 +102,7 @@
       font-weight: @roboto-light;
       color: @color-font;
       transition: .4s;
+      font-family: "Roboto", sans-serif;
       //cursor: pointer;
 
       &:focus {
@@ -189,6 +190,7 @@
 
         content: '\e933';
         display: inline-block;
+        -ms-transform: translateY(1px);
         //width: 17px;
         //height: 17px;
         //margin: 2.5px 0;
@@ -226,56 +228,7 @@
       }
     }
 
-    //select drop-down fix and hide default drop icon
-    .select-style {
 
-      select {
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        appearance: none;
-        cursor: pointer;
-        padding-right: 25px;
-      }
-      &:hover, &:focus {
-        &:after {
-          color: @color-primary;
-        }
-      }
-
-      &:after {
-        transition: .4s;
-        content: "\e928";
-        font-family: trinity;
-        font-size: 12px;
-        color: @tabs-color-label;
-        position: absolute;
-        right: 10px;
-        top: 11px;
-        line-height: 1;
-        pointer-events: none;
-      }
-
-      //todo why David?
-      &:before {
-        content: " ";
-        right: 10px;
-        top: 12px;
-        width: 15px;
-        height: 15px;
-        position: absolute;
-        pointer-events: none;
-      }
-
-      select:-moz-focusring {
-        color: transparent;
-        text-shadow: 0 0 0 #000;
-      }
-
-      select[disabled] {
-        cursor: not-allowed;
-        background: #ebf8ff;
-      }
-    }
 
     textarea {
       height: 100px;
@@ -330,6 +283,61 @@
       }
     }
   }
+
+//select drop-down fix and hide default drop icon
+.select-style {
+  position: relative;
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding-right: 25px;
+  }
+  select::-ms-expand{
+    display: none;
+  }
+  &:hover, &:focus {
+    &:after {
+      color: @color-primary;
+    }
+  }
+
+  &:after {
+    transition: .4s;
+    content: "\e928";
+    font-family: trinity;
+    font-size: 12px;
+    color: @tabs-color-label;
+    position: absolute;
+    right: 10px;
+    top: 11px;
+    line-height: 1;
+    pointer-events: none;
+  }
+
+  //todo why David?
+  &:before {
+    content: " ";
+    right: 10px;
+    top: 12px;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  select:-moz-focusring {
+    color: transparent;
+    text-shadow: 0 0 0 #000;
+  }
+
+  select[disabled] {
+    cursor: not-allowed;
+    background: #ebf8ff;
+  }
+}
 
   // dialog fix
   .modal-dialog form {

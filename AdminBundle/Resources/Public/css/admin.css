@@ -2209,6 +2209,9 @@ body {
   padding-left: 10px;
   padding-right: 10px;
 }
+.dashboard-widgets .small-widgets .small-widget .content-box {
+  display: block;
+}
 .trinity-widget {
   font-family: 'Roboto', sans-serif;
   height: 400px;
@@ -2226,38 +2229,38 @@ body {
   box-shadow: 0 2px 9.5px 2px rgba(0, 0, 0, 0.1);
   /*  Icons for resize or close  */
   /*    !*  Grid in widgets  *!
-    .data-grid {
-      border: none;
-      background: #fff;
-      width: 100%;
-
-      thead, tr, th {
+      .data-grid {
+        border: none;
         background: #fff;
-      }
-      tr {
-        border-bottom: 1px #f1f1f1 solid;
-        white-space: nowrap;
+        width: 100%;
 
-        &:hover {
-          background: @global-row-hover;
+        thead, tr, th {
+          background: #fff;
         }
+        tr {
+          border-bottom: 1px #f1f1f1 solid;
+          white-space: nowrap;
 
-        td, th {
-          &:first-child {
-            padding-left: 20px;
+          &:hover {
+            background: @global-row-hover;
           }
 
-          &:last-child {
-            padding-left: 20px;
+          td, th {
+            &:first-child {
+              padding-left: 20px;
+            }
+
+            &:last-child {
+              padding-left: 20px;
+            }
+          }
+
+          td {
+            font-weight: @roboto-regular;
+            vertical-align: middle;
           }
         }
-
-        td {
-          font-weight: @roboto-regular;
-          vertical-align: middle;
-        }
-      }
-    }*/
+      }*/
 }
 .trinity-widget .grid thead tr {
   height: auto;
@@ -2385,6 +2388,8 @@ body {
   padding-top: 10px;
 }
 .trinity-widget .content-box .content {
+  max-height: 350px;
+  overflow: hidden;
   width: 100%;
 }
 /*  .trinity-widget a {
@@ -2872,6 +2877,7 @@ body {
   font-weight: 300;
   color: #303030;
   transition: .4s;
+  font-family: "Roboto", sans-serif;
 }
 .edit-form input:not([type="submit"]):focus,
 .new-form input:not([type="submit"]):focus,
@@ -3002,6 +3008,7 @@ body {
   vertical-align: middle;
   content: '\e933';
   display: inline-block;
+  -ms-transform: translateY(1px);
 }
 .edit-form .checkbox input[type="checkbox"]:checked + label:before,
 .new-form .checkbox input[type="checkbox"]:checked + label:before,
@@ -3052,6 +3059,7 @@ body {
   vertical-align: middle;
   content: '\e933';
   display: inline-block;
+  -ms-transform: translateY(1px);
 }
 .edit-form .checkbox-inline input[type="checkbox"]:checked + label:before,
 .new-form .checkbox-inline input[type="checkbox"]:checked + label:before,
@@ -3138,6 +3146,9 @@ body {
   appearance: none;
   cursor: pointer;
   padding-right: 25px;
+}
+.select-style select::-ms-expand {
+  display: none;
 }
 .select-style:hover:after,
 .select-style:focus:after {
