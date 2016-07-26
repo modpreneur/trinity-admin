@@ -87,7 +87,7 @@
       float: none !important;
     }
 
-    input:not([type="submit"]), select, textarea {
+    input:not([type="submit"]):not([type="button"]), select, textarea {
       width: 100%;
       border-radius: 5px;
       height: 35px;
@@ -120,7 +120,7 @@
       &:hover {
         background: #fff;
       }
-      input:not([type="submit"]), select, textarea {
+      input:not([type="submit"]):not([type="button"]), select, textarea {
         background: #d4d4d4;
         //border: 1px solid @color-border;
         &:focus {
@@ -243,7 +243,7 @@
       top: 7px;
     }
 
-    input[type="submit"], button[type="submit"] {
+    input[type="submit"], button[type="submit"], input[type="button"] {
       margin-left: auto;
       display: block;
       float: none !important;
@@ -360,7 +360,7 @@
     margin-left: auto;
     margin-right: auto;
 
-    input[type="submit"] {
+    input[type="submit"], input[type="button"] {
       margin-left: auto;
       display: block;
       float: none !important;
@@ -433,7 +433,7 @@
   }
 
   .big-input {
-    input:not([type="submit"]), select, textarea {
+    input:not([type="submit"]):not([type="button"]), select, textarea {
       min-height: 300px;
     }
   }

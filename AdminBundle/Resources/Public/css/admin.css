@@ -2854,9 +2854,9 @@ body {
   position: static !important;
   float: none !important;
 }
-.edit-form input:not([type="submit"]),
-.new-form input:not([type="submit"]),
-.modal-dialog form input:not([type="submit"]),
+.edit-form input:not([type="submit"]):not([type="button"]),
+.new-form input:not([type="submit"]):not([type="button"]),
+.modal-dialog form input:not([type="submit"]):not([type="button"]),
 .edit-form select,
 .new-form select,
 .modal-dialog form select,
@@ -2879,9 +2879,9 @@ body {
   transition: .4s;
   font-family: "Roboto", sans-serif;
 }
-.edit-form input:not([type="submit"]):focus,
-.new-form input:not([type="submit"]):focus,
-.modal-dialog form input:not([type="submit"]):focus,
+.edit-form input:not([type="submit"]):not([type="button"]):focus,
+.new-form input:not([type="submit"]):not([type="button"]):focus,
+.modal-dialog form input:not([type="submit"]):not([type="button"]):focus,
 .edit-form select:focus,
 .new-form select:focus,
 .modal-dialog form select:focus,
@@ -2891,9 +2891,9 @@ body {
   border: 1px solid #d55a13;
   background: #fff;
 }
-.edit-form input:not([type="submit"]):hover,
-.new-form input:not([type="submit"]):hover,
-.modal-dialog form input:not([type="submit"]):hover,
+.edit-form input:not([type="submit"]):not([type="button"]):hover,
+.new-form input:not([type="submit"]):not([type="button"]):hover,
+.modal-dialog form input:not([type="submit"]):not([type="button"]):hover,
 .edit-form select:hover,
 .new-form select:hover,
 .modal-dialog form select:hover,
@@ -2913,9 +2913,9 @@ body {
 .modal-dialog form .just-filter:hover {
   background: #fff;
 }
-.edit-form .just-filter input:not([type="submit"]),
-.new-form .just-filter input:not([type="submit"]),
-.modal-dialog form .just-filter input:not([type="submit"]),
+.edit-form .just-filter input:not([type="submit"]):not([type="button"]),
+.new-form .just-filter input:not([type="submit"]):not([type="button"]),
+.modal-dialog form .just-filter input:not([type="submit"]):not([type="button"]),
 .edit-form .just-filter select,
 .new-form .just-filter select,
 .modal-dialog form .just-filter select,
@@ -2924,9 +2924,9 @@ body {
 .modal-dialog form .just-filter textarea {
   background: #d4d4d4;
 }
-.edit-form .just-filter input:not([type="submit"]):focus,
-.new-form .just-filter input:not([type="submit"]):focus,
-.modal-dialog form .just-filter input:not([type="submit"]):focus,
+.edit-form .just-filter input:not([type="submit"]):not([type="button"]):focus,
+.new-form .just-filter input:not([type="submit"]):not([type="button"]):focus,
+.modal-dialog form .just-filter input:not([type="submit"]):not([type="button"]):focus,
 .edit-form .just-filter select:focus,
 .new-form .just-filter select:focus,
 .modal-dialog form .just-filter select:focus,
@@ -3093,7 +3093,10 @@ body {
 .modal-dialog form input[type="submit"],
 .edit-form button[type="submit"],
 .new-form button[type="submit"],
-.modal-dialog form button[type="submit"] {
+.modal-dialog form button[type="submit"],
+.edit-form input[type="button"],
+.new-form input[type="button"],
+.modal-dialog form input[type="button"] {
   margin-left: auto;
   display: block;
   float: none !important;
@@ -3195,7 +3198,8 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.delete-form input[type="submit"] {
+.delete-form input[type="submit"],
+.delete-form input[type="button"] {
   margin-left: auto;
   display: block;
   float: none !important;
@@ -3258,7 +3262,7 @@ h2.warning {
 .box-new-form {
   padding-bottom: 15px;
 }
-.big-input input:not([type="submit"]),
+.big-input input:not([type="submit"]):not([type="button"]),
 .big-input select,
 .big-input textarea {
   min-height: 300px;
