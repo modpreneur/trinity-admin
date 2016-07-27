@@ -3769,6 +3769,7 @@ div[class^="control-"] i {
 }
 .grid td {
   vertical-align: middle;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 20em;
