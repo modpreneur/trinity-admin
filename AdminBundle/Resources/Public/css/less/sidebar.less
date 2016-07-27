@@ -1,184 +1,210 @@
 
 @import "helper";
+@import "variables";
 
 
+@li-active-bc: #f8f3f0;
 
-  /** fix */
-  .container-with-sidebar {
-    padding-left: @sidebar-width !important;
+/** fix */
+.container-with-sidebar {
+  padding-left: @sidebar-width !important;
+}
+
+
+// left sidebar menu items
+#sidebar {
+  z-index: 99;
+  font-family: Roboto, sans-serif;
+  width: @sidebar-width;
+  background: @sidebar-back-color; //#4c4743;
+  height: 100%;
+  position: fixed;
+  color: #9b9b9b;
+
+
+  /** window resize fix **/
+  top: 0;
+  padding-top: @navbar-height + 19px; //+height of sidebar-header
+  /** end **/
+
+
+  input {
+    display: none;
   }
 
-  // left sidebar menu items
-  #sidebar {
-    z-index: 99;
-    font-family: Roboto, sans-serif;
-    width: 260px;
-    background: @sidebar-back-color; //#4c4743;
-    height: 100%;
-    position: fixed;
-    color: #9b9b9b;
+  //remove dotted border on focus - moz
+  a, span:focus, span::-moz-focus-inner {
+    border: 0;
+    outline: 0;
+  }
+}
+.sidebar {
+  /** window resize fix **/
+  height: 100%;
+  overflow-y: auto;
+  /** end **/
 
-    /** window resize fix **/
-    top: 0;
-    padding-top: @navbar-height + 79px; //+height of sidebar-header
-    /** end **/
+  li {
+    width: 100%;
+    min-height: 50px;
+    height: 50px;
+    position: relative;
+    cursor: pointer;
 
-    input {
+    ul{
       display: none;
     }
 
-    //remove dotted border on focus - moz
-    a, span:focus, span::-moz-focus-inner {
-      border: 0;
-      outline: 0;
-    }
-  }
-  .sidebar {
-    /** window resize fix **/
-    height: 100%;
-    overflow-y: auto;
-    /** end **/
-
-    li {
+    a, div {
+      cursor: pointer;
+      text-transform: uppercase;
+      padding-left: 20px;
+      display: inline-block;
       width: 100%;
       min-height: 50px;
-      height: 50px;
-      position: relative;
-      cursor: pointer;
+      color: #adadad;
+      font-size: 12px;
+      font-weight: 400;
+      transition: .4s;
+      line-height: 50px;
+    }
 
+    i {
+      margin: 0 35px;
+      float: left;
+      color: #adadad;
+      display: inline-block;
+      font-size: 17px;
+      transition: .3s;
+      line-height: 50px;
+    }
+
+    &.active {
+      height: auto;
       a, div {
-        cursor: pointer;
-        text-transform: uppercase;
-        padding-left: 20px;
-        display: inline-block;
-        width: 100%;
-        min-height: 50px;
-        color: #adadad;
-        font-size: 12px;
-        font-weight: 400;
-        transition: .4s;
-        line-height: 50px;
-      }
+        font-weight: 500;
+        color: #5a544f;
+        background: #f8f3f0;
 
+      }
       i {
-        margin: 0 35px;
-        float: left;
-        color: #adadad;
-        display: inline-block;
-        font-size: 17px;
-        transition: .3s;
-        line-height: 50px;
+        color: #5a544f;
+        font-weight: 600;
       }
-
-      &.active {
-        a, div {
-          font-weight: 500;
-          color: #5a544f;
-          background: #f8f3f0;
-        }
-        i {
-          color: #5a544f;
-          font-weight: 600;
-        }
-        &:hover a {
-          background: #f8f3f0;
-          padding-left: 20px;
-        }
-      }
-
       &:hover a {
-        background: #fff;
-        color: #5a544f;
-        padding-left: 45px;
-      }
-      &:hover i {
-        color: #5a544f;
+        background: @li-active-bc;
+        padding-left: 20px;
       }
 
+      ul{
+        display: block;
+        background: @li-active-bc;
+        a{
+          padding-left: 50px !important; // @todo hover
+          line-height: 30px;
+          min-height: 30px;
+          height: 30xp;
+          font-weight: 300;
+        }
+        li{
+          line-height: 30px;
+          min-height: 30px;
+
+          &:hover{
+            a{
+              color: @color-primary;
+            }
+          }
+        }
+      }
+    }
+
+    &:hover a {
+      background: #fff;
+      color: #5a544f;
+      padding-left: 45px;
+    }
+    &:hover i {
+      color: #5a544f;
     }
   }
+}
+.sidebar-header {
+
+  font-size: 12px;
+  font-weight: 500;
+  padding: 30px 20px;
+  cursor: auto;
+  color: #adadad;
+
+  display: block;
+  position: fixed;
+  width: @sidebar-width;
+  z-index: 999;
+}
+
+@media only screen and (max-width: 1400px) {
+
+  #sidebar {
+    padding-top: @navbar-height + 69px; //+height of sidebar-header
+  }
+
   .sidebar-header {
-
-    font-size: 12px;
-    font-weight: 500;
-    padding: 30px 20px;
-    cursor: auto;
-    color: #adadad;
-
+    padding: 25px 20px;
     display: block;
     position: fixed;
     width: @sidebar-width;
     z-index: 999;
   }
 
-  @media only screen and (max-width: 1400px) {
-
-    #sidebar {
-      padding-top: @navbar-height + 69px; //+height of sidebar-header
-    }
-
-    .sidebar-header {
-      padding: 25px 20px;
-      display: block;
-      position: fixed;
-      width: @sidebar-width;
-      z-index: 999;
-    }
-
-    .sidebar {
-      li {
+  .sidebar {
+    li {
+      min-height: 45px;
+      height: 45px;
+      a {
         min-height: 45px;
-        height: 45px;
-        a {
-          min-height: 45px;
-        }
-        i, a {
-          line-height: 45px;
-        }
+      }
+      i, a {
+        line-height: 45px;
       }
     }
-
   }
 
-  @media only screen and (max-height: 755px) {
+}
 
-    #sidebar {
-      padding-top: @navbar-height + 79px; //+height of sidebar-header
-    }
+@media only screen and (max-height: 755px) {
 
-    .sidebar-header {
-      padding: 25px 20px;
-      display: block;
-      position: fixed;
-      width: @sidebar-width;
-      z-index: 999;
-    }
+  #sidebar {
+    padding-top: @navbar-height + 19px; //+height of sidebar-header
+  }
 
-    .sidebar {
-      li {
+  .sidebar-header {
+    padding: 25px 20px;
+    display: block;
+    position: fixed;
+    width: @sidebar-width;
+    z-index: 999;
+  }
+
+  .sidebar {
+    li {
+      min-height: 45px;
+      height: 45px;
+      a {
         min-height: 45px;
-        height: 45px;
-        a {
-          min-height: 45px;
-        }
-        i, a {
-          line-height: 45px;
-        }
+      }
+      i, a {
+        line-height: 45px;
       }
     }
-
   }
 
-  @media only screen and (max-height: 640px) {
-    .sidebar {
+}
 
-      padding-bottom: 50px;
+@media only screen and (max-height: 640px) {
+  .sidebar {
 
-    }
+    padding-bottom: 50px;
+
   }
-
-
-
-
-
-
+}
