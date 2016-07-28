@@ -90,9 +90,18 @@
         {# displaying the item #}
         {% import _self as knp_menu %}
 
+
+        {% set class = "" %}
+        {%- if attributes.class is defined %}
+            {% set class = attributes.class %}
+        {%- endif %}
+
+
         {%- if is_dropdown %}
             {%- set attributes = attributes|merge({'class': classes|join(' ')}) %}
             {%- set attributes = attributes|merge({'class': ['li-dropdown']|join(' ')}) %}
+
+            {% set class = "drop-down " ~ class %}
 
             {% set break = 0 %}
 
@@ -104,10 +113,6 @@
             {% endfor %}
         {%- endif %}
 
-        {% set class = "" %}
-        {%- if attributes.class is defined %}
-            {% set class = attributes.class %}
-        {%- endif %}
 
         <li class="{{ class }}">
             {%- if is_dropdown %}
@@ -125,26 +130,30 @@
                     {% block dropdownElement %}
                         {% set itemId = random() %}
                         <label for="show-drop-{{ itemId }}" class="show-drop">
+
                             <div class="dropdown-main sidebar-drop">
+                                <input type="checkbox" id="show-drop-{{ itemId }}" role="button" />
+                                <a class="fix-a" href="#"></a>
+
+                                <div class="a">
                                     <i class="{{ item.attribute('icon') }}"></i>
                                     <span class="sidebar-link-drop">{{ block('label') }}</span>
                                     <span class="trinity-dropdown-icon">
                                         <i class="tiecons tiecons-plus-light"></i>
+                                        <i class="tiecons tiecons-minus-light"></i>
                                     </span>
-                                <input type="checkbox" id="show-drop-{{ itemId }}" role="button">
-                                <ul id="dropdown" class="drop">
-                                        <span class="trinity-dropdown-icon minus">
-                                            <i class="tiecons tiecons-minus-light"></i>
-                                        </span>
+                                </div>
+                                <ul class="drop">
                                     {%- set childrenClasses = item.childrenAttribute('class') is not empty ? [item.childrenAttribute('class')] : [] %}
                                     {%- set childrenClasses = childrenClasses|merge(['drop menu_level_' ~ item.level]) %}
                                     {%- set listAttributes  = item.childrenAttributes|merge({'class': childrenClasses|join(' ') }) %}
                                     {{ block('listdropdown') }}
                                 </ul>
                             </div>
+
                         </label>
                     {% endblock %}
-                {#{{ block('linkElement') }}#}
+                    {#{{ block('linkElement') }}#}
                 {% endif %}
 
             {%- elseif item.uri is not empty and (not matcher.isCurrent(item) or options.currentAsLink) %}
@@ -181,8 +190,8 @@
 
     <a href="{{ url }}"{{ knp_menu.attributes(item.linkAttributes) }}>
         <i class="{{ item.attribute('icon') }}"></i>
-            {% if item.attribute('icon') is not empty %}
-            {% endif %}{{ block('label') }}
+        {% if item.attribute('icon') is not empty %}
+        {% endif %}{{ block('label') }}
         {% if is_dropdown %}
             <span class="dropdown-icon">
             </span>
@@ -194,9 +203,9 @@
     {% import _self as knp_menu %}
     <span{{ knp_menu.attributes(item.labelAttributes) }}>
     {% if item.attribute('icon') is not empty %}
-    		<i class=" {{ item.attribute('icon') }}"></i>
+        <i class=" {{ item.attribute('icon') }}"></i>
     {% endif %}
-    {{ block('label') }}
+        {{ block('label') }}
     </span>
 {% endblock %}
 
@@ -227,7 +236,7 @@
 {% block listdropdown %}
     {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
         {% import _self as knp_menu %}
-            {{ block('children') }}
+        {{ block('children') }}
     {% endif %}
 {% endblock %}
 

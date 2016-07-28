@@ -2,13 +2,13 @@
 @import "helper";
 @import "variables";
 
-
 @li-active-bc: #f8f3f0;
 
 /** fix */
 .container-with-sidebar {
   padding-left: @sidebar-width !important;
 }
+
 
 
 // left sidebar menu items
@@ -38,6 +38,7 @@
     outline: 0;
   }
 }
+
 .sidebar {
   /** window resize fix **/
   height: 100%;
@@ -50,6 +51,8 @@
     height: 50px;
     position: relative;
     cursor: pointer;
+    margin-bottom: 1px;
+    margin-right: 1px;
 
     ul{
       display: none;
@@ -120,7 +123,7 @@
       }
     }
 
-    &:hover a {
+    &:hover a, &:hover .a {
       background: #fff;
       color: #5a544f;
       padding-left: 45px;
@@ -130,6 +133,7 @@
     }
   }
 }
+
 .sidebar-header {
 
   font-size: 12px;
@@ -143,6 +147,117 @@
   width: @sidebar-width;
   z-index: 999;
 }
+
+
+
+.drop-down{
+
+  &.active:hover .a{
+    padding-left: 20px;
+  }
+
+  display: block;
+  height: auto !important;
+  border-radius: 0px;
+
+  label{
+    display: block;
+  }
+
+  .fix-a{
+    display: none;
+  }
+
+  .tiecons-plus-light{
+    position: absolute;
+    right: 0px;
+    margin-right: 10px;
+    top: 0px;
+  }
+
+  .tiecons-minus-light{
+    position: absolute;
+    display: none;
+    right: 0px;
+    margin-right: 10px;
+    top: 0px;
+  }
+
+  .dropdown-main, ul.drop{
+    -webkit-transition: all 0ms ease !important;
+    -moz-transition: all 0ms ease !important;
+    -o-transition: all 0ms ease !important;
+    transition: all 0ms ease !important;
+  }
+
+  div.dropdown-main{
+    padding: 0px !important;
+    margin: 0px !important;
+    border-radius: 0px;
+    background: transparent !important;
+  }
+
+  ul.drop{
+    padding: 0px;
+    margin: 0px;
+    margin-top: -10px;
+    a{
+      padding-left: 35px;
+    }
+  }
+
+  input:checked ~ .a
+  {
+    background: #f8f3f0;
+    padding-left: 20px;
+    color: #5a544f;
+    i{
+      color: #5a544f;
+    }
+  }
+
+  input:checked ~ .a .trinity-dropdown-icon i.tiecons-plus-light{
+    display: none;
+  }
+
+
+  input:checked ~ .a .trinity-dropdown-icon i.tiecons-minus-light{
+    display: block;
+  }
+
+  input:checked ~ ul.drop{
+    display: block !important;
+    visibility: visible;
+    opacity: 1;
+    top: 0px;
+    background: #f8f3f0;
+    position: static;
+    box-shadow: none;
+    border-radius: 0px;
+
+    li, li a{
+      line-height: 30px;
+      min-height: 30px;
+      height: 30px;
+      background: transparent;
+      font-weight: 300;
+    }
+
+    li a{
+      padding: 0px;
+      padding-left: 55px;
+      color: #5a544f;
+    }
+
+    li:hover{
+      a{
+        color: @color-primary;
+      }
+    }
+  }
+
+}
+
 
 @media only screen and (max-width: 1400px) {
 
@@ -209,3 +324,5 @@
 
   }
 }
+
+
