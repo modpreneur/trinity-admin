@@ -114,10 +114,13 @@
         {%- endif %}
 
         {% set liAttributes = {} %}
+        {# Custom attributes? #}
         {% if item.attribute('custom-attributes') is not empty %}
             {% set liAttributes = item.attribute('custom-attributes') %}
+            {# Merge class if necessary #}
             {% set class = class ~ (liAttributes.class is not empty ? " " ~ liAttributes.class : '') %}
         {% endif %}
+        {# Merge classes #}
         {% set liAttributes = liAttributes|merge({'class': class }) %}
 
         <li {{  _self.attributes(liAttributes)}}>
