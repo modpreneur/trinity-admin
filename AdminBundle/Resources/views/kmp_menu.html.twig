@@ -118,7 +118,7 @@
         {% if item.attribute('custom-attributes') is not empty %}
             {% set liAttributes = item.attribute('custom-attributes') %}
             {# Merge class if necessary #}
-            {% set class = class ~ (liAttributes.class is not empty ? " " ~ liAttributes.class : '') %}
+            {% set class = class ~ ( liAttributes.class is defined ? liAttributes.class : "") %}
         {% endif %}
         {# Merge classes #}
         {% set liAttributes = liAttributes|merge({'class': class }) %}
