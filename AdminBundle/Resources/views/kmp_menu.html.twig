@@ -113,8 +113,14 @@
             {% endfor %}
         {%- endif %}
 
+        {% set liAttributes = {} %}
+        {% if item.attribute('custom-attributes') is not empty %}
+            {% set liAttributes = item.attribute('custom-attributes') %}
+            {% set class = class ~ (liAttributes.class is not empty ? " " ~ liAttributes.class : '') %}
+        {% endif %}
+        {% set liAttributes = liAttributes|merge({'class': class }) %}
 
-        <li class="{{ class }}">
+        <li {{  _self.attributes(liAttributes)}}>
             {%- if is_dropdown %}
                 {# check whether current URI matches submenu item URI #}
                 {% set break = 0 %}
@@ -128,7 +134,7 @@
 
                 {% if break == 0 %}
                     {% block dropdownElement %}
-                        {% set itemId = random() %}
+                        {% set itemId = item.attribute('id') ?? random() %}
                         <label for="show-drop-{{ itemId }}" class="show-drop">
 
                             <div class="dropdown-main sidebar-drop">
