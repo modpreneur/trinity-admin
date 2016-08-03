@@ -5,7 +5,7 @@
   "main": "null",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "less": "node_modules/less/bin/lessc AdminBundle/Resources/Public/css/less/admin.less AdminBundle/Resources/Public/css/admin.css"
+    "less": "node_modules/less/bin/lessc AdminBundle/Resources/Public/less/admin.less AdminBundle/Resources/Public/css/admin.css"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,12 @@
   },
   "homepage": "https://github.com/modpreneur/trinity-admin#readme",
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-watch": "^4.3.9",
     "less": "^2.7.1"
+  },
+  "dependencies": {
+    "gulp-less": "latest",
+    "less-plugin-autoprefix": "latest"
   }
 }
