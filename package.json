@@ -22,12 +22,18 @@
   },
   "homepage": "https://github.com/modpreneur/trinity-admin#readme",
   "devDependencies": {
+    "browser-sync": "^2.14.0",
     "gulp": "^3.9.1",
+    "gulp-connect": "^5.0.0",
     "gulp-watch": "^4.3.9",
-    "less": "^2.7.1"
+    "less": "^2.7.1",
+    "v8flags": "latest"
   },
   "dependencies": {
+    "browser-sync": "^2.14.0",
     "gulp-less": "latest",
-    "less-plugin-autoprefix": "latest"
+    "less": "^2.7.1",
+    "less-plugin-autoprefix": "latest",
+    "v8flags": "latest"
   }
 }
