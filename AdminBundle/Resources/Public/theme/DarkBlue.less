@@ -1,15 +1,5 @@
 @import "../less/variables";
-
-@color-primary:   #1abb9c;
-@color-secondary: #2a3f54;
-@color-tertiary:  #a8e3d7;
-
-@sidebar-back-color: #2a3f54;
-
-@li-active-bc: #334d65;
-
 @import "../less/admin";
-
 
 .navbar{
   box-shadow: none;
@@ -19,23 +9,24 @@
   border-bottom: 1px solid #e6e9ed;
 }
 
-
 .head-content, .box{
   box-shadow: none;
   border: 1px #e6e9ed solid;
 }
 
-.sidebar{
+@back-color: #f7f7f7;
 
-  li.active{
+@color-primary:   #1abb9c;
+@color-secondary: #2a3f54;
+@color-tertiary:  #1abb9c;
 
-    i{
-      color: #fff;
-    }
-    a{
-      background: #334d65;
-      color: #fff;
-    }
-  }
+@sidebar-back-color: #2a3f54;
+@li-active-bc: #334d65;
 
-}
+@sidebar-font-color: #fff;
+@sidebar-font-color-active: #fff;
+@sidebar-li-back-active: #334d65;
+@sidebar-drop-border-bottom-color: darken(#334d65, 1%);
+
+@sidebar-drop-font-color-active: #fff;
+@sidebar-drop-back-color-active: darken(#334d65, 10%);

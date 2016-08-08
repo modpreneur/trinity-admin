@@ -1,11 +1,5 @@
-body {
-  //padding for content under navbar
-  padding-top: @navbar-height;
-  font-family: 'Roboto', sans-serif;
-  background: @back-color;
-}
-
 @import "helper";
+@import "variables";
 
 @import "navbar";
 @import "navbar-items";
@@ -28,51 +22,60 @@ body {
 @import "checkboxes";
 @import "paySystem";
 
+
+body {
+  padding-top: @navbar-height;
+  font-family: @font;
+  background:  @back-color !important;
+}
+
+
+
 /** fix **/
 
-  .modal-a.button.button-secondary {
-    display: none !important;
+.modal-a.button.button-secondary {
+  display: none !important;
+}
+
+ul.list {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+  li {
+    margin-left: 18px;
+    list-style-type: circle;
   }
+}
 
-  ul.list {
-    margin-top: 10px;
-    margin-bottom: 10px;
+ol.list {
+  margin-top: 10px;
+  margin-bottom: 10px;
 
-    li {
-      margin-left: 18px;
-      list-style-type: circle;
-    }
+  li {
+    margin-left: 18px;
+    list-style-type: decimal;
   }
+}
 
-  ol.list {
-    margin-top: 10px;
-    margin-bottom: 10px;
 
-    li {
-      margin-left: 18px;
-      list-style-type: decimal;
-    }
+a {
+  transition: .3s;
+  color: @link-font-color;
+  &:hover {
+    color: @color-primary;
   }
+}
 
+.span-large-24:first-child {
+  padding-left: 25px;
+  padding-bottom: 20px;
+}
 
-  a {
-    transition: .3s;
-    color: @link-font-color;
-    &:hover {
-      color: @color-primary;
-    }
+.no-hover-backg, .new-form .no-hover-backg, .edit-form .no-hover-backg, #row_group_rolesEntry {
+  &:hover {
+    background: transparent;
   }
-
-  .span-large-24:first-child {
-    padding-left: 25px;
-    padding-bottom: 20px;
+  .row:hover {
+    background: transparent;
   }
-
-  .no-hover-backg, .new-form .no-hover-backg, .edit-form .no-hover-backg, #row_group_rolesEntry {
-    &:hover {
-      background: transparent;
-    }
-    .row:hover {
-      background: transparent;
-    }
-  }
+}

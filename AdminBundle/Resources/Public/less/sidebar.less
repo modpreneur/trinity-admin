@@ -2,8 +2,6 @@
 @import "helper";
 @import "variables";
 
-@li-active-bc: #f8f3f0;
-
 /** fix */
 .container-with-sidebar {
   padding-left: @sidebar-width !important;
@@ -17,6 +15,7 @@
   bottom: 0px;
   left: 0;
   width: 100%;
+  background: @sidebar-back-color;
 
   .item{
     width: 50%;
@@ -25,34 +24,41 @@
     color: #fff;
     padding: 3px;
 
+    background: lighten(@sidebar-back-color, 20%);
+
     &.active{
-      background: #2e2927;
+      background: @sidebar-back-color;
     }
 
     &:hover{
-      background: #5e5e5e;
+      background: darken(@sidebar-back-color, 10%);
     }
   }
 
 }
 
 
+
+@sidebar-font-color: #9b9b9b;
+@sidebar-font-color-active: #5a544f;
+@sidebar-li-back-active: #f8f3f0;
+
+
 // left sidebar menu items
 #sidebar {
   z-index: 99;
-  font-family: Roboto, sans-serif;
+  font-family: @font;
   width: @sidebar-width;
   background: @sidebar-back-color; //#4c4743;
   height: 100%;
   position: fixed;
-  color: #9b9b9b;
 
+  color: @sidebar-font-color;
 
   /** window resize fix **/
   top: 0;
   padding-top: @navbar-height + 19px; //+height of sidebar-header
   /** end **/
-
 
   input {
     display: none;
@@ -63,224 +69,225 @@
     border: 0;
     outline: 0;
   }
-}
 
-.sidebar {
-  /** window resize fix **/
-  height: 100%;
-  overflow-y: auto;
-  /** end **/
+  .sidebar {
+    /** window resize fix **/
+    height: 100%;
+    overflow-y: auto;
+    /** end **/
+    padding-bottom: 40px;
 
-  li {
-    width: 100%;
-    min-height: 50px;
-    height: 50px;
-    position: relative;
-    cursor: pointer;
-    margin-bottom: 1px;
-    margin-right: 1px;
-
-    ul{
-      display: none;
-    }
-
-    a, div {
-      cursor: pointer;
-      text-transform: uppercase;
-      padding-left: 20px;
-      display: inline-block;
+    li {
       width: 100%;
       min-height: 50px;
-      color: #adadad;
-      font-size: 12px;
-      font-weight: 400;
-      transition: .4s;
-      line-height: 50px;
-    }
-
-    i {
-      margin: 0 35px;
-      float: left;
-      color: #adadad;
-      display: inline-block;
-      font-size: 17px;
-      transition: .3s;
-      line-height: 50px;
-    }
-
-    &.active {
-      height: auto;
-      a, div {
-        font-weight: 500;
-        color: #5a544f;
-        background: #f8f3f0;
-
-      }
-      i {
-        color: #5a544f;
-        font-weight: 600;
-      }
-      &:hover a {
-        background: @li-active-bc;
-        padding-left: 20px;
-      }
+      height: 50px;
+      position: relative;
+      cursor: pointer;
+      margin-bottom: 1px;
+      margin-right: 1px;
 
       ul{
-        display: block;
-        background: @li-active-bc;
-        a{
-          padding-left: 55px !important; // @todo hover
-          line-height: 30px;
-          min-height: 30px;
-          height: 30xp;
+        display: none;
+      }
+
+      a, div {
+        cursor: pointer;
+        text-transform: uppercase;
+        padding-left: 10px;
+        display: inline-block;
+        width: 100%;
+        min-height: 50px;
+        color: @sidebar-font-color;
+        font-size: 12px;
+        font-weight: 400;
+        transition: .4s;
+        line-height: 50px;
+        font-weight: 300;
+      }
+
+      i {
+        margin: 0 35px;
+        float: left;
+        color: @sidebar-font-color;
+        display: inline-block;
+        font-size: 17px;
+        transition: .3s;
+        line-height: 50px;
+      }
+
+      &.active {
+        height: auto;
+        a, div {
+          font-weight: 500;
+          color: @sidebar-font-color-active;
+          background: @sidebar-li-back-active;
           font-weight: 300;
         }
-        li{
-          line-height: 30px;
-          min-height: 30px;
-          height: 30px;
 
-          &:hover{
-            a{
-              color: @color-primary;
-            }
+        i {
+          color: @sidebar-font-color-active;
+          font-weight: 600;
+        }
+
+        &:hover a {
+          color: @sidebar-font-color-active;
+          background: @sidebar-li-back-active;
+          padding-left: 20px;
+        }
+
+        ul{
+          display: block;
+          background: @sidebar-li-back-active;
+          a{
+            padding-left: 55px !important; // @todo hover
+            line-height: 30px;
+            min-height: 30px;
+            height: 30xp;
+            font-weight: 300;
+          }
+          li{
+            line-height: 30px;
+            min-height: 30px;
+            height: 30px;
           }
         }
       }
-    }
 
-    &:hover a, &:hover .a {
-      background: #fff;
-      color: #5a544f;
-      padding-left: 45px;
-    }
-    &:hover i {
-      color: #5a544f;
-    }
-  }
-}
-
-.sidebar-header {
-
-  font-size: 12px;
-  font-weight: 500;
-  padding: 30px 20px;
-  cursor: auto;
-  color: #adadad;
-
-  display: block;
-  position: fixed;
-  width: @sidebar-width;
-  z-index: 999;
-}
-
-
-
-.drop-down{
-
-  &.active:hover .a{
-    padding-left: 20px;
-  }
-
-  display: block;
-  height: auto !important;
-  border-radius: 0px;
-
-  label{
-    display: block;
-  }
-
-  .fix-a{
-    display: none;
-  }
-
-  .tiecons-plus-light{
-    position: absolute;
-    right: 0px;
-    margin-right: 10px;
-    top: 0px;
-  }
-
-  .tiecons-minus-light{
-    position: absolute;
-    display: none;
-    right: 0px;
-    margin-right: 10px;
-    top: 0px;
-  }
-
-  .dropdown-main, ul.drop{
-    -webkit-transition: all 0ms ease !important;
-    -moz-transition: all 0ms ease !important;
-    -o-transition: all 0ms ease !important;
-    transition: all 0ms ease !important;
-  }
-
-  div.dropdown-main{
-    padding: 0px !important;
-    margin: 0px !important;
-    border-radius: 0px;
-    background: transparent !important;
-  }
-
-  ul.drop{
-    padding: 0px;
-    margin: 0px;
-    margin-top: -10px;
-    a{
-      padding-left: 35px;
-    }
-  }
-
-  input:checked ~ .a
-  {
-    background: #f8f3f0;
-    padding-left: 20px;
-    color: #5a544f;
-    i{
-      color: #5a544f;
-    }
-  }
-
-  input:checked ~ .a .trinity-dropdown-icon i.tiecons-plus-light{
-    display: none;
-  }
-
-
-  input:checked ~ .a .trinity-dropdown-icon i.tiecons-minus-light{
-    display: block;
-  }
-
-  input:checked ~ ul.drop{
-    display: block !important;
-    visibility: visible;
-    opacity: 1;
-    top: 0px;
-    background: #f8f3f0;
-    position: static;
-    box-shadow: none;
-    border-radius: 0px;
-
-    li, li a{
-      line-height: 30px;
-      min-height: 30px;
-      height: 30px;
-      background: transparent;
-      font-weight: 300;
-    }
-
-    li a{
-      padding: 0px;
-      padding-left: 55px;
-      color: #5a544f;
-    }
-
-    li:hover{
-      a{
-        color: @color-primary;
+      &:hover a, &:hover .a {
+        background: @sidebar-li-back-active;
+        color: @sidebar-font-color-active;
+        padding-left: 45px;
+      }
+      &:hover i {
+        color: @sidebar-font-color-active;
       }
     }
   }
+
+  .sidebar-header {
+    font-size: 12px;
+    font-weight: 500;
+    padding: 30px 20px;
+    cursor: auto;
+    color: #adadad;
+
+    display: block;
+    position: fixed;
+    width: @sidebar-width;
+    z-index: 999;
+  }
+
+  .drop-down{
+
+    &.active:hover .a{
+      padding-left: 20px;
+    }
+
+    display: block;
+    height: auto !important;
+    border-radius: 0px;
+
+    label{
+      display: block;
+    }
+
+    .fix-a{
+      display: none;
+    }
+
+    .tiecons-plus-light{
+      position: absolute;
+      right: 0px;
+      margin-right: 10px;
+      top: 0px;
+    }
+
+    .tiecons-minus-light{
+      position: absolute;
+      display: none;
+      right: 0px;
+      margin-right: 10px;
+      top: 0px;
+    }
+
+    .dropdown-main, ul.drop{
+      -webkit-transition: all 0ms ease !important;
+      -moz-transition: all 0ms ease !important;
+      -o-transition: all 0ms ease !important;
+      transition: all 0ms ease !important;
+    }
+
+    div.dropdown-main{
+      padding: 0px !important;
+      margin: 0px !important;
+      border-radius: 0px;
+      background: transparent !important;
+    }
+
+    ul.drop{
+      padding: 0px;
+      margin: 0px;
+      margin-top: -10px;
+      a{
+        padding-left: 35px;
+        border-bottom: 1px solid @sidebar-drop-border-bottom-color;
+      }
+    }
+
+    input:checked ~ .a
+    {
+      background: @sidebar-li-back-active;
+      padding-left: 20px;
+
+      color: @sidebar-font-color-active;
+      i{
+        color: @sidebar-font-color-active;
+      }
+    }
+
+    input:checked ~ .a .trinity-dropdown-icon i.tiecons-plus-light{
+      display: none;
+    }
+
+
+    input:checked ~ .a .trinity-dropdown-icon i.tiecons-minus-light{
+      display: block;
+    }
+
+    input:checked ~ ul.drop{
+      display: block !important;
+      visibility: visible;
+      opacity: 1;
+      top: 0px;
+      background: @sidebar-li-back-active;
+      position: static;
+      box-shadow: none;
+      border-radius: 0px;
+
+      li, li a{
+        line-height: 30px;
+        min-height: 30px;
+        height: 30px;
+        background: transparent;
+        font-weight: 300;
+      }
+
+      li a{
+        padding: 0px;
+        padding-left: 55px;
+        color: @sidebar-font-color;
+      }
+
+      li:hover, li.active{
+        a{
+          color: @sidebar-drop-font-color-active;
+          background: @sidebar-drop-back-color-active;
+        }
+      }
+    }
+
+  }
+
 
 }
 
