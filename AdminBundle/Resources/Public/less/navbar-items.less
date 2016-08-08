@@ -14,7 +14,7 @@
     z-index: 101;
     display: block;
     position: fixed;
-    right: 44px;
+    right: 0;
 
 
     .user-photo {
@@ -23,7 +23,7 @@
       .trinity {
         font-size: 100px;
         border-radius: 100px;
-        color: #cdbeb5;
+        color: lighten(desaturate(@color-primary, 20%),10%);
       }
       img {
         width: 100px;
@@ -48,7 +48,7 @@
     h1 {
       display: block;
       padding: 20px;
-      color: #d55a13;
+      color: @color-primary;
       font-size: 16px;
       font-weight: 700;
       line-height: 25px;
@@ -78,7 +78,7 @@
     z-index: 101;
     display: block;
     position: fixed;
-    right: 315px;
+    right: 270px;
 
     .tab-list {
       overflow-y: auto;
@@ -237,10 +237,10 @@
     transform: translateY(-8px);
 
     height: @navbar-height + 8;
-    color: #d55a13;
+    color: @color-primary;
     background: lighten(@color-primary, 50%);
     i {
-      color: #d55a13;
+      color: @color-primary;
     }
   }
 
@@ -257,10 +257,10 @@
     transform: translateY(-8px);
 
     height: @navbar-height + 8;
-    color: #d55a13;
+    color: @color-primary;
     background: lighten(@color-primary, 50%);
     i {
-      color: #d55a13;
+      color: @color-primary;
     }
   }
 
@@ -284,10 +284,10 @@
   #settings-input:checked ~ .navbar #settings-label {
     top: -5px;
     height: 95px;
-    color: #d55a13;
+    color: @color-primary;
     background: lighten(@color-primary, 50%);
     i {
-      color: #d55a13;
+      color: @color-primary;
     }
   }
   #header-for-nonvisible {
@@ -374,49 +374,32 @@
     }
   }
 
-  .quick-links {
-    transition: .7s;
-    top: @navbar-height;
-    right: 0;
-
-    will-change: transform;
-    transform: translateX(500px);
-    position: fixed;
-    width: 200px;
-    display: block;
-    background: #fff;
-    border: 1px solid #c7c7c7;
-    border-top: none;
-    .shadow(-2px, 4px, 8px, 0, rgba(0, 0, 0, .25));
-
-    z-index: 101;
+  .navbar-popup .quick-links {
+    li i{
+      position: relative;
+    }
 
     li {
-      height: 40px;
+      padding: 0;
+      //height: 40px;
       font-size: 15px;
       cursor: pointer;
 
       &:hover {
         background: lighten(@color-primary, 50%);
         a {
-          padding-left: 45px;
-          /*&:before{
-            content: "\e90b";
-            font-family: trinity;
-            font-size: 15px;
-            padding: 0 1
-          }*/
+          padding-left: 25px;
         }
       }
       a {
         transition: .3s;
         display: block;
         color: @global-font-color;
-        padding-left: 15px;
+        //padding-left: 15px;
         line-height: 40px;
       }
     }
-    .header {
+/*    .header {
       font-weight: 400;
       padding: 20px;
       font-size: 14px;
@@ -429,7 +412,7 @@
       &:hover {
         background-color: #fff;
       }
-    }
+    }*/
   }
   #quick-links-input:checked ~ .quick-links {
     will-change: transform;
