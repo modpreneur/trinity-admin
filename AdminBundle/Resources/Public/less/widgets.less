@@ -164,7 +164,7 @@
       }*/
 
   .content-box {
-    height: 350px;
+    height: 348px;
     overflow-x: hidden;
     overflow-y: hidden;
     width: 100%;
@@ -173,7 +173,7 @@
     z-index: 10;
     padding-top: 10px;
     .content {
-      max-height: 350px;
+      max-height: 348px;
       overflow: hidden;
       width: 100%;
     }
@@ -291,6 +291,15 @@
       }
     }
   }
+
+  #row_dashboard_expandedWidgets {
+    width: 40px;
+    display: inline-block;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+  }
 }
 
 #dashboard {
@@ -332,6 +341,22 @@
     }
   }
 
+  div[id^="row_dashboard_hide"]{
+    width: 49%;
+    display: inline-block;
+    .form-left{
+      display: none !important;
+    }
+    .form-right{
+      label{
+        margin-left: 10px;
+      }
+      .description{
+        margin-left: 35px;
+      }
+    }
+  }
+
   .form-content-center {
     width: 100%;
     padding: 0;
@@ -364,6 +389,7 @@
 }
 
 #dashboard_expandedWidgets {
+
   label {
     position: static;
     display: block;
@@ -583,14 +609,3 @@
     }
   }
 }
-
-
-// fix - @todo @DavidCzernin
-#row_dashboard_expandedWidgets{
-  width: 100px !important;
-  right: -30px !important;
-  top: 20px;
-  position: absolute !important;
-  background: transparent !important;
-}
-
