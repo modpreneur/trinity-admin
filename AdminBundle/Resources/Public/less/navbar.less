@@ -120,7 +120,7 @@
         padding: 0 2px;
       }
     }
-    .navbar-right-items {
+/*    .navbar-right-items {   //Moved to user profile section in navbar
       display: inline-block;
       height: 90px;
       width: 45px;
@@ -183,7 +183,7 @@
           transition: .6s;
         }
       }
-    }
+    }*/
     #user-profile-label {
       width: auto;
       font-size: 14px;
@@ -250,6 +250,7 @@
           background: @sidebar-back-color;
           i {
             font-size: 22px;
+            color: #f3f3f3;
           }
         }
       }
@@ -269,7 +270,7 @@
       i {
         transition: .5s;
         font-size: 16px;
-        color: lighten(@sidebar-back-color, 30%);
+        color: @navbar-font-color;
       }
     }
   }
