@@ -5,47 +5,62 @@
 **************************************/
 @import "helper";
 
+input[disabled],
+input[disabled]:hover{
+  background-color: #dbdbdb !important;
+  color: #808080 !important;
+  border: 1px solid #dbdbdb !important;
+  cursor: not-allowed !important;
+  font-weight: normal !important;
+}
 
+input[disabled] + label:before, input[disabled] + label:after {
+  background-color: #efefef !important;
+  color: #808080 !important;
+  border: 1px solid #dbdbdb !important;
+  cursor: not-allowed !important;
+  font-weight: normal !important;
+}
 
-  .checkbox {
+.checkbox {
 
-    vertical-align: middle;
-    //---------- Settings for groups
-    [class^=level] {
-      transition: .4s;
-    }
+  vertical-align: middle;
+  //---------- Settings for groups
+  [class^=level] {
+    transition: .4s;
+  }
 
-    .level1 {
-      margin-left: 20px;
-
-    }
-    input[type="checkbox"]:checked + label[class=level1] {
-      &:after {
-        content: '\e90e';
-      }
-    }
-
-    .level2 {
-      margin-left: 40px;
-    }
-    input[type="checkbox"]:checked + label[class=level2] {
-      &:before {
-        background: #fff;
-      }
-      &:after {
-        content: '';
-        background: @color-primary;
-        border-radius: 10px;
-        top: 11px;
-        left: 3px;
-        width: 14px;
-        height: 14px;
-        margin: 0;
-      }
-    }
-
-    .level3 {
-      margin-left: 60px;
-    }
+  .level1 {
+    margin-left: 20px;
 
   }
+  input[type="checkbox"]:checked + label[class=level1] {
+    &:after {
+      content: '\e90e';
+    }
+  }
+
+  .level2 {
+    margin-left: 40px;
+  }
+  input[type="checkbox"]:checked + label[class=level2] {
+    &:before {
+      background: #fff;
+    }
+    &:after {
+      content: '';
+      background: @color-primary;
+      border-radius: 10px;
+      top: 11px;
+      left: 3px;
+      width: 14px;
+      height: 14px;
+      margin: 0;
+    }
+  }
+
+  .level3 {
+    margin-left: 60px;
+  }
+
+}

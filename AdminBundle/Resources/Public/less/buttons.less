@@ -120,8 +120,16 @@
   }
 
   &:disabled {
+    background-color: #989898 !important;
+    box-shadow: 0px -3px 0px 0px darken(#989898, 15%) inset;
+    border: none !important;
     cursor: not-allowed !important;
-    color: #dddddd;
+    color: #e7e7e7;
+    &:hover {
+      color: #e7e7e7;
+      background-color: #989898 !important;
+      border: none !important;
+    }
   }
 
   &-red {
