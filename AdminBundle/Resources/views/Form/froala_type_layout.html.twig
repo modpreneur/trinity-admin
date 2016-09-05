@@ -1,0 +1,8 @@
+{% block froala_widget %}
+    <!-- Include Font Awesome. -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+    <div data-ng-scope="froalaInput"  data-settings="{{ froala_settings|json_encode }}">
+        {{ block('textarea_widget') }}
+    </div>
+{% endblock %}
