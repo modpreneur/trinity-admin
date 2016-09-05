@@ -13,6 +13,13 @@ services:
       - "%trinity.admin.search_text%"
       - "%trinity.admin.app_version%"
 
+  trinity.admin.type.froala_editor:
+      class: Trinity\AdminBundle\Form\FroalaType\FroalaType
+      arguments:
+          - "%trinity.admin.froala_editor_settings%"
+      tags:
+        - { name: form.type }
+
 
   trinity.twig.extension.side_bar:
       class: Trinity\AdminBundle\Twig\SidebarExtension
@@ -22,8 +29,8 @@ services:
 
 
   trinity.twig.extensions.controller:
-          class: Trinity\AdminBundle\Twig\ControllerActionExtension
-          calls:
-              - [setRequest, ["@?request="]]
-          tags:
-              - { name: twig.extension }
+      class: Trinity\AdminBundle\Twig\ControllerActionExtension
+      calls:
+          - [setRequest, ["@?request="]]
+      tags:
+          - { name: twig.extension }

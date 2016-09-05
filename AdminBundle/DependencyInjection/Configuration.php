@@ -20,16 +20,14 @@ class Configuration implements ConfigurationInterface
     {
         $treeBuilder = new TreeBuilder();
 
-        $rootNode = $treeBuilder->root('trinity');
+        $rootNode = $treeBuilder->root('trinity_admin');
+
 
         $rootNode
             ->children()
-                ->arrayNode('admin')
-                    ->children()
-                        ->scalarNode('app_version')->end()
-                        ->scalarNode('search_text')->end()
-                    ->end()
-                ->end()
+                ->scalarNode('app_version')->end()
+                ->scalarNode('search_text')->end()
+                ->arrayNode('froala_editor_settings')->prototype('variable')->end()
             ->end()
         ;
 

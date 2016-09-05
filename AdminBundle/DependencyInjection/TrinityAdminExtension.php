@@ -27,5 +27,11 @@ class TrinityAdminExtension extends Extension
 
         $loader->load('parameters.yml');
         $loader->load('services.yml');
+
+        $container->setParameter(
+            'trinity.admin.froala_editor_settings',
+            $config['froala_editor_settings']
+        );
+
     }
 }
