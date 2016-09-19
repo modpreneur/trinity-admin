@@ -5,7 +5,7 @@
   "main": "null",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "less": "node_modules/less/bin/lessc --clean-css AdminBundle/Resources/Public/less/admin.less AdminBundle/Resources/Public/css/admin.css"
+    "less": "./less.sh"
   },
   "repository": {
     "type": "git",
