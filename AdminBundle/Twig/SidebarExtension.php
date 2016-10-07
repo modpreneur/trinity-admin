@@ -26,14 +26,14 @@ class SidebarExtension extends \Twig_Extension
     /**
      *
      * In master application (as Necktie,Venice,etc)
-     * create new twig extension getSidebarMsgs
+     * create new twig extension getBarMsgs
      * that returns your messages for sidebar.
      * Already implemented in Necktie/AppBundle
      */
     public function getFilters()
     {
         return [
-            new \Twig_SimpleFilter('getSidebarMsgs', [$this, 'getRedisMsgs']),
+            new \Twig_SimpleFilter('getBarMsgs', [$this, 'getRedisMsgs']),
             new \Twig_SimpleFilter('json_decode', [$this, 'jsonDecode']),
             new \Twig_SimpleFilter('routeExists', [$this, 'routeExists'])
         ];

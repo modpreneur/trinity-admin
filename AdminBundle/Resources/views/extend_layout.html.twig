@@ -54,7 +54,7 @@
                 <label class="navbar-item-label" for="notifications-input" id="notifications-label" title="Notifications">
                     <i class="trinity trinity-bell"></i>
                     {% set redis= app.user.getId() %}
-                    {% set response = redis|getSidebarMsgs %}
+                    {% set response = redis|getBarMsgs %}
                     {% set messages = response[0] %}
                     {% set users = response[1] %}
                     {% set times = response[2] %}
