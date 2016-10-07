@@ -1,4 +1,5 @@
 {% extends "form_div_layout.html.twig" %}
+{% use "TrinityAdminBundle:Form:form_layout.html.twig" %}
 
 {%- block form_start -%}
   {{- parent() -}}
@@ -25,12 +26,12 @@
 {%- block collection_row -%}
 
   <div class="row">
-    <div class="form-content-center span-none-padding-mini-15 span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
+    {{ block('form_row_start') }}
       <div class="collection">
-        <div class="collection-label span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left">
+        {{ block('form_label_start') }}
           {{- form_label(form) -}}
         </div>
-        <div class="collection-widget span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-10 form-right">
+        {{ block('form_input_start') }}
           {{- form_widget(form) -}}
         </div>
       </div>
@@ -124,15 +125,15 @@
   {% endif %}
 
   <div class="row {% if choice %} choice{% endif %} {{ rowClass }}" id="row_{{ id }}">
-    <div class="form-content-center span-none-padding-mini-15 span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
+    {{ block('form_row_start') }}
       {% set class = "" %}
       {% if form.vars.attr.class is defined %}
         {% set class = form.vars.attr.class %}
       {% endif %}
-      <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left {{ class }}">
+      {{ block('form_label_start') }}
         {{- form_label(form) -}}
       </div>
-      <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-10 form-right">
+      {{ block('form_input_start') }}
         {{- form_widget(form) -}}
         {% for attrname,attrvalue in attr %}
           {% if attrname == 'description' %}
