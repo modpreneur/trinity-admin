@@ -11,7 +11,7 @@ use Symfony\Bundle\FrameworkBundle\Routing\Router;
 class SidebarExtension extends \Twig_Extension
 {
     /** @var  Router */
-    private $router;
+    protected $router;
 
     /**
      * SidebarExtension constructor.
