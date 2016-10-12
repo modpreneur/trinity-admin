@@ -7,8 +7,9 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Trinity Administration{% endblock %}</title>
         <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,500italic,700&subset=latin,latin-ext" rel='stylesheet' type='text/css'>
+        <link media="none" onload="if(media!='all')media='all'" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,500italic,700&subset=latin,latin-ext" rel='stylesheet' type='text/css'>
     {% endblock %}
+
 
     {% block header_javascript %}
 
@@ -30,11 +31,18 @@
         {% endblock %}
 
         {% block bowtie %}
+
             {% stylesheets
                 '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
+            %}
+            <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+            {% endstylesheets %}
+
+
+            {% stylesheets
                 '@TrinityAdminBundle/Resources/Public/css/trinity-font.css'
             %}
-                <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+                <link media="none" onload="if(media!='all')media='all'" rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
             {% endstylesheets %}
         {% endblock %}
 
@@ -48,7 +56,6 @@
         {% endblock %}
 
     {% endblock %}
-
 </head>
 
 <body class="trinity-admin navbar-fixed controller_{{ get_controller_name() }} action_{{ get_action_name() }}">
@@ -99,7 +106,6 @@
 
     {% block flashMessages %}
         <div id="flashMessages">
-
             <input id="close-alert-{type}-{id}" type="radio" class="ajax-checkbox checkbox-none">
             <div class="alert alert-{type} ajax-alert">
                 <div class="container">
@@ -163,7 +169,6 @@
                     {% endfor %}
                 {% endfor %}
             {% endblock %}
-
         </div>
     {% endblock %}
 
@@ -182,4 +187,5 @@
 </div>
 </body>
 </html>
+
 {% endspaceless %}
