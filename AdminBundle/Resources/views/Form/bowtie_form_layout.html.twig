@@ -1,5 +1,4 @@
 {% extends "form_div_layout.html.twig" %}
-{% use "TrinityAdminBundle:Form:form_layout.html.twig" %}
 
 {%- block form_start -%}
   {{- parent() -}}
@@ -25,13 +24,14 @@
 
 {%- block collection_row -%}
 
+  {# If you make changes to one of the 3 class lists below, apply these changes to form_layout.html.twig as well. #}
   <div class="row">
-    {{ block('form_row_start') }}
+    {% block form_row_start %}<div class="form-content-center span-none-padding-mini-15 span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">{% endblock form_row_start %}
       <div class="collection">
-        {{ block('form_label_start') }}
+        {% block form_row_label_start %}<div class='collection-label span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left'>{% endblock form_row_label_start %}
           {{- form_label(form) -}}
         </div>
-        {{ block('form_input_start') }}
+        {% block form_row_input_start %}<div class='collection-widget span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-10 form-right'>{% endblock form_row_input_start %}
           {{- form_widget(form) -}}
         </div>
       </div>
@@ -130,20 +130,31 @@
       {% if form.vars.attr.class is defined %}
         {% set class = form.vars.attr.class %}
       {% endif %}
-      {{ block('form_label_start') }}
-        {{- form_label(form) -}}
-      </div>
-      {{ block('form_input_start') }}
-        {{- form_widget(form) -}}
-        {% for attrname,attrvalue in attr %}
-          {% if attrname == 'description' %}
-            <span class="description">{{ attrvalue }}</span>{% endif %}
-        {% endfor %}
-      </div>
+
+      {% block form_row_label %}
+        {{ block('form_row_label_start') }}
+          {% block form_row_label_content %}
+            {{- form_label(form) -}}
+          {% endblock form_row_label_content %}
+        </div>
+      {% endblock form_row_label %}
+
+      {% block form_row_input %}
+          {{ block('form_row_input_start') }}
+          {% for attrname,attrvalue in attr %}
+            {% if attrname == 'description' %}
+              <span class="description">{{ attrvalue }}</span>{% endif %}
+          {% endfor %}
+          {% block form_row_input_content %}
+            {{- form_widget(form) -}}
+          {% endblock form_row_input_content %}
+        </div>
+      {% endblock form_row_input %}
+
     </div>
+  </div>
 
     {{- form_errors(form) -}}
-  </div>
 {%- endblock form_row -%}
 
 
