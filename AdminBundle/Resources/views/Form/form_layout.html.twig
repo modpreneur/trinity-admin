@@ -1,18 +1,19 @@
 {# This layout is meant to be used for creating custom form rows using embed tag: #}
 
-{# If you make changes to one of the 3 class lists below, apply these changes to bowtie_form_layout.html.twig as well. #}
+
 {% block form_row %}
+    {# If you make changes to one of the class list below, apply these changes to bowtie_form_layout.html.twig as well. #}
     <div class="form-content-center span-none-padding-mini-15 span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
         {% block form_row_content %}{% endblock form_row_content %}
 
+        {# If you make changes to one of the 2 class lists below, apply these changes to bowtie_form_layout.html.twig as well. #}
         {% block form_row_label %}
-            <div class="collection-label span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left">
+            <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left">
                 {% block form_row_label_content %}{% endblock form_row_label_content %}
             </div>
         {% endblock form_row_label %}
 
         {% block form_row_input %}
-            {#<div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-10 form-right">#}
             <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-10 form-right">
                 {% block form_row_input_content %}{% endblock form_row_input_content %}
             </div>
