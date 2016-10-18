@@ -2,6 +2,7 @@
 @import "../admin";
 
 
+
 .head-content, .box, .tabs-wrapper{
   box-shadow: none;
   border: 1px #e2e4e6 solid;
@@ -17,30 +18,36 @@
   color: #537ca5;
 }
 
-@back-color: #f7f7f7;
-@color-border: #e1e4e8;
 
-@color-primary:   #1abb9c;//#00879c;
-@color-secondary: #2a3f54;
+@back-color: #dbe0e9;
+@color-border: transparent;
+
+@color-primary:   #17bdff;//#00879c;
+@color-secondary: #2d323e;
 @color-tertiary:  #1ABB9C;
 
 @global-header-color: #73879C;
 
-@sidebar-back-color: #2a3f54;
+@sidebar-back-color: #2d323e;
 
-
-@sidebar-font-color: #fff;
+@sidebar-width: 240px;
+@sidebar-font-color: #adadad;
 @sidebar-font-color-active: #fff;
-@sidebar-back-active: #3a5873;
+@sidebar-back-active: transparent;
 @sidebar-font-color-active: #fff;
 @sidebar-drop-border-bottom-color: darken(#334d65, 1%);
 
 @sidebar-hover-color: @sidebar-font-color-active;
-@sidebar-hover-back-color: @sidebar-back-active;
+@sidebar-hover-back-color: #282c37;
 
 @sidebar-drop-font-color-active: #fff;
 @sidebar-drop-back-color-active: darken(#334d65, 10%);
 
+.sidebar li a, .sidebar li div{
+  text-transform: none !important;
+  padding-left: 0 !important;
+  font-weight: 300;
+}
 
 
 /* Some stuff for advanced search which using extern css file*/
