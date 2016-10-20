@@ -3,18 +3,18 @@
 
 {% block form_row %}
     {# If you make changes to one of the class list below, apply these changes to bowtie_form_layout.html.twig as well. #}
-    <div class="form-content-center span-none-padding-mini-15 span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
+    {% block form_row_start %}<div class="form-content-center span-none-padding-mini-23 span-none-padding-small-23 span-none-padding-medium-23 span-large-23 span-xlarge-20 margin-auto">{% endblock form_row_start %}
         {% block form_row_content %}{% endblock form_row_content %}
 
         {# If you make changes to one of the 2 class lists below, apply these changes to bowtie_form_layout.html.twig as well. #}
         {% block form_row_label %}
-            <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left">
+            {% block form_row_label_start %}<div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-5 span-none-padding-large-6 span-none-padding-xlarge-6 form-left">{% endblock form_row_label_start %}
                 {% block form_row_label_content %}{% endblock form_row_label_content %}
             </div>
         {% endblock form_row_label %}
 
         {% block form_row_input %}
-            <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-10 form-right">
+            {% block form_row_input_start %}<div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-19 span-none-padding-large-15 span-none-padding-xlarge-14 form-right">{% endblock form_row_input_start %}
                 {% block form_row_input_content %}{% endblock form_row_input_content %}
             </div>
         {% endblock form_row_input %}
