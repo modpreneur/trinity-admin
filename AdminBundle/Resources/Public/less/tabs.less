@@ -37,7 +37,7 @@
   }
   .tab-loop (15);
 
-  label[for^="tab"] {
+  input.tab-head ~ label[for^="tab"] {
     border: none;
     border-bottom: 2px solid transparent; // smaller resolution need that, second lvl
 
@@ -247,7 +247,7 @@
         border-top: 1px solid transparent !important;
       }
 
-      label[for^="tab"] {
+      input.tab-head ~ label[for^="tab"] {
         border: none;
         border-top: none;
         border-bottom: 2px solid #b5b5b5;
@@ -534,4 +534,9 @@
     }
   }
 
+}
+
+.trinityJS-reload-tab{
+  text-align: center;
+  padding-top: 20px;
 }

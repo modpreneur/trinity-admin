@@ -54,7 +54,7 @@
                 <label class="navbar-item-label" for="notifications-input" id="notifications-label" title="Notifications">
                     <i class="trinity trinity-bell"></i>
                     {% set redis= app.user.getId() %}
-                    {% set response = redis|getSidebarMsgs %}
+                    {% set response = redis|getBarMsgs %}
                     {% set messages = response[0] %}
                     {% set users = response[1] %}
                     {% set times = response[2] %}
@@ -69,13 +69,13 @@
                 </label>
 
 
-                {% block settings_link %}
-                    <a href="#" title="Go to settings">
-                        <label class="navbar-item-label" for="settings-input" id="settings-label">
-                            <i class="trinity-settings"></i>
-                        </label>
-                    </a>
-                {% endblock %}
+                {#{% block settings_link %}#}
+                    {#<a href="#" title="Go to settings">#}
+                        {#<label class="navbar-item-label" for="settings-input" id="settings-label">#}
+                            {#<i class="trinity-settings"></i>#}
+                        {#</label>#}
+                    {#</a>#}
+                {#{% endblock %}#}
 
 
                 <label class="navbar-item-label" for="user-profile-input" id="user-profile-label" title="User profile">
@@ -117,7 +117,7 @@
     {# Navbar popups - profile, notifications #}
     <div class="user-profile-info">
         <div class="navbar-popup">
-            <h1 class="headline">User profile</h1>
+            {#<h1 class="headline">User profile</h1>#}
             {% block sidebar_user %}
             {% endblock %}
         </div>
