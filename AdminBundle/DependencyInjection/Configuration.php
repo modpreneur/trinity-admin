@@ -22,7 +22,6 @@ class Configuration implements ConfigurationInterface
 
         $rootNode = $treeBuilder->root('trinity_admin');
 
-
         $rootNode
             ->children()
                 ->scalarNode('app_version')->end()
