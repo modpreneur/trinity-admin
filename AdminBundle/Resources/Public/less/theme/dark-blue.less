@@ -12,7 +12,9 @@
   box-shadow: none;
 }
 .navbar-container{
-  border-bottom: 1px #e2e4e6 solid;
+  // Following property caused some visual glitches
+  // (under the notification bell and the user profile drop-down)
+  //border-bottom: 1px #e2e4e6 solid;
 }
 #header-for-nonvisible {
   color: #537ca5;
@@ -67,4 +69,8 @@
 
 .query-builder input.form-control:focus{
   border-color: @color-primary !important;
+}
+
+div.notifications {
+  right: 246px;
 }
