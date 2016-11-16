@@ -83,13 +83,14 @@
 
       &:hover {
         & > td .button-small {
-          background: lighten(@color-primary, 25%);
+          //background: lighten(@color-primary, 25%);
+          background: @color-secondary;
           color: #fff;
           &:visited {
             color: #fff;
           }
           &:hover {
-            background: lighten(@color-primary, 5%);
+            background: @color-secondary;
             color: #fff;
           }
         }

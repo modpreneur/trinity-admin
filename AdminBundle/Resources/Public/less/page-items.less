@@ -48,7 +48,7 @@
   }
 
   .navigation-box {
-    height: 100px;
+    //height: 100px;
     display: block;
 
     .tooltip-loop (@i) when (@i > 0) {
@@ -63,10 +63,10 @@
       float: right;
       height: 100%;
       .tooltip-hover {
-        height: 50px;
-        width: 50px;
+        height: 32px;
+        width: 32px;
         display: block;
-        margin: 25px 25px 25px 0;
+        margin: 10px 20px 0 0;
       }
       a {
         display: block;
@@ -77,8 +77,8 @@
         line-height: 30px;
         font-size: 13px;
         font-weight: 300;
-        right: 67px;
-        top: 11px;
+        right: 60px;
+        top: 2px;
         background: rgba(0, 0, 0, 0.95);
 
         &:before {
@@ -94,9 +94,9 @@
 
     .new-entry {
       .navigation-icons();
-      background: @color-tertiary;
+      background: @color-primary;
       &:hover {
-        background: darken(@color-tertiary, 15%);
+        background: darken(@color-primary, 15%);
       }
     }
 

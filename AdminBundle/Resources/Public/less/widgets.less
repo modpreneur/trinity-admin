@@ -11,12 +11,18 @@
 // wrapper
 .dashboard-widgets {
   .small-widgets {
+    border: 1px #e2e4e6 solid;
     margin-bottom: @widget-space;
+    background: #fff;
 
-    .small-widget {
-      & > div {
-        padding-left: @widget-space/2;
-        padding-right: @widget-space/2;
+      .small-widget {
+      //& > div {
+      //  padding-left: @widget-space/2;
+      //  padding-right: @widget-space/2;
+      //}
+
+      div#small-widget-wrapper {
+        text-align: center;
       }
 
       .content-box {
@@ -475,19 +481,26 @@
 .small-widgets {
 
   .trinity-widget {
-    padding: 20px;
+    padding: 30px;
     margin-bottom: 0;
+    border: none;
+    box-shadow: none;
+    width: 100%;
+    text-align: initial;
+    display: inline-block;
 
     .content-box {
       height: auto;
       padding-top: 0;
+      padding-left: 55px;
     }
     .widget-small-description {
       font-size: 14px;
       line-height: 1;
       color: #b5b5b5;
       font-weight: 400;
-      margin-bottom: 18px;
+      margin-bottom: 10px;
+      margin-left: 55px;
     }
     .span-none-padding-large-6 {
       height: 115px;
@@ -496,6 +509,8 @@
       padding: 0;
       line-height: 1;
       font-size: 32px;
+      margin-left: 15px;
+      margin-bottom: 10px;
     }
     .widget-small-icon {
       display: block;
@@ -523,14 +538,14 @@
   }
 }
 
-.right-widget {
+.dragable-widgets .right-widget {
   & > div {
     padding-right: 0;
     padding-left: @widget-space/2;
   }
 }
 
-.left-widget {
+.dragable-widgets .left-widget {
   & > div {
     padding-right: @widget-space/2;
     padding-left: 0;
@@ -545,12 +560,22 @@
   }
 }
 
+@media screen and (min-width: 1367px) {
+  .small-widgets {
+    .span-none-padding-large-6 {
+      .trinity-widget {
+        width: 75%;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 1366px) {
   .small-widgets {
     .span-none-padding-large-6 {
       width: 50%;
       .trinity-widget {
-        margin-bottom: @widget-space;
+        //;
         .widget-small-description {
           font-size: 14px;
         }
@@ -560,23 +585,13 @@
 
   .dashboard-widgets {
     .small-widgets {
-      margin-bottom: 0;
 
       .small-widget {
         & > div {
           padding: 0;
         }
       }
-      .small-widget:nth-child(odd) {
-        & > div {
-          padding-right: @widget-space/2;
-        }
-      }
-      .small-widget:nth-child(even) {
-        & > div {
-          padding-left: @widget-space/2;
-        }
-      }
+      //
     }
   }
 }
@@ -588,9 +603,9 @@
 
   .small-widgets .span-none-padding-large-6 {
     width: 100%;
-    .trinity-widget {
-      margin-bottom: 20px;
-    }
+    //.trinity-widget {
+    //  padding-bottom: 20px;
+    //}
   }
 
   .dashboard-widgets {

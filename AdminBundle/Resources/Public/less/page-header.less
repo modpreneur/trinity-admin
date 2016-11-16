@@ -10,7 +10,8 @@
     display: block;
     float: left;
     .group-clearfix();
-    height: 100px;
+    //height: 100px;
+    padding-left: 30px;
   }
 
   .head-content {
@@ -18,46 +19,45 @@
     color: @global-font-color;
     position: relative;
     background: #fff;
-    margin: 25px 20px 20px 25px;
+    margin: 25px 20px 0 25px;
     padding-top: 10px;
-    padding-bottom: 10px;
-    min-height: 100px;
+    min-height: 50px;
 
     //border: 1px solid @color-border;
     .shadow();
 
     div[class^="span"] {
-      height: 100px;
+      height: 60px;
       position: relative;
       line-height: 1;
     }
 
-    .page-icon {
-      position: relative;
-      height: 100px;
-      width: 95px;
-      display: block;
-      float: left;
-      .group-clearfix();
-      i {
-        display: block;
-        margin: 25px 20px 20px 20px;
-        font-size: 55px;
-        color: @global-header-color;
-      }
-      img {
-        width: 65px;
-        height: 65px;
-        margin: 20px 10px 10px 20px;
-        border-radius: 55px;
-      }
-    }
+    //.page-icon {
+    //  position: relative;
+    //  height: 100px;
+    //  width: 95px;
+    //  display: block;
+    //  float: left;
+    //  .group-clearfix();
+    //  i {
+    //    display: block;
+    //    margin: 25px 20px 20px 20px;
+    //    font-size: 55px;
+    //    color: @global-header-color;
+    //  }
+    //  img {
+    //    width: 65px;
+    //    height: 65px;
+    //    margin: 20px 10px 10px 20px;
+    //    border-radius: 55px;
+    //  }
+    //}
 
     .content-header {
-      font-size: 30px;
+      font-size: 25px;
       color: @global-header-color;
-      text-transform: uppercase;
-      margin-top: 25px;
+      //text-transform: uppercase;
+      margin-top: 5px;
       font-weight: 300;
       b {
         font-weight: @roboto-bold;
@@ -73,27 +73,33 @@
     .breadcrumbs {
       float: left;
       width: auto;
-      margin-left: -10px;
+      margin-left: -5px;
       background: 0 0;
       display: block !important;
 
       span {
         font-size: 14px;
         transition: .3s;
-        color: @global-header-color;
+        font-weight: 400;
+        color: @color-grey-link;
       }
       ul {
-        padding: 5px 0 10px 0;
+        padding-bottom: 7px;
+        padding-top: 0;
       }
 
       li {
         line-height: 20px !important;
         &:after {
-          content: '\e656';
+          //content: '\e623';
+          content: '\e61f';
           font-family: 'tiecons';
-          font-size: 10px;
-          color: @global-header-color;
-          padding-left: 5px;
+          font-size: 5px;
+          font-weight: 100;
+          color: @color-grey-link;
+          padding-left: 3px;
+          position: relative;
+          top: -2px;
         }
 
         &:last-child:after {
@@ -109,11 +115,11 @@
       }
 
       a, span {
-        color: @global-header-color;
+        color: @color-grey-link;
         line-height: 18px;
         display: inline-block;
         padding: 0 !important;
-        padding-left: 5px !important;
+        padding-left: 3px !important;
       }
 
       a {

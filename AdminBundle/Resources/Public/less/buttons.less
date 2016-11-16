@@ -30,16 +30,17 @@
   border: none;
   margin: 5px;
 
-  background: lighten(desaturate(@color-primary, 75%), 30%);
+  background: lighten(desaturate(@color-primary, 100%), 30%);
   color: #fff;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
+  //text-shadow: 1px 1px rgba(0, 0, 0, 0.25);
 
   cursor: pointer;
   transition: .3s;
 
   &:hover {
     color: #fff;
-    background: lighten(@color-primary, 15%);
+    //background: lighten(@color-primary, 15%);
+    background: @color-secondary;
   }
 }
 

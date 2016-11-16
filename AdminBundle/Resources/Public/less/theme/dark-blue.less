@@ -8,13 +8,26 @@
   border: 1px #e2e4e6 solid;
 }
 
+div.head-content {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
 .navbar{
   box-shadow: none;
+
+  .navbar-logo {
+    background: -webkit-linear-gradient(-3deg, #6f68f9 0%, #00deff 100%);
+    background: -moz-linear-gradient(-3deg, #6f68f9 0%, #00deff 100%);
+    background: -o-linear-gradient(-3deg, #6f68f9 0%, #00deff 100%);
+    background: -ms-linear-gradient(-3deg, #6f68f9 0%, #00deff 100%);
+    background: linear-gradient(93deg, #6f68f9 0%, #00deff 100%);
+  }
 }
 .navbar-container{
-  // Following property caused some visual glitches
+  // Following property causes some visual glitches
   // (under the notification bell and the user profile drop-down)
-  //border-bottom: 1px #e2e4e6 solid;
+  border-bottom: 1px #e2e4e6 solid;
 }
 #header-for-nonvisible {
   color: #537ca5;
@@ -28,11 +41,10 @@
 @color-secondary: #2d323e;
 @color-tertiary:  #1ABB9C;
 
-@global-header-color: #73879C;
+@global-header-color: #2d323e; /*#73879C;*/
 
 @sidebar-back-color: #2d323e;
 
-@sidebar-width: 240px;
 @sidebar-font-color: #adadad;
 @sidebar-font-color-active: #fff;
 @sidebar-back-active: transparent;
@@ -72,5 +84,20 @@
 }
 
 div.notifications {
-  right: 246px;
+  right: 183px;
+}
+
+.tags {
+  .Enabled {
+    background: @color-primary !important;
+  }
+
+  .Pending {
+    background: #62c500 !important;
+    color: #ccc;
+  }
+
+  .Disabled {
+    background: #d2d7e3 !important;
+  }
 }
