@@ -11,6 +11,7 @@
   .user-profile-info {
     transform: translateY(-1000px);
     transition: 1s;
+    width: 182px;
     z-index: 101;
     display: block;
     position: fixed;
@@ -39,7 +40,6 @@
   //=================================================================
 
   .navbar-popup {
-    width: 226px;
     background: #fff;
     border: 1px solid #e4e4e4;
     border-top: none;
@@ -60,6 +60,11 @@
         display: block;
         padding: 10px 40px;
         border-top: 1px solid #e5e5e5;
+
+        &:first-of-type {
+          border-top: none;
+        }
+
         i {
           position: absolute;
           font-size: 20px;
@@ -77,8 +82,9 @@
     transition: all 1s, z-index 0s;
     z-index: 101;
     display: block;
+    width: 226px;
     position: fixed;
-    right: 225px;
+    right: 192px;
 
     .tab-list {
       overflow-y: auto;
@@ -233,10 +239,9 @@
     transition: .7s all, background .4s;
   }
   #user-profile-input:checked ~ .navbar #user-profile-label {
-    will-change: transform;
-    transform: translateY(-8px);
+    //will-change: transform;
+    //transform: translateY(-8px);
 
-    height: @navbar-height + 8;
     color: @color-primary;
     background: lighten(@color-primary, 50%);
     i {
@@ -250,13 +255,12 @@
   }
 
   #notifications-label {
-    transition: .7s all, background .4s;
+    //transition: .7s all, background .4s;
   }
   #notifications-input:checked ~ .navbar #notifications-label {
-    will-change: transform;
-    transform: translateY(-8px);
+    //will-change: transform;
+    //transform: translateY(-8px);
 
-    height: @navbar-height + 8;
     color: @color-primary;
     background: lighten(@color-primary, 50%);
     i {
@@ -283,7 +287,6 @@
   }
   #settings-input:checked ~ .navbar #settings-label {
     top: -5px;
-    height: 95px;
     color: @color-primary;
     background: lighten(@color-primary, 50%);
     i {
@@ -420,7 +423,6 @@
   }
   #quick-links-input:checked ~ .navbar #quick-links-label {
     width: @navbar-height/2;
-    height: @navbar-height/2;
     span {
       will-change: opacity, transform;
       opacity: 0;

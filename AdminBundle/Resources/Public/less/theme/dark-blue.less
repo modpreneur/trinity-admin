@@ -13,6 +13,21 @@ div.head-content {
   padding-bottom: 0;
 }
 
+.dashboard-widgets {
+  .small-widgets {
+    border: 1px #e2e4e6 solid;
+    box-shadow: none;
+  }
+}
+
+#user-profile-input:checked ~ .navbar #user-profile-label {
+  background: transparent !important;
+}
+
+#notifications-input:checked ~ .navbar #notifications-label {
+  background: transparent !important;
+}
+
 .navbar{
   box-shadow: none;
 
@@ -23,10 +38,13 @@ div.head-content {
     background: -ms-linear-gradient(-3deg, #6f68f9 0%, #00deff 100%);
     background: linear-gradient(93deg, #6f68f9 0%, #00deff 100%);
   }
+
+  .navbar-item-label:hover {
+    background: transparent;
+    color: @color-primary;
+  }
 }
 .navbar-container{
-  // Following property causes some visual glitches
-  // (under the notification bell and the user profile drop-down)
   border-bottom: 1px #e2e4e6 solid;
 }
 #header-for-nonvisible {
@@ -94,10 +112,11 @@ div.notifications {
 
   .Pending {
     background: #62c500 !important;
-    color: #ccc;
+    color: #fff;
   }
 
   .Disabled {
     background: #d2d7e3 !important;
   }
 }
+
