@@ -35,9 +35,20 @@
                         <label for="search">
                             <input placeholder="Type your text here…" class="navbar-search-input" type="text" name="search"
                                    id="search">
-                            <button type="submit">
+                            <button type="submit" id="navbar-search-submit-button-1">
                                 <i class="trinity trinity-search"></i>
                             </button>
+                            <div class="navbar-search-tools">
+                                <button type="submit" class="button button-primary button-success" id="navbar-search-submit-button-2">
+                                    <i class="trinity trinity-search2"></i>
+                                </button>
+                                <button class="button button-addNew" id="navbar-search-helper-button">
+                                    Search Helper
+                                </button>
+                                <button id="navbar-search-tool-close-button" class="button button-small button-small-square button-orange">
+                                    <i class="trinity trinity-close"></i>
+                                </button>
+                            </div>
                         </label>
                         {% block navbar_search_form_end %}
                     </form>
@@ -117,7 +128,6 @@
     {# Navbar popups - profile, notifications #}
     <div class="user-profile-info">
         <div class="navbar-popup">
-            {#<h1 class="headline">User profile</h1>#}
             {% block sidebar_user %}
             {% endblock %}
         </div>

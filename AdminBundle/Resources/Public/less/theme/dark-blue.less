@@ -3,9 +3,9 @@
 
 
 
-.head-content, .box, .tabs-wrapper{
+.head-content, .box, .tabs-wrapper, .button {
   box-shadow: none;
-  border: 1px #e2e4e6 solid;
+  border: 1px #ededed solid;
 }
 
 div.head-content {
@@ -15,7 +15,7 @@ div.head-content {
 
 .dashboard-widgets {
   .small-widgets {
-    border: 1px #e2e4e6 solid;
+    border: 1px #ededed solid;
     box-shadow: none;
   }
 }
@@ -65,7 +65,7 @@ div.head-content {
 
 @sidebar-font-color: #adadad;
 @sidebar-font-color-active: #fff;
-@sidebar-back-active: transparent;
+@sidebar-back-active: #282c37;
 @sidebar-font-color-active: #fff;
 @sidebar-drop-border-bottom-color: darken(#334d65, 1%);
 
@@ -81,6 +81,11 @@ div.head-content {
   font-weight: 300;
 }
 
+.sidebar {
+  input:checked ~ ul.drop {
+    background: darken(@sidebar-back-color, 5%);
+  }
+}
 
 /* Some stuff for advanced search which using extern css file*/
 //importants using bcs this styles are form js part
@@ -88,17 +93,38 @@ div.head-content {
   background: #1ABB9C !important;
 }
 
-.query-builder .rules-group-container{
-  border-color: @color-secondary !important;
-  background: #c4d5e6 !important;
+.wrapper-grid > div.padding-20 {
+  background: #f2f6fc !important;
+  display: none;
+}
+
+.query-builder {
+    .rules-group-container {
+      border-color: @color-secondary !important;
+      background: #f2f6fc !important;
+      padding: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    .rule-container{
+      background: @color-secondary !important;
+    }
+
+    input.form-control:focus{
+      border-color: @color-primary !important;
+    }
+
+    .btn-primary.disabled {
+      background: transparent !important;
+    }
+
+    .btn-danger {
+      background: #5b606a;
+    }
 }
 
 .group-conditions .btn.active{
   background: @color-primary !important;
-}
-
-.query-builder input.form-control:focus{
-  border-color: @color-primary !important;
 }
 
 div.notifications {
@@ -106,16 +132,16 @@ div.notifications {
 }
 
 .tags {
-  .Enabled {
+  .enabled {
     background: @color-primary !important;
   }
 
-  .Pending {
+  .pending {
     background: #62c500 !important;
     color: #fff;
   }
 
-  .Disabled {
+  .disabled {
     background: #d2d7e3 !important;
   }
 }

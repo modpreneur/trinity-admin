@@ -25,7 +25,7 @@
   font-weight: @roboto-medium;
   text-decoration: none;
   //vertical-align: middle;
-  text-transform: uppercase;
+  text-transform: capitalize;
   line-height: 1;
   border: none;
   margin: 5px;
@@ -192,6 +192,11 @@
   line-height: 1;
 }
 
+.button-small-square {
+  min-width: initial !important;
+  padding: 6px !important;
+}
+
 .button-addNew {
   color: #2f2f2f !important;
   background: transparent;
@@ -318,6 +323,12 @@
 .button-search{
   min-width: 200px;
   background: @sidebar-back-color;
+}
+
+.btn-group.group-conditions {
+  label {
+    border: 1px solid @color-primary;
+  }
 }
 
 //default email templates

@@ -65,11 +65,11 @@
   height: 100%;
   position: fixed;
   color: #9b9b9b;
-  padding-bottom: 30px; // space for theme changer
+  padding-bottom: 28px; // space for theme changer
 
   /** window resize fix **/
   top: 0;
-  padding-top: @navbar-height + 19px; //+height of sidebar-header
+  padding-top: @navbar-height;
   /** end **/
 
   input {
@@ -80,6 +80,10 @@
   a, span:focus, span::-moz-focus-inner {
     border: 0;
     outline: 0;
+  }
+
+  ul:first-child {
+    padding-top: 19px;
   }
 }
 
@@ -290,7 +294,11 @@
 @media only screen and (max-width: 1400px) {
 
   #sidebar {
-    padding-top: @navbar-height + 69px; //+height of sidebar-header
+    padding-top: @navbar-height;
+
+    ul:first-child {
+      padding-top: 69px;
+    }
   }
 
   .sidebar-header {
@@ -319,7 +327,11 @@
 @media only screen and (max-height: 755px) {
 
   #sidebar {
-    padding-top: @navbar-height + 19px; //+height of sidebar-header
+    padding-top: @navbar-height;
+
+    ul:first-child {
+      padding-top: 19px;
+    }
   }
 
   .sidebar-header {
