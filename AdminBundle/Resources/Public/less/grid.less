@@ -118,7 +118,7 @@
       }
       a {
         transition: .3s;
-        color: darken(desaturate(@color-primary, 78%), 17%);
+        color: #303030;
         &:hover {
           color: @color-primary;
         }
@@ -234,8 +234,6 @@
 
 .ban-grid-filter {
   margin: 30px 0 0 20px;
-  position: absolute;
-  z-index: 99;
   select {
     height: 32px;
   }
@@ -253,9 +251,6 @@
 }
 
 @media screen and(max-width: 1140px) {
-  .ban-grid-filter {
-    display: none;
-  }
   .small-hidden {
     display: none;
   }
