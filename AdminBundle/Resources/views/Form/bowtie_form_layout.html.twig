@@ -8,7 +8,6 @@
   {{- parent() -}}
 {%- endblock form -%}
 
-
 {%- block collection_widget -%}
   {% if prototype is defined %}
     {%- set attr = attr|merge({'data-prototype': form_row(prototype) }) -%}
