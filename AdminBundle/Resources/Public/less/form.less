@@ -69,7 +69,7 @@
       padding: 0;
       padding-right: 20%;
       line-height: 35px;
-      font-weight: 400;
+      font-weight: 300 !important;
 
       &.required:after {
         content: "*";
@@ -141,6 +141,122 @@
         }
       }
 
+    }
+
+    /*  DatetimePicker - just align some elements */
+    .rw-calendar-grid .rw-btn {
+      text-align: center;
+    }
+
+    .rw-calendar-grid tr td {
+      padding: 0;
+    }
+
+    .rw-popup-container {
+      left: 0;
+    }
+
+    .rw-widget > .rw-select {
+      border: none;
+    }
+
+    .rw-popup-container.rw-calendar-popup {
+      width: 18em;
+    }
+
+    .rw-calendar-grid th {
+      padding: 0;
+      text-align: center;
+    }
+
+    .rw-calendar-grid td .rw-btn {
+      padding: 0;
+    }
+
+    .rw-widget.rw-state-focus, .rw-widget.rw-state-focus:hover {
+      border: none;
+      box-shadow: none;
+    }
+
+    .rw-datetimepicker {
+      padding: 0;
+      border: 1px solid #ccc !important;
+
+      &:hover, &:focus {
+        border: 1px solid @color-primary !important;
+        transition: .4s;
+
+        .rw-btn-calendar {
+          span:before {
+            color: @color-primary;
+            transition: .4s;
+          }
+        }
+      }
+
+      input.rw-input {
+        border-radius: 5px;
+        border: 0 !important;
+      }
+
+      button.rw-btn-calendar {
+        span {
+          &:before {
+            content: "\e63c";
+            font-family: tiecons;
+          }
+        }
+      }
+
+      .rw-header .rw-btn-view {
+        background: #fff;
+      }
+
+      .rw-i-caret-left:before {
+        content: "\e61e";
+        font-family: "tiecons";
+      }
+
+      .rw-i-caret-right:before {
+        content: "\e61f";
+        font-family: "tiecons";
+      }
+    }
+
+    .rw-widget {
+      border: none;
+    }
+
+    .rw-select {
+      color: #000;
+      color: rgba(0, 0, 0, 0);
+      text-shadow: 0 0 0 #000;
+      border: none !important;
+      width: 1.9em;
+      .rw-btn {
+        width: 1.8em;
+      }
+      i {
+        float: right;
+        padding-right: 10px;
+        transition: .3s;
+      }
+      &:focus, &:hover {
+        outline: none;
+      }
+    }
+
+    .rw-popup-container {
+      width: 100%;
+    }
+
+    .rw-input {
+      font-family: "Arial", sans-serif;
+      &:focus, &:hover {
+        + .rw-select i {
+          color: @color-primary;
+        }
+      }
     }
 
     @media screen and(max-width: @medium-width) {
