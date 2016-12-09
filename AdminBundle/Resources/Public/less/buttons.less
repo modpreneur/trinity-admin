@@ -53,7 +53,7 @@
   &-success {
     font-weight: @roboto-medium;
     border: none !important;
-    box-shadow: 0px -3px 0px 0px #457A1A inset;
+    box-shadow: none;
     &:hover {
       border: none !important;
     }
@@ -61,7 +61,7 @@
 
   &-info {
     border: none !important;
-    box-shadow: 0px -3px 0px 0px #2284A1 inset;
+    box-shadow: none;
     &:hover {
       border: none !important;
     }
@@ -72,7 +72,7 @@
   &-primary {
     background-color: @color-primary !important;
     border: none !important;
-    box-shadow: 0px -3px 0px 0px darken(@color-primary, 10%) inset;
+    box-shadow: none;
     &:hover {
       background-color: darken(@color-primary, 10%) !important;
       border: none !important;
@@ -92,7 +92,7 @@
   &-tertiary {
     background: @color-tertiary !important;
     border: none !important;
-    box-shadow: 0px -3px 0px 0px darken(@color-tertiary, 15%) inset;
+    box-shadow: none;
 
     &:hover {
       background: darken(@color-tertiary, 15%) !important;
@@ -102,7 +102,7 @@
 
   &-warning {
     background-color: @color-warning;
-    box-shadow: 0px -3px 0px 0px darken(@color-warning, 20%) inset;
+    box-shadow: none;
     border: none !important;
     &:hover {
       background-color: darken(@color-warning, 20%);
@@ -112,7 +112,7 @@
 
   &-danger {
     background-color: @color-danger !important;
-    box-shadow: 0px -3px 0px 0px darken(@color-danger, 15%) inset;
+    box-shadow: none;
     border: none !important;
     &:hover {
       background-color: darken(@color-danger, 15%) !important;
@@ -122,7 +122,7 @@
 
   &:disabled {
     background-color: #989898 !important;
-    box-shadow: 0px -3px 0px 0px darken(#989898, 15%) inset;
+    box-shadow: none;
     border: none !important;
     cursor: not-allowed !important;
     color: #e7e7e7;
@@ -146,7 +146,7 @@
 
 .button-disabled{
   background-color: #989898 !important;
-  box-shadow: 0px -3px 0px 0px darken(#989898, 15%) inset;
+  box-shadow: none;
   border: none !important;
   cursor: not-allowed !important;
   color: #e7e7e7;
@@ -164,28 +164,12 @@
   padding: 8px 14px;
 }
 
-.button-medium.button-danger, .button-small.button-danger {
-  box-shadow: 0px -2px 0px 0px darken(@color-danger, 15%) inset;
-}
-
-.button-medium.button-info, .button-small.button-info {
-  box-shadow: 0px -2px 0px 0px #2284A1 inset;
-}
-
-.button-medium.button-success, .button-small.button-success {
-  box-shadow: 0px -2px 0px 0px #457A1A inset;
-}
-
-.button-medium.button-warning, .button-small.button-warning {
-  box-shadow: 0px -2px 0px 0px darken(@color-warning, 25%) inset;
-}
-
 .button-small, input[type="button"].button-small {
   .button-parameters();
   .radius(4px);
   max-height: 25px;
   font-size: 12px;
-  padding: 6px 10px;
+  padding: 6px 10px !important;
 
   min-width: 90px;
   display: inline-block;
