@@ -36,6 +36,10 @@
         background: @global-row-hover;
       }
 
+      // Rows that are added manually
+      &.row-extra {
+        border-bottom: 1px solid #ededed;
+      }
     }
 
     .advanced-settings .row {
@@ -376,7 +380,7 @@
     input[type="submit"], button[type="submit"], input[type="button"] {
       display: block;
       float: none !important;
-      margin: 15px auto 30px;
+      margin: 15px auto 0;
       text-transform: uppercase;
       font-size: 18px;
     }
