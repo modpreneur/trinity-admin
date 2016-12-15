@@ -2,20 +2,21 @@
 @import "../admin";
 
 
-
 .head-content, .box, .tabs-wrapper, .button {
   box-shadow: none;
+}
+
+.button {
   border: 1px #ededed solid;
 }
 
 div.head-content {
-  border-bottom: none;
+  border-bottom: 1px #ededed solid;
   padding-bottom: 0;
 }
 
 .dashboard-widgets {
   .small-widgets {
-    border: 1px #ededed solid;
     box-shadow: none;
   }
 }
@@ -95,32 +96,32 @@ div.head-content {
 
 .wrapper-grid > div.padding-20 {
   background: #f2f6fc !important;
-  display: none;
+  display: none !important;
 }
 
 .query-builder {
-    .rules-group-container {
-      border-color: @color-secondary !important;
-      background: #f2f6fc !important;
-      padding: 0 !important;
-      margin-top: 0 !important;
-    }
+  .rules-group-container {
+    border-color: @color-secondary !important;
+    background: #f2f6fc !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
 
-    .rule-container{
-      background: @color-secondary !important;
-    }
+  .rule-container{
+    background: @color-secondary !important;
+  }
 
-    input.form-control:focus{
-      border-color: @color-primary !important;
-    }
+  input.form-control:focus{
+    border-color: @color-primary !important;
+  }
 
-    .btn-primary.disabled {
-      background: transparent !important;
-    }
+  .btn-primary.disabled {
+    background: transparent !important;
+  }
 
-    .btn-danger {
-      background: #5b606a;
-    }
+  .btn-danger {
+    background: #5b606a;
+  }
 }
 
 .group-conditions .btn.active{
@@ -145,4 +146,3 @@ div.notifications {
     background: #d2d7e3 !important;
   }
 }
-

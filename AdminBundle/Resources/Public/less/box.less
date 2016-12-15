@@ -105,7 +105,7 @@
   .wrapper-grid > div.padding-20 {
     width: calc(~"100% - "@sidebar-width);
     position: fixed;
-    display: none;
+    display: none !important;
     top: @navbar-height;
     left: @sidebar-width;
     z-index: 99999;
@@ -117,6 +117,7 @@
   }
 
   .grid-search {
+    display: none !important;
     margin: 30px 30px 10px 30px;
     text-align: center;
     width: 100%;
