@@ -97,10 +97,16 @@
 
 {% block checkbox_widget -%}
   <div class="checkbox">
-    {{- parent() -}}
-    {{ form_label(form) }}
+      {{- parent() -}}
+        {# {{ form_label(form) }} for CheckBoxType displays label twice, inside form_label() and form_widget()#}
+        {# setting attr => ['disable_widget_label' => true]#}
+      {% if attr.disable_widget_label is defined and attr.disable_widget_label %}
+        <label for="{{ id }}" ></label>
+      {% else %}
+          {{ form_label(form) }}
+      {% endif %}
   </div>
-  {{- form_errors(form) -}}
+    {{- form_errors(form) -}}
 {%- endblock checkbox_widget %}
 
 {%- block choice_widget_expanded -%}
