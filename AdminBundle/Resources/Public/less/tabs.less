@@ -18,9 +18,6 @@
   font-weight: 300;
   margin-bottom: 20px;
 
-  //border: 1px solid @color-border;
-  .shadow();
-
   .tab-loop (@i) when (@i > 0) {
     #tab@{i}:checked + label {
       background: #fff;
@@ -84,6 +81,7 @@
 
   .tab-body-wrapper {
     border: none !important;
+    min-height: 300px;
     background: #fff;
 
     .shadow(0, 10px, 10px, -10px, rgba(0, 0, 0, .2) inset);
@@ -234,7 +232,6 @@
       font-weight: 300;
       //margin-bottom: 20px;
 
-      .shadow();
       //border: 1px #eaeceb solid;
 
       .tab-head:checked + label {
@@ -331,8 +328,6 @@
     .harmonica {
 
       .main-panel {
-
-        min-height: 51px;
 
         label[for^="harmonica"] {
           font-size: 14px;

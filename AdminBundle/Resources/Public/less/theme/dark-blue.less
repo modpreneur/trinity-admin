@@ -2,10 +2,6 @@
 @import "../admin";
 
 
-.head-content, .box, .tabs-wrapper, .button {
-  box-shadow: none;
-}
-
 .button {
   border: 1px #ededed solid;
 }
@@ -13,12 +9,6 @@
 div.head-content {
   border-bottom: 1px #ededed solid;
   padding-bottom: 0;
-}
-
-.dashboard-widgets {
-  .small-widgets {
-    box-shadow: none;
-  }
 }
 
 #user-profile-input:checked ~ .navbar #user-profile-label {
@@ -30,7 +20,6 @@ div.head-content {
 }
 
 .navbar{
-  box-shadow: none;
 
   .navbar-logo {
     background: -webkit-linear-gradient(-3deg, #6f68f9 0%, #00deff 100%);
@@ -45,9 +34,7 @@ div.head-content {
     color: @color-primary;
   }
 }
-.navbar-container{
-  border-bottom: 1px #e2e4e6 solid;
-}
+
 #header-for-nonvisible {
   color: #537ca5;
 }
@@ -97,6 +84,19 @@ div.head-content {
 .wrapper-grid > div.padding-20 {
   background: #f2f6fc !important;
   display: none !important;
+}
+
+.header-loader .load-bar {
+  background-color: @color-warning;
+
+  .bar {
+    &:nth-child(1) {
+      background-color: darken(@color-warning, 40%);
+    }
+    &:nth-child(2) {
+      background-color: @color-warning;
+    }
+  }
 }
 
 .query-builder {
