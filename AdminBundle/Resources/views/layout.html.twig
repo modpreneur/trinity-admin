@@ -60,71 +60,74 @@
 {% endblock %}
 
 {% block flashMessages %}
-    <div id="flashMessages">
 
-        <input id="close-alert-{type}-{id}" type="radio" class="ajax-checkbox checkbox-none">
-        <div class="alert alert-{type} ajax-alert">
-            <div class="container">
-                <div class="row">
-                    <div class="span-none-padding-mini-24">
-                        <label for="close-alert-{type}-{id}" class="alert-label">
-                            <i class="tiecons tiecons-cross-light alert-close-icon"></i>
-                        </label>
-                        <div class="row">
-                            <div class="show-alert">
-                                <div class="span-none-padding-mini-4">
-                                    <i class="{icon}"></i>
-                                </div>
-                                <div class="span-none-padding-mini-20">
-                                    <p>
-                                        {message}
-                                    </p>
+    <div id="flashMessagesWrapper">
+        <div id="flashMessages">
+
+            <input id="close-alert-{type}-{id}" type="radio" class="ajax-checkbox checkbox-none">
+            <div class="alert alert-{type} ajax-alert">
+                <div class="container">
+                    <div class="row">
+                        <div class="span-none-padding-mini-24">
+                            <label for="close-alert-{type}-{id}" class="alert-label">
+                                <i class="tiecons tiecons-cross-light alert-close-icon"></i>
+                            </label>
+                            <div class="row">
+                                <div class="show-alert">
+                                    <div class="span-none-padding-mini-4">
+                                        <i class="{icon}"></i>
+                                    </div>
+                                    <div class="span-none-padding-mini-20">
+                                        <p>
+                                            {message}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
-        {% block flashbag %}
-            {% for type, messages in app.session.flashbag.all() %}
-                {% for message in messages %}
-                    <input id="close-alert-{{ type }}-{{ loop.index }}" type="radio" class="checkbox-none" />
-                    <div class="alert alert-{{ type }}">
-                        <div class="container">
-                            <div class="row">
-                                <div class="span-none-padding-mini-24">
-                                    <label for="close-alert-{{ type }}-{{ loop.index }}" class="alert-label">
-                                        <i class="tiecons tiecons-cross-light alert-close-icon"></i>
-                                    </label>
-                                    <div class="row">
-                                        <div class="show-alert">
-                                            <div class="span-none-padding-mini-4">
-                                                {% if type == "success" %}
-                                                    <i class="trinity trinity-ok"></i>
-                                                {% elseif type == "warning" %}
-                                                    <i class="trinity trinity-warning"></i>
-                                                {% elseif type == "danger" %}
-                                                    <i class="tiecons tiecons-exclamation-mark-circle"></i>
-                                                {% elseif type == "info" %}
-                                                    <i class="trinity trinity-info"></i>
-                                                {% endif %}
-                                            </div>
-                                            <div class="span-none-padding-mini-20">
-                                                <p>
-                                                    {{ message|raw }}
-                                                </p>
+            {% block flashbag %}
+                {% for type, messages in app.session.flashbag.all() %}
+                    {% for message in messages %}
+                        <input id="close-alert-{{ type }}-{{ loop.index }}" type="radio" class="checkbox-none" />
+                        <div class="alert alert-{{ type }}">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="span-none-padding-mini-24">
+                                        <label for="close-alert-{{ type }}-{{ loop.index }}" class="alert-label">
+                                            <i class="tiecons tiecons-cross-light alert-close-icon"></i>
+                                        </label>
+                                        <div class="row">
+                                            <div class="show-alert">
+                                                <div class="span-none-padding-mini-4">
+                                                    {% if type == "success" %}
+                                                        <i class="trinity trinity-ok"></i>
+                                                    {% elseif type == "warning" %}
+                                                        <i class="trinity trinity-warning"></i>
+                                                    {% elseif type == "danger" %}
+                                                        <i class="tiecons tiecons-exclamation-mark-circle"></i>
+                                                    {% elseif type == "info" %}
+                                                        <i class="trinity trinity-info"></i>
+                                                    {% endif %}
+                                                </div>
+                                                <div class="span-none-padding-mini-20">
+                                                    <p>
+                                                        {{ message|raw }}
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    {% endfor %}
                 {% endfor %}
-            {% endfor %}
-        {% endblock %}
+            {% endblock %}
+        </div>
     </div>
 {% endblock %}
 
