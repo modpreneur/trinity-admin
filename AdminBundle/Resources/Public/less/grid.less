@@ -20,7 +20,7 @@
   background: transparent;
   width: 100%;
   font-family: 'Roboto', sans-serif;
-  margin: 20px 0;
+  margin: 0;
 
   thead {
     background: transparent;
@@ -169,16 +169,16 @@
   li a {
     min-width: 40px;
     height: 40px;
-    margin: 2px;
+    margin: 2px !important;
 
-    color: #7b7b7b;
+    color: #7b7b7b !important;
     font-size: 16px;
     font-weight: 400;
     text-align: center;
 
-    background: #ededed;
+    background: #ededed !important;
     border-radius: 5px;
-    border: none;
+    border: none !important;
 
     transition: 0.4s;
     cursor: pointer;
@@ -191,9 +191,9 @@
   .break {
     display: inline-block;
     float: left;
-    font-size: 42px;
+    font-size: 24px;
     color: #e8e8e8;
-    line-height: 1;
+    line-height: 40px;
   }
 
   .previous a, .next a {
@@ -213,8 +213,8 @@
   }
 
   li.active a {
-    background: @color-primary;
-    color: #fff;
+    background: @color-primary !important;
+    color: #fff !important;
   }
 }
 
