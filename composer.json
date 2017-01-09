@@ -17,8 +17,7 @@
     "nette/utils": "~2.3",
     "modpreneur/bowtie"  : "dev-master",
     "whiteoctober/breadcrumbs-bundle": "~1.2",
-    "twig/twig": "~1.0|~2.0",
-    "emanueleminotto/twig-cache-bundle": "^1.0"
+    "twig/twig": "~1.0|~2.0"
   },
 
   "require-dev": {
