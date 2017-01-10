@@ -74,16 +74,15 @@
   tbody {
 
     tr {
-      background: #fff !important;
+      background: #fff;
       border-bottom: 1px solid #ededed;
       transition: .3s;
       &:hover {
-        background: @global-row-hover;
+        background: @global-row-hover !important;
       }
 
       &:hover {
         & > td .button-small {
-          //background: lighten(@color-primary, 25%);
           background: @color-secondary;
           color: #fff;
           &:visited {
@@ -95,7 +94,6 @@
           }
         }
         & > td a {
-          color: darken(desaturate(@color-primary, 25%), 10%);
           &:hover {
             color: @color-primary;
           }
