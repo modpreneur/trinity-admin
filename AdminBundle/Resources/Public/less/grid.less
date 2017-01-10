@@ -121,6 +121,13 @@
           color: @color-primary;
         }
       }
+
+      // Enlarge clickable area of links
+      td > a:not([class*="button"]) {
+        padding: 10px;
+        margin: -10px;
+      }
+
       .button-small {
         color: #fff;
         &:hover {
