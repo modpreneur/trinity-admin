@@ -123,7 +123,7 @@
         {# Merge classes #}
         {% set liAttributes = liAttributes|merge({'class': class }) %}
 
-        <li {{  _self }}>
+        <li {{ knp_menu.attributes(listAttributes) }}>
             {%- if is_dropdown %}
                 {# check whether current URI matches submenu item URI #}
                 {% set break = 0 %}
