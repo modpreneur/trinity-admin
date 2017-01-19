@@ -69,14 +69,14 @@
                 <div class="row">
                     <div class="span-none-padding-mini-24">
                         <label for="close-alert-{type}-{id}" class="alert-label">
-                            <i class="tiecons tiecons-cross-light alert-close-icon"></i>
+                            <i class="tiecons tiecons-cross-light alert-close-icon button close-button"></i>
                         </label>
                         <div class="row">
                             <div class="show-alert">
-                                <div class="span-none-padding-mini-4">
-                                    <i class="{icon}"></i>
+                                <div class  ="span-none-padding-mini-7">
+                                    <i class="trinity alert-icon"></i>
                                 </div>
-                                <div class="span-none-padding-mini-20">
+                                <div class="span-none-padding-mini-17">
                                     <p>
                                         {message}
                                     </p>
@@ -97,22 +97,14 @@
                             <div class="row">
                                 <div class="span-none-padding-mini-24">
                                     <label for="close-alert-{{ type }}-{{ loop.index }}" class="alert-label">
-                                        <i class="tiecons tiecons-cross-light alert-close-icon"></i>
+                                        <i class="tiecons tiecons-cross-light alert-close-icon button close-button"></i>
                                     </label>
                                     <div class="row">
                                         <div class="show-alert">
-                                            <div class="span-none-padding-mini-4">
-                                                {% if type == "success" %}
-                                                    <i class="trinity trinity-ok"></i>
-                                                {% elseif type == "warning" %}
-                                                    <i class="trinity trinity-warning"></i>
-                                                {% elseif type == "danger" %}
-                                                    <i class="tiecons tiecons-exclamation-mark-circle"></i>
-                                                {% elseif type == "info" %}
-                                                    <i class="trinity trinity-info"></i>
-                                                {% endif %}
+                                            <div class="span-none-padding-mini-7">
+                                                <i class="trinity alert-icon"></i>
                                             </div>
-                                            <div class="span-none-padding-mini-20">
+                                            <div class="span-none-padding-mini-17">
                                                 <p>
                                                     {{ message|raw }}
                                                 </p>
@@ -126,6 +118,7 @@
                 {% endfor %}
             {% endfor %}
         {% endblock %}
+
     </div>
 {% endblock %}
 

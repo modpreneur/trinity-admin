@@ -15,6 +15,10 @@
   display: none;
 }
 
+.grid-bulk-actions {
+  padding: 15px 20px 0 15px;
+}
+
 .grid {
   border: none;
   background: transparent;
@@ -41,20 +45,33 @@
     td[class*=center] { // use text-align class
       text-align: center;
     }
-    .order-by-asc:after {
-      position: absolute;
-      padding-left: 7px;
-      font-family: trinity;
-      content: "\e929";
-      font-size: 10px;
+
+    // display a grey glyph when hovered over
+    th.order-by:hover {
+      &:after {
+        //color: #999999;
+        color: @color-primary;
+      }
     }
 
-    .order-by-desc:after {
-      position: absolute;
-      font-family: trinity;
-      padding-left: 7px;
-      content: "\e928";
-      font-size: 10px;
+    .order-by-asc, th.order-by:not([class*=order-by-]):hover, th.order-by-desc:hover {
+      &:after {
+        position: absolute;
+        padding-left: 7px;
+        font-family: trinity;
+        content: "\e929";
+        font-size: 10px;
+      }
+    }
+
+    .order-by-desc, th.order-by-asc:hover {
+      &:after {
+        position: absolute;
+        font-family: trinity;
+        padding-left: 7px;
+        content: "\e928";
+        font-size: 10px;
+      }
     }
     tr:hover {
       background: transparent;
@@ -74,7 +91,7 @@
   tbody {
 
     tr {
-      background: #fff;
+      background: #fff !important;
       border-bottom: 1px solid #ededed;
       transition: .3s;
       &:hover {
@@ -83,13 +100,13 @@
 
       &:hover {
         & > td .button-small {
-          background: @color-secondary;
+          background: lighten(@color-primary, 25%);
           color: #fff;
           &:visited {
             color: #fff;
           }
           &:hover {
-            background: @color-secondary;
+            background: lighten(@color-primary, 5%);
             color: #fff;
           }
         }
@@ -123,7 +140,7 @@
       }
 
       // Enlarge clickable area of links
-      td > a:not([class*="button"]) {
+      td > a:not([class*="button"]), .alert i.alert-close-icon:before {
         padding: 10px;
         margin: -10px;
       }
@@ -167,7 +184,7 @@
   }
 }
 .pagination {
-  margin: 10px 35px 35px 35px;
+  margin: 35px 35px 0 35px;
   float: right;
   .group-clearfix();
 
@@ -198,7 +215,7 @@
     float: left;
     font-size: 24px;
     color: #e8e8e8;
-    line-height: 40px;
+    line-height: 40px !important;
   }
 
   .previous a, .next a {
@@ -234,6 +251,9 @@
     word-break: break-all;
     white-space: normal;
     max-width: none;
+  }
+  tr:nth-of-type(2n) {
+    background: initial;
   }
 }
 

@@ -283,13 +283,17 @@
       top: 0;
       right: 0;
       z-index: 5;
+      line-height: @navbar-height;
 
       .button {
+        vertical-align: middle;
+      }
+
+      .button:not(.close-button) {
         height: 44px;
         font-size: 14px;
         font-weight: 400;
         min-width: 105px;
-        margin-top: calc(~"("@navbar-height~" - 44px)/2"); // navbar height - height of a navbar button
       }
 
       #navbar-search-submit-button-2 {
@@ -297,18 +301,8 @@
       }
 
       #navbar-search-helper-button {
-        position: relative;
-        top: -1px;
         padding-left: 20px;
         padding-right: 20px;
-      }
-
-      #navbar-search-tool-close-button {
-        font-size: 10px;
-        box-sizing: content-box;
-        height: 20px;
-        width: 20px;
-        padding: 0 !important;
       }
 
       .button:last-child {

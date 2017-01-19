@@ -4,6 +4,10 @@
 
 .button {
   border: 1px #ededed solid;
+
+  &:hover {
+    background: lighten(@color-secondary, 30%);
+  }
 }
 
 div.head-content {
@@ -44,7 +48,7 @@ div.head-content {
 //@color-border: transparent;
 
 @color-primary:   #17bdff;
-@color-secondary: #2d323e;
+  @color-secondary: #2d323e;
 @color-tertiary:  #1ABB9C;
 
 @global-header-color: #2d323e;
@@ -84,6 +88,14 @@ div.head-content {
 .wrapper-grid > div.padding-20 {
   background: #f2f6fc !important;
   display: none !important;
+}
+
+.grid tbody tr:hover > td .button-small {
+  background: @color-secondary !important;
+
+  &:hover {
+    background: @color-secondary !important;
+  }
 }
 
 .header-loader .load-bar {
@@ -148,5 +160,19 @@ div.notifications {
 
   .disabled {
     background: #d2d7e3 !important;
+  }
+}
+
+.alert {
+  &.alert-info i.alert-icon {
+    &:before {
+      color: @color-primary;
+    }
+  }
+
+  &.alert-success i.alert-icon {
+    &:before {
+      color: @color-primary;
+    }
   }
 }
