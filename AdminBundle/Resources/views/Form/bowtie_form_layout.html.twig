@@ -84,7 +84,7 @@
     {%- endif -%}
   {%- endif -%}
 
-  <div class="padding-bottom-30">
+  <div class="submit-button-wrapper">
     {% if type is defined and type == "submit" %}
       <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</button>
     {% else %}
