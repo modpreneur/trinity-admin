@@ -48,7 +48,7 @@ div.head-content {
 //@color-border: transparent;
 
 @color-primary:   #17bdff;
-  @color-secondary: #2d323e;
+@color-secondary: #2d323e;
 @color-tertiary:  #1ABB9C;
 
 @global-header-color: #2d323e;
@@ -90,7 +90,8 @@ div.head-content {
   display: none !important;
 }
 
-.grid tbody tr:hover > td .button-small {
+// the Get Details button
+.grid tbody tr:hover > td .button-small:not(.button-info) {
   background: @color-secondary !important;
 
   &:hover {
