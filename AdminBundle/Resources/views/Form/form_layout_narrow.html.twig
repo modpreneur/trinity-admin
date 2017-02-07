@@ -1,0 +1,27 @@
+{# This layout is meant to be used for creating custom form rows using embed tag. #}
+{# For narrow forms (with short widgets only - checkboxes etc.) #}
+
+{# Explaination: #}
+{# Usually, form widgets wider than their label. If all widgets are short, the entire form will seem misaligned. #}
+{# This layout has different label and widget widths to center them #}
+
+{% block form_row %}
+    {# If you make changes to one of the 3 class lists below, apply these changes to bowtie_form_layout.html.twig as well. #}
+    {% block form_row_start %}<div class="form-content-center span-none-padding-mini-23 span-none-padding-small-23 span-none-padding-medium-23 span-large-23 span-xlarge-20 margin-auto">{% endblock form_row_start %}
+    {% block form_row_content %}{% endblock form_row_content %}
+
+    {% block form_row_label %}
+        {% block form_row_label_start %}<div class="span-none-padding-mini-16 span-none-padding-small-11 span-none-padding-medium-11 span-none-padding-large-12 span-none-padding-xlarge-12 form-left">{% endblock form_row_label_start %}
+        {% block form_row_label_content %}{% endblock form_row_label_content %}
+        </div>
+    {% endblock form_row_label %}
+
+    {% block form_row_input %}
+        {% block form_row_input_start %}<div class="span-none-padding-mini-7 span-none-padding-small-12 span-none-padding-medium-12 span-none-padding-large-10 span-none-padding-xlarge-10 form-right">{% endblock form_row_input_start %}
+        {% block form_row_input_content %}{% endblock form_row_input_content %}
+        </div>
+    {% endblock form_row_input %}
+
+    {% block form_row_content_end %}{% endblock form_row_content_end %}
+    </div>
+{% endblock form_row %}

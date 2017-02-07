@@ -31,11 +31,9 @@
     width: 100%;
     color: @navbar-font-color;
     padding: 0 !important;
-    overflow-y: hidden;
+    overflow: hidden;
     font-weight: @roboto-light;
     font-family: "Roboto", sans-serif;
-
-    //.shadow(0, 0, 10px, 1px, rgba(0, 0, 0, .15));
 
     .navbar-logo {
       height: @navbar-height;
@@ -230,7 +228,7 @@
     z-index: 9;
 
     form {
-      margin: 22px;
+      margin: 25px 0 25px 25px;
     }
     input {
       background: transparent;
@@ -277,7 +275,7 @@
       }
     }
     div.navbar-search-tools {
-      height: calc(@navbar-height~" - 1px");
+      height: calc(@navbar-height~" - 1px"); // - border width
       background: #fff;
       position: fixed;
       display: none;
@@ -312,27 +310,11 @@
     }
   }
 
-  @media screen and(max-width: 1280px) {
-
-    .navbar-search {
-
-      form {
-        transition: .4s;
-        margin: 28px 0 0 31px;
-      }
-      //input:focus {
-      //  & + button {
-      //    top: 25px
-      //  }
-      //}
-      //
-      //button {
-      //  top: 25px;
-      //}
+  @media screen and(max-width: 800px) {
+    .navbar-container div.navbar-search-tools {
+      display: none !important;
     }
   }
-
-
 
 
 

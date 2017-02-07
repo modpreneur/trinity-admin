@@ -278,20 +278,6 @@
       color: @color-primary;
     }
   }
-  #header-for-nonvisible {
-    position: absolute;
-    left: 0;
-    height: 90px;
-    line-height: @navbar-height;
-    width: 100%;
-    z-index: -1;
-    font-size: 30px;
-    color: #968378;
-    font-weight: 300;
-    overflow: hidden;
-    display: block;
-    text-align: center;
-  }
 
   .slideInUp {
     -webkit-animation-name: slideInUp;
@@ -425,18 +411,8 @@
     }
   }
 
-  @media screen and(max-width: 1280px) {
-    #header-for-nonvisible {
-      width: auto;
-      margin-left: 291px;
-      line-height: 1.6;
-      height: auto;
-    }
-  }
-  @media screen and(max-width: 1024px) {
-    .navbar .navbar-item-label{
+  @media screen and(max-width: 550px) {
+    div.user-profile-info {
       display: none;
     }
   }
-
-
