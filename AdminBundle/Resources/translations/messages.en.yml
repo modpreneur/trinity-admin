@@ -1,0 +1,10 @@
+trinity_admin:
+  layout:
+    search:
+      type_your_text: Type your text here…
+      helper: Search Helper
+    notifications:
+      notifications: Notifications
+      no_new_notification: You don't have any new notification.
+      remove_notification: Remove this notification.
+
