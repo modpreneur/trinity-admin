@@ -6,57 +6,29 @@
     <input name="navbar-items" type="radio" id="user-profile-input" class="navbar-item-input">
     <input name="navbar-items" type="radio" id="notifications-input" class="navbar-item-input">
     {#<input name="navbar-items" type="radio" id="settings-input" class="navbar-item-input">#}
-   {# <input name="navbar-items" type="radio" id="quick-links-input" class="navbar-item-input">#}
+    {# <input name="navbar-items" type="radio" id="quick-links-input" class="navbar-item-input">#}
 
     <nav class="navbar row">
 
         <div class="navbar-logo">
-            {% block navbar_logo %} <i> Logo zde </i> {% endblock %}
+            {% block navbar_logo %} <i> Logo </i> {% endblock %}
             {#<span class="version">{{ admin_manager.getAppVersion() }}</span>#}
         </div>
 
         <div class="navbar-container">
 
-            <div>
-                loading
-            </div>
-
-            {% block navbar_search %}
-                <div class="navbar-search navbar-actions-item">
-                    {% block navbar_seach_form_start %}
-                    <form action="{% block search_action %}{% endblock %}" autocomplete="on">
-                        {% endblock %}
-                        <label for="search">
-                            <input placeholder="Type your text here…" class="navbar-search-input" type="text" name="search"
-                                   id="search">
-                            <button type="submit" id="navbar-search-submit-button-1">
-                                <i class="trinity trinity-search"></i>
-                            </button>
-                            <div class="navbar-search-tools">
-                                <button type="submit" class="button button-primary button-success" id="navbar-search-submit-button-2">
-                                    <i class="trinity trinity-search2"></i>
-                                </button>
-                                <button class="button button-addNew" id="navbar-search-helper-button">
-                                    Search Helper
-                                </button>
-                                <button id="navbar-search-tool-close-button" class="button close-button orange">
-                                    <i class="trinity trinity-close"></i>
-                                </button>
-                            </div>
-                        </label>
-                        {% block navbar_search_form_end %}
-                    </form>
-                    {% endblock %}
-                </div>
-            {% endblock %}
-
             {# Navbar labels for popus #}
-            <div class="pull-right navbar-actions">
+            <div class="pull-right navbar-actions" style="width: 260px;">
 
                 {% block navbar_actions %}
                 {% endblock %}
 
-                <label class="navbar-item-label" for="notifications-input" id="notifications-label" title="Notifications">
+                <label
+                        class="navbar-item-label"
+                        for="notifications-input"
+                        id="notifications-label"
+                        title="{{ 'trinity_admin.layout.notifications.notifications'|trans }}"
+                >
                     <i class="trinity trinity-bell"></i>
                     {% set redis= app.user.getId() %}
                     {% set response = redis|getBarMsgs %}
@@ -75,49 +47,84 @@
 
 
                 {#{% block settings_link %}#}
-                    {#<a href="#" title="Go to settings">#}
-                        {#<label class="navbar-item-label" for="settings-input" id="settings-label">#}
-                            {#<i class="trinity-settings"></i>#}
-                        {#</label>#}
-                    {#</a>#}
+                {#<a href="#" title="Go to settings">#}
+                {#<label class="navbar-item-label" for="settings-input" id="settings-label">#}
+                {#<i class="trinity-settings"></i>#}
+                {#</label>#}
+                {#</a>#}
                 {#{% endblock %}#}
 
 
-                <label class="navbar-item-label" for="user-profile-input" id="user-profile-label" title="User profile">
+                <label class="navbar-item-label" for="user-profile-input" id="user-profile-label">
                     {% block user_label %}
                     {% endblock %}
                 </label>
 
-{#                <div class="navbar-right-items">
-                    <div class="item">
-                        <a title="Logout me" href="{{ path("fos_user_security_logout") }}">
-                            <i class="tiecons tiecons-power-button"></i>
-                        </a>
-                    </div>
+                {#                <div class="navbar-right-items">
+                                    <div class="item">
+                                        <a title="Logout me" href="{{ path("fos_user_security_logout") }}">
+                                            <i class="tiecons tiecons-power-button"></i>
+                                        </a>
+                                    </div>
 
 
-                    <div class="item">
-                        <label class="display-inline-block pointer" for="quick-links-input" id="quick-links-label" title="Quick links">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>
-                    </div>
-                </div>#}
+                                    <div class="item">
+                                        <label class="display-inline-block pointer" for="quick-links-input" id="quick-links-label" title="Quick links">
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                            <span></span>
+                                        </label>
+                                    </div>
+                                </div>#}
 
 
             </div>
 
+            {% block navbar_search %}
+                <div class="navbar-search navbar-actions-item" style="margin-right: 330px; float: none;">
+                    {% block navbar_seach_form_start %}
+                    <form action="{% block search_action %}{% endblock %}" autocomplete="on" style="width: 100%; margin:0; padding: 25px 0 25px 25px">
+                        {% endblock %}
+                        <label for="search">
+                            <input placeholder="{{ 'trinity_admin.layout.search.type_your_text'|trans }}" class="navbar-search-input" type="text" name="search"
+                                   id="search" style="width:100%;">
+                            <button type="submit" id="navbar-search-submit-button-1">
+                                <i class="trinity trinity-search"></i>
+                            </button>
+
+                        </label>
+                        {% block navbar_search_form_end %}
+                    </form>
+                    <div class="navbar-search-tools display-none" style="display: block;">
+                        <button type="submit" class="button button-primary button-success" id="navbar-search-submit-button-2">
+                            <i class="trinity trinity-search2"></i>
+                        </button>
+                        <button class="button button-addNew" id="navbar-search-helper-button">
+                            {{ 'trinity_admin.layout.search.cancel'|trans }}
+                        </button>
+                        {# TODO @MarekOmasta - style tags are just temporary solution, can you please put it into less ?
+                            TODO I removed close-button, orange classes and added style tags to button and also icon
+                         #}
+                        <button id="navbar-search-tool-close-button"
+                                class="button"
+                                style="padding: 15px !important; min-width: 0; border:none; background:none; color: #a0a2a5;"
+                        >
+                            <i class="trinity-arrow-down-two" style="font-weight: 600"></i>
+                        </button>
+                    </div>
+                    {% endblock %}
+                </div>
+            {% endblock %}
         </div>
     </nav>
 
     {# Navbar popups - profile, notifications #}
-{#    <div class="quick-links">
-        {% block quick_links %}
-        {% endblock %}
-    </div>#}
+    {#    <div class="quick-links">
+            {% block quick_links %}
+            {% endblock %}
+        </div>#}
 
     {# Navbar popups - profile, notifications #}
     <div class="user-profile-info">
@@ -130,7 +137,7 @@
     {# Don't look there, we know it's messy... #}
     <div class="notifications">
         <div class="navbar-popup">
-            <h1 class="headline">Notifications</h1>
+            <h1 class="headline">{{ 'trinity_admin.layout.notifications.notifications'|trans }}</h1>
             {% block FlashbagHistory %}
                 {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                     {% if "admin_api_remove-redis-msg"|routeExists %}
@@ -164,7 +171,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -182,7 +189,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -205,7 +212,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -223,7 +230,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -246,7 +253,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -264,7 +271,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -287,7 +294,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -305,7 +312,7 @@
                                     {% if is_granted("ROLE_ADMIN_SIDEBAR_MSG_REMOVE") %}
                                         <a id="sidebar_remove_btn_{{ count }}" href="#">
                                             <input type="hidden" value="{{ message_keys[count] }}"/>
-                                            <i class="trinity-close" title="Remove this notification"></i>
+                                            <i class="trinity-close" title="{{ 'trinity_admin.layout.notifications.remove_notification'|trans }}"></i>
                                         </a>
                                     {% endif %}
                                     <div class="detail-info">{% if users[count] != "" %}{{ users[count] }} | {% endif %} {{ times[count] }}</div>
@@ -325,7 +332,7 @@
                             <li class="info noaction">
                                 <i class="tiecons tiecons-info-circle"></i>
                                 <div class="message-group">
-                                    <span>You don't have any new notification.</span>
+                                    <span>{{ 'trinity_admin.layout.notifications.no_new_notification'|trans }}</span>
                                 </div>
                             </li>
                         {% endif %}

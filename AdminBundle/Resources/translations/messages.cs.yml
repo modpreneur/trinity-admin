@@ -1,0 +1,10 @@
+trinity_admin:
+  layout:
+    search:
+      type_your_text: Zde napište text…
+      cancel: zrušit
+    notifications:
+      notifications: Notifikace
+      no_new_notification: Nemáte žádné nové notifikace
+      remove_notification: Smazat tuto notifikaci
+
