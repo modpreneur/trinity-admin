@@ -2,6 +2,7 @@
 
 namespace Trinity\AdminBundle\Form\FroalaType;
 
+use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormInterface;
@@ -16,8 +17,13 @@ class FroalaType extends AbstractType
     /** @var array */
     protected $froalaSettings;
 
-    public function __construct(array $froalaSettings)
+    public function __construct(array $froalaSettings, Router $router)
     {
+        foreach ($froalaSettings as $module => $setting) {
+            if ($module === 'imageUploadURL' || $module === 'imageDeleteURL') {
+                $froalaSettings[$module] = $router->generate($setting);
+            }
+        }
         $this->froalaSettings = $froalaSettings;
     }
 

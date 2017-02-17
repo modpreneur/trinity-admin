@@ -17,6 +17,7 @@ services:
       class: Trinity\AdminBundle\Form\FroalaType\FroalaType
       arguments:
           - "%trinity.admin.froala_editor_settings%"
+          - "@router"
       tags:
         - { name: form.type }
 
