@@ -181,7 +181,7 @@
       }
     }*/
     #user-profile-label {
-      width: auto;
+      width: 187px;
       font-size: 14px;
       margin: 0 10px 0 15px;
       padding: 0 0 0 15px;
@@ -208,6 +208,10 @@
       .user-name {
         line-height: @navbar-height;
         font-weight: 400;
+        width: 98px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-align: right;
         i {
           width: 10px;
           height: 10px;
@@ -285,14 +289,11 @@
       line-height: @navbar-height;
 
       .button {
-        vertical-align: middle;
-      }
-
-      .button:not(.close-button) {
         height: 44px;
         font-size: 14px;
         font-weight: 400;
         min-width: 105px;
+        vertical-align: middle;
       }
 
       #navbar-search-submit-button-2 {
@@ -304,8 +305,17 @@
         padding-right: 20px;
       }
 
-      .button:last-child {
-        margin-right: 40px;
+      #navbar-search-tool-close-button {
+        padding: 15px !important;
+        min-width: 0;
+        border: none;
+        background: none;
+        color: #a0a2a5;
+        margin-right: 0;
+
+        i {
+          font-weight: 600;
+        }
       }
     }
   }

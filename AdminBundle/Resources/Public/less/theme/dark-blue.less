@@ -15,16 +15,21 @@ div.head-content {
   padding-bottom: 0;
 }
 
-#user-profile-input:checked ~ .navbar #user-profile-label {
-  background: transparent !important;
-}
-
-#notifications-input:checked ~ .navbar #notifications-label {
-  background: transparent !important;
-}
 
 .navbar{
 
+  #user-profile-input:checked ~ .navbar #user-profile-label {
+    background: transparent !important;
+  }
+
+  #notifications-input:checked ~ .navbar #notifications-label {
+    background: transparent !important;
+  }
+
+  .navbar-item-label:hover {
+    background: transparent;
+    color: @color-primary;
+  }
   .navbar-logo {
     background: #6F68F9;
 
@@ -37,10 +42,6 @@ div.head-content {
 
 
 
-  .navbar-item-label:hover {
-    background: transparent;
-    color: @color-primary;
-  }
 }
 
 @back-color: #dbe0e9;
@@ -90,7 +91,7 @@ div.head-content {
 }
 
 // the Get Details button
-.grid tbody tr:hover > td a.button-small:not(.button-info) {
+.grid tbody tr:hover > td .button-small.button-get-details {
   background: @color-secondary !important;
 
   &:hover {

@@ -45,40 +45,10 @@
                     {% endif %}
                 </label>
 
-
-                {#{% block settings_link %}#}
-                {#<a href="#" title="Go to settings">#}
-                {#<label class="navbar-item-label" for="settings-input" id="settings-label">#}
-                {#<i class="trinity-settings"></i>#}
-                {#</label>#}
-                {#</a>#}
-                {#{% endblock %}#}
-
-
                 <label class="navbar-item-label" for="user-profile-input" id="user-profile-label">
                     {% block user_label %}
                     {% endblock %}
                 </label>
-
-                {#                <div class="navbar-right-items">
-                                    <div class="item">
-                                        <a title="Logout me" href="{{ path("fos_user_security_logout") }}">
-                                            <i class="tiecons tiecons-power-button"></i>
-                                        </a>
-                                    </div>
-
-
-                                    <div class="item">
-                                        <label class="display-inline-block pointer" for="quick-links-input" id="quick-links-label" title="Quick links">
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                            <span></span>
-                                        </label>
-                                    </div>
-                                </div>#}
-
 
             </div>
 
@@ -106,11 +76,8 @@
                             {# TODO @MarekOmasta - style tags are just temporary solution, can you please put it into less ?
                                 TODO I removed close-button, orange classes and added style tags to button and also icon
                              #}
-                            <button id="navbar-search-tool-close-button"
-                                    class="button"
-                                    style="padding: 15px !important; min-width: 0; border:none; background:none; color: #a0a2a5; margin-right:0;"
-                            >
-                                <i class="trinity-arrow-down-two" style="font-weight: 600"></i>
+                            <button id="navbar-search-tool-close-button" class="button">
+                                <i class="trinity-arrow-down-two"></i>
                             </button>
                         </div>
                     </form>

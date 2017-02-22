@@ -55,16 +55,20 @@
     }
   }
 
-.wrapper-grid, .box, .tabs-wrapper {
-  .header {
-    min-height: 40px;
-    color: @color-font;
-    margin: 0;
-    font-size: 20px;
-    padding: 20px 20px 0 20px;
-    font-weight: 400;
+  .wrapper-grid, .box, .tabs-wrapper {
+    .header {
+      min-height: 40px;
+      color: @color-font;
+      margin: 0;
+      font-size: 20px;
+      padding: 20px 20px 0 20px;
+      font-weight: 400;
+    }
   }
-}
+
+  .header + .box-table-body {
+    margin-top: 10px;
+  }
 
   .help-box {
     width: 100%;

@@ -71,20 +71,21 @@
 
 .navigation-icons() {
   position: relative;
-  display: inline-block;
   z-index: 10;
   border-radius: 40px;
   width: 33px;
   height: 33px;
   transition: background .3s ease-in-out;
+  display: table;
 
   i, span {
     color: #fff;
     font-weight: 600;
     font-size: 20px;
-    display: block;
-    padding: 7px 6px;
+    text-align: center;
+    vertical-align: middle;
     background: transparent;
+    display: table-cell;
   }
 }
 
