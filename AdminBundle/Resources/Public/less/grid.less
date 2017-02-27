@@ -32,27 +32,27 @@
     border-bottom: 2px solid #ededed;
     tr {
       //height: 45px;
-    }
-    th {
-      padding: 0 10px 10px 10px;
-      font-size: 16px;
-      color: @header-font-color;
-      font-weight: @roboto-medium;
-      text-transform: capitalize;
-    }
+      th {
+        //padding: 0 10px 10px 10px;
+        font-size: 16px;
+        color: @header-font-color;
+        font-weight: @roboto-medium;
+        text-transform: capitalize;
+      }
 
-    th[class*=order-] {
-      cursor: pointer;
-    }
-    td[class*=center] { // use text-align class
-      text-align: center;
-    }
+      th[class*=order-] {
+        cursor: pointer;
+      }
+      td[class*=center] { // use text-align class
+        text-align: center;
+      }
 
-    // display a grey glyph when hovered over
-    th.order-by:hover {
-      &:after {
-        //color: #999999;
-        color: @color-primary;
+      // display a grey glyph when hovered over
+      th.order-by:hover {
+        &:after {
+          //color: #999999;
+          color: @color-primary;
+        }
       }
     }
 
@@ -166,14 +166,16 @@
     max-width: 20em;
   }
 
-  th:first-child, td:first-child {
-    padding-left: 20px;
-  }
-
   // indicate for no-synchronized product
   .trinity-warning {
     color: lighten(@color-primary, 20%);
     cursor: context-menu;
+  }
+}
+
+.grid:not(.record_properties) {
+  th:first-child, td:first-child {
+    padding-left: 20px;
   }
 }
 
@@ -276,7 +278,7 @@
 }
 
 @media screen and(max-width: 1366px) {
-  .grid td {
+  .grid:not(.record_properties) td {
     max-width: 16em;
   }
 }
