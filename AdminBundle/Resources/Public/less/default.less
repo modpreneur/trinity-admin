@@ -122,6 +122,15 @@
     color: #fff;
     border-radius: 2px;
     padding: 0 4px;
+    margin-right: 5px;
+
+    &:only-of-type {
+      margin: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
   }
   .enabled {
     background: #a4c590;
@@ -153,12 +162,6 @@
   }
   .warning {
     background: @color-warning;
-  }
-}
-
-.tags {
-  li {
-    margin: 0;
   }
 }
 

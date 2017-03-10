@@ -56,6 +56,20 @@
     display: block;
   }
 
+  // In some tables, there's a disabled checkbox to display status
+  .record_properties .edit-form {
+    .checkbox {
+      label {
+        line-height: 1.125rem !important;
+
+        &:before {
+          height: 14px;
+          width: 14px;
+        }
+      }
+    }
+  }
+
   th.grid-checkbox, td.grid-checkbox {
 
     padding-left: 10px;
