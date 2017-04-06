@@ -278,8 +278,23 @@
 }
 
 @media screen and(max-width: 1366px) {
-  .grid:not(.record_properties) td {
-    max-width: 16em;
+  .grid:not(.record_properties) {
+    td {
+      max-width: 16em;
+    }
+
+    // Allow smaller column width to grids with tons of columns
+    tr td:first-child:nth-last-child(8) ~ td {
+      max-width: 8em;
+    }
+
+    tr td:first-child:nth-last-child(9) ~ td {
+      max-width: 8em;
+    }
+
+    tr td:first-child:nth-last-child(10) ~ td {
+      max-width: 8em;
+    }
   }
 }
 
