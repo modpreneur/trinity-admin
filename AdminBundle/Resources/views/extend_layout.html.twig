@@ -55,7 +55,7 @@
             {% block navbar_search %}
                 <div class="navbar-search navbar-actions-item" style="margin-right: 330px; float: none;">
                     {% block navbar_seach_form_start %}
-                    <form action="{% block search_action %}{% endblock %}" autocomplete="on" style="width: 100%; margin:0; padding: 25px 0 25px 25px">
+                    <form id="global-search-form" action="{% block search_action %}{% endblock %}" autocomplete="on" style="width: 100%; margin:0; padding: 25px 0 25px 25px">
                         {% endblock %}
                         <label for="search">
                             <input placeholder="{{ 'trinity_admin.layout.search.type_your_text'|trans }}" class="navbar-search-input" type="text" name="search"
