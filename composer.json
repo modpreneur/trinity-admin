@@ -22,7 +22,7 @@
 
   "require-dev": {
     "sensio/generator-bundle": "~3.0",
-    "phpunit/phpunit": "~5.0",
+    "phpunit/phpunit": "~6.0",
     "knplabs/knp-menu-bundle":      "~2.1",
     "mockery/mockery":              "~0.9"
   },
