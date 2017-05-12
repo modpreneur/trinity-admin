@@ -7,7 +7,7 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Trinity Administration{% endblock %}</title>
         <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
-        <link media="none" onload="if(media!='all')media='all'" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,500italic,700&subset=latin,latin-ext" rel='stylesheet' type='text/css'>
+        <link media="none" onload="if(media !== 'all')media='all'" href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,400italic,500,500italic,700&subset=latin,latin-ext" rel='stylesheet' type='text/css'>
     {% endblock %}
 
     {% block header_javascript %}
@@ -39,7 +39,7 @@
                 '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
                 '@TrinityAdminBundle/Resources/Public/css/trinity-font.css'
             %}
-                <link media="none" onload="if(media!='all')media='all'" rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
+                <link media="none" onload="if(media !== 'all')media='all'" rel="stylesheet" type="text/css" href="{{ asset_url }}"/>
             {% endstylesheets %}
         {% endblock %}
 
@@ -53,72 +53,51 @@
 </head>
 
 
-<body class="trinity-admin navbar-fixed controller_{{ get_controller_name() }} action_{{ get_action_name() }}">
+<body class="trinity-admin navbar-fixed">
 
 {% block navbar %}
 
 {% endblock %}
 
 {% block flashMessages %}
-
-    <div id="flashMessages">
-
-        <input id="close-alert-{type}-{id}" type="radio" class="ajax-checkbox checkbox-none">
-        <div class="alert alert-{type} ajax-alert">
-            <div class="container">
-                <div class="row">
-                    <div class="span-none-padding-mini-24">
-                        <label for="close-alert-{type}-{id}" class="alert-label">
-                            <i class="tiecons tiecons-cross-light alert-close-icon button close-button"></i>
-                        </label>
+    {% set flashMessages = [] %}
+    {% for type, messages in app.session.flashbag.all() %}
+        {% for message in messages %}
+            {% set flashMessages = flashMessages|merge([type, message]) %}
+        {% endfor %}
+    {% endfor %}
+    <div id="flash-message-container" data-messages="{{ flashMessages|json_encode }}">
+        <div id="flash-message-template" class="display-none">
+            {% if messageTemplate is defined %}
+                {% include messageTemplate %}
+            {% else %}
+                {# Default flash message template #}
+                <input id="close-{id}" type="radio" class="checkbox-none">
+                <div class="alert alert-{type}">
+                    <div class="container">
                         <div class="row">
-                            <div class="show-alert">
-                                <div class  ="span-none-padding-mini-7">
-                                    <i class="trinity alert-icon"></i>
-                                </div>
-                                <div class="span-none-padding-mini-17">
-                                    <p>
-                                        {message}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        {% block flashbag %}
-            {% for type, messages in app.session.flashbag.all() %}
-                {% for message in messages %}
-                    <input id="close-alert-{{ type }}-{{ loop.index }}" type="radio" class="checkbox-none" />
-                    <div class="alert alert-{{ type }}">
-                        <div class="container">
-                            <div class="row">
-                                <div class="span-none-padding-mini-24">
-                                    <label for="close-alert-{{ type }}-{{ loop.index }}" class="alert-label">
-                                        <i class="tiecons tiecons-cross-light alert-close-icon button close-button"></i>
-                                    </label>
-                                    <div class="row">
-                                        <div class="show-alert">
-                                            <div class="span-none-padding-mini-7">
-                                                <i class="trinity alert-icon"></i>
-                                            </div>
-                                            <div class="span-none-padding-mini-17">
-                                                <p>
-                                                    {{ message|raw }}
-                                                </p>
-                                            </div>
+                            <div class="span-none-padding-mini-24">
+                                <label for="close-{id}" class="alert-label">
+                                    <i class="tiecons tiecons-cross-light alert-close-icon button close-button"></i>
+                                </label>
+                                <div class="row">
+                                    <div class="show-alert">
+                                        <div class  ="span-none-padding-mini-7">
+                                            <i class="trinity alert-icon"></i>
+                                        </div>
+                                        <div class="span-none-padding-mini-17">
+                                            <p>
+                                                {message}
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                {% endfor %}
-            {% endfor %}
-        {% endblock %}
-
+                </div>
+            {% endif %}
+        </div>
     </div>
 {% endblock %}
 
