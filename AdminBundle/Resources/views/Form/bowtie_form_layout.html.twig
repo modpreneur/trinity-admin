@@ -22,22 +22,17 @@
 
 
 {%- block collection_row -%}
-
-  {# If you make changes to one of the 3 class lists below, apply these changes to form_layout.html.twig as well. #}
   <div class="row">
-    {% block form_row_start %}<div class="form-content-center span-none-padding-mini-23 span-none-padding-small-23 span-none-padding-medium-23 span-large-23 span-xlarge-20 margin-auto">{% endblock form_row_start %}
-      <div class="collection">
-        {% block form_row_label_start %}<div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-5 span-none-padding-large-6 span-none-padding-xlarge-6 form-left">{% endblock form_row_label_start %}
+    {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
+        {% block form_row_label_content %}
           {{- form_label(form) -}}
-        </div>
-        {% block form_row_input_start %}<div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-19 span-none-padding-large-15 span-none-padding-xlarge-14 form-right">{% endblock form_row_input_start %}
-          {# collection widgets have only 1 extra class compared to normal widgets #}
-          {{- form_widget(form, { 'attr': {'class': 'collection-widget'} }) -}}
-        </div>
-      </div>
-    </div>
-  </div>
+        {% endblock form_row_label_content %}
 
+        {% block form_row_input_content %}
+          {{- form_widget(form, { 'attr': {'class': 'collection-widget'} }) -}}
+        {% endblock form_row_input_content %}
+    {% endembed %}
+  </div>
 {%- endblock collection_row -%}
 
 
@@ -133,38 +128,36 @@
   {% endif %}
 
   <div class="row {% if choice %} choice{% endif %} {{ rowClass }}" id="row_{{ id }}">
-    {{ block('form_row_start') }}
-      {% set class = "" %}
-      {% if form.vars.attr.class is defined %}
-        {% set class = form.vars.attr.class %}
-      {% endif %}
 
-      {% block form_row_label %}
-        {{ block('form_row_label_start') }}
-          {% block form_row_label_content %}
-            {{- form_label(form) -}}
-          {% endblock form_row_label_content %}
-        </div>
-      {% endblock form_row_label %}
+  {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
 
-      {% block form_row_input %}
-          {{ block('form_row_input_start') }}
-          {% for attrname,attrvalue in attr %}
-            {% if attrname == 'description' %}
-              <span class="description">{{ attrvalue }}</span>{% endif %}
-          {% endfor %}
-          {% block form_row_input_content %}
-            {{- form_widget(form) -}}
-          {% endblock form_row_input_content %}
-        </div>
-      {% endblock form_row_input %}
+    {% block form_row_content %}
+       {% set class = "" %}
+       {% if form.vars.attr.class is defined %}
+         {% set class = form.vars.attr.class %}
+       {% endif %}
+    {% endblock form_row_content %}
 
-    </div>
+    {% block form_row_label_content %}
+        {{- form_label(form) -}}
+    {% endblock form_row_label_content %}
+
+    {% block form_row_input %}
+      {% for attrname,attrvalue in attr %}
+        {% if attrname == 'description' %}
+          <span class="description">{{ attrvalue }}</span>
+        {% endif %}
+      {% endfor %}
+
+      {% block form_row_input_content %}
+        {{- form_widget(form) -}}
+      {% endblock form_row_input_content %}
+
+    {% endblock form_row_input %}
+
+  {% endembed %}
+
   </div>
 
-    {{- form_errors(form) -}}
+  {{- form_errors(form) -}}
 {%- endblock form_row -%}
-
-
-
-

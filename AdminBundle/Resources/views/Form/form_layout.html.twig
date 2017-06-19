@@ -1,23 +1,81 @@
-{# This layout is meant to be used for creating custom form rows using embed tag: #}
+{# Default template for all form's rows #}
 
 
-{% block form_row %}
-    {# If you make changes to one of the 3 class lists below, apply these changes to bowtie_form_layout.html.twig as well. #}
-    {% block form_row_start %}<div class="form-content-center span-none-padding-mini-23 span-none-padding-small-23 span-none-padding-medium-23 span-large-23 span-xlarge-20 margin-auto">{% endblock form_row_start %}
+{# This can be used for creating custom form rows using the {% embed '' %} tag. #}
+
+{# Most of the time, you'll only need to override these:
+block form_row_label_content
+block form_row_input_content
+
+Overriding empty blocks will not mess up label and widget's width
+#}
+
+{% block form_row_template %}
+    {% set display_collection_labels = false %}
+    {% set collection_wrapper = false %} {# Collection or collection widget wrapper (inner) #}
+
+    {# Check if collection labels should be displayed: #}
+    {% if form.parent is defined and form.parent is not null %}
+        {% if form.parent.vars.attr["display-widget-labels"] is defined %}
+            {% set display_collection_labels = true %}
+            {% set collection_wrapper = true %} {# This form_row wraps the whole collection #}
+        {% endif %}
+
+        {% if form.parent.parent is defined and form.parent.parent is not null %}
+            {% if form.parent.parent.vars.attr["display-widget-labels"] is defined %}
+                {% set display_collection_labels = true %}
+                {% set collection_wrapper = false %} {# This form_row wraps collection rows (inner) #}
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% block form_row_content_start %}{% endblock form_row_content_start %}
+
+    {% block form_row_start %}
+        {% if display_collection_labels %}
+            <div class="form-content-center span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-24 span-none-padding-large-24 span-none-padding-xlarge-24 margin-auto">
+        {% else %}
+            {# Default wrapper for entire form rows #}
+            <div class="form-content-center span-none-padding-mini-23 span-none-padding-small-23 span-none-padding-medium-23 span-large-23 span-xlarge-20 margin-auto">
+        {% endif %}
+    {% endblock form_row_start %}
+
         {% block form_row_content %}{% endblock form_row_content %}
 
-        {% block form_row_label %}
-            {% block form_row_label_start %}<div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-5 span-none-padding-large-6 span-none-padding-xlarge-6 form-left">{% endblock form_row_label_start %}
-                {% block form_row_label_content %}{% endblock form_row_label_content %}
-            </div>
-        {% endblock form_row_label %}
+        {% block form_row_label_template %}
 
-        {% block form_row_input %}
-            {% block form_row_input_start %}<div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-19 span-none-padding-large-15 span-none-padding-xlarge-14 form-right">{% endblock form_row_input_start %}
+            {% block form_row_label_start %}
+                {% if display_collection_labels and not collection_wrapper %}
+                  <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-10 span-none-padding-xlarge-7 form-left">
+                {% else %}
+                  {# Default wrapper for form row labels #}
+                  <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-5 span-none-padding-large-6 span-none-padding-xlarge-6 form-left">
+                {% endif %}
+            {% endblock form_row_label_start %}
+
+              {# Use this block to override form label content #}
+              {% block form_row_label_content %}{% endblock form_row_label_content %}
+            </div>
+        {% endblock form_row_label_template %}
+
+        {% block form_row_input_template %}
+
+            {% block form_row_input_start %}
+                {% if display_collection_labels and collection_wrapper %}
+                    <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-24 span-none-padding-large-24 span-none-padding-xlarge-24 form-right">
+                {% elseif display_collection_labels and not collection_wrapper %}
+                    <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-15 span-none-padding-large-14 span-none-padding-xlarge-17 form-right">
+                {% else %}
+                    {# Default wrapper for form row widgets #}
+                    <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-19 span-none-padding-large-15 span-none-padding-xlarge-14 form-right">
+                {% endif %}
+            {% endblock form_row_input_start %}
+
+                {# Use this block to override form widget content #}
                 {% block form_row_input_content %}{% endblock form_row_input_content %}
             </div>
-        {% endblock form_row_input %}
+        {% endblock form_row_input_template %}
 
         {% block form_row_content_end %}{% endblock form_row_content_end %}
     </div>
-{% endblock form_row %}
+{% endblock form_row_template %}
