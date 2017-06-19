@@ -622,10 +622,13 @@
 
   // fixes - collections
   .collection-widget {
-    div {
+    &:not([display-widget-labels="display-widget-labels"]) div {
       width: 100% !important;
+      margin: 0;
+    }
+
+    div {
       padding: 0 !important;
-      margin: 0 !important;
 
       // collection within a collection
       &.collection-widget-inner {
@@ -685,6 +688,13 @@
           -webkit-transform: scale(1.2); /* Safari */
           transform: scale(1.2);
         }
+      }
+    }
+
+    &[display-widget-labels="display-widget-labels"] {
+      & > .row > div > div.form-right div.form-left {
+        display: block !important;
+
       }
     }
   }
