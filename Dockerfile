@@ -1,4 +1,4 @@
-FROM modpreneur/trinity-test:alpine
+FROM modpreneur/trinity-test
 
 MAINTAINER Martin Kolek <kolek@modpreneur.com>
 
