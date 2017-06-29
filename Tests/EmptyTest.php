@@ -3,18 +3,18 @@
  * This file is part of Trinity package.
  */
 
-namespace Trinity\Bundle\GridBundle\Tests\Functional;
+namespace Trinity\Bundle\AdminBundle\Tests;
 
-use PHPUnit_Framework_TestCase;
+use PHPUnit\Framework\TestCase;
 
 /**
- * Class ControllerTest
- * @package Trinity\Bundle\GridBundle\Tests\Functional
+ * Class EmptyTest
+ * @package Trinity\Bundle\AdminBundle\Tests
  */
-class ControllerTest extends PHPUnit_Framework_TestCase
+class EmptyTest extends TestCase
 {
 
-    public function testEmpty()
+    public function testEmpty(): void
     {
         static::assertEquals(1, 1);
     }
