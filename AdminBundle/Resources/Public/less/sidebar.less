@@ -124,8 +124,6 @@
       font-size: 17px;
       transition: .3s;
       line-height: 35px;
-      min-height: 1px;
-      min-width: 18px;
     }
 
     &.active {
@@ -179,6 +177,12 @@
   }
   .active:hover a {
     //padding-left: 20px;
+  }
+
+  // Stop menu items from jumping while loading (icons can't have a zero-width)
+  & > li > a > i {
+    min-height: 1px;
+    min-width: 18px;
   }
 }
 
