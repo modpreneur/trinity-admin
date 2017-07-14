@@ -85,6 +85,17 @@
   ul:first-child {
     padding-top: 19px;
   }
+
+  // Stop menu items from jumping while loading (icons can't have a zero-width)
+  ul li i {
+    min-height: 1px;
+    min-width: 18px;
+  }
+
+  ul.drop li i {
+    min-height: 0;
+    min-width: 0;
+  }
 }
 
 .sidebar {
@@ -177,12 +188,6 @@
   }
   .active:hover a {
     //padding-left: 20px;
-  }
-
-  // Stop menu items from jumping while loading (icons can't have a zero-width)
-  & > li > a > i {
-    min-height: 1px;
-    min-width: 18px;
   }
 }
 
