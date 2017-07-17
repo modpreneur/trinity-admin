@@ -1,6 +1,6 @@
 #!/bin/sh sh
 
-#composer update
+composer install
 
 #phpunit
 
