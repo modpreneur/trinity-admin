@@ -1,5 +1,4 @@
-{% extends "@TrinityAdmin/extend_layout.html.twig" %}
-
+{% extends "@Admin/doc_layout.html.twig" %}
 
 {% block pageTitle %}
     HTML/CSS documentation
@@ -7,7 +6,6 @@
 
 {% block pageAction %}
 {% endblock %}
-
 
 {% block form %}
 
@@ -19,7 +17,8 @@
                     <label for="necktie_product_name" class="required">Name</label></div>
                 <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
                     <input type="text" id="necktie_product_name" name="necktie_product[name]" required="required"
-                           value="GoDaddy"></div>
+                           value="GoDaddy">
+                </div>
             </div>
         </div>
 
@@ -92,7 +91,6 @@
 {% endblock %}
 
 {% block pageBody %}
-
     <div class="box">
 
         <h3>

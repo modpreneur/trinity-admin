@@ -3,6 +3,7 @@
 namespace Trinity\AdminBundle;
 
 use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
+use Symfony\Bundle\WebProfilerBundle\WebProfilerBundle;
 use Symfony\Bundle\WebServerBundle\WebServerBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
@@ -26,10 +27,12 @@ class AppKernel extends Kernel
             new WebServerBundle(),
             new SensioFrameworkExtraBundle(),
             new TrinityAdminBundle(),
+            new AdminBundle(),
             new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
 
             new \Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
             new \Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new WebProfilerBundle(),
         ];
     }
 

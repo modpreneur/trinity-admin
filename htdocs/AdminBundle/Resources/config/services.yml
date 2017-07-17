@@ -1,0 +1,17 @@
+services:
+
+    knp.main_menu:
+        class: Knp\Menu\MenuItem
+        factory: ["@trinity.admin.menu_builder", createMainMenu]
+        arguments: ["@request_stack"]
+        tags:
+            - { name: knp_menu.menu, alias: sidebar }
+
+
+    necktie.admin.listener.menu.config:
+        class: Trinity\AdminBundle\EventListener\MenuListener
+        arguments:
+           - "@router"
+           - "@translator"
+        tags:
+          - { name: kernel.event_listener, event: trinity.main_menu.configure, method: onMenuConfigure }

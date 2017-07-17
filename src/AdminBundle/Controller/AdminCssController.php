@@ -25,5 +25,4 @@ class AdminCssController extends Controller
     {
         return $this->render('@TrinityAdmin/css.html.twig');
     }
-
 }

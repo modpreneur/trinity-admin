@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
 
+
 parameters:
     database_driver: pdo_sqlite
     database_host: 127.0.0.1
@@ -22,31 +23,76 @@ parameters:
     trinity.search.doctrine_prefix: "Grid"
     trinity.search.namespace: "Trinity\\Bundle\\GridBundle\\Tests\\Functional\\Entity"
 
+
+web_profiler:
+    toolbar: "%debug_toolbar%"
+    intercept_redirects: "%debug_redirects%"
+
+
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
     bundles:        [ TrinityAdminBundle ]
     filters:
         cssrewrite: ~
+    assets:
+         bowtie_css:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/css/bowtie.css"
+         necktie_icons:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/css/necktie-icons.css"
+         ticones_eot:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.eot"
+           outpoutput: "fonts/tiecons/tiecons.eot"
+         ticones_svg:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.svg"
+           output: "fonts/tiecons/tiecons.svg"
+         ticones_ttf:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.ttf"
+           output: "fonts/tiecons/tiecons.ttf"
+         ticones_woff:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.woff"
+           output: "fonts/tiecons/tiecons.woff"
+         necktie_eot:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.eot"
+           output: "fonts/necktie.eot"
+         necktie_svg:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.svg"
+           output: "fonts/necktie.svg"
+         necktie_ttf:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.ttf"
+           output: "fonts/necktie.ttf"
+         necktie_woff:
+           inputs:
+              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.woff"
+           output: "fonts/necktie.woff"
 
-## Doctrine Configuration
-#doctrine:
-#    dbal:
-#      driver:   "%database_driver%"
-#      path:     "%kernel.cache_dir%/test.db"
-#      host:     "%database_host%"
-#
-#    orm:
-#        auto_generate_proxy_classes: "%kernel.debug%"
-#        auto_mapping: false
-#        mappings:
-#          SearchBundle:
-#            type: annotation
-#            dir: '%kernel.root_dir%/../Entity'
-#            is_bundle: false
-#            prefix: Trinity\Bundle\GridBundle\Tests\Functional\Entity
-#            alias: Search
-#
+         trinity_eot:
+            inputs:
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/trinity.eot"
+            output: "fonts/trinity.eot"
+         trinity_ttf:
+            inputs:
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/trinity.ttf"
+            output: "fonts/trinity.ttf"
+         trinity_woff:
+            inputs:
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/trinity.woff"
+            output: "fonts/trinity.wof"
+         trinity_svg:
+            inputs:
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/trinity.svg"
+            output: "fonts/trinity.svg"
+
+
 
 framework:
     secret: "Three can keep a secret, if two of them are dead. MUHEHE."
@@ -59,7 +105,6 @@ framework:
     form: ~
 
 
-
 # Twig Configuration
 twig:
     debug:            "%kernel.debug%"
@@ -67,58 +112,12 @@ twig:
 
 #Other bundle configs---------------------------------------------------------------------------------------------------
 
+
 knp_menu:
     twig:
         template: knp_menu.html.twig
     templating: false
     default_renderer: twig
 
-#trinity_settings:
-#  settings:
-#
-#
-#trinity_logger:
-#  elastic_logs:
-#    elastic_host: 'necktie_elasticsearch_1'
-#
-#
-#swiftmailer:
-#    transport: "%mailer_transport%"
-#    username:  "noreply"
-#    host:      "%mailer_host%"
-#    port:      "%mailer_port%"
-#    spool:     { type: memory }
-#
-#
-#security:
-#  providers:
-#      fos_userbundle:
-#          id: fos_user.user_provider.username
-#
-#      in_memory:
-#          memory:
-#              users:
-#                  ryan:
-#                      password: ryanpass
-#                      roles: 'ROLE_ADMIN'
-#
-#  role_hierarchy:
-#      ROLE_ADMIN:       ROLE_USER
-#      ROLE_SUPER_ADMIN: ROLE_ADMIN
-#
-#  firewalls:
-#     # disables authentication for assets and the profiler, adapt it according to your needs
-#      dev:
-#          pattern:  ^/(_(profiler|wdt)|css|images|js)/
-#          security: false
-#      default:
-#          pattern: ^/
-#          anonymous: ~
-#
-#
-#fos_user:
-#    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
-#    firewall_name: main
-#    user_class: Trinity\Bundle\GridBundle\Tests\Functional\Entity\User
 
 services:

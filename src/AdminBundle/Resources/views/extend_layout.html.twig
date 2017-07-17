@@ -23,6 +23,7 @@
                 {% block navbar_actions %}
                 {% endblock %}
 
+                {% if app.user %}
                 <label
                         class="navbar-item-label"
                         for="notifications-input"
@@ -49,6 +50,7 @@
                     {% block user_label %}
                     {% endblock %}
                 </label>
+                {% endif %}
 
             </div>
 

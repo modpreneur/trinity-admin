@@ -18,9 +18,10 @@
 {% endblock %}
 
 {% block list %}
+
     {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
         {% import _self as knp_menu %}
-
+        {% set listAttributes = item.childrenAttributes %}
         <ul {{ knp_menu.attributes(listAttributes) }}>
             {{ block('children') }}
         </ul>
@@ -187,6 +188,7 @@
     {% import _self as knp_menu %}
 
     {% set url = item.uri %}
+    {%- set is_dropdown = attributes.dropdown|default(false) %}
 
     {# make sure dropdown menu links to the first item of its submenu #}
     {% if is_dropdown %}

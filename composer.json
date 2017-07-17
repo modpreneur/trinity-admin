@@ -48,7 +48,8 @@
   "autoload": {
     "classmap": [
       "src/AdminBundle/",
-      "htdocs/app/"
+      "htdocs/app/",
+      "htdocs/AdminBundle/"
     ]
   },
   "extra": {
