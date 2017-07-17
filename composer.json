@@ -10,6 +10,10 @@
     }
   ],
 
+  "config": {
+    "vendor-dir": "htdocs/vendor"
+  },
+
   "require": {
     "php": ">=7.1",
     "symfony/symfony": "~3.3",
@@ -44,7 +48,7 @@
   "autoload": {
     "classmap": [
       "src/AdminBundle/",
-      "app/"
+      "htdocs/app/"
     ]
   },
   "extra": {

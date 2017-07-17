@@ -8,6 +8,9 @@
 
 # Build data
 /build/
+/htdocs/vendor
+/htdocs/app/cache
+/htdocs/app/logs
 
 # Composer PHAR
 /composer.phar
