@@ -19,15 +19,14 @@
   }
 }
 
-.button-parameters{
+.button-parameters {
   text-align: center;
   font-family: "Roboto", sans-serif;
   font-weight: @roboto-medium;
   text-decoration: none;
-  //vertical-align: middle;
   text-transform: capitalize;
   line-height: 1;
-  border: none;
+  border: 1px #ededed solid;
   margin: 5px;
 
   background: lighten(desaturate(@color-primary, 100%), 30%);
@@ -38,7 +37,7 @@
 
   &:hover {
     color: #fff;
-    background: lighten(@color-primary, 15%);
+    background: lighten(@color-secondary, 30%);
   }
 }
 
@@ -197,15 +196,6 @@
   background: -o-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
   background: -ms-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
   background: linear-gradient(0deg, #cbd2df 0%, #c4cad3 100%);
-
-  &.orange {
-    border: none !important;
-    background: -webkit-linear-gradient(90deg, #ff9502 0%, #f9792d 100%);
-    background: -moz-linear-gradient(90deg, #ff9502 0%, #f9792d 100%);
-    background: -o-linear-gradient(90deg, #ff9502 0%, #f9792d 100%);
-    background: -ms-linear-gradient(90deg, #ff9502 0%, #f9792d 100%);
-    background: linear-gradient(0deg, #ff9502 0%, #f9792d 100%);
-  }
 }
 
 .button-addNew {
@@ -286,7 +276,7 @@
 }
 
 // Query builder
-.button-search{
+.button-search {
   min-width: 200px;
   background: @sidebar-back-color;
 }

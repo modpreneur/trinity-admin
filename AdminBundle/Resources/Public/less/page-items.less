@@ -84,3 +84,33 @@
   padding-top: 0;
 }
 
+// An override for query builder styles
+
+.query-builder {
+  .rules-group-container {
+    border-color: @color-secondary !important;
+    background: #f2f6fc !important;
+    padding: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  .rule-container {
+    background: @color-secondary !important;
+  }
+
+  input.form-control:focus {
+    border-color: @color-primary !important;
+  }
+
+  .btn-primary.disabled {
+    background: transparent !important;
+  }
+
+  .btn-danger {
+    background: #5b606a;
+  }
+}
+
+.group-conditions .btn.active {
+  background: @color-primary !important;
+}

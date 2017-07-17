@@ -26,14 +26,14 @@
 **************************************/
 
 /*  Colors - primary,secondary... */
-@back-color: #f1ece9;
+@back-color: #dbe0e9;
 
-@color-primary: #d55a13;
+@color-primary: #17bdff;
 @color-primary-hover: darken(@color-primary, 10%);
 @color-primary-inverse: inverse(@color-primary);
+@color-secondary: #2d323e;
+@color-tertiary: #1ABB9C;
 
-@color-secondary: #edecec;
-@color-tertiary: #40adc2;
 
 @global-row-hover: #f8f8f8;
 
@@ -48,7 +48,6 @@
 
 /*  Fonts  */
 @global-font-color: #303030;
-//@global-header-color: #97999c;
 @global-header-color: #2d323e;
 @font-size-button: 18px;
 
@@ -78,7 +77,7 @@
 **************************************/
 
 @sidebar-width: 240px;
-@sidebar-back-color: darken(desaturate(@color-primary, 78%), 17%);
+@sidebar-back-color: #2d323e;
 
 @sidebar-row-height: 50px;
 @sidebar-icon-font-size: 22px;
@@ -90,15 +89,16 @@
 @sidebar-navbar-notifi: #ffffff;
 @sidebar-detail-color: #838383;
 
-@sidebar-hover-back-color: @back-color;
-@sidebar-hover-color: @sidebar-back-color;
+@sidebar-hover-color: @sidebar-font-color-active;
+@sidebar-hover-back-color: #282c37;
 
-@sidebar-font-color: #4d4845;
-@sidebar-font-color-active: @sidebar-back-color;
-@sidebar-back-active: @back-color;
-@sidebar-drop-border-bottom-color: #f8f3f0;
-@sidebar-drop-font-color-active: #5a544f;
-@sidebar-drop-back-color-active: #f8f3f0;
+@sidebar-font-color: #adadad;
+@sidebar-font-color-active: #fff;
+@sidebar-back-active: #282c37;
+@sidebar-drop-border-bottom-color: darken(#334d65, 1%);
+@sidebar-drop-font-color-active: #fff;
+@sidebar-drop-back-color-active: darken(#334d65, 10%);
+
 
 
 /**************************************

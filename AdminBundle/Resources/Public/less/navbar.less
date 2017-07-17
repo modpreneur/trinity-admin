@@ -42,7 +42,14 @@
       float: left;
       .group-clearfix();
       z-index: 999;
-      background: @color-primary;
+
+      background: #6F68F9;
+
+      background-image: -o-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+      background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+      background-image: -webkit-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+      background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+      background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
 
       i {
         margin: (@navbar-height - @logo-height)/2 0 (@navbar-height - @logo-height)/2 3*(@sidebar-width - @logo-width)/5;
@@ -96,7 +103,8 @@
         margin: (@navbar-height - @navbar-font-icon-size)/2  (@navbar-height/2 - @navbar-font-icon-size)/2;
       }
       &:hover {
-        background: desaturate(lighten(@color-primary, 52%), 10%);
+        background: transparent;
+        color: @color-primary;
       }
       .number-info {
         border-radius: 6px;

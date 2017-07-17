@@ -31,9 +31,7 @@
     background: transparent;
     border-bottom: 2px solid #ededed;
     tr {
-      //height: 45px;
       th {
-        //padding: 0 10px 10px 10px;
         font-size: 16px;
         color: @header-font-color;
         font-weight: @roboto-medium;
@@ -43,14 +41,14 @@
       th[class*=order-] {
         cursor: pointer;
       }
+
       td[class*=center] { // use text-align class
         text-align: center;
       }
 
-      // display a grey glyph when hovered over
+      // display a glyph when hovered over (order by)
       th.order-by:hover {
         &:after {
-          //color: #999999;
           color: @color-primary;
         }
       }
@@ -102,13 +100,9 @@
 
       &:hover {
         & > td a.button-small:not(.button-info) {
-          background: lighten(@color-primary, 25%);
+          background: @color-secondary;
           color: #fff;
           &:visited {
-            color: #fff;
-          }
-          &:hover {
-            background: lighten(@color-primary, 5%);
             color: #fff;
           }
         }
@@ -154,6 +148,10 @@
       .button-small.button-get-details {
         margin-right: 10px;
         float: right;
+
+        &:hover {
+          background: @color-secondary;
+        }
       }
     }
   }
@@ -218,6 +216,12 @@
     }
 
   }
+
+  li.active a {
+    background: @color-secondary !important;
+    color: #fff !important;
+  }
+
   .break {
     display: inline-block;
     float: left;
@@ -240,11 +244,6 @@
   }
   .next a {
     transform: rotate(-90deg);
-  }
-
-  li.active a {
-    background: @color-primary !important;
-    color: #fff !important;
   }
 }
 

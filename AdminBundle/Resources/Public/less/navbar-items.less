@@ -69,7 +69,7 @@
     display: block;
     width: 226px;
     position: fixed;
-    right: 212px;
+    right: 183px;
 
     .tab-list {
       overflow-y: auto;
@@ -224,11 +224,9 @@
     transition: .7s all, background .4s;
   }
   #user-profile-input:checked ~ .navbar #user-profile-label {
-    //will-change: transform;
-    //transform: translateY(-8px);
-
+    background: transparent;
     color: @color-primary;
-    background: lighten(@color-primary, 50%);
+
     i {
       color: @color-primary;
     }
@@ -239,15 +237,10 @@
     transform: translateY(0px);
   }
 
-  #notifications-label {
-    //transition: .7s all, background .4s;
-  }
   #notifications-input:checked ~ .navbar #notifications-label {
-    //will-change: transform;
-    //transform: translateY(-8px);
-
     color: @color-primary;
-    background: lighten(@color-primary, 50%);
+    background: transparent;
+
     i {
       color: @color-primary;
     }
