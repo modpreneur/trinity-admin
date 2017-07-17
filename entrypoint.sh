@@ -1,9 +1,7 @@
 #!/bin/sh sh
 
-composer update
+#composer update
 
-phpunit
+#phpunit
 
-phpstan analyse Controller/ DependencyInjection/ Event/ EventListener/ Exception/ Filter/ Grid/ Service/ Tests/ --level=4
-
-#tail -f /dev/null
+bin/console server:run 0.0.0.0:8080

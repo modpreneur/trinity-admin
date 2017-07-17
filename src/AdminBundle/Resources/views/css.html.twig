@@ -1,0 +1,634 @@
+{% extends "@TrinityAdmin/layout.html.twig" %}
+
+
+{% block pageTitle %}
+    HTML/CSS documentation
+{% endblock %}
+
+{% block pageAction %}
+{% endblock %}
+
+
+{% block form %}
+
+    <form name="necktie_product" method="post" action="#" class="edit-form"
+          novalidate="novalidate"><input type="hidden" name="_method" value="PUT">
+        <div class="row " id="row_necktie_product_name">
+            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
+                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
+                    <label for="necktie_product_name" class="required">Name</label></div>
+                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
+                    <input type="text" id="necktie_product_name" name="necktie_product[name]" required="required"
+                           value="GoDaddy"></div>
+            </div>
+        </div>
+
+        <div class="row  choice" id="row_necktie_product_clients">
+            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
+                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
+                    <label class="required">Projects</label></div>
+                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
+                    <div class="widget-expanded" id="necktie_product_clients">
+                        <div class="checkbox"><input type="checkbox" id="necktie_product_clients_1"
+                                                     name="necktie_product[clients][]" value="1"
+                                                     checked="checked"><label for="necktie_product_clients_1">ClickAndCoach</label>
+                        </div>
+                        <label for="necktie_product_clients_1">ClickAndCoach</label>
+                        <div class="checkbox"><input type="checkbox" id="necktie_product_clients_2"
+                                                     name="necktie_product[clients][]" value="2"
+                                                     checked="checked"><label
+                                    for="necktie_product_clients_2">HotAtHome</label>
+                        </div>
+                        <label for="necktie_product_clients_2">HotAtHome</label>
+                        <div class="checkbox"><input type="checkbox" id="necktie_product_clients_3"
+                                                     name="necktie_product[clients][]" value="3"><label
+                                    for="necktie_product_clients_3">Venice</label>
+                        </div>
+                        <label for="necktie_product_clients_3">Venice</label></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row  choice" id="row_necktie_product_mainClient">
+            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
+                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
+                    <label for="necktie_product_mainClient">Main Project</label></div>
+                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
+                    <div class="input-postfix-icon form-select">
+                        <div class="select-style form-control">
+                            <select id="necktie_product_mainClient" name="necktie_product[mainClient]"
+                                    class="user-success" aria-invalid="false">
+                                <option value=""></option>
+                                <option value="1" selected="selected">ClickAndCoach</option>
+                                <option value="2">HotAtHome</option>
+                                <option value="3">Venice</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row " id="row_necktie_product_description">
+            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
+                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
+                    <label for="necktie_product_description">Description</label></div>
+                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
+                    <textarea id="necktie_product_description" name="necktie_product[description]"></textarea></div>
+            </div>
+        </div>
+
+        <div class="row">
+            <button type="submit" id="necktie_product_submit" name="necktie_product[submit]"
+                    class="button button-success">Update
+            </button>
+
+        </div>
+
+        <input type="hidden" id="necktie_product__token" name="necktie_product[_token]"
+               value="AqnfBZjF3tyQ2psHNRDatBVU_-vYF0fJNAiDw7m1gKI">
+    </form>
+
+{% endblock %}
+
+{% block pageBody %}
+
+    <div class="box">
+
+        <h3>
+            Trinity icons
+        </h3>
+
+        <div class="box-body">
+            <ul class="icon-example">
+                <li><span>trinity-arrow-down-one</span><i class="trinity trinity-arrow-down-one font-20"></i> </li>
+                <li><span>trinity-arrow-down-two</span><i class="trinity trinity-arrow-down-two font-20"></i> </li>
+                <li><span>trinity-arrow-up-one</span><i class="trinity trinity-arrow-up-one font-20"></i> </li>
+                <li><span>trinity-arrow-up-two</span><i class="trinity trinity-arrow-up-two font-20"></i> </li>
+                <li><span>trinity-arrow-lvl-up</span><i class="trinity trinity-arrow-lvl-up font-20"></i> </li>
+                <li><span>trinity-arrow-right-bold</span><i class="trinity trinity-arrow-right-bold font-20"></i> </li>
+                <li><span>trinity-arrow-right</span><i class="trinity trinity-arrow-right font-20"></i> </li>
+                <li><span>trinity-bell</span><i class="trinity trinity-bell font-20"></i> </li>
+                <li><span>trinity-calendar</span><i class="trinity trinity-calendar font-20"></i> </li>
+                <li><span>trinity-close</span><i class="trinity trinity-close font-20"></i> </li>
+                <li><span>trinity-company</span><i class="trinity trinity-company font-20"></i> </li>
+                <li><span>trinity-company2</span><i class="trinity trinity-company2 font-20"></i> </li>
+                <li><span>trinity-dashboard</span><i class="trinity trinity-dashboard font-20"></i> </li>
+                <li><span>trinity-delete</span><i class="trinity trinity-delete font-20"></i> </li>
+                <li><span>trinity-folder</span><i class="trinity trinity-folder font-20"></i> </li>
+                <li><span>trinity-home</span><i class="trinity trinity-home font-20"></i> </li>
+                <li><span>trinity-info</span><i class="trinity trinity-info font-20"></i> </li>
+                <li><span>trinity-key</span><i class="trinity trinity-key font-20"></i> </li>
+                <li><span>trinity-logout</span><i class="trinity trinity-logout font-20"></i> </li>
+                <li><span>trinity-mail</span><i class="trinity trinity-mail font-20"></i> </li>
+                <li><span>trinity-minus</span><i class="trinity trinity-minus font-20"></i> </li>
+                <li><span>trinity-money</span><i class="trinity trinity-money font-20"></i> </li>
+                <li><span>trinity-newsletters</span><i class="trinity trinity-newsletters font-20"></i> </li>
+                <li><span>trinity-notification</span><i class="trinity trinity-notification font-20"></i> </li>
+                <li><span>trinity-off</span><i class="trinity trinity-off font-20"></i> </li>
+                <li><span>trinity-ok-old</span><i class="trinity trinity-ok-old font-20"></i> </li>
+                <li><span>trinity-ok</span><i class="trinity trinity-ok font-20"></i> </li>
+                <li><span>trinity-orders</span><i class="trinity trinity-orders font-20"></i> </li>
+                <li><span>trinity-page-list</span><i class="trinity trinity-page-list font-20"></i> </li>
+                <li><span>trinity-pay-braintree</span><i class="trinity trinity-pay-braintree font-20"></i> </li>
+                <li><span>trinity-pay-cb</span><i class="trinity trinity-pay-cb font-20"></i> </li>
+                <li><span>trinity-pay-limelight</span><i class="trinity trinity-pay-limelight font-20"></i> </li>
+                <li><span>trinity-pay-pp</span><i class="trinity trinity-pay-pp font-20"></i> </li>
+                <li><span>trinity-pay-stripe</span><i class="trinity trinity-pay-stripe font-20"></i> </li>
+                <li><span>trinity-plus</span><i class="tiecons tiecons-plus font-20"></i> </li>
+                <li><span>trinity-pin</span><i class="trinity trinity-pin font-20"></i> </li>
+                <li><span>trinity-products</span><i class="trinity trinity-products font-20"></i> </li>
+                <li><span>trinity-products2</span><i class="trinity trinity-products2 font-20"></i> </li>
+                <li><span>trinity-profile</span><i class="trinity trinity-profile font-20"></i> </li>
+                <li><span>trinity-projects</span><i class="trinity trinity-projects font-20"></i> </li>
+                <li><span>trinity-projects2</span><i class="trinity trinity-projects2 font-20"></i> </li>
+                <li><span>trinity-search</span><i class="trinity trinity-search font-20"></i> </li>
+                <li><span>trinity-search2</span><i class="trinity trinity-search2 font-20"></i> </li>
+                <li><span>trinity-select-down</span><i class="trinity trinity-select-down font-20"></i> </li>
+                <li><span>trinity-select-up</span><i class="trinity trinity-select-up font-20"></i> </li>
+                <li><span>trinity-settings</span><i class="trinity trinity-settings font-20"></i> </li>
+                <li><span>trinity-star</span><i class="trinity trinity-star font-20"></i> </li>
+                <li><span>trinity-tool</span><i class="trinity trinity-tool font-20"></i> </li>
+                <li><span>trinity-trash</span><i class="trinity trinity-trash font-20"></i> </li>
+                <li><span>trinity-user</span><i class="trinity trinity-user font-20"></i> </li>
+                <li><span>trinity-users</span><i class="trinity trinity-users font-20"></i> </li>
+                <li><span>trinity-users2</span><i class="trinity trinity-users2 font-20"></i> </li>
+                <li><span>trinity-view-hover</span><i class="trinity trinity-view-hover font-20"></i> </li>
+                <li><span>trinity-view</span><i class="trinity trinity-view font-20"></i> </li>
+                <li><span>trinity-views</span><i class="trinity trinity-views font-20"></i> </li>
+                <li><span>trinity-warning</span><i class="trinity trinity-warning font-20"></i> </li>
+                <li><span>trinity-yes</span><i class="trinity trinity-yes font-20"></i> </li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+        <h3>
+            Box
+        </h3>
+
+        <div class="box-body">
+            <p>Text content.</p>
+
+            <ul class="list">
+                <li>
+                    Line
+                </li>
+                <li>
+                    Line
+                </li>
+            </ul>
+
+            <ol class="list">
+                <li>
+                    Line
+                </li>
+                <li>
+                    Line
+                </li>
+            </ol>
+
+            <p>
+                <strong> Lorem ipsum dolor sit amet</strong>, <em>consectetur adipiscing elit</em>. Vestibulum egestas
+                neque quis neque auctor, eu varius urna vestibulum. Duis eleifend dapibus enim, a lobortis leo varius
+                ut.
+            </p>
+
+        </div>
+
+        <footer class="footer">
+            <p>Footer text.</p>
+        </footer>
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+        <h3>
+            Table
+        </h3>
+
+        <div class="box-table-body">
+            <table class="grid">
+                <thead>
+                <tr>
+                    <th>
+                        #
+                    </th>
+                    <th>
+                        First Name
+                    </th>
+                    <th>
+                        Last Name
+                    </th>
+                    <th>
+                        Email
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1.</td>
+                    <td>Ruben</td>
+                    <td>Southgate</td>
+                    <td>ruben@southgate.com</td>
+                </tr>
+
+                <tr>
+                    <td>2.</td>
+                    <td>Martin</td>
+                    <td>Page</td>
+                    <td>martin@page.com</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+        <h3>
+            Tabs
+        </h3>
+        <div class="box-tabs-body">
+            <div class="tabs-wrapper">
+                <input type="radio" name="tab" id="tab1" class="tab-head" checked/>
+                <label for="tab1">One</label>
+                <input type="radio" name="tab" id="tab2" class="tab-head"/>
+                <label for="tab2">Text - p tag</label>
+                <input type="radio" name="tab" id="tab3" class="tab-head"/>
+                <label for="tab3">Three</label>
+                <input type="radio" name="tab" id="tab4" class="tab-head"/>
+                <label for="tab4">Four</label>
+
+                <div class="tab-body-wrapper">
+                    <div id="tab-body-1" class="tab-body">
+                        {{ block('form') }}
+                    </div>
+                    <div id="tab-body-2" class="tab-body">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra pretium semper.
+                            Integer ultrices sapien sapien, ut lobortis urna imperdiet in. Aliquam pretium purus et
+                            sapien iaculis, ut malesuada tellus vestibulum. Donec porta lacus id ipsum sodales, eget
+                            volutpat orci eleifend. Praesent vehicula feugiat nibh sit amet auctor. Aenean pretium
+                            molestie blandit. Maecenas cursus porttitor leo, vel cursus dolor faucibus quis. Praesent
+                            porta congue enim, id sollicitudin metus porttitor et. Mauris sodales consequat arcu, sit
+                            amet dignissim tortor feugiat ac. Duis tempus, lorem vehicula lobortis ornare, diam elit
+                            accumsan justo, at dignissim tortor nibh eget risus. Quisque scelerisque sapien ac odio
+                            bibendum condimentum. Vestibulum imperdiet enim eu dolor posuere, sed scelerisque enim
+                            sodales. Maecenas aliquet arcu nisl, vel sagittis lorem finibus venenatis. Fusce non
+                            elementum velit, ac consectetur nisi.
+                        </p>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra pretium semper.
+                            Integer ultrices sapien sapien, ut lobortis urna imperdiet in. Aliquam pretium purus et
+                            sapien iaculis, ut malesuada tellus vestibulum. Donec porta lacus id ipsum sodales, eget
+                            volutpat orci eleifend. Praesent vehicula feugiat nibh sit amet auctor. Aenean pretium
+                            molestie blandit. Maecenas cursus porttitor leo, vel cursus dolor faucibus quis. Praesent
+                            porta congue enim, id sollicitudin metus porttitor et. Mauris sodales consequat arcu, sit
+                            amet dignissim tortor feugiat ac. Duis tempus, lorem vehicula lobortis ornare, diam elit
+                            accumsan justo, at dignissim tortor nibh eget risus. Quisque scelerisque sapien ac odio
+                            bibendum condimentum. Vestibulum imperdiet enim eu dolor posuere, sed scelerisque enim
+                            sodales. Maecenas aliquet arcu nisl, vel sagittis lorem finibus venenatis. Fusce non
+                            elementum velit, ac consectetur nisi.
+                        </p>
+                    </div>
+                    <div id="tab-body-3" class="tab-body">
+                        <div class="box-harmonica-body">
+                            <div class="harmonica">
+                                <input type="radio" id="harmonica-01" name="list1" checked/>
+                                <div class="main-panel">
+                                    <label for="harmonica-01">Harmonica - Text</label>
+                                    <div class="show-harmonica">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra
+                                            pretium semper. Integer ultrices sapien sapien, ut lobortis urna imperdiet
+                                            in. Aliquam pretium purus et sapien iaculis, ut malesuada tellus vestibulum.
+                                            Donec porta lacus id ipsum sodales, eget volutpat orci eleifend. Praesent
+                                            vehicula feugiat nibh sit amet auctor. Aenean pretium molestie blandit.
+                                            Maecenas cursus porttitor leo, vel cursus dolor faucibus quis. Praesent
+                                            porta congue enim, id sollicitudin metus porttitor et. Mauris sodales
+                                            consequat arcu, sit amet dignissim tortor feugiat ac. Duis tempus, lorem
+                                            vehicula lobortis ornare, diam elit accumsan justo, at dignissim tortor nibh
+                                            eget risus. Quisque scelerisque sapien ac odio bibendum condimentum.
+                                            Vestibulum imperdiet enim eu dolor posuere, sed scelerisque enim sodales.
+                                            Maecenas aliquet arcu nisl, vel sagittis lorem finibus venenatis. Fusce non
+                                            elementum velit, ac consectetur nisi.
+                                        </p>
+                                        <p>
+                                            Donec neque quam, maximus nec lobortis et, placerat et sapien. Fusce in
+                                            dolor convallis, luctus quam vitae, mollis dui. Etiam tincidunt arcu augue.
+                                            Quisque tincidunt arcu quis turpis commodo, nec fermentum odio iaculis. Nunc
+                                            sodales auctor tempus. Morbi et mauris porta sapien hendrerit dapibus id id
+                                            nunc. Aenean dignissim, orci sed pharetra blandit, ex justo lobortis justo,
+                                            eget malesuada lorem nulla sed mi. Cras consectetur lacus augue, at
+                                            tristique quam malesuada non. Nulla accumsan ultrices erat, a placerat est
+                                            accumsan non. Morbi mauris lorem, molestie et pretium id, hendrerit eget
+                                            eros. Nam nec commodo felis. Nulla malesuada quis ligula at malesuada.
+                                            Praesent ac porta orci, in lobortis ex.
+                                        </p>
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra
+                                            pretium semper. Integer ultrices sapien sapien, ut lobortis urna imperdiet
+                                            in. Aliquam pretium purus et sapien iaculis, ut malesuada tellus vestibulum.
+                                            Donec porta lacus id ipsum sodales, eget volutpat orci eleifend. Praesent
+                                            vehicula feugiat nibh sit amet auctor. Aenean pretium molestie blandit.
+                                            Maecenas cursus porttitor leo, vel cursus dolor faucibus quis. Praesent
+                                            porta congue enim, id sollicitudin metus porttitor et. Mauris sodales
+                                            consequat arcu, sit amet dignissim tortor feugiat ac. Duis tempus, lorem
+                                            vehicula lobortis ornare, diam elit accumsan justo, at dignissim tortor nibh
+                                            eget risus. Quisque scelerisque sapien ac odio bibendum condimentum.
+                                            Vestibulum imperdiet enim eu dolor posuere, sed scelerisque enim sodales.
+                                            Maecenas aliquet arcu nisl, vel sagittis lorem finibus venenatis. Fusce non
+                                            elementum velit, ac consectetur nisi.
+                                        </p>
+                                        <p>
+                                            Donec neque quam, maximus nec lobortis et, placerat et sapien. Fusce in
+                                            dolor convallis, luctus quam vitae, mollis dui. Etiam tincidunt arcu augue.
+                                            Quisque tincidunt arcu quis turpis commodo, nec fermentum odio iaculis. Nunc
+                                            sodales auctor tempus. Morbi et mauris porta sapien hendrerit dapibus id id
+                                            nunc. Aenean dignissim, orci sed pharetra blandit, ex justo lobortis justo,
+                                            eget malesuada lorem nulla sed mi. Cras consectetur lacus augue, at
+                                            tristique quam malesuada non. Nulla accumsan ultrices erat, a placerat est
+                                            accumsan non. Morbi mauris lorem, molestie et pretium id, hendrerit eget
+                                            eros. Nam nec commodo felis. Nulla malesuada quis ligula at malesuada.
+                                            Praesent ac porta orci, in lobortis ex.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <input type="radio" id="harmonica-02" name="list1"/>
+                                <div class="main-panel">
+                                    <label for="harmonica-02">Harmonica - Form</label>
+                                    <div class="show-harmonica">
+                                        {{ block('form') }}
+                                    </div>
+                                </div>
+
+                                <input type="radio" id="harmonica-03" name="list1"/>
+                                <div class="main-panel">
+                                    <label for="harmonica-03">Harmonica 03</label>
+                                    <div class="show-harmonica">
+                                        ...03
+                                    </div>
+                                </div>
+
+                                <input type="radio" id="harmonica-04" name="list1"/>
+                                <div class="main-panel">
+                                    <label for="harmonica-04">Harmonica 04</label>
+                                    <div class="show-harmonica">
+                                        ...04
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div id="tab-body-4" class="tab-body">
+                        <p>... 04</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+
+        <h3>
+            Form
+        </h3>
+
+        <div class="box-form-body">
+            {{ block('form') }}
+        </div>
+
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+
+        <h3>
+            Harmonica
+        </h3>
+
+        <div class="box-harmonica-body">
+            <div class="harmonica">
+                <input type="radio" id="harmonica-011" name="list" checked/>
+                <div class="main-panel">
+                    <label for="harmonica-011">Harmonica - Text</label>
+                    <div class="show-harmonica">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra pretium semper.
+                            Integer ultrices sapien sapien, ut lobortis urna imperdiet in. Aliquam pretium purus et
+                            sapien iaculis, ut malesuada tellus vestibulum. Donec porta lacus id ipsum sodales, eget
+                            volutpat orci eleifend. Praesent vehicula feugiat nibh sit amet auctor. Aenean pretium
+                            molestie blandit. Maecenas cursus porttitor leo, vel cursus dolor faucibus quis. Praesent
+                            porta congue enim, id sollicitudin metus porttitor et. Mauris sodales consequat arcu, sit
+                            amet dignissim tortor feugiat ac. Duis tempus, lorem vehicula lobortis ornare, diam elit
+                            accumsan justo, at dignissim tortor nibh eget risus. Quisque scelerisque sapien ac odio
+                            bibendum condimentum. Vestibulum imperdiet enim eu dolor posuere, sed scelerisque enim
+                            sodales. Maecenas aliquet arcu nisl, vel sagittis lorem finibus venenatis. Fusce non
+                            elementum velit, ac consectetur nisi.
+                        </p>
+                        <br>
+                        <p>
+                            Donec neque quam, maximus nec lobortis et, placerat et sapien. Fusce in dolor convallis,
+                            luctus quam vitae, mollis dui. Etiam tincidunt arcu augue. Quisque tincidunt arcu quis
+                            turpis commodo, nec fermentum odio iaculis. Nunc sodales auctor tempus. Morbi et mauris
+                            porta sapien hendrerit dapibus id id nunc. Aenean dignissim, orci sed pharetra blandit, ex
+                            justo lobortis justo, eget malesuada lorem nulla sed mi. Cras consectetur lacus augue, at
+                            tristique quam malesuada non. Nulla accumsan ultrices erat, a placerat est accumsan non.
+                            Morbi mauris lorem, molestie et pretium id, hendrerit eget eros. Nam nec commodo felis.
+                            Nulla malesuada quis ligula at malesuada. Praesent ac porta orci, in lobortis ex.
+                        </p>
+                        <br>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra pretium semper.
+                            Integer ultrices sapien sapien, ut lobortis urna imperdiet in. Aliquam pretium purus et
+                            sapien iaculis, ut malesuada tellus vestibulum. Donec porta lacus id ipsum sodales, eget
+                            volutpat orci eleifend. Praesent vehicula feugiat nibh sit amet auctor. Aenean pretium
+                            molestie blandit. Maecenas cursus porttitor leo, vel cursus dolor faucibus quis. Praesent
+                            porta congue enim, id sollicitudin metus porttitor et. Mauris sodales consequat arcu, sit
+                            amet dignissim tortor feugiat ac. Duis tempus, lorem vehicula lobortis ornare, diam elit
+                            accumsan justo, at dignissim tortor nibh eget risus. Quisque scelerisque sapien ac odio
+                            bibendum condimentum. Vestibulum imperdiet enim eu dolor posuere, sed scelerisque enim
+                            sodales. Maecenas aliquet arcu nisl, vel sagittis lorem finibus venenatis. Fusce non
+                            elementum velit, ac consectetur nisi.
+                        </p>
+                        <br>
+                        <p>
+                            Donec neque quam, maximus nec lobortis et, placerat et sapien. Fusce in dolor convallis,
+                            luctus quam vitae, mollis dui. Etiam tincidunt arcu augue. Quisque tincidunt arcu quis
+                            turpis commodo, nec fermentum odio iaculis. Nunc sodales auctor tempus. Morbi et mauris
+                            porta sapien hendrerit dapibus id id nunc. Aenean dignissim, orci sed pharetra blandit, ex
+                            justo lobortis justo, eget malesuada lorem nulla sed mi. Cras consectetur lacus augue, at
+                            tristique quam malesuada non. Nulla accumsan ultrices erat, a placerat est accumsan non.
+                            Morbi mauris lorem, molestie et pretium id, hendrerit eget eros. Nam nec commodo felis.
+                            Nulla malesuada quis ligula at malesuada. Praesent ac porta orci, in lobortis ex.
+                        </p>
+                        <br>
+                    </div>
+                </div>
+
+                <input type="radio" id="harmonica-021" name="list"/>
+                <div class="main-panel">
+                    <label for="harmonica-021">Harmonica - Form</label>
+                    <div class="show-harmonica">
+                        {{ block('form') }}
+                    </div>
+                </div>
+
+                <input type="radio" id="harmonica-031" name="list"/>
+                <div class="main-panel">
+                    <label for="harmonica-031">Harmonica 03</label>
+                    <div class="show-harmonica">
+                        ...03
+                    </div>
+                </div>
+
+                <input type="radio" id="harmonica-041" name="list"/>
+                <div class="main-panel">
+                    <label for="harmonica-041">Harmonica 04</label>
+                    <div class="show-harmonica">
+                        ...04
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+
+        <h3>
+            Buttons
+        </h3>
+
+        <div class="box-body">
+            <form action="">
+                <div class="row">
+                    <div class="span-none-padding-24">
+                        <button class="button  trinity-form-loading" disabled="disabled"> loading</button>
+                        <button class="button button-success trinity-form-success"> success</button>
+                        <button class="button trinity-form-error" disabled="disabled"> error</button>
+                        <button class="button trinity-form-ready"> ready</button>
+                    </div>
+
+                    <div class="span-none-padding-24">
+                        <input type="submit" class="button" value="button">
+                        <input type="submit" class=" button-medium" value="button-medium">
+                        <input type="submit" class=" button-small" value="button-small">
+                    </div>
+
+                    <div class="span-none-padding-24">
+                        <input type="submit" class="button button-success" value="success">
+                        <input type="submit" class="button button-info" value="info">
+                        <input type="submit" class="button button-primary" value="primary">
+                        <input type="submit" class="button button-addNew" value="addNew">
+                    </div>
+
+                    <div class="span-none-padding-24">
+                        <input type="submit" class=" button-medium button-success" value="success">
+                        <input type="submit" class=" button-small button-info" value="info">
+                    </div>
+
+                    <div class="span-none-padding-24">
+                        <button type="submit" class="button button-success"> button</button>
+                        <button type="submit" class=" button-medium button-success"> button</button>
+
+                        <button type="submit" class="button" disabled="disabled"> button</button>
+                    </div>
+
+                    <div class="span-none-padding-24">
+                        <a href="#" class="button button-success"> link </a>
+                    </div>
+
+                    <div class="span-none-padding-24">
+                        <a href="#" class="button button-danger"> Danger </a>
+                        <a href="#" class="button button-warning"> Warning </a>
+                        <a href="#" class="button button-tertiary"> Tertiary </a>
+                        <a href="#" class="button button-secondary"> Secondary </a>
+                    </div>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+
+        <h3>
+            Background color
+        </h3>
+
+        <div class="box-body">
+
+            <ul>
+                <li class="info">info</li>
+                <li class="warning">warning</li>
+                <li class="danger">danger</li>
+                <li class="primary color-secondary">primary</li>
+                <li class="secondary" style="color: #fff;">secondary</li>
+                <li class="tertiary">tertiary</li>
+            </ul>
+
+        </div>
+
+        <h3>
+            Font color
+        </h3>
+
+        <div class="box-body">
+
+            <ul>
+                <li class="color-info">color-info</li>
+                <li class="color-warning">color-warning</li>
+                <li class="color-danger">color-danger</li>
+                <li class="color-primary">color-primary</li>
+                <li class="color-secondary">color-secondary</li>
+                <li class="color-tertiary">color-tertiary</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+    <div class="margin-top-20"></div>
+
+    <div class="box">
+
+        <h3>
+            Tags list
+        </h3>
+
+        <div class="box-body">
+
+            <ul class="tags">
+                <li class="enabled">Enabled</li>
+                <li class="disabled">Disabled</li>
+                <li class="active">Active</li>
+                <li class="changed">Changed</li>
+                <li class="premium">Premium</li>
+                <li class="blocked">Blocked</li>
+                <li class="pending">Pending</li>
+                <li class="banned">Banned</li>
+                <li class="locked">Locked</li>
+                <li class="create">create, Success</li>
+                <li class="warning">Warning</li>
+            </ul>
+
+        </div>
+
+    </div>
+{% endblock %}

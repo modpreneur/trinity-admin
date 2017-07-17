@@ -1,0 +1,40 @@
+.stickyNotes {
+    margin:1em;
+    float:left;
+    overflow:hidden;
+    padding:3em;
+}
+
+.stickyNotes div p{
+    font-family:"Reenie Beanie",arial,sans-serif;
+    font-size:180%;
+}
+
+.stickyNotes div {
+    text-decoration:none;
+    color:#000;
+    background:#ffc;
+    display:block;
+    height:15em;
+    width:15em;
+    padding:1em;
+    /* Firefox */
+    -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
+    /* Safari+Chrome */
+    -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    /* Opera */
+    box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+    -webkit-transform:rotate(-6deg);
+    -o-transform:rotate(-6deg);
+    -moz-transform:rotate(-6deg);
+    transform: rotate(-6deg);
+}
+
+.stickyNotes div .thanks {
+    -webkit-transform:rotate(-17deg);
+    -o-transform:rotate(-17deg);
+    -moz-transform:rotate(-17deg);
+    transform: rotate(-17deg);
+    margin-top: 80px;
+    font-size: 50px;
+}

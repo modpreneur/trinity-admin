@@ -1,0 +1,3 @@
+grid:
+    resource: '@TrinityAdminBundle/Resources/config/routing.yml'
+    prefix: /

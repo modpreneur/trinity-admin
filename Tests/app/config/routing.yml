@@ -1,3 +1,0 @@
-grid:
-    resource: '@GridBundle/Resources/config/routing.yml'
-    prefix: '/'
