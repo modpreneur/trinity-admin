@@ -1,7 +1,7 @@
 #!/bin/sh sh
 
-#composer update
+composer install
 
 #phpunit
 
-bin/console server:run 0.0.0.0:8080
+htdocs/bin/console server:run 0.0.0.0:8080 --docroot=htdocs/web
