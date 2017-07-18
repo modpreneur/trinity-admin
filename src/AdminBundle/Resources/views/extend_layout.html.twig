@@ -5,21 +5,17 @@
     {# Inputs are as toggle, don't move them from top #}
     <input name="navbar-items" type="radio" id="user-profile-input" class="navbar-item-input">
     <input name="navbar-items" type="radio" id="notifications-input" class="navbar-item-input">
-    {#<input name="navbar-items" type="radio" id="settings-input" class="navbar-item-input">#}
-    {# <input name="navbar-items" type="radio" id="quick-links-input" class="navbar-item-input">#}
 
     <nav class="navbar row">
 
         <div class="navbar-logo">
             {% block navbar_logo %} <i> Logo </i> {% endblock %}
-            {#<span class="version">{{ admin_manager.getAppVersion() }}</span>#}
         </div>
 
         <div class="navbar-container">
 
             {# Navbar labels for popus #}
             <div class="pull-right navbar-actions" style="width: 260px;">
-
                 {% block navbar_actions %}
                 {% endblock %}
 
@@ -88,12 +84,6 @@
             {% endblock %}
         </div>
     </nav>
-
-    {# Navbar popups - profile, notifications #}
-    {#    <div class="quick-links">
-            {% block quick_links %}
-            {% endblock %}
-        </div>#}
 
     {# Navbar popups - profile, notifications #}
     <div class="user-profile-info">
