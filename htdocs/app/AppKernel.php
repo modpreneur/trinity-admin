@@ -2,11 +2,18 @@
 
 namespace Trinity\AdminBundle;
 
+use Knp\Bundle\GaufretteBundle\KnpGaufretteBundle;
+use Knp\Bundle\MenuBundle\KnpMenuBundle;
 use Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle;
+use Symfony\Bundle\AsseticBundle\AsseticBundle;
+use Symfony\Bundle\FrameworkBundle\FrameworkBundle;
+use Symfony\Bundle\SecurityBundle\SecurityBundle;
+use Symfony\Bundle\TwigBundle\TwigBundle;
 use Symfony\Bundle\WebProfilerBundle\WebProfilerBundle;
 use Symfony\Bundle\WebServerBundle\WebServerBundle;
 use Symfony\Component\Config\Loader\LoaderInterface;
 use Symfony\Component\HttpKernel\Kernel;
+use Trinity\HtDoc\AdminBundle\HtDocAdminBundle;
 
 /**
  * Class AppKernel.
@@ -19,20 +26,19 @@ class AppKernel extends Kernel
     public function registerBundles()
     {
         return [
-            new \Symfony\Bundle\FrameworkBundle\FrameworkBundle(),
-            new \Symfony\Bundle\TwigBundle\TwigBundle(),
-            new \Symfony\Bundle\SecurityBundle\SecurityBundle(),
+            new FrameworkBundle(),
+            new SecurityBundle(),
 
             //new SettingsBundle(),
             new WebServerBundle(),
             new SensioFrameworkExtraBundle(),
             new TrinityAdminBundle(),
-            new AdminBundle(),
-            new \Symfony\Bundle\AsseticBundle\AsseticBundle(),
-
-            new \Knp\Bundle\GaufretteBundle\KnpGaufretteBundle(),
-            new \Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new HtDocAdminBundle(),
+            new AsseticBundle(),
+            new KnpGaufretteBundle(),
+            new KnpMenuBundle(),
             new WebProfilerBundle(),
+            new TwigBundle(),
         ];
     }
 
