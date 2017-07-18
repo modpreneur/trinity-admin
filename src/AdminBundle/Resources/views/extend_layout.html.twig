@@ -1,11 +1,6 @@
 {% extends "TrinityAdminBundle::layout.html.twig" %}
 
 {% block navbar %}
-
-    {# Inputs are as toggle, don't move them from top #}
-    <input name="navbar-items" type="radio" id="user-profile-input" class="navbar-item-input">
-    <input name="navbar-items" type="radio" id="notifications-input" class="navbar-item-input">
-
     <nav class="navbar row">
 
         <div class="navbar-logo">
@@ -19,43 +14,6 @@
         </div>
 
         <div class="navbar-container">
-
-            {# Navbar labels for popus #}
-            <div class="pull-right navbar-actions" style="width: 260px;">
-                {% block navbar_actions %}
-                {% endblock %}
-
-                {% if app.user %}
-                <label
-                        class="navbar-item-label"
-                        for="notifications-input"
-                        id="notifications-label"
-                        title="{{ 'trinity_admin.layout.notifications.notifications'|trans }}"
-                >
-                    <i class="trinity trinity-bell"></i>
-                    {% set redis= app.user.getId() %}
-                    {% set response = redis|getBarMsgs %}
-                    {% set messages = response[0] %}
-                    {% set users = response[1] %}
-                    {% set times = response[2] %}
-                    {% set countNew = response[3] %}
-                    {% set message_keys = response[4] %}
-
-                    {% if countNew != 0 %}
-                        <i class="number-info">
-                            {{ countNew }}
-                        </i>
-                    {% endif %}
-                </label>
-
-                <label class="navbar-item-label" for="user-profile-input" id="user-profile-label">
-                    {% block user_label %}
-                    {% endblock %}
-                </label>
-                {% endif %}
-
-            </div>
-
             <div class="navbar-actions-item page-title">
                 {% block navbarTitle %}
                     Navbar title
