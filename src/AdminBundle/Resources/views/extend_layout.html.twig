@@ -56,38 +56,11 @@
 
             </div>
 
-            {% block navbar_search %}
-                <div class="navbar-search navbar-actions-item" style="margin-right: 330px; float: none;">
-                    {% block navbar_seach_form_start %}
-                    <form id="global-search-form" action="{% block search_action %}{% endblock %}" autocomplete="on" style="width: 100%; margin:0; padding: 25px 0 25px 25px">
-                        {% endblock %}
-                        <label for="search">
-                            <input placeholder="{{ 'trinity_admin.layout.search.type_your_text'|trans }}" class="navbar-search-input" type="text" name="search"
-                                   id="search" style="width:100%;">
-                            <button type="submit" id="navbar-search-submit-button-1">
-                                <i class="trinity trinity-search"></i>
-                            </button>
-
-                        </label>
-                        {% block navbar_search_form_end %}
-                        <div class="navbar-search-tools display-none" style="display: block; padding-right: 40px;">
-                            <button type="submit" class="button button-primary button-success" id="navbar-search-submit-button-2">
-                                <i class="trinity trinity-search2"></i>
-                            </button>
-
-                            <button class="button button-addNew" id="navbar-search-helper-button">
-                                {{ 'trinity_admin.layout.search.cancel'|trans }}
-                            </button>
-
-                            <button id="navbar-search-tool-close-button" class="button">
-                                <i class="trinity-arrow-down-two"></i>
-                            </button>
-                        </div>
-                    </form>
-
-                    {% endblock %}
-                </div>
-            {% endblock %}
+            <div class="navbar-actions-item page-title">
+                {% block navbarTitle %}
+                    Navbar title
+                {% endblock %}
+            </div>
         </div>
     </nav>
 

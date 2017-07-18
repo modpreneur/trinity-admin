@@ -2,10 +2,8 @@
 
     {% block navbar %}
         {{ parent() }}
-        <div style="padding-left: 240px; width: 100%; z-index: 80;">
-            <div data-ng-scope="queryBuilderWrapper" class="display-none padding-20" style="background: #f2f6fc"> Loading...</div>
-        </div>
     {% endblock %}
+
     {% block navbar_logo %}
         <a class="color-white" href="/">
             <i class="necktie necktielogo2"></i>

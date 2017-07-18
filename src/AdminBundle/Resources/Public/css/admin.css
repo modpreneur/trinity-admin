@@ -143,6 +143,11 @@
       }
     }*/
 }
+.navbar .page-title {
+  color: #515974;
+  padding: 0.8em;
+  font-size: 20px;
+}
 .navbar .navbar-logo {
   height: 60px;
   width: 60px;
@@ -971,7 +976,7 @@
   background: #e4ebf7;
 }
 #sidebar ul.sidebar li ul {
-  padding-top: 3px;
+  padding-top: 10px;
   display: none;
 }
 #sidebar ul.sidebar li ul li {
@@ -995,6 +1000,11 @@
   color: #515974;
 }
 #sidebar .drop-down {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   display: block;
   border-radius: 0;
 }
@@ -1018,14 +1028,6 @@
   right: 0;
   margin-right: 15px;
   top: 0;
-}
-#sidebar .drop-down ul.drop {
-  display: none;
-  padding: 0;
-  margin: 0;
-}
-#sidebar .drop-down ul.drop a {
-  padding-left: 35px;
 }
 #sidebar .drop-down input:checked ~ .a {
   background: #e4ebf7;
