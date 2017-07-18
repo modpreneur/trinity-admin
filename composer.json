@@ -52,8 +52,7 @@
     "psr-4": { "Trinity\\AdminBundle\\": "src/AdminBundle/" },
     "classmap": [
       "htdocs/AdminBundle/"
-    ],
-    "apcu-autoloader" : true
+    ]
   },
   "extra": {
     "branch-alias": {
