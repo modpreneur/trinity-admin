@@ -4,8 +4,26 @@
     HTML/CSS documentation
 {% endblock %}
 
-{% block pageAction %}
+{% block navbar_project %}
+    <div id="project-select">
+        <span>Project</span>
+        <h2 class="title">Hot at home</h2>
+    </div>
 {% endblock %}
+
+
+{% block pageAction %}
+    <div class="head-title">
+        <h2 class="content-header"> Users <small>(7)</small></h2>
+        <div class="breadcrumbs">
+            <ul id="wo-breadcrumbs" class="breadcrumb" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                <li><a href="/admin/" itemprop="url"><span itemprop="title">Home</span></a><span class="separator"></span></li>
+                <li itemprop="child"><a href="/admin/user/" itemprop="url"><span itemprop="title">Users</span></a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
 
 {% block form %}
 

@@ -51,21 +51,34 @@ class MenuListener
         $menu = $event->getMenu('sidebar');
 
         $menu
-            ->addChild('Dashboard')
+            ->addChild('Dashboard', ['route' => 'admin-css'])
             ->setAttribute('class', 'js-direct-item')
             ->setAttribute('icon', 'trinity trinity-dashboard')
             ->setExtra('orderNumber', 0);
 
         $menu
-            ->addChild('Products')
+            ->addChild('Products', ['route' => 'admin-css-link'])
             ->setAttribute('class', 'js-direct-item')
-            ->setAttribute('icon', 'trinity trinity-dashboard')
+            ->setAttribute('icon', 'trinity trinity-products')
             ->setExtra('orderNumber', 1);
 
-        $menu
-            ->addChild('Users')
+        $user = $menu
+            ->addChild('Users', ['route' => 'admin-css-link'])
             ->setAttribute('class', 'js-direct-item')
-            ->setAttribute('icon', 'trinity trinity-dashboard')
+            ->setAttribute('dropdown', true)
+            ->setAttribute('icon', 'trinity trinity-users')
             ->setExtra('orderNumber', 2);
+
+        $user
+            ->addChild('User 1', ['route' => 'admin-css-link']);
+
+        $user
+            ->addChild('User 2', ['route' => 'admin-css-link']);
+
+        $menu
+            ->addChild('Company', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'trinity trinity-products')
+            ->setExtra('orderNumber', 3);
     }
 }

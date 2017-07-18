@@ -9,7 +9,6 @@
 @import "variables";
 @import "helper";
 
-
   // for body
   &.navbar-fixed {
     padding-top: @navbar-height;
@@ -37,7 +36,7 @@
 
     .navbar-logo {
       height: @navbar-height;
-      width: @sidebar-width;
+      width:  @navbar-height;
       display: inline-block;
       float: left;
       .group-clearfix();
@@ -52,10 +51,10 @@
       background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
 
       i {
-        margin: (@navbar-height - @logo-height)/2 0 (@navbar-height - @logo-height)/2 3*(@sidebar-width - @logo-width)/5;
+        margin: @navbar-height/4;
         display: block;
         height: @logo-height;
-        width: @logo-width;
+        width: @logo-height;
       }
       a {
         font-size: 30px;
@@ -65,6 +64,14 @@
         color: #fff;
       }
     }
+
+    #navbar-project{
+      float: left;
+      width:  @sidebar-width - @navbar-height;
+      height: @navbar-height;
+      background: @color-primary;
+    }
+
     .version {
       position: absolute;
       top: 55px;
