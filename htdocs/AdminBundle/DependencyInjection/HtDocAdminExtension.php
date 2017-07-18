@@ -1,6 +1,6 @@
 <?php
 
-namespace Trinity\AdminBundle\DependencyInjection;
+namespace Trinity\HtDoc\AdminBundle\DependencyInjection;
 
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
@@ -12,7 +12,7 @@ use Symfony\Component\HttpKernel\DependencyInjection\Extension;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class AdminExtension extends Extension
+class HtDocAdminExtension extends Extension
 {
     /**
      * {@inheritdoc}
@@ -20,7 +20,7 @@ class AdminExtension extends Extension
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
-//        $config = $this->processConfiguration($configuration, $configs);
+        $config = $this->processConfiguration($configuration, $configs);
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');

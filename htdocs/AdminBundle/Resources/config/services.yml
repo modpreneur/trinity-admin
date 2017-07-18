@@ -9,7 +9,7 @@ services:
 
 
     necktie.admin.listener.menu.config:
-        class: Trinity\AdminBundle\EventListener\MenuListener
+        class: Trinity\HtDoc\AdminBundle\EventListener\MenuListener
         arguments:
            - "@router"
            - "@translator"

@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace Trinity\AdminBundle\EventListener;
+namespace Trinity\HtDoc\AdminBundle\EventListener;
 
 use Knp\Menu\ItemInterface;
 use Symfony\Component\Routing\Router;

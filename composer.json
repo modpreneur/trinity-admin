@@ -17,10 +17,10 @@
   "require": {
     "php": ">=7.1",
     "symfony/symfony": "~3.3",
-    "symfony/framework-bundle": "~2.8 | ~3.0",
-    "symfony/form": "~2.8 | ~3.0",
+    "symfony/framework-bundle": "~2.8 | ~3.3",
+    "symfony/form": "~2.8 | ~3.3",
     "nette/utils": "~2.3",
-    "modpreneur/bowtie"  : "dev-master",
+    "modpreneur/bowtie": "dev-master",
     "whiteoctober/breadcrumbs-bundle": "~1.2",
     "twig/twig": "~1.0|~2.0",
     "symfony/twig-bundle": "^3.3",
@@ -29,7 +29,9 @@
     "sensio/framework-extra-bundle": "^3.0",
     "knplabs/knp-menu-bundle": "~2.0",
     "knplabs/knp-gaufrette-bundle": "~0.3",
-    "symfony/assetic-bundle": "^2.8"
+    "symfony/assetic-bundle": "^2.8",
+    "twig/extensions": "~1.5",
+    "symfony/twig-bridge": "~3.3"
   },
 
   "require-dev": {
@@ -46,11 +48,12 @@
 
 
   "autoload": {
+    "files": [ "htdocs/app/AppKernel.php" ],
+    "psr-4": { "Trinity\\AdminBundle\\": "src/AdminBundle/" },
     "classmap": [
-      "src/AdminBundle/",
-      "htdocs/app/",
       "htdocs/AdminBundle/"
-    ]
+    ],
+    "apcu-autoloader" : true
   },
   "extra": {
     "branch-alias": {
