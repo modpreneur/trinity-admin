@@ -1,13 +1,8 @@
-@import "variables";
-@import "helper";
+@import-once "variables";
+@import-once "helper";
 
-@li-active-bc: #f8f3f0;
-@color-primary: #515974;
 @sidebar-background: #fff;
-@sidebar-font-color: @color-primary;
-
 @sidebar-hover-background-color: #e4ebf7;
-
 
 /* sidebar top */
 
@@ -26,8 +21,6 @@
     }
   }
 }
-
-
 
 /** fix */
 .container-with-sidebar {
@@ -53,7 +46,6 @@
     width: 100%;
   }
 
-
   ul{
     &.sidebar {
       /** window resize fix **/
@@ -69,7 +61,7 @@
         position: relative;
         cursor: pointer;
         list-style-type: none;
-        color: @sidebar-font-color;
+        color: @color-primary;
         margin-bottom: 3px;
 
         & > a, .a{
@@ -78,6 +70,7 @@
           margin-right: 0.6em;
           border-radius: 5px;
           padding: 10px 10px;
+          border: 1px solid transparent;
           font-size: 14px;
         }
 
@@ -85,6 +78,7 @@
           & > a, .a{
             background: @sidebar-hover-background-color;
             font-weight: 600;
+            color: @color-primary;
           }
 
           &:before{
@@ -101,8 +95,9 @@
         }
 
         &:hover{
-          & > a{
-            background: @sidebar-hover-background-color;
+          & > a, .a{
+            color: @color-primary;
+            border: 1px solid @sidebar-hover-background-color;
           }
         }
 
@@ -123,6 +118,9 @@
             a{
               background: transparent;
               color: @color-primary;
+              border: 1px solid transparent;
+              border-bottom: 1px solid @sidebar-hover-background-color;
+              border-radius: 0;
             }
           }
         }
@@ -133,7 +131,7 @@
           display: inline-block;
           font-size: 22px;
           transition: .3s;
-          color: @sidebar-font-color;
+          color: @color-primary;
         }
       }
     }
@@ -142,6 +140,10 @@
 
 #sidebar .drop-down {
   .no-select();
+
+  label{
+    cursor: pointer;
+  }
 
   &.last {
     margin-bottom: 19px;
@@ -154,36 +156,10 @@
     display: none;
   }
 
-  .tiecons-plus-light, .tiecons-arrow-tall-normal-down {
-    position: absolute;
-    right: 0;
-    margin-right: 15px;
-    top: 0;
-  }
-
-  .tiecons-minus-light, .tiecons-arrow-tall-normal-up {
-    position: absolute;
-    display: none;
-    right: 0;
-    margin-right: 15px;
-    top: 0;
-  }
-
   input:checked ~ .a {
     background: @sidebar-hover-background-color;
     color: @color-primary;
     font-weight: 600;
-    i {
-      color: @color-primary;
-    }
-  }
-
-  input:checked ~ .a .trinity-dropdown-icon i.tiecons-arrow-tall-normal-down {
-    display: none;
-  }
-
-  input:checked ~ .a .trinity-dropdown-icon i.tiecons-arrow-tall-normal-up {
-    display: block;
   }
 
   input:checked ~ ul.drop {

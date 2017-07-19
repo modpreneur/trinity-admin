@@ -2,7 +2,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-
         {% block head %}
             <meta charset="UTF-8"/>
             <title>{% block title %}Trinity Administration{% endblock %}</title>
@@ -24,7 +23,6 @@
             {% endblock %}
         {% endblock %}
 
-
         {% block header_stylesheets %}
 
             {% block bowtie %}
@@ -41,9 +39,11 @@
                 <link rel="stylesheet" href="{{ asset("assetic/necktie_icons.css") }}"/>
 
                 {% stylesheets
-                '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
-                '@TrinityAdminBundle/Resources/Public/css/admin.css' %}
-                <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
+                    '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
+                    '@TrinityAdminBundle/Resources/Public/css/admin.css'
+                    output="style.css"
+                %}
+                    <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
                 {% endstylesheets %}
 
                 {% stylesheets
