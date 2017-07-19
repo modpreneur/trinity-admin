@@ -1,86 +1,26 @@
 {% extends "TrinityAdminBundle::layout.html.twig" %}
 
+
 {% block navbar %}
-
-    {# Inputs are as toggle, don't move them from top #}
-    <input name="navbar-items" type="radio" id="user-profile-input" class="navbar-item-input">
-    <input name="navbar-items" type="radio" id="notifications-input" class="navbar-item-input">
-
     <nav class="navbar row">
-
         <div class="navbar-logo">
             {% block navbar_logo %} <i> Logo </i> {% endblock %}
         </div>
 
+        <div id="navbar-project">
+            {% block navbar_project %}
+                Project
+            {% endblock %}
+        </div>
+
         <div class="navbar-container">
-
-            {# Navbar labels for popus #}
-            <div class="pull-right navbar-actions" style="width: 260px;">
-                {% block navbar_actions %}
+            <div class="navbar-actions-item page-title pull-left">
+                {% block navbarTitle %}
+                    Navbar title
                 {% endblock %}
-
-                {% if app.user %}
-                <label
-                        class="navbar-item-label"
-                        for="notifications-input"
-                        id="notifications-label"
-                        title="{{ 'trinity_admin.layout.notifications.notifications'|trans }}"
-                >
-                    <i class="trinity trinity-bell"></i>
-                    {% set redis= app.user.getId() %}
-                    {% set response = redis|getBarMsgs %}
-                    {% set messages = response[0] %}
-                    {% set users = response[1] %}
-                    {% set times = response[2] %}
-                    {% set countNew = response[3] %}
-                    {% set message_keys = response[4] %}
-
-                    {% if countNew != 0 %}
-                        <i class="number-info">
-                            {{ countNew }}
-                        </i>
-                    {% endif %}
-                </label>
-
-                <label class="navbar-item-label" for="user-profile-input" id="user-profile-label">
-                    {% block user_label %}
-                    {% endblock %}
-                </label>
-                {% endif %}
-
             </div>
 
-            {% block navbar_search %}
-                <div class="navbar-search navbar-actions-item" style="margin-right: 330px; float: none;">
-                    {% block navbar_seach_form_start %}
-                    <form id="global-search-form" action="{% block search_action %}{% endblock %}" autocomplete="on" style="width: 100%; margin:0; padding: 25px 0 25px 25px">
-                        {% endblock %}
-                        <label for="search">
-                            <input placeholder="{{ 'trinity_admin.layout.search.type_your_text'|trans }}" class="navbar-search-input" type="text" name="search"
-                                   id="search" style="width:100%;">
-                            <button type="submit" id="navbar-search-submit-button-1">
-                                <i class="trinity trinity-search"></i>
-                            </button>
-
-                        </label>
-                        {% block navbar_search_form_end %}
-                        <div class="navbar-search-tools display-none" style="display: block; padding-right: 40px;">
-                            <button type="submit" class="button button-primary button-success" id="navbar-search-submit-button-2">
-                                <i class="trinity trinity-search2"></i>
-                            </button>
-
-                            <button class="button button-addNew" id="navbar-search-helper-button">
-                                {{ 'trinity_admin.layout.search.cancel'|trans }}
-                            </button>
-
-                            <button id="navbar-search-tool-close-button" class="button">
-                                <i class="trinity-arrow-down-two"></i>
-                            </button>
-                        </div>
-                    </form>
-
-                    {% endblock %}
-                </div>
+            {% block pageAction %}
             {% endblock %}
         </div>
     </nav>
@@ -92,8 +32,8 @@
             {% endblock %}
         </div>
     </div>
-
 {% endblock %}
+
 
 {% block sidebar %}
     {{ knp_menu_render('sidebar', {"currentClass": "active", "template" : "TrinityAdminBundle::kmp_menu.html.twig"}) }}

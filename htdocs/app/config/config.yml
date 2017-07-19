@@ -104,6 +104,7 @@ framework:
     templating:
             engines: ['twig']
     form: ~
+    profiler: true
 
 
 # Twig Configuration

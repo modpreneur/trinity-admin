@@ -1,11 +1,10 @@
-@import "helper";
-@import "variables";
+@import-once "helper";
+@import-once "variables";
 
 @import "navbar";
 @import "navbar-items";
 @import "page-header";
 @import "sidebar";
-@import "helper";
 @import "default";
 @import "alert";
 @import "tabs";
@@ -28,7 +27,6 @@ html {
 }
 
 body {
-  padding-top: @navbar-height;
   font-family: @font;
   width: 100%;
   height: 100%;
@@ -53,6 +51,11 @@ body {
 
 .modal-a.button.button-secondary {
   display: none !important;
+}
+
+ul, ol {
+  list-style: none;
+  padding-left: 0;
 }
 
 ul.list {

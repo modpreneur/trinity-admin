@@ -5,6 +5,15 @@
 **************************************/
 @import "variables";
 
+
+.no-select(){
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .shadow(@offset-x: 0, @offset-y: 2px, @blur-radius: 9.5px, @spread-radius: 2px, @color: rgba(0,0,0,.1)) {
   -webkit-box-shadow: @offset-x @offset-y @blur-radius @spread-radius @color;
   -moz-box-shadow: @offset-x @offset-y @blur-radius @spread-radius @color;

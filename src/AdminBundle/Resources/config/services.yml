@@ -7,11 +7,13 @@ services:
       - "@knp_menu.factory"
       - "@security.authorization_checker"
 
+
   trinity.admin.service.admin_manager:
     class: Trinity\AdminBundle\Service\AdminManager
     arguments:
       - "%trinity.admin.search_text%"
       - "%trinity.admin.app_version%"
+
 
   trinity.admin.type.froala_editor:
       class: Trinity\AdminBundle\Form\FroalaType\FroalaType
@@ -20,13 +22,6 @@ services:
           - "@router"
       tags:
         - { name: form.type }
-
-
-  trinity.twig.extension.side_bar:
-      class: Trinity\AdminBundle\Twig\SidebarExtension
-      arguments:  ["@router"]
-      tags:
-          - { name: twig.extension }
 
 
   trinity.twig.extensions.controller:

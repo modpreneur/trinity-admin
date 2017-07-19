@@ -25,4 +25,14 @@ class AdminCssController extends Controller
     {
         return $this->render('@TrinityAdmin/css.html.twig');
     }
+
+    /**
+     * @Route("/link", name="admin-css-link")
+     *
+     * @return Response
+     */
+    public function adminAction() : Response
+    {
+        return new Response('Tu nic nima');
+    }
 }
