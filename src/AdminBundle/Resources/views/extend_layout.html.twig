@@ -14,11 +14,14 @@
         </div>
 
         <div class="navbar-container">
-            <div class="navbar-actions-item page-title">
+            <div class="navbar-actions-item page-title pull-left">
                 {% block navbarTitle %}
                     Navbar title
                 {% endblock %}
             </div>
+
+            {% block pageAction %}
+            {% endblock %}
         </div>
     </nav>
 
