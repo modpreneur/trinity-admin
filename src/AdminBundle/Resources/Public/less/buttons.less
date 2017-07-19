@@ -4,6 +4,7 @@
 
 **************************************/
 @import-once "helper";
+@import-once "variables";
 
 :focus {
   outline: none;
@@ -13,15 +14,9 @@
   border: 0;
 }
 
-@-moz-document url-prefix() {
-  .button {
-    font-family: 'Roboto', sans-serif !important;
-  }
-}
 
 .button-parameters {
   text-align: center;
-  font-family: "Roboto", sans-serif;
   font-weight: @roboto-medium;
   text-decoration: none;
   text-transform: capitalize;
@@ -44,89 +39,81 @@
 .button {
   .button-parameters();
   font-size: 18px;
-  padding: 9px 35px !important;
-  .radius(5px);
+  padding: 9px 35px;
+  .radius(20px);
 
   &-success {
     font-weight: @roboto-medium;
-    border: none !important;
     box-shadow: none;
-    &:hover {
-      border: none !important;
-    }
+    .green();
   }
 
   &-info {
-    border: none !important;
     box-shadow: none;
-    &:hover {
-      border: none !important;
-    }
   }
 
-  //  Yea, yea shitty importants bcs we are using bowtie
-
   &-primary {
-    background-color: @color-primary !important;
-    border: none !important;
-    box-shadow: none;
+    background-color: @color-purple;
+    border: 1px solid #fff;
+    box-shadow: 0px 0px 0px 1px #c9d5e9;
+
     &:hover {
-      background-color: darken(@color-primary, 10%) !important;
-      border: none !important;
+      background-color: darken(@color-purple, 10%);
+      box-shadow: 0px 0px 0px 1px darken(@color-purple, 10%);
     }
   }
 
   &-secondary {
-    background-color: @color-secondary !important;
-    border: none !important;
+    background-color: @color-secondary;
+    border: none;
 
     &:hover {
-      background-color: darken(@color-secondary, 20%) !important;
-      border: none !important;
+      background-color: darken(@color-secondary, 20%);
+      border: none;
     }
   }
 
   &-tertiary {
-    background: @color-tertiary !important;
-    border: none !important;
+    background: @color-tertiary;
+    border: none;
     box-shadow: none;
 
     &:hover {
-      background: darken(@color-tertiary, 15%) !important;
-      border: none !important;
+      background: darken(@color-tertiary, 15%);
+      border: none;
     }
   }
 
   &-warning {
     background-color: @color-warning;
     box-shadow: none;
-    border: none !important;
+    border: none;
     &:hover {
       background-color: darken(@color-warning, 20%);
-      border: none !important;
+      border: none;
     }
   }
 
   &-danger {
-    background-color: @color-danger !important;
+    background-color: @color-danger;
     box-shadow: none;
-    border: none !important;
+    border: none;
     &:hover {
-      background-color: darken(@color-danger, 15%) !important;
-      border: none !important;
+      background-color: darken(@color-danger, 15%);
+      border: none;
     }
   }
 
   &:disabled {
-    background-color: #989898 !important;
+    background-color: #989898;
     box-shadow: none;
-    border: none !important;
-    cursor: not-allowed !important;
+    border: none;
+    cursor: not-allowed ;
     color: #e7e7e7;
     &:hover {
       color: #e7e7e7;
-      background-color: #989898 !important;
-      border: none !important;
+      background-color: #989898;
+      border: none ;
     }
   }
 
@@ -142,15 +129,15 @@
 }
 
 .button-disabled{
-  background-color: #989898 !important;
+  background-color: #989898;
   box-shadow: none;
-  border: none !important;
-  cursor: not-allowed !important;
+  border: none;
+  cursor: not-allowed;
   color: #e7e7e7;
   &:hover {
     color: #e7e7e7;
-    background-color: #989898 !important;
-    border: none !important;
+    background-color: #989898;
+    border: none;
   }
 }
 
@@ -166,7 +153,7 @@
   .radius(4px);
   max-height: 25px;
   font-size: 12px;
-  padding: 6px 10px !important;
+  padding: 6px 10px;
 
   min-width: 90px;
   display: inline-block;
@@ -175,7 +162,7 @@
 
 .close-button {
   &:before {
-    font-weight: 400 !important;
+    font-weight: 400;
   }
 
   display: inline-block;
@@ -184,8 +171,8 @@
     display: inline;
   }
 
-  border: none !important;
-  padding: 4px !important;
+  border: none;
+  padding: 4px;
   border-radius: 4px;
   color: #fff;
   font-size: 10px;
@@ -199,7 +186,7 @@
 }
 
 .button-addNew {
-  color: #2f2f2f !important;
+  color: #2f2f2f;
   background: transparent;
   border: 1px solid #cacaca;
   transition: all @form-tr-time;
@@ -211,9 +198,9 @@
 }
 
 .disabled {
-  cursor: not-allowed !important;
+  cursor: not-allowed;
   &:hover{
-    background: inherit !important;;
+    background: inherit;;
   }
 }
 
@@ -223,7 +210,7 @@
 
   .disabled() {
     &:disabled {
-      cursor: not-allowed !important;
+      cursor: not-allowed;
       color: #fff;
     }
   }
