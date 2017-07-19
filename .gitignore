@@ -1,6 +1,8 @@
 /.idea/
 /vendor/
 /app/cache
+/node_modules/
+/htdocs/web/
 
 # Assets and user uploads
 /web/bundles/
