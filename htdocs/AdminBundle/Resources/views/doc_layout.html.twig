@@ -69,7 +69,13 @@
 
     {% block trinity_admin_script_footer %}
 
+        {% block trinityAdminJavascript %}
+            <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+            <script src="/js/main.js"></script>
+        {%  endblock %}
+
         {% block necktieJavascript %}
+
         {% endblock %}
         {{ parent() }}
     {% endblock %}
