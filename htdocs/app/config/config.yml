@@ -42,7 +42,7 @@ assetic:
               - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/css/bowtie.css"
          necktie_icons:
            inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/css/necktie-icons.css"
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/css/necktie-icons.css"
          ticones_eot:
            inputs:
               - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.eot"
@@ -61,19 +61,19 @@ assetic:
            output: "fonts/tiecons/tiecons.woff"
          necktie_eot:
            inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.eot"
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/necktie.eot"
            output: "fonts/necktie.eot"
          necktie_svg:
            inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.svg"
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/necktie.svg"
            output: "fonts/necktie.svg"
          necktie_ttf:
            inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.ttf"
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/necktie.ttf"
            output: "fonts/necktie.ttf"
          necktie_woff:
            inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/administration/fonts/necktie.woff"
+              - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/necktie.woff"
            output: "fonts/necktie.woff"
 
          trinity_eot:
