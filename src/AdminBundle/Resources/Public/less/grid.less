@@ -317,6 +317,11 @@
   }
 }
 
+// To show menu, it must be whole item absolute
+table.data-grid .item-menu-button {
+  position: absolute;
+}
+
 .item-menu-button {
   label {
     position: relative;
@@ -343,21 +348,25 @@
   input[type=radio]:checked~label {
     background: #525975;
     color: #fff;
+    z-index: 102;
   }
 
   input[type=radio]:checked~.dropdown-item {
     transform: translateX(-118px);
     opacity: 1;
     visibility: visible;
+    z-index: 101;
   }
 
   input[type=checkbox]:checked~label {
     background: #525975;
     color: #fff;
+    z-index: 102;
   }
 
   input[type=checkbox]:checked~.dropdown-item {
     transform: translateX(-118px);
+    z-index: 101;
   }
 
   .ul-list {
