@@ -5,207 +5,66 @@
 
 **************************************/
 @import (once) "helper";
+@import (once) "variables";
 
-  .wrapper-grid, .box {
+.box {
+  position: relative;
+  color: @global-font-color;
+  margin-bottom: 20px;
+  border-radius: 4px;
+  border: 1px solid @color-border;
+  padding: 0;
 
-    position: relative;
-    font-family: "Roboto", sans-serif;
-    color: @global-font-color;
-
-    /*    a {
-          color: @color-tertiary;
-        }*/
-
-    .box-body {
-      padding-bottom: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
-
-      p {
-        margin-bottom: 10px;
-        margin-top: 10px;
-      }
-    }
-
-    .box-table-body {
-      overflow-x: auto;
-      .data-grid {
-        width: 100%;
-        border-left: none;
-        border-right: none;
-      }
-    }
-
-    .box-harmonica-body {
-      .show-harmonica {
-        padding: 20px !important;
-        margin-bottom: 0;
-        color: @color-font;
-      }
-    }
-
-    .box-form-body {
-      padding-bottom: 15px;
-    }
-
-    .footer {
-      border-top: 1px solid @color-border;
-      padding: 10px 20px;
-      font-size: 12px;
-    }
+  .box-title{
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 0.5em 0.5em 0.5em 20px;
+    font-size: 1.4em;
+    font-weight: 300;
   }
 
-  .wrapper-grid, .box, .tabs-wrapper {
-    h3 {
-      min-height: 40px;
-      color: @color-font;
-      margin: 0;
-      font-size: 20px;
-      padding: 20px 20px 0 20px;
-      font-weight: 400;
-    }
+  .box-header {
+    background: @color-primary;
+    color: @color-white;
+    .box-title;
   }
 
-  h3 + .box-table-body {
-    margin-top: 5px;
-  }
+  .box-body {
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 
-  .help-box {
-    width: 100%;
-
-    .label {
-      text-align: right;
-      padding-left: 15px;
-    }
-
-    .help-content {
-      display: none;
-    }
-
-    .hide {
-      display: none;
-    }
     p {
-      font-size: 12px;
-    }
-
-    input[type="checkbox"]:checked ~ .help-content {
-      display: block;
-    }
-
-    input[type="checkbox"]:checked ~ .label {
-      .show {
-        display: none;
-      }
-      .hide {
-        display: block;
-      }
+      margin-bottom: 10px;
+      margin-top: 10px;
     }
   }
 
-  .wrapper-grid {
-    padding: 20px;
+  .box-harmonica-body {
+    .show-harmonica {
+      padding: 20px;
+      margin-bottom: 0;
+      color: @color-font;
+    }
   }
 
-  .tabs-wrapper .wrapper-grid {
+  .footer {
+    border-top: 1px solid @color-border;
     padding: 10px 20px;
+    font-size: 12px;
   }
+}
 
-  .box {
-    padding: 0;
-  }
 
-  .wrapper-grid > div.padding-20 {
-    width: calc(~"100% - "@sidebar-width);
-    position: fixed;
-    top: @navbar-height;
-    left: @sidebar-width;
-    z-index: 99999;
-
-    background: #f2f6fc;
-    display: none;
-
-    form {
-      margin-top: 0 !important;
-    }
-  }
-
+@media screen and(max-width: 1366px) {
   .grid-search {
-    display: none !important;
-    margin: 30px 30px 10px 30px;
-    text-align: center;
-    width: 100%;
-    max-width: 600px;
-
-    .title {
-      color: @header-font-color;
-      font-size: 20px;
-      margin-left: 10px;
-      font-weight: 300;
-    }
-
-    input[type="text"] {
-      border: 1px solid #ccc;
-      height: @grid-search-height;
-      border-radius: 5px 0 0 5px;
-      padding: 0 0 0 10px;
-      //width: 100%;
-      width: ~"calc(100% - 65px)"; //- width of button for search and margin of wrapper
-      outline: none;
-      font-size: @search-font-size;
-      float: left;
-      .group-clearfix();
-      transition: .3s;
-      color: @color-primary;
-
-      &:focus {
-        border: 1px solid @color-primary;
-      }
-
-      &:focus + button {
-        background: @color-primary;
-        color: #fff;
-        border: 1px solid @color-primary;
-      }
-    }
-    button[type="submit"] {
-      background: #ccc;
-      color: #fff;
-      border-radius: 0 5px 5px 0;
-      margin-left: -2px;
-      height: @grid-search-height;
-      border: none; //border: 2px solid #ccc;
-      outline: none;
-      text-align: center;
-      font-size: 14px;
-      float: left;
-      width: 65px;
-
-      transition: .3s ease-in;
-
-      &:hover {
-        background: @color-primary-hover;
-        cursor: pointer;
-        border: none;
-      }
-    }
-
+    max-width: 450px;
   }
+}
 
-  .box ~ #javascript-inserted-form .box {
-    box-shadow: none;
-  }
-
-  @media screen and(max-width: 1366px) {
-    .grid-search {
-      max-width: 450px;
-    }
-  }
 
 @media screen and(max-width: 840px) {
   .grid-search input[type="text"] {
-      width: ~"calc(100% - 125px)";
-    }
+    width: ~"calc(100% - 125px)";
   }
-
-
+}
