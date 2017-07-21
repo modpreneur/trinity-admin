@@ -138,19 +138,6 @@
     }
   }
 
-  &:disabled {
-    background-color: #989898;
-    box-shadow: none;
-    border: none;
-    cursor: not-allowed ;
-    color: #e7e7e7;
-    &:hover {
-      color: #e7e7e7;
-      background-color: #989898;
-      border: none ;
-    }
-  }
-
   &-red {
     color: #fff;
     background-color: #b35445;
@@ -162,96 +149,11 @@
   }
 }
 
-.button-disabled{
-  background-color: #989898;
-  box-shadow: none;
-  border: none;
-  cursor: not-allowed;
-  color: #e7e7e7;
-  &:hover {
-    color: #e7e7e7;
-    background-color: #989898;
-    border: none;
-  }
-}
-
-.button-medium {
-  .button-parameters();
-  .radius(4px);
-  font-size: 14px;
-  padding: 8px 14px;
-}
-
-.button-small, input[type="button"].button-small {
-  .button-parameters();
-  .radius(4px);
-  max-height: 25px;
-  font-size: 12px;
-  padding: 6px 10px;
-
-  min-width: 90px;
-  display: inline-block;
-  line-height: 1;
-}
-
-.close-button {
-  &:before {
-    font-weight: 400;
-  }
-
-  display: inline-block;
-
-  i {
-    display: inline;
-  }
-
-  border: none;
-  padding: 4px;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 10px;
-  height: 20px;
-  width: 20px;
-  background: -webkit-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: -moz-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: -o-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: -ms-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: linear-gradient(0deg, #cbd2df 0%, #c4cad3 100%);
-}
-
-.button-addNew {
-  color: #2f2f2f;
-  background: transparent;
-  border: 1px solid #cacaca;
-  transition: all @form-tr-time;
-  text-shadow: none;
-  &:hover {
-    background-color: #dbdbdb;
-    border: 1px solid #2f2f2f;
-  }
-}
-
-.disabled {
-  cursor: not-allowed;
-  &:hover{
-    background: inherit;;
-  }
-}
-
-
 //  Buttons with icons and animations for form actions
 .trinity-form {
 
-  .disabled() {
-    &:disabled {
-      cursor: not-allowed;
-      color: #fff;
-    }
-  }
-
   &-loading {
     .button();
-    .disabled();
 
     &:after {
       .icon("\e6a9");

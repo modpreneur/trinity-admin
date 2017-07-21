@@ -6,41 +6,40 @@
 
 /* sidebar top */
 
-#navbar-project{
+#navbar-left {
+  width: @sidebar-width;
+  background: @color-primary;
 
-  #project-select{
-    color: #fff;
-    margin: 0.7em;
-    span{
-      display: block;
-      font-weight: 300;
-      margin-bottom: 2px;
-    }
-    .title{
-      font-size: 13px;
+  #navbar-project{
+
+    #project-select{
+      color: #fff;
+      margin: 0.7em;
+      span{
+        display: block;
+        font-weight: 300;
+        margin-bottom: 2px;
+      }
+      .title{
+        font-size: 13px;
+      }
     }
   }
-}
 
-/** fix */
-.container-with-sidebar {
-  padding-left: @sidebar-width !important;
+  #main-menu-button {
+    background: @color-primary;
+    border: none;
+    padding: 0;
+  }
 }
 
 // left sidebar menu items
 #sidebar {
   z-index: 99;
-  font-family: Roboto, sans-serif;
+  font-family: @font;
   width: @sidebar-width;
-  height: 100%;
-  position: fixed;
   padding-bottom: 0;
   background: @sidebar-background;
-
-  /** window resize fix **/
-  top: 0;
-  padding-top: @navbar-height;
-  /** end **/
 
   label{
     width: 100%;
@@ -48,8 +47,6 @@
 
   ul{
     &.sidebar {
-      /** window resize fix **/
-      height: 100%;
       overflow-y: auto;
       margin-top: 10%;
       padding-left: 0;

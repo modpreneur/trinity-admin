@@ -8,6 +8,9 @@
 **************************************/
 @import (once) "helper";
 
+   //Used for vertical centering
+  @navbar-button-height: 44px;
+
   .user-profile-info {
     transform: translateY(-1000px);
     transition: 1s;
@@ -60,6 +63,10 @@
         }
       }
     }
+  }
+
+  div#navbar-actions {
+    margin: (@navbar-height - @navbar-button-height) / 2 0;
   }
 
   .notifications {

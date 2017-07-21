@@ -29,7 +29,6 @@
     min-height: @navbar-height;
     width: 100%;
     color: @navbar-font-color;
-    padding: 0 !important;
     overflow: hidden;
     font-weight: @roboto-light;
     font-family: "Roboto", sans-serif;
@@ -72,9 +71,7 @@
 
     #navbar-project{
       float: left;
-      width:  @sidebar-width - @navbar-height;
       height: @navbar-height;
-      background: @color-primary;
     }
 
     .version {
@@ -187,7 +184,7 @@
     }
     input {
       background: transparent;
-      font-family: Roboto, sans-serif;
+      font-family: @font;
       font-size: 14px;
       border: none;
       font-weight: 400;

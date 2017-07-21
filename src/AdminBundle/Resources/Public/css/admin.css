@@ -79,7 +79,6 @@
   min-height: 60px;
   width: 100%;
   color: #a0a2a5;
-  padding: 0 !important;
   overflow: hidden;
   font-weight: 300;
   font-family: "Roboto", sans-serif;
@@ -122,9 +121,7 @@
 }
 .navbar #navbar-project {
   float: left;
-  width: 180px;
   height: 60px;
-  background: #515974;
 }
 .navbar .version {
   position: absolute;
@@ -247,7 +244,7 @@
 }
 .navbar-search input {
   background: transparent;
-  font-family: Roboto, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   font-size: 14px;
   border: none;
   font-weight: 400;
@@ -402,6 +399,9 @@
   color: #000;
   left: 0;
   top: 0;
+}
+div#navbar-actions {
+  margin: 8px 0;
 }
 .notifications {
   transform: translateY(-1000px);
@@ -720,7 +720,7 @@
   clear: both;
 }
 .head-content {
-  font-family: Roboto, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   color: #303030;
   position: relative;
   background: #fff;
@@ -853,41 +853,38 @@
   }
 }
 /* sidebar top */
-#navbar-project #project-select {
+#navbar-left {
+  width: 240px;
+  background: #515974;
+}
+#navbar-left #navbar-project #project-select {
   color: #fff;
   margin: 0.7em;
 }
-#navbar-project #project-select span {
+#navbar-left #navbar-project #project-select span {
   display: block;
   font-weight: 300;
   margin-bottom: 2px;
 }
-#navbar-project #project-select .title {
+#navbar-left #navbar-project #project-select .title {
   font-size: 13px;
 }
-/** fix */
-.container-with-sidebar {
-  padding-left: 240px !important;
+#navbar-left #main-menu-button {
+  background: #515974;
+  border: none;
+  padding: 0;
 }
 #sidebar {
   z-index: 99;
-  font-family: Roboto, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   width: 240px;
-  height: 100%;
-  position: fixed;
   padding-bottom: 0;
   background: #fff;
-  /** window resize fix **/
-  top: 0;
-  padding-top: 60px;
-  /** end **/
 }
 #sidebar label {
   width: 100%;
 }
 #sidebar ul.sidebar {
-  /** window resize fix **/
-  height: 100%;
   overflow-y: auto;
   margin-top: 10%;
   padding-left: 0;
@@ -1511,6 +1508,7 @@ g {
   border: none;
   box-shadow: none;
   border-top: 1px solid #dbe2ed;
+  background: #fff;
 }
 .tabs-wrapper > input[name=tab]:checked + label {
   border-top: 0 !important;
@@ -1546,7 +1544,7 @@ g {
   box-shadow: none;
 }
 .trinity-widget {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   height: 400px;
   margin: 0 5px 10px;
   background: #fff;
@@ -2374,7 +2372,7 @@ g {
   font-weight: 300;
   color: #303030;
   transition: .4s;
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 .edit-form input:not([type="submit"]):not([type="button"]):focus,
 .new-form input:not([type="submit"]):not([type="button"]):focus,
@@ -2927,7 +2925,7 @@ h2.warning {
   padding: 5px 10px 10px 10px;
 }
 .collection-widget .add-collection-item i:after {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   margin-left: 5px;
   content: 'Add item';
   font-size: 16px;
@@ -3002,7 +3000,7 @@ div[class^="control-"] i {
   padding: 6px;
   z-index: 2;
   left: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 .help-on-hover:hover .help-block {
   display: block;
@@ -3168,9 +3166,6 @@ div[class^="control-"] i {
 .navigation-box .reload:hover {
   background: #323647;
 }
-.container-with-sidebar .row table.data-grid {
-  padding-top: 0;
-}
 .query-builder .rules-group-container {
   border-color: #2d323e !important;
   background: #f2f6fc !important;
@@ -3293,7 +3288,7 @@ div[class^="control-"] i {
   border: none;
   background: transparent;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Noto Sans", sans-serif;
   margin: 0;
 }
 .data-grid thead {
@@ -3810,18 +3805,6 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   background-color: #8c2326;
   border: none;
 }
-.button:disabled {
-  background-color: #989898;
-  box-shadow: none;
-  border: none;
-  cursor: not-allowed;
-  color: #e7e7e7;
-}
-.button:disabled:hover {
-  color: #e7e7e7;
-  background-color: #989898;
-  border: none ;
-}
 .button-red {
   color: #fff;
   background-color: #b35445;
@@ -3830,105 +3813,6 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 .button-red:hover {
   background-color: #8a4134;
   border: 1px solid #3d1d17;
-}
-.button-disabled {
-  background-color: #989898;
-  box-shadow: none;
-  border: none;
-  cursor: not-allowed;
-  color: #e7e7e7;
-}
-.button-disabled:hover {
-  color: #e7e7e7;
-  background-color: #989898;
-  border: none;
-}
-.button-medium {
-  text-align: center;
-  font-weight: 500;
-  text-decoration: none;
-  text-transform: capitalize;
-  line-height: 1;
-  border: 1px #ededed solid;
-  margin: 5px;
-  background: #afafaf;
-  color: #fff;
-  cursor: pointer;
-  transition: .3s;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  font-size: 14px;
-  padding: 8px 14px;
-}
-.button-medium:hover {
-  color: #fff;
-  background: #6e7a96;
-}
-.button-small,
-input[type="button"].button-small {
-  text-align: center;
-  font-weight: 500;
-  text-decoration: none;
-  text-transform: capitalize;
-  border: 1px #ededed solid;
-  margin: 5px;
-  background: #afafaf;
-  color: #fff;
-  cursor: pointer;
-  transition: .3s;
-  -moz-border-radius: 4px;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  max-height: 25px;
-  font-size: 12px;
-  padding: 6px 10px;
-  min-width: 90px;
-  display: inline-block;
-  line-height: 1;
-}
-.button-small:hover,
-input[type="button"].button-small:hover {
-  color: #fff;
-  background: #6e7a96;
-}
-.close-button {
-  display: inline-block;
-  border: none;
-  padding: 4px;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 10px;
-  height: 20px;
-  width: 20px;
-  background: -webkit-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: -moz-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: -o-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: -ms-linear-gradient(90deg, #cbd2df 0%, #c4cad3 100%);
-  background: linear-gradient(0deg, #cbd2df 0%, #c4cad3 100%);
-}
-.close-button:before {
-  font-weight: 400;
-}
-.close-button i {
-  display: inline;
-}
-.button-addNew {
-  color: #2f2f2f;
-  background: transparent;
-  border: 1px solid #cacaca;
-  transition: all 0.3s;
-  text-shadow: none;
-}
-.button-addNew:hover {
-  background-color: #dbdbdb;
-  border: 1px solid #2f2f2f;
-}
-.disabled {
-  cursor: not-allowed;
-}
-.disabled:hover {
-  background: inherit;
 }
 .trinity-form-loading {
   text-align: center;
@@ -4038,18 +3922,6 @@ input[type="button"].button-small:hover {
   background-color: #8c2326;
   border: none;
 }
-.trinity-form-loading:disabled {
-  background-color: #989898;
-  box-shadow: none;
-  border: none;
-  cursor: not-allowed;
-  color: #e7e7e7;
-}
-.trinity-form-loading:disabled:hover {
-  color: #e7e7e7;
-  background-color: #989898;
-  border: none ;
-}
 .trinity-form-loading-red {
   color: #fff;
   background-color: #b35445;
@@ -4058,10 +3930,6 @@ input[type="button"].button-small:hover {
 .trinity-form-loading-red:hover {
   background-color: #8a4134;
   border: 1px solid #3d1d17;
-}
-.trinity-form-loading:disabled {
-  cursor: not-allowed;
-  color: #fff;
 }
 .trinity-form-loading:after {
   content: "\e6a9";
@@ -4627,12 +4495,16 @@ input[type=color] {
   opacity: 1;
   transition: opacity 0.5s ease-in;
 }
+@font-face {
+  font-family: "Noto Sans";
+  src: url('../fonts/NotoSans/NotoSans-Regular.ttf') format("truetype");
+}
 html {
   width: 100%;
   height: 100%;
 }
 body {
-  font-family: Roboto, sans-serif;
+  font-family: "Noto Sans", sans-serif;
   width: 100%;
   height: 100%;
   background: #e4ebf7 !important;

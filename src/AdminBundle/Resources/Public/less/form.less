@@ -281,8 +281,7 @@
     font-weight: @roboto-light;
     color: @color-font;
     transition: .4s;
-    font-family: "Roboto", sans-serif;
-    //cursor: pointer;
+    font-family: @font;
 
     &:focus {
       border: 1px solid @color-primary;
@@ -820,7 +819,7 @@ h2.warning {
       font-size: 18px;
       padding: 5px 10px 10px 10px;
       &:after {
-        font-family: 'Roboto', sans-serif;
+        font-family: @font;
         margin-left: 5px;
         content: 'Add item';
         font-size: 16px;
@@ -910,7 +909,7 @@ div[class^="control-"] {
   padding: 6px;
   z-index: 2;
   left: 20px;
-  font-family: 'Roboto', sans-serif;
+  font-family: @font;
 }
 
 .help-on-hover:hover .help-block {
