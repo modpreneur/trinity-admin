@@ -45,7 +45,26 @@
 /**************************************
   Grid parameters
 **************************************/
+table.grid {
+  border-radius: 5px!important;
+}
 
+.grid thead {
+  background-color: #525975;
+  padding: 0;
+  color: white;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+}
+.grid .button-get-details {
+  background: white;
+  color: #525975;
+  border-color: #525975;
+}
+.grid .button-get-details:hover {
+  background: #525975;
+  color: white;
+}
 
 /**************************************
   Roboto font-weight
