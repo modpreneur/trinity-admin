@@ -1514,9 +1514,6 @@ g {
 .tabs-wrapper .tab-body {
   padding: 20px;
 }
-.tabs-wrapper form {
-  background: red;
-}
 .tabs-wrapper form label {
   width: 100%;
   border: none;
@@ -1554,6 +1551,7 @@ g {
   border-radius: 4px;
   border: 1px solid #dbe2ed;
   padding: 0;
+  min-height: 20px;
   /*  Icons for resize or close  */
 }
 .trinity-widget .data-grid thead tr {
@@ -1564,6 +1562,11 @@ g {
 }
 .trinity-widget:last-child {
   margin-right: 0 !important;
+}
+.trinity-widget.box-small {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .trinity-widget .box-title {
   border-top-left-radius: 4px;
@@ -1703,7 +1706,13 @@ g {
   border-radius: 4px;
   border: 1px solid #dbe2ed;
   padding: 0;
+  min-height: 20px;
   margin-bottom: 20px;
+}
+.box-widget.box-small {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .box-widget .box-title {
   border-top-left-radius: 4px;
@@ -2075,6 +2084,144 @@ g {
     - user js control messages for edit, new
 
 **************************************/
+.form label {
+  width: 100%;
+  color: #515974;
+  text-align: left;
+  font-weight: 500;
+  padding-bottom: 5px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  cursor: pointer;
+}
+.form label a {
+  color: #515974;
+  font-weight: 300;
+  text-decoration: underline;
+}
+.form input,
+.form select,
+.form textarea {
+  width: 100%;
+  border: 1px solid #dbe2ed;
+  padding: 5px 10px;
+  color: #515974;
+  border-radius: 4px;
+  background: transparent;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+  font-weight: 300;
+}
+.form input:hover,
+.form select:hover,
+.form textarea:hover {
+  border: 1px solid #c0ccdf;
+}
+.form .form-center {
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.form .input-with-action {
+  position: relative;
+}
+.form .input-with-action .action {
+  position: absolute;
+  display: block;
+  right: 10px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  background: #dbe2ed;
+  color: #515974;
+  font-weight: 300;
+  font-size: 12px;
+  top: 5px;
+}
+.form .input-with-action .action:hover {
+  background: #c0ccdf;
+}
+.form .select {
+  position: relative;
+}
+.form .select:after {
+  position: absolute;
+  content: "\e935";
+  font-family: trinity !important;
+  speak: none;
+  color: #515974;
+  font-size: 20px;
+  right: 8px;
+}
+.form .checkbox {
+  margin-bottom: 5px;
+}
+.form .checkbox label {
+  width: auto;
+  font-weight: 300;
+}
+.form .checkbox input {
+  display: none;
+}
+.form .checkbox label:before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: #dbe2ed;
+  margin-right: 5px;
+  border-radius: 2px;
+}
+.form .checkbox input:checked ~ label:before {
+  background: #515974;
+}
+.form .checkbox input:checked ~ label:after {
+  content: "\e933";
+  color: #fff;
+  position: absolute;
+  left: 1px;
+  font-family: trinity !important;
+  speak: none;
+  line-height: 1;
+}
+.form .form-caption {
+  font-weight: 600;
+  color: #515974;
+  margin-bottom: 10px;
+}
+.form .form-row {
+  padding-bottom: 20px;
+}
+.form .left {
+  margin-right: 10px;
+}
+.form .right {
+  margin-left: 10px;
+}
+.add-new-box {
+  border: 1px solid #515974;
+  border-radius: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  color: #515974;
+  max-width: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+.add-new-box:hover {
+  background: #515974;
+  color: #fff;
+}
 .edit-form,
 .new-form,
 .modal-dialog form {
@@ -2805,7 +2952,7 @@ div[class^="control-"] i {
   left: -20px;
   top: 0;
   /*      width: 30px;
-      height: 30px;*/
+          height: 30px;*/
 }
 .control-ok {
   color: #5da423;
@@ -3037,6 +3184,12 @@ div[class^="control-"] i {
   border-radius: 4px;
   border: 1px solid #dbe2ed;
   padding: 0;
+  min-height: 20px;
+}
+.modal-dialog > div.box-small {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .modal-dialog > div .box-title {
   border-top-left-radius: 4px;
@@ -4131,6 +4284,12 @@ input[type="button"].button-small:hover {
   border-radius: 4px;
   border: 1px solid #dbe2ed;
   padding: 0;
+  min-height: 20px;
+}
+.box.box-small {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .box .box-title {
   border-top-left-radius: 4px;

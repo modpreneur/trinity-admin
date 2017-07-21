@@ -14,455 +14,607 @@
 @medium-width: 768px;
 @medium-height: 35px;
 
+.form {
 
-  .edit-form, .new-form, .modal-dialog form {
+  label {
     width: 100%;
+    color: @color-primary;
+    text-align: left;
+    font-weight: 500;
+    padding-bottom: 5px;
+    .no-select();
+    position: relative;
+    cursor: pointer;
 
-    div[class='row']:last-of-type {
-      border-bottom: none;
+    a {
+      color: @color-primary;
+      font-weight: 300;
+      text-decoration: underline;
     }
+  }
 
-    .row {
-      margin-left: auto;
-      margin-right: auto;
-      border-bottom: 1px solid #ededed;
-      padding-bottom: 15px;
-      padding-top: 15px;
-      width: 100%;
-      margin-bottom: 0;
-      transition: .3s;
+  input, select, textarea {
+    width: 100%;
+    border: 1px solid @color-border;
+    padding: 5px 10px;
+    color: @color-primary;
+    border-radius: 4px;
+    background: transparent;
+    outline: none !important;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none !important;
+    font-weight: 300;
 
-      &:hover {
-        background: @global-row-hover;
-      }
-
-      // Rows that are added manually
-      &.row-extra {
-        border-bottom: 1px solid #ededed;
-      }
+    &:hover{
+      border: 1px solid darken(@color-border, 8%);
     }
+  }
 
-    .advanced-settings .row {
+  .form-center{
+    margin-left: auto;
+    margin-right: auto;
+    display: block
+  }
 
-      &:first-of-type {
-        margin-top: 0;
-      }
-    }
-
-    .form-left {
-      text-align: right;
-
-      label {
-        text-align: right !important;
-      }
-    }
-
-    h3 {
-      text-align: center;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-    }
-
-    .form-right {
-
-      .checkbox + .description {
-        float: left;
-        margin-top: -25px;
-        margin-left: 25px;
-      }
-
-      .description {
-        font-size: 12px;
-        color: #727272;
-      }
-    }
-
-    label {
-      color: @color-font;
-      padding: 0 20px 0 0 !important;
-      line-height: 35px !important;
-      font-weight: 300 !important;
-
-      &.required:after {
-        content: "*";
-        color: @color-primary;
-        font-weight: 600;
-      }
-    }
-
-    span.text {
-      line-height: 35px;
-      padding: 0;
-    }
-
-    input.display-none~label {
-      display: none !important;
-    }
-
-    div#row_group_user_groups label.bold {
-      cursor: default;
-    }
-
-    .form-content-center {
-      margin-left: auto;
-      margin-right: auto;
-      display: block !important;
-      position: static !important;
-      float: none !important;
-    }
-
-    input:not([type="submit"]):not([type="button"]), select, textarea {
-      width: 100%;
-      border-radius: 5px;
-      height: 35px;
-      line-height: 20px;
-      font-size: 14px;
-      padding-left: 10px;
-      padding-right: 10px;
-      outline-width: 0;
-      border: 1px solid @color-border;
-      background: #fff;
-      -webkit-appearance: none;
-      font-weight: @roboto-light;
-      color: @color-font;
-      transition: .4s;
-      font-family: "Roboto", sans-serif;
-      //cursor: pointer;
-
-      &:focus {
-        border: 1px solid @color-primary;
-        background: #fff;
-      }
-      &:hover {
-        border: 1px solid @color-primary;
-      }
-    }
-
-    .just-filter {
-      background: @global-row-hover;
-      transition: .3s;
-      &:hover {
-        background: #fff;
-      }
-      input:not([type="submit"]):not([type="button"]), select, textarea {
-        background: #d4d4d4;
-        //border: 1px solid @color-border;
-        &:focus {
-          //border: 1px solid @color-border;
-          background: #e7e7e7;
-        }
-      }
-
-    }
-
-    @media screen and(max-width: @medium-width) {
-      .form-left {
-        text-align: left;
-      }
-    }
-
-    @media screen and (max-width: 767px) {
-      label {
-        text-align: left;
-      }
-    }
-
-    input[type="checkbox"] {;
-      display: none;
-    }
-
-
-    .checkbox(@display: block) {
-
-      label {
-        display: @display;
-        margin-right: 15px;
-        position: relative;
-        cursor: pointer;
-        padding: 0;
-        text-align: left;
-        overflow: hidden;
-        //max-width: 20px; //truncate text in checkbox labels
-        white-space: nowrap;
-
-        &:before {
-          content: '';
-          display: inline-block;
-          width: 18px;
-          height: 18px;
-          margin-right: 10px;
-          font-size: 16px;
-          border: 1px solid #b9b9b9;
-          vertical-align: middle;
-
-          transition: .3s;
-        }
-        &:hover:before {
-          border: 1px solid @color-primary;
-        }
-      }
-
-      input[type="checkbox"]:checked ~ label:after {
-        position: absolute;
-        height: 100%;
-        left: 3px;
-        font-size: 15px;
-        //line-height: 1;
-        font-family: "trinity";
-        color: #fff;
-        vertical-align: middle;
-
-        content: '\e933';
-        display: inline-block;
-        -ms-transform: translateY(1px);
-      }
-
-      input[type="checkbox"]:checked ~ label:before {
-        border: 1px solid @color-primary;
-        background: @color-primary;
-      }
-    }
-
-    .widget-expanded {
-      .checkbox {
-        label {
-          display: block;
-          max-width: 100%;
-        }
-      }
-
-      .checkbox + label {
-        display: none;
-      }
-    }
-
-    .checkbox {
-      .checkbox(block);
-    }
-
-    .checkbox-inline {
-      .checkbox(inline-block);
-      label {
-        float: left;
-        position: relative;
-      }
-    }
-
-    textarea {
-      height: 100px;
-      padding-top: 10px;
-      line-height: 20px;
-      padding-bottom: 10px;
-      resize: vertical;
-    }
-
-    .tiecons-postfix {
+  .input-with-action{
+    position: relative;
+    .action{
       position: absolute;
+      display: block;
       right: 10px;
-      top: 7px;
-    }
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: @color-border;
+      color: @color-primary;
+      font-weight: 300;
+      font-size: 12px;
+      top: 5px;
 
-    input[type="submit"], button[type="submit"], input[type="button"] {
-      display: block;
-      float: none !important;
-      margin: 15px auto 0;
-      text-transform: uppercase;
-      font-size: 18px;
-    }
-
-    input[type="submit"], button[type="submit"] {
-      font-weight: 500 !important;
-    }
-
-    input.error {
-      border: solid 1px red !important;
-    }
-
-    /* Just for webkit browsers */
-    input[type="date"]::-webkit-inner-spin-button,
-    input[type="date"]::-webkit-outer-spin-button {
-      height: 100%;
-    }
-
-    input[type="date"]::-webkit-calendar-picker-indicator {
-      position: relative;
-      display: block;
-      width: 14px;
-      height: 30px;
-      right: -6px;
-      color: transparent;
-
-      &:after {
-        content: "\e654";
-        font-family: "tiecons";
-        font-size: 12px;
-        color: @tabs-color-label;
-        position: absolute;
-        right: 5px;
-        top: 7px;
-        pointer-events: none;
+      &:hover{
+        background: darken(@color-border, 8%);
       }
     }
   }
 
-  // React Widgets (date time picker and such)
-  .rw-widget {
-    border: none;
-
-    .rw-btn:hover {
+  .select {
+    position: relative;
+    &:after {
+      position: absolute;
+      content: "\e935";
+      font-family: trinity !important;
+      speak: none;
       color: @color-primary;
+      font-size: 20px;
+      right: 8px;
+    }
+  }
+
+  .checkbox {
+    margin-bottom: 5px;
+    label {
+      width: auto;
+      font-weight: 300;
     }
 
-    &.rw-state-focus, &.rw-state-focus:hover {
-      -webkit-box-shadow: none !important;
-      box-shadow: none !important;
-      outline: 0;
+    input {
+      display: none;
     }
 
-    &.rw-datetimepicker {
-      padding: 0;
-      border: 1px solid @color-border !important;
+    label:before {
+      content: "";
+      display: inline-block;
+      width: 15px;
+      height: 15px;
+      background: @color-border;
+      margin-right: 5px;
+      border-radius: 2px;
+    }
 
-      &:active, &:active.rw-state-focus {
-        -webkit-box-shadow: none;
-        box-shadow: none;
+    input:checked ~ label:before {
+      background: @color-primary;
+    }
+
+    input:checked ~ label:after {
+      content: "\e933";
+      color: #fff;
+      position: absolute;
+      left: 1px;
+      font-family: trinity !important;
+      speak: none;
+      line-height: 1;
+    }
+  }
+
+  .form-caption {
+    font-weight: 600;
+    color: @color-primary;
+    margin-bottom: 10px;
+  }
+
+  .form-row {
+    padding-bottom: 20px;
+  }
+
+  .left {
+    margin-right: 10px;
+  }
+
+  .right {
+    margin-left: 10px;
+  }
+}
+
+
+// add-new-form?
+.add-new-box{
+  border:  1px solid @color-primary;
+  border-radius: 20px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px 10px;
+  color: @color-primary;
+  max-width: 100px;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.5s ease;
+
+  &:hover{
+    background: @color-primary;
+    color: @color-white;
+  }
+}
+
+
+.edit-form, .new-form, .modal-dialog form {
+  width: 100%;
+
+  div[class='row']:last-of-type {
+    border-bottom: none;
+  }
+
+  .row {
+    margin-left: auto;
+    margin-right: auto;
+    border-bottom: 1px solid #ededed;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    width: 100%;
+    margin-bottom: 0;
+    transition: .3s;
+
+    &:hover {
+      background: @global-row-hover;
+    }
+
+    // Rows that are added manually
+    &.row-extra {
+      border-bottom: 1px solid #ededed;
+    }
+  }
+
+  .advanced-settings .row {
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  .form-left {
+    text-align: right;
+
+    label {
+      text-align: right !important;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  .form-right {
+
+    .checkbox + .description {
+      float: left;
+      margin-top: -25px;
+      margin-left: 25px;
+    }
+
+    .description {
+      font-size: 12px;
+      color: #727272;
+    }
+  }
+
+  label {
+    color: @color-font;
+    padding: 0 20px 0 0 !important;
+    line-height: 35px !important;
+    font-weight: 300 !important;
+
+    &.required:after {
+      content: "*";
+      color: @color-primary;
+      font-weight: 600;
+    }
+  }
+
+  span.text {
+    line-height: 35px;
+    padding: 0;
+  }
+
+  input.display-none ~ label {
+    display: none !important;
+  }
+
+  div#row_group_user_groups label.bold {
+    cursor: default;
+  }
+
+  .form-content-center {
+    margin-left: auto;
+    margin-right: auto;
+    display: block !important;
+    position: static !important;
+    float: none !important;
+  }
+
+  input:not([type="submit"]):not([type="button"]), select, textarea {
+    width: 100%;
+    border-radius: 5px;
+    height: 35px;
+    line-height: 20px;
+    font-size: 14px;
+    padding-left: 10px;
+    padding-right: 10px;
+    outline-width: 0;
+    border: 1px solid @color-border;
+    background: #fff;
+    -webkit-appearance: none;
+    font-weight: @roboto-light;
+    color: @color-font;
+    transition: .4s;
+    font-family: "Roboto", sans-serif;
+    //cursor: pointer;
+
+    &:focus {
+      border: 1px solid @color-primary;
+      background: #fff;
+    }
+    &:hover {
+      border: 1px solid @color-primary;
+    }
+  }
+
+  .just-filter {
+    background: @global-row-hover;
+    transition: .3s;
+    &:hover {
+      background: #fff;
+    }
+    input:not([type="submit"]):not([type="button"]), select, textarea {
+      background: #d4d4d4;
+      //border: 1px solid @color-border;
+      &:focus {
+        //border: 1px solid @color-border;
+        background: #e7e7e7;
       }
+    }
 
-      &:hover, &:focus {
-        border: 1px solid @color-primary !important;
-        background: #fff;
-        transition: .4s;
-        box-shadow: none;
+  }
 
-        span.rw-select {
-          background-color: unset !important;
+  @media screen and(max-width: @medium-width) {
+    .form-left {
+      text-align: left;
+    }
+  }
 
-          button {
-            background-color: transparent !important;
-          }
+  @media screen and (max-width: 767px) {
+    label {
+      text-align: left;
+    }
+  }
+
+  input[type="checkbox"] {;
+    display: none;
+  }
+
+  .checkbox(@display: block) {
+
+    label {
+      display: @display;
+      margin-right: 15px;
+      position: relative;
+      cursor: pointer;
+      padding: 0;
+      text-align: left;
+      overflow: hidden;
+      //max-width: 20px; //truncate text in checkbox labels
+      white-space: nowrap;
+
+      &:before {
+        content: '';
+        display: inline-block;
+        width: 18px;
+        height: 18px;
+        margin-right: 10px;
+        font-size: 16px;
+        border: 1px solid #b9b9b9;
+        vertical-align: middle;
+
+        transition: .3s;
+      }
+      &:hover:before {
+        border: 1px solid @color-primary;
+      }
+    }
+
+    input[type="checkbox"]:checked ~ label:after {
+      position: absolute;
+      height: 100%;
+      left: 3px;
+      font-size: 15px;
+      //line-height: 1;
+      font-family: "trinity";
+      color: #fff;
+      vertical-align: middle;
+
+      content: '\e933';
+      display: inline-block;
+      -ms-transform: translateY(1px);
+    }
+
+    input[type="checkbox"]:checked ~ label:before {
+      border: 1px solid @color-primary;
+      background: @color-primary;
+    }
+  }
+
+  .widget-expanded {
+    .checkbox {
+      label {
+        display: block;
+        max-width: 100%;
+      }
+    }
+
+    .checkbox + label {
+      display: none;
+    }
+  }
+
+  .checkbox {
+    .checkbox(block);
+  }
+
+  .checkbox-inline {
+    .checkbox(inline-block);
+    label {
+      float: left;
+      position: relative;
+    }
+  }
+
+  textarea {
+    height: 100px;
+    padding-top: 10px;
+    line-height: 20px;
+    padding-bottom: 10px;
+    resize: vertical;
+  }
+
+  .tiecons-postfix {
+    position: absolute;
+    right: 10px;
+    top: 7px;
+  }
+
+  input[type="submit"], button[type="submit"], input[type="button"] {
+    display: block;
+    float: none !important;
+    margin: 15px auto 0;
+    text-transform: uppercase;
+    font-size: 18px;
+  }
+
+  input[type="submit"], button[type="submit"] {
+    font-weight: 500 !important;
+  }
+
+  input.error {
+    border: solid 1px red !important;
+  }
+
+  /* Just for webkit browsers */
+  input[type="date"]::-webkit-inner-spin-button,
+  input[type="date"]::-webkit-outer-spin-button {
+    height: 100%;
+  }
+
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    position: relative;
+    display: block;
+    width: 14px;
+    height: 30px;
+    right: -6px;
+    color: transparent;
+
+    &:after {
+      content: "\e654";
+      font-family: "tiecons";
+      font-size: 12px;
+      color: @tabs-color-label;
+      position: absolute;
+      right: 5px;
+      top: 7px;
+      pointer-events: none;
+    }
+  }
+}
+
+// React Widgets (date time picker and such)
+.rw-widget {
+  border: none;
+
+  .rw-btn:hover {
+    color: @color-primary;
+  }
+
+  &.rw-state-focus, &.rw-state-focus:hover {
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    outline: 0;
+  }
+
+  &.rw-datetimepicker {
+    padding: 0;
+    border: 1px solid @color-border !important;
+
+    &:active, &:active.rw-state-focus {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    &:hover, &:focus {
+      border: 1px solid @color-primary !important;
+      background: #fff;
+      transition: .4s;
+      box-shadow: none;
+
+      span.rw-select {
+        background-color: unset !important;
+
+        button {
+          background-color: transparent !important;
         }
       }
+    }
 
-      &:not(.rw-has-both) {
-        &:hover, &:focus {
-          span.rw-select button.rw-btn span:before {
+    &:not(.rw-has-both) {
+      &:hover, &:focus {
+        span.rw-select button.rw-btn span:before {
+          color: @color-primary;
+        }
+      }
+    }
+
+    input.rw-input {
+      border-radius: 5px;
+      border: 0 !important;
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    span.rw-select {
+      border: none;
+
+      button.rw-btn {
+        width: 1.8em;
+
+        &:hover {
+          span:before {
             color: @color-primary;
           }
         }
-      }
 
-      input.rw-input {
-        border-radius: 5px;
-        border: 0 !important;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-      }
+        span:before {
+          font-family: tiecons;
+          color: @tabs-color-label;
+        }
 
-      span.rw-select {
-        border: none;
-
-        button.rw-btn {
-          width: 1.8em;
-
-          &:hover {
-            span:before {
-              color: @color-primary;
-            }
-          }
-
+        &.rw-btn-calendar {
           span:before {
-            font-family: tiecons;
-            color: @tabs-color-label;
+            content: "\e63c";
           }
+        }
 
-          &.rw-btn-calendar {
-            span:before {
-              content: "\e63c";
-            }
-          }
-
-          &.rw-btn-time {
-            span:before {
-              content: "\e647";
-            }
+        &.rw-btn-time {
+          span:before {
+            content: "\e647";
           }
         }
       }
+    }
 
-      div.rw-popup-container {
+    div.rw-popup-container {
+      left: 0;
+      right: 0;
+
+      div.rw-popup {
         left: 0;
         right: 0;
+        padding: 0;
+      }
 
-        div.rw-popup {
-          left: 0;
-          right: 0;
-          padding: 0;
-        }
+      &.rw-calendar-popup {
+        width: 18em !important;
 
-        &.rw-calendar-popup {
-          width: 18em !important;
+        .rw-header {
 
-          .rw-header {
-
-            &>.rw-btn:active.rw-state-focus {
-              -webkit-box-shadow: none;
-              box-shadow: none;
-            }
-
-            .rw-btn-view {
-              background: #fff;
-            }
-            .rw-i-caret-left:before {
-              content: "\e622";
-              font-family: "tiecons";
-            }
-
-            .rw-i-caret-right:before {
-              content: "\e623";
-              font-family: "tiecons";
-            }
+          & > .rw-btn:active.rw-state-focus {
+            -webkit-box-shadow: none;
+            box-shadow: none;
           }
 
+          .rw-btn-view {
+            background: #fff;
+          }
+          .rw-i-caret-left:before {
+            content: "\e622";
+            font-family: "tiecons";
+          }
 
-          .rw-calendar-grid {
-            th {
+          .rw-i-caret-right:before {
+            content: "\e623";
+            font-family: "tiecons";
+          }
+        }
+
+        .rw-calendar-grid {
+          th {
+            padding: 0;
+            text-align: center;
+          }
+
+          tr td {
+            padding: 0;
+
+            .rw-btn {
               padding: 0;
               text-align: center;
-            }
-
-            tr td {
-              padding: 0;
-
-              .rw-btn {
-                padding: 0;
-                text-align: center;
-              }
             }
           }
         }
       }
     }
   }
+}
 
-  //select drop-down fix and hide default drop icon
-  .select-style {
-    position: relative;
+//select drop-down fix and hide default drop icon
+.select-style {
+  position: relative;
 
-    select {
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      cursor: pointer;
-      padding-right: 25px;
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    padding-right: 25px;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  &:hover, &:focus {
+    &:after {
+      color: @color-primary;
     }
-    select::-ms-expand{
-      display: none;
-    }
-    &:hover, &:focus {
-      &:after {
-        color: @color-primary;
-      }
-    }
+  }
 
   &:after {
     transition: .4s;
@@ -499,308 +651,311 @@
   }
 }
 
-  // dialog fix
-  .modal-dialog form {
-    label {
-      width: 100%;
-    }
-    .row:first-of-type {
-
-    }
-  }
-
-  .form-title {
-    padding: 15px;
-  }
-
-  //delete form layout
-  .delete-form {
+// dialog fix
+.modal-dialog form {
+  label {
     width: 100%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
+  }
+  .row:first-of-type {
 
-    input[type="submit"], input[type="button"], button[type="submit"] {
-      display: block;
-      float: none !important;
-      text-transform: uppercase;
-      font-size: 18px;
-      margin: 15px auto 0;
+  }
+}
 
-      -webkit-appearance: none;
-      transition: .3s ease-in;
-    }
+.form-title {
+  padding: 15px;
+}
 
-    div.checkbox {
-      & > input {
-        vertical-align: text-top;
-        margin: 0;
-      }
+//delete form layout
+.delete-form {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
-      & > label {
-        padding-left: 5px;
-      }
-    }
+  input[type="submit"], input[type="button"], button[type="submit"] {
+    display: block;
+    float: none !important;
+    text-transform: uppercase;
+    font-size: 18px;
+    margin: 15px auto 0;
 
-    i.trinity-warning:before {
-      font-size: 150px;
-      color: orange;
-    }
-    h2.warning {
-      font-weight: 200;
-      font-size: 60px;
-    }
-    p {
-      font-size: 20px;
-      color: #8e8e8e;
-    }
-    ul {
-      font-size: 20px;
-      color: #8e8e8e;
-      margin-top: 3px;
-    }
-    li {
-      margin-top: 5px;
-    }
-    .row {
-      margin: 15px 0;
-
-      &:last-of-type {
-        margin: 0;
-      }
-    }
+    -webkit-appearance: none;
+    transition: .3s ease-in;
   }
 
-  h2.warning {
-    background-color: transparent !important;
-  }
-
-  //info empty billing plans
-  .info-empty-form {
-    width: 100%;
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-
-    i.trinity-info:before {
-      font-size: 140px;
-      color: lighten(@color-tertiary, 15%);
-    }
-    h2.warning {
-      font-weight: 200;
-      font-size: 50px;
-    }
-    p {
-      font-size: 20px;
-      color: #8e8e8e;
-    }
-    .row {
-      margin: 10px 0 20px 0;
-    }
-    .button {
-      margin-bottom: 30px;
-    }
-  }
-
-  .box-new-form {
-    padding-bottom: 15px;
-  }
-
-  .big-input {
-    input:not([type="submit"]):not([type="button"]), select, textarea {
-      min-height: 300px;
-    }
-  }
-
-  .help-buttons {
-    right: 0;
-    position: absolute;
-    i, button {
-      display: inline-block;
-    }
-  }
-
-  // fixes - collections
-  .collection-widget {
-    &:not([display-widget-labels="display-widget-labels"]) div {
-      width: 100% !important;
+  div.checkbox {
+    & > input {
+      vertical-align: text-top;
       margin: 0;
     }
 
-    div {
-      padding: 0 !important;
-
-      // collection within a collection
-      &.collection-widget-inner {
-        padding: 0 30px 0 20px !important;
-
-        // remove double margin from a collection within another collection
-        .form-right .form-right {
-          margin-bottom: 0 !important;
-        }
-      }
+    & > label {
+      padding-left: 5px;
     }
+  }
 
-    .row {
-      border-bottom: none !important;
+  i.trinity-warning:before {
+    font-size: 150px;
+    color: orange;
+  }
+  h2.warning {
+    font-weight: 200;
+    font-size: 60px;
+  }
+  p {
+    font-size: 20px;
+    color: #8e8e8e;
+  }
+  ul {
+    font-size: 20px;
+    color: #8e8e8e;
+    margin-top: 3px;
+  }
+  li {
+    margin-top: 5px;
+  }
+  .row {
+    margin: 15px 0;
+
+    &:last-of-type {
+      margin: 0;
     }
+  }
+}
 
-    .form-right {
-      margin-bottom: 5px !important;
-    }
+h2.warning {
+  background-color: transparent !important;
+}
 
-    .form-left {
-      display: none !important;
-    }
+//info empty billing plans
+.info-empty-form {
+  width: 100%;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
 
-    .add-collection-item {
-      color: @color-tertiary;
-      p {
-        margin: 5px 0 !important;
-        font-weight: 500;
+  i.trinity-info:before {
+    font-size: 140px;
+    color: lighten(@color-tertiary, 15%);
+  }
+  h2.warning {
+    font-weight: 200;
+    font-size: 50px;
+  }
+  p {
+    font-size: 20px;
+    color: #8e8e8e;
+  }
+  .row {
+    margin: 10px 0 20px 0;
+  }
+  .button {
+    margin-bottom: 30px;
+  }
+}
 
-      }
-      &:hover {
-        color: darken(@color-tertiary, 5%);
-      }
-      i {
-        font-size: 18px;
-        padding: 5px 10px 10px 10px;
-        &:after {
-          font-family: 'Roboto', sans-serif;
-          margin-left: 5px;
-          content: 'Add item';
-          font-size: 16px;
-        }
-      }
-    }
+.box-new-form {
+  padding-bottom: 15px;
+}
 
-    .delete-collection-item {
-      .tiecons, .trinity {
-        color: #c22a00;
-        position: absolute;
-        right: -20px;
-        top: 10px;
-        transition: all 0.1s;
-        &:hover {
-          will-change: transform;
-          -ms-transform: scale(1.2); /* IE 9 */
-          -webkit-transform: scale(1.2); /* Safari */
-          transform: scale(1.2);
-        }
-      }
-    }
+.big-input {
+  input:not([type="submit"]):not([type="button"]), select, textarea {
+    min-height: 300px;
+  }
+}
 
-    &[display-widget-labels="display-widget-labels"] {
-      & > .row > div > div.form-right div.form-left {
-        display: block !important;
+.help-buttons {
+  right: 0;
+  position: absolute;
+  i, button {
+    display: inline-block;
+  }
+}
 
+// fixes - collections
+.collection-widget {
+  &:not([display-widget-labels="display-widget-labels"]) div {
+    width: 100% !important;
+    margin: 0;
+  }
+
+  div {
+    padding: 0 !important;
+
+    // collection within a collection
+    &.collection-widget-inner {
+      padding: 0 30px 0 20px !important;
+
+      // remove double margin from a collection within another collection
+      .form-right .form-right {
+        margin-bottom: 0 !important;
       }
     }
   }
 
-  .form-width-100 {
-    .form-content-center {
-      width: 100%;
-    }
+  .row {
+    border-bottom: none !important;
   }
 
-  div[class^="control-"] {
-    padding: 0 5px;
-    display: block;
-    font-weight: 500;
-    margin-left: 20px;
-    margin-top: 10px;
-    position: relative;
+  .form-right {
+    margin-bottom: 5px !important;
+  }
+
+  .form-left {
+    display: none !important;
+  }
+
+  .add-collection-item {
+    color: @color-tertiary;
+    p {
+      margin: 5px 0 !important;
+      font-weight: 500;
+
+    }
+    &:hover {
+      color: darken(@color-tertiary, 5%);
+    }
     i {
-      font-weight: 600;
-      float: left;
       font-size: 18px;
-      line-height: 24px;
-      display: block;
-      position: absolute;
-      left: -20px;
-      top: 0;
-/*      width: 30px;
-      height: 30px;*/
+      padding: 5px 10px 10px 10px;
+      &:after {
+        font-family: 'Roboto', sans-serif;
+        margin-left: 5px;
+        content: 'Add item';
+        font-size: 16px;
+      }
     }
   }
-  .control-ok {
-    color: #5da423;
-  }
-  .control-loading{
-    color: #ffda28;
-  }
-  .control-fail {
-    color: #d2322b;
+
+  .delete-collection-item {
+    .tiecons, .trinity {
+      color: #c22a00;
+      position: absolute;
+      right: -20px;
+      top: 10px;
+      transition: all 0.1s;
+      &:hover {
+        will-change: transform;
+        -ms-transform: scale(1.2); /* IE 9 */
+        -webkit-transform: scale(1.2); /* Safari */
+        transform: scale(1.2);
+      }
+    }
   }
 
-  .help-on-hover:not(.help-block) {
-    position: absolute;
+  &[display-widget-labels="display-widget-labels"] {
+    & > .row > div > div.form-right div.form-left {
+      display: block !important;
+
+    }
+  }
+}
+
+.form-width-100 {
+  .form-content-center {
+    width: 100%;
+  }
+}
+
+div[class^="control-"] {
+  padding: 0 5px;
+  display: block;
+  font-weight: 500;
+  margin-left: 20px;
+  margin-top: 10px;
+  position: relative;
+  i {
     font-weight: 600;
     float: left;
-    padding: 5px;
     font-size: 18px;
     line-height: 24px;
-    color: #4a94cc;
-  }
-
-  .help-block {
-    display: none;
-    font-size: 14px;
-    color: @global-font-color;
-    font-weight: @roboto-light;
-    line-height: 1.4;
-    padding: 6px;
-    z-index: 2;
-    left: 20px;
-    font-family: 'Roboto', sans-serif;
-  }
-
-  .help-on-hover:hover .help-block {
     display: block;
-    width: 210px;
-    background: #ffecc2;
-    border: 1px solid #9f9f9f;
     position: absolute;
+    left: -20px;
+    top: 0;
+    /*      width: 30px;
+          height: 30px;*/
+  }
+}
+
+.control-ok {
+  color: #5da423;
+}
+
+.control-loading {
+  color: #ffda28;
+}
+
+.control-fail {
+  color: #d2322b;
+}
+
+.help-on-hover:not(.help-block) {
+  position: absolute;
+  font-weight: 600;
+  float: left;
+  padding: 5px;
+  font-size: 18px;
+  line-height: 24px;
+  color: #4a94cc;
+}
+
+.help-block {
+  display: none;
+  font-size: 14px;
+  color: @global-font-color;
+  font-weight: @roboto-light;
+  line-height: 1.4;
+  padding: 6px;
+  z-index: 2;
+  left: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.help-on-hover:hover .help-block {
+  display: block;
+  width: 210px;
+  background: #ffecc2;
+  border: 1px solid #9f9f9f;
+  position: absolute;
+}
+
+// service manager graph from google
+#web-service-chart2 {
+  g {
+    cursor: pointer;
+  }
+}
+
+.froala-tall {
+  .fr-wrapper {
+    min-height: 200px;
+    max-height: 300px;
+  }
+}
+
+@media screen and(max-width: 1475px) {
+  .pad {
+    width: 29.5%;
+    display: block;
+    float: left;
+    height: 1px;
   }
 
-  // service manager graph from google
-  #web-service-chart2{
-    g{
-      cursor: pointer;
-    }
+  div[class^="control-"] i {
+    padding-left: 0;
   }
+}
 
-  .froala-tall {
-    .fr-wrapper {
-      min-height: 200px;
-      max-height: 300px;
-    }
+@media screen and(max-width: 1200px) {
+  .lol {
+    right: 20px;
+    left: auto;
   }
+}
 
-  @media screen and(max-width: 1475px) {
-    .pad {
-      width: 29.5%;
-      display: block;
-      float: left;
-      height: 1px;
-    }
-
-    div[class^="control-"] i {
-      padding-left: 0;
-    }
+@media screen and(max-width: 1030px) {
+  .pad {
+    width: 37.5%;
   }
-
-  @media screen and(max-width: 1200px) {
-    .lol {
-      right: 20px;
-      left: auto;
-    }
-  }
-
-  @media screen and(max-width: 1030px) {
-    .pad {
-      width: 37.5%;
-    }
-  }
+}

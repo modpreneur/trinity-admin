@@ -1,8 +1,10 @@
 {% extends "@HtDocAdmin/doc_layout.html.twig" %}
 
+
 {% block pageTitle %}
     HTML/CSS documentation
 {% endblock %}
+
 
 {% block navbar_project %}
     <div id="project-select">
@@ -10,6 +12,7 @@
         <h2 class="title">Hot at home</h2>
     </div>
 {% endblock %}
+
 
 {% block navbarTitle %}
     Basic Css theme
@@ -99,8 +102,107 @@
 
 {% endblock %}
 
+
 {% block pageBody %}
 
+    <div class="box box-small">
+        <h3 class="box-header">
+            h3.box-header .box-small
+        </h3>
+        <div class="box-body">
+            <p>
+                .box.box-small
+            </p>
+
+            <form action="#" class="form">
+                <div class="row">
+                    <div class="grid xlarge-12 large-8 medium-4 small-8 mini-24">
+                        <div class="form-row left">
+                            <label for="a1">Label</label>
+                            <input name="a1" id="a1" type="text" placeholder="Placeholder">
+                        </div>
+                    </div>
+                    <div class="grid xlarge-12 large-8 medium-4 small-8 mini-24">
+                        <div class="form-row right">
+                            <label for="a1">Label</label>
+                            <input name="a1" id="a1" type="text" placeholder="Placeholder">
+                        </div>
+                    </div>
+                    <div class="grid xlarge-12 large-8 medium-4 small-8 mini-24">
+                        <div class="form-row left">
+                            <label for="a1">Label <a href="#">This is link</a></label>
+                            <div class="input-with-action">
+                                <input name="a1" id="a1" type="text" placeholder="Placeholder">
+                                <a class="action" href="#">action</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid xlarge-12 large-8 medium-4 small-8 mini-24">
+                        <div class="form-row right">
+                            <label class="form-caption">Categories</label>
+                            <div class="checkbox">
+                                <input name="ac0" id="ac0" type="checkbox">
+                                <label for="ac0">Category A</label>
+                            </div>
+
+                            <div class="checkbox">
+                                <input name="ac" id="ac" type="checkbox">
+                                <label for="ac">Category B</label>
+                            </div>
+
+                            <div class="checkbox">
+                                <input name="ac1" id="ac1" type="checkbox">
+                                <label for="ac1">Category C</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid xlarge-12 large-8 medium-4 small-8 mini-24">
+                        <div class="form-row left">
+                            <label for="a1">Label</label>
+                            <div class="select">
+                                <select name="A" id="A">
+                                    <option value="A">AAA</option>
+                                    <option value="B">BBB</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid xlarge-24">
+                        <div class="form-row">
+                            <label for="textarea">Label</label>
+                            <textarea name="textarea" id="textarea" cols="30" rows="10"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="grid xlarge-24">
+                        <div class="form-row">
+                            <button type="submit" class="button button-success form-center">
+                                .button.button-success
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <div class="box box-small">
+        <h3 class="box-header">
+            Add
+        </h3>
+
+        <div class="box-body">
+            <p>body</p>
+        </div>
+    </div>
+
+    <a class="add-new-box">
+        Add new
+    </a>
+    
     <div id="colors" class="box">
         <h3 class="box-header">
             h3.box-header

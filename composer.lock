@@ -2849,16 +2849,16 @@
         },
         {
             "name": "nette/robot-loader",
-            "version": "v3.0.1",
+            "version": "v3.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nette/robot-loader.git",
-                "reference": "f8f87c979be88e9b6ebd50df7975326423bbe99f"
+                "reference": "b703b4f5955831b0bcaacbd2f6af76021b056826"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nette/robot-loader/zipball/f8f87c979be88e9b6ebd50df7975326423bbe99f",
-                "reference": "f8f87c979be88e9b6ebd50df7975326423bbe99f",
+                "url": "https://api.github.com/repos/nette/robot-loader/zipball/b703b4f5955831b0bcaacbd2f6af76021b056826",
+                "reference": "b703b4f5955831b0bcaacbd2f6af76021b056826",
                 "shasum": ""
             },
             "require": {
@@ -2910,7 +2910,7 @@
                 "nette",
                 "trait"
             ],
-            "time": "2017-07-11T00:20:12+00:00"
+            "time": "2017-07-18T00:09:56+00:00"
         },
         {
             "name": "nikic/php-parser",
