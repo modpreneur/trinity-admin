@@ -52,7 +52,41 @@
     box-shadow: none;
   }
 
-  &-primary {
+
+  &-primary{
+    padding: 5px 10px;
+    color: @color-primary;
+
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border: 1px solid @color-primary;
+    border-radius: 20px;
+
+    &:hover{
+      background: @color-primary;
+      color: @color-white;
+    }
+  }
+
+  &-primary-inverse{
+    padding: 5px 10px;
+    color: @color-white;
+
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    border: 1px solid @color-white;
+    border-radius: 20px;
+    background: @color-primary;
+
+    &:hover{
+      background: @color-white;
+      color: @color-primary;
+    }
+  }
+
+  &-necktie {
     background-color: @color-purple;
     border: 1px solid #fff;
     box-shadow: 0px 0px 0px 1px #c9d5e9;
