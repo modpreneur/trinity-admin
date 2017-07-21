@@ -21,6 +21,11 @@
 .padding-14 {
   padding: 14px !important;
 }
+.object-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 /**
   Font
 */
@@ -1584,6 +1589,14 @@ g {
   font-size: 1.4em;
   font-weight: 300;
 }
+.trinity-widget .box-header .box-header-actions {
+  float: right;
+  margin-top: -6px;
+}
+.trinity-widget .box-header .box-header-actions .button {
+  font-size: 12px;
+  margin-left: 5px;
+}
 .trinity-widget .box-body {
   padding-bottom: 20px;
   padding-left: 20px;
@@ -1729,6 +1742,14 @@ g {
   padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
+}
+.box-widget .box-header .box-header-actions {
+  float: right;
+  margin-top: -6px;
+}
+.box-widget .box-header .box-header-actions .button {
+  font-size: 12px;
+  margin-left: 5px;
 }
 .box-widget .box-body {
   padding-bottom: 20px;
@@ -2205,18 +2226,18 @@ g {
   margin-left: 10px;
 }
 .add-new-box {
-  border: 1px solid #515974;
-  border-radius: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
   padding: 5px 10px;
   color: #515974;
-  max-width: 100px;
   text-align: center;
-  margin-bottom: 20px;
   cursor: pointer;
   transition: all 0.5s ease;
+  border: 1px solid #515974;
+  border-radius: 20px;
+  max-width: 100px;
+  margin-bottom: 20px;
 }
 .add-new-box:hover {
   background: #515974;
@@ -3207,6 +3228,14 @@ div[class^="control-"] i {
   font-size: 1.4em;
   font-weight: 300;
 }
+.modal-dialog > div .box-header .box-header-actions {
+  float: right;
+  margin-top: -6px;
+}
+.modal-dialog > div .box-header .box-header-actions .button {
+  font-size: 12px;
+  margin-left: 5px;
+}
 .modal-dialog > div .box-body {
   padding-bottom: 20px;
   padding-left: 20px;
@@ -3711,11 +3740,38 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   box-shadow: none;
 }
 .button-primary {
+  padding: 5px 10px;
+  color: #515974;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 1px solid #515974;
+  border-radius: 20px;
+}
+.button-primary:hover {
+  background: #515974;
+  color: #fff;
+}
+.button-primary-inverse {
+  padding: 5px 10px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: #515974;
+}
+.button-primary-inverse:hover {
+  background: #fff;
+  color: #515974;
+}
+.button-necktie {
   background-color: #6f68f9;
   border: 1px solid #fff;
   box-shadow: 0px 0px 0px 1px #c9d5e9;
 }
-.button-primary:hover {
+.button-necktie:hover {
   background-color: #4037f7;
   box-shadow: 0px 0px 0px 1px #4037f7;
 }
@@ -3912,11 +3968,38 @@ input[type="button"].button-small:hover {
   box-shadow: none;
 }
 .trinity-form-loading-primary {
+  padding: 5px 10px;
+  color: #515974;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 1px solid #515974;
+  border-radius: 20px;
+}
+.trinity-form-loading-primary:hover {
+  background: #515974;
+  color: #fff;
+}
+.trinity-form-loading-primary-inverse {
+  padding: 5px 10px;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  border: 1px solid #fff;
+  border-radius: 20px;
+  background: #515974;
+}
+.trinity-form-loading-primary-inverse:hover {
+  background: #fff;
+  color: #515974;
+}
+.trinity-form-loading-necktie {
   background-color: #6f68f9;
   border: 1px solid #fff;
   box-shadow: 0px 0px 0px 1px #c9d5e9;
 }
-.trinity-form-loading-primary:hover {
+.trinity-form-loading-necktie:hover {
   background-color: #4037f7;
   box-shadow: 0px 0px 0px 1px #4037f7;
 }
@@ -4306,6 +4389,14 @@ input[type="button"].button-small:hover {
   padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
+}
+.box .box-header .box-header-actions {
+  float: right;
+  margin-top: -6px;
+}
+.box .box-header .box-header-actions .button {
+  font-size: 12px;
+  margin-left: 5px;
 }
 .box .box-body {
   padding-bottom: 20px;
