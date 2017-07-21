@@ -45,6 +45,8 @@
 /**************************************
   Grid parameters
 **************************************/
+
+
 /**************************************
   Roboto font-weight
 **************************************/
@@ -2011,6 +2013,7 @@ g {
 }
 .trinity-widget .data-grid thead tr {
   height: auto;
+  background-color: red;
 }
 .trinity-widget:first-child {
   margin-left: 0 !important;
