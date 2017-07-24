@@ -6,6 +6,10 @@
 
 /* sidebar top */
 
+body{
+  padding-left: @sidebar-width;
+}
+
 #navbar-left {
   width: @sidebar-width;
   background: @color-primary;
@@ -40,6 +44,9 @@
   width: @sidebar-width;
   padding-bottom: 0;
   background: @sidebar-background;
+  position: fixed;
+  height: 100%;
+  left: 0;
 
   label{
     width: 100%;

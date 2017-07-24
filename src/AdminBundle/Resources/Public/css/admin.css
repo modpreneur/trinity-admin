@@ -853,6 +853,9 @@ div#navbar-actions {
   }
 }
 /* sidebar top */
+body {
+  padding-left: 240px;
+}
 #navbar-left {
   width: 240px;
   background: #515974;
@@ -880,6 +883,9 @@ div#navbar-actions {
   width: 240px;
   padding-bottom: 0;
   background: #fff;
+  position: fixed;
+  height: 100%;
+  left: 0;
 }
 #sidebar label {
   width: 100%;
