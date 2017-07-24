@@ -21,6 +21,7 @@
         {% endblock %}
 
         {% block stylesheets %}
+            <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css">
             <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('favicons/apple-touch-icon.png') }}">
             <link rel="icon" type="image/png" href="{{ asset('favicons/favicon-32x32.png') }}" sizes="32x32">
             <link rel="icon" type="image/png" href="{{ asset('favicons/favicon-16x16.png') }}" sizes="16x16">
@@ -31,9 +32,9 @@
             <meta name="theme-color" content="#ffffff">
 
             {% stylesheets
-            '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
-            '@TrinityAdminBundle/Resources/Public/css/admin.css'
-            output="style.css"
+                '@TrinityAdminBundle/Resources/Public/bowtie/bowtie.css'
+                '@TrinityAdminBundle/Resources/Public/css/admin.css'
+                output="style.css"
             %}
             <link rel="stylesheet" type="text/css" media="screen" href="{{ asset_url }}"/>
             {% endstylesheets %}
@@ -42,14 +43,13 @@
                 '@TrinityAdminBundle/Resources/Public/css/trinity-font.css' %}
                 <link media="none" onload="if(media !== 'all')media='all'" rel="stylesheet" type="text/css"
                       href="{{ asset_url }}"/>
-                {% endstylesheets %}
+            {% endstylesheets %}
         {% endblock %}
 
     </head>
 
-    <body class="grid-sidebar grid-navigation-body">
-
-
+    <body class="grid-sidebar grid-navigation-body navbar-fixed">
+    
         {% block flashMessages %}
             {% set flashMessages = [] %}
             {% for type, messages in app.session.flashbag.all() %}
@@ -57,6 +57,7 @@
                     {% set flashMessages = flashMessages|merge([type, message]) %}
                 {% endfor %}
             {% endfor %}
+
             <div id="flash-message-container" data-messages="{{ flashMessages|json_encode }}">
                 <div id="flash-message-template" class="display-none">
                     {% if messageTemplate is defined %}
@@ -143,11 +144,13 @@
                             {% endblock %}
                         </div>
                     </section>
-                    <aside class="grid-aside sidebar-first" id="sidebar">
-                        {% block sidebar %}
-                            Sidebar
-                        {% endblock %}
-                    </aside>
+                    {% block element_sidebar %}
+                        <aside class="grid-aside sidebar-first" id="sidebar">
+                            {% block sidebar %}
+                                Sidebar
+                            {% endblock %}
+                        </aside>
+                    {% endblock %}
                 </div>
             </div>
 
