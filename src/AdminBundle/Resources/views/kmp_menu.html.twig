@@ -1,3 +1,8 @@
+{# NEVER DELETE EXTENDS, IT CAN BREAK THE INTERNET! #}
+{# Extending KNP menu layout bundle, until you have installed all dependecies, it will tells you that its not used/missing #}
+{% extends '@KnpMenu/menu.html.twig' %}
+{# Read above #}
+
 {% macro attributes(attributes) %}
     {% for name, value in attributes %}
         {%- if value is not none and value is not same as(false) -%}
@@ -6,51 +11,51 @@
     {%- endfor -%}
 {% endmacro %}
 
-{% block compressed_root %}
-    {% spaceless %}
-        {{ block('root') }}
-    {% endspaceless %}
-{% endblock %}
+{#{% block compressed_root %}#}
+    {#{% spaceless %}#}
+        {#{{ block('root') }}#}
+    {#{% endspaceless %}#}
+{#{% endblock %}#}
 
-{% block root %}
-    {% set listAttributes = item.childrenAttributes %}
-    {{ block('list') -}}
-{% endblock %}
+{#{% block root %}#}
+    {#{% set listAttributes = item.childrenAttributes %}#}
+    {#{{ block('list') -}}#}
+{#{% endblock %}#}
 
-{% block list %}
+{#{% block list %}#}
 
-    {% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}
-        {% import _self as knp_menu %}
-        {% set listAttributes = item.childrenAttributes %}
-        <ul {{ knp_menu.attributes(listAttributes) }}>
-            {{ block('children') }}
-        </ul>
-    {% endif %}
-{% endblock %}
+    {#{% if item.hasChildren and options.depth is not same as(0) and item.displayChildren %}#}
+        {#{% import _self as knp_menu %}#}
+        {#{% set listAttributes = item.childrenAttributes %}#}
+        {#<ul {{ knp_menu.attributes(listAttributes) }}>#}
+            {#{{ block('children') }}#}
+        {#</ul>#}
+    {#{% endif %}#}
+{#{% endblock %}#}
 
-{% block children %}
+{#{% block children %}#}
     {# save current variables #}
-    {% set currentOptions = options %}
-    {% set currentItem = item %}
+    {#{% set currentOptions = options %}#}
+    {#{% set currentItem = item %}#}
 
     {# update the depth for children #}
-    {% if options.depth is not none %}
-        {% set options = options|merge({'depth': currentOptions.depth - 1}) %}
-    {% endif %}
+    {#{% if options.depth is not none %}#}
+        {#{% set options = options|merge({'depth': currentOptions.depth - 1}) %}#}
+    {#{% endif %}#}
 
     {# update the matchingDepth for children #}
-    {% if options.matchingDepth is not none and options.matchingDepth > 0 %}
-        {% set options = options|merge({'matchingDepth': currentOptions.matchingDepth - 1}) %}
-    {% endif %}
+    {#{% if options.matchingDepth is not none and options.matchingDepth > 0 %}#}
+        {#{% set options = options|merge({'matchingDepth': currentOptions.matchingDepth - 1}) %}#}
+    {#{% endif %}#}
 
-    {% for item in currentItem.children %}
-        {{ block('item') }}
-    {% endfor %}
+    {#{% for item in currentItem.children %}#}
+        {#{{ block('item') }}#}
+    {#{% endfor %}#}
 
     {# restore current variables #}
-    {% set item = currentItem %}
-    {% set options = currentOptions %}
-{% endblock %}
+    {#{% set item = currentItem %}#}
+    {#{% set options = currentOptions %}#}
+{#{% endblock %}#}
 
 {% block item %}
     {% if item.displayed %}
@@ -146,12 +151,6 @@
                                 <div class="a">
                                     <i class="{{ item.attribute('icon') }}"></i>
                                     <span class="sidebar-link-drop">{{ block('label') }}</span>
-                                    <span class="trinity-dropdown-icon">
-                                        {#<i class="tiecons tiecons-plus-light"></i>#}
-                                        {#<i class="tiecons tiecons-minus-light"></i>#}
-                                        <i class="tiecons tiecons-arrow-tall-normal-down"></i>
-                                        <i class="tiecons tiecons-arrow-tall-normal-up"></i>
-                                    </span>
                                 </div>
                                 <ul class="drop">
                                     {%- set childrenClasses = item.childrenAttribute('class') is not empty ? [item.childrenAttribute('class')] : [] %}
@@ -220,7 +219,7 @@
     </span>
 {% endblock %}
 
-{% block label %}{% if options.allow_safe_labels and item.getExtra('safe_label', false) %}{{ item.label|raw }}{% else %}{{ item.label }}{% endif %}{% endblock %}
+{#{% block label %}{% if options.allow_safe_labels and item.getExtra('safe_label', false) %}{{ item.label|raw }}{% else %}{{ item.label }}{% endif %}{% endblock %}#}
 
 {#{% block dropdownElement %}
 

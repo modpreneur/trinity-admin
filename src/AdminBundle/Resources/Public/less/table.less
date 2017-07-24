@@ -72,14 +72,16 @@
 
   th.grid-checkbox, td.grid-checkbox {
 
-    padding-left: 10px;
+    padding: 0 5px;
     width: 24px;
+
 
     // The actual checkbox
     input[type="checkbox"] {
       &:checked  + label span {
         border: 1px solid @color-primary;
         background: @color-primary;
+
 
         &:before {
           font-family: trinity;
@@ -95,11 +97,11 @@
           width: 20px;
           height: 20px;
           text-align: center;
-          border: 1px solid #b5b5b5;
-          background: #fff;
+          background: #e4ebf7;
           vertical-align: middle;
           display: inline-block;
-          border-radius: 0;
+          border-radius: 4px;
+          margin: 0 auto;
 
           &:before {
             font-family: trinity;

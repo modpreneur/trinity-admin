@@ -53,7 +53,7 @@ class MenuListener
         $menu
             ->addChild('Dashboard', ['route' => 'admin-css'])
             ->setAttribute('class', 'js-direct-item')
-            ->setAttribute('icon', 'trinity trinity-dashboard')
+            ->setAttribute('icon', 'mdi mdi-view-dashboard')
             ->setExtra('orderNumber', 0);
 
         $menu
@@ -65,6 +65,7 @@ class MenuListener
         $user = $menu
             ->addChild('Users', ['route' => 'admin-css-link'])
             ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('class', 'active')
             ->setAttribute('dropdown', true)
             ->setAttribute('icon', 'trinity trinity-users')
             ->setExtra('orderNumber', 2);

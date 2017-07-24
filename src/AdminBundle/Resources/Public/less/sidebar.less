@@ -6,22 +6,27 @@
 
 /* sidebar top */
 
+body{
+  padding-left: @sidebar-width;
+}
+
 #navbar-left {
   width: @sidebar-width;
   background: @color-primary;
 
-  #navbar-project{
+  #navbar-project {
 
     #project-select{
       color: #fff;
-      margin: 0.7em;
+      margin: (@navbar-height - 33px)/2 1em;
       span{
         display: block;
         font-weight: 300;
-        margin-bottom: 2px;
+        font-size: 12px;
       }
       .title{
-        font-size: 13px;
+        font-size: 14px;
+        font-weight: bold;
       }
     }
   }
@@ -30,6 +35,8 @@
     background: @color-primary;
     border: none;
     padding: 0;
+    font-size: 20px;
+    margin: (@navbar-height - 20px) / 2;
   }
 }
 
@@ -40,6 +47,9 @@
   width: @sidebar-width;
   padding-bottom: 0;
   background: @sidebar-background;
+  position: fixed;
+  height: 100%;
+  left: 0;
 
   label{
     width: 100%;
@@ -48,7 +58,7 @@
   ul{
     &.sidebar {
       overflow-y: auto;
-      margin-top: 10%;
+      margin-top: 10px;
       padding-left: 0;
       margin-left: 0;
       /** end **/
@@ -59,7 +69,6 @@
         cursor: pointer;
         list-style-type: none;
         color: @color-primary;
-        margin-bottom: 3px;
 
         & > a, .a{
           display: block;
@@ -68,7 +77,7 @@
           border-radius: 5px;
           padding: 10px 10px;
           border: 1px solid transparent;
-          font-size: 14px;
+          font-size: @sidebar-font-size;
         }
 
         &.active{
@@ -87,6 +96,7 @@
             border-width: 10px 0 10px 5px;
             margin-top: 10px;
             float: left;
+            position: absolute;
             border-color: transparent transparent transparent #6F68F9;
           }
         }
@@ -115,7 +125,6 @@
             a{
               background: transparent;
               color: @color-primary;
-              border: 1px solid transparent;
               border-bottom: 1px solid @sidebar-hover-background-color;
               border-radius: 0;
             }
@@ -123,12 +132,16 @@
         }
 
         i {
-          margin: 0 0.5em 0 0;
+          margin: 3px 16px 0 0;
           float: left;
           display: inline-block;
-          font-size: 22px;
+          font-size: @sidebar-icon-font-size;
           transition: .3s;
           color: @color-primary;
+
+          &.mdi{
+            margin-top: -5px;
+          }
         }
       }
     }
@@ -137,6 +150,7 @@
 
 #sidebar .drop-down {
   .no-select();
+  position: relative;
 
   label{
     cursor: pointer;
@@ -162,6 +176,7 @@
   input:checked ~ ul.drop {
     display: block;
     visibility: visible;
+    margin-left: 2.5em;
     opacity: 1;
     top: 0;
     position: static;
