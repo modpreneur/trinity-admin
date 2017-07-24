@@ -1,3 +1,6 @@
+{# NEVER DELETE EXTENDS, IT CAN BREAK THE INTERNET! #}
+{% extends '@KnpMenu/menu.html.twig' %}
+
 {% macro attributes(attributes) %}
     {% for name, value in attributes %}
         {%- if value is not none and value is not same as(false) -%}

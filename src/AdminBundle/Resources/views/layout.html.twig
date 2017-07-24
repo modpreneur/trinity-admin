@@ -143,11 +143,13 @@
                             {% endblock %}
                         </div>
                     </section>
-                    <aside class="grid-aside sidebar-first" id="sidebar">
-                        {% block sidebar %}
-                            Sidebar
-                        {% endblock %}
-                    </aside>
+                    {% block element_sidebar %}
+                        <aside class="grid-aside sidebar-first" id="sidebar">
+                            {% block sidebar %}
+                                Sidebar
+                            {% endblock %}
+                        </aside>
+                    {% endblock %}
                 </div>
             </div>
 
