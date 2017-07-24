@@ -31,12 +31,12 @@
     color: @navbar-font-color;
     overflow: hidden;
     font-weight: @roboto-light;
-    font-family: "Roboto", sans-serif;
+    font-family: @font;
 
     .page-title{
       color: @color-primary;
-      padding: 0.8em;
-      font-size: 20px;
+      padding: (@navbar-height - 22px) / 2;
+      font-size: 14px;
     }
 
     .navbar-logo {
@@ -55,7 +55,7 @@
       background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
 
       i {
-        margin: @navbar-height/4;
+        margin: (@navbar-height - @logo-height)/2;
         display: block;
         height: @logo-height;
         width: @logo-height;

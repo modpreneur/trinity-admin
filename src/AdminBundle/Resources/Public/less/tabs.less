@@ -12,45 +12,44 @@
 
 **************************************/
 
-.tabs-wrapper{
+.tabs-wrapper {
   border: none;
   box-shadow: none;
+  background: @color-white;
+  border-radius: 3px;
 
 
-  & > label{
+  & > label {
     border: none;
     border-bottom: 3px solid transparent;
     transition: all 0.2s ease;
     color: @color-primary;
-    margin-right: 25px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 300;
     text-align: left;
-    padding-left: 2px;
-    padding-right: 2px;
-
-    &:first-of-type{
-      margin-left: 20px;
-    }
+    padding: 10px 2px 2px 2px;
+    margin-left: 25px;
+    text-shadow: 0 0 0 2px transparent;
   }
 
 
-  .tab-body-wrapper{
+  .tab-body-wrapper {
     border: none;
     box-shadow: none;
-    border-top: 1px solid @color-border;
-    background: @color-white;
+    background: @back-color;
   }
 
 
   & > input[name=tab]:checked+label{
     border-top: 0 !important; // ???
     border-bottom: 3px solid @color-primary;
+    font-weight: bold;
   }
 
 
   .tab-body{
-    padding: 20px;
+    background: @color-white;
+    margin: 0 auto;
   }
 
 
@@ -61,4 +60,9 @@
       text-align: left !important;
     }
   }
+}
+
+
+.body-wrapper > .tabs-wrapper > .tab-body-wrapper {
+  padding-top: 14px;
 }

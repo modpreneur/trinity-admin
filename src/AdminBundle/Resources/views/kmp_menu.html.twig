@@ -151,12 +151,6 @@
                                 <div class="a">
                                     <i class="{{ item.attribute('icon') }}"></i>
                                     <span class="sidebar-link-drop">{{ block('label') }}</span>
-                                    <span class="trinity-dropdown-icon">
-                                        {#<i class="tiecons tiecons-plus-light"></i>#}
-                                        {#<i class="tiecons tiecons-minus-light"></i>#}
-                                        <i class="tiecons tiecons-arrow-tall-normal-down"></i>
-                                        <i class="tiecons tiecons-arrow-tall-normal-up"></i>
-                                    </span>
                                 </div>
                                 <ul class="drop">
                                     {%- set childrenClasses = item.childrenAttribute('class') is not empty ? [item.childrenAttribute('class')] : [] %}

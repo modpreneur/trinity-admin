@@ -66,7 +66,7 @@
     - etc
 */
 .navbar-fixed {
-  padding-top: 60px;
+  padding-top: 50px;
 }
 .navbar-fixed .navbar {
   position: fixed;
@@ -79,21 +79,21 @@
 }
 .navbar {
   background: #fff;
-  min-height: 60px;
+  min-height: 50px;
   width: 100%;
   color: #a0a2a5;
   overflow: hidden;
   font-weight: 300;
-  font-family: "Roboto", sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 .navbar .page-title {
   color: #515974;
-  padding: 0.8em;
-  font-size: 20px;
+  padding: 14px;
+  font-size: 14px;
 }
 .navbar .navbar-logo {
-  height: 60px;
-  width: 60px;
+  height: 50px;
+  width: 50px;
   display: inline-block;
   float: left;
   z-index: 999;
@@ -110,7 +110,7 @@
   clear: both;
 }
 .navbar .navbar-logo i {
-  margin: 15px;
+  margin: 10px;
   display: block;
   height: 30px;
   width: 30px;
@@ -124,7 +124,7 @@
 }
 .navbar #navbar-project {
   float: left;
-  height: 60px;
+  height: 50px;
 }
 .navbar .version {
   position: absolute;
@@ -137,7 +137,7 @@
   display: inline-block;
   float: left;
   width: calc(100% - 240px );
-  height: 60px;
+  height: 50px;
   border-bottom: 1px #e2e4e6 solid;
 }
 .navbar .navbar-container:after {
@@ -161,7 +161,7 @@
   display: block;
   width: 20px;
   height: 20px;
-  margin: 20px 5px;
+  margin: 15px 2.5px;
 }
 .navbar .navbar-item-label:hover {
   background: transparent;
@@ -215,7 +215,7 @@
   margin: 13px 15px;
 }
 .navbar #user-profile-label .user-name {
-  line-height: 60px;
+  line-height: 50px;
   font-weight: 400;
   width: 98px;
   overflow: hidden;
@@ -272,14 +272,14 @@
   display: block;
 }
 .navbar-search div.navbar-search-tools {
-  height: calc(60px  - 1px);
+  height: calc(50px  - 1px);
   background: #fff;
   position: fixed;
   display: none;
   top: 0;
   right: 0;
   z-index: 5;
-  line-height: 60px;
+  line-height: 50px;
 }
 .navbar-search div.navbar-search-tools .button {
   height: 44px;
@@ -404,7 +404,7 @@
   top: 0;
 }
 div#navbar-actions {
-  margin: 8px 0;
+  margin: 3px 0;
 }
 .notifications {
   transform: translateY(-1000px);
@@ -685,7 +685,7 @@ div#navbar-actions {
   transform: translateX(0px);
 }
 #quick-links-input:checked ~ .navbar #quick-links-label {
-  width: 30px;
+  width: 25px;
 }
 #quick-links-input:checked ~ .navbar #quick-links-label span {
   will-change: opacity, transform;
@@ -857,33 +857,36 @@ div#navbar-actions {
 }
 /* sidebar top */
 body {
-  padding-left: 240px;
+  padding-left: 230px;
 }
 #navbar-left {
-  width: 240px;
+  width: 230px;
   background: #515974;
 }
 #navbar-left #navbar-project #project-select {
   color: #fff;
-  margin: 0.7em;
+  margin: 8.5px 1em;
 }
 #navbar-left #navbar-project #project-select span {
   display: block;
   font-weight: 300;
-  margin-bottom: 2px;
+  font-size: 12px;
 }
 #navbar-left #navbar-project #project-select .title {
-  font-size: 13px;
+  font-size: 14px;
+  font-weight: bold;
 }
 #navbar-left #main-menu-button {
   background: #515974;
   border: none;
   padding: 0;
+  font-size: 20px;
+  margin: 15px;
 }
 #sidebar {
   z-index: 99;
   font-family: "Noto Sans", sans-serif;
-  width: 240px;
+  width: 230px;
   padding-bottom: 0;
   background: #fff;
   position: fixed;
@@ -895,7 +898,7 @@ body {
 }
 #sidebar ul.sidebar {
   overflow-y: auto;
-  margin-top: 10%;
+  margin-top: 10px;
   padding-left: 0;
   margin-left: 0;
   /** end **/
@@ -906,7 +909,6 @@ body {
   cursor: pointer;
   list-style-type: none;
   color: #515974;
-  margin-bottom: 3px;
 }
 #sidebar ul.sidebar li > a,
 #sidebar ul.sidebar li .a {
@@ -956,15 +958,14 @@ body {
 #sidebar ul.sidebar li ul li:hover a {
   background: transparent;
   color: #515974;
-  border: 1px solid transparent;
   border-bottom: 1px solid #e4ebf7;
   border-radius: 0;
 }
 #sidebar ul.sidebar li i {
-  margin: 0 0.3em 0 0;
+  margin: 3px 16px 0 0;
   float: left;
   display: inline-block;
-  font-size: 22px;
+  font-size: 16px;
   transition: .3s;
   color: #515974;
 }
@@ -998,6 +999,7 @@ body {
 #sidebar .drop-down input:checked ~ ul.drop {
   display: block;
   visibility: visible;
+  margin-left: 2.5em;
   opacity: 1;
   top: 0;
   position: static;
@@ -1209,10 +1211,10 @@ g {
 **************************************/
 #flash-message-container {
   width: 328px;
-  height: calc(100% - ( 60px  + 10px));
+  height: calc(100% - ( 50px  + 10px));
   will-change: contents;
   position: fixed;
-  top: 70px;
+  top: 60px;
   z-index: 999999;
   pointer-events: none;
   word-wrap: break-word;
@@ -1501,39 +1503,42 @@ g {
 .tabs-wrapper {
   border: none;
   box-shadow: none;
+  background: #fff;
+  border-radius: 3px;
 }
 .tabs-wrapper > label {
   border: none;
   border-bottom: 3px solid transparent;
   transition: all 0.2s ease;
   color: #515974;
-  margin-right: 25px;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 300;
   text-align: left;
-  padding-left: 2px;
-  padding-right: 2px;
-}
-.tabs-wrapper > label:first-of-type {
-  margin-left: 20px;
+  padding: 10px 2px 2px 2px;
+  margin-left: 25px;
+  text-shadow: 0 0 0 2px transparent;
 }
 .tabs-wrapper .tab-body-wrapper {
   border: none;
   box-shadow: none;
-  border-top: 1px solid #dbe2ed;
-  background: #fff;
+  background: #e4ebf7;
 }
 .tabs-wrapper > input[name=tab]:checked + label {
   border-top: 0 !important;
   border-bottom: 3px solid #515974;
+  font-weight: bold;
 }
 .tabs-wrapper .tab-body {
-  padding: 20px;
+  background: #fff;
+  margin: 0 auto;
 }
 .tabs-wrapper form label {
   width: 100%;
   border: none;
   text-align: left !important;
+}
+.body-wrapper > .tabs-wrapper > .tab-body-wrapper {
+  padding-top: 14px;
 }
 /**************************************
 
@@ -4552,21 +4557,16 @@ html {
   height: 100%;
 }
 body {
-  font-family: "Noto Sans", sans-serif;
   width: 100%;
   height: 100%;
-  background: #e4ebf7 !important;
-  background: -webkit-linear-gradient(90deg, #cbd2df 0%, #ebeef3 100%);
-  background: -moz-linear-gradient(90deg, #cbd2df 0%, #ebeef3 100%);
-  background: -o-linear-gradient(90deg, #cbd2df 0%, #ebeef3 100%);
-  background: -ms-linear-gradient(90deg, #cbd2df 0%, #ebeef3 100%);
-  background: linear-gradient(0deg, #cbd2df 0%, #ebeef3 100%);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  font-family: "Noto Sans", sans-serif;
+  background: #e4ebf7;
 }
 .display-none {
   display: none !important;
+}
+.body-wrapper {
+  margin: 14px;
 }
 /** fix **/
 .modal-a.button.button-secondary {
