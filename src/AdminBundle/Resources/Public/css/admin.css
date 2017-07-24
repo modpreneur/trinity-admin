@@ -3292,7 +3292,7 @@ div[class^="control-"] i {
   margin: 0;
 }
 .data-grid thead {
-  background: transparent;
+  background-color: #515974;
   border-bottom: 2px solid #ededed;
 }
 .data-grid thead tr th {
