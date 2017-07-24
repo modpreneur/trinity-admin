@@ -1510,7 +1510,6 @@ g {
   text-align: left;
   padding-left: 2px;
   padding-right: 2px;
-  text-shadow: 0 0 0 2px transparent;
 }
 .tabs-wrapper > label:first-of-type {
   margin-left: 20px;

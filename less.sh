@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env fish
 
 node_modules/less/bin/lessc src/AdminBundle/Resources/Public/less/admin.less src/AdminBundle/Resources/Public/css/admin.css
 node_modules/less/bin/lessc src/AdminBundle/Resources/Public/less/error.less src/AdminBundle/Resources/Public/css/error.css

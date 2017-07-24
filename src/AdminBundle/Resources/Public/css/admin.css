@@ -1510,7 +1510,6 @@ g {
   text-align: left;
   padding-left: 2px;
   padding-right: 2px;
-  text-shadow: 0 0 0 2px transparent;
 }
 .tabs-wrapper > label:first-of-type {
   margin-left: 20px;
@@ -1683,7 +1682,7 @@ g {
   text-transform: uppercase;
   padding: 0;
   font-weight: 300;
-  color: #2f2f2f;
+  color: #fff;
   min-height: 0;
 }
 .trinity-widget footer {
@@ -3301,16 +3300,34 @@ div[class^="control-"] i {
   width: 100%;
   font-family: "Noto Sans", sans-serif;
   margin: 0;
+  border-collapse: collapse;
+  overflow: hidden;
+  -moz-border-radius-topright: 4px;
+  -webkit-border-top-right-radius: 4px;
+  border-top-right-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+  -webkit-border-top-left-radius: 4px;
+  border-top-left-radius: 4px;
 }
 .data-grid thead {
   background-color: #515974;
   border-bottom: 2px solid #ededed;
 }
+.data-grid thead tr {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+}
 .data-grid thead tr th {
+  padding: 5px;
+  text-align: left;
+  padding-left: 10px;
   font-size: 16px;
-  color: #2f2f2f;
+  color: #fff;
   font-weight: 500;
   text-transform: capitalize;
+  border-right: 0.5px solid #d9d9d9;
+  border-left: 0.5px solid #d9d9d9;
 }
 .data-grid thead tr th[class*=order-] {
   cursor: pointer;
@@ -3324,7 +3341,7 @@ div[class^="control-"] i {
 .data-grid thead .order-by-asc:after,
 .data-grid thead th.order-by:not([class*=order-by-]):hover:after,
 .data-grid thead th.order-by-desc:hover:after {
-  position: absolute;
+  float: right;
   padding-left: 7px;
   font-family: trinity;
   content: "\e929";
@@ -3338,6 +3355,10 @@ div[class^="control-"] i {
   content: "\e928";
   font-size: 10px;
 }
+.data-grid thead .order-by-desc:after:hover,
+.data-grid thead th.order-by-asc:hover:after:hover {
+  color: #7d8397;
+}
 .data-grid thead tr:hover {
   background: transparent;
 }
@@ -3348,18 +3369,18 @@ div[class^="control-"] i {
   text-align: center;
 }
 .data-grid tbody tr {
-  background: #fff !important;
+  background: #fff;
   border-bottom: 1px solid #ededed;
   transition: .3s;
 }
 .data-grid tbody tr:hover {
-  background: #f8f8f8 !important;
+  background: #dbe3f3 !important;
 }
-.data-grid tbody tr:hover > td a.button-small:not(.button-info) {
-  background: #2d323e;
-  color: #fff;
+.data-grid tbody tr:hover > td a.button-small:not(.button-info, button-get-details) {
+  background: #515974;
+  color: white;
 }
-.data-grid tbody tr:hover > td a.button-small:not(.button-info):visited {
+.data-grid tbody tr:hover > td a.button-small:not(.button-info, button-get-details):visited {
   color: #fff;
 }
 .data-grid tbody tr:hover > td a:hover {
@@ -3378,9 +3399,12 @@ div[class^="control-"] i {
 .data-grid tbody tr:hover > td:last-of-type .revelation:hover:after {
   background: #5b6583;
 }
+.data-grid tbody tr:nth-child(odd) {
+  background-color: #d2d7e3;
+}
 .data-grid tbody tr a {
   transition: .3s;
-  color: #303030;
+  color: #515974;
 }
 .data-grid tbody tr a:hover {
   color: #515974;
@@ -3397,16 +3421,26 @@ div[class^="control-"] i {
 .data-grid tbody tr .button-small.button-get-details {
   margin-right: 10px;
   float: right;
+  padding: 5px;
+  border: 1px solid #515974;
+  -moz-border-radius: 14px;
+  -webkit-border-radius: 14px;
+  border-radius: 14px;
+  color: #515974;
 }
 .data-grid tbody tr .button-small.button-get-details:hover {
-  background: #2d323e;
+  background: #515974;
+  color: white;
 }
 .data-grid td {
+  padding: 5px;
+  padding-left: 10px;
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 20em;
+  border-right: 1px solid #d9d9d9;
 }
 .data-grid .trinity-warning {
   color: #838ba8;
@@ -3414,7 +3448,7 @@ div[class^="control-"] i {
 }
 .data-grid:not(.record_properties) th:first-child,
 .data-grid:not(.record_properties) td:first-child {
-  padding-left: 20px;
+  padding-left: 5px;
 }
 .tabs-wrapper .data-grid input[type="checkbox"] ~ label {
   padding: 0;
@@ -3644,7 +3678,7 @@ div.color-viewer {
 }
 th.grid-checkbox,
 td.grid-checkbox {
-  padding-left: 10px;
+  padding: 0 5px;
   width: 24px;
 }
 th.grid-checkbox input[type="checkbox"]:checked + label span,
@@ -3667,11 +3701,11 @@ td.grid-checkbox input[type="checkbox"] + label span {
   width: 20px;
   height: 20px;
   text-align: center;
-  border: 1px solid #b5b5b5;
-  background: #fff;
+  background: #e4ebf7;
   vertical-align: middle;
   display: inline-block;
-  border-radius: 0;
+  border-radius: 4px;
+  margin: 0 auto;
 }
 th.grid-checkbox input[type="checkbox"] + label span:before,
 td.grid-checkbox input[type="checkbox"] + label span:before {
