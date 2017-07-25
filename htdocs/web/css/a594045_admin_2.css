@@ -4358,11 +4358,14 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   text-align: left;
   font-weight: 300;
   padding: 0;
-  color: #303030;
+  color: #ffffff;
   line-height: 36px;
+  background: #525975;
   border-top: 1px solid #d6d6d6;
-  text-transform: uppercase;
+  padding-left: 10px;
   margin: 0;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
 .harmonica .main-panel label[for^="harmonica"] i {
   margin-right: 10px;
@@ -4376,17 +4379,16 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   margin-top: 8px;
 }
 .harmonica .main-panel label[for^="harmonica"]:hover {
-  background: #ebebeb;
+  background: #3d4257;
 }
-.harmonica .main-panel label[for^="harmonica"]:before {
-  content: "\e623";
+.harmonica .main-panel label[for^="harmonica"]:after {
+  content: "\F140";
   display: block;
-  font-family: 'tiecons';
+  font-family: "Material Design Icons";
   speak: none;
-  font-size: 11px;
-  color: #525975;
-  float: left;
-  margin-left: 10px;
+  font-size: 24px;
+  color: #ffffff;
+  float: right;
   margin-right: 10px;
 }
 .harmonica .main-panel label[for^="default"] {
@@ -4468,19 +4470,21 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 }
 .harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"] {
   font-weight: 400 !important;
-  background: #ebebeb;
-  color: #525975;
+  background: #525975;
+  color: #ffffff;
   border-top: 1px solid #d7d7d7;
   border-bottom: 1px solid #ccc;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
-.harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"]:before {
-  content: "\e621";
+.harmonica input[id^="harmonica"]:checked + .main-panel label[for^="harmonica"]:after {
+  content: "\F140";
   display: block;
-  font-family: 'tiecons';
+  font-family: "Material Design Icons";
   speak: none;
-  font-size: 11px;
-  color: #525975;
-  float: left;
+  font-size: 24px;
+  color: #ffffff;
+  float: right;
   margin-right: 10px;
 }
 .tab-body-wrapper .harmonica input:checked + .main-panel:first-of-type label[for^=harmonica] {

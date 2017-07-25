@@ -131,11 +131,14 @@
         text-align: left;
         font-weight: @roboto-light;
         padding: 0;
-        color: @color-font;
+        color: @color-white;
         line-height: 36px;
+        background: @color-primary;
         border-top: 1px solid lighten(@tabs-color-label, 35%);
-        text-transform: uppercase;
+        padding-left: 10px;
         margin: 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
 
         i {
           margin-right: 10px;
@@ -151,19 +154,16 @@
         }
 
         &:hover {
-          background: darken(@global-row-hover, 5%);
+          background: darken(@color-primary, 10%);
         }
-
-        &:before {
-          //content: "\e656";
-          content: "\e623";
+        &:after {
+          content: "\F140";
           display: block;
-          font-family: 'tiecons';
+          font-family: "Material Design Icons";
           speak: none;
-          font-size: 11px;
-          color: @color-primary;
-          float: left;
-          margin-left: 10px;
+          font-size: 24px;
+          color: @color-white;
+          float: right;
           margin-right: 10px;
         }
       }
@@ -256,19 +256,21 @@
 
       label[for^="harmonica"] {
         font-weight: 400 !important;
-        background: darken(@global-row-hover, 5%);
-        color: @color-primary;
+        background: @color-primary;
+        color: @color-white;
         border-top: 1px solid #d7d7d7;
         border-bottom: 1px solid #ccc;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
 
-        &:before {
-          content: "\e621";
+        &:after {
+          content: "\F140";
           display: block;
-          font-family: 'tiecons';
+          font-family: "Material Design Icons";
           speak: none;
-          font-size: 11px;
-          color: @color-primary;
-          float: left;
+          font-size: 24px;
+          color: @color-white;
+          float: right;
           margin-right: 10px;
         }
       }
