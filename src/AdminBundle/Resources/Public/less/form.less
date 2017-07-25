@@ -90,6 +90,19 @@
       font-size: 20px;
       right: 8px;
     }
+
+
+  }
+
+  .select-disabled {
+    select {
+      background: @color-grey-3;
+      border-color: @color-grey-3;
+
+      &:hover {
+        border-color: @color-grey-3;
+      }
+    }
   }
 
   .checkbox {
@@ -111,6 +124,9 @@
       background: @color-border;
       margin-right: 5px;
       border-radius: 2px;
+      position: relative;
+      vertical-align: middle;
+      bottom: 1px;
     }
 
     input:checked ~ label:before {
@@ -958,4 +974,20 @@ div[class^="control-"] {
   .pad {
     width: 37.5%;
   }
+}
+
+.image {
+  height: 257.5px;
+  border: 1px solid @color-border;
+  border-radius: 5px;
+  margin-bottom: 17.5px;
+}
+
+.upload-buttons {
+  text-align: center;
+}
+
+.error-message {
+  color: @color-warning;
+  text-align: right;
 }
