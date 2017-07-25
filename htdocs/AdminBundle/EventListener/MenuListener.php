@@ -65,7 +65,7 @@ class MenuListener
         $user = $menu
             ->addChild('Users', ['route' => 'admin-css-link'])
             ->setAttribute('class', 'js-direct-item')
-            ->setAttribute('class', 'active')
+            ->setAttribute('class', '')
             ->setAttribute('dropdown', true)
             ->setAttribute('icon', 'mdi mdi-face')
             ->setExtra('orderNumber', 2);
@@ -76,8 +76,60 @@ class MenuListener
         $user
             ->addChild('User 2', ['route' => 'admin-css-link']);
 
+        return;
+
         $menu
             ->addChild('Company', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 2', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 3', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 4', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 5', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 6', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 7', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 8', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 9', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 10', ['route' => 'admin-css-link'])
+            ->setAttribute('class', 'js-direct-item')
+            ->setAttribute('icon', 'mdi mdi-domain')
+            ->setExtra('orderNumber', 3);
+        $menu
+            ->addChild('Company 11', ['route' => 'admin-css-link'])
             ->setAttribute('class', 'js-direct-item')
             ->setAttribute('icon', 'mdi mdi-domain')
             ->setExtra('orderNumber', 3);

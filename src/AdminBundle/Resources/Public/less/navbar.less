@@ -90,6 +90,21 @@
       border-bottom: 1px #e2e4e6 solid;
     }
 
+    #navbar-actions{
+      padding-right: 10px;
+
+      .navbar-search{
+        font-size: 30px;
+        line-height: @navbar-height - 5px;
+        margin-right: 5px;
+        color: @color-primary;
+
+        &:hover{
+          color: darken(@color-primary, 10%);
+        }
+      }
+    }
+
     .navbar-item-label {
       display: inline-block;
       cursor: pointer;
