@@ -131,3 +131,52 @@
       }
     }
   }
+
+
+.table-pagination {
+  background-color: @back-color;
+  padding: 10px 0;
+
+  ul {
+    text-align: center;
+    color: @color-primary;
+    position: relative;
+
+    &:before {
+      font-family: "Material Design Icons";
+      content: '\F141';
+      font-size: 24px;
+      position: relative;
+      vertical-align: middle;
+      margin-right: 25px;
+    }
+
+    &:after {
+      font-family: "Material Design Icons";
+      content: '\F142';
+      font-size: 24px;
+      position: relative;
+      vertical-align: middle;
+      margin-left: 25px;
+    }
+
+    li {
+      border: 1px solid transparent;
+      display: inline-block;
+      padding: 5px 13px;
+      margin-right: 5px;
+      border-radius: 4px;
+
+      &.active {
+        border: 1px solid @color-primary;
+      }
+
+      &:hover {
+        border: 1px solid @color-primary;
+        background: @color-primary;
+        color: @color-white;
+        cursor: pointer;
+      }
+    }
+  }
+}
