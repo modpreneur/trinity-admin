@@ -877,8 +877,8 @@ body {
   background: #525975;
   border: none;
   padding: 0;
-  font-size: 20px;
-  margin: 15px;
+  font-size: 22px;
+  margin: 14px;
 }
 #sidebar {
   z-index: 99;
@@ -906,6 +906,7 @@ body {
   cursor: pointer;
   list-style-type: none;
   color: #525975;
+  margin-bottom: 2px;
 }
 #sidebar ul.sidebar li > a,
 #sidebar ul.sidebar li .a {
@@ -948,26 +949,24 @@ body {
   padding: 0;
 }
 #sidebar ul.sidebar li ul li a {
-  font-size: 12px;
+  font-size: 11.2px;
   padding: 2px;
   background: transparent;
 }
 #sidebar ul.sidebar li ul li:hover a {
   background: transparent;
   color: #525975;
-  border-bottom: 1px solid #e4ebf7;
+  border: 1px solid transparent;
   border-radius: 0;
+  text-decoration: underline;
 }
 #sidebar ul.sidebar li i {
-  margin: 3px 16px 0 0;
+  margin: -5px 16px 0 0;
   float: left;
   display: inline-block;
-  font-size: 16px;
+  font-size: 21px;
   transition: .3s;
   color: #525975;
-}
-#sidebar ul.sidebar li i.mdi {
-  margin-top: -5px;
 }
 #sidebar .drop-down {
   -webkit-touch-callout: none;
@@ -996,7 +995,7 @@ body {
 #sidebar .drop-down input:checked ~ ul.drop {
   display: block;
   visibility: visible;
-  margin-left: 2.5em;
+  margin-left: čřpx;
   opacity: 1;
   top: 0;
   position: static;
@@ -1583,7 +1582,7 @@ g {
   margin-right: 0 !important;
 }
 .trinity-widget.box-small {
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -1737,7 +1736,7 @@ g {
   margin-bottom: 20px;
 }
 .box-widget.box-small {
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -3242,7 +3241,7 @@ div[class^="control-"] i {
   min-height: 20px;
 }
 .modal-dialog > div.box-small {
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -4490,7 +4489,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   min-height: 20px;
 }
 .box.box-small {
-  max-width: 700px;
+  max-width: 800px;
   margin-left: auto;
   margin-right: auto;
 }

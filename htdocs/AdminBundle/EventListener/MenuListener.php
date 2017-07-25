@@ -59,7 +59,7 @@ class MenuListener
         $menu
             ->addChild('Products', ['route' => 'admin-css-link'])
             ->setAttribute('class', 'js-direct-item')
-            ->setAttribute('icon', 'trinity trinity-products')
+            ->setAttribute('icon', 'mdi mdi-book-open-variant')
             ->setExtra('orderNumber', 1);
 
         $user = $menu
@@ -67,7 +67,7 @@ class MenuListener
             ->setAttribute('class', 'js-direct-item')
             ->setAttribute('class', 'active')
             ->setAttribute('dropdown', true)
-            ->setAttribute('icon', 'trinity trinity-users')
+            ->setAttribute('icon', 'mdi mdi-face')
             ->setExtra('orderNumber', 2);
 
         $user
@@ -79,7 +79,7 @@ class MenuListener
         $menu
             ->addChild('Company', ['route' => 'admin-css-link'])
             ->setAttribute('class', 'js-direct-item')
-            ->setAttribute('icon', 'trinity trinity-products')
+            ->setAttribute('icon', 'mdi mdi-domain')
             ->setExtra('orderNumber', 3);
     }
 }
