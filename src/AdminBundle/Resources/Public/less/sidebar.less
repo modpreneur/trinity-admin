@@ -50,17 +50,18 @@ body{
   position: fixed;
   height: 100%;
   left: 0;
+  overflow-y: auto;
 
   label{
     width: 100%;
   }
 
-  ul{
+  ul {
     &.sidebar {
-      overflow-y: auto;
       margin-top: 10px;
       padding-left: 0;
       margin-left: 0;
+      padding-bottom: 20px; // correction for sufficient scrollbar
       /** end **/
 
       li {
