@@ -26,7 +26,7 @@
 
   .navbar {
     background: #fff;
-    min-height: @navbar-height;
+    height: @navbar-height;
     width: 100%;
     color: @navbar-font-color;
     overflow: hidden;
@@ -85,8 +85,7 @@
       display: inline-block;
       float: left;
       .group-clearfix();
-      width: ~"calc(100% -" 240px ~")";
-      height: @navbar-height;
+      width: ~"calc(100% -" @sidebar-width ~")";
 
       border-bottom: 1px #e2e4e6 solid;
     }
