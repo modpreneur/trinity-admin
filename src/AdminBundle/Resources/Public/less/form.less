@@ -94,19 +94,17 @@
 
   }
 
-  .select-disabled {
-    select {
-      background: @color-grey-3;
-      border-color: @color-grey-3;
+  select[disabled] {
+    background: @color-grey-3;
+    border-color: @color-grey-3;
 
-      &:hover {
-        border-color: @color-grey-3;
-      }
+    &:hover {
+      cursor: not-allowed;
+      border-color: @color-grey-3;
     }
   }
 
   .checkbox {
-    margin-bottom: 5px;
     label {
       width: auto;
       font-weight: 300;
@@ -117,30 +115,24 @@
     }
 
     label:before {
-      content: "";
-      display: inline-block;
-      width: 15px;
-      height: 15px;
-      background: @color-border;
-      margin-right: 5px;
-      border-radius: 2px;
+      content: "\F12E";
       position: relative;
       vertical-align: middle;
-      bottom: 1px;
+      font-family: "Material Design Icons";
+      font-size: 24px;
+      margin-right: 5px;
     }
 
     input:checked ~ label:before {
-      background: @color-primary;
+      content: "\F132";
+      color: @color-primary;
+      position: relative;
+      vertical-align: middle;
+      font-family: "Material Design Icons";
+      speak: none;
     }
 
     input:checked ~ label:after {
-      content: "\e933";
-      color: #fff;
-      position: absolute;
-      left: 1px;
-      font-family: trinity !important;
-      speak: none;
-      line-height: 1;
     }
   }
 
@@ -163,6 +155,7 @@
   }
 }
 
+//34
 
 // add-new-form?
 .add-new-box{
@@ -355,40 +348,44 @@
       white-space: nowrap;
 
       &:before {
-        content: '';
-        display: inline-block;
-        width: 18px;
-        height: 18px;
-        margin-right: 10px;
-        font-size: 16px;
-        border: 1px solid #b9b9b9;
-        vertical-align: middle;
 
+        content: "\F12E";
+        position: relative;
+        vertical-align: middle;
+        font-family: "Material Design Icons";
+        font-size: 23px;
+        margin-right: 5px;
         transition: .3s;
-      }
-      &:hover:before {
-        border: 1px solid @color-primary;
       }
     }
 
-    input[type="checkbox"]:checked ~ label:after {
-      position: absolute;
-      height: 100%;
-      left: 3px;
-      font-size: 15px;
-      //line-height: 1;
-      font-family: "trinity";
-      color: #fff;
+    label:before {
+      content: "\F12E";
+      position: relative;
       vertical-align: middle;
+      font-family: "Material Design Icons";
+      font-size: 24px;
+      margin-right: 5px;
+      color: @color-primary;
+    }
 
-      content: '\e933';
-      display: inline-block;
+    input:checked ~ label:before {
+      content: "\F132";
+      color: @color-primary;
+      position: relative;
+      vertical-align: middle;
+      font-family: "Material Design Icons";
+      speak: none;
       -ms-transform: translateY(1px);
     }
 
     input[type="checkbox"]:checked ~ label:before {
-      border: 1px solid @color-primary;
-      background: @color-primary;
+      content: "\F132";
+      color: @color-primary;
+      position: relative;
+      vertical-align: middle;
+      font-family: "Material Design Icons";
+      speak: none;
     }
   }
 
@@ -977,7 +974,6 @@ div[class^="control-"] {
 }
 
 .image {
-  height: 257.5px;
   border: 1px solid @color-border;
   border-radius: 5px;
   margin-bottom: 17.5px;

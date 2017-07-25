@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /**************************************
 
     Functions - mixins
@@ -99,11 +98,11 @@
   float: left;
   z-index: 999;
   background: #6F68F9;
-  background-image: -o-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: -webkit-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
+  background-image: -o-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
+  background-image: -moz-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
+  background-image: -webkit-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
+  background-image: -ms-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
+  background-image: linear-gradient(to left top, #6f68f9 0%, #17bdff 100%);
 }
 .navbar .navbar-logo:after {
   content: "";
@@ -325,7 +324,7 @@
   background: #17bdff;
 }
 .background.background-purple {
-  background: #7068F9;
+  background: #7068f9;
 }
 .background.background-necktie {
   background: #19beff;
@@ -484,7 +483,7 @@ div#navbar-actions {
   color: #838383;
 }
 .notifications .tab-list li:hover i.trinity-close:hover {
-  color: #1ABB9C;
+  color: #1abb9c;
 }
 .notifications .tab-list li:hover .detail-info {
   position: relative;
@@ -513,7 +512,7 @@ div#navbar-actions {
   background: #fff;
 }
 .notifications .info i {
-  color: #18BDFF;
+  color: #18bdff;
 }
 .notifications .warning {
   background: #fff4e6;
@@ -889,7 +888,7 @@ body {
   font-family: "Noto Sans", sans-serif;
   width: 230px;
   padding-bottom: 0;
-  background: #fff;
+  background: #ffffff;
   position: fixed;
   height: 100%;
   left: 0;
@@ -1059,10 +1058,10 @@ body {
   color: red;
 }
 .info {
-  background-color: #18BDFF;
+  background-color: #18bdff;
 }
 .color-info {
-  color: #18BDFF;
+  color: #18bdff;
 }
 .warning {
   background-color: #ff8939;
@@ -1083,16 +1082,16 @@ body {
   color: #525975 !important;
 }
 .secondary {
-  background-color: #7068F9;
+  background-color: #7068f9;
 }
 .color-secondary {
-  color: #7068F9 !important;
+  color: #7068f9 !important;
 }
 .tertiary {
-  background-color: #1ABB9C;
+  background-color: #1abb9c;
 }
 .color-tertiary {
-  color: #1ABB9C !important;
+  color: #1abb9c !important;
 }
 .tags li {
   width: auto;
@@ -1503,7 +1502,7 @@ g {
 .tabs-wrapper {
   border: none;
   box-shadow: none;
-  background: #fff;
+  background: #ffffff;
   border-radius: 3px;
 }
 .tabs-wrapper > label {
@@ -1530,7 +1529,7 @@ g {
   font-weight: bold;
 }
 .tabs-wrapper .tab-body {
-  background: #fff;
+  background: #ffffff;
   margin: 0 auto;
 }
 .tabs-wrapper form label {
@@ -1593,18 +1592,17 @@ g {
 .trinity-widget .box-title {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
 }
 .trinity-widget .box-header {
   background: #525975;
-  color: #fff;
+  color: #ffffff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
+  padding: 6.5px 11px;
 }
 .trinity-widget .box-header .box-header-actions {
   float: right;
@@ -1681,7 +1679,7 @@ g {
   bottom: -15px;
 }
 .trinity-widget .widgetResizer i {
-  background: #1ABB9C;
+  background: #1abb9c;
 }
 .trinity-widget .widgetResizer i:hover {
   color: #942a25;
@@ -1691,7 +1689,7 @@ g {
   text-transform: uppercase;
   padding: 0;
   font-weight: 300;
-  color: #fff;
+  color: #ffffff;
   min-height: 0;
 }
 .trinity-widget footer {
@@ -1747,18 +1745,17 @@ g {
 .box-widget .box-title {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
 }
 .box-widget .box-header {
   background: #525975;
-  color: #fff;
+  color: #ffffff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
+  padding: 6.5px 11px;
 }
 .box-widget .box-header .box-header-actions {
   float: right;
@@ -1888,7 +1885,7 @@ g {
   border-bottom: 1px solid #e5e5e5;
 }
 #dashboard .choice:first-of-type .checkbox:hover {
-  background: #EFEFEF;
+  background: #efefef;
 }
 #dashboard .choice:last-of-type {
   width: 40px;
@@ -2197,15 +2194,13 @@ g {
   font-size: 20px;
   right: 8px;
 }
-.form .select-disabled select {
-  background: #E0E7F1;
-  border-color: #E0E7F1;
+.form select[disabled] {
+  background: #e0e7f1;
+  border-color: #e0e7f1;
 }
-.form .select-disabled select:hover {
-  border-color: #E0E7F1;
-}
-.form .checkbox {
-  margin-bottom: 5px;
+.form select[disabled]:hover {
+  cursor: not-allowed;
+  border-color: #e0e7f1;
 }
 .form .checkbox label {
   width: auto;
@@ -2215,28 +2210,20 @@ g {
   display: none;
 }
 .form .checkbox label:before {
-  content: "";
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  background: #dbe2ed;
-  margin-right: 5px;
-  border-radius: 2px;
+  content: "\F12E";
   position: relative;
   vertical-align: middle;
-  bottom: 1px;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  margin-right: 5px;
 }
 .form .checkbox input:checked ~ label:before {
-  background: #525975;
-}
-.form .checkbox input:checked ~ label:after {
-  content: "\e933";
-  color: #fff;
-  position: absolute;
-  left: 1px;
-  font-family: trinity !important;
+  content: "\F132";
+  color: #525975;
+  position: relative;
+  vertical-align: middle;
+  font-family: "Material Design Icons";
   speak: none;
-  line-height: 1;
 }
 .form .form-caption {
   font-weight: 600;
@@ -2268,7 +2255,7 @@ g {
 }
 .add-new-box:hover {
   background: #525975;
-  color: #fff;
+  color: #ffffff;
 }
 .edit-form,
 .new-form,
@@ -2504,40 +2491,45 @@ g {
 .edit-form .checkbox label:before,
 .new-form .checkbox label:before,
 .modal-dialog form .checkbox label:before {
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  font-size: 16px;
-  border: 1px solid #b9b9b9;
+  content: "\F12E";
+  position: relative;
   vertical-align: middle;
+  font-family: "Material Design Icons";
+  font-size: 23px;
+  margin-right: 5px;
   transition: .3s;
 }
-.edit-form .checkbox label:hover:before,
-.new-form .checkbox label:hover:before,
-.modal-dialog form .checkbox label:hover:before {
-  border: 1px solid #525975;
-}
-.edit-form .checkbox input[type="checkbox"]:checked ~ label:after,
-.new-form .checkbox input[type="checkbox"]:checked ~ label:after,
-.modal-dialog form .checkbox input[type="checkbox"]:checked ~ label:after {
-  position: absolute;
-  height: 100%;
-  left: 3px;
-  font-size: 15px;
-  font-family: "trinity";
-  color: #fff;
+.edit-form .checkbox label:before,
+.new-form .checkbox label:before,
+.modal-dialog form .checkbox label:before {
+  content: "\F12E";
+  position: relative;
   vertical-align: middle;
-  content: '\e933';
-  display: inline-block;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  margin-right: 5px;
+  color: #525975;
+}
+.edit-form .checkbox input:checked ~ label:before,
+.new-form .checkbox input:checked ~ label:before,
+.modal-dialog form .checkbox input:checked ~ label:before {
+  content: "\F132";
+  color: #525975;
+  position: relative;
+  vertical-align: middle;
+  font-family: "Material Design Icons";
+  speak: none;
   -ms-transform: translateY(1px);
 }
 .edit-form .checkbox input[type="checkbox"]:checked ~ label:before,
 .new-form .checkbox input[type="checkbox"]:checked ~ label:before,
 .modal-dialog form .checkbox input[type="checkbox"]:checked ~ label:before {
-  border: 1px solid #525975;
-  background: #525975;
+  content: "\F132";
+  color: #525975;
+  position: relative;
+  vertical-align: middle;
+  font-family: "Material Design Icons";
+  speak: none;
 }
 .edit-form .checkbox-inline label,
 .new-form .checkbox-inline label,
@@ -2554,40 +2546,45 @@ g {
 .edit-form .checkbox-inline label:before,
 .new-form .checkbox-inline label:before,
 .modal-dialog form .checkbox-inline label:before {
-  content: '';
-  display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  font-size: 16px;
-  border: 1px solid #b9b9b9;
+  content: "\F12E";
+  position: relative;
   vertical-align: middle;
+  font-family: "Material Design Icons";
+  font-size: 23px;
+  margin-right: 5px;
   transition: .3s;
 }
-.edit-form .checkbox-inline label:hover:before,
-.new-form .checkbox-inline label:hover:before,
-.modal-dialog form .checkbox-inline label:hover:before {
-  border: 1px solid #525975;
-}
-.edit-form .checkbox-inline input[type="checkbox"]:checked ~ label:after,
-.new-form .checkbox-inline input[type="checkbox"]:checked ~ label:after,
-.modal-dialog form .checkbox-inline input[type="checkbox"]:checked ~ label:after {
-  position: absolute;
-  height: 100%;
-  left: 3px;
-  font-size: 15px;
-  font-family: "trinity";
-  color: #fff;
+.edit-form .checkbox-inline label:before,
+.new-form .checkbox-inline label:before,
+.modal-dialog form .checkbox-inline label:before {
+  content: "\F12E";
+  position: relative;
   vertical-align: middle;
-  content: '\e933';
-  display: inline-block;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  margin-right: 5px;
+  color: #525975;
+}
+.edit-form .checkbox-inline input:checked ~ label:before,
+.new-form .checkbox-inline input:checked ~ label:before,
+.modal-dialog form .checkbox-inline input:checked ~ label:before {
+  content: "\F132";
+  color: #525975;
+  position: relative;
+  vertical-align: middle;
+  font-family: "Material Design Icons";
+  speak: none;
   -ms-transform: translateY(1px);
 }
 .edit-form .checkbox-inline input[type="checkbox"]:checked ~ label:before,
 .new-form .checkbox-inline input[type="checkbox"]:checked ~ label:before,
 .modal-dialog form .checkbox-inline input[type="checkbox"]:checked ~ label:before {
-  border: 1px solid #525975;
-  background: #525975;
+  content: "\F132";
+  color: #525975;
+  position: relative;
+  vertical-align: middle;
+  font-family: "Material Design Icons";
+  speak: none;
 }
 .edit-form .checkbox-inline label,
 .new-form .checkbox-inline label,
@@ -2940,7 +2937,7 @@ h2.warning {
   display: none !important;
 }
 .collection-widget .add-collection-item {
-  color: #1ABB9C;
+  color: #1abb9c;
 }
 .collection-widget .add-collection-item p {
   margin: 5px 0 !important;
@@ -3068,7 +3065,6 @@ div[class^="control-"] i {
   }
 }
 .image {
-  height: 257.5px;
   border: 1px solid #dbe2ed;
   border-radius: 5px;
   margin-bottom: 17.5px;
@@ -3092,19 +3088,19 @@ div[class^="control-"] i {
 .navigation-box {
   display: block;
 }
-.navigation-box span.tooltip:nth-child(5) {
+.navigation-box span.tooltip:nth-child( 5) {
   z-index: 25;
 }
-.navigation-box span.tooltip:nth-child(4) {
+.navigation-box span.tooltip:nth-child( 4) {
   z-index: 26;
 }
-.navigation-box span.tooltip:nth-child(3) {
+.navigation-box span.tooltip:nth-child( 3) {
   z-index: 27;
 }
-.navigation-box span.tooltip:nth-child(2) {
+.navigation-box span.tooltip:nth-child( 2) {
   z-index: 28;
 }
-.navigation-box span.tooltip:nth-child(1) {
+.navigation-box span.tooltip:nth-child( 1) {
   z-index: 29;
 }
 .navigation-box .tooltip {
@@ -3209,13 +3205,13 @@ div[class^="control-"] i {
   background: #323748;
 }
 .query-builder .rules-group-container {
-  border-color: #7068F9 !important;
+  border-color: #7068f9 !important;
   background: #f2f6fc !important;
   padding: 0 !important;
   margin-top: 0 !important;
 }
 .query-builder .rule-container {
-  background: #7068F9 !important;
+  background: #7068f9 !important;
 }
 .query-builder input.form-control:focus {
   border-color: #525975 !important;
@@ -3252,18 +3248,17 @@ div[class^="control-"] i {
 .modal-dialog > div .box-title {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
 }
 .modal-dialog > div .box-header {
   background: #525975;
-  color: #fff;
+  color: #ffffff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
+  padding: 6.5px 11px;
 }
 .modal-dialog > div .box-header .box-header-actions {
   float: right;
@@ -3355,7 +3350,7 @@ div[class^="control-"] i {
 }
 .data-grid thead tr th {
   text-align: left;
-  color: #fff;
+  color: #ffffff;
   font-weight: 700;
   text-transform: capitalize;
 }
@@ -3363,7 +3358,7 @@ div[class^="control-"] i {
   cursor: pointer;
 }
 .data-grid thead tr th.order-by:hover:after {
-  color: #fff;
+  color: #ffffff;
 }
 .data-grid thead .order-by-asc:after,
 .data-grid thead th.order-by:not([class*=order-by-]):hover:after,
@@ -3523,7 +3518,7 @@ table.data-grid .item-menu-button {
   color: #fff;
 }
 .pagination li.active a {
-  background: #7068F9 !important;
+  background: #7068f9 !important;
   color: #fff !important;
 }
 .pagination .break {
@@ -3655,7 +3650,7 @@ table.data-grid .item-menu-button {
   text-decoration: underline;
 }
 .action-cell .actions a:hover {
-  color: #1ABB9C;
+  color: #1abb9c;
   text-decoration: none;
 }
 div.color-viewer {
@@ -3678,14 +3673,15 @@ td.grid-checkbox {
 }
 th.grid-checkbox input[type="checkbox"]:checked + label span,
 td.grid-checkbox input[type="checkbox"]:checked + label span {
-  border: 1px solid #525975;
-  background: #525975;
+  font-family: "Material Design Icons";
+  content: '\F12E';
 }
 th.grid-checkbox input[type="checkbox"]:checked + label span:before,
 td.grid-checkbox input[type="checkbox"]:checked + label span:before {
-  font-family: trinity;
-  content: '\e933';
-  color: #fff;
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  content: '\F132';
+  color: #525975;
 }
 th.grid-checkbox input[type="checkbox"] + label,
 td.grid-checkbox input[type="checkbox"] + label {
@@ -3693,21 +3689,25 @@ td.grid-checkbox input[type="checkbox"] + label {
 }
 th.grid-checkbox input[type="checkbox"] + label span,
 td.grid-checkbox input[type="checkbox"] + label span {
-  width: 20px;
-  height: 20px;
   text-align: center;
-  background: #e4ebf7;
   vertical-align: middle;
   display: inline-block;
   border-radius: 4px;
   margin: 0 auto;
+  color: #e4ebf7;
 }
 th.grid-checkbox input[type="checkbox"] + label span:before,
 td.grid-checkbox input[type="checkbox"] + label span:before {
-  font-family: trinity;
+  font-family: "Material Design Icons";
   text-align: left;
-  font-size: 14px;
-  content: '\0a0';
+  font-size: 24px;
+  content: '\F12E';
+}
+th:first-child input[type="checkbox"]:checked + label span:before {
+  font-family: "Material Design Icons";
+  font-size: 24px;
+  content: '\F132';
+  color: #ffffff;
 }
 /**************************************
 
@@ -3749,7 +3749,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #fff;
   cursor: pointer;
   transition: .3s;
-  font-size: 18px;
+  font-size: 14px;
   padding: 9px 35px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -3762,6 +3762,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 .button-success {
   font-weight: 500;
   box-shadow: none;
+  border: none;
   background: #7fb93d;
   background: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
@@ -3772,14 +3773,15 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
 }
 .button-success:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY1OTMzMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAyNWIzMCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  border: none;
 }
 .button-info {
   box-shadow: none;
 }
 .button-primary {
   padding: 9px 13px;
-  color: #fff;
+  color: #ffffff;
   background: #525975;
   text-align: center;
   cursor: pointer;
@@ -3789,24 +3791,24 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 }
 .button-primary:hover {
   background: #3d4257;
-  color: #fff;
+  color: #ffffff;
 }
 .button-primary-inverse {
   padding: 9px 13px;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   border-radius: 20px;
   background: #525975;
 }
 .button-primary-inverse:hover {
-  background: #fff;
+  background: #ffffff;
   color: #525975;
 }
 .button-secondary {
-  background-color: #7068F9;
+  background-color: #7068f9;
   border: none;
 }
 .button-secondary:hover {
@@ -3814,7 +3816,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   border: none;
 }
 .button-tertiary {
-  background: #1ABB9C;
+  background: #1abb9c;
   border: none;
   box-shadow: none;
 }
@@ -3823,7 +3825,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   border: none;
 }
 .button-info {
-  background-color: #18BDFF;
+  background-color: #18bdff;
   box-shadow: none;
   border: none;
 }
@@ -3859,12 +3861,12 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   border: 1px solid #3d1d17;
 }
 .button-necktie {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE5YmNmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZlNjlmOSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 2px #c9d5e9;
+  box-shadow: 0 0 0 1px #c9d5e9;
 }
 .button-necktie:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTJlNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNmMzhmNyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
 }
 .button-line {
   border: 1px solid #525975;
@@ -3874,7 +3876,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 }
 .button-line:hover {
   background: #525975;
-  color: #fff;
+  color: #ffffff;
 }
 .button-disable {
   border: 1px solid #525975;
@@ -3889,15 +3891,15 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .button-grey-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZWVmMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NiZDNlMCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
   border: none;
   color: #525975;
 }
 .button-grey-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NiZDNlMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FiYjhjZCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
 }
 .button-grey-1 {
-  background: #F7F8FC;
+  background: #f7f8fc;
   color: #525975;
   border: none;
 }
@@ -3906,7 +3908,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .button-grey-2 {
-  background: #E4EAF6;
+  background: #e4eaf6;
   color: #525975;
   border: none;
 }
@@ -3915,7 +3917,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .button-grey-3 {
-  background: #E0E7F1;
+  background: #e0e7f1;
   color: #525975;
   border: none;
 }
@@ -3924,7 +3926,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .button-grey-4 {
-  background: #CFD2D9;
+  background: #cfd2d9;
   color: #525975;
   border: none;
 }
@@ -3933,11 +3935,11 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .button-orange-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlNzgwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5NDUyZSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
   border: none;
 }
 .button-orange-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NiNjAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VkMjEwNyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
 }
 .trinity-form-loading {
   text-align: center;
@@ -3951,7 +3953,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #fff;
   cursor: pointer;
   transition: .3s;
-  font-size: 18px;
+  font-size: 14px;
   padding: 9px 35px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -3965,6 +3967,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 .trinity-form-loading-success {
   font-weight: 500;
   box-shadow: none;
+  border: none;
   background: #7fb93d;
   background: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
   background: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
@@ -3975,14 +3978,15 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
 }
 .trinity-form-loading-success:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY1OTMzMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAyNWIzMCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  border: none;
 }
 .trinity-form-loading-info {
   box-shadow: none;
 }
 .trinity-form-loading-primary {
   padding: 9px 13px;
-  color: #fff;
+  color: #ffffff;
   background: #525975;
   text-align: center;
   cursor: pointer;
@@ -3992,24 +3996,24 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 }
 .trinity-form-loading-primary:hover {
   background: #3d4257;
-  color: #fff;
+  color: #ffffff;
 }
 .trinity-form-loading-primary-inverse {
   padding: 9px 13px;
-  color: #fff;
+  color: #ffffff;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff;
   border-radius: 20px;
   background: #525975;
 }
 .trinity-form-loading-primary-inverse:hover {
-  background: #fff;
+  background: #ffffff;
   color: #525975;
 }
 .trinity-form-loading-secondary {
-  background-color: #7068F9;
+  background-color: #7068f9;
   border: none;
 }
 .trinity-form-loading-secondary:hover {
@@ -4017,7 +4021,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   border: none;
 }
 .trinity-form-loading-tertiary {
-  background: #1ABB9C;
+  background: #1abb9c;
   border: none;
   box-shadow: none;
 }
@@ -4026,7 +4030,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   border: none;
 }
 .trinity-form-loading-info {
-  background-color: #18BDFF;
+  background-color: #18bdff;
   box-shadow: none;
   border: none;
 }
@@ -4062,12 +4066,12 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   border: 1px solid #3d1d17;
 }
 .trinity-form-loading-necktie {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzE5YmNmZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzZlNjlmOSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 2px #c9d5e9;
+  box-shadow: 0 0 0 1px #c9d5e9;
 }
 .trinity-form-loading-necktie:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTJlNSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzNmMzhmNyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
 }
 .trinity-form-loading-line {
   border: 1px solid #525975;
@@ -4077,7 +4081,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 }
 .trinity-form-loading-line:hover {
   background: #525975;
-  color: #fff;
+  color: #ffffff;
 }
 .trinity-form-loading-disable {
   border: 1px solid #525975;
@@ -4092,15 +4096,15 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .trinity-form-loading-grey-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZWVmMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NiZDNlMCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
   border: none;
   color: #525975;
 }
 .trinity-form-loading-grey-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NiZDNlMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FiYjhjZCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
 }
 .trinity-form-loading-grey-1 {
-  background: #F7F8FC;
+  background: #f7f8fc;
   color: #525975;
   border: none;
 }
@@ -4109,7 +4113,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .trinity-form-loading-grey-2 {
-  background: #E4EAF6;
+  background: #e4eaf6;
   color: #525975;
   border: none;
 }
@@ -4118,7 +4122,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .trinity-form-loading-grey-3 {
-  background: #E0E7F1;
+  background: #e0e7f1;
   color: #525975;
   border: none;
 }
@@ -4127,7 +4131,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .trinity-form-loading-grey-4 {
-  background: #CFD2D9;
+  background: #cfd2d9;
   color: #525975;
   border: none;
 }
@@ -4136,11 +4140,11 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   color: #525975;
 }
 .trinity-form-loading-orange-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlNzgwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5NDUyZSIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
   border: none;
 }
 .trinity-form-loading-orange-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NiNjAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VkMjEwNyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
 }
 .trinity-form-loading:after {
   content: "\e92b";
@@ -4225,7 +4229,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 }
 .harmonica input:checked + .main-panel label {
   font-weight: bold;
-  background-color: #1ABB9C;
+  background-color: #1abb9c;
   -webkit-transition: all 100ms ease;
   -moz-transition: all 100ms ease;
   -ms-transition: all 100ms ease;
@@ -4233,7 +4237,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   transition: all 100ms ease;
 }
 .harmonica input:checked + .main-panel label:hover {
-  color: #fff;
+  color: #ffffff;
 }
 .harmonica input:checked + .main-panel label span:before {
   font-family: "tiecons";
@@ -4244,8 +4248,8 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 }
 .harmonica .main-panel .show-harmonica {
   padding: 15px;
-  background: #1ABB9C;
-  color: #fff;
+  background: #1abb9c;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 300;
 }
@@ -4254,7 +4258,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   position: relative;
   border: solid 1px transparent;
   color: #525975;
-  background-color: #fff;
+  background-color: #ffffff;
   font-size: 17px;
   font-weight: 600;
   line-height: 1;
@@ -4262,7 +4266,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 }
 .harmonica .main-panel label:hover {
   cursor: pointer;
-  color: red;
+  color: #ff0000;
 }
 .harmonica .main-panel label img.text-right,
 .harmonica .main-panel label i.text-right,
@@ -4387,7 +4391,7 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
   display: block;
   font-size: 30px;
   padding: 15px;
-  color: #1ABB9C;
+  color: #1abb9c;
 }
 .harmonica label[for^="help-content"] i:hover {
   color: #117864;
@@ -4463,18 +4467,17 @@ td.grid-checkbox input[type="checkbox"] + label span:before {
 .box .box-title {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
 }
 .box .box-header {
   background: #525975;
-  color: #fff;
+  color: #ffffff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 0.5em 0.5em 0.5em 20px;
   font-size: 1.4em;
   font-weight: 300;
+  padding: 6.5px 11px;
 }
 .box .box-header .box-header-actions {
   float: right;
@@ -4653,6 +4656,7 @@ input[disabled] + label:after {
 .checkbox .level3 {
   margin-left: 60px;
 }
+@charset "UTF-8";
 .grid-table-body {
   overflow-x: auto;
   white-space: nowrap;
@@ -4686,8 +4690,8 @@ input[type=checkbox].edit-input:disabled + label span {
   background: none;
 }
 input[type=checkbox].edit-input:checked + label span::before {
-  font-family: 'trinity';
-  content: '\e933';
+  font-family: 'Material Design Icons';
+  content: '\F12E';
 }
 input[type=color] {
   padding: 0 !important;

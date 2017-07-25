@@ -14,7 +14,6 @@
   border: 0;
 }
 
-
 .button-parameters {
   text-align: center;
   font-weight: @roboto-medium;
@@ -36,19 +35,22 @@
   }
 }
 
+
 .button {
   .button-parameters();
-  font-size: 18px;
+  font-size: 14px;
   padding: 9px 35px;
   .radius(20px);
 
   &-success {
     font-weight: @roboto-medium;
     box-shadow: none;
+    border: none;
     .green();
 
     &:hover {
       background-image: svg-gradient(to bottom, darken(@color-green, 10%), darken(@color-darkgreen, 10%));
+      border: none;
     }
   }
 
@@ -156,7 +158,7 @@
     background-image: svg-gradient(to bottom, @color-necktie-gradient1, @color-necktie-gradient2);
 
     border: 1.5px solid #fff;
-    box-shadow: 0 0 0 2px #c9d5e9;
+    box-shadow: 0 0 0 1px #c9d5e9;
 
     &:hover {
       background-image: svg-gradient(to bottom, darken(@color-necktie-gradient1, 10%), darken(@color-necktie-gradient2, 10%));
@@ -245,11 +247,11 @@
   }
 
   &-orange-gradient {
-    background-image: svg-gradient(to bottom, @color-orange-gradient1, @color-orange-gradient1);
+    background-image: svg-gradient(to bottom, @color-orange-gradient1, @color-orange-gradient2);
     border: none;
 
     &:hover {
-      background-image: svg-gradient(to bottom, darken(@color-orange-gradient1, 10%), darken(@color-orange-gradient1, 10%));
+      background-image: svg-gradient(to bottom, darken(@color-orange-gradient1, 10%), darken(@color-orange-gradient2, 10%));
     }
   }
 }

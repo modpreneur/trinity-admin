@@ -79,14 +79,16 @@
     // The actual checkbox
     input[type="checkbox"] {
       &:checked  + label span {
-        border: 1px solid @color-primary;
-        background: @color-primary;
-
+        //border: 1px solid @color-primary;
+        //background: @color-primary;
+        font-family: "Material Design Icons";
+        content: '\F12E';
 
         &:before {
-          font-family: trinity;
-          content: '\e933';
-          color: #fff;
+          font-family: "Material Design Icons";
+          font-size: 24px;
+          content: '\F132';
+          color: @color-primary;
         }
       }
 
@@ -94,21 +96,37 @@
         cursor: pointer;
 
         span {
-          width: 20px;
-          height: 20px;
+          //width: 20px;
+          //height: 20px;
           text-align: center;
-          background: #e4ebf7;
+          //background: #e4ebf7;
           vertical-align: middle;
           display: inline-block;
           border-radius: 4px;
           margin: 0 auto;
+          color: #e4ebf7;
+
 
           &:before {
-            font-family: trinity;
+            font-family: "Material Design Icons";
             text-align: left;
-            font-size: 14px;
-            content: '\0a0';
+            font-size: 24px;
+            content: '\F12E';
           }
+        }
+      }
+    }
+  }
+
+  th:first-child {
+    input[type="checkbox"] {
+      &:checked + label span {
+
+        &:before {
+          font-family: "Material Design Icons";
+          font-size: 24px;
+          content: '\F132';
+          color: @color-white;
         }
       }
     }
