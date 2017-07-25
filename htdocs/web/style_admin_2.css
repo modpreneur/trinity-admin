@@ -53,6 +53,10 @@
 **************************************/
 /**************************************
   Roboto font-weight
+  TODO: use noto and remove roboto everywhere
+**************************************/
+/**************************************
+  Noto font-weight
 **************************************/
 /**
     Top sidebar
@@ -995,7 +999,7 @@ body {
 #sidebar .drop-down input:checked ~ ul.drop {
   display: block;
   visibility: visible;
-  margin-left: čřpx;
+  margin-left: 50px;
   opacity: 1;
   top: 0;
   position: static;
@@ -3315,13 +3319,6 @@ div[class^="control-"] i {
       - pagination
 
 **************************************/
-.show-filters {
-  display: none;
-}
-.grid-bulk-actions {
-  padding: 15px 20px 0 20px;
-  margin-bottom: -15px;
-}
 .data-grid {
   border: none;
   background: transparent;
@@ -3337,9 +3334,19 @@ div[class^="control-"] i {
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
+.data-grid td,
+.data-grid th {
+  line-height: 1;
+  font-size: 14px;
+  border-right: 1px solid #e4ebf7;
+  padding: 0 5px 0 10px;
+}
+.data-grid td.grid-checkbox,
+.data-grid th.grid-checkbox {
+  padding: 10px;
+}
 .data-grid thead {
   background-color: #525975;
-  border-bottom: 2px solid #ededed;
 }
 .data-grid thead tr {
   -moz-border-radius: 5px;
@@ -3347,24 +3354,16 @@ div[class^="control-"] i {
   border-radius: 5px;
 }
 .data-grid thead tr th {
-  padding: 5px;
   text-align: left;
-  padding-left: 10px;
-  font-size: 16px;
   color: #fff;
-  font-weight: 500;
+  font-weight: 700;
   text-transform: capitalize;
-  border-right: 0.5px solid #d9d9d9;
-  border-left: 0.5px solid #d9d9d9;
 }
 .data-grid thead tr th[class*=order-] {
   cursor: pointer;
 }
-.data-grid thead tr td[class*=center] {
-  text-align: center;
-}
 .data-grid thead tr th.order-by:hover:after {
-  color: #525975;
+  color: #fff;
 }
 .data-grid thead .order-by-asc:after,
 .data-grid thead th.order-by:not([class*=order-by-]):hover:after,
@@ -3387,64 +3386,18 @@ div[class^="control-"] i {
 .data-grid thead th.order-by-asc:hover:after:hover {
   color: #7d8397;
 }
-.data-grid thead tr:hover {
-  background: transparent;
-}
-.data-grid .product-clients a:hover {
-  color: #525975 !important;
-}
-.data-grid .cell-center {
-  text-align: center;
-}
 .data-grid tbody tr {
   background: #fff;
-  border-bottom: 1px solid #ededed;
   transition: .3s;
 }
 .data-grid tbody tr:hover {
   background: #dbe3f3 !important;
 }
-.data-grid tbody tr:hover > td a.button-small:not(.button-info, button-get-details) {
-  background: #525975;
-  color: white;
-}
-.data-grid tbody tr:hover > td a.button-small:not(.button-info, button-get-details):visited {
-  color: #fff;
-}
-.data-grid tbody tr:hover > td a:hover {
-  color: #525975;
-}
-.data-grid tbody tr:hover > td a li {
-  background: #a3a3a3;
-  transition: .3s;
-}
-.data-grid tbody tr:hover > td a li:hover {
-  background: #5d6484;
-}
-.data-grid tbody tr:hover > td:last-of-type .revelation:after {
-  background: #939ab3;
-}
-.data-grid tbody tr:hover > td:last-of-type .revelation:hover:after {
-  background: #5d6484;
-}
 .data-grid tbody tr:nth-child(odd) {
-  background-color: #d2d7e3;
+  background-color: #f6f8fc;
 }
 .data-grid tbody tr a {
-  transition: .3s;
   color: #525975;
-}
-.data-grid tbody tr a:hover {
-  color: #525975;
-}
-.data-grid tbody tr .button-small {
-  color: #fff;
-}
-.data-grid tbody tr .button-small:hover {
-  color: #fff;
-}
-.data-grid tbody tr .button-small:visited {
-  color: #fff;
 }
 .data-grid tbody tr .button-small.button-get-details {
   margin-right: 10px;
@@ -3461,143 +3414,20 @@ div[class^="control-"] i {
   color: white;
 }
 .data-grid td {
-  padding: 5px;
-  padding-left: 10px;
   vertical-align: middle;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 20em;
-  border-right: 1px solid #d9d9d9;
 }
 .data-grid .trinity-warning {
   color: #848ba9;
   cursor: context-menu;
 }
-.data-grid:not(.record_properties) th:first-child,
-.data-grid:not(.record_properties) td:first-child {
-  padding-left: 5px;
-}
-.tabs-wrapper .data-grid input[type="checkbox"] ~ label {
-  padding: 0;
-}
-.trinity-widget .data-grid {
-  margin: 0 0 20px 0;
-}
-.trinity-widget .data-grid thead th {
-  padding: 10px;
-}
-.pagination {
-  margin: 35px 35px 0 35px;
-  float: right;
-}
-.pagination:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.pagination li a {
-  min-width: 40px;
-  height: 40px;
-  margin: 2px !important;
-  color: #7b7b7b !important;
-  font-size: 16px;
-  font-weight: 400;
-  text-align: center;
-  background: #ededed !important;
-  border-radius: 5px;
-  border: none !important;
-  transition: 0.4s;
-  cursor: pointer;
-}
-.pagination li a:hover {
-  background: #a5a5a5;
-  color: #fff;
-}
-.pagination li.active a {
-  background: #7068F9 !important;
-  color: #fff !important;
-}
-.pagination .break {
-  display: inline-block;
-  float: left;
-  font-size: 24px;
-  color: #e8e8e8;
-  line-height: 40px !important;
-}
-.pagination .previous a,
-.pagination .next a {
-  line-height: 34px;
-}
-.pagination .previous a:hover,
-.pagination .next a:hover {
-  color: #d3d3d3;
-}
-.pagination .previous a i:before,
-.pagination .next a i:before {
-  padding-top: 5px;
-}
-.pagination .previous a {
-  transform: rotate(90deg);
-}
-.pagination .next a {
-  transform: rotate(-90deg);
-}
-.record_properties th:first-child {
-  padding-left: 15px;
-}
-.record_properties th {
-  width: 300px;
-}
-.record_properties td {
-  word-break: break-all;
-  white-space: normal;
-  max-width: none;
-}
-.record_properties tr:nth-of-type(2n) {
-  background: initial;
-}
-.ban-grid-filter {
-  margin: 30px 0 0 20px;
-}
-.ban-grid-filter select {
-  height: 32px;
-}
-.pagination-wrapper {
-  display: inline-block;
-  width: 100%;
-}
-@media screen and (max-width: 1366px) {
-  .data-grid:not(.record_properties) td {
-    max-width: 16em;
-  }
-  .data-grid:not(.record_properties) tr td:first-child:nth-last-child(8) ~ td {
-    max-width: 8em;
-  }
-  .data-grid:not(.record_properties) tr td:first-child:nth-last-child(9) ~ td {
-    max-width: 8em;
-  }
-  .data-grid:not(.record_properties) tr td:first-child:nth-last-child(10) ~ td {
-    max-width: 8em;
-  }
-}
-@media screen and (max-width: 1140px) {
-  .small-hidden {
-    display: none;
-  }
-}
-@media screen and (min-width: 1200px) {
-  .xlarge-hidden {
-    display: none;
-  }
-}
-@media screen and (max-width: 768px) {
-  .data-grid tbody tr td,
-  .data-grid tbody tr th {
-    display: block;
-    padding-left: 15px;
-  }
-}
+/*************************
+  MENU DROPDOWN COMPONENT
+  will be changed
+ **************************/
 table.data-grid .item-menu-button {
   position: absolute;
 }
@@ -3655,6 +3485,143 @@ table.data-grid .item-menu-button {
 .item-menu-button .ul-list li a:hover {
   color: #525975;
 }
+/*************************
+  END - MENU DROPDOWN COMPONENT
+ **************************/
+/******************************
+  PAGINATION
+ ******************************/
+.pagination-wrapper {
+  display: inline-block;
+  width: 100%;
+}
+.pagination {
+  margin: 35px 35px 0 35px;
+  float: right;
+}
+.pagination:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.pagination li a {
+  min-width: 40px;
+  height: 40px;
+  margin: 2px !important;
+  color: #7b7b7b !important;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+  background: #ededed !important;
+  border-radius: 5px;
+  border: none !important;
+  transition: 0.4s;
+  cursor: pointer;
+}
+.pagination li a:hover {
+  background: #a5a5a5;
+  color: #fff;
+}
+.pagination li.active a {
+  background: #7068F9 !important;
+  color: #fff !important;
+}
+.pagination .break {
+  display: inline-block;
+  float: left;
+  font-size: 24px;
+  color: #e8e8e8;
+  line-height: 40px !important;
+}
+.pagination .previous a,
+.pagination .next a {
+  line-height: 34px;
+}
+.pagination .previous a:hover,
+.pagination .next a:hover {
+  color: #d3d3d3;
+}
+.pagination .previous a i:before,
+.pagination .next a i:before {
+  padding-top: 5px;
+}
+.pagination .previous a {
+  transform: rotate(90deg);
+}
+.pagination .next a {
+  transform: rotate(-90deg);
+}
+/******************************
+  END - PAGINATION
+ ******************************/
+.tabs-wrapper .data-grid input[type="checkbox"] ~ label {
+  padding: 0;
+}
+.trinity-widget .data-grid {
+  margin: 0 0 20px 0;
+}
+.trinity-widget .data-grid thead th {
+  padding: 10px;
+}
+.record_properties th:first-child {
+  padding-left: 15px;
+}
+.record_properties th {
+  width: 300px;
+}
+.record_properties td {
+  word-break: break-all;
+  white-space: normal;
+  max-width: none;
+}
+.record_properties tr:nth-of-type(2n) {
+  background: initial;
+}
+.ban-grid-filter {
+  margin: 30px 0 0 20px;
+}
+.ban-grid-filter select {
+  height: 32px;
+}
+/************************
+ MEDIA QUERIES SETTINGS
+ SHOULD BE LAST
+ ***********************/
+@media screen and (max-width: 1366px) {
+  .data-grid:not(.record_properties) td {
+    max-width: 16em;
+  }
+  .data-grid:not(.record_properties) tr td:first-child:nth-last-child(8) ~ td {
+    max-width: 8em;
+  }
+  .data-grid:not(.record_properties) tr td:first-child:nth-last-child(9) ~ td {
+    max-width: 8em;
+  }
+  .data-grid:not(.record_properties) tr td:first-child:nth-last-child(10) ~ td {
+    max-width: 8em;
+  }
+}
+@media screen and (max-width: 1140px) {
+  .small-hidden {
+    display: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .xlarge-hidden {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+  .data-grid tbody tr td,
+  .data-grid tbody tr th {
+    display: block;
+    padding-left: 15px;
+  }
+}
+/************************
+ END - MEDIA QUERIES SETTINGS
+ SHOULD BE LAST. DONT PUT ANYTHING AFTER!
+ ***********************/
 /**************************************
 
   Not sure if still used, mainly replaced by new grid
