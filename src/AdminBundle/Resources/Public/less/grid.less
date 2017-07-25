@@ -11,15 +11,7 @@
 **************************************/
 @import (once) "helper";
 
-.show-filters {
-  display: none;
-}
 
-
-.grid-bulk-actions {
-  padding: 15px 20px 0 20px;
-  margin-bottom: -15px;
-}
 
 .data-grid {
   border: none;
@@ -36,35 +28,35 @@
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 
+  td, th {
+    line-height: 1;
+    font-size: 14px;
+    border-right: 1px solid @back-color;
+    padding: 0 5px 0 10px;
+    &.grid-checkbox {
+      padding: 10px;
+    }
+  }
+
   thead {
     background-color: @color-primary;
-    border-bottom: 2px solid #ededed;
     tr {
       .radius(5px);
       th {
-        padding: 5px;
         text-align: left;
-        padding-left: 10px;
-        font-size: 16px;
         color: @header-font-color;
-        font-weight: @roboto-medium;
+        font-weight: @noto-bold;
         text-transform: capitalize;
-        border-right: 0.5px solid #d9d9d9;
-        border-left: 0.5px solid #d9d9d9;
       }
 
       th[class*=order-] {
         cursor: pointer;
       }
 
-      td[class*=center] { // use text-align class
-        text-align: center;
-      }
-
       // display a glyph when hovered over (order by)
       th.order-by:hover {
         &:after {
-          color: @color-primary;
+          color: @header-font-color;
         }
       }
     }
@@ -91,80 +83,47 @@
         }
       }
     }
-    tr:hover {
-      background: transparent;
-    }
-  }
-
-  .product-clients{
-    a:hover{
-      color: @color-primary !important;
-    }
-  }
-
-  .cell-center {
-    text-align: center;
   }
 
   tbody {
     tr {
       background: #fff;
-      border-bottom: 1px solid #ededed;
       transition: .3s;
 
       &:hover {
         background: #dbe3f3 !important;
+        //& > td a.button-small:not(.button-info, button-get-details) {
+        //  background: @color-primary;
+        //  color: #fff;
+        //  &:visited {
+        //    color: #fff;
+        //  }
+        //}
+        //& > td a {
+        //  &:hover {
+        //    color: @color-primary;
+        //  }
+        //}
       }
-
-      &:hover {
-        & > td a.button-small:not(.button-info, button-get-details) {
-          background: @color-primary;
-          color: white;
-          &:visited {
-            color: #fff;
-          }
-        }
-        & > td a {
-          &:hover {
-            color: @color-primary;
-          }
-        }
-        & > td a li {
-          background: lighten(desaturate(@color-primary, 25%), 25%);
-          transition: .3s;
-          &:hover {
-            background: lighten(@color-primary, 5%);
-          }
-        }
-        & > td:last-of-type .revelation {
-          &:after {
-            background: lighten(@color-primary, 25%);
-          }
-          &:hover:after {
-            background: lighten(@color-primary, 5%);
-          }
-        }
-      }
+      // Odd row
       &:nth-child(odd) {
-        background-color: #d2d7e3;
-      }
-      a {
-        transition: .3s;
-        color: @color-primary;
-        &:hover {
-          color: @color-primary;
-        }
+        background-color: #f6f8fc;
       }
 
-      .button-small {
-        color: #fff;
-        &:hover {
-          color: #fff;
-        }
-        &:visited {
-          color: #fff;
-        }
+      a {
+        //transition: .3s;
+        color: @color-primary;
       }
+
+      //.button-small {
+      //  color: #fff;
+      //  &:hover {
+      //    color: #fff;
+      //  }
+      //  &:visited {
+      //    color: #fff;
+      //  }
+      //}
 
       .button-small.button-get-details {
         margin-right: 10px;
@@ -182,14 +141,11 @@
   }
 
   td {
-    padding: 5px;
-    padding-left: 10px;
     vertical-align: middle;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 20em;
-    border-right: 1px solid #d9d9d9;
   }
 
   // indicate for no-synchronized product
@@ -199,152 +155,10 @@
   }
 }
 
-.data-grid:not(.record_properties) {
-  th:first-child, td:first-child {
-    padding-left: 5px;
-  }
-}
-
-
-.tabs-wrapper .data-grid input[type="checkbox"] ~ label {
-  padding: 0;
-}
-
-.trinity-widget{
-  .data-grid{
-    margin: 0 0 20px 0;
-    thead th{
-      padding: 10px;
-    }
-  }
-}
-.pagination {
-  margin: 35px 35px 0 35px;
-  float: right;
-  .group-clearfix();
-
-  li a {
-    min-width: 40px;
-    height: 40px;
-    margin: 2px !important;
-
-    color: #7b7b7b !important;
-    font-size: 16px;
-    font-weight: 400;
-    text-align: center;
-
-    background: #ededed !important;
-    border-radius: 5px;
-    border: none !important;
-
-    transition: 0.4s;
-    cursor: pointer;
-    &:hover {
-      background: #a5a5a5;
-      color: #fff;
-    }
-
-  }
-
-  li.active a {
-    background: @color-secondary !important;
-    color: #fff !important;
-  }
-
-  .break {
-    display: inline-block;
-    float: left;
-    font-size: 24px;
-    color: #e8e8e8;
-    line-height: 40px !important;
-  }
-
-  .previous a, .next a {
-    line-height: 34px;
-    &:hover {
-      color: #d3d3d3;
-    }
-    i:before {
-      padding-top: 5px;
-    }
-  }
-  .previous a {
-    transform: rotate(90deg);
-  }
-  .next a {
-    transform: rotate(-90deg);
-  }
-}
-
-.record_properties {
-  th:first-child {
-    padding-left: 15px;
-  }
-  th {
-    width: 300px;
-  }
-  td {
-    word-break: break-all;
-    white-space: normal;
-    max-width: none;
-  }
-  tr:nth-of-type(2n) {
-    background: initial;
-  }
-}
-
-.ban-grid-filter {
-  margin: 30px 0 0 20px;
-  select {
-    height: 32px;
-  }
-}
-
-.pagination-wrapper{
-  display: inline-block;
-  width: 100%;
-}
-
-@media screen and(max-width: 1366px) {
-  .data-grid:not(.record_properties) {
-    td {
-      max-width: 16em;
-    }
-
-    // Allow smaller column width to grids with tons of columns
-    tr td:first-child:nth-last-child(8) ~ td {
-      max-width: 8em;
-    }
-
-    tr td:first-child:nth-last-child(9) ~ td {
-      max-width: 8em;
-    }
-
-    tr td:first-child:nth-last-child(10) ~ td {
-      max-width: 8em;
-    }
-  }
-}
-
-@media screen and(max-width: 1140px) {
-  .small-hidden {
-    display: none;
-  }
-}
-
-@media screen and(min-width: 1200px) {
-  .xlarge-hidden {
-    display: none;
-  }
-}
-
-@media screen and(max-width: 768px) {
-  .data-grid tbody tr td, .data-grid tbody tr th {
-    display: block;
-    padding-left: 15px;
-  }
-}
-
+/*************************
+  MENU DROPDOWN COMPONENT
+  will be changed
+ **************************/
 // To show menu, it must be whole item absolute
 table.data-grid .item-menu-button {
   position: absolute;
@@ -359,7 +173,6 @@ table.data-grid .item-menu-button {
     border: 1px solid #525975;
     padding: 5.5px 12.5px;
     z-index: 100;
-
 
     &:hover,
     &:focus,
@@ -418,8 +231,168 @@ table.data-grid .item-menu-button {
         color: #525975;
       }
     }
+  }
+}
+/*************************
+  END - MENU DROPDOWN COMPONENT
+ **************************/
 
+/******************************
+  PAGINATION
+ ******************************/
+.pagination-wrapper{
+  display: inline-block;
+  width: 100%;
+}
+.pagination {
+  margin: 35px 35px 0 35px;
+  float: right;
+  .group-clearfix();
+
+  li a {
+    min-width: 40px;
+    height: 40px;
+    margin: 2px !important;
+
+    color: #7b7b7b !important;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+
+    background: #ededed !important;
+    border-radius: 5px;
+    border: none !important;
+
+    transition: 0.4s;
+    cursor: pointer;
+    &:hover {
+      background: #a5a5a5;
+      color: #fff;
+    }
+  }
+
+  li.active a {
+    background: @color-secondary !important;
+    color: #fff !important;
+  }
+
+  .break {
+    display: inline-block;
+    float: left;
+    font-size: 24px;
+    color: #e8e8e8;
+    line-height: 40px !important;
+  }
+
+  .previous a, .next a {
+    line-height: 34px;
+    &:hover {
+      color: #d3d3d3;
+    }
+    i:before {
+      padding-top: 5px;
+    }
+  }
+  .previous a {
+    transform: rotate(90deg);
+  }
+  .next a {
+    transform: rotate(-90deg);
+  }
+}
+/******************************
+  END - PAGINATION
+ ******************************/
+
+// GRID IN TAB
+.tabs-wrapper .data-grid input[type="checkbox"] ~ label {
+  padding: 0;
+}
+
+// GRID IN WIDGETS
+.trinity-widget {
+  .data-grid {
+    margin: 0 0 20px 0;
+    thead th {
+      padding: 10px;
+    }
+  }
+}
+
+// Special grid in show tabs
+// probably will be removed
+.record_properties {
+  th:first-child {
+    padding-left: 15px;
+  }
+  th {
+    width: 300px;
+  }
+  td {
+    word-break: break-all;
+    white-space: normal;
+    max-width: none;
+  }
+  tr:nth-of-type(2n) {
+    background: initial;
+  }
+}
+
+// For special filter on data
+.ban-grid-filter {
+  margin: 30px 0 0 20px;
+  select {
+    height: 32px;
   }
 }
 
 
+/************************
+ MEDIA QUERIES SETTINGS
+ SHOULD BE LAST
+ ***********************/
+
+@media screen and(max-width: 1366px) {
+  .data-grid:not(.record_properties) {
+    td {
+      max-width: 16em;
+    }
+
+    // Allow smaller column width to grids with tons of columns
+    tr td:first-child:nth-last-child(8) ~ td {
+      max-width: 8em;
+    }
+
+    tr td:first-child:nth-last-child(9) ~ td {
+      max-width: 8em;
+    }
+
+    tr td:first-child:nth-last-child(10) ~ td {
+      max-width: 8em;
+    }
+  }
+}
+
+@media screen and(max-width: 1140px) {
+  .small-hidden {
+    display: none;
+  }
+}
+
+@media screen and(min-width: 1200px) {
+  .xlarge-hidden {
+    display: none;
+  }
+}
+
+@media screen and(max-width: 768px) {
+  .data-grid tbody tr td, .data-grid tbody tr th {
+    display: block;
+    padding-left: 15px;
+  }
+}
+
+/************************
+ END - MEDIA QUERIES SETTINGS
+ SHOULD BE LAST. DONT PUT ANYTHING AFTER!
+ ***********************/
