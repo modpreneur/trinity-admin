@@ -80,14 +80,14 @@
   line-height: 1;
   border: 1px #ededed solid;
   margin: 5px;
-  background: #afafaf;
+  background: #b0b0b0;
   color: #fff;
   cursor: pointer;
   transition: .3s;
 }
 .button-parameters:hover {
   color: #fff;
-  background: #6e7a96;
+  background: #fbfbff;
 }
 .button {
   text-align: center;
@@ -97,7 +97,7 @@
   line-height: 1;
   border: 1px #ededed solid;
   margin: 5px;
-  background: #afafaf;
+  background: #b0b0b0;
   color: #fff;
   cursor: pointer;
   transition: .3s;
@@ -109,7 +109,7 @@
 }
 .button:hover {
   color: #fff;
-  background: #6e7a96;
+  background: #fbfbff;
 }
 .button-success {
   font-weight: 500;
@@ -123,51 +123,46 @@
   background: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
 }
+.button-success:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
 .button-info {
   box-shadow: none;
 }
 .button-primary {
-  padding: 5px 10px;
-  color: #515974;
+  padding: 9px 13px;
+  color: #fff;
+  background: #525975;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
-  border: 1px solid #515974;
+  border: 1px solid #525975;
   border-radius: 20px;
 }
 .button-primary:hover {
-  background: #515974;
+  background: #3d4257;
   color: #fff;
 }
 .button-primary-inverse {
-  padding: 5px 10px;
+  padding: 9px 13px;
   color: #fff;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
   border: 1px solid #fff;
   border-radius: 20px;
-  background: #515974;
+  background: #525975;
 }
 .button-primary-inverse:hover {
   background: #fff;
-  color: #515974;
-}
-.button-necktie {
-  background-color: #6f68f9;
-  border: 1px solid #fff;
-  box-shadow: 0px 0px 0px 1px #c9d5e9;
-}
-.button-necktie:hover {
-  background-color: #4037f7;
-  box-shadow: 0px 0px 0px 1px #4037f7;
+  color: #525975;
 }
 .button-secondary {
-  background-color: #2d323e;
+  background-color: #7068F9;
   border: none;
 }
 .button-secondary:hover {
-  background-color: #020203;
+  background-color: #160af1;
   border: none;
 }
 .button-tertiary {
@@ -177,6 +172,15 @@
 }
 .button-tertiary:hover {
   background: #117864;
+  border: none;
+}
+.button-info {
+  background-color: #18BDFF;
+  box-shadow: none;
+  border: none;
+}
+.button-info:hover {
+  background-color: #007eb1;
   border: none;
 }
 .button-warning {
@@ -206,6 +210,87 @@
   background-color: #8a4134;
   border: 1px solid #3d1d17;
 }
+.button-necktie {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 2px #c9d5e9;
+}
+.button-necktie:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+.button-line {
+  border: 1px solid #525975;
+  background: transparent;
+  color: #525975;
+  padding: 9px 13.5px;
+}
+.button-line:hover {
+  background: #525975;
+  color: #fff;
+}
+.button-disable {
+  border: 1px solid #525975;
+  background: transparent;
+  color: #525975;
+  padding: 9px 13.5px;
+  opacity: 0.5;
+  cursor: default;
+}
+.button-disable:hover {
+  background: transparent;
+  color: #525975;
+}
+.button-grey-gradient {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
+  color: #525975;
+}
+.button-grey-gradient:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+.button-grey-1 {
+  background: #F7F8FC;
+  color: #525975;
+  border: none;
+}
+.button-grey-1:hover {
+  background: #d2d8ee;
+  color: #525975;
+}
+.button-grey-2 {
+  background: #E4EAF6;
+  color: #525975;
+  border: none;
+}
+.button-grey-2:hover {
+  background: #becce9;
+  color: #525975;
+}
+.button-grey-3 {
+  background: #E0E7F1;
+  color: #525975;
+  border: none;
+}
+.button-grey-3:hover {
+  background: #bdcce1;
+  color: #525975;
+}
+.button-grey-4 {
+  background: #CFD2D9;
+  color: #525975;
+  border: none;
+}
+.button-grey-4:hover {
+  background: #b3b7c2;
+  color: #525975;
+}
+.button-orange-gradient {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
+}
+.button-orange-gradient:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
 .trinity-form-loading {
   text-align: center;
   font-weight: 500;
@@ -214,7 +299,7 @@
   line-height: 1;
   border: 1px #ededed solid;
   margin: 5px;
-  background: #afafaf;
+  background: #b0b0b0;
   color: #fff;
   cursor: pointer;
   transition: .3s;
@@ -223,10 +308,11 @@
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
+  background: #525975;
 }
 .trinity-form-loading:hover {
   color: #fff;
-  background: #6e7a96;
+  background: #fbfbff;
 }
 .trinity-form-loading-success {
   font-weight: 500;
@@ -240,51 +326,46 @@
   background: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
 }
+.trinity-form-loading-success:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
 .trinity-form-loading-info {
   box-shadow: none;
 }
 .trinity-form-loading-primary {
-  padding: 5px 10px;
-  color: #515974;
+  padding: 9px 13px;
+  color: #fff;
+  background: #525975;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
-  border: 1px solid #515974;
+  border: 1px solid #525975;
   border-radius: 20px;
 }
 .trinity-form-loading-primary:hover {
-  background: #515974;
+  background: #3d4257;
   color: #fff;
 }
 .trinity-form-loading-primary-inverse {
-  padding: 5px 10px;
+  padding: 9px 13px;
   color: #fff;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
   border: 1px solid #fff;
   border-radius: 20px;
-  background: #515974;
+  background: #525975;
 }
 .trinity-form-loading-primary-inverse:hover {
   background: #fff;
-  color: #515974;
-}
-.trinity-form-loading-necktie {
-  background-color: #6f68f9;
-  border: 1px solid #fff;
-  box-shadow: 0px 0px 0px 1px #c9d5e9;
-}
-.trinity-form-loading-necktie:hover {
-  background-color: #4037f7;
-  box-shadow: 0px 0px 0px 1px #4037f7;
+  color: #525975;
 }
 .trinity-form-loading-secondary {
-  background-color: #2d323e;
+  background-color: #7068F9;
   border: none;
 }
 .trinity-form-loading-secondary:hover {
-  background-color: #020203;
+  background-color: #160af1;
   border: none;
 }
 .trinity-form-loading-tertiary {
@@ -294,6 +375,15 @@
 }
 .trinity-form-loading-tertiary:hover {
   background: #117864;
+  border: none;
+}
+.trinity-form-loading-info {
+  background-color: #18BDFF;
+  box-shadow: none;
+  border: none;
+}
+.trinity-form-loading-info:hover {
+  background-color: #007eb1;
   border: none;
 }
 .trinity-form-loading-warning {
@@ -323,17 +413,102 @@
   background-color: #8a4134;
   border: 1px solid #3d1d17;
 }
+.trinity-form-loading-necktie {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 2px #c9d5e9;
+}
+.trinity-form-loading-necktie:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+.trinity-form-loading-line {
+  border: 1px solid #525975;
+  background: transparent;
+  color: #525975;
+  padding: 9px 13.5px;
+}
+.trinity-form-loading-line:hover {
+  background: #525975;
+  color: #fff;
+}
+.trinity-form-loading-disable {
+  border: 1px solid #525975;
+  background: transparent;
+  color: #525975;
+  padding: 9px 13.5px;
+  opacity: 0.5;
+  cursor: default;
+}
+.trinity-form-loading-disable:hover {
+  background: transparent;
+  color: #525975;
+}
+.trinity-form-loading-grey-gradient {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
+  color: #525975;
+}
+.trinity-form-loading-grey-gradient:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+.trinity-form-loading-grey-1 {
+  background: #F7F8FC;
+  color: #525975;
+  border: none;
+}
+.trinity-form-loading-grey-1:hover {
+  background: #d2d8ee;
+  color: #525975;
+}
+.trinity-form-loading-grey-2 {
+  background: #E4EAF6;
+  color: #525975;
+  border: none;
+}
+.trinity-form-loading-grey-2:hover {
+  background: #becce9;
+  color: #525975;
+}
+.trinity-form-loading-grey-3 {
+  background: #E0E7F1;
+  color: #525975;
+  border: none;
+}
+.trinity-form-loading-grey-3:hover {
+  background: #bdcce1;
+  color: #525975;
+}
+.trinity-form-loading-grey-4 {
+  background: #CFD2D9;
+  color: #525975;
+  border: none;
+}
+.trinity-form-loading-grey-4:hover {
+  background: #b3b7c2;
+  color: #525975;
+}
+.trinity-form-loading-orange-gradient {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
+}
+.trinity-form-loading-orange-gradient:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
 .trinity-form-loading:after {
-  content: "\e6a9";
+  content: "\e92b";
   font-family: 'tiecons';
   speak: none;
   min-width: 16px;
   font-size: 15px;
   display: inline-block;
   margin-left: 5px;
+  font-family: 'trinity';
   -webkit-animation: spin 3s linear infinite;
   -moz-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
+}
+.trinity-form-loading:hover {
+  background: #282b39;
 }
 .trinity-form-success:after {
   content: '\e933';
@@ -382,7 +557,10 @@
   background: #2d323e;
 }
 .btn-group.group-conditions label {
-  border: 1px solid #515974;
+  border: 1px solid #525975;
+}
+.button-circle {
+  padding: 9px;
 }
 body,
 html {
@@ -438,7 +616,7 @@ body .button-success {
   line-height: 1;
   border: 1px #ededed solid;
   margin: 5px;
-  background: #afafaf;
+  background: #b0b0b0;
   color: #fff;
   cursor: pointer;
   transition: .3s;
@@ -454,7 +632,7 @@ body .button-success {
 }
 body .button-success:hover {
   color: #fff;
-  background: #6e7a96;
+  background: #fbfbff;
 }
 body .button-success-success {
   font-weight: 500;
@@ -468,51 +646,46 @@ body .button-success-success {
   background: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
 }
+body .button-success-success:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
 body .button-success-info {
   box-shadow: none;
 }
 body .button-success-primary {
-  padding: 5px 10px;
-  color: #515974;
+  padding: 9px 13px;
+  color: #fff;
+  background: #525975;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
-  border: 1px solid #515974;
+  border: 1px solid #525975;
   border-radius: 20px;
 }
 body .button-success-primary:hover {
-  background: #515974;
+  background: #3d4257;
   color: #fff;
 }
 body .button-success-primary-inverse {
-  padding: 5px 10px;
+  padding: 9px 13px;
   color: #fff;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
   border: 1px solid #fff;
   border-radius: 20px;
-  background: #515974;
+  background: #525975;
 }
 body .button-success-primary-inverse:hover {
   background: #fff;
-  color: #515974;
-}
-body .button-success-necktie {
-  background-color: #6f68f9;
-  border: 1px solid #fff;
-  box-shadow: 0px 0px 0px 1px #c9d5e9;
-}
-body .button-success-necktie:hover {
-  background-color: #4037f7;
-  box-shadow: 0px 0px 0px 1px #4037f7;
+  color: #525975;
 }
 body .button-success-secondary {
-  background-color: #2d323e;
+  background-color: #7068F9;
   border: none;
 }
 body .button-success-secondary:hover {
-  background-color: #020203;
+  background-color: #160af1;
   border: none;
 }
 body .button-success-tertiary {
@@ -522,6 +695,15 @@ body .button-success-tertiary {
 }
 body .button-success-tertiary:hover {
   background: #117864;
+  border: none;
+}
+body .button-success-info {
+  background-color: #18BDFF;
+  box-shadow: none;
+  border: none;
+}
+body .button-success-info:hover {
+  background-color: #007eb1;
   border: none;
 }
 body .button-success-warning {
@@ -550,6 +732,87 @@ body .button-success-red {
 body .button-success-red:hover {
   background-color: #8a4134;
   border: 1px solid #3d1d17;
+}
+body .button-success-necktie {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 2px #c9d5e9;
+}
+body .button-success-necktie:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+body .button-success-line {
+  border: 1px solid #525975;
+  background: transparent;
+  color: #525975;
+  padding: 9px 13.5px;
+}
+body .button-success-line:hover {
+  background: #525975;
+  color: #fff;
+}
+body .button-success-disable {
+  border: 1px solid #525975;
+  background: transparent;
+  color: #525975;
+  padding: 9px 13.5px;
+  opacity: 0.5;
+  cursor: default;
+}
+body .button-success-disable:hover {
+  background: transparent;
+  color: #525975;
+}
+body .button-success-grey-gradient {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
+  color: #525975;
+}
+body .button-success-grey-gradient:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+body .button-success-grey-1 {
+  background: #F7F8FC;
+  color: #525975;
+  border: none;
+}
+body .button-success-grey-1:hover {
+  background: #d2d8ee;
+  color: #525975;
+}
+body .button-success-grey-2 {
+  background: #E4EAF6;
+  color: #525975;
+  border: none;
+}
+body .button-success-grey-2:hover {
+  background: #becce9;
+  color: #525975;
+}
+body .button-success-grey-3 {
+  background: #E0E7F1;
+  color: #525975;
+  border: none;
+}
+body .button-success-grey-3:hover {
+  background: #bdcce1;
+  color: #525975;
+}
+body .button-success-grey-4 {
+  background: #CFD2D9;
+  color: #525975;
+  border: none;
+}
+body .button-success-grey-4:hover {
+  background: #b3b7c2;
+  color: #525975;
+}
+body .button-success-orange-gradient {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
+}
+body .button-success-orange-gradient:hover {
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
 }
 body .button-success:hover {
   border: none !important;
