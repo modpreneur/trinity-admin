@@ -16,88 +16,12 @@
 {% endblock %}
 
 
-{% block form %}
-
-    <form name="necktie_product" method="post" action="#" class="edit-form"
-          novalidate="novalidate"><input type="hidden" name="_method" value="PUT">
-        <div class="row " id="row_necktie_product_name">
-            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
-                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
-                    <label for="necktie_product_name" class="required">Name</label></div>
-                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
-                    <input type="text" id="necktie_product_name" name="necktie_product[name]" required="required"
-                           value="GoDaddy">
-                </div>
-            </div>
-        </div>
-
-        <div class="row  choice" id="row_necktie_product_clients">
-            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
-                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
-                    <label class="required">Projects</label></div>
-                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
-                    <div class="widget-expanded" id="necktie_product_clients">
-                        <div class="checkbox"><input type="checkbox" id="necktie_product_clients_1"
-                                                     name="necktie_product[clients][]" value="1"
-                                                     checked="checked"><label for="necktie_product_clients_1">ClickAndCoach</label>
-                        </div>
-                        <label for="necktie_product_clients_1">ClickAndCoach</label>
-                        <div class="checkbox"><input type="checkbox" id="necktie_product_clients_2"
-                                                     name="necktie_product[clients][]" value="2"
-                                                     checked="checked"><label
-                                    for="necktie_product_clients_2">HotAtHome</label>
-                        </div>
-                        <label for="necktie_product_clients_2">HotAtHome</label>
-                        <div class="checkbox"><input type="checkbox" id="necktie_product_clients_3"
-                                                     name="necktie_product[clients][]" value="3"><label
-                                    for="necktie_product_clients_3">Venice</label>
-                        </div>
-                        <label for="necktie_product_clients_3">Venice</label></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row  choice" id="row_necktie_product_mainClient">
-            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
-                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
-                    <label for="necktie_product_mainClient">Main Project</label></div>
-                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
-                    <div class="input-postfix-icon form-select">
-                        <div class="select-style form-control">
-                            <select id="necktie_product_mainClient" name="necktie_product[mainClient]"
-                                    class="user-success" aria-invalid="false">
-                                <option value=""></option>
-                                <option value="1" selected="selected">ClickAndCoach</option>
-                                <option value="2">HotAtHome</option>
-                                <option value="3">Venice</option>
-                            </select>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="row " id="row_necktie_product_description">
-            <div class="form-content-center span-none-small-18 span-medium-22 span-large-21 span-xlarge-17 margin-auto">
-                <div class="span-none-padding-medium-9 span-none-padding-large-7 span-none-padding-xlarge-7 form-left ">
-                    <label for="necktie_product_description">Description</label></div>
-                <div class="span-none-padding-small-24 span-none-padding-medium-13 span-none-padding-large-12 span-none-padding-xlarge-11 form-right">
-                    <textarea id="necktie_product_description" name="necktie_product[description]"></textarea></div>
-            </div>
-        </div>
-
-        <div class="row">
-            <button type="submit" id="necktie_product_submit" name="necktie_product[submit]"
-                    class="button button-success">Update
-            </button>
-
-        </div>
-
-        <input type="hidden" id="necktie_product__token" name="necktie_product[_token]"
-               value="AqnfBZjF3tyQ2psHNRDatBVU_-vYF0fJNAiDw7m1gKI">
-    </form>
-
+{% block pageAction %}
+    <a href="#" class="navbar-search"><i class="mdi mdi-magnify"></i></a>
+    <a href="#" class="button button-info">Necktie</a>
 {% endblock %}
+
+{% block form %} {% endblock %}
 
 
 {% block pageBody %}
@@ -322,49 +246,6 @@
 
     <div class="box">
         <h3 class="box-header">
-            Table
-        </h3>
-
-        <div class="box-body">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th>
-                        #
-                    </th>
-                    <th>
-                        First Name
-                    </th>
-                    <th>
-                        Last Name
-                    </th>
-                    <th>
-                        Email
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>1.</td>
-                    <td>Ruben</td>
-                    <td>Southgate</td>
-                    <td>ruben@southgate.com</td>
-                </tr>
-
-                <tr>
-                    <td>2.</td>
-                    <td>Martin</td>
-                    <td>Page</td>
-                    <td>martin@page.com</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-
-    </div>
-
-    <div class="box">
-        <h3 class="box-header">
             Tabs
         </h3>
         <div class="box-tabs-body">
@@ -379,9 +260,7 @@
                 <label for="tab4">Four</label>
 
                 <div class="tab-body-wrapper">
-                    <div id="tab-body-1" class="tab-body">
-                        {{ block('form') }}
-                    </div>
+
                     <div id="tab-body-2" class="tab-body">
                         <p>
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra pretium semper.
@@ -415,7 +294,7 @@
                             <div class="harmonica">
                                 <input type="radio" id="harmonica-01" name="list1" checked/>
                                 <div class="main-panel">
-                                    <label for="harmonica-01">Harmonica - Text</label>
+                                    <label class="first" for="harmonica-01">Harmonica - Text</label>
                                     <div class="show-harmonica">
                                         <p>
                                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum viverra
@@ -476,9 +355,9 @@
 
                                 <input type="radio" id="harmonica-02" name="list1"/>
                                 <div class="main-panel">
-                                    <label for="harmonica-02">Harmonica - Form</label>
+                                    <label class="first" for="harmonica-02">Harmonica - Form</label>
                                     <div class="show-harmonica">
-                                        {{ block('form') }}
+                                        Form
                                     </div>
                                 </div>
 
@@ -586,14 +465,6 @@
                             Nulla malesuada quis ligula at malesuada. Praesent ac porta orci, in lobortis ex.
                         </p>
                         <br>
-                    </div>
-                </div>
-
-                <input type="radio" id="harmonica-021" name="list"/>
-                <div class="main-panel">
-                    <label for="harmonica-021">Harmonica - Form</label>
-                    <div class="show-harmonica">
-                        {{ block('form') }}
                     </div>
                 </div>
 
@@ -715,32 +586,6 @@
     <div class="box">
 
         <h3 class="box-header">
-            Tags list
-        </h3>
-
-        <div class="box-body">
-
-            <ul class="tags">
-                <li class="enabled">Enabled</li>
-                <li class="disabled">Disabled</li>
-                <li class="active">Active</li>
-                <li class="changed">Changed</li>
-                <li class="premium">Premium</li>
-                <li class="blocked">Blocked</li>
-                <li class="pending">Pending</li>
-                <li class="banned">Banned</li>
-                <li class="locked">Locked</li>
-                <li class="create">create, Success</li>
-                <li class="warning">Warning</li>
-            </ul>
-
-        </div>
-    </div>
-
-
-    <div class="box">
-
-        <h3 class="box-header">
             Grid
         </h3>
         <br>
@@ -748,7 +593,7 @@
             <div class="dropdown-main item-menu-button">
                 <input type="checkbox" id="show-drop1" role="button" name="show-drop" class="show-drop">
                 <label for="show-drop1" class="label-dropdown">
-                    <i class="trinity trinity-arrow-down-one font-20"></i>
+                    <i class="mdi mdi-menu font-20"></i>
                 </label>
                 <ul class="dropdown-item ul-list">
                     <li><a href="#">Delete relation</a></li>
@@ -760,7 +605,7 @@
             <div class="dropdown-main item-menu-button">
                 <input type="checkbox" id="show-drop2" role="button" name="show-drop" class="show-drop">
                 <label for="show-drop2" class="label-dropdown">
-                    <i class="trinity trinity-arrow-down-one font-20"></i>
+                    <i class="mdi mdi-menu font-20"></i>
                 </label>
                 <ul class="dropdown-item ul-list">
                     <li><a href="#">Delete relation</a></li>

@@ -114,12 +114,4 @@ twig:
 
 #Other bundle configs---------------------------------------------------------------------------------------------------
 
-
-knp_menu:
-    twig:
-        template: knp_menu.html.twig
-    templating: false
-    default_renderer: twig
-
-
 services:

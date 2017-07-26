@@ -25,7 +25,6 @@ class ControllerActionExtension extends \Twig_Extension
     }
 
 
-
     /**
      * @return array
      */

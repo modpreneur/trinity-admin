@@ -1,7 +1,6 @@
 @import "variables";
 @import (once) "helper";
 
-
 /**************************************
 
   Not sure if still used, mainly replaced by new grid
@@ -74,7 +73,7 @@
 
     padding: 0 5px;
     width: 24px;
-
+    .no-select();
 
     // The actual checkbox
     input[type="checkbox"] {
@@ -86,7 +85,7 @@
 
         &:before {
           font-family: "Material Design Icons";
-          font-size: 24px;
+          font-size: 22px;
           content: '\F132';
           color: @color-primary;
         }
