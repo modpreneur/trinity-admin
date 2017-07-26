@@ -2246,7 +2246,7 @@ g {
   position: relative;
   vertical-align: middle;
   font-family: "Material Design Icons";
-  font-size: 24px;
+  font-size: 20px;
   margin-right: 5px;
   color: #dbe2ed;
 }
@@ -2528,7 +2528,7 @@ g {
   position: relative;
   vertical-align: middle;
   font-family: "Material Design Icons";
-  font-size: 23px;
+  font-size: 20px;
   margin-right: 5px;
   transition: .3s;
 }
@@ -2583,7 +2583,7 @@ g {
   position: relative;
   vertical-align: middle;
   font-family: "Material Design Icons";
-  font-size: 23px;
+  font-size: 20px;
   margin-right: 5px;
   transition: .3s;
 }
@@ -3734,7 +3734,7 @@ td.grid-checkbox input[type="checkbox"]:checked + label span {
 th.grid-checkbox input[type="checkbox"]:checked + label span:before,
 td.grid-checkbox input[type="checkbox"]:checked + label span:before {
   font-family: "Material Design Icons";
-  font-size: 22px;
+  font-size: 20px;
   content: '\F132';
   color: #525975;
 }
@@ -3755,12 +3755,12 @@ th.grid-checkbox input[type="checkbox"] + label span:before,
 td.grid-checkbox input[type="checkbox"] + label span:before {
   font-family: "Material Design Icons";
   text-align: left;
-  font-size: 24px;
+  font-size: 20px;
   content: '\F12E';
 }
 th:first-child input[type="checkbox"]:checked + label span:before {
   font-family: "Material Design Icons";
-  font-size: 24px;
+  font-size: 20px;
   content: '\F132';
   color: #ffffff;
 }
