@@ -64,10 +64,10 @@
       }
     }
 
-    .order-by-asc, th.order-by-desc:hover {
+    .order-by {
       position: relative;
 
-      &:before, &.active:before {
+      &:before {
         position: absolute;
         right: 10px;
         top: 1px;
@@ -75,6 +75,33 @@
         content: "\F143";
         font-size: 20px;
         color: @color-white;
+        opacity: 0.5;
+      }
+
+      &:after {
+        position: absolute;
+        right: 10px;
+        top: 13px;
+        font-family: "Material Design Icons";
+        content: "\F140";
+        font-size: 20px;
+        color: @color-white;
+        opacity: 0.5;
+      }
+    }
+
+    .order-by-asc, th.order-by-desc:hover {
+      position: relative;
+
+      &:before {
+        position: absolute;
+        right: 10px;
+        top: 1px;
+        font-family: "Material Design Icons";
+        content: "\F143";
+        font-size: 20px;
+        color: @color-white;
+        opacity: 1;
       }
 
       &:after {
@@ -92,7 +119,7 @@
     .order-by-desc, th.order-by-asc:hover {
         position: relative;
 
-      &:before, &.active:before {
+      &:before {
         position: absolute;
         right: 10px;
         top: 1px;
@@ -111,6 +138,7 @@
         content: "\F140";
         font-size: 20px;
         color: @color-white;
+        opacity: 1;
       }
     }
   }
