@@ -79,7 +79,7 @@
 }
 .navbar {
   background: #fff;
-  min-height: 50px;
+  height: 50px;
   width: 100%;
   color: #a0a2a5;
   overflow: hidden;
@@ -136,8 +136,7 @@
 .navbar .navbar-container {
   display: inline-block;
   float: left;
-  width: calc(100% - 240px );
-  height: 50px;
+  width: calc(100% - 230px );
   border-bottom: 1px #e2e4e6 solid;
 }
 .navbar .navbar-container:after {
@@ -892,15 +891,16 @@ body {
   position: fixed;
   height: 100%;
   left: 0;
+  overflow-y: auto;
 }
 #sidebar label {
   width: 100%;
 }
 #sidebar ul.sidebar {
-  overflow-y: auto;
   margin-top: 10px;
   padding-left: 0;
   margin-left: 0;
+  padding-bottom: 35px;
   /** end **/
 }
 #sidebar ul.sidebar li {
@@ -3713,38 +3713,47 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   background-color: #e4ebf7;
   padding: 10px 0;
 }
-.table-pagination ul {
+.table-pagination .pagination-items {
+  position: relative;
+  width: 300px;
+  margin: 0 auto;
+}
+.table-pagination .pagination-items .chevron-prev:before {
+  font-family: "Material Design Icons";
+  content: '\F141';
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  vertical-align: middle;
+  margin-right: 25px;
+}
+.table-pagination .pagination-items .chevron-next:after {
+  font-family: "Material Design Icons";
+  content: '\F142';
+  font-size: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  vertical-align: middle;
+  margin-left: 25px;
+}
+.table-pagination .pagination-items ul {
   text-align: center;
   color: #525975;
   position: relative;
 }
-.table-pagination ul:before {
-  font-family: "Material Design Icons";
-  content: '\F141';
-  font-size: 24px;
-  position: relative;
-  vertical-align: middle;
-  margin-right: 25px;
-}
-.table-pagination ul:after {
-  font-family: "Material Design Icons";
-  content: '\F142';
-  font-size: 24px;
-  position: relative;
-  vertical-align: middle;
-  margin-left: 25px;
-}
-.table-pagination ul li {
+.table-pagination .pagination-items ul li {
   border: 1px solid transparent;
   display: inline-block;
   padding: 5px 13px;
   margin-right: 5px;
   border-radius: 4px;
 }
-.table-pagination ul li.active {
+.table-pagination .pagination-items ul li.active {
   border: 1px solid #525975;
 }
-.table-pagination ul li:hover {
+.table-pagination .pagination-items ul li:hover {
   border: 1px solid #525975;
   background: #525975;
   color: #ffffff;
