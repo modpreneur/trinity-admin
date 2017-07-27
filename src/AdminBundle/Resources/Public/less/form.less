@@ -470,6 +470,25 @@
       pointer-events: none;
     }
   }
+
+  input[disabled],
+  input[disabled]:hover, textarea[disabled]{
+    background-color: @color-grey-3 !important;
+    border: 1px solid #dbdbdb !important;
+    cursor: not-allowed !important;
+    font-weight: normal !important;
+  }
+
+  input[disabled] + label:before/*, input[disabled] + label:after */{
+    background-color: #efefef !important;
+    color: #808080 !important;
+    border: 1px solid #dbdbdb !important;
+    cursor: not-allowed !important;
+    font-weight: normal !important;
+  }
+  input[disabled] + label:after {
+    color: #b9b9b9 !important;
+  }
 }
 
 // React Widgets (date time picker and such)
@@ -661,7 +680,7 @@
 
   select[disabled] {
     cursor: not-allowed;
-    background: #ebf8ff;
+    background: @color-grey-3;
   }
 }
 

@@ -203,7 +203,16 @@ table.data-grid td .item-menu-button {
   position: absolute;
 }
 
+  &:hover {
+    .item-menu-button {
+      visibility: visible;
+    }
+  }
+}
+
 .item-menu-button {
+  visibility: hidden;
+
   label {
     position: relative;
     border-radius: 36px;
