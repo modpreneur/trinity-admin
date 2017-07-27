@@ -199,11 +199,21 @@
   will be changed
  **************************/
 // To show menu, it must be whole item absolute
-table.data-grid .item-menu-button {
-  position: absolute;
+table.data-grid tr {
+  .item-menu-button {
+    position: absolute;
+  }
+
+  &:hover {
+    .item-menu-button {
+      visibility: visible;
+    }
+  }
 }
 
 .item-menu-button {
+  visibility: hidden;
+
   label {
     position: relative;
     border-radius: 36px;
