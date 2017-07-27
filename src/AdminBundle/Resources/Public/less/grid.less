@@ -199,7 +199,7 @@
   will be changed
  **************************/
 // To show menu, it must be whole item absolute
-table.data-grid .item-menu-button {
+table.data-grid td .item-menu-button {
   position: absolute;
 }
 
@@ -209,7 +209,9 @@ table.data-grid .item-menu-button {
     border-radius: 36px;
     -moz-border-radius: 36px;
     -webkit-border-radius: 36px;
-    border: 1px solid #525975;
+    border: 1px solid @color-primary;
+    color: @color-primary;
+    background: #fff;
     padding: 2px 14px;
     z-index: 100;
     .no-select();
@@ -217,7 +219,7 @@ table.data-grid .item-menu-button {
     &:hover,
     &:focus,
     &:active {
-      background: #525975;
+      background: @color-primary;
       color: #fff;
     }
   }
@@ -227,7 +229,7 @@ table.data-grid .item-menu-button {
   }
 
   input[type=radio]:checked~label {
-    background: #525975;
+    background: @color-primary;
     color: #fff;
     z-index: 102;
   }
@@ -258,17 +260,18 @@ table.data-grid .item-menu-button {
   }
 
   .ul-list li {
-
+    font-weight: @noto-regular;
     &:hover {
-      background: #F8F9FD;
+      background: none;
     }
 
     a {
-      color: #525975;
+      color: @color-primary;
       border-color: #E4EAF6;
 
       &:hover {
-        color: #525975;
+        color: @color-primary;
+        text-decoration: underline;
       }
     }
   }
