@@ -199,8 +199,8 @@
   will be changed
  **************************/
 // To show menu, it must be whole item absolute
-table.data-grid tr {
-  td .item-menu-button {
+table.data-grid tbody tr {
+  .item-menu-button {
     position: absolute;
   }
 
@@ -209,6 +209,10 @@ table.data-grid tr {
       visibility: visible;
     }
   }
+}
+
+table.data-grid thead .item-menu-button {
+  visibility: visible;
 }
 
 .item-menu-button {
