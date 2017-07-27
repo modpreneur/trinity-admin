@@ -160,7 +160,7 @@
         transition: none; // overrides <a> transition style
         margin-right: 10px;
         float: right;
-        padding: 5px;
+        padding: 5px 16px;
         border: 1px solid @color-primary;
         .radius(14px);
         color: @color-primary;
@@ -205,20 +205,22 @@ table.data-grid tbody tr {
   }
 
   &:hover {
-    .item-menu-button {
+    .item-menu-button label {
       visibility: visible;
     }
   }
 }
 
-table.data-grid thead .item-menu-button {
+table.data-grid thead .item-menu-button label {
   visibility: visible;
 }
 
 .item-menu-button {
-  visibility: hidden;
+
 
   label {
+    font-size: 18px;
+    visibility: hidden;
     position: relative;
     border-radius: 36px;
     -moz-border-radius: 36px;
@@ -259,6 +261,7 @@ table.data-grid thead .item-menu-button {
     background: #525975;
     color: #fff;
     z-index: 102;
+    visibility: visible;
   }
 
   input[type=checkbox]:checked~.dropdown-item {
