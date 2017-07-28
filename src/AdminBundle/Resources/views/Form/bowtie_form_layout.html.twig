@@ -82,7 +82,7 @@
 {%- block widget_attributes -%}
     {% set add_disabled = false %}
 
-     Check if the form wrapping current choice widget has a "disabled" attribute
+     {#Check if the form wrapping current choice widget has a "disabled" attribute#}
     {% if form.parent.vars is defined %}
         {% if form.parent.vars.attr["disabled"] is defined and form.parent.vars.attr["disabled"] %}
             {% set add_disabled = true %}
