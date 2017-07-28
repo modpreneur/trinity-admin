@@ -37,7 +37,7 @@
       background: @color-tertiary;
       color: @color-white;
       font-size: 16px;
-      font-weight: 300;
+      font-weight: @noto-light;
     }
 
     label {
@@ -47,7 +47,7 @@
       color: @color-primary;
       background-color: @color-white;
       font-size: 17px;
-      font-weight: 600;
+      font-weight: @noto-bold;
       line-height: 1;
       padding: 10px;
       &:hover {
@@ -58,7 +58,7 @@
       i.text-right,
       span.text-right {
         position: absolute;
-        right: 0px;
+        right: 0;
       }
     }
   }
@@ -190,6 +190,7 @@
     }
   }
 
+  // TODO: is it still valid?
   label[for^="help-content"] {
     position: absolute;
     top: 0;
@@ -234,10 +235,10 @@
     max-height: 650px;
 
     label[for^="harmonica"] {
-      font-weight: 400 !important;
+      font-weight: @noto-regular !important;
       background: @color-primary;
       color: @color-white;
-      border-top: 1px solid #d7d7d7;
+      border-top: 1px solid #d7d7d7; // TODO: color variabels?
       border-bottom: 1px solid #ccc;
       border-top-left-radius: 5px;
       border-top-right-radius: 5px;
@@ -256,9 +257,15 @@
   }
 }
 
+/********************
+  Special behaviour in tabs
+ ********************/
 .tab-body-wrapper {
   .harmonica input:checked + .main-panel:first-of-type label[for^=harmonica] {
     border-top: none;
     .shadow(0, 10px, 10px, -10px, rgba(0, 0, 0, .2) inset);
   }
 }
+/********************
+  END - Special behaviour in tabs
+ ********************/

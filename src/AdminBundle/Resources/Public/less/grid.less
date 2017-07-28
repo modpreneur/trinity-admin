@@ -66,12 +66,13 @@
 
     .order-by {
       position: relative;
+      // TODO: do we need duplicate font-family 4 times?
 
       &:before {
         position: absolute;
         right: 10px;
         top: 1px;
-        font-family: "Material Design Icons";
+        font-family: @icon-font;
         content: "\F143";
         font-size: 20px;
         color: @color-white;
@@ -82,7 +83,7 @@
         position: absolute;
         right: 10px;
         top: 13px;
-        font-family: "Material Design Icons";
+        font-family: @icon-font;
         content: "\F140";
         font-size: 20px;
         color: @color-white;
@@ -97,7 +98,7 @@
         position: absolute;
         right: 10px;
         top: 1px;
-        font-family: "Material Design Icons";
+        font-family: @icon-font;
         content: "\F143";
         font-size: 20px;
         color: @color-white;
@@ -108,7 +109,7 @@
         position: absolute;
         right: 10px;
         top: 13px;
-        font-family: "Material Design Icons";
+        font-family: @icon-font;
         content: "\F140";
         font-size: 20px;
         color: @color-white;
@@ -123,7 +124,7 @@
         position: absolute;
         right: 10px;
         top: 1px;
-        font-family: "Material Design Icons";
+        font-family: @icon-font;
         content: "\F143";
         font-size: 20px;
         color: @color-white;
@@ -134,7 +135,7 @@
         position: absolute;
         right: 10px;
         top: 13px;
-        font-family: "Material Design Icons";
+        font-family: @icon-font;
         content: "\F140";
         font-size: 20px;
         color: @color-white;
@@ -149,7 +150,7 @@
 
       // Odd row
       &:nth-child(odd) {
-        background-color: #f6f8fc;
+        background-color: #f6f8fc; // TODO: variable?
       }
 
       a {
@@ -240,34 +241,38 @@ table.data-grid thead .item-menu-button label {
     }
   }
 
-  input[type=radio] {
-    display: none;
+  //input[type=radio] {
+  //  display: none;
+  //}
+  //
+  //input[type=radio]:checked~label {
+  //  background: @color-primary;
+  //  color: #fff;
+  //  z-index: 102;
+  //}
+  //
+  //input[type=radio]:checked~.dropdown-item {
+  //  transform: translateX(-118px);
+  //  //opacity: 1;
+  //  //visibility: visible;
+  //  z-index: 101;
+  //}
+
+  input[type=checkbox]:checked {
+    // label
+    ~ label {
+      background: #525975;
+      color: #fff;
+      z-index: 102;
+      visibility: visible;
+    }
+    // Menu list
+    ~ .dropdown-item {
+      transform: translateX(-118px);
+      z-index: 101;
+    }
   }
 
-  input[type=radio]:checked~label {
-    background: @color-primary;
-    color: #fff;
-    z-index: 102;
-  }
-
-  input[type=radio]:checked~.dropdown-item {
-    transform: translateX(-118px);
-    opacity: 1;
-    visibility: visible;
-    z-index: 101;
-  }
-
-  input[type=checkbox]:checked~label {
-    background: #525975;
-    color: #fff;
-    z-index: 102;
-    visibility: visible;
-  }
-
-  input[type=checkbox]:checked~.dropdown-item {
-    transform: translateX(-118px);
-    z-index: 101;
-  }
 
   .ul-list {
     top: 7px;
@@ -284,7 +289,6 @@ table.data-grid thead .item-menu-button label {
 
     a {
       color: @color-primary;
-      border-color: #E4EAF6;
 
       &:hover {
         color: @color-primary;
