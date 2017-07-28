@@ -66,6 +66,7 @@
 
     .order-by {
       position: relative;
+      min-width: 50px;
 
       &:before {
         position: absolute;
@@ -159,12 +160,14 @@
       .button-small.button-get-details {
         transition: none; // overrides <a> transition style
         margin-right: 10px;
+        margin-left: 5px;
         float: right;
         padding: 5px 16px;
         border: 1px solid @color-primary;
         .radius(14px);
         color: @color-primary;
         visibility: hidden;
+        font-size: 10px;
         &:hover {
           background: @color-primary;
           color: white;

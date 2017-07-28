@@ -17,7 +17,34 @@
 
 
 {% block pageAction %}
-    <a href="#" class="navbar-search"><i class="mdi mdi-magnify"></i></a>
+    <input type="checkbox" id="modal-01" hidden class="modal-input">
+    <label for="modal-01" class="navbar-search"><i class="mdi mdi-magnify"></i></label>
+    <div class="modal-wrapper search-modal">
+        <label for="modal-01-disabled" class="modal-close-full-width"></label>
+
+        <label for="modal-01" class="modal-close-button button button-close">
+            <i class="mdi mdi-close-circle"></i> <span>Close</span>
+        </label>
+        <div class="modal-content">
+            <div class="row search-box">
+                <div class="grid medium-14">
+                    <i class="mdi mdi-magnify search-ico"></i>
+                    <input class="search-input" type="text" placeholder="Type your text here...">
+                    <div class="separator"></div>
+                </div>
+                <div class="grid medium-6">
+                    <label class="search-select-wrapper" for="search-select">
+                        <select name="search-select" id="search-select" class="search-select">
+                            <option value="newsletter">Newsletter</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="grid medium-4">
+                    <a href="#" class="button button-necktie pull-right">Search</a>
+                </div>
+            </div>
+        </div>
+    </div>
     <a href="#" class="button button-info">Necktie</a>
 {% endblock %}
 

@@ -6,32 +6,106 @@
 @import "variables";
 @import (once) "helper";
 
+.modal-wrapper{
+  background: fade(@color-primary, 95%);
 
+  .modal-content{
+    border-radius: 5px;
+  }
 
-    .modal-dialog{
-        & > div{
-            background: #fff !important;
-            .box;
-        }
+  &.search-modal{
 
-        header{
-            border-bottom: 1px solid #ededed;
-            padding-bottom: 10px;
-            h2{
-                color: @color-primary;
-                font-size: 32px;
-                font-weight: 300;
-            }
+    padding-left: 15px;
+    padding-right: 15px;
 
-            p{
-                color: #b5b5b5;
-                font-weight: 300;
-            }
-        }
+    .button-close{
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      padding: 3px;
+      background: darken(@color-primary, 10%);
+      font-size: 12px;
+      transition: all 0.5s ease;
 
-        label.required{
-            display: none;
-        }
+      &:hover{
+        background: darken(@color-primary, 30%);
+      }
+
+      span{
+        padding: 0 15px 0 15px;
+        margin-top: 5px;
+        float: right;
+        display: inline-block;
+      }
+
+      .mdi{
+        font-size: 22px;
+      }
     }
 
+    .grid{
+      padding: 0;
+    }
 
+    .search-ico{
+      font-size: 30px;
+      line-height: 1.2em;
+      padding-left: 15px;
+    }
+
+    .search-input{
+      font-size: 16px;
+      border: none;
+      padding: 5px;
+      width: 85%;
+    }
+
+    .separator{
+      height: 40%;
+      border-right: 1px solid @color-primary;
+      display: inline-block;
+    }
+
+    .search-select-wrapper{
+      width: 80%;
+      display: block;
+      position: relative;
+      margin-left: 15px;
+      font-size: 16px;
+      color: @color-primary;
+
+      &:after{
+        content: "\F140";
+        position: absolute;
+        right: 10px;
+        top: -2px;
+        font-size: 20px;
+        font-family: "Material Design Icons";
+        text-rendering: auto;
+        line-height: inherit;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+
+    .search-select{
+      border: none;
+      width: 100%;
+      background: transparent;
+      box-shadow: none;
+
+      outline: none !important;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+    }
+
+    .modal-content{
+
+    }
+  }
+
+  &.standard-modal{
+
+  }
+}
