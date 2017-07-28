@@ -21,7 +21,6 @@
 @import "box";
 @import "user-avatar";
 @import "checkboxes";
-@import "paySystem";
 
 @font-face {
   font-family: "Noto Sans";
@@ -45,12 +44,13 @@ body {
   display: none !important;
 }
 
+// TODO: move to corrct place or remove
 .body-wrapper {
   margin: 14px;
 }
 
 /** fix **/
-
+// TODO: remove?
 .modal-a.button.button-secondary {
   display: none !important;
 }
@@ -80,7 +80,7 @@ ol.list {
   }
 }
 
-
+// TODO: do we need?
 a {
   transition: .3s;
   color: @link-font-color;
@@ -90,17 +90,21 @@ a {
 }
 
 // Enlarge clickable area of links
-.data-grid tbody tr td > a:not([class*="button"]), .alert i.alert-close-icon:before, .large-clickable-area {
+.data-grid tbody tr td > a:not([class*="button"]),
+.alert i.alert-close-icon:before,
+.large-clickable-area {
   padding: 10px;
   margin: -10px;
 }
 
+// TODO: please remove container-fluid. Ask Marek
 .container-fluid > .row > .span-large-24 {
   &:first-child {
     padding: 0 25px 20px 25px;
   }
 }
 
+// TODO: WTF?
 .no-hover-backg, .new-form .no-hover-backg, .edit-form .no-hover-backg, #row_group_rolesEntry {
   &:hover {
     background: transparent;
