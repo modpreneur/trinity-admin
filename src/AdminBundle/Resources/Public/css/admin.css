@@ -829,6 +829,7 @@ body {
   padding: 10px 10px;
   border: 1px solid transparent;
   font-size: 14px;
+  color: #525975;
 }
 #sidebar ul.sidebar li.active > a,
 #sidebar ul.sidebar li.active .a {
