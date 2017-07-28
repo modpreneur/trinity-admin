@@ -2,8 +2,9 @@
 @import (once) "variables";
 
 @import "navbar";
-
 @import "color";
+@import "animation";
+@import "background";
 @import "navbar-items";
 @import "page-header";
 @import "sidebar";
@@ -44,17 +45,6 @@ body {
   display: none !important;
 }
 
-// TODO: move to corrct place or remove
-.body-wrapper {
-  margin: 14px;
-}
-
-/** fix **/
-// TODO: remove?
-.modal-a.button.button-secondary {
-  display: none !important;
-}
-
 ul, ol {
   list-style: none;
   padding-left: 0;
@@ -80,15 +70,6 @@ ol.list {
   }
 }
 
-// TODO: do we need?
-a {
-  transition: .3s;
-  color: @link-font-color;
-  &:hover {
-    color: @color-primary;
-  }
-}
-
 // Enlarge clickable area of links
 .data-grid tbody tr td > a:not([class*="button"]),
 .alert i.alert-close-icon:before,
@@ -101,15 +82,5 @@ a {
 .container-fluid > .row > .span-large-24 {
   &:first-child {
     padding: 0 25px 20px 25px;
-  }
-}
-
-// TODO: WTF?
-.no-hover-backg, .new-form .no-hover-backg, .edit-form .no-hover-backg, #row_group_rolesEntry {
-  &:hover {
-    background: transparent;
-  }
-  .row:hover {
-    background: transparent;
   }
 }

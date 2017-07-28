@@ -7,270 +7,129 @@
     - etc
 */
 @import (once) "variables";
-@import "helper";
+@import (once) "helper";
 
-  // for body
-  &.navbar-fixed {
-    padding-top: @navbar-height;
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 1001;
-    }
-  }
-
-  .navbar-item-input {
-    display: none;
-  }
+// for body
+&.navbar-fixed {
+  padding-top: @navbar-height + 15px;
 
   .navbar {
-    background: #fff;
-    height: @navbar-height;
-    width: 100%;
-    color: @navbar-font-color;
-    //overflow: hidden;
-    font-weight: @roboto-light;
-    font-family: @font;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+  }
+}
 
-    .page-title{
-      color: @color-primary;
-      padding: (@navbar-height - 22px) / 2;
-      font-size: 14px;
-    }
-    
-    .navbar-logo {
-      height: @navbar-height;
-      width:  @navbar-height;
-      display: inline-block;
-      float: left;
-      .group-clearfix();
-      z-index: 999;
+#navbar-left {
+  width: @sidebar-width;
+  background: @color-primary;
 
-      // TODO: use variables
-      background: #6F68F9;
-      background-image: -o-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-      background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-      background-image: -webkit-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-      background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-      background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
+  #navbar-project {
 
-      i {
-        margin: (@navbar-height - @logo-height)/2;
-        display: block;
-        height: @logo-height;
-        width: @logo-height;
-      }
-      a {
-        font-size: 30px;
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        color: #fff;
-      }
-    }
-
-    #navbar-project{
-      float: left;
-      height: @navbar-height;
-    }
-
-    .version {
-      position: absolute;
-      top: 55px;
-      left: 140px;
+    #project-select{
       color: #fff;
-      font-size: 8px;
-    }
-    .navbar-container {
-      display: inline-block;
-      float: left;
-      .group-clearfix();
-      width: ~"calc(100% -" @sidebar-width ~")";
-
-      border-bottom: 1px #e2e4e6 solid;
-    }
-
-    #navbar-actions{
-      padding-right: 10px;
-
-      .navbar-search{
-        font-size: 30px;
-        line-height: @navbar-height - 5px;
-        margin-right: 5px;
-        color: @color-primary;
-
-        &:hover{
-          color: darken(@color-primary, 10%);
-        }
-      }
-    }
-
-    .navbar-item-label {
-      display: inline-block;
-      cursor: pointer;
-      font-size: @navbar-font-icon-size;
-      float: left;
-      margin-left: 10px;
-      .group-clearfix();
-
-      i {
+      margin: (@navbar-height - 33px)/2 1em;
+      span{
         display: block;
-        width: @navbar-font-icon-size;
-        height: @navbar-font-icon-size;
-        margin: (@navbar-height - @navbar-font-icon-size)/2  (@navbar-height/2 - @navbar-font-icon-size)/2;
-      }
-      &:hover {
-        background: transparent;
-        color: @color-primary;
-      }
-      .number-info {
-        border-radius: 6px;
-        background: #ef7e3e;
-        text-align: center;
+        font-weight: 300;
         font-size: 12px;
-        color: #fff;
-        display: block;
-        width: auto;
-        height: auto;
-        min-width: 16px;
-        min-height: 18px;
-        margin: 0;
-        position: absolute;
-        top: 25px;
-        right: 6px;
-        padding: 0 2px;
       }
-    }
-
-    // TODO: still valid?
-    #user-profile-label {
-      width: 187px;
-      font-size: 14px;
-      margin: 0 10px 0 15px;
-      padding: 0 0 0 15px;
-      .user-name, .user-photo {
-        display: inline-block;
-        float: left;
-        .group-clearfix();
-      }
-      img {
-        display: block;
-        margin: 13px 15px;
-        width: 44px;
-        height: 44px;
-        border-radius: 22px;
-      }
-      .user-photo {
-        i {
-          font-size: 40px;
-          width: 44px;
-          height: 44px;
-          margin: 13px 15px;
-        }
-      }
-      .user-name {
-        line-height: @navbar-height;
-        font-weight: 400;
-        width: 98px;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        text-align: right;
-        i {
-          width: 10px;
-          height: 10px;
-          font-size: 10px;
-          transform: rotate(90deg);
-        }
-      }
-      i {
-        display: inline-block;
-        margin: 5px;
+      .title{
+        font-size: 14px;
+        font-weight: bold;
       }
     }
   }
-  .navbar-search {
-    position: relative;
+
+  #main-menu-button {
+    background: @color-primary;
+    border: none;
+    padding: 0;
+    font-size: 22px;
+    margin: (@navbar-height - 22px) / 2;
+  }
+}
+
+.navbar {
+  background: #fff;
+  height: @navbar-height;
+  width: 100%;
+  color: @navbar-font-color;
+  font-weight: @noto-light;
+  font-family: @font;
+
+  .page-title {
+    color: @color-primary;
+    padding: (@navbar-height - 22px) / 2;
+    font-size: 14px;
+  }
+
+  .navbar-logo {
+    height: @navbar-height;
+    width: @navbar-height;
+    display: inline-block;
     float: left;
     .group-clearfix();
-    z-index: 9;
+    z-index: 999;
 
-    form {
-      margin: 25px 0 25px 25px;
+    // TODO: use variables
+    background: #6F68F9;
+    background-image: -o-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+    background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+    background-image: -webkit-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+    background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
+    background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
+
+    i {
+      margin: (@navbar-height - @logo-height)/2;
+      display: block;
+      height: @logo-height;
+      width: @logo-height;
     }
-    input {
-      background: transparent;
-      font-family: @font;
-      font-size: 14px;
-      border: none;
-      font-weight: 400;
-      width: auto;
-      &:focus {
-        font-weight: 400;
-        & + button {
-          top: 18px;
-          left: -20px;
-          height: 32px;
-          width: 32px;
-          border-radius: 20px;
-          background: @sidebar-back-color;
-          i {
-            font-size: 20px;
-            color: #f3f3f3;
-          }
-        }
-        & ~ div.navbar-search-tools {
-          display: block;
-        }
-      }
-    }
-    div.navbar-search-tools {
-      height: calc(@navbar-height~" - 1px"); // - border width
-      background: #fff;
-      position: fixed;
-      display: none;
-      top: 0;
-      right: 0;
-      z-index: 5;
-      line-height: @navbar-height;
 
-      .button {
-        height: 44px;
-        font-size: 14px;
-        font-weight: 400;
-        min-width: 105px;
-        vertical-align: middle;
-      }
-
-      #navbar-search-submit-button-2 {
-        font-size: 16px;
-      }
-
-      #navbar-search-helper-button {
-        padding-left: 20px;
-        padding-right: 20px;
-      }
-
-      #navbar-search-tool-close-button {
-        padding: 15px !important;
-        min-width: 0;
-        border: none;
-        background: none;
-        color: #a0a2a5;
-        margin-right: 0;
-
-        i {
-          font-weight: 600;
-        }
-      }
+    a {
+      font-size: 30px;
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      color: #fff;
     }
   }
 
-  @media screen and(max-width: 800px) {
-    .navbar-container div.navbar-search-tools {
-      display: none !important;
-    }
+  #navbar-project {
+    float: left;
+    height: @navbar-height;
   }
 
+  .navbar-container{
+    width: 80%;
+  }
 
+  .page-title {
+    font-size: 20px;
+    line-height: 1;
+  }
 
+  .navbar-actions {
+    float: right;
+  }
+
+  .navbar-search{
+    font-size: 28px;
+    margin-right: 10px;
+    color: @color-primary;
+    float: left;
+    border: 1px solid transparent;
+    line-height: 1;
+    padding: 5px;
+    cursor: pointer;
+    margin-top: 2px;
+
+    &:hover{
+      border-radius: 30px;
+      border: 1px solid @color-border;
+      background:  @color-border;
+    }
+  }
+}

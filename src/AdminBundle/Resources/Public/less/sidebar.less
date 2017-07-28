@@ -1,47 +1,19 @@
 @import (once) "variables";
 @import (once) "helper";
 
-@sidebar-background: #fff;
-@sidebar-hover-background-color: #e4ebf7;
+@sidebar-background: @color-white;
+@sidebar-hover-background-color: @back-color;
 
 /* sidebar top */
 
 body{
-  padding-left: @sidebar-width;
-}
-
-#navbar-left {
-  width: @sidebar-width;
-  background: @color-primary;
-
-  #navbar-project {
-
-    #project-select{
-      color: #fff;
-      margin: (@navbar-height - 33px)/2 1em;
-      span{
-        display: block;
-        font-weight: 300;
-        font-size: 12px;
-      }
-      .title{
-        font-size: 14px;
-        font-weight: bold;
-      }
-    }
-  }
-
-  #main-menu-button {
-    background: @color-primary;
-    border: none;
-    padding: 0;
-    font-size: 22px;
-    margin: (@navbar-height - 22px) / 2;
-  }
+  padding-left: @sidebar-width + 15px;
+  padding-right: 15px;
 }
 
 // left sidebar menu items
 #sidebar {
+  padding-top: 15px;
   z-index: 99;
   font-family: @font;
   width: @sidebar-width;
@@ -50,6 +22,7 @@ body{
   position: fixed;
   height: 100%;
   left: 0;
+  top: @navbar-height;
   overflow-y: auto;
   border-right: 1px solid @color-border;
 
@@ -146,41 +119,41 @@ body{
       }
     }
   }
-}
 
-#sidebar .drop-down {
-  .no-select();
-  position: relative;
+  .drop-down {
+    .no-select();
+    position: relative;
 
-  label{
-    cursor: pointer;
-  }
+    label{
+      cursor: pointer;
+    }
 
-  &.last {
-    margin-bottom: 19px;
-  }
+    &.last {
+      margin-bottom: 19px;
+    }
 
-  display: block;
-  border-radius: 0;
-
-  .fix-a {
-    display: none;
-  }
-
-  input:checked ~ .a {
-    background: @sidebar-hover-background-color;
-    color: @color-primary;
-    font-weight: 600;
-  }
-
-  input:checked ~ ul.drop {
     display: block;
-    visibility: visible;
-    margin-left: 50px;
-    opacity: 1;
-    top: 0;
-    position: static;
-    box-shadow: none;
     border-radius: 0;
+
+    .fix-a {
+      display: none;
+    }
+
+    input:checked ~ .a {
+      background: @sidebar-hover-background-color;
+      color: @color-primary;
+      font-weight: 600;
+    }
+
+    input:checked ~ ul.drop {
+      display: block;
+      visibility: visible;
+      margin-left: 50px;
+      opacity: 1;
+      top: 0;
+      position: static;
+      box-shadow: none;
+      border-radius: 0;
+    }
   }
 }

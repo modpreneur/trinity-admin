@@ -8,62 +8,10 @@
 
 **************************************/
 @import (once) "helper";
-/*  Some default stuffs e.g. colors   */
-// TODO: move to modal or remove
-.modal-dialog {
-  background: rgba(255, 255, 255, 0.8);
-}
+@import  (once) "variables";
 
 .overflow-hidden {
   overflow: hidden;
-}
-
-.info {
-  background-color: @color-info;
-}
-
-.color-info {
-  color: @color-info;
-}
-
-.warning {
-  background-color: @color-warning;
-}
-
-.color-warning {
-  color: @color-warning;
-}
-
-.danger {
-  background-color: @color-danger;
-}
-
-.color-danger {
-  color: @color-danger;
-}
-
-.primary {
-  background-color: @color-primary;
-}
-
-.color-primary {
-  color: @color-primary !important; //yea again important bcs bowtie shit
-}
-
-.secondary {
-  background-color: @color-secondary;
-}
-
-.color-secondary {
-  color: @color-secondary !important;
-}
-
-.tertiary {
-  background-color: @color-tertiary;
-}
-
-.color-tertiary {
-  color: @color-tertiary !important;
 }
 
 .tags {
@@ -121,39 +69,6 @@
   }
 }
 
-// TODO: remove or what?
-.table {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-// TODO: margins? remove?
-.margin-0-auto {
-  margin: 0 auto !important;
-}
-
-.margin-left-auto {
-  margin-left: auto;
-}
-
-.margin-top-5p {
-  margin-top: 5% !important;
-}
-
-.margin-bottom-none{
-  margin-bottom: 0 !important;
-}
-
-.margin-right-auto {
-  margin-right: auto;
-}
-
-// TODO: remove?
-.hidden {
-  display: none !important;
-}
-
 /*********************
   GRAPHS SPECIFICS
  **********************/
@@ -171,31 +86,3 @@ g{
 /*********************
   END - GRAPHS SPECIFICS
  **********************/
-
-
-/*  Animations - classes with keyframes */
-// TODO: move to special animation.less ?
-.spin {
-  -webkit-animation: spin 2s linear infinite;
-  -moz-animation: spin 2s linear infinite;
-  animation: spin 2s linear infinite;
-}
-
-@-moz-keyframes spin {
-  100% {
-    -moz-transform: rotate(360deg);
-  }
-}
-
-@-webkit-keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-  }
-}
-
-@keyframes spin {
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
