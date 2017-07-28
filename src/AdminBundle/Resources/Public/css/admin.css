@@ -25,6 +25,14 @@
   margin-left: auto;
   margin-right: auto;
 }
+.select-clear {
+  background: transparent;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+}
 /**
   Font
 */
@@ -82,7 +90,6 @@
   height: 50px;
   width: 100%;
   color: #a0a2a5;
-  overflow: hidden;
   font-weight: 300;
   font-family: "Noto Sans", sans-serif;
 }
@@ -2136,6 +2143,7 @@ g {
   user-select: none;
   position: relative;
   cursor: pointer;
+  font-weight: 600;
 }
 .form label a {
   color: #525975;
@@ -2191,8 +2199,8 @@ g {
 }
 .form .select:after {
   position: absolute;
-  content: "\e935";
-  font-family: trinity !important;
+  content: "\F140";
+  font-family: "Material Design Icons";
   speak: none;
   color: #525975;
   font-size: 20px;
@@ -2244,6 +2252,25 @@ g {
 .form .right {
   margin-left: 10px;
 }
+.form .image {
+  border: 1px solid #dbe2ed;
+}
+.form .error-message {
+  color: #FE7800;
+  text-align: right;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  font-size: 12px;
+}
+.form .upload-buttons-wrapper {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.form .upload-buttons-wrapper .upload-buttons {
+  width: auto;
+  display: inline-block;
+}
 .add-new-box {
   display: block;
   margin-left: auto;
@@ -2261,853 +2288,6 @@ g {
 .add-new-box:hover {
   background: #525975;
   color: #fff;
-}
-.edit-form,
-.new-form,
-.modal-dialog form {
-  width: 100%;
-  /* Just for webkit browsers */
-}
-.edit-form div[class='row']:last-of-type,
-.new-form div[class='row']:last-of-type,
-.modal-dialog form div[class='row']:last-of-type {
-  border-bottom: none;
-}
-.edit-form .row,
-.new-form .row,
-.modal-dialog form .row {
-  margin-left: auto;
-  margin-right: auto;
-  border-bottom: 1px solid #ededed;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  width: 100%;
-  margin-bottom: 0;
-  transition: .3s;
-}
-.edit-form .row:hover,
-.new-form .row:hover,
-.modal-dialog form .row:hover {
-  background: #f8f8f8;
-}
-.edit-form .row.row-extra,
-.new-form .row.row-extra,
-.modal-dialog form .row.row-extra {
-  border-bottom: 1px solid #ededed;
-}
-.edit-form .advanced-settings .row:first-of-type,
-.new-form .advanced-settings .row:first-of-type,
-.modal-dialog form .advanced-settings .row:first-of-type {
-  margin-top: 0;
-}
-.edit-form .form-left,
-.new-form .form-left,
-.modal-dialog form .form-left {
-  text-align: right;
-}
-.edit-form .form-left label,
-.new-form .form-left label,
-.modal-dialog form .form-left label {
-  text-align: right !important;
-}
-.edit-form h3,
-.new-form h3,
-.modal-dialog form h3 {
-  text-align: center;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
-.edit-form .form-right .checkbox + .description,
-.new-form .form-right .checkbox + .description,
-.modal-dialog form .form-right .checkbox + .description {
-  float: left;
-  margin-top: -25px;
-  margin-left: 25px;
-}
-.edit-form .form-right .description,
-.new-form .form-right .description,
-.modal-dialog form .form-right .description {
-  font-size: 12px;
-  color: #727272;
-}
-.edit-form label,
-.new-form label,
-.modal-dialog form label {
-  color: #303030;
-  padding: 0 20px 0 0 !important;
-  line-height: 35px !important;
-  font-weight: 300 !important;
-}
-.edit-form label.required:after,
-.new-form label.required:after,
-.modal-dialog form label.required:after {
-  content: "*";
-  color: #525975;
-  font-weight: 600;
-}
-.edit-form span.text,
-.new-form span.text,
-.modal-dialog form span.text {
-  line-height: 35px;
-  padding: 0;
-}
-.edit-form input.display-none ~ label,
-.new-form input.display-none ~ label,
-.modal-dialog form input.display-none ~ label {
-  display: none !important;
-}
-.edit-form div#row_group_user_groups label.bold,
-.new-form div#row_group_user_groups label.bold,
-.modal-dialog form div#row_group_user_groups label.bold {
-  cursor: default;
-}
-.edit-form .form-content-center,
-.new-form .form-content-center,
-.modal-dialog form .form-content-center {
-  margin-left: auto;
-  margin-right: auto;
-  display: block !important;
-  position: static !important;
-  float: none !important;
-}
-.edit-form input:not([type="submit"]):not([type="button"]),
-.new-form input:not([type="submit"]):not([type="button"]),
-.modal-dialog form input:not([type="submit"]):not([type="button"]),
-.edit-form select,
-.new-form select,
-.modal-dialog form select,
-.edit-form textarea,
-.new-form textarea,
-.modal-dialog form textarea {
-  width: 100%;
-  border-radius: 5px;
-  height: 35px;
-  line-height: 20px;
-  font-size: 14px;
-  padding-left: 10px;
-  padding-right: 10px;
-  outline-width: 0;
-  border: 1px solid #dbe2ed;
-  background: #fff;
-  -webkit-appearance: none;
-  font-weight: 300;
-  color: #303030;
-  transition: .4s;
-  font-family: "Noto Sans", sans-serif;
-}
-.edit-form input:not([type="submit"]):not([type="button"]):focus,
-.new-form input:not([type="submit"]):not([type="button"]):focus,
-.modal-dialog form input:not([type="submit"]):not([type="button"]):focus,
-.edit-form select:focus,
-.new-form select:focus,
-.modal-dialog form select:focus,
-.edit-form textarea:focus,
-.new-form textarea:focus,
-.modal-dialog form textarea:focus {
-  border: 1px solid #525975;
-  background: #fff;
-}
-.edit-form input:not([type="submit"]):not([type="button"]):hover,
-.new-form input:not([type="submit"]):not([type="button"]):hover,
-.modal-dialog form input:not([type="submit"]):not([type="button"]):hover,
-.edit-form select:hover,
-.new-form select:hover,
-.modal-dialog form select:hover,
-.edit-form textarea:hover,
-.new-form textarea:hover,
-.modal-dialog form textarea:hover {
-  border: 1px solid #525975;
-}
-.edit-form .just-filter,
-.new-form .just-filter,
-.modal-dialog form .just-filter {
-  background: #f8f8f8;
-  transition: .3s;
-}
-.edit-form .just-filter:hover,
-.new-form .just-filter:hover,
-.modal-dialog form .just-filter:hover {
-  background: #fff;
-}
-.edit-form .just-filter input:not([type="submit"]):not([type="button"]),
-.new-form .just-filter input:not([type="submit"]):not([type="button"]),
-.modal-dialog form .just-filter input:not([type="submit"]):not([type="button"]),
-.edit-form .just-filter select,
-.new-form .just-filter select,
-.modal-dialog form .just-filter select,
-.edit-form .just-filter textarea,
-.new-form .just-filter textarea,
-.modal-dialog form .just-filter textarea {
-  background: #d4d4d4;
-}
-.edit-form .just-filter input:not([type="submit"]):not([type="button"]):focus,
-.new-form .just-filter input:not([type="submit"]):not([type="button"]):focus,
-.modal-dialog form .just-filter input:not([type="submit"]):not([type="button"]):focus,
-.edit-form .just-filter select:focus,
-.new-form .just-filter select:focus,
-.modal-dialog form .just-filter select:focus,
-.edit-form .just-filter textarea:focus,
-.new-form .just-filter textarea:focus,
-.modal-dialog form .just-filter textarea:focus {
-  background: #e7e7e7;
-}
-@media screen and (max-width: 768px) {
-  .edit-form .form-left,
-  .new-form .form-left,
-  .modal-dialog form .form-left {
-    text-align: left;
-  }
-}
-@media screen and (max-width: 767px) {
-  .edit-form label,
-  .new-form label,
-  .modal-dialog form label {
-    text-align: left;
-  }
-}
-.edit-form input[type="checkbox"],
-.new-form input[type="checkbox"],
-.modal-dialog form input[type="checkbox"] {
-  display: none;
-}
-.edit-form .widget-expanded .checkbox label,
-.new-form .widget-expanded .checkbox label,
-.modal-dialog form .widget-expanded .checkbox label {
-  display: block;
-  max-width: 100%;
-}
-.edit-form .widget-expanded .checkbox + label,
-.new-form .widget-expanded .checkbox + label,
-.modal-dialog form .widget-expanded .checkbox + label {
-  display: none;
-}
-.edit-form .checkbox label,
-.new-form .checkbox label,
-.modal-dialog form .checkbox label {
-  display: block;
-  margin-right: 15px;
-  position: relative;
-  cursor: pointer;
-  padding: 0;
-  text-align: left;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.edit-form .checkbox label:before,
-.new-form .checkbox label:before,
-.modal-dialog form .checkbox label:before {
-  content: "\F12E";
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  font-size: 20px;
-  margin-right: 5px;
-  transition: .3s;
-}
-.edit-form .checkbox label:before,
-.new-form .checkbox label:before,
-.modal-dialog form .checkbox label:before {
-  content: "\F12E";
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  font-size: 24px;
-  margin-right: 5px;
-  color: #525975;
-}
-.edit-form .checkbox input:checked ~ label:before,
-.new-form .checkbox input:checked ~ label:before,
-.modal-dialog form .checkbox input:checked ~ label:before {
-  content: "\F132";
-  color: #525975;
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  speak: none;
-  -ms-transform: translateY(1px);
-}
-.edit-form .checkbox input[type="checkbox"]:checked ~ label:before,
-.new-form .checkbox input[type="checkbox"]:checked ~ label:before,
-.modal-dialog form .checkbox input[type="checkbox"]:checked ~ label:before {
-  content: "\F132";
-  color: #525975;
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  speak: none;
-}
-.edit-form .checkbox-inline label,
-.new-form .checkbox-inline label,
-.modal-dialog form .checkbox-inline label {
-  display: inline-block;
-  margin-right: 15px;
-  position: relative;
-  cursor: pointer;
-  padding: 0;
-  text-align: left;
-  overflow: hidden;
-  white-space: nowrap;
-}
-.edit-form .checkbox-inline label:before,
-.new-form .checkbox-inline label:before,
-.modal-dialog form .checkbox-inline label:before {
-  content: "\F12E";
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  font-size: 20px;
-  margin-right: 5px;
-  transition: .3s;
-}
-.edit-form .checkbox-inline label:before,
-.new-form .checkbox-inline label:before,
-.modal-dialog form .checkbox-inline label:before {
-  content: "\F12E";
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  font-size: 24px;
-  margin-right: 5px;
-  color: #525975;
-}
-.edit-form .checkbox-inline input:checked ~ label:before,
-.new-form .checkbox-inline input:checked ~ label:before,
-.modal-dialog form .checkbox-inline input:checked ~ label:before {
-  content: "\F132";
-  color: #525975;
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  speak: none;
-  -ms-transform: translateY(1px);
-}
-.edit-form .checkbox-inline input[type="checkbox"]:checked ~ label:before,
-.new-form .checkbox-inline input[type="checkbox"]:checked ~ label:before,
-.modal-dialog form .checkbox-inline input[type="checkbox"]:checked ~ label:before {
-  content: "\F132";
-  color: #525975;
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
-  speak: none;
-}
-.edit-form .checkbox-inline label,
-.new-form .checkbox-inline label,
-.modal-dialog form .checkbox-inline label {
-  float: left;
-  position: relative;
-}
-.edit-form textarea,
-.new-form textarea,
-.modal-dialog form textarea {
-  height: 100px;
-  padding-top: 10px;
-  line-height: 20px;
-  padding-bottom: 10px;
-  resize: vertical;
-}
-.edit-form .tiecons-postfix,
-.new-form .tiecons-postfix,
-.modal-dialog form .tiecons-postfix {
-  position: absolute;
-  right: 10px;
-  top: 7px;
-}
-.edit-form input[type="submit"],
-.new-form input[type="submit"],
-.modal-dialog form input[type="submit"],
-.edit-form button[type="submit"],
-.new-form button[type="submit"],
-.modal-dialog form button[type="submit"],
-.edit-form input[type="button"],
-.new-form input[type="button"],
-.modal-dialog form input[type="button"] {
-  display: block;
-  float: none !important;
-  margin: 15px auto 0;
-  text-transform: uppercase;
-  font-size: 18px;
-}
-.edit-form input[type="submit"],
-.new-form input[type="submit"],
-.modal-dialog form input[type="submit"],
-.edit-form button[type="submit"],
-.new-form button[type="submit"],
-.modal-dialog form button[type="submit"] {
-  font-weight: 500 !important;
-}
-.edit-form input.error,
-.new-form input.error,
-.modal-dialog form input.error {
-  border: solid 1px red !important;
-}
-.edit-form input[type="date"]::-webkit-inner-spin-button,
-.new-form input[type="date"]::-webkit-inner-spin-button,
-.modal-dialog form input[type="date"]::-webkit-inner-spin-button,
-.edit-form input[type="date"]::-webkit-outer-spin-button,
-.new-form input[type="date"]::-webkit-outer-spin-button,
-.modal-dialog form input[type="date"]::-webkit-outer-spin-button {
-  height: 100%;
-}
-.edit-form input[type="date"]::-webkit-calendar-picker-indicator,
-.new-form input[type="date"]::-webkit-calendar-picker-indicator,
-.modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator {
-  position: relative;
-  display: block;
-  width: 14px;
-  height: 30px;
-  right: -6px;
-  color: transparent;
-}
-.edit-form input[type="date"]::-webkit-calendar-picker-indicator:after,
-.new-form input[type="date"]::-webkit-calendar-picker-indicator:after,
-.modal-dialog form input[type="date"]::-webkit-calendar-picker-indicator:after {
-  content: "\e654";
-  font-family: "tiecons";
-  font-size: 12px;
-  color: #7d7d7d;
-  position: absolute;
-  right: 5px;
-  top: 7px;
-  pointer-events: none;
-}
-.edit-form input[disabled],
-.new-form input[disabled],
-.modal-dialog form input[disabled],
-.edit-form input[disabled]:hover,
-.new-form input[disabled]:hover,
-.modal-dialog form input[disabled]:hover,
-.edit-form textarea[disabled],
-.new-form textarea[disabled],
-.modal-dialog form textarea[disabled] {
-  background-color: #E0E7F1 !important;
-  border: 1px solid #dbdbdb !important;
-  cursor: not-allowed !important;
-  font-weight: normal !important;
-}
-.edit-form input[disabled] + label:before,
-.new-form input[disabled] + label:before,
-.modal-dialog form input[disabled] + label:before {
-  background-color: #efefef !important;
-  color: #808080 !important;
-  border: 1px solid #dbdbdb !important;
-  cursor: not-allowed !important;
-  font-weight: normal !important;
-}
-.edit-form input[disabled] + label:after,
-.new-form input[disabled] + label:after,
-.modal-dialog form input[disabled] + label:after {
-  color: #b9b9b9 !important;
-}
-.rw-widget {
-  border: none;
-}
-.rw-widget .rw-btn:hover {
-  color: #525975;
-}
-.rw-widget.rw-state-focus,
-.rw-widget.rw-state-focus:hover {
-  -webkit-box-shadow: none !important;
-  box-shadow: none !important;
-  outline: 0;
-}
-.rw-widget.rw-datetimepicker {
-  padding: 0;
-  border: 1px solid #dbe2ed !important;
-}
-.rw-widget.rw-datetimepicker:active,
-.rw-widget.rw-datetimepicker:active.rw-state-focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.rw-widget.rw-datetimepicker:hover,
-.rw-widget.rw-datetimepicker:focus {
-  border: 1px solid #525975 !important;
-  background: #fff;
-  transition: .4s;
-  box-shadow: none;
-}
-.rw-widget.rw-datetimepicker:hover span.rw-select,
-.rw-widget.rw-datetimepicker:focus span.rw-select {
-  background-color: unset !important;
-}
-.rw-widget.rw-datetimepicker:hover span.rw-select button,
-.rw-widget.rw-datetimepicker:focus span.rw-select button {
-  background-color: transparent !important;
-}
-.rw-widget.rw-datetimepicker:not(.rw-has-both):hover span.rw-select button.rw-btn span:before,
-.rw-widget.rw-datetimepicker:not(.rw-has-both):focus span.rw-select button.rw-btn span:before {
-  color: #525975;
-}
-.rw-widget.rw-datetimepicker input.rw-input {
-  border-radius: 5px;
-  border: 0 !important;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.rw-widget.rw-datetimepicker span.rw-select {
-  border: none;
-}
-.rw-widget.rw-datetimepicker span.rw-select button.rw-btn {
-  width: 1.8em;
-}
-.rw-widget.rw-datetimepicker span.rw-select button.rw-btn:hover span:before {
-  color: #525975;
-}
-.rw-widget.rw-datetimepicker span.rw-select button.rw-btn span:before {
-  font-family: tiecons;
-  color: #7d7d7d;
-}
-.rw-widget.rw-datetimepicker span.rw-select button.rw-btn.rw-btn-calendar span:before {
-  content: "\e63c";
-}
-.rw-widget.rw-datetimepicker span.rw-select button.rw-btn.rw-btn-time span:before {
-  content: "\e647";
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container {
-  left: 0;
-  right: 0;
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container div.rw-popup {
-  left: 0;
-  right: 0;
-  padding: 0;
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup {
-  width: 18em !important;
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup .rw-header > .rw-btn:active.rw-state-focus {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup .rw-header .rw-btn-view {
-  background: #fff;
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup .rw-header .rw-i-caret-left:before {
-  content: "\e622";
-  font-family: "tiecons";
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup .rw-header .rw-i-caret-right:before {
-  content: "\e623";
-  font-family: "tiecons";
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup .rw-calendar-grid th {
-  padding: 0;
-  text-align: center;
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup .rw-calendar-grid tr td {
-  padding: 0;
-}
-.rw-widget.rw-datetimepicker div.rw-popup-container.rw-calendar-popup .rw-calendar-grid tr td .rw-btn {
-  padding: 0;
-  text-align: center;
-}
-.select-style {
-  position: relative;
-}
-.select-style select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  cursor: pointer;
-  padding-right: 25px;
-}
-.select-style select::-ms-expand {
-  display: none;
-}
-.select-style:hover:after,
-.select-style:focus:after {
-  color: #525975;
-}
-.select-style:after {
-  transition: .4s;
-  content: "\e928";
-  font-family: trinity;
-  font-size: 12px;
-  color: #7d7d7d;
-  position: absolute;
-  right: 10px;
-  top: 11px;
-  line-height: 1;
-  pointer-events: none;
-}
-.select-style:before {
-  content: " ";
-  right: 10px;
-  top: 12px;
-  width: 15px;
-  height: 15px;
-  position: absolute;
-  pointer-events: none;
-}
-.select-style select:-moz-focusring {
-  color: transparent;
-  text-shadow: 0 0 0 #000;
-}
-.select-style select[disabled] {
-  cursor: not-allowed;
-  background: #E0E7F1;
-}
-.modal-dialog form label {
-  width: 100%;
-}
-.form-title {
-  padding: 15px;
-}
-.delete-form {
-  width: 100%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.delete-form input[type="submit"],
-.delete-form input[type="button"],
-.delete-form button[type="submit"] {
-  display: block;
-  float: none !important;
-  text-transform: uppercase;
-  font-size: 18px;
-  margin: 15px auto 0;
-  -webkit-appearance: none;
-  transition: 0.3s ease-in;
-}
-.delete-form div.checkbox > input {
-  vertical-align: text-top;
-  margin: 0;
-}
-.delete-form div.checkbox > label {
-  padding-left: 5px;
-}
-.delete-form i.trinity-warning:before {
-  font-size: 150px;
-  color: orange;
-}
-.delete-form h2.warning {
-  font-weight: 200;
-  font-size: 60px;
-}
-.delete-form p {
-  font-size: 20px;
-  color: #8e8e8e;
-}
-.delete-form ul {
-  font-size: 20px;
-  color: #8e8e8e;
-  margin-top: 3px;
-}
-.delete-form li {
-  margin-top: 5px;
-}
-.delete-form .row {
-  margin: 15px 0;
-}
-.delete-form .row:last-of-type {
-  margin: 0;
-}
-h2.warning {
-  background-color: transparent !important;
-}
-.info-empty-form {
-  width: 100%;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-}
-.info-empty-form i.trinity-info:before {
-  font-size: 140px;
-  color: #3de4c4;
-}
-.info-empty-form h2.warning {
-  font-weight: 200;
-  font-size: 50px;
-}
-.info-empty-form p {
-  font-size: 20px;
-  color: #8e8e8e;
-}
-.info-empty-form .row {
-  margin: 10px 0 20px 0;
-}
-.info-empty-form .button {
-  margin-bottom: 30px;
-}
-.box-new-form {
-  padding-bottom: 15px;
-}
-.big-input input:not([type="submit"]):not([type="button"]),
-.big-input select,
-.big-input textarea {
-  min-height: 300px;
-}
-.help-buttons {
-  right: 0;
-  position: absolute;
-}
-.help-buttons i,
-.help-buttons button {
-  display: inline-block;
-}
-.collection-widget:not([display-widget-labels="display-widget-labels"]) div {
-  width: 100% !important;
-  margin: 0;
-}
-.collection-widget div {
-  padding: 0 !important;
-}
-.collection-widget div.collection-widget-inner {
-  padding: 0 30px 0 20px !important;
-}
-.collection-widget div.collection-widget-inner .form-right .form-right {
-  margin-bottom: 0 !important;
-}
-.collection-widget .row {
-  border-bottom: none !important;
-}
-.collection-widget .form-right {
-  margin-bottom: 5px !important;
-}
-.collection-widget .form-left {
-  display: none !important;
-}
-.collection-widget .add-collection-item {
-  color: #1ABB9C;
-}
-.collection-widget .add-collection-item p {
-  margin: 5px 0 !important;
-  font-weight: 500;
-}
-.collection-widget .add-collection-item:hover {
-  color: #17a589;
-}
-.collection-widget .add-collection-item i {
-  font-size: 18px;
-  padding: 5px 10px 10px 10px;
-}
-.collection-widget .add-collection-item i:after {
-  font-family: "Noto Sans", sans-serif;
-  margin-left: 5px;
-  content: 'Add item';
-  font-size: 16px;
-}
-.collection-widget .delete-collection-item .tiecons,
-.collection-widget .delete-collection-item .trinity {
-  color: #c22a00;
-  position: absolute;
-  right: -20px;
-  top: 10px;
-  transition: all 0.1s;
-}
-.collection-widget .delete-collection-item .tiecons:hover,
-.collection-widget .delete-collection-item .trinity:hover {
-  will-change: transform;
-  -ms-transform: scale(1.2);
-  /* IE 9 */
-  -webkit-transform: scale(1.2);
-  /* Safari */
-  transform: scale(1.2);
-}
-.collection-widget[display-widget-labels="display-widget-labels"] > .row > div > div.form-right div.form-left {
-  display: block !important;
-}
-.form-width-100 .form-content-center {
-  width: 100%;
-}
-div[class^="control-"] {
-  padding: 0 5px;
-  display: block;
-  font-weight: 500;
-  margin-left: 20px;
-  margin-top: 10px;
-  position: relative;
-}
-div[class^="control-"] i {
-  font-weight: 600;
-  float: left;
-  font-size: 18px;
-  line-height: 24px;
-  display: block;
-  position: absolute;
-  left: -20px;
-  top: 0;
-  /*      width: 30px;
-          height: 30px;*/
-}
-.control-ok {
-  color: #5da423;
-}
-.control-loading {
-  color: #ffda28;
-}
-.control-fail {
-  color: #d2322b;
-}
-.help-on-hover:not(.help-block) {
-  position: absolute;
-  font-weight: 600;
-  float: left;
-  padding: 5px;
-  font-size: 18px;
-  line-height: 24px;
-  color: #4a94cc;
-}
-.help-block {
-  display: none;
-  font-size: 14px;
-  color: #303030;
-  font-weight: 300;
-  line-height: 1.4;
-  padding: 6px;
-  z-index: 2;
-  left: 20px;
-  font-family: "Noto Sans", sans-serif;
-}
-.help-on-hover:hover .help-block {
-  display: block;
-  width: 210px;
-  background: #ffecc2;
-  border: 1px solid #9f9f9f;
-  position: absolute;
-}
-#web-service-chart2 g {
-  cursor: pointer;
-}
-.froala-tall .fr-wrapper {
-  min-height: 200px;
-  max-height: 300px;
-}
-@media screen and (max-width: 1475px) {
-  .pad {
-    width: 29.5%;
-    display: block;
-    float: left;
-    height: 1px;
-  }
-  div[class^="control-"] i {
-    padding-left: 0;
-  }
-}
-@media screen and (max-width: 1200px) {
-  .lol {
-    right: 20px;
-    left: auto;
-  }
-}
-@media screen and (max-width: 1030px) {
-  .pad {
-    width: 37.5%;
-  }
-}
-.image {
-  border: 1px solid #dbe2ed;
-  border-radius: 5px;
-  margin-bottom: 17.5px;
-}
-.upload-buttons {
-  text-align: center;
-}
-.error-message {
-  color: #ff8939;
-  text-align: right;
 }
 /**************************************
 
@@ -3262,87 +2442,86 @@ div[class^="control-"] i {
     Modal dialog
     Dashboard - edit widgets (plus button)
 */
-.modal-dialog > div {
-  background: #fff !important;
-  background: #fff;
-  position: relative;
-  color: #303030;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  border: 1px solid #dbe2ed;
-  padding: 0;
-  min-height: 20px;
+.modal-wrapper {
+  background: rgba(82, 89, 117, 0.95);
 }
-.modal-dialog > div.box-small {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+.modal-wrapper .modal-content {
+  border-radius: 5px;
 }
-.modal-dialog > div .box-title {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.3em;
+.modal-wrapper.search-modal {
+  padding-left: 15px;
+  padding-right: 15px;
 }
-.modal-dialog > div .grid {
-  padding: 0px;
-}
-.modal-dialog > div .box-header {
-  background: #525975;
-  color: #fff;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.3em;
-  padding: 6.5px 11px;
-}
-.modal-dialog > div .box-header .box-header-actions {
-  float: right;
-  margin-top: -5px;
-}
-.modal-dialog > div .box-header .box-header-actions .button {
-  font-size: 10px;
-  margin-left: 5px;
-  padding: 3px 5px;
-}
-.modal-dialog > div .box-body {
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.modal-dialog > div .box-body p {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-.modal-dialog > div .box-harmonica-body .show-harmonica {
-  padding: 20px;
-  margin-bottom: 0;
-  color: #303030;
-}
-.modal-dialog > div .footer {
-  border-top: 1px solid #dbe2ed;
-  padding: 10px 10px;
+.modal-wrapper.search-modal .button-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  padding: 3px;
+  background: #3d4257;
   font-size: 12px;
+  transition: all 0.5s ease;
 }
-.modal-dialog header {
-  border-bottom: 1px solid #ededed;
-  padding-bottom: 10px;
+.modal-wrapper.search-modal .button-close:hover {
+  background: #13151b;
 }
-.modal-dialog header h2 {
+.modal-wrapper.search-modal .button-close span {
+  padding: 0 15px 0 15px;
+  margin-top: 5px;
+  float: right;
+  display: inline-block;
+}
+.modal-wrapper.search-modal .button-close .mdi {
+  font-size: 22px;
+}
+.modal-wrapper.search-modal .grid {
+  padding: 0;
+}
+.modal-wrapper.search-modal .search-ico {
+  font-size: 30px;
+  line-height: 1.2em;
+  padding-left: 15px;
+}
+.modal-wrapper.search-modal .search-input {
+  font-size: 16px;
+  border: none;
+  padding: 5px;
+  width: 85%;
+}
+.modal-wrapper.search-modal .separator {
+  height: 40%;
+  border-right: 1px solid #525975;
+  display: inline-block;
+}
+.modal-wrapper.search-modal .search-select-wrapper {
+  width: 80%;
+  display: block;
+  position: relative;
+  margin-left: 15px;
+  font-size: 16px;
   color: #525975;
-  font-size: 32px;
-  font-weight: 300;
 }
-.modal-dialog header p {
-  color: #b5b5b5;
-  font-weight: 300;
+.modal-wrapper.search-modal .search-select-wrapper:after {
+  content: "\F140";
+  position: absolute;
+  right: 10px;
+  top: -2px;
+  font-size: 20px;
+  font-family: "Material Design Icons";
+  text-rendering: auto;
+  line-height: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
-.modal-dialog label.required {
-  display: none;
+.modal-wrapper.search-modal .search-select {
+  border: none;
+  width: 100%;
+  box-shadow: none;
+  background: transparent;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
 }
 /**************************************
 
@@ -3407,6 +2586,7 @@ div[class^="control-"] i {
 }
 .data-grid thead .order-by {
   position: relative;
+  min-width: 50px;
 }
 .data-grid thead .order-by:before {
   position: absolute;
@@ -3492,6 +2672,7 @@ div[class^="control-"] i {
 .data-grid tbody tr .button-small.button-get-details {
   transition: none;
   margin-right: 10px;
+  margin-left: 5px;
   float: right;
   padding: 5px 16px;
   border: 1px solid #525975;
@@ -3500,6 +2681,7 @@ div[class^="control-"] i {
   border-radius: 14px;
   color: #525975;
   visibility: hidden;
+  font-size: 10px;
 }
 .data-grid tbody tr .button-small.button-get-details:hover {
   background: #525975;
@@ -4028,6 +3210,10 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 .button-necktie:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
 }
+.button-delete:hover {
+  background: #fa4a28 !important;
+  border: 1px solid #ea2a05 !important;
+}
 .button-line {
   border: 1px solid #525975;
   background: transparent;
@@ -4234,6 +3420,10 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 }
 .trinity-form-loading-necktie:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+.trinity-form-loading-delete:hover {
+  background: #fa4a28 !important;
+  border: 1px solid #ea2a05 !important;
 }
 .trinity-form-loading-line {
   border: 1px solid #525975;
