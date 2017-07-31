@@ -2,12 +2,14 @@
 <!DOCTYPE html>
 <html>
     <head>
+
         {% block head %}
             <meta charset="UTF-8"/>
             <title>{% block title %}Trinity Administration{% endblock %}</title>
             <meta name="viewport"
                   content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
         {% endblock %}
+
 
         {% block header_javascript %}
             {% block jquery %}
@@ -19,6 +21,7 @@
             {% block highcharts %}
             {% endblock %}
         {% endblock %}
+
 
         {% block stylesheets %}
             <link rel="stylesheet" href="//cdn.materialdesignicons.com/1.9.32/css/materialdesignicons.min.css">
@@ -48,7 +51,9 @@
 
     </head>
 
-    <body class="grid-sidebar grid-navigation-body navbar-fixed">
+    <body class="
+        {% block body_class %} grid-sidebar grid-navigation-body navbar-fixed {% endblock %}
+    ">
     
         {% block flashMessages %}
             {% set flashMessages = [] %}
@@ -99,7 +104,6 @@
             <div class="grid-content">
             {% block navbar %}
                 <nav class="navbar row">
-
                     <div id="navbar-left">
                         <div class="navbar-logo">
                             {% block navbar_logo %} <i> Logo </i> {% endblock %}
@@ -118,18 +122,23 @@
                         </a>
                     </div>
 
-                    <div class="navbar-container">
-                        <div class="navbar-actions-item page-title pull-left">
-                            {% block navbarTitle %}
-                                Navbar title
-                            {% endblock %}
-                        </div>
 
-                        <div id="navbar-actions" class="pull-right">
-                            {% block pageAction %}
+                    {% block navbar_elements %}
+                        <div class="navbar-container navbar-items">
+                            <div class="navbar-actions-item navbar-title pull-left">
+                                {% block navbar_title %}
+                                    Navbar title
+                                {% endblock %}
+                            </div>
+
+                            {% block navbar_actions_wrapper %}
+                                <div id="navbar-actions" class="pull-right">
+                                    {% block navbar_actions %}
+                                    {% endblock %}
+                                </div>
                             {% endblock %}
                         </div>
-                    </div>
+                    {% endblock %}
                 </nav>
             {% endblock %}
             </div>
@@ -142,7 +151,7 @@
                 <div class="grid-content">
                     <section class="main-section">
                         <div class="body-wrapper">
-                            {% block pageBody %}
+                            {% block page_body %}
                             {% endblock %}
                         </div>
                     </section>
@@ -156,13 +165,14 @@
                 </div>
             </div>
 
+
             {% block trinity_admin_script_footer %}
                 {% block javascripts %}
                 {% endblock %}
             {% endblock %}
 
+
         </main>
     </body>
 </html>
-
 {% endspaceless %}

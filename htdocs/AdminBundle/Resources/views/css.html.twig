@@ -1,22 +1,17 @@
 {% extends "@HtDocAdmin/doc_layout.html.twig" %}
 
 
-{% block pageTitle %}
-    HTML/CSS documentation
-{% endblock %}
-
-
 {% block navbar_project_name %}
     Hot at home
 {% endblock %}
 
 
-{% block navbarTitle %}
+{% block navbar_title %}
    <i class="mdi mdi-view-dashboard"></i> Basic Css theme
 {% endblock %}
 
 
-{% block pageAction %}
+{% block navbar_actions %}
     <input type="checkbox" id="modal-01" hidden class="modal-input">
     <label for="modal-01" class="navbar-search"><i class="mdi mdi-magnify"></i></label>
     <div class="modal-wrapper search-modal">
@@ -53,7 +48,7 @@
 {% block form %} {% endblock %}
 
 
-{% block pageBody %}
+{% block page_body %}
 
     <div class="box box-small">
         <h3 class="box-header">
