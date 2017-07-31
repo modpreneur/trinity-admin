@@ -1,0 +1,62 @@
+/**
+
+  Tags
+
+ */
+@import (once) "helper";
+@import (once) "variables";
+
+.tags {
+  li {
+    width: auto;
+    min-width: 60px;
+    height: auto !important;
+    line-height: 20px !important;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    border-radius: 2px;
+    padding: 0 4px;
+    margin-right: 5px;
+
+    &:only-of-type {
+      margin: 0;
+    }
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+  .enabled {
+    background: @color-primary;
+  }
+  .disabled {
+    background: #d2d7e3;
+  }
+  .active {
+    background: #22baa0;
+  }
+  .changed, .update {
+    background: #24afc9;
+  }
+  .premium {
+    background: @color-primary;
+  }
+  .banned, .blocked, .danger, .delete {
+    background: @color-danger;
+  }
+  .pending {
+    background: #62c500;
+    color: #fff; // todo useless?
+  }
+  .locked {
+    background: #b9ae86;
+  }
+  .create, .success {
+    background: #5DA423;
+  }
+  .warning {
+    background: @color-warning;
+  }
+}

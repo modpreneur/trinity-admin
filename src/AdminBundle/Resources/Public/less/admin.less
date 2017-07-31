@@ -1,14 +1,13 @@
 @import (once) "helper";
 @import (once) "variables";
 
+@import "default";
 @import "navbar";
 @import "color";
 @import "animation";
 @import "background";
 @import "navbar-items";
-@import "page-header";
 @import "sidebar";
-@import "default";
 @import "alert";
 @import "tabs";
 @import "widgets";
@@ -20,67 +19,5 @@
 @import "buttons";
 @import "harmonica";
 @import "box";
-@import "user-avatar";
-@import "checkboxes";
-
-@font-face {
-  font-family: "Noto Sans";
-  src: url('../fonts/NotoSans/NotoSans-Regular.ttf') format("truetype");
-}
-
-html {
-  width: 100%;
-  height: 100%;
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  font-family: @font;
-  background:  @back-color;
-}
-
-// todo @MarekOmasta Are we able to get rid of this shite?
-.display-none {
-  display: none !important;
-}
-
-ul, ol {
-  list-style: none;
-  padding-left: 0;
-}
-
-ul.list {
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-  li {
-    margin-left: 18px;
-    list-style-type: circle;
-  }
-}
-
-ol.list {
-  margin-top: 10px;
-  margin-bottom: 10px;
-
-  li {
-    margin-left: 18px;
-    list-style-type: decimal;
-  }
-}
-
-// Enlarge clickable area of links
-.data-grid tbody tr td > a:not([class*="button"]),
-.alert i.alert-close-icon:before,
-.large-clickable-area {
-  padding: 10px;
-  margin: -10px;
-}
-
-// TODO: please remove container-fluid. Ask Marek
-.container-fluid > .row > .span-large-24 {
-  &:first-child {
-    padding: 0 25px 20px 25px;
-  }
-}
+@import "tags";
+@import "graphs";

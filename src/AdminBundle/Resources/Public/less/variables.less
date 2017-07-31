@@ -52,6 +52,8 @@
 @color-white: #fff;
 @color-green: #7FB93D;
 @color-darkgreen: #038d4a;
+@color-green-gradient1: rgba(127,185,61,1);
+@color-green-gradient2: rgba(3,141,74,1);
 
 
 @global-row-hover: #f8f8f8;
@@ -132,27 +134,24 @@
 @noto-medium: 500;
 @noto-bold: 700;
 
-
-//TODO: use background-image for gradients, use variables above instead of functions (no need for alpha)
 .green(){
   background: @color-green;
-  background: -moz-linear-gradient(top, rgba(127,185,61,1) 0%, rgba(3,141,74,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(127,185,61,1)), color-stop(100%, rgba(3,141,74,1)));
-  background: -webkit-linear-gradient(top, rgba(127,185,61,1) 0%, rgba(3,141,74,1) 100%);
-  background: -o-linear-gradient(top, rgba(127,185,61,1) 0%, rgba(3,141,74,1) 100%);
-  background: -ms-linear-gradient(top, rgba(127,185,61,1) 0%, rgba(3,141,74,1) 100%);
-  background: linear-gradient(to bottom, rgba(127,185,61,1) 0%, rgba(3,141,74,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0 );
+  background-image: -moz-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(127,185,61,1)), color-stop(100%, @color-green-gradient2));
+  background-image: -webkit-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+  background-image: -o-linear-image-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+  background-image: -ms-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+  background-image: linear-gradient(to bottom, @color-green-gradient1 0%, @color-green-gradient2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color-green-gradient1, endColorstr=@color-green-gradient2, GradientType=0 );
 }
 
-//TODO: use background-image for gradients, use variables above instead of functions (no need for alpha)
 .necktie(){
-  background: rgba(25,190,255,1);
-  background: -moz-linear-gradient(top, rgba(25,190,255,1) 0%, rgba(109,106,249,1) 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(25,190,255,1)), color-stop(100%, rgba(109,106,249,1)));
-  background: -webkit-linear-gradient(top, rgba(25,190,255,1) 0%, rgba(109,106,249,1) 100%);
-  background: -o-linear-gradient(top, rgba(25,190,255,1) 0%, rgba(109,106,249,1) 100%);
-  background: -ms-linear-gradient(top, rgba(25,190,255,1) 0%, rgba(109,106,249,1) 100%);
-  background: linear-gradient(to bottom, rgba(25,190,255,1) 0%, rgba(109,106,249,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#19beff', endColorstr='#6d6af9', GradientType=0 );
+  background: @color-necktie-gradient1;
+  background-image: -moz-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, @color-necktie-gradient1), color-stop(100%, @color-necktie-gradient2));
+  background-image: -webkit-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: -o-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: -ms-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: linear-gradient(to bottom, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color-necktie-gradient1, endColorstr=@color-necktie-gradient2, GradientType=0 );
 }

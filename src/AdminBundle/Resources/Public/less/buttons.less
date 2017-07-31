@@ -3,8 +3,19 @@
   Default buttons for forms and others
 
 **************************************/
+
 @import (once) "helper";
 @import (once) "variables";
+
+.icon(@font) {
+  content: @font;
+  font-family: @icon-font;
+  speak: none;
+  min-width: 16px;
+  font-size: @font-size-button - 3;
+  display: inline-block;
+  margin-left: 5px;
+}
 
 :focus {
   outline: none;
@@ -20,17 +31,17 @@
   text-decoration: none;
   text-transform: capitalize;
   line-height: 1;
-  border: 1px #ededed solid;
+  border: 1px @color-border solid;
   margin: 5px;
 
   background: lighten(desaturate(@color-primary, 100%), 30%);
-  color: #fff;
+  color: @color-white;
 
   cursor: pointer;
   transition: .3s;
 
   &:hover {
-    color: #fff;
+    color: @color-white;
     background: lighten(@color-secondary, 30%);
   }
 }
@@ -40,6 +51,18 @@
   font-size: 14px;
   padding: 9px 35px;
   .radius(20px);
+
+  &-medium{
+    padding: 8px 18px;
+    font-size: 12px;
+    width: auto;
+  }
+
+  &-small{
+    padding: 6px 15px;
+    font-size: 10px;
+    width: auto;
+  }
 
   &-success {
     font-weight: @noto-medium;
@@ -143,24 +166,24 @@
   }
 
   &-red {
-    color: #fff;
-    background-color: #b35445;
-    border: 1px dashed #642f26;
+    color: @color-white;
+    background-color: @color-red;
+    border: 1px dashed darken(@color-red, 5%);
     &:hover {
-      background-color: #8a4134;
-      border: 1px solid #3d1d17;
+      background-color: darken(@color-red, 5%);
+      border: 1px solid darken(@color-red, 10%);
     }
   }
 
   &-necktie {
-
     background-image: svg-gradient(to bottom, @color-necktie-gradient1, @color-necktie-gradient2);
 
-    border: 1.5px solid #fff;
-    box-shadow: 0 0 0 1px #c9d5e9;
+    border: 1.5px solid @color-white;
+    box-shadow: 0 0 0 1px @color-border;
 
     &:hover {
-      background-image: svg-gradient(to bottom, darken(@color-necktie-gradient1, 10%), darken(@color-necktie-gradient2, 10%));
+      background-image:
+              svg-gradient(to bottom, darken(@color-necktie-gradient1, 10%), darken(@color-necktie-gradient2, 10%));
     }
   }
 
@@ -199,12 +222,16 @@
 
   &-grey-gradient {
 
-    background-image: svg-gradient(to bottom, @color-grey-gradient1, @color-grey-gradient2);
+    background-image:
+            svg-gradient(to bottom, @color-grey-gradient1, @color-grey-gradient2);
+
     border: none;
     color: @color-primary;
 
     &:hover {
-      background-image: svg-gradient(to bottom, darken(@color-grey-gradient1, 10%), darken(@color-grey-gradient2, 10%));
+      background-image:
+              svg-gradient(to bottom, darken(@color-grey-gradient1, 10%), darken(@color-grey-gradient2, 10%));
+      border: none;
     }
   }
 
@@ -216,6 +243,7 @@
     &:hover {
       background:  darken(@color-grey-1, 10%);
       color: @color-primary;
+      border: none;
     }
   }
 
@@ -227,6 +255,7 @@
     &:hover {
       background: darken(@color-grey-2, 10%);
       color: @color-primary;
+      border: none;
     }
   }
 
@@ -238,6 +267,7 @@
     &:hover {
       background: darken(@color-grey-3, 10%);
       color: @color-primary;
+      border: none;
     }
   }
 
@@ -249,6 +279,7 @@
     &:hover {
       background: darken(@color-grey-4, 10%);
       color: @color-primary;
+      border: none;
     }
   }
 
@@ -257,22 +288,19 @@
     border: none;
 
     &:hover {
-      background-image: svg-gradient(to bottom, darken(@color-orange-gradient1, 10%), darken(@color-orange-gradient2, 10%));
+      background-image:
+              svg-gradient(to bottom, darken(@color-orange-gradient1, 10%), darken(@color-orange-gradient2, 10%));
+      border: none;
     }
   }
-}
 
-// delete?
-//  Buttons with icons and animations for form actions
-.trinity-form {
-
+  // FORMS
   &-loading {
-    .button();
     background: @color-primary;
 
     &:after {
-      .icon("\e92b");
-      font-family: 'trinity';
+      .icon("\F6EA");
+      font-family: @icon-font;
       .animation(spin, 3s, linear, infinite);
     }
 
@@ -283,36 +311,26 @@
 
   &-success {
     &:after {
-      .icon('\e933');
-      font-family: 'trinity';
-    }
-    &.button-medium {
-      &:after {
-        font-size: 13px;
-      }
+      .icon('\F12C');
     }
   }
 
   &-error {
-
     &:after {
-      .icon('\e932');
-      font-family: 'trinity';
+      .icon('\F02A');
     }
   }
 
   &-ready {
-
     &.button-save {
       &:after {
-        .icon('\e6fc');
+        .icon('\F193');
       }
     }
 
     &.button-remove {
       &:after {
-        .icon('\e934');
-        font-family: 'trinity';
+        .icon('\F1C0');
       }
     }
   }
@@ -328,8 +346,4 @@
   label {
     border: 1px solid @color-primary;
   }
-}
-
-.button-circle {
-  padding: 9px;
 }

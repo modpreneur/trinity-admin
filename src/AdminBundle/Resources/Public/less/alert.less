@@ -3,7 +3,9 @@
   Alerts messages from flashBag or JS on right side
 
 **************************************/
+
 @import (once) "helper";
+@import (once) "variables";
 
 #flash-message-container {
   width: 328px;
@@ -201,6 +203,7 @@
   animation: progressAnimate 4.2s 1.5s linear;
 }
 
+
 .keyframes(@left: 400px) {
   0% {
     opacity: 0;
@@ -226,12 +229,15 @@
 @-webkit-keyframes alert {
   .keyframes();
 }
+
 @-moz-keyframes alert {
   .keyframes();
 }
+
 @-ms-keyframes alert {
   .keyframes();
 }
+
 @keyframes alert {
   .keyframes();
 }
