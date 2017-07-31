@@ -2171,6 +2171,15 @@ table.data-grid tbody tr:hover .item-menu-button label {
 table.data-grid thead .item-menu-button label {
   visibility: visible;
 }
+th .item-menu-button label {
+  background-color: #fff;
+}
+th .item-menu-button label:hover,
+th .item-menu-button label:focus,
+th .item-menu-button label:active {
+  border-color: #fff;
+  background-color: transparent;
+}
 .item-menu-button label {
   visibility: hidden;
   position: relative;
