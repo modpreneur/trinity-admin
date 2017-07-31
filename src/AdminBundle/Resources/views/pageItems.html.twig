@@ -1,0 +1,19 @@
+{# Generates tab bodies (see http://kodovani.com/bp-bowtie/index.html#tabs) #}
+{# Parameter class is optional - adds additional classes to tabs #}
+{% macro tab_body(id, data_source, class = '') %}
+
+    {# Separate additional classes from others with a space #}
+    {% if not class == '' %}
+        {% set class = ' ' ~ class %}
+    {% endif %}
+
+    <div id="{{ id }}"
+         class="tab-body{{ class }}"
+         data-source="{{ data_source }}">
+        <div class="box large-16 small-24">
+            <div class="box-header">
+                ahoj
+            </div>
+        </div>
+    </div>
+{% endmacro %}

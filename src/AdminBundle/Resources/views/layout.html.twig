@@ -134,6 +134,8 @@
                             {% block navbar_actions_wrapper %}
                                 <div class="pull-right navbar-actions">
                                     {% block navbar_actions %}
+                                        {# Navbar action buttons (on the right) - usually different for each view #}
+                                        {# You can use a macro from buttons.html.twig to create them #}
                                     {% endblock %}
                                 </div>
                             {% endblock %}

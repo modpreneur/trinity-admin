@@ -1,7 +1,11 @@
-{# todo @MarekOmasta documentation #}
+{# These macros can be used to create buttons using: #}
+{# {% import "@TrinityAdmin/buttons.html.twig" as buttons %} #}
+{# {{ buttons.macro_name(...) }} #}
 
-{% macro navbar_action(label, url) %}
-    <a class="button button-secondary button-medium pull-right margin-none-vertical" href="{{ url }}">
+{# Navbar action buttons (on the right of the panel) #}
+{# The last optional parameter (class) defines the button type #}
+{% macro navbar_action(label, url, class = "button-secondary") %}
+    <a class="button {{ class }} button-medium pull-right margin-none-vertical" href="{{ url }}">
         {{ label }}
     </a>
 {% endmacro %}

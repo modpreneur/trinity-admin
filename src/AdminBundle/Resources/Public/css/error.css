@@ -4,11 +4,7 @@
     (400, 404, 500, ...)
     php compile this less
 
-**************************************/
-@import-once "helper";
-/**************************************
-
-  Default buttons for forms and others
+    @ignore -> there will be new graphic
 
 **************************************/
 /**************************************
@@ -16,28 +12,6 @@
     Functions - mixins
 
 **************************************/
-.box {
-  background: #fff;
-}
-.tabs-wrapper .box {
-  background: transparent;
-}
-.pointer {
-  cursor: pointer;
-}
-.group-clearfix:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.padding-14 {
-  padding: 14px !important;
-}
-.object-center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
 /**
   Font
 */
@@ -64,7 +38,39 @@
   Grid parameters
 **************************************/
 /**************************************
-  Roboto font-weight
+  Noto font-weight
+**************************************/
+.box {
+  background: #fff;
+}
+.tabs-wrapper .box {
+  background: transparent;
+}
+.pointer {
+  cursor: pointer;
+}
+.group-clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.object-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.select-clear {
+  background: transparent;
+  outline: none !important;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  box-shadow: none !important;
+}
+/**************************************
+
+  Default buttons for forms and others
+
 **************************************/
 :focus {
   outline: none;
@@ -78,7 +84,7 @@
   text-decoration: none;
   text-transform: capitalize;
   line-height: 1;
-  border: 1px #ededed solid;
+  border: 1px #dbe2ed solid;
   margin: 5px;
   background: #b0b0b0;
   color: #fff;
@@ -95,13 +101,13 @@
   text-decoration: none;
   text-transform: capitalize;
   line-height: 1;
-  border: 1px #ededed solid;
+  border: 1px #dbe2ed solid;
   margin: 5px;
   background: #b0b0b0;
   color: #fff;
   cursor: pointer;
   transition: .3s;
-  font-size: 18px;
+  font-size: 14px;
   padding: 9px 35px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -111,20 +117,32 @@
   color: #fff;
   background: #fbfbff;
 }
+.button-medium {
+  padding: 8px 18px;
+  font-size: 12px;
+  width: auto;
+}
+.button-small {
+  padding: 6px 15px;
+  font-size: 10px;
+  width: auto;
+}
 .button-success {
   font-weight: 500;
   box-shadow: none;
-  background: #7fb93d;
-  background: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
-  background: -webkit-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -o-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -ms-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
+  border: none;
+  background: #7FB93D;
+  background-image: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
+  background-image: -webkit-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: -o-linear-image-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: -ms-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fb93d, endColorstr=#038d4a, GradientType=0);
 }
 .button-success:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
 }
 .button-info {
   box-shadow: none;
@@ -203,20 +221,24 @@
 }
 .button-red {
   color: #fff;
-  background-color: #b35445;
-  border: 1px dashed #642f26;
+  background-color: #fa4a28;
+  border: 1px dashed #f9350f;
 }
 .button-red:hover {
-  background-color: #8a4134;
-  border: 1px solid #3d1d17;
+  background-color: #f9350f;
+  border: 1px solid #ea2a05;
 }
 .button-necktie {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 2px #c9d5e9;
+  box-shadow: 0 0 0 1px #dbe2ed;
 }
 .button-necktie:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+.button-delete:hover {
+  background: #fa4a28 !important;
+  border: 1px solid #ea2a05 !important;
 }
 .button-line {
   border: 1px solid #525975;
@@ -228,15 +250,17 @@
   background: #525975;
   color: #fff;
 }
-.button-disable {
+.button-disabled,
+.button:disabled {
   border: 1px solid #525975;
   background: transparent;
   color: #525975;
   padding: 9px 13.5px;
   opacity: 0.5;
-  cursor: default;
+  cursor: not-allowed;
 }
-.button-disable:hover {
+.button-disabled:hover,
+.button:disabled:hover {
   background: transparent;
   color: #525975;
 }
@@ -247,6 +271,7 @@
 }
 .button-grey-gradient:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
 }
 .button-grey-1 {
   background: #F7F8FC;
@@ -256,6 +281,7 @@
 .button-grey-1:hover {
   background: #d2d8ee;
   color: #525975;
+  border: none;
 }
 .button-grey-2 {
   background: #E4EAF6;
@@ -265,6 +291,7 @@
 .button-grey-2:hover {
   background: #becce9;
   color: #525975;
+  border: none;
 }
 .button-grey-3 {
   background: #E0E7F1;
@@ -274,6 +301,7 @@
 .button-grey-3:hover {
   background: #bdcce1;
   color: #525975;
+  border: none;
 }
 .button-grey-4 {
   background: #CFD2D9;
@@ -283,274 +311,69 @@
 .button-grey-4:hover {
   background: #b3b7c2;
   color: #525975;
+  border: none;
 }
 .button-orange-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f9452e%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 .button-orange-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ed2107%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
 }
-.trinity-form-loading {
-  text-align: center;
-  font-weight: 500;
-  text-decoration: none;
-  text-transform: capitalize;
-  line-height: 1;
-  border: 1px #ededed solid;
-  margin: 5px;
-  background: #b0b0b0;
-  color: #fff;
-  cursor: pointer;
-  transition: .3s;
-  font-size: 18px;
-  padding: 9px 35px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
+.button-loading {
   background: #525975;
 }
-.trinity-form-loading:hover {
-  color: #fff;
-  background: #fbfbff;
-}
-.trinity-form-loading-success {
-  font-weight: 500;
-  box-shadow: none;
-  background: #7fb93d;
-  background: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
-  background: -webkit-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -o-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -ms-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
-}
-.trinity-form-loading-success:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-}
-.trinity-form-loading-info {
-  box-shadow: none;
-}
-.trinity-form-loading-primary {
-  padding: 9px 13px;
-  color: #fff;
-  background: #525975;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: 1px solid #525975;
-  border-radius: 20px;
-}
-.trinity-form-loading-primary:hover {
-  background: #3d4257;
-  color: #fff;
-}
-.trinity-form-loading-primary-inverse {
-  padding: 9px 13px;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  background: #525975;
-}
-.trinity-form-loading-primary-inverse:hover {
-  background: #fff;
-  color: #525975;
-}
-.trinity-form-loading-secondary {
-  background-color: #7068F9;
-  border: none;
-}
-.trinity-form-loading-secondary:hover {
-  background-color: #160af1;
-  border: none;
-}
-.trinity-form-loading-tertiary {
-  background: #1ABB9C;
-  border: none;
-  box-shadow: none;
-}
-.trinity-form-loading-tertiary:hover {
-  background: #117864;
-  border: none;
-}
-.trinity-form-loading-info {
-  background-color: #18BDFF;
-  box-shadow: none;
-  border: none;
-}
-.trinity-form-loading-info:hover {
-  background-color: #007eb1;
-  border: none;
-}
-.trinity-form-loading-warning {
-  background-color: #ff8939;
-  box-shadow: none;
-  border: none;
-}
-.trinity-form-loading-warning:hover {
-  background-color: #d25500;
-  border: none;
-}
-.trinity-form-loading-danger {
-  background-color: #c93236;
-  box-shadow: none;
-  border: none;
-}
-.trinity-form-loading-danger:hover {
-  background-color: #8c2326;
-  border: none;
-}
-.trinity-form-loading-red {
-  color: #fff;
-  background-color: #b35445;
-  border: 1px dashed #642f26;
-}
-.trinity-form-loading-red:hover {
-  background-color: #8a4134;
-  border: 1px solid #3d1d17;
-}
-.trinity-form-loading-necktie {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: 1.5px solid #fff;
-  box-shadow: 0 0 0 2px #c9d5e9;
-}
-.trinity-form-loading-necktie:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-}
-.trinity-form-loading-line {
-  border: 1px solid #525975;
-  background: transparent;
-  color: #525975;
-  padding: 9px 13.5px;
-}
-.trinity-form-loading-line:hover {
-  background: #525975;
-  color: #fff;
-}
-.trinity-form-loading-disable {
-  border: 1px solid #525975;
-  background: transparent;
-  color: #525975;
-  padding: 9px 13.5px;
-  opacity: 0.5;
-  cursor: default;
-}
-.trinity-form-loading-disable:hover {
-  background: transparent;
-  color: #525975;
-}
-.trinity-form-loading-grey-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: none;
-  color: #525975;
-}
-.trinity-form-loading-grey-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-}
-.trinity-form-loading-grey-1 {
-  background: #F7F8FC;
-  color: #525975;
-  border: none;
-}
-.trinity-form-loading-grey-1:hover {
-  background: #d2d8ee;
-  color: #525975;
-}
-.trinity-form-loading-grey-2 {
-  background: #E4EAF6;
-  color: #525975;
-  border: none;
-}
-.trinity-form-loading-grey-2:hover {
-  background: #becce9;
-  color: #525975;
-}
-.trinity-form-loading-grey-3 {
-  background: #E0E7F1;
-  color: #525975;
-  border: none;
-}
-.trinity-form-loading-grey-3:hover {
-  background: #bdcce1;
-  color: #525975;
-}
-.trinity-form-loading-grey-4 {
-  background: #CFD2D9;
-  color: #525975;
-  border: none;
-}
-.trinity-form-loading-grey-4:hover {
-  background: #b3b7c2;
-  color: #525975;
-}
-.trinity-form-loading-orange-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: none;
-}
-.trinity-form-loading-orange-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-}
-.trinity-form-loading:after {
-  content: "\e92b";
-  font-family: 'tiecons';
+.button-loading:after {
+  content: "\F6EA";
   speak: none;
   min-width: 16px;
   font-size: 15px;
   display: inline-block;
   margin-left: 5px;
-  font-family: 'trinity';
+  font-family: "Material Design Icons";
   -webkit-animation: spin 3s linear infinite;
   -moz-animation: spin 3s linear infinite;
   animation: spin 3s linear infinite;
 }
-.trinity-form-loading:hover {
+.button-loading:hover {
   background: #282b39;
 }
-.trinity-form-success:after {
-  content: '\e933';
-  font-family: 'tiecons';
-  speak: none;
-  min-width: 16px;
-  font-size: 15px;
-  display: inline-block;
-  margin-left: 5px;
-  font-family: 'trinity';
-}
-.trinity-form-success.button-medium:after {
-  font-size: 13px;
-}
-.trinity-form-error:after {
-  content: '\e932';
-  font-family: 'tiecons';
-  speak: none;
-  min-width: 16px;
-  font-size: 15px;
-  display: inline-block;
-  margin-left: 5px;
-  font-family: 'trinity';
-}
-.trinity-form-ready.button-save:after {
-  content: '\e6fc';
-  font-family: 'tiecons';
+.button-success:after {
+  content: '\F12C';
+  font-family: "Material Design Icons";
   speak: none;
   min-width: 16px;
   font-size: 15px;
   display: inline-block;
   margin-left: 5px;
 }
-.trinity-form-ready.button-remove:after {
-  content: '\e934';
-  font-family: 'tiecons';
+.button-error:after {
+  content: '\F02A';
+  font-family: "Material Design Icons";
   speak: none;
   min-width: 16px;
   font-size: 15px;
   display: inline-block;
   margin-left: 5px;
-  font-family: 'trinity';
+}
+.button-ready.button-save:after {
+  content: '\F193';
+  font-family: "Material Design Icons";
+  speak: none;
+  min-width: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
+}
+.button-ready.button-remove:after {
+  content: '\F1C0';
+  font-family: "Material Design Icons";
+  speak: none;
+  min-width: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
 }
 .button-search {
   min-width: 200px;
@@ -558,9 +381,6 @@
 }
 .btn-group.group-conditions label {
   border: 1px solid #525975;
-}
-.button-circle {
-  padding: 9px;
 }
 body,
 html {
@@ -614,13 +434,13 @@ body .button-success {
   text-decoration: none;
   text-transform: capitalize;
   line-height: 1;
-  border: 1px #ededed solid;
+  border: 1px #dbe2ed solid;
   margin: 5px;
   background: #b0b0b0;
   color: #fff;
   cursor: pointer;
   transition: .3s;
-  font-size: 18px;
+  font-size: 14px;
   padding: 9px 35px;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
@@ -634,20 +454,32 @@ body .button-success:hover {
   color: #fff;
   background: #fbfbff;
 }
+body .button-success-medium {
+  padding: 8px 18px;
+  font-size: 12px;
+  width: auto;
+}
+body .button-success-small {
+  padding: 6px 15px;
+  font-size: 10px;
+  width: auto;
+}
 body .button-success-success {
   font-weight: 500;
   box-shadow: none;
-  background: #7fb93d;
-  background: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
-  background: -webkit-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -o-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: -ms-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#7fb93d', endColorstr='#038d4a', GradientType=0);
+  border: none;
+  background: #7FB93D;
+  background-image: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
+  background-image: -webkit-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: -o-linear-image-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: -ms-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background-image: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fb93d, endColorstr=#038d4a, GradientType=0);
 }
 body .button-success-success:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
 }
 body .button-success-info {
   box-shadow: none;
@@ -726,20 +558,24 @@ body .button-success-danger:hover {
 }
 body .button-success-red {
   color: #fff;
-  background-color: #b35445;
-  border: 1px dashed #642f26;
+  background-color: #fa4a28;
+  border: 1px dashed #f9350f;
 }
 body .button-success-red:hover {
-  background-color: #8a4134;
-  border: 1px solid #3d1d17;
+  background-color: #f9350f;
+  border: 1px solid #ea2a05;
 }
 body .button-success-necktie {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 2px #c9d5e9;
+  box-shadow: 0 0 0 1px #dbe2ed;
 }
 body .button-success-necktie:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+}
+body .button-success-delete:hover {
+  background: #fa4a28 !important;
+  border: 1px solid #ea2a05 !important;
 }
 body .button-success-line {
   border: 1px solid #525975;
@@ -751,15 +587,17 @@ body .button-success-line:hover {
   background: #525975;
   color: #fff;
 }
-body .button-success-disable {
+body .button-success-disabled,
+body .button-success:disabled {
   border: 1px solid #525975;
   background: transparent;
   color: #525975;
   padding: 9px 13.5px;
   opacity: 0.5;
-  cursor: default;
+  cursor: not-allowed;
 }
-body .button-success-disable:hover {
+body .button-success-disabled:hover,
+body .button-success:disabled:hover {
   background: transparent;
   color: #525975;
 }
@@ -770,6 +608,7 @@ body .button-success-grey-gradient {
 }
 body .button-success-grey-gradient:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
 }
 body .button-success-grey-1 {
   background: #F7F8FC;
@@ -779,6 +618,7 @@ body .button-success-grey-1 {
 body .button-success-grey-1:hover {
   background: #d2d8ee;
   color: #525975;
+  border: none;
 }
 body .button-success-grey-2 {
   background: #E4EAF6;
@@ -788,6 +628,7 @@ body .button-success-grey-2 {
 body .button-success-grey-2:hover {
   background: #becce9;
   color: #525975;
+  border: none;
 }
 body .button-success-grey-3 {
   background: #E0E7F1;
@@ -797,6 +638,7 @@ body .button-success-grey-3 {
 body .button-success-grey-3:hover {
   background: #bdcce1;
   color: #525975;
+  border: none;
 }
 body .button-success-grey-4 {
   background: #CFD2D9;
@@ -806,13 +648,69 @@ body .button-success-grey-4 {
 body .button-success-grey-4:hover {
   background: #b3b7c2;
   color: #525975;
+  border: none;
 }
 body .button-success-orange-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23fe7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f9452e%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 body .button-success-orange-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cb6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ed2107%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: none;
+}
+body .button-success-loading {
+  background: #525975;
+}
+body .button-success-loading:after {
+  content: "\F6EA";
+  speak: none;
+  min-width: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
+  font-family: "Material Design Icons";
+  -webkit-animation: spin 3s linear infinite;
+  -moz-animation: spin 3s linear infinite;
+  animation: spin 3s linear infinite;
+}
+body .button-success-loading:hover {
+  background: #282b39;
+}
+body .button-success-success:after {
+  content: '\F12C';
+  font-family: "Material Design Icons";
+  speak: none;
+  min-width: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
+}
+body .button-success-error:after {
+  content: '\F02A';
+  font-family: "Material Design Icons";
+  speak: none;
+  min-width: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
+}
+body .button-success-ready.button-save:after {
+  content: '\F193';
+  font-family: "Material Design Icons";
+  speak: none;
+  min-width: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
+}
+body .button-success-ready.button-remove:after {
+  content: '\F1C0';
+  font-family: "Material Design Icons";
+  speak: none;
+  min-width: 16px;
+  font-size: 15px;
+  display: inline-block;
+  margin-left: 5px;
 }
 body .button-success:hover {
   border: none !important;

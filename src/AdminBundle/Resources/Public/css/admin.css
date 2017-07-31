@@ -157,11 +157,6 @@ ol.list li {
   font-weight: 300;
   font-family: "Noto Sans", sans-serif;
 }
-.navbar .page-title {
-  color: #525975;
-  padding: 14px;
-  font-size: 14px;
-}
 .navbar .navbar-logo {
   height: 50px;
   width: 50px;
@@ -309,10 +304,10 @@ ol.list li {
 
 **************************************/
 .navbar-items .navbar-title {
-  font-size: 20px;
+  font-size: 16px;
+  padding-left: 1em;
   color: #525975;
   line-height: 50px;
-  padding-left: 10px;
 }
 .navbar-items .navbar-actions {
   float: right;
@@ -795,6 +790,7 @@ body {
 .tabs-wrapper .tab-body {
   background: #fff;
   margin: 0 auto;
+  padding: 0;
 }
 .tabs-wrapper form label {
   width: 100%;
