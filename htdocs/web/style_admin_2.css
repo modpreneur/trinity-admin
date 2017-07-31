@@ -3492,6 +3492,7 @@ div[class^="control-"] i {
 .data-grid tbody tr .button-small.button-get-details {
   transition: none;
   margin-right: 10px;
+  margin-left: 5px;
   float: right;
   padding: 5px 16px;
   border: 1px solid #525975;
@@ -3500,6 +3501,7 @@ div[class^="control-"] i {
   border-radius: 14px;
   color: #525975;
   visibility: hidden;
+  font-size: 10px;
 }
 .data-grid tbody tr .button-small.button-get-details:hover {
   background: #525975;
@@ -3533,7 +3535,6 @@ table.data-grid thead .item-menu-button label {
   visibility: visible;
 }
 .item-menu-button label {
-  font-size: 18px;
   visibility: hidden;
   position: relative;
   border-radius: 36px;
@@ -3555,9 +3556,6 @@ table.data-grid thead .item-menu-button label {
 .item-menu-button label:active {
   background: #525975;
   color: #fff;
-}
-.item-menu-button label i {
-  font-size: 20px;
 }
 .item-menu-button input[type=checkbox]:checked ~ label {
   background: #525975;
