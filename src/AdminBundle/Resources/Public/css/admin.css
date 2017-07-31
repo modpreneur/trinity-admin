@@ -2012,8 +2012,16 @@ table.data-grid tbody tr:hover .item-menu-button label {
 table.data-grid thead .item-menu-button label {
   visibility: visible;
 }
+th .item-menu-button label {
+  background-color: #fff;
+}
+th .item-menu-button label:hover,
+th .item-menu-button label:focus,
+th .item-menu-button label:active {
+  border-color: #fff;
+  background-color: transparent;
+}
 .item-menu-button label {
-  font-size: 18px;
   visibility: hidden;
   position: relative;
   border-radius: 36px;
@@ -2021,7 +2029,7 @@ table.data-grid thead .item-menu-button label {
   -webkit-border-radius: 36px;
   border: 1px solid #525975;
   color: #525975;
-  background: #fff;
+  background: none;
   padding: 2px 14px;
   z-index: 100;
   -webkit-touch-callout: none;
@@ -2035,9 +2043,6 @@ table.data-grid thead .item-menu-button label {
 .item-menu-button label:active {
   background: #525975;
   color: #fff;
-}
-.item-menu-button label i {
-  font-size: 18px;
 }
 .item-menu-button input[type=checkbox]:checked ~ label {
   background: #525975;

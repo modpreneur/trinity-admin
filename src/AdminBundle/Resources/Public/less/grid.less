@@ -220,11 +220,19 @@ table.data-grid thead .item-menu-button label {
   visibility: visible;
 }
 
-.item-menu-button {
-
-
+th .item-menu-button {
   label {
-    font-size: 18px;
+    background-color: #fff;
+    &:hover,
+    &:focus,
+    &:active {
+      border-color: #fff;
+      background-color: transparent;
+    }
+  }
+}
+.item-menu-button {
+  label {
     visibility: hidden;
     position: relative;
     border-radius: 36px;
@@ -232,7 +240,7 @@ table.data-grid thead .item-menu-button label {
     -webkit-border-radius: 36px;
     border: 1px solid @color-primary;
     color: @color-primary;
-    background: #fff;
+    background: none;
     padding: 2px 14px;
     z-index: 100;
     .no-select();
@@ -242,9 +250,6 @@ table.data-grid thead .item-menu-button label {
     &:active {
       background: @color-primary;
       color: #fff;
-    }
-    i {
-      font-size: 18px;
     }
   }
 
