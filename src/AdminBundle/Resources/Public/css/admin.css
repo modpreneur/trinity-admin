@@ -269,6 +269,7 @@
 }
 .navbar-items .navbar-actions {
   float: right;
+  margin-top: 3px;
 }
 .navbar-items .navbar-search {
   font-size: 28px;
@@ -1591,7 +1592,6 @@ g {
   width: 100%;
   color: #525975;
   text-align: left;
-  font-weight: 500;
   padding-bottom: 5px;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
