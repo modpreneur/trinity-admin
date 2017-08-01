@@ -29,6 +29,32 @@
       font-weight: 300;
       text-decoration: underline;
     }
+
+    &.tooltip {
+      display: inline;
+      position: relative;
+
+      &:after {
+        font-family: @icon-font;
+        content: "\F2FC";
+        font-size: 19px;
+      }
+
+      &:hover:before {
+        content: attr(data-title);
+        width: 243px;
+        padding: 11px 13px;
+        position: absolute;
+        left: 50px;
+        bottom: 28px;
+        background: @color-primary;
+        color: @color-white;
+        font-size: 14px;
+        font-weight: 400;
+        border-radius: 5px 5px 5px 0;
+        z-index: 98;
+      }
+    }
   }
 
   input, select, textarea {
