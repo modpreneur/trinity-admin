@@ -38,8 +38,8 @@
 @color-red: #fa4a28;
 @color-blue: #17bdff;
 @color-purple: #7068F9;
-@color-necktie-gradient1: #19BCFF;
-@color-necktie-gradient2: #6E69F9;
+@color-necktie-gradient1: #6E69F9;
+@color-necktie-gradient2: #19BCFF;
 @color-grey-1: #F7F8FC;
 @color-grey-2: #E4EAF6;
 @color-grey-3: #E0E7F1;
@@ -77,6 +77,9 @@
 @tabs-hover-color: @color-tertiary;
 @tabs-color-label: #7d7d7d;
 
+/*  Grid  */
+@grid-even-row-color: #f6f8fc;
+
 /*  Widgets  */
 @widget-space: 10px; //Space between widgets in grid
 
@@ -88,8 +91,8 @@
 @navbar-font-icon-size: 20px;
 
 /*  Logo  */
-@logo-width: 122px;
 @logo-height: 30px;
+@logo-width: @logo-height;
 
 /* Search */
 
@@ -147,11 +150,11 @@
 
 .necktie(){
   background: @color-necktie-gradient1;
-  background-image: -moz-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, @color-necktie-gradient1), color-stop(100%, @color-necktie-gradient2));
-  background-image: -webkit-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: -o-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: -ms-linear-gradient(top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: linear-gradient(to bottom, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: -moz-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, @color-necktie-gradient1), color-stop(100%, @color-necktie-gradient2));
+  background-image: -webkit-linear-gradient(right bottom, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: -o-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: -ms-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+  background-image: linear-gradient(to left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color-necktie-gradient1, endColorstr=@color-necktie-gradient2, GradientType=0 );
 }
