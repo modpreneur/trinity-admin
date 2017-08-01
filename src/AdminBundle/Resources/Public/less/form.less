@@ -34,10 +34,15 @@
       display: inline;
       position: relative;
 
-      &:after {
+      &::after {
         font-family: @icon-font;
         content: "\F2FC";
         font-size: 19px;
+        opacity: 0.5;
+
+        &:hover {
+          opacity: 1;
+        }
       }
 
       &:hover:before {

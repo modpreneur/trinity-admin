@@ -1522,11 +1522,16 @@ form label.tooltip {
   display: inline;
   position: relative;
 }
-.form label.tooltip:after,
-form label.tooltip:after {
+.form label.tooltip::after,
+form label.tooltip::after {
   font-family: "Material Design Icons";
   content: "\F2FC";
   font-size: 19px;
+  opacity: 0.5;
+}
+.form label.tooltip::after:hover,
+form label.tooltip::after:hover {
+  opacity: 1;
 }
 .form label.tooltip:hover:before,
 form label.tooltip:hover:before {
