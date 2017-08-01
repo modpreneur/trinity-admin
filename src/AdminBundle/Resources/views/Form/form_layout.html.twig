@@ -33,10 +33,10 @@ Overriding empty blocks will not mess up label and widget's width
 
     {% block form_row_start %}
         {% if display_collection_labels %}
-            <div class="form-content-center span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-24 span-none-padding-large-24 span-none-padding-xlarge-24 margin-auto">
+            <div class="form-content-center mini-24 small-24 medium-24 large-24 xlarge-24 margin-auto">
         {% else %}
             {# Default wrapper for entire form rows #}
-            <div class="form-content-center span-none-padding-mini-23 span-none-padding-small-23 span-none-padding-medium-23 span-large-23 span-xlarge-20 margin-auto">
+            <div class="form-content-center mini-23 small-23 medium-23 large-23 xlarge-20 margin-auto">
         {% endif %}
     {% endblock form_row_start %}
 
@@ -46,10 +46,10 @@ Overriding empty blocks will not mess up label and widget's width
 
             {% block form_row_label_start %}
                 {% if display_collection_labels and not collection_wrapper %}
-                  <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-9 span-none-padding-large-10 span-none-padding-xlarge-7 form-left">
+                  <div class="mini-24 small-24 medium-9 large-10 xlarge-7 form-left">
                 {% else %}
                   {# Default wrapper for form row labels #}
-                  <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-5 span-none-padding-large-6 span-none-padding-xlarge-6 form-left">
+                  <div class="mini-24 small-24 medium-5 large-6 xlarge-6 form-left">
                 {% endif %}
             {% endblock form_row_label_start %}
 
@@ -62,12 +62,12 @@ Overriding empty blocks will not mess up label and widget's width
 
             {% block form_row_input_start %}
                 {% if display_collection_labels and collection_wrapper %}
-                    <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-24 span-none-padding-large-24 span-none-padding-xlarge-24 form-right">
+                    <div class="mini-24 small-24 medium-24 large-24 xlarge-24 form-right">
                 {% elseif display_collection_labels and not collection_wrapper %}
-                    <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-15 span-none-padding-large-14 span-none-padding-xlarge-17 form-right">
+                    <div class="mini-24 small-24 medium-15 large-14 xlarge-17 form-right">
                 {% else %}
                     {# Default wrapper for form row widgets #}
-                    <div class="span-none-padding-mini-24 span-none-padding-small-24 span-none-padding-medium-19 span-none-padding-large-15 span-none-padding-xlarge-14 form-right">
+                    <div class="mini-24 small-24 medium-19 large-15 xlarge-14 form-right">
                 {% endif %}
             {% endblock form_row_input_start %}
 
