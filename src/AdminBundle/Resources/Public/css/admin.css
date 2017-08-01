@@ -43,6 +43,7 @@
 /*  Used for e.g. button  */
 /*  Fonts  */
 /*  Tabs  */
+/*  Grid  */
 /*  Widgets  */
 /**************************************
   Navbar parameters
@@ -111,6 +112,9 @@ ol.list li {
 .text-center {
   text-align: center;
 }
+.padding-top {
+  padding-top: 10px;
+}
 /**
     Top sidebar
     - logo
@@ -159,6 +163,7 @@ ol.list li {
   color: #a0a2a5;
   font-weight: 300;
   font-family: "Noto Sans", sans-serif;
+  overflow: hidden;
 }
 .navbar .navbar-logo {
   height: 50px;
@@ -166,12 +171,14 @@ ol.list li {
   display: inline-block;
   float: left;
   z-index: 999;
-  background: #6F68F9;
-  background-image: -o-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: -webkit-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-  background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
+  background: #6E69F9;
+  background-image: -moz-linear-gradient(left top, #6E69F9 0%, #19BCFF 100%);
+  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #6E69F9), color-stop(100%, #19BCFF));
+  background-image: -webkit-linear-gradient(right bottom, #6E69F9 0%, #19BCFF 100%);
+  background-image: -o-linear-gradient(left top, #6E69F9 0%, #19BCFF 100%);
+  background-image: -ms-linear-gradient(left top, #6E69F9 0%, #19BCFF 100%);
+  background-image: linear-gradient(to left top, #6E69F9 0%, #19BCFF 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6E69F9, endColorstr=#19BCFF, GradientType=0);
 }
 .navbar .navbar-logo:after {
   content: "";
@@ -196,7 +203,7 @@ ol.list li {
   height: 50px;
 }
 .navbar .navbar-container {
-  width: 80%;
+  width: calc(100% -  230px);
 }
 .white {
   color: #fff;
@@ -279,14 +286,14 @@ ol.list li {
   background: #7068F9;
 }
 .background.background-necktie {
-  background: #19BCFF;
-  background-image: -moz-linear-gradient(top, #19BCFF 0%, #6E69F9 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #19BCFF), color-stop(100%, #6E69F9));
-  background-image: -webkit-linear-gradient(top, #19BCFF 0%, #6E69F9 100%);
-  background-image: -o-linear-gradient(top, #19BCFF 0%, #6E69F9 100%);
-  background-image: -ms-linear-gradient(top, #19BCFF 0%, #6E69F9 100%);
-  background-image: linear-gradient(to bottom, #19BCFF 0%, #6E69F9 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#19BCFF, endColorstr=#6E69F9, GradientType=0);
+  background: #6E69F9;
+  background-image: -moz-linear-gradient(left top, #6E69F9 0%, #19BCFF 100%);
+  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #6E69F9), color-stop(100%, #19BCFF));
+  background-image: -webkit-linear-gradient(right bottom, #6E69F9 0%, #19BCFF 100%);
+  background-image: -o-linear-gradient(left top, #6E69F9 0%, #19BCFF 100%);
+  background-image: -ms-linear-gradient(left top, #6E69F9 0%, #19BCFF 100%);
+  background-image: linear-gradient(to left top, #6E69F9 0%, #19BCFF 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6E69F9, endColorstr=#19BCFF, GradientType=0);
 }
 .background.background-green {
   background: #7FB93D;
@@ -803,6 +810,8 @@ body {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding: 10px;
+  min-height: 0;
+  position: absolute;
 }
 .tabs-wrapper .tab-body.box-small {
   max-width: 800px;
@@ -862,8 +871,21 @@ body {
 .tabs-wrapper .tab-body.tab-small {
   width: 800px;
 }
+.tabs-wrapper .tab-body.tab-grid {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+.tabs-wrapper .tab-body.tab-grid .data-grid {
+  margin-top: 0;
+}
 .tabs-wrapper .tab-body .box-header {
   margin: -10px -10px 10px;
+}
+.tabs-wrapper .tab-body .box-title {
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 10px;
 }
 .tabs-wrapper form label {
   width: 100%;
@@ -2042,7 +2064,7 @@ form .upload-buttons-wrapper .upload-buttons {
 .data-grid tbody tr {
   background: #fff;
 }
-.data-grid tbody tr:nth-child(odd) {
+.data-grid tbody tr:nth-child(even) {
   background-color: #f6f8fc;
 }
 .data-grid tbody tr a {
@@ -2223,9 +2245,6 @@ th .item-menu-button label:active {
 /******************************
   END - PAGINATION
  ******************************/
-.trinity-widget .data-grid {
-  margin: 0 0 20px 0;
-}
 .trinity-widget .data-grid thead th {
   padding: 10px;
 }
@@ -2293,12 +2312,6 @@ th .item-menu-button label:active {
   Not sure if still used, mainly replaced by new grid
 
 **************************************/
-.tabs-wrapper table.data-grid {
-  margin: 20px 0;
-}
-.tabs-wrapper h3 + table.data-grid {
-  margin: 10px 0;
-}
 .action-cell {
   position: relative;
   min-height: 40px;
@@ -2597,12 +2610,12 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: 1px solid #ea2a05;
 }
 .button-necktie {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%236e69f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319bcff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #dbe2ed;
 }
 .button-necktie:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%233f38f7%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2300a2e5%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
 }
 .button-delete:hover {
   background: #fa4a28 !important;
