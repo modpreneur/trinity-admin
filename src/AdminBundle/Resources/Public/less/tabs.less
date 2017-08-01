@@ -52,9 +52,20 @@
 
 
   .tab-body{
+    .box;
     background: @color-white;
     margin: 0 auto;
-    padding: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 10px;
+
+    &.tab-small{
+      width: @box-small-width;
+    }
+
+    .box-header{
+      margin: -10px -10px 10px;
+    }
   }
 
 

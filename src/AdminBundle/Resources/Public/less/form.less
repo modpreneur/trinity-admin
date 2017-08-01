@@ -71,9 +71,10 @@
     }
   }
 
+
   .select {
     position: relative;
-    &:after {
+    &:before {
       position: absolute;
       content: "\F140";
       font-family: @icon-font;
@@ -186,4 +187,18 @@
 
   max-width: 100px;
   margin-bottom: 20px;
+}
+
+.control-info{
+  border: 1px solid darken(@color-border, 10%);
+  background: @color-border;
+  padding: 10px;
+  font-size: 12px;
+
+  .mdi{
+    display: block;
+    float: left;
+    font-size: 30px;
+    padding-right: 10px;
+  }
 }
