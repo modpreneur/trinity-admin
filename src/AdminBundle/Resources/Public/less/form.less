@@ -58,17 +58,22 @@
   }
 
   input, select, textarea {
+    .select-clear;
     width: 100%;
     border: 1px solid @color-border;
     padding: 5px 10px;
     color: @color-primary;
     border-radius: 4px;
-    .select-clear;
     font-weight: 300;
+    background: #fff;
 
     &:hover {
       border: 1px solid darken(@color-border, 8%);
     }
+  }
+
+  select {
+    cursor: pointer;
   }
 
   .form-center {
@@ -97,9 +102,11 @@
     }
   }
 
+
   .select {
     position: relative;
-    &:after {
+    // ::before, because error message colide with ::after
+    &:before {
       position: absolute;
       content: "\F140";
       font-family: @icon-font;
@@ -107,6 +114,7 @@
       color: @color-primary;
       font-size: 20px;
       right: 8px;
+      pointer-events: none; // to propagate click into <select> element
     }
   }
 
@@ -212,4 +220,18 @@
 
   max-width: 100px;
   margin-bottom: 20px;
+}
+
+.control-info{
+  border: 1px solid darken(@color-border, 10%);
+  background: @color-border;
+  padding: 10px;
+  font-size: 12px;
+
+  .mdi{
+    display: block;
+    float: left;
+    font-size: 30px;
+    padding-right: 10px;
+  }
 }

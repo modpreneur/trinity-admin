@@ -52,9 +52,39 @@
 
 
   .tab-body{
+    .box;
     background: @color-white;
     margin: 0 auto;
-    padding: 0;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    padding: 10px;
+    min-height: 0;
+    position: absolute;
+
+    &.tab-small{
+      width: @box-small-width;
+    }
+
+    &.tab-grid{
+      padding: 0;
+
+      background: transparent;
+      border: none;
+
+      .data-grid{
+        margin-top: 0;
+      }
+    }
+
+    .box-header{
+      margin: -10px -10px 10px;
+    }
+
+    .box-title{
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 10px;
+    }
   }
 
 

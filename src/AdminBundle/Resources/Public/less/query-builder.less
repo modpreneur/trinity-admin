@@ -1,0 +1,343 @@
+@import (once) 'variables';
+@import (once) 'buttons';
+/**
+ * Query builder component styles override
+ * @url: http://querybuilder.js.org/
+ */
+
+/** MAIN CLASS **/
+.query-builder {
+  background: @grid-even-row-color;
+  padding: 4px; // to counter margin of .rule-group-container which shout not be removed
+
+  .rules-group-container,
+  .rule-placeholder,
+  .rule-container {
+    position: relative;
+    margin: 4px 0;
+    padding: 10px;
+    border: none;
+  }
+
+  .drag-handle,
+  .error-container,
+  .rule-container .rule-filter-container,
+  .rule-container .rule-operator-container,
+  .rule-container .rule-value-container {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    vertical-align: middle
+  }
+
+
+  /**
+   * WHOLE GROUP - wrapper for:
+   * - .rules-group-header
+   * - .rules-group-body
+   */
+  .rules-group-container {
+    padding: 10px 10px 6px;
+  }
+
+  // Moves icon of all buttons little bit closer to text
+  .btn i {
+    margin-right: -3px;
+  }
+
+
+  /**
+   * HEADER GROUP
+   * child of: .rules-group-container
+   * wrapper for:
+   * - .group-conditions (AND/OR)
+   * - .group-actions (Add Rule and Add Group buttons)
+   */
+  .rules-group-header {
+    margin-bottom: 10px;
+
+    .group-actions .btn {
+      .button-parameters();
+      .radius(20px);
+      font-size: 11px;
+      font-weight: @noto-bold;
+      padding: 5px 10px;
+
+      // .button-secondary styles
+      background-color: @color-secondary;
+      border: none;
+
+      &:hover {
+        background-color: darken(@color-secondary, 10%);
+        border: none;
+      }
+    }
+
+    [data-invert] {
+      margin-left: 5px
+    }
+
+    // Not sure what for
+    .group-conditions .btn.readonly:not(.active),
+    .group-conditions input[name$=_cond] {
+      display: none
+    }
+  }
+  /** END RULES GROUP HEADER **/
+
+  .rules-group-body {
+    margin-left: 10px;
+  }
+
+  /**
+   * GROUP CONDITIONS
+   * Child of: .rules-group-header
+   * parent of: AND / OR  buttons
+   */
+  .group-conditions {
+    display: inline-block;
+
+    .btn-primary {
+      background: transparent;
+      font-weight: @noto-light;
+      padding: 4px 4px;
+      width: 40px;
+      display: inline-block;
+      margin: 0;
+      float: left;
+      text-align: center;
+      cursor: pointer;
+
+      // AND button
+      &:nth-child(1) {
+        border-radius: 3px 0 0 3px;
+      }
+      // OR button
+      &:nth-child(2) {
+        border-radius: 0 3px 3px 0;
+      }
+
+      // Selected
+      &.active {
+        color: #fff;
+        background: @color-secondary;
+        border-color: @color-secondary;
+      }
+
+      &.disabled {
+        cursor: not-allowed;
+      }
+    }
+  }
+  /** END GROUP CONDITIONS **/
+
+
+  /**
+   * Defines also left connect pipe
+   * Child of: .rules-group-body
+   * Wrapper for:
+   * - .rule-container
+   */
+  .rules-list {
+    @tmp-height: 54%;
+    list-style: none;
+    padding: 0 0 0 15px;
+    margin: 0;
+
+    /**
+      LEFT CONNECT PIPE (line)
+     */
+    >::after,
+    >::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      width: 10px;
+      height: @tmp-height;
+      // DO NOT OPTIMIZE !!!!
+      border-color: #545454;
+      border-style: solid;
+    }
+
+    >::before {
+      top: -4px;
+      border-width: 0 0 2px 2px
+    }
+    >::after {
+      top: 100% - @tmp-height;
+      border-width: 0 0 0 2px
+    }
+
+    >:first-child::before {
+      top: -12px;
+      height: 80%;
+    }
+
+    >:last-child::before {
+      border-radius: 0 0 0 4px
+    }
+
+    >:last-child::after {
+      display: none
+    }
+
+    .rules-group-container::before {
+      height: @tmp-height / 2;
+    }
+    /** END LEFT CONNECT PIPE (line)*/
+  }
+  /** END .rule-list */
+
+  /**
+   * RULE ACTIONS
+   * Child of: .rule-container
+   * Wrapper for:
+   * - buttons
+   */
+  .rule-actions {
+    .btn.btn-danger {
+      .button-parameters();
+      .radius(20px);
+      font-size: 11px;
+      font-weight: @noto-bold;
+      padding: 5px 10px;
+      margin: 2px; // fix position
+
+      // .button-orange-gradient styles
+      color: @color-white;
+
+      background-image: svg-gradient(to bottom, @color-orange-gradient1, @color-orange-gradient2);
+      border: none;
+      &:hover {
+        background-image: svg-gradient(to bottom, darken(@color-orange-gradient1, 10%), darken(@color-orange-gradient2, 10%));
+        border: none;
+      }
+    }
+  }
+  /** END RULE ACTIONS **/
+
+
+  /**
+   * RULE CONTAINER
+   * Child of: .rules-list
+   * Wrapper for:
+   * - .rule-header
+   * - .error-container
+   * - .rule-filter-container
+   * - .rule-operator-container
+   * - .rule-value-container
+   */
+  .rule-container {
+    background: @color-primary;
+    border-radius: 5px;
+
+    .select:before {
+      padding: 2px 0; // small fix of icon position
+    }
+  }
+  /** END RULE CONTAINER **/
+
+  /**
+    Wrapper for value inputs
+    can have as child:
+    - select, input[text], input[date], input[number], input[radio/checkbox], label..
+   */
+  .rule-value-container {
+    // border - the split line on the left of value input
+    border-left: 1px solid #FFF;
+    padding-left: 5px;
+
+    // Label - probably used in checkboxes
+    label {
+      margin-bottom: 0;
+      font-weight: @noto-regular;
+      &.block {
+        display: block
+      }
+    }
+  }
+  /**
+   * END .rule-value-container
+   */
+
+  /**
+   * Default string input
+   */
+  input.form-control {
+    width: auto;
+    line-height: 26px;
+    height: 26px; /*ie fails here just with line-height*/
+    padding-left: 5px;
+    //transition: .3s;
+    border: 1px solid @color-border;
+
+    &:focus {
+      border-color: @color-primary;
+    }
+  }
+  /**
+   * END Default string input
+   */
+
+
+  /**
+   * Error
+   * show error icon next to each rule or whole rule group
+   */
+  .error-container {
+    display: none;
+    cursor: help;
+    color: red;
+  }
+
+  /** Whole rule line **/
+  .has-error {
+    //background-color: #FDD; // old one, was nice quite
+    background-color: @color-danger;
+
+    .error-container {
+      display: inline-block;
+      i {
+        color: #FFF;
+      }
+    }
+  }
+  /**
+   * END Error
+   */
+
+  /***
+   * ORDERING FEATURE OF QUERY-BUILDER
+   */
+
+  // Styles works only if ordering of component is enabled
+  // Right now its disabled so all styles are commented
+
+  //p.filter-description {
+  //  margin: 5px 0 0;
+  //  background: #D9EDF7;
+  //  border: 1px solid #BCE8F1;
+  //  color: #31708F;
+  //  border-radius: 5px;
+  //  padding: 2.5px 5px;
+  //  font-size: .8em
+  //}
+  //
+  //.drag-handle {
+  //  cursor: move;
+  //  vertical-align: middle;
+  //  margin-left: 5px
+  //}
+  //
+  //.dragged {
+  //  opacity: .5
+  //}
+  //
+  //.rule-placeholder {
+  //  border: 1px dashed #BBB;
+  //  opacity: .7
+  //}
+
+  /***
+   * END ORDERING FEATURE OF QUERY-BUILDER
+   */
+}

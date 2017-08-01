@@ -40,7 +40,14 @@
     &.grid-checkbox {
       padding: 6px;
     }
+
   }
+
+  // Row with custom content (one cell stretched)
+  tr.tjs-grid-custom-row td {
+    padding: 0;
+  }
+
 
   thead {
     background-color: @color-primary;
@@ -151,8 +158,8 @@
       background: #fff;
 
       // Odd row
-      &:nth-child(odd) {
-        background-color: #f6f8fc; // TODO: variable?
+      &:nth-child(even) {
+        background-color: @grid-even-row-color;
       }
 
       a {
@@ -252,23 +259,6 @@ th .item-menu-button {
       color: #fff;
     }
   }
-
-  //input[type=radio] {
-  //  display: none;
-  //}
-  //
-  //input[type=radio]:checked~label {
-  //  background: @color-primary;
-  //  color: #fff;
-  //  z-index: 102;
-  //}
-  //
-  //input[type=radio]:checked~.dropdown-item {
-  //  transform: translateX(-118px);
-  //  //opacity: 1;
-  //  //visibility: visible;
-  //  z-index: 101;
-  //}
 
   input[type=checkbox]:checked {
     // label
@@ -385,7 +375,6 @@ th .item-menu-button {
 // GRID IN WIDGETS
 .trinity-widget {
   .data-grid {
-    margin: 0 0 20px 0;
     thead th {
       padding: 10px;
     }

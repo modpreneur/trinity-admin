@@ -58,6 +58,7 @@
   color: @navbar-font-color;
   font-weight: @noto-light;
   font-family: @font;
+  overflow: hidden;
 
   .navbar-logo {
     height: @navbar-height;
@@ -67,13 +68,7 @@
     .group-clearfix();
     z-index: 999;
 
-    // TODO: use variables
-    background: #6F68F9;
-    background-image: -o-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-    background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-    background-image: -webkit-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-    background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17bdff 100%);
-    background-image: linear-gradient(to left top, #6F68F9 0%, #17bdff 100%);
+    .necktie();
 
     i {
       margin: (@navbar-height - @logo-height)/2;
@@ -97,6 +92,6 @@
   }
 
   .navbar-container{
-    width: 80%;
+    width: calc(~'100% - '@sidebar-width);
   }
 }

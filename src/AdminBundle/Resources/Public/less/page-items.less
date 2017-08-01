@@ -6,107 +6,76 @@
 **************************************/
 @import (once) "helper";
 
-  .box-new-form {
-    position: relative;
-  }
-
-  .navigation-box {
-    display: block;
-
-    .tooltip-loop (@i) when (@i > 0) {
-      span.tooltip:nth-child(@{i}) {
-        z-index: 30-@i;
-      }
-      .tooltip-loop(@i - 1);
-    }
-    .tooltip-loop(5); //potential number of page-items
-
-    .tooltip {
-      float: right;
-      height: 100%;
-      .tooltip-hover {
-        height: 32px;
-        width: 32px;
-        display: block;
-        margin: 10px 20px 0 0;
-      }
-
-      .tooltip-left {
-        padding: 0;
-        line-height: 30px;
-        font-size: 13px;
-        font-weight: 300;
-        right: 55px;
-        top: 2px;
-        background: rgba(0, 0, 0, 0.95);
-
-        &:before {
-          top: 7px;
-          left: auto;
-          right: -15px;
-          border-top: 7px solid transparent;
-          border-left: 16px solid rgba(0, 0, 0, 0.95);
-          border-bottom: 7px solid transparent
-        }
-      }
-    }
-
-    .new-entry {
-      .navigation-icons();
-      background: @color-primary;
-      &:hover {
-        background: darken(@color-primary, 15%);
-      }
-    }
-
-    .go-up {
-      .navigation-icons();
-      background: @color-primary;
-      &:hover {
-        background: darken(@color-primary, 15%);
-      }
-    }
-
-    .reload{
-      .navigation-icons();
-      background: @color-primary;
-      i, span {
-        font-weight: 100;
-        font-size: 21px;
-      }
-      &:hover{
-        background: darken(@color-primary, 15%);
-      }
-    }
-  }
-
-// An override for query builder styles
-
-.query-builder {
-  .rules-group-container {
-    border-color: @color-secondary !important;
-    background: #f2f6fc !important;
-    padding: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  .rule-container {
-    background: @color-secondary !important;
-  }
-
-  input.form-control:focus {
-    border-color: @color-primary !important;
-  }
-
-  .btn-primary.disabled {
-    background: transparent !important;
-  }
-
-  .btn-danger {
-    background: #5b606a;
-  }
+.box-new-form {
+  position: relative;
 }
 
-.group-conditions .btn.active {
-  background: @color-primary !important;
+.navigation-box {
+  display: block;
+
+  .tooltip-loop (@i) when (@i > 0) {
+    span.tooltip:nth-child(@{i}) {
+      z-index: 30-@i;
+    }
+    .tooltip-loop(@i - 1);
+  }
+  .tooltip-loop(5); //potential number of page-items
+
+  .tooltip {
+    float: right;
+    height: 100%;
+    .tooltip-hover {
+      height: 32px;
+      width: 32px;
+      display: block;
+      margin: 10px 20px 0 0;
+    }
+
+    .tooltip-left {
+      padding: 0;
+      line-height: 30px;
+      font-size: 13px;
+      font-weight: 300;
+      right: 55px;
+      top: 2px;
+      background: rgba(0, 0, 0, 0.95);
+
+      &:before {
+        top: 7px;
+        left: auto;
+        right: -15px;
+        border-top: 7px solid transparent;
+        border-left: 16px solid rgba(0, 0, 0, 0.95);
+        border-bottom: 7px solid transparent
+      }
+    }
+  }
+
+  .new-entry {
+    .navigation-icons();
+    background: @color-primary;
+    &:hover {
+      background: darken(@color-primary, 15%);
+    }
+  }
+
+  .go-up {
+    .navigation-icons();
+    background: @color-primary;
+    &:hover {
+      background: darken(@color-primary, 15%);
+    }
+  }
+
+  .reload{
+    .navigation-icons();
+    background: @color-primary;
+    i, span {
+      font-weight: 100;
+      font-size: 21px;
+    }
+    &:hover{
+      background: darken(@color-primary, 15%);
+    }
+  }
 }
