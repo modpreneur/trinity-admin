@@ -51,15 +51,19 @@
   }
 
 
-  .tab-body{
+  .tab-body {
     .box;
     background: @color-white;
     margin: 0 auto;
     border-top-left-radius: 4px;
     border-top-right-radius: 4px;
-    padding: 10px;
+    padding: 0;
     min-height: 0;
     position: absolute;
+
+    &.box {
+      padding: 10px;
+    }
 
     &.tab-small{
       width: @box-small-width;
@@ -99,5 +103,5 @@
 
 
 .body-wrapper > .tabs-wrapper > .tab-body-wrapper {
-  padding-top: 14px;
+  padding: 14px 0;
 }

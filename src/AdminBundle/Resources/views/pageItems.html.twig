@@ -1,14 +1,29 @@
 {# Generates tab bodies (see http://kodovani.com/bp-bowtie/index.html#tabs) #}
-{# Parameter class is optional - adds additional classes to tabs #}
-{% macro tab_body(id, data_source, class = '') %}
 
-    {# Separate additional classes from others with a space #}
+{# Parameter width is optional - wide or narrow, narrow is default #}
+{# Parameter class is optional - adds custom classes to tabs #}
+
+{% macro tab_body(id, data_source, width = 'narrow', class = '') %}
+
+    {# Separate additional classes from others with a leading space #}
     {% if not class == '' %}
         {% set class = ' ' ~ class %}
     {% endif %}
 
+    {% if width == 'wide' %}
+
+        {# Takes up all available space on the page #}
+        {% set class = class ~ ' xlarge-24 large-24 medium-24 small-24 mini-24' %}
+
+    {% else %}
+
+        {# Narrow tab body - default #}
+        {% set class = class ~ ' box xlarge-16 large-16 medium-24 small-24 mini-24' %}
+
+    {% endif %}
+
     <div id="{{ id }}"
-         class="tab-body{{ class }} box xlarge-16 large-16 medium-24 small-24 mini-24"
+         class="tab-body{{ class }}"
          data-source="{{ data_source }}">
     </div>
 {% endmacro %}
