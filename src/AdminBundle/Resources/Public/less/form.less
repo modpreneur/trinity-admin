@@ -32,17 +32,22 @@
   }
 
   input, select, textarea {
+    .select-clear;
     width: 100%;
     border: 1px solid @color-border;
     padding: 5px 10px;
     color: @color-primary;
     border-radius: 4px;
-    .select-clear;
     font-weight: 300;
+    background: #fff;
 
     &:hover {
       border: 1px solid darken(@color-border, 8%);
     }
+  }
+
+  select {
+    cursor: pointer;
   }
 
   .form-center {
@@ -74,6 +79,7 @@
 
   .select {
     position: relative;
+    // ::before, because error message colide with ::after
     &:before {
       position: absolute;
       content: "\F140";
@@ -82,6 +88,7 @@
       color: @color-primary;
       font-size: 20px;
       right: 8px;
+      pointer-events: none; // to propagate click into <select> element
     }
   }
 
