@@ -1,6 +1,5 @@
 {# Default template for all form's rows #}
 
-
 {# This can be used for creating custom form rows using the {% embed '' %} tag. #}
 
 {# Most of the time, you'll only need to override these:
@@ -33,10 +32,10 @@ Overriding empty blocks will not mess up label and widget's width
 
     {% block form_row_start %}
         {% if display_collection_labels %}
-            <div class="form-content-center mini-24 small-24 medium-24 large-24 xlarge-24 margin-auto">
+            <div class="">
         {% else %}
             {# Default wrapper for entire form rows #}
-            <div class="form-content-center mini-23 small-23 medium-23 large-23 xlarge-20 margin-auto">
+            <div class="">
         {% endif %}
     {% endblock form_row_start %}
 
@@ -62,12 +61,12 @@ Overriding empty blocks will not mess up label and widget's width
 
             {% block form_row_input_start %}
                 {% if display_collection_labels and collection_wrapper %}
-                    <div class="mini-24 small-24 medium-24 large-24 xlarge-24 form-right">
+                    <div class="form-right">
                 {% elseif display_collection_labels and not collection_wrapper %}
-                    <div class="mini-24 small-24 medium-15 large-14 xlarge-17 form-right">
+                    <div class="form-right">
                 {% else %}
                     {# Default wrapper for form row widgets #}
-                    <div class="mini-24 small-24 medium-19 large-15 xlarge-14 form-right">
+                    <div class="form-right">
                 {% endif %}
             {% endblock form_row_input_start %}
 

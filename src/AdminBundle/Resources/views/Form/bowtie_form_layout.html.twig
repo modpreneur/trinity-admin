@@ -1,51 +1,107 @@
 {% extends "form_div_layout.html.twig" %}
 
-
-{%- block choice_widget_collapsed -%}
-    {%- if required and placeholder is none and not placeholder_in_choices and not multiple and (attr.size is not defined or attr.size <= 1) -%}
-        {% set required = false %}
-    {%- endif -%}
-    <div class="select">
-        <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
-            {%- if placeholder is not none -%}
-                <option value=""{% if required and value is empty %} selected="selected"{% endif %}>{{ placeholder != '' ? (translation_domain is same as(false) ? placeholder : placeholder|trans({}, translation_domain)) }}</option>
-            {%- endif -%}
-            {%- if preferred_choices|length > 0 -%}
-                {% set options = preferred_choices %}
-                {{- block('choice_widget_options') -}}
-                {%- if choices|length > 0 and separator is not none -%}
-                    <option disabled="disabled">{{ separator }}</option>
-                {%- endif -%}
-            {%- endif -%}
-            {%- set options = choices -%}
-            {{- block('choice_widget_options') -}}
-        </select>
-    </div>
-{%- endblock -%}
+{%- block form_start -%}
+    {{- parent() -}}
+{%- endblock form_start -%}
 
 
-{%- block checkbox_row -%}
-    <div class="checkbox">
-        <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
-        {{- form_label(form) }}
-    </div>
-{%- endblock -%}
+{%- block form -%}
+    {{- parent() -}}
+{%- endblock form -%}
 
 
 {%- block collection_widget -%}
     {% if prototype is defined %}
         {%- set attr = attr|merge({'data-prototype': form_row(prototype) }) -%}
     {% endif %}
+
+    {% if dataOptions is defined %}
+        {%- set attr = attr|merge({'data-options': dataOptions }) -%}
+    {% endif %}
+
     {{- block('form_widget') -}}
 {%- endblock collection_widget -%}
 
 
-{%- block checkbox_widget -%}
-    <div class="checkbox">
-        <input type="checkbox" {{ block('widget_attributes') }}{% if value is defined %} value="{{ value }}"{% endif %}{% if checked %} checked="checked"{% endif %} />
-        {{- form_label(form) }}
+{%- block collection_row -%}
+    <div class="row">
+        {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
+            {% block form_row_label_content %}
+                {{- form_label(form) -}}
+            {% endblock form_row_label_content %}
+
+            {% block form_row_input_content %}
+                {{- form_widget(form, { 'attr': {'class': 'collection-widget'} }) -}}
+            {% endblock form_row_input_content %}
+        {% endembed %}
     </div>
-{%- endblock checkbox_widget -%}
+{%- endblock collection_row -%}
+
+
+{%- block choice_widget_collapsed -%}
+    {%- if required and placeholder is none and not placeholder_in_choices and not multiple -%}
+        {% set required = false %}
+    {%- endif -%}
+
+    <div class="input-postfix-icon form-select">
+        <div class="select-style form-control">
+            <select {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+                {%- if placeholder is not none -%}
+                    <option
+                            value=""{% if required and value is empty %} selected="selected"{% endif %}>{{ placeholder|trans({}, translation_domain) }}</option>
+                {%- endif -%}
+                {%- if preferred_choices|length > 0 -%}
+                    {% set options = preferred_choices %}
+                    {{- block('choice_widget_options') -}}
+                    {%- if choices|length > 0 and separator is not none -%}
+                        <option disabled="disabled">{{ separator }}</option>
+                    {%- endif -%}
+                {%- endif -%}
+                {%- set options = choices -%}
+                {{- block('choice_widget_options') -}}
+            </select>
+        </div>
+    </div>
+{%- endblock choice_widget_collapsed -%}
+
+
+{%- block button_widget -%}
+    {%- if label is empty -%}
+        {%- if label_format is not empty -%}
+            {% set label = label_format|replace({
+            '%name%': name,
+            '%id%': id,
+            }) %}
+        {%- else -%}
+            {% set label = name|humanize %}
+        {%- endif -%}
+    {%- endif -%}
+
+    <div class="submit-button-wrapper">
+        {% if type is defined and type == "submit" %}
+            <button type="{{ type|default('button') }}" {{ block('button_attributes') }}>{{ translation_domain is same as(false) ? label : label|trans({}, translation_domain) }}</button>
+        {% else %}
+            <input type="{{ type|default('button') }}" {{ block('button_attributes') }}
+                   value="{{ label|trans({}, translation_domain) }}"/>
+        {% endif %}
+    </div>
+
+{%- endblock button_widget -%}
+
+
+{% block checkbox_widget -%}
+    <div class="checkbox">
+        {{- parent() -}}
+        {# {{ form_label(form) }} for CheckBoxType displays label twice, inside form_label() and form_widget()#}
+        {# setting attr => ['disable_widget_label' => true]#}
+        {% if attr.disable_widget_label is defined and attr.disable_widget_label %}
+            <label for="{{ id }}" ></label>
+        {% else %}
+            {{ form_label(form) }}
+        {% endif %}
+    </div>
+    {{- form_errors(form) -}}
+{%- endblock checkbox_widget %}
 
 
 {% block choice_widget_expanded -%}
@@ -56,3 +112,53 @@
         }) -}}
     {% endfor -%}
 {%- endblock choice_widget_expanded %}
+
+
+{%- block form_row -%}
+
+    {% set choice = false %}
+    {% for prefix in form.vars.block_prefixes %}
+        {% if prefix == 'choice' %}
+            {% set choice = true %}
+        {% endif %}
+    {% endfor %}
+
+    {% set rowClass = "" %}
+    {% if form.vars.attr.rowClass is defined %}
+        {% set rowClass = form.vars.attr.rowClass %}
+    {% endif %}
+
+    <div class="form-row{% if choice %} choice{% endif %} {{ rowClass }}" id="row_{{ id }}">
+
+        {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
+
+            {% block form_row_content %}
+                {% set class = "" %}
+                {% if form.vars.attr.class is defined %}
+                    {% set class = form.vars.attr.class %}
+                {% endif %}
+            {% endblock form_row_content %}
+
+            {% block form_row_label_content %}
+                {{- form_label(form) -}}
+            {% endblock form_row_label_content %}
+
+            {% block form_row_input %}
+                {% for attrname,attrvalue in attr %}
+                    {% if attrname == 'description' %}
+                        <span class="description">{{ attrvalue }}</span>
+                    {% endif %}
+                {% endfor %}
+
+                {% block form_row_input_content %}
+                    {{- form_widget(form) -}}
+                {% endblock form_row_input_content %}
+
+            {% endblock form_row_input %}
+
+        {% endembed %}
+
+    </div>
+
+    {{- form_errors(form) -}}
+{%- endblock form_row -%}
