@@ -343,7 +343,7 @@ ol.list li {
   background: #dbe2ed;
 }
 /* sidebar top */
-body {
+body.body-sidebar {
   padding-left: 245px;
   padding-right: 15px;
 }
@@ -1484,7 +1484,7 @@ form label.tooltip:hover:before {
   bottom: 28px;
   background: #677093;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   border-radius: 5px 5px 5px 0;
   z-index: 98;
