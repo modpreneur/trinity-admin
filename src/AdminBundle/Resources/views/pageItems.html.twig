@@ -3,14 +3,16 @@
 {# Parameter width is optional - wide or narrow, narrow is default #}
 {# Parameter class is optional - adds custom classes to tabs #}
 
-{% macro tab_body(id, data_source, width = 'narrow', class = '') %}
+{% macro tab_body(id, data_source, options = {}) %}
+
+    {% set class = '' %}
 
     {# Separate additional classes from others with a leading space #}
-    {% if not class == '' %}
-        {% set class = ' ' ~ class %}
+    {% if options.class is defined and not options.class == '' %}
+        {% set class = ' ' ~ options.class %}
     {% endif %}
 
-    {% if width == 'wide' %}
+    {% if options.width is defined and options.width == 'wide' %}
 
         {# Takes up all available space on the page #}
         {% set class = class ~ ' xlarge-24 large-24 medium-24 small-24 mini-24' %}
