@@ -52,7 +52,7 @@
     </head>
 
     <body class="
-        {% block body_class %} grid-sidebar grid-navigation-body navbar-fixed body-sidebar {% endblock %}
+        {% block body_class %} grid-navigation-body navbar-fixed body-sidebar {% endblock %}
     ">
     
         {% block flashMessages %}
@@ -101,9 +101,8 @@
 
         {# Navbar #}
         <header class="main-header large-24">
-            <div class="grid-content">
             {% block navbar %}
-                <nav class="navbar row">
+                <div class="navbar row">
                     <div id="navbar-left">
                         <div class="navbar-logo">
                             {% block navbar_logo %} <i> Logo </i> {% endblock %}
@@ -122,17 +121,16 @@
                         </a>
                     </div>
 
-
                     {% block navbar_elements %}
-                        <div class="navbar-container navbar-items">
-                            <div class="navbar-actions-item navbar-title pull-left">
+                        <div class="navbar-items grid-auto">
+                            <div class="navbar-title pull-left">
                                 {% block navbar_title %}
                                     Navbar title
                                 {% endblock %}
                             </div>
 
                             {% block navbar_actions_wrapper %}
-                                <div class="pull-right navbar-actions">
+                                <div class="navbar-actions pull-right">
                                     {% block navbar_actions %}
                                         {# Navbar action buttons (on the right) - usually different for each view #}
                                         {# You can use a macro from buttons.html.twig to create them #}
@@ -141,31 +139,27 @@
                             {% endblock %}
                         </div>
                     {% endblock %}
-                </nav>
+                </div>
             {% endblock %}
-            </div>
         </header>
 
 
         {# Main content of the page - sidebar, body, tabs #}
         <main class="main-content">
-            <div class="large-24">
-                <div class="grid-content">
-                    <section class="main-section">
-                        <div class="body-wrapper">
-                            {% block page_body %}
-                            {% endblock %}
-                        </div>
-                    </section>
-                    {% block element_sidebar %}
-                        <aside class="grid-aside sidebar-first" id="sidebar">
-                            {% block sidebar %}
-                                Sidebar
-                            {% endblock %}
-                        </aside>
+            <section class="main-section">
+                <div class="body-wrapper">
+                    {% block page_body %}
                     {% endblock %}
                 </div>
-            </div>
+            </section>
+
+            {% block element_sidebar %}
+                <aside class="sidebar-first" id="sidebar">
+                    {% block sidebar %}
+                        Sidebar
+                    {% endblock %}
+                </aside>
+            {% endblock %}
 
 
             {% block trinity_admin_script_footer %}

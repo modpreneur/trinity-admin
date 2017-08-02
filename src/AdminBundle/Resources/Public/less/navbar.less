@@ -1,54 +1,8 @@
-/**
-    Top sidebar
-    - logo
-    - search
-    - favourites items
-    - logout
-    - etc
-*/
 @import (once) "variables";
 @import (once) "helper";
 
-// for body
-&.navbar-fixed {
-  padding-top: @navbar-height + 15px;
-
-  .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1001;
-  }
-}
-
-#navbar-left {
-  width: @sidebar-width;
-  background: @color-primary;
-
-  #navbar-project {
-
-    #project-select{
-      color: #fff;
-      margin: (@navbar-height - 33px)/2 1em;
-      span{
-        display: block;
-        font-weight: 300;
-        font-size: 12px;
-      }
-      .title{
-        font-size: 14px;
-        font-weight: bold;
-      }
-    }
-  }
-
-  #main-menu-button {
-    background: @color-primary;
-    border: none;
-    padding: 0;
-    font-size: 22px;
-    margin: (@navbar-height - 22px) / 2;
-  }
+header.main-header {
+  height: @navbar-height;
 }
 
 .navbar {
@@ -59,6 +13,8 @@
   font-weight: @noto-light;
   font-family: @font;
   overflow: hidden;
+  position: fixed;
+  z-index: 1001;
 
   .navbar-logo {
     height: @navbar-height;
@@ -86,12 +42,34 @@
     }
   }
 
-  #navbar-project {
-    float: left;
-    height: @navbar-height;
-  }
+  #navbar-left {
+    width: @sidebar-width;
+    background: @color-primary;
 
-  .navbar-container{
-    width: calc(~'100% - '@sidebar-width);
+    #navbar-project {
+      height: @navbar-height;
+
+      #project-select{
+        color: #fff;
+        margin: (@navbar-height - 33px)/2 1em;
+        span {
+          display: block;
+          font-weight: 300;
+          font-size: 12px;
+        }
+        .title{
+          font-size: 14px;
+          font-weight: bold;
+        }
+      }
+    }
+
+    #main-menu-button {
+      background: @color-primary;
+      border: none;
+      padding: 0;
+      font-size: 22px;
+      margin: (@navbar-height - 22px) / 2;
+    }
   }
 }

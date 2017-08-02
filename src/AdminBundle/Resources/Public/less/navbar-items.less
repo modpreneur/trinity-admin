@@ -1,42 +1,37 @@
-/**************************************
-
-  Navbar popup elements
-    - labels, input and wrappers for popup contents
-    - notifications, user profile, quick links and
-    - classes for space between
-
-**************************************/
 @import (once) "helper";
 @import (once) "variables";
 
-.navbar-items{
-  .navbar-title {
-    font-size: 16px;
-    padding-left: 1em;
-    color: @color-primary;
-    line-height: @navbar-height;
-  }
+.navbar-title {
+  font-size: 16px;
+  padding-left: 15px;
+  color: @color-primary;
+  line-height: @navbar-height;
+}
+
+.navbar-items {
 
   .navbar-actions {
-    float: right;
-    margin-top: 3px;
-  }
+    padding-right: 15px;
 
-  .navbar-search{
-    font-size: 28px;
-    margin-right: 10px;
-    color: @color-primary;
-    float: left;
-    border: 1px solid transparent;
-    line-height: 1;
-    padding: 5px;
-    cursor: pointer;
-    margin-top: 2px;
+    .navbar-search {
+      font-size: 28px;
+      margin: (@navbar-height - 41px) / 2 10px 0 0;
+      color: @color-primary;
+      float: left;
+      border: 1px solid transparent;
+      line-height: 1;
+      padding: 5px;
+      cursor: pointer;
 
-    &:hover{
-      border-radius: 30px;
-      border: 1px solid @color-border;
-      background:  @color-border;
+      &:hover {
+        border-radius: 30px;
+        border: 1px solid @color-border;
+        background: @color-border;
+      }
+    }
+
+    .button {
+      margin: (@navbar-height - 28px) / 2 0;
     }
   }
 }
