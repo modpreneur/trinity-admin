@@ -36,11 +36,30 @@
     &:last-child{
       border-right: none;
     }
+  }
+
+  th {
+    text-align: left;
+    color: @header-font-color;
+    font-weight: @noto-bold;
+    text-transform: capitalize;
+    // padding 6px for tables without grid checkbox
+    padding-top: 6px;
+    padding-bottom: 6px;
+
+
 
     &.grid-checkbox {
-      padding: 6px;
+      padding: 6px; // grid checkbox has padding 6px everywhere
     }
+  }
 
+  td {
+    vertical-align: middle;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 20em;
   }
 
   // Row with custom content (one cell stretched)
@@ -53,19 +72,13 @@
     background-color: @color-primary;
     tr {
       .radius(5px);
-      th {
-        text-align: left;
-        color: @header-font-color;
-        font-weight: @noto-bold;
-        text-transform: capitalize;
-      }
 
-      th[class*=order-] {
+      &[class*=order-] {
         cursor: pointer;
       }
 
       // display a glyph when hovered over (order by)
-      th.order-by:hover {
+      &.order-by:hover {
         &:after {
           color: @header-font-color;
         }
@@ -191,13 +204,7 @@
     }
   }
 
-  td {
-    vertical-align: middle;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 20em;
-  }
+
 
   // indicate for no-synchronized product
   .trinity-warning {
