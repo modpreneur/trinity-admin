@@ -343,7 +343,7 @@ ol.list li {
   background: #dbe2ed;
 }
 /* sidebar top */
-body {
+body.body-sidebar {
   padding-left: 245px;
   padding-right: 15px;
 }
@@ -801,76 +801,17 @@ body {
   font-weight: bold;
 }
 .tabs-wrapper .tab-body {
-  background: #fff;
-  position: relative;
-  color: #303030;
-  margin-bottom: 20px;
-  border-radius: 4px;
-  border: 1px solid #dbe2ed;
-  padding: 0;
-  min-height: 20px;
+  padding: 10px;
   background: #ffffff;
   margin: 0 auto;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
-  padding: 10px;
+  padding: 0;
   min-height: 0;
   position: absolute;
 }
-.tabs-wrapper .tab-body.box-small {
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.tabs-wrapper .tab-body .box-title {
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.3em;
-}
-.tabs-wrapper .tab-body .grid {
-  padding: 0;
-}
-.tabs-wrapper .tab-body .box-header {
-  background: #525975;
-  color: #ffffff;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
-  padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
-  line-height: 1.3em;
-  padding: 6.5px 11px;
-}
-.tabs-wrapper .tab-body .box-header .box-header-actions {
-  float: right;
-  margin-top: -5px;
-}
-.tabs-wrapper .tab-body .box-header .box-header-actions .button {
-  font-size: 10px;
-  margin-left: 5px;
-  padding: 3px 5px;
-}
-.tabs-wrapper .tab-body .box-body {
-  padding-bottom: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-.tabs-wrapper .tab-body .box-body p {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-.tabs-wrapper .tab-body .box-harmonica-body .show-harmonica {
-  padding: 20px;
-  margin-bottom: 0;
-  color: #303030;
-}
-.tabs-wrapper .tab-body .footer {
-  border-top: 1px solid #dbe2ed;
-  padding: 10px 10px;
-  font-size: 12px;
+.tabs-wrapper .tab-body.box {
+  padding: 10px;
 }
 .tabs-wrapper .tab-body.tab-small {
   width: 800px;
@@ -897,7 +838,7 @@ body {
   text-align: left !important;
 }
 .body-wrapper > .tabs-wrapper > .tab-body-wrapper {
-  padding-top: 14px;
+  padding: 14px 0;
 }
 /**************************************
 
@@ -1541,9 +1482,9 @@ form label.tooltip:hover:before {
   position: absolute;
   left: 50px;
   bottom: 28px;
-  background: #525975;
+  background: #677093;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 400;
   border-radius: 5px 5px 5px 0;
   z-index: 98;
