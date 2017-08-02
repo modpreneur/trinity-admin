@@ -1,5 +1,16 @@
-{# Generates tab bodies (see http://kodovani.com/bp-bowtie/index.html#tabs) #}
+{# Macros for creating different sorts of page items #}
 
+{#
+    Generates tab bodies (see http://kodovani.com/bp-bowtie/index.html#tabs)
+
+    - parameter id - tab-body-{id}, must match tab header (tab{id})
+
+    - parameter data_source - the contents of tab body - path("user_tab_edit"...) for example
+
+    - parameter options     - optional (array). Allows you to set tab body's:
+      width: {width : 'wide'} or {width : 'narrow'} - optional (narrow is default)
+      class: custom classes {class : 'some-class'}
+#}
 {% macro tab_body(id, data_source, options = {}) %}
 
     {% set class = '' %}
@@ -35,15 +46,24 @@
     </div>
 {% endmacro %}
 
-{# Shortcuts for creating tab bodies with forms/grids #}
+{# Shortcuts: #}
 
-{# Create a tab body for forms - narrow #}
+{#
+    Create a tab body for forms - narrow
+
+     - parameter class - optional (adds custom classes to tab-body)
+#}
 {% macro tab_body_form(id, data_source, class = '') %}
     {% import _self as page_items %}
     {{ page_items.tab_body(id, data_source, {width : 'narrow', class : class}) }}
 {% endmacro %}
 
-{# Create a tab body for grids - takes up all available space on the page, no padding around grids #}
+{#
+    Create a tab body for grids
+
+    Takes up all available space on the page, no padding around grids
+    - parameter class - optional (adds custom classes to tab-body)
+#}
 {% macro tab_body_grid(id, data_source, class = '') %}
     {% import _self as page_items %}
     {{ page_items.tab_body(id, data_source, {width : 'wide', class: 'tab-grid ' ~ class}) }}
