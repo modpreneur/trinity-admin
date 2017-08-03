@@ -75,6 +75,14 @@
     &:hover {
       border: 1px solid darken(@color-border, 8%);
     }
+
+    &.error{
+      border: 1px solid @color-red;
+
+      &:hover, &:focus{
+        border: 1px solid darken(@color-red, 10%);
+      }
+    }
   }
 
   select {
@@ -185,7 +193,7 @@
     border: 1px solid @color-border;
   }
 
-  .error-message {
+  .error-message, .form-msg-wrapper {
     color: @color-orange-gradient1;
     text-align: right;
     padding-top: 3px;

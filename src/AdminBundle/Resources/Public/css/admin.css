@@ -229,29 +229,28 @@ header.main-header {
 * Animations
 *
 */
-.spin {
+.spin,
+.mdi.spin:before,
+.mdi.spin:after {
   -webkit-animation: spin 2s linear infinite;
   -moz-animation: spin 2s linear infinite;
   animation: spin 2s linear infinite;
 }
 @-moz-keyframes spin {
   100% {
-    -moz-transform: rotate(-360deg);
+    -moz-transform: rotate(360deg);
   }
 }
 @-webkit-keyframes spin {
   100% {
-    -webkit-transform: rotate(-360deg);
+    -webkit-transform: rotate(360deg);
   }
 }
 @keyframes spin {
   100% {
-    -webkit-transform: rotate(-360deg);
-    transform: rotate(-360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
   }
-}
-.background.background-primary {
-  background: #525975;
 }
 .background.background-primary {
   background: #525975;
@@ -290,9 +289,6 @@ header.main-header {
   color: #525975;
   line-height: 50px;
 }
-.navbar-items .navbar-actions {
-  padding-right: 15px;
-}
 .navbar-items .navbar-actions .navbar-search {
   font-size: 28px;
   margin: 4.5px 10px 0 0;
@@ -309,10 +305,9 @@ header.main-header {
   background: #dbe2ed;
 }
 .navbar-items .navbar-actions .button {
-  margin: 11px 0;
+  margin: 11px 15px 0 0;
 }
 #sidebar {
-  padding-top: 15px;
   z-index: 99;
   font-family: "Noto Sans", sans-serif;
   width: 230px;
@@ -329,7 +324,7 @@ header.main-header {
   width: 100%;
 }
 #sidebar ul.sidebar {
-  margin-top: 10px;
+  margin-top: 18px;
   padding-left: 0;
   margin-left: 0;
   padding-bottom: 35px;
@@ -785,11 +780,18 @@ header.main-header {
   background: transparent;
   border: none;
 }
+.tabs-wrapper .tab-body.tab-grid .box {
+  background: #fff !important;
+}
 .tabs-wrapper .tab-body.tab-grid .data-grid {
   margin-top: 0;
 }
 .tabs-wrapper .tab-body .box-header {
   margin: -10px -10px 10px;
+}
+.tabs-wrapper .tab-body.box-with-grid .box-header {
+  margin: 0;
+  margin-bottom: 10px;
 }
 .tabs-wrapper .tab-body .box-title {
   padding-left: 0;
@@ -1481,6 +1483,28 @@ form select:hover,
 form textarea:hover {
   border: 1px solid #c0ccdf;
 }
+.form input.error,
+form input.error,
+.form select.error,
+form select.error,
+.form textarea.error,
+form textarea.error {
+  border: 1px solid #fa4a28;
+}
+.form input.error:hover,
+form input.error:hover,
+.form select.error:hover,
+form select.error:hover,
+.form textarea.error:hover,
+form textarea.error:hover,
+.form input.error:focus,
+form input.error:focus,
+.form select.error:focus,
+form select.error:focus,
+.form textarea.error:focus,
+form textarea.error:focus {
+  border: 1px solid #ea2a05;
+}
 .form select,
 form select {
   cursor: pointer;
@@ -1588,7 +1612,9 @@ form .image {
   border: 1px solid #dbe2ed;
 }
 .form .error-message,
-form .error-message {
+form .error-message,
+.form .form-msg-wrapper,
+form .form-msg-wrapper {
   color: #FE7800;
   text-align: right;
   padding-top: 3px;
@@ -1885,6 +1911,9 @@ body.body-sidebar main.main-content {
 .data-grid tbody tr {
   background: #fff;
 }
+.data-grid tbody tr td {
+  height: 43px;
+}
 .data-grid tbody tr:nth-child(even) {
   background-color: #f6f8fc;
 }
@@ -1947,7 +1976,7 @@ th .item-menu-button label:active {
   border: 1px solid #525975;
   color: #525975;
   background: none;
-  padding: 2px 14px;
+  padding: 2px 10px;
   z-index: 100;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -2273,23 +2302,6 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 ::-moz-focus-inner {
   border: 0;
 }
-.button-parameters {
-  text-align: center;
-  font-weight: 500;
-  text-decoration: none;
-  text-transform: capitalize;
-  line-height: 1;
-  border: 1px #dbe2ed solid;
-  margin: 5px;
-  background: #b0b0b0;
-  color: #fff;
-  cursor: pointer;
-  transition: .3s;
-}
-.button-parameters:hover {
-  color: #fff;
-  background: #fbfbff;
-}
 .button {
   text-align: center;
   font-weight: 500;
@@ -2520,7 +2532,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   background: #525975;
 }
 .button-loading:after {
-  content: "\F6EA";
+  content: "\F450";
   speak: none;
   min-width: 16px;
   font-size: 15px;
@@ -3083,6 +3095,7 @@ g {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
+  text-transform: none;
   font-size: 11px;
   font-weight: 700;
   padding: 5px 10px;
