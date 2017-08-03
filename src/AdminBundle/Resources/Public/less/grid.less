@@ -170,6 +170,11 @@
     tr {
       background: #fff;
 
+      // Table rows should at least have this height
+      td {
+        height: 43px;
+      }
+
       // Odd row
       &:nth-child(even) {
         background-color: @grid-even-row-color;
@@ -255,7 +260,7 @@ th .item-menu-button {
     border: 1px solid @color-primary;
     color: @color-primary;
     background: none;
-    padding: 2px 14px;
+    padding: 2px 10px;
     z-index: 100;
     .no-select();
 
