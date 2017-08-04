@@ -13,111 +13,54 @@
 
 .harmonica {
   display: block;
-  input {
-    display: none;
+  border-bottom: 1px solid @color-border;
 
-    &:checked + .main-panel label {
-      font-weight: bold;
-      background-color: @color-tertiary;
-      -webkit-transition: all 100ms ease;
-      -moz-transition: all 100ms ease;
-      -ms-transition: all 100ms ease;
-      -o-transition: all 100ms ease;
-      transition: all 100ms ease;
-
-      &:hover {
-        color: @color-white;
-      }
-    }
-  }
   .main-panel {
-    margin-bottom: 3px;
+    max-height: 39px;
+    margin-bottom: 0;
+    overflow: hidden;
+    border-style: none;
+    -webkit-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -moz-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    -o-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
+    transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
 
     .show-harmonica {
-      padding: 15px;
-      background: @color-tertiary;
-      color: @color-white;
-      font-size: 16px;
+      padding: 0 14px;
       font-weight: @noto-light;
+      position: relative;
+      max-height: 800px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      display: block;
+
+      border: 1px solid @color-border;
+      border-top-style: none;
+      border-bottom-style: none;
     }
 
-    label {
+    label[for^="harmonica"] {
       display: block;
       position: relative;
       border: solid 1px transparent;
-      color: @color-primary;
-      background-color: @color-white;
-      font-size: 17px;
-      font-weight: @noto-bold;
-      line-height: 1;
-      padding: 10px;
+      font-size: 14px;
+      text-align: left;
+      font-weight: @noto-light;
+      padding: 0 0 0 10px;
+      color: @color-white;
+      line-height: 36px;
+      background: @color-primary;
+      margin: 0;
+
       &:hover {
         cursor: pointer;
-        color: @color-tertiary-lighter;
       }
+
       img.text-right,
       i.text-right,
       span.text-right {
         position: absolute;
         right: 0;
-      }
-    }
-  }
-}
-
-.harmonica .main-panel {
-  max-height: 39px;
-  overflow: hidden;
-  -webkit-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  -moz-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  -o-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
-}
-
-.harmonica input:checked + .main-panel {
-  max-height: 400px;
-  overflow: hidden;
-  -webkit-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  -moz-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  -o-transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940);
-  transition: all 500ms cubic-bezier(0.250, 0.460, 0.450, 0.940); /* easeOutQuad */
-}
-
-.box .show-harmonica > form {
-  margin-left: -20px;
-  margin-right: -20px;
-  width: 105%;
-}
-
-.harmonica {
-  .main-panel {
-    margin-bottom: 0;
-    min-height: 37px;
-    max-height: 37px;
-
-    + label:hover {
-      cursor: pointer;
-    }
-
-    input {
-      display: block;
-    }
-
-    label[for^="harmonica"] {
-      font-size: 14px;
-      text-align: left;
-      font-weight: @noto-light;
-      padding: 0;
-      color: @color-white;
-      line-height: 36px;
-      background: @color-primary;
-      border-top: 1px solid lighten(@tabs-color-label, 35%);
-      padding-left: 10px;
-      margin: 0;
-
-      &.first{
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
       }
 
       i {
@@ -125,7 +68,7 @@
         font-size: 16px;
         line-height: 36px;
         float: left;
-        color: @color-primary;
+        color: @color-white;
 
         img {
           height: 20px;
@@ -152,121 +95,36 @@
       text-align: left;
     }
 
-    .show-harmonica {
-      position: relative;
-      background: #fff;
-      padding: 0;
-      color: @color-font;
-      max-height: 600px;
-      overflow-y: auto;
-      overflow-x: hidden;
-      display: block;
-
-      .harmonica-content {
-        color: @color-font;
-        padding-left: 15px;
-        padding-right: 15px;
-      }
-
-      input[type="checkbox"] {
-        display: none !important;
-      }
-
-      label {
-        color: @color-font;
-        font-weight: 300;
-        font-size: 14px;
-        padding-top: 5px;
-        background: transparent;
-      }
-    }
     &:first-of-type {
       label[for^="harmonica"] {
-        transition: box-shadow 0s, background .2s;
         border-top: 1px solid transparent;
-        &:hover {
-          .shadow(0, 10px, 10px, -10px, rgba(0, 0, 0, .2) inset);
+        border-top-left-radius: 4px;
+        border-top-right-radius: 4px;
+      }
+    }
+  }
+
+  input[id^="harmonica"] {
+    display: none;
+
+    &:checked + .main-panel {
+      max-height: 800px;
+      overflow: hidden;
+
+      label[for^="harmonica"] {
+        font-weight: @noto-regular;
+
+        &:after {
+          content: "\F143";
+          display: block;
+          font-family: @icon-font;
+          speak: none;
+          font-size: 24px;
+          color: @color-white;
+          float: right;
+          margin-right:  10px;
         }
       }
     }
   }
-
-  // TODO: is it still valid?
-  label[for^="help-content"] {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0;
-    i {
-      display: block;
-      font-size: 30px;
-      padding: 15px;
-      color: @color-tertiary;
-      &:hover {
-        color: darken(@color-tertiary, 15%);
-      }
-    }
-  }
-  input[id^="help-content"]:checked ~ .help-content {
-    max-height: 500px;
-    margin: 15px auto;
-  }
-  input:checked + .main-panel label {
-    background: transparent;
-    font-weight: @noto-light;
-    &:hover {
-      color: @global-font-color;
-    }
-  }
-
-  .help-content {
-    overflow: hidden;
-    max-width: 400px;
-    max-height: 0;
-    border-bottom: 1px solid #ededed;
-    margin: 0 auto;
-    transition: .7s;
-    //default template styles are in tabs.less
-    h4 {
-      margin: 5px 0;
-    }
-  }
-
-  input[id^="harmonica"]:checked + .main-panel {
-    max-height: 650px;
-
-    label[for^="harmonica"] {
-      font-weight: @noto-regular !important;
-      background: @color-primary;
-      color: @color-white;
-      border-top: 1px solid #d7d7d7; // TODO: color variabels?
-      border-bottom: 1px solid #ccc;
-      border-top-left-radius: 5px;
-      border-top-right-radius: 5px;
-
-      &:after {
-        content: "\F140";
-        display: block;
-        font-family: @icon-font;
-        speak: none;
-        font-size: 24px;
-        color: @color-white;
-        float: right;
-        margin-right: 10px;
-      }
-    }
-  }
 }
-
-/********************
-  Special behaviour in tabs
- ********************/
-.tab-body-wrapper {
-  .harmonica input:checked + .main-panel:first-of-type label[for^=harmonica] {
-    border-top: none;
-    .shadow(0, 10px, 10px, -10px, rgba(0, 0, 0, .2) inset);
-  }
-}
-/********************
-  END - Special behaviour in tabs
- ********************/

@@ -11,52 +11,43 @@
 
 @page-padding: 10px;
 @color-border: #ededed;
-@color-font: #303030;
-@form-tr-time: 0.3s;
-
-@hover-timing: 0.3s;
-@header-min-height: 100px;
-
-@grid-search-height: 32px;
-@search-time: 0.3s;
-@search-font-size: 14px;
-
-@link-font-color: darken(desaturate(@color-primary, 75%), 17%);
 
 /**************************************
   Global parameters
 **************************************/
 
 /*  Colors - primary,secondary... */
-@back-color: #e4ebf7;
+@background-color: #e4ebf7;
 
 @color-primary: #525975;
 @color-primary-hover: darken(@color-primary, 10%);
 @color-primary-inverse: inverse(@color-primary);
-@color-secondary: #7068F9;
+@color-secondary: #6F68F9;
 @color-tertiary: #1ABB9C;
+
 @color-red: #fa4a28;
-@color-blue: #17bdff;
-@color-purple: #7068F9;
-@color-necktie-gradient1: #6E69F9;
-@color-necktie-gradient2: #19BCFF;
+
+@color-blue: #17BDFF;
+@color-necktie-gradient1: @color-secondary;
+@color-necktie-gradient2: @color-blue;
+
 @color-grey-1: #F7F8FC;
 @color-grey-2: #E4EAF6;
 @color-grey-3: #E0E7F1;
 @color-grey-4: #CFD2D9;
 @color-grey-gradient1: #EBEEF3;
 @color-grey-gradient2: #CBD3E0;
-@color-orange-gradient1: #FE7800;
-@color-orange-gradient2: #F9452E;
+
+@color-orange-gradient1: #ff7801;
+@color-orange-gradient2: #f9452d;
+
 @color-border: #dbe2ed;
 @color-white: #fff;
+
 @color-green: #7FB93D;
 @color-darkgreen: #038d4a;
 @color-green-gradient1: @color-green;
 @color-green-gradient2: @color-darkgreen;
-
-
-@global-row-hover: #f8f8f8;
 
 
 /*  Used for e.g. button  */
@@ -65,7 +56,6 @@
 @color-danger: #c93236;
 @color-success: #5da423;
 @color-success-notification: #f6e064;
-@color-grey-link: #8f8f8f;
 
 /*  Fonts  */
 @global-font-color: #303030;
@@ -73,8 +63,6 @@
 @font-size-button: 18px;
 
 /*  Tabs  */
-@tabs-max-count: 8; //There are max, min width for tab and some media-queries for fit
-@tabs-hover-color: @color-tertiary;
 @tabs-color-label: #7d7d7d;
 
 /*  Grid  */
@@ -107,21 +95,6 @@
 @sidebar-icon-font-size: 21px;
 @sidebar-font-size: 14px;
 @sidebar-link-color: #595959;
-
-@sidebar-detail-width: 200px;
-@sidebar-row-hover-color: #f2f2f2;
-@sidebar-navbar-notifi: #ffffff;
-@sidebar-detail-color: #838383;
-
-@sidebar-hover-color: @sidebar-font-color-active;
-@sidebar-hover-back-color: #282c37;
-
-@sidebar-font-color: #adadad;
-@sidebar-font-color-active: #fff;
-@sidebar-back-active: #282c37;
-@sidebar-drop-border-bottom-color: darken(#334d65, 1%);
-@sidebar-drop-font-color-active: #fff;
-@sidebar-drop-back-color-active: darken(#334d65, 10%);
 
 /**************************************
   Grid parameters
