@@ -1,0 +1,31 @@
+{% set class = '' %}
+
+{% if width is defined %}
+    {% if width == 'narrow' %}
+        {# Takes up all available space on the page #}
+        {% set class = class ~ ' xlarge-24 large-24 medium-24 small-24 mini-24' %}
+    {% else %}
+        {# Narrow tab body - default #}
+        {% set class = class ~ ' xlarge-16 large-16 medium-24 small-24 mini-24 object-center' %}
+
+    {% endif %}
+{% endif %}
+
+{% block box %}
+    <div class="box {{ class }}">
+        {% if (block("box_header") is not empty) or block("box_header") != "" %}
+            <div class="box-header">
+                {% block box_header %}{% endblock %}
+            </div>
+        {% endif %}
+
+        <div class="box-body">
+            {% block box_body %}
+            {% endblock %}
+        </div>
+
+        <div class="box-footer">
+            {% block box_footer %} {% endblock %}
+        </div>
+    </div>
+{% endblock %}
