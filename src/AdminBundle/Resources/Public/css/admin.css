@@ -122,9 +122,9 @@ header.main-header {
   color: #a0a2a5;
   font-weight: 300;
   font-family: "Noto Sans", sans-serif;
-  overflow: hidden;
   position: fixed;
   z-index: 1001;
+  border-bottom: 1px solid #dbe2ed;
 }
 .navbar .navbar-logo {
   height: 50px;
@@ -760,43 +760,18 @@ header.main-header {
   font-weight: bold;
 }
 .tabs-wrapper .tab-body {
-  padding: 10px;
-  background: #fff;
+  background: transparent;
   margin: 0 auto;
-  border-top-left-radius: 4px;
-  border-top-right-radius: 4px;
   padding: 0;
   min-height: 0;
   position: absolute;
+  border: 0;
 }
 .tabs-wrapper .tab-body.box {
-  padding: 10px;
+  background-color: #fff;
 }
 .tabs-wrapper .tab-body.tab-small {
   width: 800px;
-}
-.tabs-wrapper .tab-body.tab-grid {
-  padding: 0;
-  background: transparent;
-  border: none;
-}
-.tabs-wrapper .tab-body.tab-grid .box {
-  background: #fff !important;
-}
-.tabs-wrapper .tab-body.tab-grid .data-grid {
-  margin-top: 0;
-}
-.tabs-wrapper .tab-body .box-header {
-  margin: -10px -10px 10px;
-}
-.tabs-wrapper .tab-body.box-with-grid .box-header {
-  margin: 0;
-  margin-bottom: 10px;
-}
-.tabs-wrapper .tab-body .box-title {
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 10px;
 }
 .tabs-wrapper form label {
   width: 100%;

@@ -12,9 +12,12 @@ header.main-header {
   color: @navbar-font-color;
   font-weight: @noto-light;
   font-family: @font;
-  overflow: hidden;
   position: fixed;
   z-index: 1001;
+  border-bottom: 1px solid @color-border;
+
+  // pokud zde někdo napiše overflow:hidden udělám z něj dva kusy.
+  // pak nefunguje vyhledávání...
 
   .navbar-logo {
     height: @navbar-height;
