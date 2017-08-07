@@ -1,0 +1,144 @@
+/********
+ * Loader styles and animation
+ * https://codepen.io/Smudded/pen/pKtmu
+ ***************/
+@import (once) 'variables';
+
+@marginStart: 1px;
+@marginEnd: 8px;
+@opacityStart: 1;
+@opacityEnd: 0.5;
+@shadowStart: 0 0 4px rgba(255, 255, 255, 0.3);
+@shadowEnd: 0 0 0 rgba(255, 255, 255, 0.3);
+@duration: 500ms;
+@delay: 150ms;
+@dotSize: 12px;
+@logo-font-size: 45px;
+
+@-webkit-keyframes logopulse {
+  0% {
+    margin: 0 @marginStart;
+    opacity: @opacityStart;
+    text-shadow: @shadowStart;
+  }
+
+  100% {
+    margin: 0 @marginEnd;
+    opacity: @opacityEnd;
+    text-shadow: @shadowEnd;
+  }
+}
+
+@-webkit-keyframes dotleftpulse {
+  0% {
+    margin-left: @marginStart;
+    opacity: @opacityStart;
+    box-shadow: @shadowStart;
+  }
+
+  100% {
+    margin-left: @marginEnd;
+    opacity: @opacityEnd;
+    box-shadow: @shadowEnd;
+  }
+}
+
+@-webkit-keyframes dotrightpulse {
+  0% {
+    margin-right: @marginStart;
+    opacity: @opacityStart;
+    box-shadow: @shadowStart;
+  }
+
+  100% {
+    margin-right: @marginEnd;
+    opacity: @opacityEnd;
+    box-shadow: @shadowEnd;
+  }
+}
+
+.loading-container {
+  text-align: center;
+
+  &:before {
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    content: "";
+  }
+
+  i.necktie {
+    display: inline-block;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    vertical-align: middle;
+
+
+    /* Better Font Rendering =========== */
+    //-webkit-font-smoothing: antialiased;
+    //-moz-osx-font-smoothing: grayscale;
+
+    margin: 0 5px;
+    font-size: @logo-font-size;
+    color: @color-primary;
+    -webkit-animation: logopulse @duration alternate infinite;
+
+    &.poop {
+      font-size: @logo-font-size * 2;
+    }
+  }
+}
+
+.loading {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-backface-visibility: hidden;
+}
+
+.dot {
+  display: inline-block;
+  width: @dotSize;
+  height: @dotSize;
+  background: @color-primary;
+  vertical-align: middle;
+  border-radius: 100%;
+
+  &.left {
+    margin-left: 5px;
+    -webkit-animation: dotleftpulse @duration alternate infinite;
+
+    &.one {
+      -webkit-animation-delay: @delay;
+    }
+
+    &.two {
+      -webkit-animation-delay: @delay * 2;
+    }
+
+    &.three {
+      -webkit-animation-delay: @delay * 3;
+    }
+  }
+
+  &.right {
+    margin-right: 5px;
+    -webkit-animation: dotrightpulse @duration alternate infinite;
+
+    &.one {
+      -webkit-animation-delay: @delay;
+    }
+
+    &.two {
+      -webkit-animation-delay: @delay * 2;
+    }
+
+    &.three {
+      -webkit-animation-delay: @delay * 3;
+    }
+  }
+}
