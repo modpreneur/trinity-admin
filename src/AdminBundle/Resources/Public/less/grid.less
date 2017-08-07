@@ -27,6 +27,17 @@
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 
+  // During loading data, extra row is inserted into body. It breaks initial odd/even color and causes "glitch".
+  // This set rules prevents it from happening
+  &.fetching tbody {
+    tr:nth-child(odd) {
+      background-color: @grid-even-row-color;
+    }
+    tr:nth-child(even) {
+      background-color: initial;
+    }
+  }
+
   td, th {
     line-height: 1;
     font-size: 14px;
@@ -65,6 +76,7 @@
   // Row with custom content (one cell stretched)
   tr.tjs-grid-custom-row td {
     padding: 0;
+    height: 0;
   }
 
 
@@ -88,6 +100,7 @@
     .order-by {
       position: relative;
       min-width: 50px;
+      cursor: pointer;
       // TODO: do we need duplicate font-family 4 times?
 
       &:before {
@@ -172,10 +185,11 @@
 
       // Table rows should at least have this height
       td {
+        color: @color-primary;
         height: @grid-row-min-height;
       }
 
-      // Odd row
+      // Even row
       &:nth-child(even) {
         background-color: @grid-even-row-color;
       }
@@ -208,6 +222,32 @@
       }
     }
   }
+
+  // Fetching/Loading View
+  .fetching-view {
+    width: 100%;
+    text-align: center;
+
+    &.absolute {
+      position: absolute;
+      background-color: rgba(128, 149, 191, 0.3);
+    }
+  }
+
+  // Empty  view
+  .empty-view {
+    padding: 10px;
+    text-align: center;
+    color: @color-primary;
+
+    // empty image
+    img {
+      padding: 40px
+    }
+  }
+
+  // Error view
+
 
 
 

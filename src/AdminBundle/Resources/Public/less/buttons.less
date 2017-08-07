@@ -32,6 +32,7 @@
   line-height: 1;
   border: 1px @color-border solid;
   margin: 5px;
+  white-space: nowrap;
 
   background: lighten(desaturate(@color-primary, 100%), 30%);
   color: @color-white;
@@ -115,11 +116,12 @@
 
   &-secondary {
     background-color: @color-secondary;
-    border: none;
+
+    border: 1.5px solid @color-white;
+    box-shadow: 0 0 0 1px @color-border;
 
     &:hover {
-      background-color: darken(@color-secondary, 20%);
-      border: none;
+      background-color: darken(@color-secondary, 10%);
     }
   }
 
@@ -173,17 +175,6 @@
     &:hover {
       background-image:
               svg-gradient(to bottom, darken(@color-necktie-gradient1, 10%), darken(@color-necktie-gradient2, 10%));
-    }
-  }
-
-  &-addNew {
-    background-color: @color-secondary;
-
-    border: 1.5px solid @color-white;
-    box-shadow: 0 0 0 1px @color-border;
-
-    &:hover {
-      background-color: darken(@color-secondary, 10%);
     }
   }
 
