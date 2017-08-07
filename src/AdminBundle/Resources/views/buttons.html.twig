@@ -12,8 +12,9 @@
     - parameter url - use path() whenever you can
     - parameter class - optional - defines the button type, button-secondary is default
 #}
-{% macro navbar_action(label, url, class = "button-secondary") %}
-    <a class="button {{ class }} button-medium pull-right margin-none-vertical" href="{{ url }}">
+
+{% macro navbar_action(label, url, class = "button-secondary", id = "") %}
+    <a id="{{ id }}" class="button {{ class }} button-medium pull-right margin-none-vertical" href="{{ url }}">
         {{ label }}
     </a>
 {% endmacro %}
