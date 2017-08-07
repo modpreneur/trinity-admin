@@ -1,4 +1,5 @@
 <?php
+declare(strict_types=1);
 
 namespace Trinity\AdminBundle\Menu;
 
@@ -32,6 +33,9 @@ class MenuBuilder
     /** @var MenuEvent */
     private $menuEvent;
 
+    /** @var string  */
+    private $menu = AdminEvents::MENU_CREATE;
+
 
     /**
      * @param EventDispatcherInterface $eventDispatcher
@@ -48,40 +52,30 @@ class MenuBuilder
         $this->authorizationChecker = $authorizationChecker;
 
         $sidebar_menu = $this->factory->createItem(
-            'root',
+            'sidebar',
             [
                 'childrenAttributes' => [
                     'class' => 'sidebar',
                 ],
             ]
         );
+
+        $sidebar_profile_menu = $this->factory->createItem(
+            'profile_sidebar',
+            [
+                'childrenAttributes' => [
+                    'class' => 'sidebar',
+                ],
+            ]
+        );
+
         $this->navs['sidebar'] = $sidebar_menu;
-
-        $quick_menu = $this->factory->createItem(
-            'root',
-            [
-                'childrenAttributes' => [
-                    'class' => 'show-quick-add',
-                ],
-            ]
-        );
-        $this->navs['quick-menu'] = $quick_menu;
-
-        $user_menu = $this->factory->createItem(
-            'root',
-            [
-                'childrenAttributes' => [
-                    'class' => 'show-drop-login',
-                ],
-            ]
-        );
-        $this->navs['user_menu'] = $user_menu;
+        $this->navs['profile_sidebar'] = $sidebar_profile_menu;
 
         $this->menuEvent = new MenuEvent($this->factory);
         $this->menuEvent
             ->addNav('sidebar', $sidebar_menu)
-            ->addNav('quick-menu', $quick_menu)
-            ->addNav('user_menu', $user_menu)
+            ->addNav('profile_sidebar', $sidebar_profile_menu)
         ;
     }
 
@@ -89,15 +83,28 @@ class MenuBuilder
      * @param RequestStack $requestStack
      *
      * @return ItemInterface
-     * @throws \InvalidArgumentException
      */
-    public function createMainMenu(RequestStack $requestStack)
+    public function createMainMenu(): ItemInterface
     {
         $menu = $this->navs['sidebar'];
-        $menu->setUri($requestStack->getCurrentRequest()->getRequestUri());
 
         $this->eventDispatcher->dispatch(
-            AdminEvents::MENU_CREATE,
+            $this->menu,
+            $this->menuEvent
+        );
+
+        $this->orderMenu($menu);
+
+        return $menu;
+    }
+
+
+    public function createProfileMenu(): ItemInterface
+    {
+        $menu = $this->navs['profile_sidebar'];
+
+        $this->eventDispatcher->dispatch(
+            $this->menu,
             $this->menuEvent
         );
 
@@ -165,8 +172,8 @@ class MenuBuilder
             }
         }
 
-        $names = array_merge($unorderedNames, $names);
-        ksort($names);
+        $names = \array_merge($unorderedNames, $names);
+        \ksort($names);
 
         $menu->reorderChildren($names);
 
@@ -184,7 +191,7 @@ class MenuBuilder
      */
     private function orderArray(array $names, array $userIndexes, $currOrderNumber)
     {
-        for ($i = 0; $i <= $currOrderNumber + count($names); $i++) {
+        for ($i = 0; $i <= $currOrderNumber + \count($names); $i++) {
             if (!empty($names[$i])) {
                 if ($userIndexes[$i] > $currOrderNumber) {
                     $names = $this->shiftArray($names, $i, 1);
@@ -210,7 +217,7 @@ class MenuBuilder
      */
     private function shiftArray(array $shiftArray, $fromElement, $shiftSize)
     {
-        for ($i = count($shiftArray) + $shiftSize - 1; $i > $fromElement; $i--) {
+        for ($i = \count($shiftArray) + $shiftSize - 1; $i > $fromElement; $i--) {
             $shiftArray[$i] = $shiftArray[$i - $shiftSize];
         }
         return $shiftArray;
@@ -235,5 +242,14 @@ class MenuBuilder
         }
 
         return false;
+    }
+
+
+    /**
+     * @param string $menu
+     */
+    public function setMenu(string $menu)
+    {
+        $this->menu = $menu;
     }
 }

@@ -116,9 +116,11 @@
                                 </div>
                             {% endblock %}
                         </div>
-                        <a class="button button-medium pull-right" id="main-menu-button">
-                            <i class="mdi mdi-menu"></i>
-                        </a>
+                        {% block project_button %}
+                            <a class="button button-medium pull-right" id="main-menu-button">
+                                <i class="mdi mdi-menu"></i>
+                            </a>
+                        {% endblock %}
                     </div>
 
                     {% block navbar_elements %}

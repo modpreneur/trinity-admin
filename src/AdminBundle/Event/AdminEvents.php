@@ -17,6 +17,7 @@ class AdminEvents
      * @Event("Trinity\AdminBundle\Event\MenuEvent")
      */
     const MENU_CREATE       = 'trinity.main_menu.configure';
+
     //const QUICK_MENU_CREATE = 'trinity.quick_menu.configure';
     //const USER_MENU_CREATE  = 'trinity.user_menu.configure';
 }

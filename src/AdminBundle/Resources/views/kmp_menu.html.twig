@@ -87,6 +87,7 @@
 
         {%- set attributes = item.attributes %}
         {%- set is_dropdown = attributes.dropdown|default(false) %}
+        {%- set is_dropdown_open = attributes.dropdown_open|default(false) %}
         {%- if classes is not empty %}
             {%- set attributes = attributes|merge({'class': classes|join(' ')}) %}
         {%- endif %}
@@ -145,7 +146,7 @@
                         <label for="show-drop-{{ itemId }}" class="show-drop">
 
                             <div class="dropdown-main sidebar-drop">
-                                <input type="checkbox" id="show-drop-{{ itemId }}" role="button" />
+                                <input type="checkbox" id="show-drop-{{ itemId }}" role="button" {% if is_dropdown_open %} checked {% endif %} />
                                 <a class="fix-a" href="#"></a>
 
                                 <div class="a">
