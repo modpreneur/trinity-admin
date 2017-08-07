@@ -27,6 +27,17 @@
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 
+  // During loading data, extra row is inserted into body. It breaks initial odd/even color and causes "glitch".
+  // This set rules prevents it from happening
+  &.fetching tbody {
+    tr:nth-child(odd) {
+      background-color: @grid-even-row-color;
+    }
+    tr:nth-child(even) {
+      background-color: initial;
+    }
+  }
+
   td, th {
     line-height: 1;
     font-size: 14px;
@@ -177,7 +188,7 @@
         height: @grid-row-min-height;
       }
 
-      // Odd row
+      // Even row
       &:nth-child(even) {
         background-color: @grid-even-row-color;
       }
