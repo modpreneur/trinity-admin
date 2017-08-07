@@ -44,9 +44,6 @@
 .box {
   background: #fff;
 }
-.tabs-wrapper .box {
-  background: transparent;
-}
 .pointer {
   cursor: pointer;
 }
@@ -86,6 +83,7 @@
   line-height: 1;
   border: 1px #dbe2ed solid;
   margin: 5px;
+  white-space: nowrap;
   background: #b0b0b0;
   color: #fff;
   cursor: pointer;
@@ -160,11 +158,11 @@
 }
 .button-secondary {
   background-color: #6F68F9;
-  border: none;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #dbe2ed;
 }
 .button-secondary:hover {
-  background-color: #150af1;
-  border: none;
+  background-color: #4037f7;
 }
 .button-tertiary {
   background: #1ABB9C;
@@ -408,6 +406,7 @@ body .button-success {
   line-height: 1;
   border: 1px #dbe2ed solid;
   margin: 5px;
+  white-space: nowrap;
   background: #b0b0b0;
   color: #fff;
   cursor: pointer;
@@ -486,11 +485,11 @@ body .button-success-primary-inverse:hover {
 }
 body .button-success-secondary {
   background-color: #6F68F9;
-  border: none;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #dbe2ed;
 }
 body .button-success-secondary:hover {
-  background-color: #150af1;
-  border: none;
+  background-color: #4037f7;
 }
 body .button-success-tertiary {
   background: #1ABB9C;

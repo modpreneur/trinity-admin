@@ -6,9 +6,6 @@
 .box {
   background: #fff;
 }
-.tabs-wrapper .box {
-  background: transparent;
-}
 .pointer {
   cursor: pointer;
 }
@@ -131,13 +128,13 @@ header.main-header {
   display: inline-block;
   float: left;
   z-index: 999;
-  background-color: #6f68f9;
-  background-image: -moz-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
-  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #6f68f9), color-stop(100%, #17bdff));
-  background-image: -webkit-linear-gradient(right bottom, #6f68f9 0%, #17bdff 100%);
-  background-image: -o-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
-  background-image: -ms-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
-  background-image: linear-gradient(to left top, #6f68f9 0%, #17bdff 100%);
+  background-color: #6F68F9;
+  background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #6F68F9), color-stop(100%, #17BDFF));
+  background-image: -webkit-linear-gradient(right bottom, #6F68F9 0%, #17BDFF 100%);
+  background-image: -o-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: linear-gradient(to left top, #6F68F9 0%, #17BDFF 100%);
 }
 .navbar .navbar-logo:after {
   content: "";
@@ -185,13 +182,13 @@ header.main-header {
   margin: 14px;
 }
 .white {
-  color: #ffffff;
+  color: #fff;
 }
 .info {
-  background-color: #18bdff;
+  background-color: #18BDFF;
 }
 .color-info {
-  color: #18bdff;
+  color: #18BDFF;
 }
 .warning {
   background-color: #ff8939;
@@ -212,16 +209,16 @@ header.main-header {
   color: #525975;
 }
 .secondary {
-  background-color: #6f68f9;
+  background-color: #6F68F9;
 }
 .color-secondary {
-  color: #6f68f9;
+  color: #6F68F9;
 }
 .tertiary {
-  background-color: #1abb9c;
+  background-color: #1ABB9C;
 }
 .color-tertiary {
-  color: #1abb9c;
+  color: #1ABB9C;
 }
 /*----------
 *
@@ -258,29 +255,29 @@ header.main-header {
   background: #fa4a28;
 }
 .background.background-blue {
-  background: #17bdff;
+  background: #17BDFF;
 }
 .background.background-purple {
-  background: #6f68f9;
+  background: #6F68F9;
 }
 .background.background-necktie {
-  background-color: #6f68f9;
-  background-image: -moz-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
-  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #6f68f9), color-stop(100%, #17bdff));
-  background-image: -webkit-linear-gradient(right bottom, #6f68f9 0%, #17bdff 100%);
-  background-image: -o-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
-  background-image: -ms-linear-gradient(left top, #6f68f9 0%, #17bdff 100%);
-  background-image: linear-gradient(to left top, #6f68f9 0%, #17bdff 100%);
+  background-color: #6F68F9;
+  background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #6F68F9), color-stop(100%, #17BDFF));
+  background-image: -webkit-linear-gradient(right bottom, #6F68F9 0%, #17BDFF 100%);
+  background-image: -o-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: linear-gradient(to left top, #6F68F9 0%, #17BDFF 100%);
 }
 .background.background-green {
-  background: #7fb93d;
-  background-image: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background: #7FB93D;
+  background-image: -moz-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
-  background-image: -webkit-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background-image: -o-linear-image-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background-image: -ms-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background-image: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fb93d, endColorstr=#038d4a, GradientType=0);
+  background-image: -webkit-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
+  background-image: -o-linear-image-gradient(top, #7FB93D 0%, #038d4a 100%);
+  background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
+  background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
 }
 .navbar-title {
   font-size: 16px;
@@ -314,7 +311,7 @@ header.main-header {
   font-family: "Noto Sans", sans-serif;
   width: 230px;
   padding-bottom: 0;
-  background: #ffffff;
+  background: #fff;
   position: fixed;
   height: 100%;
   left: 0;
@@ -733,7 +730,7 @@ header.main-header {
 .tabs-wrapper {
   border: none;
   box-shadow: none;
-  background: #ffffff;
+  background: #fff;
   border-radius: 3px;
 }
 .tabs-wrapper > label {
@@ -769,7 +766,7 @@ header.main-header {
   border: 0;
 }
 .tabs-wrapper .tab-body.box {
-  background-color: #ffffff;
+  background-color: #fff;
 }
 .tabs-wrapper form label {
   width: 100%;
@@ -843,7 +840,7 @@ header.main-header {
 }
 .trinity-widget .box-header {
   background: #525975;
-  color: #ffffff;
+  color: #fff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
@@ -927,7 +924,7 @@ header.main-header {
   bottom: -15px;
 }
 .trinity-widget .widgetResizer i {
-  background: #1abb9c;
+  background: #1ABB9C;
 }
 .trinity-widget .widgetResizer i:hover {
   color: #942a25;
@@ -937,7 +934,7 @@ header.main-header {
   text-transform: uppercase;
   padding: 0;
   font-weight: 300;
-  color: #ffffff;
+  color: #525975;
   min-height: 0;
 }
 .trinity-widget footer {
@@ -1003,7 +1000,7 @@ header.main-header {
 }
 .box-widget .box-header {
   background: #525975;
-  color: #ffffff;
+  color: #fff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
@@ -1140,7 +1137,7 @@ header.main-header {
   border-bottom: 1px solid #e5e5e5;
 }
 #dashboard .choice:first-of-type .checkbox:hover {
-  background: #efefef;
+  background: #EFEFEF;
 }
 #dashboard .choice:last-of-type {
   width: 40px;
@@ -1420,7 +1417,7 @@ form label.tooltip:hover:before {
   left: 50px;
   bottom: 28px;
   background: #677093;
-  color: #ffffff;
+  color: #fff;
   font-size: 12px;
   font-weight: 400;
   border-radius: 5px 5px 5px 0;
@@ -1480,6 +1477,10 @@ form textarea.error:focus {
 form select {
   cursor: pointer;
 }
+.form input[type=color],
+form input[type=color] {
+  padding: 0;
+}
 .form .form-center,
 form .form-center {
   margin-left: auto;
@@ -1524,13 +1525,13 @@ form .select:before {
 }
 .form select[disabled],
 form select[disabled] {
-  background: #e0e7f1;
-  border-color: #e0e7f1;
+  background: #E0E7F1;
+  border-color: #E0E7F1;
 }
 .form select[disabled]:hover,
 form select[disabled]:hover {
   cursor: not-allowed;
-  border-color: #e0e7f1;
+  border-color: #E0E7F1;
 }
 .form .checkbox label,
 form .checkbox label {
@@ -1619,7 +1620,7 @@ form .upload-buttons-wrapper .upload-buttons {
 }
 .add-new-box:hover {
   background: #525975;
-  color: #ffffff;
+  color: #fff;
 }
 .control-info {
   border: 1px solid #b9c7dc;
@@ -1757,6 +1758,12 @@ body.body-sidebar main.main-content {
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
 }
+.data-grid.fetching tbody tr:nth-child(odd) {
+  background-color: #f6f8fc;
+}
+.data-grid.fetching tbody tr:nth-child(even) {
+  background-color: initial;
+}
 .data-grid td,
 .data-grid th {
   line-height: 1;
@@ -1770,7 +1777,7 @@ body.body-sidebar main.main-content {
 }
 .data-grid th {
   text-align: left;
-  color: #ffffff;
+  color: #fff;
   font-weight: 700;
   text-transform: capitalize;
   padding-top: 6px;
@@ -1788,6 +1795,7 @@ body.body-sidebar main.main-content {
 }
 .data-grid tr.tjs-grid-custom-row td {
   padding: 0;
+  height: 0;
 }
 .data-grid thead {
   background-color: #525975;
@@ -1801,11 +1809,12 @@ body.body-sidebar main.main-content {
   cursor: pointer;
 }
 .data-grid thead tr.order-by:hover:after {
-  color: #ffffff;
+  color: #fff;
 }
 .data-grid thead .order-by {
   position: relative;
   min-width: 50px;
+  cursor: pointer;
 }
 .data-grid thead .order-by:before {
   position: absolute;
@@ -1814,7 +1823,7 @@ body.body-sidebar main.main-content {
   font-family: "Material Design Icons";
   content: "\F143";
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   opacity: 0.5;
 }
 .data-grid thead .order-by:after {
@@ -1824,7 +1833,7 @@ body.body-sidebar main.main-content {
   font-family: "Material Design Icons";
   content: "\F140";
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   opacity: 0.5;
 }
 .data-grid thead .order-by-asc,
@@ -1839,7 +1848,7 @@ body.body-sidebar main.main-content {
   font-family: "Material Design Icons";
   content: "\F143";
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   opacity: 1;
 }
 .data-grid thead .order-by-asc:after,
@@ -1850,7 +1859,7 @@ body.body-sidebar main.main-content {
   font-family: "Material Design Icons";
   content: "\F140";
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   opacity: 0.5;
 }
 .data-grid thead .order-by-desc,
@@ -1865,7 +1874,7 @@ body.body-sidebar main.main-content {
   font-family: "Material Design Icons";
   content: "\F143";
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   opacity: 0.5;
 }
 .data-grid thead .order-by-desc:after,
@@ -1876,13 +1885,14 @@ body.body-sidebar main.main-content {
   font-family: "Material Design Icons";
   content: "\F140";
   font-size: 20px;
-  color: #ffffff;
+  color: #fff;
   opacity: 1;
 }
 .data-grid tbody tr {
   background: #fff;
 }
 .data-grid tbody tr td {
+  color: #525975;
   height: 43px;
 }
 .data-grid tbody tr:nth-child(even) {
@@ -1911,6 +1921,22 @@ body.body-sidebar main.main-content {
 }
 .data-grid tbody tr:hover .button-small.button-get-details {
   visibility: visible;
+}
+.data-grid .fetching-view {
+  width: 100%;
+  text-align: center;
+}
+.data-grid .fetching-view.absolute {
+  position: absolute;
+  background-color: rgba(128, 149, 191, 0.3);
+}
+.data-grid .empty-view {
+  padding: 10px;
+  text-align: center;
+  color: #525975;
+}
+.data-grid .empty-view img {
+  padding: 40px;
 }
 .data-grid .trinity-warning {
   color: #848ba9;
@@ -2028,7 +2054,7 @@ th .item-menu-button label:active {
   color: #fff;
 }
 .pagination li.active a {
-  background: #6f68f9 !important;
+  background: #6F68F9 !important;
   color: #fff !important;
 }
 .pagination .break {
@@ -2148,7 +2174,7 @@ th .item-menu-button label:active {
   text-decoration: underline;
 }
 .action-cell .actions a:hover {
-  color: #1abb9c;
+  color: #1ABB9C;
   text-decoration: none;
 }
 div.color-viewer {
@@ -2210,7 +2236,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   font-family: "Material Design Icons";
   font-size: 20px;
   content: '\F132';
-  color: #ffffff;
+  color: #fff;
 }
 .table-pagination {
   background-color: #e4ebf7;
@@ -2259,7 +2285,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 .table-pagination .pagination-items ul li:hover {
   border: 1px solid #525975;
   background: #525975;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
 }
 /**************************************
@@ -2280,8 +2306,9 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   line-height: 1;
   border: 1px #dbe2ed solid;
   margin: 5px;
+  white-space: nowrap;
   background: #b0b0b0;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
   transition: .3s;
   font-size: 14px;
@@ -2291,7 +2318,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border-radius: 20px;
 }
 .button:hover {
-  color: #ffffff;
+  color: #fff;
   background: #fbfbff;
 }
 .button-medium {
@@ -2308,17 +2335,17 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   font-weight: 500;
   box-shadow: none;
   border: none;
-  background: #7fb93d;
-  background-image: -moz-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
+  background: #7FB93D;
+  background-image: -moz-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #7fb93d), color-stop(100%, #038d4a));
-  background-image: -webkit-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background-image: -o-linear-image-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background-image: -ms-linear-gradient(top, #7fb93d 0%, #038d4a 100%);
-  background-image: linear-gradient(to bottom, #7fb93d 0%, #038d4a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7fb93d, endColorstr=#038d4a, GradientType=0);
+  background-image: -webkit-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
+  background-image: -o-linear-image-gradient(top, #7FB93D 0%, #038d4a 100%);
+  background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
+  background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
 }
 .button-success:hover {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzY1OTMzMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAyNWIzMCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 .button-info {
@@ -2326,7 +2353,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 }
 .button-primary {
   padding: 9px 13px;
-  color: #ffffff;
+  color: #fff;
   background: #525975;
   text-align: center;
   cursor: pointer;
@@ -2336,32 +2363,32 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 }
 .button-primary:hover {
   background: #3d4257;
-  color: #ffffff;
+  color: #fff;
 }
 .button-primary-inverse {
   padding: 9px 13px;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   cursor: pointer;
   transition: all 0.5s ease;
-  border: 1px solid #ffffff;
+  border: 1px solid #fff;
   border-radius: 20px;
   background: #525975;
 }
 .button-primary-inverse:hover {
-  background: #ffffff;
+  background: #fff;
   color: #525975;
 }
 .button-secondary {
-  background-color: #6f68f9;
-  border: none;
+  background-color: #6F68F9;
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #dbe2ed;
 }
 .button-secondary:hover {
-  background-color: #150af1;
-  border: none;
+  background-color: #4037f7;
 }
 .button-tertiary {
-  background: #1abb9c;
+  background: #1ABB9C;
   border: none;
   box-shadow: none;
 }
@@ -2370,7 +2397,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: none;
 }
 .button-info {
-  background-color: #18bdff;
+  background-color: #18BDFF;
   box-shadow: none;
   border: none;
 }
@@ -2388,7 +2415,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: none;
 }
 .button-red {
-  color: #ffffff;
+  color: #fff;
   background-color: #fa4a28;
   border: 1px dashed #f9350f;
 }
@@ -2397,20 +2424,12 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: 1px solid #ea2a05;
 }
 .button-necktie {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzZmNjhmOSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzE3YmRmZiIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
-  border: 1.5px solid #ffffff;
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%236f68f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2317bdff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #dbe2ed;
 }
 .button-necktie:hover {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQwMzdmNyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwYTJlMyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
-}
-.button-addNew {
-  background-color: #6f68f9;
-  border: 1.5px solid #ffffff;
-  box-shadow: 0 0 0 1px #dbe2ed;
-}
-.button-addNew:hover {
-  background-color: #4037f7;
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234037f7%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2300a2e3%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
 }
 .button-delete:hover {
   background: #fa4a28 !important;
@@ -2423,7 +2442,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 }
 .button-line:hover {
   background: #525975;
-  color: #ffffff;
+  color: #fff;
 }
 .button-disabled,
 .button:disabled {
@@ -2440,16 +2459,16 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   color: #525975;
 }
 .button-grey-gradient {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ViZWVmMyIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NiZDNlMCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
   color: #525975;
 }
 .button-grey-gradient:hover {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NiZDNlMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2FiYjhjZCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb8cd%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 .button-grey-1 {
-  background: #f7f8fc;
+  background: #F7F8FC;
   color: #525975;
   border: none;
 }
@@ -2459,7 +2478,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: none;
 }
 .button-grey-2 {
-  background: #e4eaf6;
+  background: #E4EAF6;
   color: #525975;
   border: none;
 }
@@ -2469,7 +2488,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: none;
 }
 .button-grey-3 {
-  background: #e0e7f1;
+  background: #E0E7F1;
   color: #525975;
   border: none;
 }
@@ -2479,7 +2498,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: none;
 }
 .button-grey-4 {
-  background: #cfd2d9;
+  background: #CFD2D9;
   color: #525975;
   border: none;
 }
@@ -2489,11 +2508,11 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: none;
 }
 .button-orange-gradient {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNzgwMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5NDUyZCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff7801%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f9452d%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 .button-orange-gradient:hover {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NkNjAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VjMjIwNyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cd6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ec2207%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 .button-loading {
@@ -2599,7 +2618,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   text-align: left;
   font-weight: 300;
   padding: 0 0 0 10px;
-  color: #ffffff;
+  color: #fff;
   line-height: 36px;
   background: #525975;
   margin: 0;
@@ -2618,7 +2637,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   font-size: 16px;
   line-height: 36px;
   float: left;
-  color: #ffffff;
+  color: #fff;
 }
 .harmonica .main-panel label[for^="harmonica"] i img {
   height: 20px;
@@ -2633,7 +2652,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   font-family: "Material Design Icons";
   speak: none;
   font-size: 24px;
-  color: #ffffff;
+  color: #fff;
   float: right;
   margin-right: 10px;
 }
@@ -2661,7 +2680,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   font-family: "Material Design Icons";
   speak: none;
   font-size: 24px;
-  color: #ffffff;
+  color: #fff;
   float: right;
   margin-right: 10px;
 }
@@ -2698,7 +2717,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 }
 .box .box-header {
   background: #525975;
-  color: #ffffff;
+  color: #fff;
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
@@ -2924,8 +2943,9 @@ g {
   line-height: 1;
   border: 1px #dbe2ed solid;
   margin: 5px;
+  white-space: nowrap;
   background: #b0b0b0;
-  color: #ffffff;
+  color: #fff;
   cursor: pointer;
   transition: .3s;
   -moz-border-radius: 20px;
@@ -2935,11 +2955,11 @@ g {
   font-size: 11px;
   font-weight: 700;
   padding: 5px 10px;
-  background-color: #6f68f9;
+  background-color: #6F68F9;
   border: none;
 }
 .query-builder .rules-group-header .group-actions .btn:hover {
-  color: #ffffff;
+  color: #fff;
   background: #fbfbff;
 }
 .query-builder .rules-group-header .group-actions .btn:hover {
@@ -2978,8 +2998,8 @@ g {
 }
 .query-builder .group-conditions .btn-primary.active {
   color: #fff;
-  background: #6f68f9;
-  border-color: #6f68f9;
+  background: #6F68F9;
+  border-color: #6F68F9;
 }
 .query-builder .group-conditions .btn-primary.disabled {
   cursor: not-allowed;
@@ -3031,6 +3051,7 @@ g {
   line-height: 1;
   border: 1px #dbe2ed solid;
   margin: 5px;
+  white-space: nowrap;
   background: #b0b0b0;
   cursor: pointer;
   transition: .3s;
@@ -3041,16 +3062,16 @@ g {
   font-weight: 700;
   padding: 5px 10px;
   margin: 2px;
-  color: #ffffff;
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmNzgwMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2Y5NDUyZCIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  color: #fff;
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff7801%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f9452d%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 .query-builder .rule-actions .btn.btn-danger:hover {
-  color: #ffffff;
+  color: #fff;
   background: #fbfbff;
 }
 .query-builder .rule-actions .btn.btn-danger:hover {
-  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIHZpZXdCb3g9IjAgMCAxIDEiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2NkNjAwMCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2VjMjIwNyIvPjwvbGluZWFyR3JhZGllbnQ+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkaWVudCkiIC8+PC9zdmc+');
+  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cd6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ec2207%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
 }
 .query-builder .rule-container {
