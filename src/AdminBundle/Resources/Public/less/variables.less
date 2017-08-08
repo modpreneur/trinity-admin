@@ -112,8 +112,12 @@
 **************************************/
 @widget-space: 10px; //Space between widgets in grid
 
-.green(){
-  .vertical-gradient(@color-green-gradient2, @color-green-gradient1)
+.green() {
+  .vertical-gradient(@color-green-gradient2, @color-green-gradient1);
+}
+
+.green-darker() {
+  .vertical-gradient(darken(@color-green-gradient2, 10%), darken(@color-green-gradient1, 10%));
 }
 //.green(){
 //  background: @color-green;
