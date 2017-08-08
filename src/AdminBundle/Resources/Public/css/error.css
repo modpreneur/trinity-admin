@@ -28,6 +28,9 @@
 /*  Used for e.g. button  */
 /** Gradients **/
 /**************************************
+  Global Element variables
+**************************************/
+/**************************************
   Administration layout
 **************************************/
 /**************************************
@@ -83,7 +86,7 @@
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  border: 1px #dbe2ed solid;
+  border: 1px #d0d2d9 solid;
   margin: 5px;
   white-space: nowrap;
   background: #afafaf;
@@ -160,7 +163,7 @@
 .button-secondary {
   background-color: #6F68F9;
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #dbe2ed;
+  box-shadow: 0 0 0 1px #d0d2d9;
 }
 .button-secondary:hover {
   background-color: #4037f7;
@@ -204,7 +207,7 @@
 .button-necktie {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%236f68f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2317bdff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #dbe2ed;
+  box-shadow: 0 0 0 1px #d0d2d9;
 }
 .button-necktie:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234037f7%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2300a2e3%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
@@ -396,7 +399,7 @@ body .button-success {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  border: 1px #dbe2ed solid;
+  border: 1px #d0d2d9 solid;
   margin: 5px;
   white-space: nowrap;
   background: #afafaf;
@@ -477,7 +480,7 @@ body .button-success-primary-inverse:hover {
 body .button-success-secondary {
   background-color: #6F68F9;
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #dbe2ed;
+  box-shadow: 0 0 0 1px #d0d2d9;
 }
 body .button-success-secondary:hover {
   background-color: #4037f7;
@@ -521,7 +524,7 @@ body .button-success-red:hover {
 body .button-success-necktie {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%236f68f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2317bdff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #dbe2ed;
+  box-shadow: 0 0 0 1px #d0d2d9;
 }
 body .button-success-necktie:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234037f7%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2300a2e3%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');

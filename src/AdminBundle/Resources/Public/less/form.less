@@ -73,7 +73,7 @@
     background: #fff;
 
     &:hover {
-      border: 1px solid darken(@color-border, 8%);
+      border-color: darken(@color-border, 8%);
     }
 
     &.error{
@@ -83,10 +83,6 @@
         border: 1px solid darken(@color-warning, 10%);
       }
     }
-  }
-
-  select {
-    cursor: pointer;
   }
 
   input[type=color] {
@@ -121,6 +117,7 @@
 
 
   .select {
+    cursor: pointer;
     position: relative;
     // ::before, because error message colide with ::after
     &:before {
@@ -133,22 +130,26 @@
       right: 8px;
       pointer-events: none; // to propagate click into <select> element
     }
+
+    select {
+      padding-right: 30px; // dropdown icon wont be mixed with text
+    }
   }
 
   select[disabled] {
-    background: @color-grey-3;
-    border-color: @color-grey-3;
+    background: @color-grey;
+    border-color: @color-grey;
 
     &:hover {
       cursor: not-allowed;
-      border-color: @color-grey-3;
+      border-color: @color-grey;
     }
   }
 
   .checkbox {
     label {
       width: auto;
-      font-weight: 300;
+      font-weight: @noto-light;
     }
 
     input {
@@ -156,29 +157,23 @@
     }
 
     label:before {
-      content: "\F12E";
+      content: "\F12E"; // unchecked
       position: relative;
       vertical-align: middle;
       font-family: @icon-font;
       font-size: 20px;
       margin-right: 5px;
-      color: @color-border;
+      color: @color-grey-light;
     }
 
     input:checked ~ label:before {
-      content: "\F132";
+      content: "\F132"; // checked
       color: @color-primary;
       position: relative;
       vertical-align: middle;
       font-family: @icon-font;
       speak: none;
     }
-  }
-
-  .form-caption {
-    font-weight: 600;
-    color: @color-primary;
-    margin-bottom: 10px;
   }
 
   .form-row {
@@ -200,8 +195,7 @@
   .error-message, .form-msg-wrapper {
     color: @color-warning;
     text-align: right;
-    padding-top: 3px;
-    padding-bottom: 3px;
+    padding: 3px 0;
     font-size: 12px;
   }
 
@@ -239,36 +233,28 @@
   margin-bottom: 20px;
 }
 
-// TODO: what is it?
-// this in info box for form
-.control-info{
+
+/*********************
+  Information message box
+ ********************/
+.control-info {
   border: 1px solid darken(@color-border, 10%);
   background: @color-border;
   padding: 10px;
-  font-size: 14px;
+  font-size: 13px;
   width: 100%;
-  color: @color-primary;
   margin-bottom: 10px;
 
-
-
-  .mdi{
+  .mdi {
     display: block;
     float: left;
     font-size: 30px;
     line-height: 1;
     padding-right: 10px;
-    color: @color-blue;
+    padding-top: 5px;
   }
 }
 
-.collection-add{
-  display: block;
-
-
-  .add-collection-item{
-    .button;
-
-    color: red;
-  }
-}
+/*********************
+  END Information message box
+ ********************/
