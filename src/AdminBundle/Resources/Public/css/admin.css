@@ -836,10 +836,7 @@ header.main-header {
   padding: 3px 5px;
 }
 .trinity-widget .box-body {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px 10px;
 }
 .trinity-widget .box-body p {
   margin-bottom: 10px;
@@ -996,10 +993,7 @@ header.main-header {
   padding: 3px 5px;
 }
 .box-widget .box-body {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px 10px;
 }
 .box-widget .box-body p {
   margin-bottom: 10px;
@@ -2191,6 +2185,10 @@ body.body-sidebar main.main-content {
 .data-grid .error-view img {
   padding: 40px;
 }
+.data-grid .empty-view + .data-grid,
+.data-grid .error-view + .data-grid {
+  padding-top: 14px;
+}
 .data-grid .trinity-warning {
   color: #838ba8;
   cursor: context-menu;
@@ -2345,6 +2343,7 @@ th .item-menu-button label:active {
   padding-left: 15px;
 }
 .record_properties th {
+  color: #515974;
   width: 300px;
 }
 .record_properties td {
@@ -2817,7 +2816,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   /* easeOutQuad */
 }
 .harmonica .main-panel .show-harmonica {
-  padding: 0 14px;
+  padding: 14px;
   font-weight: 300;
   position: relative;
   max-height: 800px;
@@ -2953,10 +2952,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   padding: 3px 5px;
 }
 .box .box-body {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px 10px;
 }
 .box .box-body p {
   margin-bottom: 10px;

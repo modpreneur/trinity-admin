@@ -1,14 +1,12 @@
-{% embed "@TrinityAdmin/box.html.twig" %}
+{% if count >0 %}
+    <div id="{{ name }}-grid" data-config="{{ gridConfiguration }}"></div>
+{% else %}
+    {% embed "@TrinityAdmin/box.html.twig" %}
 
-    {%  block box_header %}
+        {% block box_header %}
+        {% endblock %}
 
-    {% endblock %}
-
-    {% block box_body -%}
-
-        {% if count >0 %}
-            <div id="{{ name }}-grid" data-config="{{ gridConfiguration }}"></div>
-        {% else %}
+        {% block box_body -%}
             <div class="row">
                 <div class="xlarge-24 margin-auto">
                     <div class="xlarge-10 margin-top-20">
@@ -22,6 +20,6 @@
                     </div>
                 </div>
             </div>
-        {% endif %}
-    {% endblock %}
-{% endembed %}
+        {% endblock %}
+    {% endembed %}
+{% endif %}

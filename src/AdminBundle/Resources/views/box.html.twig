@@ -13,7 +13,7 @@
 
 {% block box %}
     <div class="box {{ class }}">
-        {% if (block("box_header") is not empty) or block("box_header") != "" %}
+        {% if (block("box_header")|trim is not empty) or block("box_header")|trim != "" %}
             <h3 class="box-header">
                 {% block box_header %}{% endblock %}
             </h3>
