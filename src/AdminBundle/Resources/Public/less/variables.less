@@ -1,3 +1,4 @@
+@import (once) "helper";
 /**************************************
   SHAME
 **************************************/
@@ -111,26 +112,31 @@
 **************************************/
 @widget-space: 10px; //Space between widgets in grid
 
-
 .green(){
-  background: @color-green;
-  background-image: -moz-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, @color-green-gradient1), color-stop(100%, @color-green-gradient2));
-  background-image: -webkit-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
-  background-image: -o-linear-image-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
-  background-image: -ms-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
-  background-image: linear-gradient(to bottom, @color-green-gradient1 0%, @color-green-gradient2 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color-green-gradient1, endColorstr=@color-green-gradient2, GradientType=0 );
+  .vertical-gradient(@color-green-gradient2, @color-green-gradient1)
+}
+//.green(){
+//  background: @color-green;
+//  background-image: -moz-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+//  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, @color-green-gradient1), color-stop(100%, @color-green-gradient2));
+//  background-image: -webkit-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+//  background-image: -o-linear-image-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+//  background-image: -ms-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
+//  background-image: linear-gradient(to bottom, @color-green-gradient1 0%, @color-green-gradient2 100%);
+//  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@color-green-gradient1, endColorstr=@color-green-gradient2, GradientType=0 );
+//}
+.necktie(){
+  .diagonal-left-top-gradient(@color-necktie-gradient2, @color-necktie-gradient1);
 }
 
-.necktie(){
-  background-color: @color-necktie-gradient1;
-  background-image: -moz-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, @color-necktie-gradient1), color-stop(100%, @color-necktie-gradient2));
-  background-image: -webkit-linear-gradient(right bottom, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: -o-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: -ms-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-  background-image: linear-gradient(to left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
-}
+//.necktie(){
+//  background-color: @color-necktie-gradient1;
+//  background-image: -moz-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+//  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, @color-necktie-gradient1), color-stop(100%, @color-necktie-gradient2));
+//  background-image: -webkit-linear-gradient(right bottom, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+//  background-image: -o-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+//  background-image: -ms-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+//  background-image: linear-gradient(to left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
+//}
 
 
