@@ -62,12 +62,6 @@
   filter: brightness(@percent);
 }
 
-// TODO: extra? shoud it be in box?
-.box {
-  //border: 1px solid @color-border;
-  background: #fff;
-}
-
 .animation(@name, @time, @s, @e) {
   -webkit-animation: @name @time @s @e;
   -moz-animation: @name @time @s @e;
@@ -80,28 +74,27 @@
   border-radius: @size;
 }
 
-// TODO: extra?
-.navigation-icons() {
-  position: relative;
-  z-index: 10;
-  border-radius: 40px;
-  width: 33px;
-  height: 33px;
-  transition: background .3s ease-in-out;
-  display: table;
-
-  i, span {
-    color: #fff;
-    font-weight: 600;
-    font-size: 20px;
-    text-align: center;
-    vertical-align: middle;
-    background: transparent;
-    display: table-cell;
-  }
+.vertical-gradient(@start-color, @end-color){
+  background: @end-color;
+  background-image: -moz-linear-gradient(top, @end-color 0%, @start-color 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, @end-color), color-stop(100%, @start-color));
+  background-image: -webkit-linear-gradient(top, @end-color 0%, @start-color 100%);
+  background-image: -o-linear-image-gradient(top, @end-color 0%, @start-color 100%);
+  background-image: -ms-linear-gradient(top, @end-color 0%, @start-color 100%);
+  background-image: linear-gradient(to bottom, @end-color 0%, @start-color 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr=@end-color, endColorstr=@start-color, GradientType=0 );
 }
 
-// TODO: bowtie? or leave it?
+.diagonal-left-top-gradient(@start-color, @end-color){
+  background-color: @end-color;
+  background-image: -moz-linear-gradient(left top, @end-color 0%, @start-color 100%);
+  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, @end-color), color-stop(100%, @start-color));
+  background-image: -webkit-linear-gradient(right bottom, @end-color 0%, @start-color 100%);
+  background-image: -o-linear-gradient(left top, @end-color 0%, @start-color 100%);
+  background-image: -ms-linear-gradient(left top, @end-color 0%, @start-color 100%);
+  background-image: linear-gradient(to left top, @end-color 0%, @start-color 100%);
+}
+
 .pointer {
   cursor: pointer;
 }

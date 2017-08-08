@@ -16,14 +16,6 @@
   margin-left: 5px;
 }
 
-:focus {
-  outline: none;
-}
-
-::-moz-focus-inner {
-  border: 0;
-}
-
 .button-parameters() {
   text-align: center;
   font-weight: @noto-regular;
@@ -33,16 +25,10 @@
   margin: 5px;
   white-space: nowrap;
 
-  background: lighten(desaturate(@color-primary, 100%), 30%);
   color: @color-white;
 
   cursor: pointer;
   transition: .3s;
-
-  &:hover {
-    color: @color-white;
-    background: lighten(@color-secondary, 30%);
-  }
 }
 
 .button {
@@ -57,29 +43,22 @@
     width: auto;
   }
 
-  &-small{
+  &-small {
     padding: 6px 15px;
     font-size: 10px;
     width: auto;
   }
 
   &-success {
-    box-shadow: none;
-    border: none;
     .green();
 
     &:hover {
-      background-image: svg-gradient(to bottom, darken(@color-green, 10%), darken(@color-darkgreen, 10%));
+      .green-darker();
       border: none;
     }
   }
 
-  &-info {
-    box-shadow: none;
-  }
-
-  &-primary{
-    padding: 9px 13px;
+  &-primary {
     color: @color-white;
     background: @color-primary;
 
@@ -89,26 +68,9 @@
     border: 1px solid @color-primary;
     border-radius: 20px;
 
-    &:hover{
+    &:hover {
       background: @color-primary-hover;
       color: @color-white;
-    }
-  }
-
-  &-primary-inverse{
-    padding: 9px 13px;
-    color: @color-white;
-
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    border: 1px solid @color-white;
-    border-radius: 20px;
-    background: @color-primary;
-
-    &:hover{
-      background: @color-white;
-      color: @color-primary;
     }
   }
 
@@ -134,16 +96,6 @@
     }
   }
 
-  &-info {
-    background-color: @color-info;
-    box-shadow: none;
-    border: none;
-    &:hover {
-      background-color: darken(@color-info, 20%);
-      border: none;
-    }
-  }
-
   &-danger {
     background-color: @color-danger;
     box-shadow: none;
@@ -154,18 +106,8 @@
     }
   }
 
-  &-red {
-    color: @color-white;
-    background-color: @color-red;
-    border: 1px dashed darken(@color-red, 5%);
-    &:hover {
-      background-color: darken(@color-red, 5%);
-      border: 1px solid darken(@color-red, 10%);
-    }
-  }
-
   &-necktie {
-    background-image: svg-gradient(to bottom, @color-necktie-gradient1, @color-necktie-gradient2);
+    .necktie();
 
     border: 1.5px solid @color-white;
     box-shadow: 0 0 0 1px @color-border;

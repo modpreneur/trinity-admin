@@ -6,9 +6,6 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
     Functions - mixins
 
 **************************************/
-.box {
-  background: #fff;
-}
 .pointer {
   cursor: pointer;
 }
@@ -70,6 +67,12 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 @font-face {
   font-family: "Noto Sans";
   src: url('../fonts/NotoSans/NotoSans-Regular.ttf') format("truetype");
+}
+:focus {
+  outline: none;
+}
+::-moz-focus-inner {
+  border: 0;
 }
 html {
   width: 100%;
@@ -744,9 +747,6 @@ header.main-header {
 .tabs-wrapper .tab-body .box {
   background-color: #fff;
 }
-.tabs-wrapper .tab-body .box-header {
-  margin-bottom: 10px;
-}
 .tabs-wrapper .tab-body .box-title {
   font-size: 1.3em;
   padding-left: 0;
@@ -845,10 +845,7 @@ header.main-header {
   padding: 3px 5px;
 }
 .trinity-widget .box-body {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px 10px;
 }
 .trinity-widget .box-body p {
   margin-bottom: 10px;
@@ -1005,10 +1002,7 @@ header.main-header {
   padding: 3px 5px;
 }
 .box-widget .box-body {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px 10px;
 }
 .box-widget .box-body p {
   margin-bottom: 10px;
@@ -1379,6 +1373,12 @@ form label a {
   font-weight: 300;
   text-decoration: underline;
 }
+.form label.required:after,
+form label.required:after {
+  content: "*";
+  color: #515974;
+  font-weight: 700;
+}
 .form label.tooltip,
 form label.tooltip {
   display: inline;
@@ -1603,287 +1603,28 @@ form .upload-buttons-wrapper .upload-buttons {
   background: #515974;
   color: #fff;
 }
+/*********************
+  Information message box
+ ********************/
 .control-info {
   border: 1px solid #b4b7c2;
   background: #d0d2d9;
   padding: 10px;
-  font-size: 12px;
+  font-size: 13px;
   width: 100%;
+  margin-bottom: 10px;
 }
 .control-info .mdi {
   display: block;
   float: left;
   font-size: 30px;
-  padding-right: 10px;
-}
-.collection-add {
-  display: block;
-}
-.collection-add .add-collection-item {
-  text-align: center;
-  font-weight: 400;
-  text-decoration: none;
   line-height: 1;
-  border: 1px #d0d2d9 solid;
-  margin: 5px;
-  white-space: nowrap;
-  background: #afafaf;
-  color: #fff;
-  cursor: pointer;
-  transition: .3s;
-  font-size: 14px;
-  padding: 9px 35px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
-  color: red;
+  padding-right: 10px;
+  padding-top: 5px;
 }
-.collection-add .add-collection-item:hover {
-  color: #fff;
-  background: #fbfbff;
-}
-.collection-add .add-collection-item-medium {
-  padding: 8px 18px;
-  font-size: 12px;
-  width: auto;
-}
-.collection-add .add-collection-item-small {
-  padding: 6px 15px;
-  font-size: 10px;
-  width: auto;
-}
-.collection-add .add-collection-item-success {
-  box-shadow: none;
-  border: none;
-  background: #7FB93D;
-  background-image: -moz-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #7FB93D), color-stop(100%, #038d4a));
-  background-image: -webkit-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
-  background-image: -o-linear-image-gradient(top, #7FB93D 0%, #038d4a 100%);
-  background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
-  background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
-}
-.collection-add .add-collection-item-success:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: none;
-}
-.collection-add .add-collection-item-info {
-  box-shadow: none;
-}
-.collection-add .add-collection-item-primary {
-  padding: 9px 13px;
-  color: #fff;
-  background: #515974;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: 1px solid #515974;
-  border-radius: 20px;
-}
-.collection-add .add-collection-item-primary:hover {
-  background: #3c4256;
-  color: #fff;
-}
-.collection-add .add-collection-item-primary-inverse {
-  padding: 9px 13px;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  background: #515974;
-}
-.collection-add .add-collection-item-primary-inverse:hover {
-  background: #fff;
-  color: #515974;
-}
-.collection-add .add-collection-item-secondary {
-  background-color: #6F68F9;
-  border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #d0d2d9;
-}
-.collection-add .add-collection-item-secondary:hover {
-  background-color: #4037f7;
-}
-.collection-add .add-collection-item-tertiary {
-  background: #1ABB9C;
-  border: none;
-  box-shadow: none;
-}
-.collection-add .add-collection-item-tertiary:hover {
-  background: #117864;
-  border: none;
-}
-.collection-add .add-collection-item-info {
-  background-color: #17BDFF;
-  box-shadow: none;
-  border: none;
-}
-.collection-add .add-collection-item-info:hover {
-  background-color: #007eb0;
-  border: none;
-}
-.collection-add .add-collection-item-danger {
-  background-color: #c93236;
-  box-shadow: none;
-  border: none;
-}
-.collection-add .add-collection-item-danger:hover {
-  background-color: #8c2326;
-  border: none;
-}
-.collection-add .add-collection-item-red {
-  color: #fff;
-  background-color: #fa4a28;
-  border: 1px dashed #f9350f;
-}
-.collection-add .add-collection-item-red:hover {
-  background-color: #f9350f;
-  border: 1px solid #ea2a05;
-}
-.collection-add .add-collection-item-necktie {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%236f68f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2317bdff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #d0d2d9;
-}
-.collection-add .add-collection-item-necktie:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%234037f7%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2300a2e3%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-}
-.collection-add .add-collection-item-delete:hover {
-  background: #fa4a28 !important;
-  border: 1px solid #ea2a05 !important;
-}
-.collection-add .add-collection-item-line {
-  border: 1px solid #515974;
-  background: transparent;
-  color: #515974;
-}
-.collection-add .add-collection-item-line:hover {
-  background: #515974;
-  color: #fff;
-}
-.collection-add .add-collection-item-disabled,
-.collection-add .add-collection-item:disabled {
-  border: 1px solid #515974;
-  background: transparent;
-  color: #515974;
-  padding: 9px 13.5px;
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-.collection-add .add-collection-item-disabled:hover,
-.collection-add .add-collection-item:disabled:hover {
-  background: transparent;
-  color: #515974;
-}
-.collection-add .add-collection-item-grey-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ebeef3%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23cbd2df%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: none;
-  color: #515974;
-}
-.collection-add .add-collection-item-grey-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cbd3e0%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23abb7cc%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: none;
-}
-.collection-add .add-collection-item-grey-1 {
-  background: #F7F8FC;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-grey-1:hover {
-  background: #d2d8ee;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-grey-2 {
-  background: #E4EAF6;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-grey-2:hover {
-  background: #becce9;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-grey-3 {
-  background: #E0E7F1;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-grey-3:hover {
-  background: #bdcce1;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-grey-4 {
-  background: #CFD2D9;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-grey-4:hover {
-  background: #b3b7c2;
-  color: #515974;
-  border: none;
-}
-.collection-add .add-collection-item-orange-gradient {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f9452d%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: none;
-}
-.collection-add .add-collection-item-orange-gradient:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cc6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ec2207%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
-  border: none;
-}
-.collection-add .add-collection-item-loading {
-  background: #515974;
-}
-.collection-add .add-collection-item-loading:after {
-  content: "\F450";
-  speak: none;
-  min-width: 16px;
-  display: inline-block;
-  margin-left: 5px;
-  font-family: "Material Design Icons";
-  -webkit-animation: spin 3s linear infinite;
-  -moz-animation: spin 3s linear infinite;
-  animation: spin 3s linear infinite;
-}
-.collection-add .add-collection-item-loading:hover {
-  background: #272b38;
-}
-.collection-add .add-collection-item-success:after {
-  content: '\F12C';
-  font-family: "Material Design Icons";
-  speak: none;
-  min-width: 16px;
-  display: inline-block;
-  margin-left: 5px;
-}
-.collection-add .add-collection-item-error:after {
-  content: '\F02A';
-  font-family: "Material Design Icons";
-  speak: none;
-  min-width: 16px;
-  display: inline-block;
-  margin-left: 5px;
-}
-.collection-add .add-collection-item-ready.button-save:after {
-  content: '\F193';
-  font-family: "Material Design Icons";
-  speak: none;
-  min-width: 16px;
-  display: inline-block;
-  margin-left: 5px;
-}
-.collection-add .add-collection-item-ready.button-remove:after {
-  content: '\F1C0';
-  font-family: "Material Design Icons";
-  speak: none;
-  min-width: 16px;
-  display: inline-block;
-  margin-left: 5px;
-}
+/*********************
+  END Information message box
+ ********************/
 /**************************************
 
   Navigation box for content in page header box
@@ -2190,6 +1931,10 @@ body.body-sidebar main.main-content {
 .data-grid .error-view img {
   padding: 40px;
 }
+.data-grid .empty-view + .data-grid,
+.data-grid .error-view + .data-grid {
+  padding-top: 14px;
+}
 .data-grid .trinity-warning {
   color: #838ba8;
   cursor: context-menu;
@@ -2344,6 +2089,7 @@ th .item-menu-button label:active {
   padding-left: 15px;
 }
 .record_properties th {
+  color: #515974;
   width: 300px;
 }
 .record_properties td {
@@ -2520,12 +2266,6 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   Default buttons for forms and others
 
 **************************************/
-:focus {
-  outline: none;
-}
-::-moz-focus-inner {
-  border: 0;
-}
 .button {
   text-align: center;
   font-weight: 400;
@@ -2534,7 +2274,6 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border: 1px #d0d2d9 solid;
   margin: 5px;
   white-space: nowrap;
-  background: #afafaf;
   color: #fff;
   cursor: pointer;
   transition: .3s;
@@ -2543,10 +2282,6 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
-}
-.button:hover {
-  color: #fff;
-  background: #fbfbff;
 }
 .button-medium {
   padding: 8px 18px;
@@ -2559,8 +2294,6 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   width: auto;
 }
 .button-success {
-  box-shadow: none;
-  border: none;
   background: #7FB93D;
   background-image: -moz-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #7FB93D), color-stop(100%, #038d4a));
@@ -2571,14 +2304,17 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
 }
 .button-success:hover {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23659330%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23025b30%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background: #659330;
+  background-image: -moz-linear-gradient(top, #659330 0%, #025b30 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #659330), color-stop(100%, #025b30));
+  background-image: -webkit-linear-gradient(top, #659330 0%, #025b30 100%);
+  background-image: -o-linear-image-gradient(top, #659330 0%, #025b30 100%);
+  background-image: -ms-linear-gradient(top, #659330 0%, #025b30 100%);
+  background-image: linear-gradient(to bottom, #659330 0%, #025b30 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#659330, endColorstr=#025b30, GradientType=0);
   border: none;
 }
-.button-info {
-  box-shadow: none;
-}
 .button-primary {
-  padding: 9px 13px;
   color: #fff;
   background: #515974;
   text-align: center;
@@ -2590,20 +2326,6 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 .button-primary:hover {
   background: #3c4256;
   color: #fff;
-}
-.button-primary-inverse {
-  padding: 9px 13px;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: 1px solid #fff;
-  border-radius: 20px;
-  background: #515974;
-}
-.button-primary-inverse:hover {
-  background: #fff;
-  color: #515974;
 }
 .button-secondary {
   background-color: #6F68F9;
@@ -2622,15 +2344,6 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   background: #117864;
   border: none;
 }
-.button-info {
-  background-color: #17BDFF;
-  box-shadow: none;
-  border: none;
-}
-.button-info:hover {
-  background-color: #007eb0;
-  border: none;
-}
 .button-danger {
   background-color: #c93236;
   box-shadow: none;
@@ -2640,17 +2353,14 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   background-color: #8c2326;
   border: none;
 }
-.button-red {
-  color: #fff;
-  background-color: #fa4a28;
-  border: 1px dashed #f9350f;
-}
-.button-red:hover {
-  background-color: #f9350f;
-  border: 1px solid #ea2a05;
-}
 .button-necktie {
-  background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%236f68f9%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2317bdff%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
+  background-color: #6F68F9;
+  background-image: -moz-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: -webkit-gradient(left top, right bottom, color-stop(0%, #6F68F9), color-stop(100%, #17BDFF));
+  background-image: -webkit-linear-gradient(right bottom, #6F68F9 0%, #17BDFF 100%);
+  background-image: -o-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: -ms-linear-gradient(left top, #6F68F9 0%, #17BDFF 100%);
+  background-image: linear-gradient(to left top, #6F68F9 0%, #17BDFF 100%);
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
 }
@@ -2816,7 +2526,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   /* easeOutQuad */
 }
 .harmonica .main-panel .show-harmonica {
-  padding: 0 14px;
+  padding: 14px;
   font-weight: 300;
   position: relative;
   max-height: 800px;
@@ -2908,6 +2618,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 
 **************************************/
 .box {
+  background: #fff;
   position: relative;
   margin-bottom: 20px;
   border-radius: 4px;
@@ -2952,10 +2663,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   padding: 3px 5px;
 }
 .box .box-body {
-  padding-bottom: 20px;
-  padding-top: 20px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 20px 10px;
 }
 .box .box-body p {
   margin-bottom: 10px;
@@ -2969,6 +2677,13 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border-top: 1px solid #d0d2d9;
   padding: 10px 10px;
   font-size: 12px;
+}
+.tab-body-wrapper .box .data-grid {
+  margin-left: -10px;
+  margin-right: -10px;
+  width: 102%;
+  border-radius: 0;
+  margin-bottom: 10px;
 }
 /**
 
@@ -3161,7 +2876,6 @@ g {
   border: 1px #d0d2d9 solid;
   margin: 5px;
   white-space: nowrap;
-  background: #afafaf;
   color: #fff;
   cursor: pointer;
   transition: .3s;
@@ -3174,10 +2888,6 @@ g {
   padding: 5px 10px;
   background-color: #6F68F9;
   border: none;
-}
-.query-builder .rules-group-header .group-actions .btn:hover {
-  color: #fff;
-  background: #fbfbff;
 }
 .query-builder .rules-group-header .group-actions .btn:hover {
   background-color: #4037f7;
@@ -3269,7 +2979,6 @@ g {
   border: 1px #d0d2d9 solid;
   margin: 5px;
   white-space: nowrap;
-  background: #afafaf;
   cursor: pointer;
   transition: .3s;
   -moz-border-radius: 20px;
@@ -3282,10 +2991,6 @@ g {
   color: #fff;
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23ff7800%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23f9452d%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
   border: none;
-}
-.query-builder .rule-actions .btn.btn-danger:hover {
-  color: #fff;
-  background: #fbfbff;
 }
 .query-builder .rule-actions .btn.btn-danger:hover {
   background-image: url('data:image/svg+xml,%3C%3Fxml%20version%3D%221.0%22%20%3F%3E%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20version%3D%221.1%22%20width%3D%22100%25%22%20height%3D%22100%25%22%20viewBox%3D%220%200%201%201%22%20preserveAspectRatio%3D%22none%22%3E%3ClinearGradient%20id%3D%22gradient%22%20gradientUnits%3D%22userSpaceOnUse%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%220%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%23cc6000%22%2F%3E%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%23ec2207%22%2F%3E%3C%2FlinearGradient%3E%3Crect%20x%3D%220%22%20y%3D%220%22%20width%3D%221%22%20height%3D%221%22%20fill%3D%22url(%23gradient)%22%20%2F%3E%3C%2Fsvg%3E');
