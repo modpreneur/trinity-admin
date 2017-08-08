@@ -20,6 +20,8 @@
 
   label{
     width: 100%;
+
+
   }
 
   ul {
@@ -130,6 +132,17 @@
 
     .fix-a {
       display: none;
+    }
+
+    .active{
+      a{
+        background: transparent !important;
+        text-decoration: underline;
+      }
+
+      &:before{
+        display: none !important;
+      }
     }
 
     input:checked ~ .a {
