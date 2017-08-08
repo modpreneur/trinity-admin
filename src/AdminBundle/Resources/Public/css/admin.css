@@ -738,9 +738,6 @@ header.main-header {
 .tabs-wrapper .tab-body .box {
   background-color: #fff;
 }
-.tabs-wrapper .tab-body .box-header {
-  margin-bottom: 10px;
-}
 .tabs-wrapper .tab-body .box-title {
   font-size: 1.3em;
   padding-left: 0;
@@ -1607,14 +1604,18 @@ form .upload-buttons-wrapper .upload-buttons {
   border: 1px solid #b9c7dc;
   background: #dbe2ed;
   padding: 10px;
-  font-size: 12px;
+  font-size: 14px;
   width: 100%;
+  color: #515974;
+  margin-bottom: 10px;
 }
 .control-info .mdi {
   display: block;
   float: left;
   font-size: 30px;
+  line-height: 1;
   padding-right: 10px;
+  color: #17BDFF;
 }
 .collection-add {
   display: block;
@@ -2969,6 +2970,13 @@ th:first-child input[type="checkbox"]:checked + label span:before {
   border-top: 1px solid #dbe2ed;
   padding: 10px 10px;
   font-size: 12px;
+}
+.tab-body-wrapper .box .data-grid {
+  margin-left: -10px;
+  margin-right: -10px;
+  width: 102%;
+  border-radius: 0;
+  margin-bottom: 10px;
 }
 /**
 
