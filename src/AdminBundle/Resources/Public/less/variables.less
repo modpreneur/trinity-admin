@@ -1,120 +1,116 @@
-/**
-  Font
-*/
+/**************************************
+  SHAME
+**************************************/
+@color-border: #dbe2ed; // todo @TomasJancar odkud ? pro co?
+@page-padding: 10px;
 
+/** END SHAME */
+
+
+/**************************************
+  FONT (Noto)
+**************************************/
 @font: "Noto Sans", sans-serif;
 @icon-font: "Material Design Icons";
 
-/**
-  End font
-*/
+@noto-thin: 100;
+@noto-light: 300;
+@noto-regular: 400;
+@noto-bold: 700;
 
-@page-padding: 10px;
-@color-border: #ededed;
+/** End font */
+
 
 /**************************************
   Global parameters
 **************************************/
 
-/*  Colors - primary,secondary... */
-@background-color: #e4ebf7;
-
-@color-primary: #525975;
-@color-primary-hover: darken(@color-primary, 10%);
-@color-primary-inverse: inverse(@color-primary);
-@color-secondary: #6F68F9;
-@color-tertiary: #1ABB9C;
-
-@color-red: #fa4a28;
-
-@color-blue: #17BDFF;
-@color-necktie-gradient1: @color-secondary;
-@color-necktie-gradient2: @color-blue;
-
+/* Basic Colors  */
+@color-white: #fff;
+// TODO remove all color-grey-{num}
 @color-grey-1: #F7F8FC;
 @color-grey-2: #E4EAF6;
 @color-grey-3: #E0E7F1;
 @color-grey-4: #CFD2D9;
-@color-grey-gradient1: #EBEEF3;
-@color-grey-gradient2: #CBD3E0;
 
-@color-orange-gradient1: #ff7801;
-@color-orange-gradient2: #f9452d;
+@color-grey-lighter: #f6f8fc;
+@color-grey-light: #e4ebf7; // for back background, disabled line button, unchecked checkbox/radio buttons
+@color-grey: #e1e7f0; // for disabled inputs
+@color-grey-dark: #d0d2d9; // for input borders
 
-@color-border: #dbe2ed;
-@color-white: #fff;
-
+@color-orange: #ff7800;
+@color-orange-darker: #f9452d;
+@color-red: #fa4a28; // todo @TomasJancar odkud?
 @color-green: #7FB93D;
 @color-darkgreen: #038d4a;
-@color-green-gradient1: @color-green;
-@color-green-gradient2: @color-darkgreen;
+@color-blue: #17BDFF;
 
+/** Design palete Colors (primary, secondary, tertiary) **/
+@color-primary: #515974;
+@color-primary-hover: darken(@color-primary, 10%);
+@color-secondary: #6F68F9;
+@color-tertiary: #1ABB9C;
 
 /*  Used for e.g. button  */
-@color-info: #18BDFF;
-@color-warning: #ff8939;
-@color-danger: #c93236;
+@color-info: @color-blue;
+@color-warning: #fc5e17;
+@color-danger: #c93236; // Not from PSD
 @color-success: #5da423;
-@color-success-notification: #f6e064;
 
-/*  Fonts  */
-@global-font-color: #303030;
-@global-header-color: #2d323e;
-@font-size-button: 18px;
+/** Gradients **/
+@color-grey-gradient1: #ebeef3; // special grey 1 only for gradient
+@color-grey-gradient2: #cbd2df; // special grey 2 only for gradient
+@color-orange-gradient1: @color-orange;
+@color-orange-gradient2: @color-orange-darker;
+@color-green-gradient1: @color-green;
+@color-green-gradient2: @color-darkgreen;
+@color-necktie-gradient1: @color-secondary;
+@color-necktie-gradient2: @color-blue;
 
-/*  Tabs  */
-@tabs-color-label: #7d7d7d;
+/**************************************
+  Administration layout
+**************************************/
+@background-color: #e4ebf7; // grey background from other pages
 
-/*  Grid  */
-@grid-even-row-color: #f6f8fc;
-@grid-row-min-height: 43px;
-
-/*  Widgets  */
-@widget-space: 10px; //Space between widgets in grid
 
 /**************************************
   Navbar parameters
 **************************************/
 @navbar-height: 50px;
-@navbar-font-color: #a0a2a5;
-@navbar-font-icon-size: 20px;
 
 /*  Logo  */
 @logo-height: 30px;
 @logo-width: @logo-height;
 
-/* Search */
 
 /**************************************
   Sidebar parameters
 **************************************/
 
 @sidebar-width: 230px;
-@sidebar-back-color: #2d323e;
-
-@sidebar-row-height: 50px;
-@sidebar-icon-font-size: 21px;
 @sidebar-font-size: 14px;
-@sidebar-link-color: #595959;
+@sidebar-drop-font-size: 13px;
+@sidebar-icon-font-size: 21px;
+
 
 /**************************************
   Grid parameters
 **************************************/
-@header-font-color: #fff;
+@header-font-color: @color-white;
+@grid-even-row-color: @color-grey-lighter;
+@grid-row-min-height: 43px;
+
 
 /**************************************
-  Noto font-weight
+  Widgets
 **************************************/
-@noto-thin: 100;
-@noto-light: 300;
-@noto-regular: 400;
-@noto-medium: 500;
-@noto-bold: 700;
+@widget-space: 10px; //Space between widgets in grid
+
 
 .green(){
   background: @color-green;
   background-image: -moz-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(127,185,61,1)), color-stop(100%, @color-green-gradient2));
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, @color-green-gradient1), color-stop(100%, @color-green-gradient2));
   background-image: -webkit-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
   background-image: -o-linear-image-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
   background-image: -ms-linear-gradient(top, @color-green-gradient1 0%, @color-green-gradient2 100%);
@@ -131,3 +127,5 @@
   background-image: -ms-linear-gradient(left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
   background-image: linear-gradient(to left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
 }
+
+
