@@ -12,7 +12,6 @@
   font-family: @icon-font;
   speak: none;
   min-width: 16px;
-  font-size: @font-size-button - 3;
   display: inline-block;
   margin-left: 5px;
 }
@@ -27,7 +26,7 @@
 
 .button-parameters() {
   text-align: center;
-  font-weight: @noto-medium;
+  font-weight: @noto-regular;
   text-decoration: none;
   line-height: 1;
   border: 1px @color-border solid;
@@ -65,7 +64,6 @@
   }
 
   &-success {
-    font-weight: @noto-medium;
     box-shadow: none;
     border: none;
     .green();
@@ -324,12 +322,6 @@
       }
     }
   }
-}
-
-// Query builder
-.button-search {
-  min-width: 200px;
-  background: @sidebar-back-color;
 }
 
 .btn-group.group-conditions {
