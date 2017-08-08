@@ -7,8 +7,12 @@
 @import (once) "helper";
 @import (once) "variables";
 
+.checkbox-none{
+  display: none;
+}
+
 #flash-message-container {
-  width: 328px;
+  width: 200px;
   height: calc(~"100% - (" @navbar-height ~" + 10px)");
   will-change: contents;
   position: fixed;
@@ -43,7 +47,69 @@
 
     background: #fff !important;
     border-bottom: none !important;
-    border-radius: 0 !important;
+    border-radius: 10px;
+
+    .alert-label{
+      padding: 8px !important;
+      cursor: pointer;
+      font-size: 18px;
+      width: 100%;
+
+      i{
+        float: right;
+      }
+
+      &:hover{
+        color: darken(@color-red, 10%);
+      }
+    }
+
+
+    .message-icon{
+      text-align: center;
+      clear: both;
+      margin-top: -20px;
+      i{
+        font-size: 80px;
+        line-height: 1;
+      }
+    }
+
+    .message-text{
+      padding-top: 5px;
+      text-align: center;
+      font-size: 18px;
+      color: @color-primary;
+      padding-bottom: 20px;
+      font-weight: 800;
+    }
+
+
+    &-danger, &-error{
+      .message-icon{
+        .mdi:before{
+          content: "\F15C";
+          color: @color-red;
+        }
+      }
+
+      .message-text{
+        color: @color-red;
+      }
+    }
+
+    &-success{
+      .alert-label{
+        visibility: hidden;
+      }
+
+      .message-icon{
+        .mdi:before{
+          content: "\F12C";
+        }
+      }
+    }
+
 
     &:hover {
       -webkit-animation-play-state: paused;
@@ -135,74 +201,8 @@
         }
       }
     }
-
-    .alert-label {
-      position: absolute;
-      right: 0;
-      top: 0;
-      padding: 0;
-
-      i, i.ff-cross2, i.tiecons, i.trinity {
-        font-size: 10px !important;
-        line-height: 12px;
-        z-index: 10;
-        margin: 7px;
-
-        &:before {
-          content: '\e90f';
-          font-family: trinity;
-          font-weight: 100;
-        }
-      }
-    }
   }
 }
-
-.progressAnimate() {
-  0% {
-    width: 0;
-    opacity: 0.7;
-  }
-  99% {
-    opacity: 0.7;
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-    width: 100%;
-  }
-}
-
-@-webkit-keyframes progressAnimate {
-  .progressAnimate();
-}
-@-moz-keyframes progressAnimate {
-  .progressAnimate();
-}
-@-ms-keyframes progressAnimate {
-  .progressAnimate();
-}
-@keyframes progressAnimate {
-  .progressAnimate();
-}
-
-.progres {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-
-.progres .progress-line {
-  width: 0;
-  background-color: #c01f25;
-  height: 2px;
-  -webkit-animation: progressAnimate 4.2s 1.5s linear;
-  -moz-animation: progressAnimate 4.2s 1.5s linear;
-  -ms-animation: progressAnimate 4.2s 1.5s linear;
-  animation: progressAnimate 4.2s 1.5s linear;
-}
-
 
 .keyframes(@left: 400px) {
   0% {

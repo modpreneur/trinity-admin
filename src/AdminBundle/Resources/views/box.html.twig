@@ -14,9 +14,9 @@
 {% block box %}
     <div class="box {{ class }}">
         {% if (block("box_header") is not empty) or block("box_header") != "" %}
-            <div class="box-header">
+            <h3 class="box-header">
                 {% block box_header %}{% endblock %}
-            </div>
+            </h3>
         {% endif %}
 
         <div class="box-body">

@@ -446,8 +446,11 @@ header.main-header {
   Alerts messages from flashBag or JS on right side
 
 **************************************/
+.checkbox-none {
+  display: none;
+}
 #flash-message-container {
-  width: 328px;
+  width: 200px;
   height: calc(100% - ( 50px  + 10px));
   will-change: contents;
   position: fixed;
@@ -479,7 +482,51 @@ header.main-header {
   box-shadow: 0 12.5px 16.5px 2.5px rgba(0, 0, 0, 0.13);
   background: #fff !important;
   border-bottom: none !important;
-  border-radius: 0 !important;
+  border-radius: 10px;
+}
+#flash-message-container > div.alert .alert-label {
+  padding: 8px !important;
+  cursor: pointer;
+  font-size: 18px;
+  width: 100%;
+}
+#flash-message-container > div.alert .alert-label i {
+  float: right;
+}
+#flash-message-container > div.alert .alert-label:hover {
+  color: #ea2a05;
+}
+#flash-message-container > div.alert .message-icon {
+  text-align: center;
+  clear: both;
+  margin-top: -20px;
+}
+#flash-message-container > div.alert .message-icon i {
+  font-size: 80px;
+  line-height: 1;
+}
+#flash-message-container > div.alert .message-text {
+  padding-top: 5px;
+  text-align: center;
+  font-size: 18px;
+  color: #525975;
+  padding-bottom: 20px;
+  font-weight: 800;
+}
+#flash-message-container > div.alert-danger .message-icon .mdi:before,
+#flash-message-container > div.alert-error .message-icon .mdi:before {
+  content: "\F15C";
+  color: #fa4a28;
+}
+#flash-message-container > div.alert-danger .message-text,
+#flash-message-container > div.alert-error .message-text {
+  color: #fa4a28;
+}
+#flash-message-container > div.alert-success .alert-label {
+  visibility: hidden;
+}
+#flash-message-container > div.alert-success .message-icon .mdi:before {
+  content: "\F12C";
 }
 #flash-message-container > div.alert:hover {
   -webkit-animation-play-state: paused;
@@ -548,100 +595,6 @@ header.main-header {
   top: -52px;
   left: 24px;
   position: relative;
-}
-#flash-message-container > div.alert .alert-label {
-  position: absolute;
-  right: 0;
-  top: 0;
-  padding: 0;
-}
-#flash-message-container > div.alert .alert-label i,
-#flash-message-container > div.alert .alert-label i.ff-cross2,
-#flash-message-container > div.alert .alert-label i.tiecons,
-#flash-message-container > div.alert .alert-label i.trinity {
-  font-size: 10px !important;
-  line-height: 12px;
-  z-index: 10;
-  margin: 7px;
-}
-#flash-message-container > div.alert .alert-label i:before,
-#flash-message-container > div.alert .alert-label i.ff-cross2:before,
-#flash-message-container > div.alert .alert-label i.tiecons:before,
-#flash-message-container > div.alert .alert-label i.trinity:before {
-  content: '\e90f';
-  font-family: trinity;
-  font-weight: 100;
-}
-@-webkit-keyframes progressAnimate {
-  0% {
-    width: 0;
-    opacity: 0.7;
-  }
-  99% {
-    opacity: 0.7;
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-    width: 100%;
-  }
-}
-@-moz-keyframes progressAnimate {
-  0% {
-    width: 0;
-    opacity: 0.7;
-  }
-  99% {
-    opacity: 0.7;
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-    width: 100%;
-  }
-}
-@-ms-keyframes progressAnimate {
-  0% {
-    width: 0;
-    opacity: 0.7;
-  }
-  99% {
-    opacity: 0.7;
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-    width: 100%;
-  }
-}
-@keyframes progressAnimate {
-  0% {
-    width: 0;
-    opacity: 0.7;
-  }
-  99% {
-    opacity: 0.7;
-    width: 100%;
-  }
-  100% {
-    opacity: 0;
-    width: 100%;
-  }
-}
-.progres {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-}
-.progres .progress-line {
-  width: 0;
-  background-color: #c01f25;
-  height: 2px;
-  -webkit-animation: progressAnimate 4.2s 1.5s linear;
-  -moz-animation: progressAnimate 4.2s 1.5s linear;
-  -ms-animation: progressAnimate 4.2s 1.5s linear;
-  animation: progressAnimate 4.2s 1.5s linear;
 }
 @-webkit-keyframes alert {
   0% {
@@ -880,6 +833,7 @@ header.main-header {
 }
 .trinity-widget .box-body {
   padding-bottom: 20px;
+  padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -1040,6 +994,7 @@ header.main-header {
 }
 .box-widget .box-body {
   padding-bottom: 20px;
+  padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }
@@ -3031,6 +2986,7 @@ th:first-child input[type="checkbox"]:checked + label span:before {
 }
 .box .box-body {
   padding-bottom: 20px;
+  padding-top: 20px;
   padding-left: 10px;
   padding-right: 10px;
 }

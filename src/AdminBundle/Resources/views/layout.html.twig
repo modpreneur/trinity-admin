@@ -54,7 +54,7 @@
     <body class="
         {% block body_class %} grid-navigation-body navbar-fixed body-sidebar {% endblock %}
     ">
-    
+
         {% block flashMessages %}
             {% set flashMessages = [] %}
             {% for type, messages in app.session.flashbag.all() %}
