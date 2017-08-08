@@ -7,19 +7,7 @@
         {% endblock %}
 
         {% block box_body -%}
-            <div class="row">
-                <div class="xlarge-24 margin-auto">
-                    <div class="xlarge-10 margin-top-20">
-                        <div class="info-empty-form">
-                            <div class="row"><i class="trinity-info"></i></div>
-                            <div class="row"><h2 class="warning">NO DATA</h2></div>
-                            <div class="row xlarge-10">
-                                <p>This log does not contain any data yet.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            {% include "@TrinityAdmin/no-data.html.twig" %}
         {% endblock %}
     {% endembed %}
 {% endif %}

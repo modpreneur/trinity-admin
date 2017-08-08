@@ -1367,6 +1367,12 @@ form label a {
   font-weight: 300;
   text-decoration: underline;
 }
+.form label.required:after,
+form label.required:after {
+  content: "*";
+  color: #515974;
+  font-weight: 700;
+}
 .form label.tooltip,
 form label.tooltip {
   display: inline;
@@ -1736,6 +1742,9 @@ body.body-sidebar main.main-content {
   -moz-border-radius-topleft: 4px;
   -webkit-border-top-left-radius: 4px;
   border-top-left-radius: 4px;
+}
+.data-grid .error-view img {
+  max-width: 100%;
 }
 .data-grid.fetching tbody tr:nth-child(odd) {
   background-color: #f6f8fc;
