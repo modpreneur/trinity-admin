@@ -89,6 +89,17 @@
         border: 1px solid darken(@color-warning, 10%);
       }
     }
+
+    &[disabled],
+    &[disabled=disabled] {
+      background: @color-grey;
+      border-color: @color-grey;
+
+      &:hover {
+        cursor: not-allowed;
+        border-color: @color-grey;
+      }
+    }
   }
 
   input[type=color] {
@@ -142,16 +153,6 @@
     }
   }
 
-  select[disabled] {
-    background: @color-grey;
-    border-color: @color-grey;
-
-    &:hover {
-      cursor: not-allowed;
-      border-color: @color-grey;
-    }
-  }
-
   .checkbox {
     label {
       width: auto;
@@ -179,6 +180,11 @@
       vertical-align: middle;
       font-family: @icon-font;
       speak: none;
+    }
+
+    input[type=checkbox][disabled] + label,
+    input[type=radio][disabled] + label{
+      cursor: not-allowed;
     }
   }
 
