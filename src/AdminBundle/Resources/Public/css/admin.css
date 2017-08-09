@@ -1648,9 +1648,15 @@ body.body-sidebar main.main-content {
 .modal-wrapper .modal-content {
   border-radius: 5px;
 }
+.modal-wrapper .button.button-necktie {
+  margin: 0 !important;
+}
 .modal-wrapper.search-modal {
   padding-left: 15px;
   padding-right: 15px;
+}
+.modal-wrapper.search-modal .search-box {
+  height: 50px;
 }
 .modal-wrapper.search-modal .button-close {
   position: absolute;
@@ -1676,7 +1682,7 @@ body.body-sidebar main.main-content {
 .modal-wrapper.search-modal .grid {
   padding: 0;
 }
-.modal-wrapper.search-modal .search-ico {
+.modal-wrapper.search-modal .search-icon {
   font-size: 30px;
   line-height: 1.2em;
   padding-left: 15px;
