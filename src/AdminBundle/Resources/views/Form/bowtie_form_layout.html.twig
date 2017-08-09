@@ -9,6 +9,105 @@
     {{- parent() -}}
 {%- endblock form -%}
 
+{# If the form has an attribute "disabled", its inputs will be disabled as well  #}
+{%- block choice_widget -%}
+    {% set add_disabled = false %}
+
+    {# Check if the form wrapping current choice widget has a "disabled" attribute #}
+    {% if form.parent.vars is defined %}
+        {% if form.parent.vars.attr["disabled"] is defined and form.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+
+        {# If we're within a collection, we have to access its attributes trough parent.parent.parent #}
+        {% if form.parent.parent.parent.vars.attr["disabled"] is defined and form.parent.parent.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+    {% endif %}
+
+    {% if add_disabled %}
+        {% set disabled = true %}
+    {% endif %}
+
+    {{- parent() -}}
+{%- endblock choice_widget -%}
+
+{%- block submit_widget -%}
+    {% set add_disabled = false %}
+
+    {# Check if the form wrapping current choice widget has a "disabled" attribute #}
+    {% if form.parent.vars is defined %}
+        {% if form.parent.vars.attr["disabled"] is defined and form.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+
+        {% if form.parent.parent.parent.vars.attr["disabled"] is defined and form.parent.parent.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+    {% endif %}
+
+    {% if add_disabled %}
+        {% set disabled = true %}
+    {% endif %}
+
+    {{ parent() }}
+{%- endblock submit_widget -%}
+
+{%- block choice_widget_expanded -%}
+    {% set add_disabled = false %}
+
+    {# Check if the form wrapping current choice widget has a "disabled" attribute #}
+    {% if form.parent.vars is defined %}
+        {% if form.parent.vars.attr["disabled"] is defined and form.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+
+        {% if form.parent.parent.parent.vars.attr["disabled"] is defined and form.parent.parent.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+    {% endif %}
+
+    {% if add_disabled %}
+        {% set disabled = true %}
+    {% endif %}
+
+    {#<div class="widget-expanded" {{ block('widget_container_attributes') }}>#}
+        {#{%- for child in form %}#}
+            {#{{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}#}
+        {#{% endfor -%}#}
+
+        {%- for child in form %}
+            {{- form_widget(child, {
+                parent_label_class: label_attr.class|default(''),
+                translation_domain: choice_translation_domain,
+                'attr': {'disabled': add_disabled}
+            }) -}}
+        {% endfor -%}
+    {#</div>#}
+{%- endblock choice_widget_expanded -%}
+
+
+{%- block widget_attributes -%}
+    {% set add_disabled = false %}
+
+    Check if the form wrapping current choice widget has a "disabled" attribute
+    {% if form.parent.vars is defined %}
+        {% if form.parent.vars.attr["disabled"] is defined and form.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+
+        {% if form.parent.parent.parent.vars.attr["disabled"] is defined and form.parent.parent.parent.vars.attr["disabled"] %}
+            {% set add_disabled = true %}
+        {% endif %}
+    {% endif %}
+
+    {% if add_disabled %}
+        {% set disabled = true %}
+    {% endif %}
+
+    {{- parent() -}}
+{%- endblock widget_attributes -%}
+{# End of blocks that add attr disabled to disabled forms #}
 
 {%- block collection_widget -%}
     {% if prototype is defined %}
@@ -102,16 +201,6 @@
     </div>
     {{- form_errors(form) -}}
 {%- endblock checkbox_widget %}
-
-
-{% block choice_widget_expanded -%}
-    {%- for child in form %}
-        {{- form_widget(child, {
-            parent_label_class: label_attr.class|default(''),
-            translation_domain: choice_translation_domain,
-        }) -}}
-    {% endfor -%}
-{%- endblock choice_widget_expanded %}
 
 
 {%- block form_row -%}
