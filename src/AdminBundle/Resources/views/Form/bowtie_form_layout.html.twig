@@ -71,7 +71,7 @@
         {% set disabled = true %}
     {% endif %}
 
-    {#<div class="widget-expanded" {{ block('widget_container_attributes') }}>#}
+    <div class="widget-expanded" {{ block('widget_container_attributes') }}>
         {#{%- for child in form %}#}
             {#{{- form_label(child, null, {translation_domain: choice_translation_domain}) -}}#}
         {#{% endfor -%}#}
@@ -83,7 +83,7 @@
                 'attr': {'disabled': add_disabled}
             }) -}}
         {% endfor -%}
-    {#</div>#}
+    </div>
 {%- endblock choice_widget_expanded -%}
 
 
