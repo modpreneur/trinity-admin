@@ -16,6 +16,12 @@
         {% if (block("box_header")|trim is not empty) or block("box_header")|trim != "" %}
             <h3 class="box-header">
                 {% block box_header %}{% endblock %}
+
+                {% if (block("box_header_actions")|trim is not empty) or block("box_header_actions")|trim != "" %}
+                    <div class="box-header-actions">
+                        {% block box_header_actions %}{% endblock %}
+                    </div>
+                {% endif %}
             </h3>
         {% endif %}
 

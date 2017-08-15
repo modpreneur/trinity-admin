@@ -136,6 +136,18 @@
     }
   }
 
+  // For dark backgrounds
+  &-line-inverse {
+    border: 1px solid #fff;
+    background: transparent;
+    color: #fff;
+
+    &:hover {
+      background: #fff;
+      color: @color-primary;
+    }
+  }
+
   &-disabled, &:disabled {
     border: 1px solid @color-primary;
     background: transparent;

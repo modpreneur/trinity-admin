@@ -47,11 +47,12 @@
 
     .box-header-actions{ // delete button in header
       float: right;
-      margin-top: -5px;
+      margin-top: -6px;
+
       .button{
         font-size: 10px;
         margin-left: 5px;
-        padding: 3px 5px;
+        padding: .5em 1em;
       }
     }
   }
@@ -77,6 +78,10 @@
     padding: 10px 10px;
     font-size: 12px;
   }
+}
+
+.box ~ .box {
+  margin-top: 20px;
 }
 
 //// experimental code - grid in box
