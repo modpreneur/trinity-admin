@@ -6,11 +6,52 @@
 @import "variables";
 @import (once) "helper";
 
-.modal-wrapper{
-  background: fade(@color-primary, 95%);
+@search-box-height: 50px;
+
+.modal-wrapper {
+  padding: @navbar-height 0;
+
+  .button-close{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    padding: 3px;
+    background: darken(@color-primary, 10%);
+    font-size: 12px;
+    transition: all 0.5s ease;
+
+    &:hover{
+      background: darken(@color-primary, 30%);
+    }
+
+    span{
+      padding: 0 15px 0 15px;
+      margin-top: 5px;
+      float: right;
+      display: inline-block;
+    }
+
+    .mdi{
+      font-size: 22px;
+    }
+  }
 
   .modal-content{
     border-radius: 5px;
+    background: @color-grey-lighter;
+    padding: 100px;
+
+    input, select, textarea {
+      border-color: @color-primary;
+      color: @color-primary;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 3em;
+      text-align: center;
+      font-weight: @noto-bold;
+    }
   }
 
   .button.button-necktie{
@@ -23,32 +64,7 @@
     padding-right: 15px;
 
     .search-box{
-      height: 50px;
-    }
-
-    .button-close{
-      position: absolute;
-      right: 10px;
-      top: 10px;
-      padding: 3px;
-      background: darken(@color-primary, 10%);
-      font-size: 12px;
-      transition: all 0.5s ease;
-
-      &:hover{
-        background: darken(@color-primary, 30%);
-      }
-
-      span{
-        padding: 0 15px 0 15px;
-        margin-top: 5px;
-        float: right;
-        display: inline-block;
-      }
-
-      .mdi{
-        font-size: 22px;
-      }
+      height: @search-box-height;
     }
 
     .grid{
@@ -105,7 +121,8 @@
     }
 
     .modal-content{
-
+      padding: 0;
+      .gradient-grey();
     }
   }
 

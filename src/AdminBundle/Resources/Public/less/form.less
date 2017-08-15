@@ -76,7 +76,7 @@
     color: @color-primary;
     border-radius: 4px;
     font-weight: @noto-light;
-    background: #fff;
+    background: transparent;
 
     &:hover {
       border-color: darken(@color-border, 8%);
@@ -207,8 +207,11 @@
   .error-message, .form-msg-wrapper {
     color: @color-warning;
     text-align: right;
-    padding: 3px 0;
     font-size: 12px;
+  }
+
+  .form-error-wrapper:not(:empty) {
+    padding: 3px 0;
   }
 
   .upload-buttons-wrapper {

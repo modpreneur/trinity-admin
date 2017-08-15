@@ -33,10 +33,11 @@
 @color-grey-3: #E0E7F1;
 @color-grey-4: #CFD2D9;
 
-@color-grey-lighter: #f6f8fc;
+@color-grey-lighter: #f6f8fc; // used for even grid rows and modal background
 @color-grey-light: #e4ebf7; // for back background, disabled line button, unchecked checkbox/radio buttons
-@color-grey: #e1e7f0; // for disabled inputs
+@color-grey: #e1e6f0; // for disabled inputs
 @color-grey-dark: #d0d2d9; // for input borders
+
 
 @color-orange: #ff7800;
 @color-orange-darker: #f9452d;
@@ -143,4 +144,6 @@
 //  background-image: linear-gradient(to left top, @color-necktie-gradient1 0%, @color-necktie-gradient2 100%);
 //}
 
-
+.gradient-grey() { /* Used in the search modal */
+  .vertical-gradient(@color-grey, #fff)
+}
