@@ -273,3 +273,26 @@
 /*********************
   END Information message box
  ********************/
+
+// React Widgets (date time picker and such)
+div.rw-widget {
+
+  &.rw-datetimepicker {
+    background: transparent;
+
+    &.rw-state-hover:hover, &.rw-state-focus {
+      box-shadow: none;
+      background: transparent;
+      outline: none;
+    }
+
+    input {
+      background: transparent;
+      box-shadow: none;
+    }
+
+    [class*="rw-popup"] {
+      background-color: white;
+    }
+  }
+}
