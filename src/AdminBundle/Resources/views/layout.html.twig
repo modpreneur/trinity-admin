@@ -54,6 +54,7 @@
     <body class="
         {% block body_class %} grid-navigation-body navbar-fixed body-sidebar {% endblock %}
     ">
+        {% block body_start %}{% endblock %}
 
         {% block flashMessages %}
             {% set flashMessages = [] %}
@@ -97,7 +98,6 @@
                 </div>
             </div>
         {% endblock %}
-
 
         {# Navbar #}
         <header class="main-header large-24">
