@@ -191,17 +191,16 @@
 
       // Table rows should at least have this height
       td {
-        color: @color-primary;
         height: @grid-row-min-height;
+
+        & > a:not([class*="button"]) {
+          .large-clickable-area();
+        }
       }
 
       // Even row
       &:nth-child(even) {
         background-color: @grid-even-row-color;
-      }
-
-      a {
-        color: @color-primary;
       }
 
       .button-small.button-get-details {

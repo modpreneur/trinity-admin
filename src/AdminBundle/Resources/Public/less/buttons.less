@@ -31,7 +31,7 @@
   transition: .3s;
 }
 
-.button {
+.button() {
   .button-parameters();
   font-size: 14px;
   padding: 9px 35px;
@@ -269,6 +269,10 @@
       }
     }
   }
+}
+
+a.button, input.button, button.button, label.button {
+  .button();
 }
 
 .btn-group.group-conditions {

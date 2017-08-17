@@ -1,0 +1,37 @@
+@import (once) "helper";
+
+.collection {
+
+  // A label for the entire collection
+  & > label {
+    display: none;
+  }
+
+  .collection-widget {
+    & > .form-row > label {
+      display: none;
+    }
+  }
+
+  .form-row {
+    // We want to position delete button relative to this
+    position: relative;
+  }
+
+  .collection-add {
+    position: relative;
+    top: -20px;
+  }
+
+  // Delete button
+  .delete-collection-item {
+
+    font-size: 20px;
+
+    span {
+      position: absolute;
+      right: -25px;
+      bottom: 40px;
+    }
+  }
+}

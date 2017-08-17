@@ -123,7 +123,7 @@
 
 
 {%- block collection_row -%}
-    <div class="row">
+    <div class="collection">
         {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
             {% block form_row_label_content %}
                 {{- form_label(form) -}}
@@ -194,7 +194,7 @@
         {# {{ form_label(form) }} for CheckBoxType displays label twice, inside form_label() and form_widget()#}
         {# setting attr => ['disable_widget_label' => true]#}
         {% if attr.disable_widget_label is defined and attr.disable_widget_label %}
-            <label for="{{ id }}" ></label>
+            <label for="{{ id }}"></label>
         {% else %}
             {{ form_label(form) }}
         {% endif %}

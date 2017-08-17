@@ -12,28 +12,28 @@ Overriding empty blocks will not mess up label and widget's width
 #}
 
 {% block form_row_template %}
-    {#{% set display_collection_labels = false %}#}
-    {#{% set collection_wrapper = false %} #}{# Collection or collection widget wrapper (inner) #}
+    {% set hide_collection_labels = false %}
+    {% set collection_wrapper = false %}  {#Collection or collection widget wrapper (inner)#}
 
-    {# Check if collection labels should be displayed: #}
-    {#{% if form.parent is defined and form.parent is not null %}#}
-        {#{% if form.parent.vars.attr["display-widget-labels"] is defined %}#}
-            {#{% set display_collection_labels = true %}#}
-            {#{% set collection_wrapper = true %} #}{# This form_row wraps the whole collection #}
-        {#{% endif %}#}
+     {#Check if collection labels should be displayed:#}
+    {% if form is defined and form.parent is not null %}
+        {% if form.vars.attr["hide-collection-labels"] is defined %}
+            {% set hide_collection_labels = true %}
+            {% set collection_wrapper = true %}  {#This form_row wraps the whole collection#}
+        {% endif %}
 
-        {#{% if form.parent.parent is defined and form.parent.parent is not null %}#}
-            {#{% if form.parent.parent.vars.attr["display-widget-labels"] is defined %}#}
-                {#{% set display_collection_labels = true %}#}
-                {#{% set collection_wrapper = false %} #}{# This form_row wraps collection rows (inner) #}
-            {#{% endif %}#}
-        {#{% endif %}#}
-    {#{% endif %}#}
+        {% if form.parent.parent is defined and form.parent.parent is not null %}
+            {% if form.parent.parent.vars.attr["hide-collection-labels"] is defined %}
+                {% set hide_collection_labels = true %}
+                {% set collection_wrapper = false %} {# This form_row wraps collection rows (inner)#}
+            {% endif %}
+        {% endif %}
+    {% endif %}
 
     {% block form_row_content_start %}{% endblock form_row_content_start %}
 
     {% block form_row_start %}
-        {#{% if display_collection_labels %}#}
+        {#{% if hide_collection_labels %}#}
             {#<div class="">#}
         {#{% else %}#}
             {# Default wrapper for entire form rows #}
@@ -45,26 +45,27 @@ Overriding empty blocks will not mess up label and widget's width
 
         {% block form_row_label_template %}
 
-            {#{% block form_row_label_start %}#}
-                {#{% if display_collection_labels and not collection_wrapper %}#}
-                  {#<div class="xlarge-24">#}
-                {#{% else %}#}
-                  {# Default wrapper for form row labels #}
-                  {#<div class="xlarge-24">#}
-                {#{% endif %}#}
-            {#{% endblock form_row_label_start %}#}
+            {% block form_row_label_start %}
+                {% if hide_collection_labels %}
+                    <div class="display-none">
+                {% endif %}
+            {% endblock form_row_label_start %}
 
-              {# Use this block to override form label content #}
+               {#Use this block to override form label content #}
               {% block form_row_label_content %}{% endblock form_row_label_content %}
-            {#</div>#}
+
+            {% if hide_collection_labels %}
+                </div>
+            {% endif %}
+
         {% endblock form_row_label_template %}
 
         {% block form_row_input_template %}
 
             {#{% block form_row_input_start %}#}
-                {#{% if display_collection_labels and collection_wrapper %}#}
+                {#{% if hide_collection_labels and collection_wrapper %}#}
                     {#<div class="form-right">#}
-                {#{% elseif display_collection_labels and not collection_wrapper %}#}
+                {#{% elseif hide_collection_labels and not collection_wrapper %}#}
                     {#<div class="form-right">#}
                 {#{% else %}#}
                     {# Default wrapper for form row widgets #}
