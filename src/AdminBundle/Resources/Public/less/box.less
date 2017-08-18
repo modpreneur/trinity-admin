@@ -14,9 +14,9 @@
   position: relative;
   margin-bottom: 20px;
   border-radius: 4px;
-  border: 1px solid @color-border;
   padding: 0;
   min-height: 20px; // ?? ponechat?
+  box-shadow: 0 1px 2px @color-border;
 
   &.box-small{
     max-width: @box-small-width;
@@ -29,8 +29,7 @@
     border-top-right-radius: 4px;
     padding-left: 10px;
 
-    font-size: 1.1em;
-    font-weight: 300;
+    font-size: 13px;
     line-height: 1.3em;
   }
 
@@ -43,11 +42,11 @@
     color: @color-white;
     .box-title;
     font-weight: @noto-bold;
-    padding: 6.5px 11px;
+    padding: 10px 11px;
 
     .box-header-actions{ // delete button in header
       float: right;
-      margin-top: -6px;
+      margin-top: -8px;
 
       .button{
         font-size: 10px;
@@ -58,7 +57,7 @@
   }
 
   .box-body {
-    padding: 20px 10px;
+    padding: 20px 15px;
 
     p {
       margin-bottom: 10px;

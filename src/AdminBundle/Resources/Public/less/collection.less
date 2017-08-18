@@ -1,26 +1,25 @@
 @import (once) "helper";
+@import (once) "variables";
 
-.collection {
+.collection-widget {
 
-  // A label for the entire collection
-  & > label {
-    display: none;
+  padding: 20px 20%;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background: @color-grey-light;
+
+  // Collection children should be separated visually
+  .collection-child + .collection-child {
+    margin-top: 60px;
   }
 
-  .collection-widget {
-    & > .form-row > label {
-      display: none;
-    }
+  & > .form-row > label {
+    display: none;
   }
 
   .form-row {
     // We want to position delete button relative to this
     position: relative;
-  }
-
-  .collection-add {
-    position: relative;
-    top: -20px;
   }
 
   // Delete button
@@ -31,7 +30,24 @@
     span {
       position: absolute;
       right: -25px;
-      bottom: 40px;
+      top: 30px;
     }
   }
 }
+
+// Collection widget labels create a bigger padding
+.collection-widget[hide-collection-labels="hide-collection-labels"] .delete-collection-item span {
+  top: 4px;
+}
+
+.modal-wrapper {
+  // A label for the entire collection
+  .collection > label {
+    display: none;
+  }
+
+  .collection-widget {
+    background: @color-grey;
+  }
+}
+

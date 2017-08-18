@@ -68,15 +68,16 @@
     }
   }
 
-  input, select, textarea {
+  input, select, textarea, .rw-datetimepicker input {
     .select-clear;
     width: 100%;
     border: 1px solid @color-border;
-    padding: 5px 10px;
+    padding: 8px 10px;
     color: @color-primary;
     border-radius: 4px;
     font-weight: @noto-light;
-    background: transparent;
+    background: #fff;
+    font-size: 13px;
 
     &:hover {
       border-color: darken(@color-border, 8%);
@@ -143,7 +144,7 @@
       font-family: @icon-font;
       speak: none;
       color: @color-primary;
-      font-size: 20px;
+      font-size: 24px;
       right: 8px;
       pointer-events: none; // to propagate click into <select> element
     }
@@ -189,7 +190,7 @@
   }
 
   .form-row {
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .left {
@@ -278,16 +279,17 @@
 div.rw-widget {
 
   &.rw-datetimepicker {
-    background: transparent;
 
     &.rw-state-hover:hover, &.rw-state-focus {
       box-shadow: none;
-      background: transparent;
       outline: none;
     }
 
+    .rw-input {
+      line-height: inherit;
+    }
+
     input {
-      background: transparent;
       box-shadow: none;
     }
 

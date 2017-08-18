@@ -16,8 +16,8 @@ Overriding empty blocks will not mess up label and widget's width
     {% set collection_wrapper = false %}  {#Collection or collection widget wrapper (inner)#}
 
      {#Check if collection labels should be displayed:#}
-    {% if form is defined and form.parent is not null %}
-        {% if form.vars.attr["hide-collection-labels"] is defined %}
+    {% if form.parent is defined and form.parent is not null %}
+        {% if form.parent.vars.attr["hide-collection-labels"] is defined %}
             {% set hide_collection_labels = true %}
             {% set collection_wrapper = true %}  {#This form_row wraps the whole collection#}
         {% endif %}
