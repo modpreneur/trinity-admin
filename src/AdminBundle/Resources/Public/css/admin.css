@@ -457,10 +457,10 @@ header.main-header {
 }
 #flash-message-container {
   width: 200px;
-  height: calc(100% - ( 50px  + 10px));
+  height: calc(100% - ( 50px  + 15px));
   will-change: contents;
   position: fixed;
-  top: 60px;
+  top: 65px;
   z-index: 999999;
   pointer-events: none;
   word-wrap: break-word;
@@ -793,9 +793,9 @@ header.main-header {
   position: relative;
   margin-bottom: 20px;
   border-radius: 4px;
-  border: 1px solid #d0d2d9;
   padding: 0;
   min-height: 20px;
+  box-shadow: 0 1px 2px #d0d2d9;
   /*  Icons for resize or close  */
 }
 .trinity-widget .data-grid thead tr {
@@ -816,8 +816,7 @@ header.main-header {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-size: 13px;
   line-height: 1.3em;
 }
 .trinity-widget .grid {
@@ -829,15 +828,14 @@ header.main-header {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-size: 13px;
   line-height: 1.3em;
   font-weight: 700;
-  padding: 6.5px 11px;
+  padding: 10px 11px;
 }
 .trinity-widget .box-header .box-header-actions {
   float: right;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 .trinity-widget .box-header .box-header-actions .button {
   font-size: 10px;
@@ -845,7 +843,7 @@ header.main-header {
   padding: .5em 1em;
 }
 .trinity-widget .box-body {
-  padding: 20px 10px;
+  padding: 20px 15px;
 }
 .trinity-widget .box-body p {
   margin-bottom: 10px;
@@ -960,9 +958,9 @@ header.main-header {
   background: #fff;
   position: relative;
   border-radius: 4px;
-  border: 1px solid #d0d2d9;
   padding: 0;
   min-height: 20px;
+  box-shadow: 0 1px 2px #d0d2d9;
   margin-bottom: 20px;
 }
 .box-widget.box-small {
@@ -974,8 +972,7 @@ header.main-header {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-size: 13px;
   line-height: 1.3em;
 }
 .box-widget .grid {
@@ -987,15 +984,14 @@ header.main-header {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-size: 13px;
   line-height: 1.3em;
   font-weight: 700;
-  padding: 6.5px 11px;
+  padding: 10px 11px;
 }
 .box-widget .box-header .box-header-actions {
   float: right;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 .box-widget .box-header .box-header-actions .button {
   font-size: 10px;
@@ -1003,7 +999,7 @@ header.main-header {
   padding: .5em 1em;
 }
 .box-widget .box-body {
-  padding: 20px 10px;
+  padding: 20px 15px;
 }
 .box-widget .box-body p {
   margin-bottom: 10px;
@@ -1418,7 +1414,10 @@ form input,
 .form select,
 form select,
 .form textarea,
-form textarea {
+form textarea,
+.form .rw-datetimepicker input,
+form .rw-datetimepicker input {
+  background: transparent;
   outline: none !important;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -1426,18 +1425,21 @@ form textarea {
   box-shadow: none !important;
   width: 100%;
   border: 1px solid #d0d2d9;
-  padding: 5px 10px;
+  padding: 8px 10px;
   color: #515974;
   border-radius: 4px;
   font-weight: 300;
-  background: transparent;
+  background: #fff;
+  font-size: 13px;
 }
 .form input:hover,
 form input:hover,
 .form select:hover,
 form select:hover,
 .form textarea:hover,
-form textarea:hover {
+form textarea:hover,
+.form .rw-datetimepicker input:hover,
+form .rw-datetimepicker input:hover {
   border-color: #b9bcc7;
 }
 .form input.error,
@@ -1445,7 +1447,9 @@ form input.error,
 .form select.error,
 form select.error,
 .form textarea.error,
-form textarea.error {
+form textarea.error,
+.form .rw-datetimepicker input.error,
+form .rw-datetimepicker input.error {
   border: 1px solid #fc5e17;
 }
 .form input.error:hover,
@@ -1454,12 +1458,16 @@ form input.error:hover,
 form select.error:hover,
 .form textarea.error:hover,
 form textarea.error:hover,
+.form .rw-datetimepicker input.error:hover,
+form .rw-datetimepicker input.error:hover,
 .form input.error:focus,
 form input.error:focus,
 .form select.error:focus,
 form select.error:focus,
 .form textarea.error:focus,
-form textarea.error:focus {
+form textarea.error:focus,
+.form .rw-datetimepicker input.error:focus,
+form .rw-datetimepicker input.error:focus {
   border: 1px solid #dd4703;
 }
 .form input[disabled],
@@ -1468,14 +1476,18 @@ form input[disabled],
 form select[disabled],
 .form textarea[disabled],
 form textarea[disabled],
+.form .rw-datetimepicker input[disabled],
+form .rw-datetimepicker input[disabled],
 .form input[disabled=disabled],
 form input[disabled=disabled],
 .form select[disabled=disabled],
 form select[disabled=disabled],
 .form textarea[disabled=disabled],
-form textarea[disabled=disabled] {
-  background: #e1e6f0;
-  border-color: #e1e6f0;
+form textarea[disabled=disabled],
+.form .rw-datetimepicker input[disabled=disabled],
+form .rw-datetimepicker input[disabled=disabled] {
+  background: #e1e7f0;
+  border-color: #e1e7f0;
 }
 .form input[disabled]:hover,
 form input[disabled]:hover,
@@ -1483,14 +1495,18 @@ form input[disabled]:hover,
 form select[disabled]:hover,
 .form textarea[disabled]:hover,
 form textarea[disabled]:hover,
+.form .rw-datetimepicker input[disabled]:hover,
+form .rw-datetimepicker input[disabled]:hover,
 .form input[disabled=disabled]:hover,
 form input[disabled=disabled]:hover,
 .form select[disabled=disabled]:hover,
 form select[disabled=disabled]:hover,
 .form textarea[disabled=disabled]:hover,
-form textarea[disabled=disabled]:hover {
+form textarea[disabled=disabled]:hover,
+.form .rw-datetimepicker input[disabled=disabled]:hover,
+form .rw-datetimepicker input[disabled=disabled]:hover {
   cursor: not-allowed;
-  border-color: #e1e6f0;
+  border-color: #e1e7f0;
 }
 .form input[type=color],
 form input[type=color] {
@@ -1535,7 +1551,7 @@ form .select:before {
   font-family: "Material Design Icons";
   speak: none;
   color: #515974;
-  font-size: 20px;
+  font-size: 24px;
   right: 8px;
   pointer-events: none;
 }
@@ -1579,7 +1595,7 @@ form .checkbox input[type=radio][disabled] + label {
 }
 .form .form-row,
 form .form-row {
-  padding-bottom: 20px;
+  margin-bottom: 20px;
 }
 .form .left,
 form .left {
@@ -1656,17 +1672,15 @@ form .upload-buttons-wrapper .upload-buttons {
 /*********************
   END Information message box
  ********************/
-div.rw-widget.rw-datetimepicker {
-  background: transparent;
-}
 div.rw-widget.rw-datetimepicker.rw-state-hover:hover,
 div.rw-widget.rw-datetimepicker.rw-state-focus {
   box-shadow: none;
-  background: transparent;
   outline: none;
 }
+div.rw-widget.rw-datetimepicker .rw-input {
+  line-height: inherit;
+}
 div.rw-widget.rw-datetimepicker input {
-  background: transparent;
   box-shadow: none;
 }
 div.rw-widget.rw-datetimepicker [class*="rw-popup"] {
@@ -1719,13 +1733,6 @@ body.body-sidebar main.main-content {
   border-radius: 5px;
   background: #f6f8fc;
   padding: 100px 100px 0 100px;
-}
-.modal-wrapper .modal-content input,
-.modal-wrapper .modal-content select,
-.modal-wrapper .modal-content textarea,
-.modal-wrapper .modal-content .rw-input input {
-  border-color: #515974;
-  color: #515974;
 }
 .modal-wrapper .modal-content h3 {
   font-size: 20px;
@@ -1806,13 +1813,13 @@ body.body-sidebar main.main-content {
   padding: 0;
   /* Used in the search modal */
   background: #fff;
-  background-image: -moz-linear-gradient(top, #fff 0%, #e1e6f0 100%);
-  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #fff), color-stop(100%, #e1e6f0));
-  background-image: -webkit-linear-gradient(top, #fff 0%, #e1e6f0 100%);
-  background-image: -o-linear-image-gradient(top, #fff 0%, #e1e6f0 100%);
-  background-image: -ms-linear-gradient(top, #fff 0%, #e1e6f0 100%);
-  background-image: linear-gradient(to bottom, #fff 0%, #e1e6f0 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff, endColorstr=#e1e6f0, GradientType=0);
+  background-image: -moz-linear-gradient(top, #fff 0%, #e1e7f0 100%);
+  background-image: -webkit-gradient(left top, left bottom, color-stop(0%, #fff), color-stop(100%, #e1e7f0));
+  background-image: -webkit-linear-gradient(top, #fff 0%, #e1e7f0 100%);
+  background-image: -o-linear-image-gradient(top, #fff 0%, #e1e7f0 100%);
+  background-image: -ms-linear-gradient(top, #fff 0%, #e1e7f0 100%);
+  background-image: linear-gradient(to bottom, #fff 0%, #e1e7f0 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#fff, endColorstr=#e1e7f0, GradientType=0);
 }
 /**************************************
 
@@ -2408,6 +2415,8 @@ label.button-success {
   background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #d0d2d9;
 }
 a.button-success:hover,
 input.button-success:hover,
@@ -2831,26 +2840,37 @@ label.button-ready.button-remove:after {
   float: right;
   margin-right: 10px;
 }
-.collection > label {
+.collection-widget {
+  padding: 20px 20%;
+  margin-bottom: 15px;
+  border-radius: 4px;
+  background: #e4ebf7;
+}
+.collection-widget .collection-child + .collection-child {
+  margin-top: 60px;
+}
+.collection-widget > .form-row > label {
   display: none;
 }
-.collection .collection-widget > .form-row > label {
-  display: none;
-}
-.collection .form-row {
+.collection-widget .form-row {
   position: relative;
 }
-.collection .collection-add {
-  position: relative;
-  top: -20px;
-}
-.collection .delete-collection-item {
+.collection-widget .delete-collection-item {
   font-size: 20px;
 }
-.collection .delete-collection-item span {
+.collection-widget .delete-collection-item span {
   position: absolute;
   right: -25px;
-  bottom: 40px;
+  top: 30px;
+}
+.collection-widget[hide-collection-labels="hide-collection-labels"] .delete-collection-item span {
+  top: 4px;
+}
+.modal-wrapper .collection > label {
+  display: none;
+}
+.modal-wrapper .collection-widget {
+  background: #e1e7f0;
 }
 /**************************************
 
@@ -2863,9 +2883,9 @@ label.button-ready.button-remove:after {
   position: relative;
   margin-bottom: 20px;
   border-radius: 4px;
-  border: 1px solid #d0d2d9;
   padding: 0;
   min-height: 20px;
+  box-shadow: 0 1px 2px #d0d2d9;
 }
 .box.box-small {
   max-width: 800px;
@@ -2876,8 +2896,7 @@ label.button-ready.button-remove:after {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-size: 13px;
   line-height: 1.3em;
 }
 .box .grid {
@@ -2889,15 +2908,14 @@ label.button-ready.button-remove:after {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   padding-left: 10px;
-  font-size: 1.1em;
-  font-weight: 300;
+  font-size: 13px;
   line-height: 1.3em;
   font-weight: 700;
-  padding: 6.5px 11px;
+  padding: 10px 11px;
 }
 .box .box-header .box-header-actions {
   float: right;
-  margin-top: -6px;
+  margin-top: -8px;
 }
 .box .box-header .box-header-actions .button {
   font-size: 10px;
@@ -2905,7 +2923,7 @@ label.button-ready.button-remove:after {
   padding: .5em 1em;
 }
 .box .box-body {
-  padding: 20px 10px;
+  padding: 20px 15px;
 }
 .box .box-body p {
   margin-bottom: 10px;

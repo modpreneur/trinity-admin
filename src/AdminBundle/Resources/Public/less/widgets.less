@@ -9,6 +9,7 @@
 
 **************************************/
 @import (once) "helper";
+@import (once) "variables";
 
 // wrapper
 .dashboard-widgets {
@@ -210,212 +211,65 @@
   }
 }
 
-#show-widgets-form {
-  .row {
-    width: 650px;
-    //border: none;
-    //border-radius: 6px;
-    border: 1px solid #adadad;
-    padding: 20px;
-    box-shadow: none;
-    border-radius: 0;
-    background: #fff;
-
-    //faking with dashoard settings...
-    &:first-of-type {
-      border-bottom: none;
-    }
-    &:last-of-type {
-      max-height: 400px;
-      border-top: none;
-    }
-
-    .row {
-      border: none;
-      box-shadow: none;
-      padding: 0 0 10px 0;
-    }
-    .cross-link {
-      position: absolute;
-      right: 15px;
-      top: 15px;
-      width: 22px;
-      i {
-        padding: 10px;
-        color: #b8b8b8;
-        transition: .6s;
-        &:hover {
-          color: #585858;
-        }
-      }
-    }
-  }
-
-  #row_dashboard_expandedWidgets {
-    width: 40px;
-    display: inline-block;
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    background: transparent;
-  }
-}
-
-#dashboard {
-  overflow-y: auto;
-  overflow-x: hidden;
-  //max-height: 450px;
-  .choice {
-    border: none;
-    width: 100%;
-    display: inline-block;
-    float: left;
-    .group-clearfix();
-
-    &:hover {
-      background: none;
-    }
-    &:first-of-type {
-      margin-top: 0;
-      label {
-        margin: 0 10px;
-      }
-      .checkbox {
-        transition: .3s;
-        border-bottom: 1px solid #e5e5e5;
-        &:hover {
-          background: #EFEFEF
-        }
-      }
-    }
-
-    &:last-of-type {
-      width: 40px;
-      margin-left: -50px;
-      .form-right {
-        label:hover {
-          background: none;
-        }
-      }
-    }
-  }
-
-  div[id^="row_dashboard_hide"]{
-    width: 49%;
-    display: inline-block;
-    .form-left{
-      display: none !important;
-    }
-    .form-right{
-      label{
-        margin-left: 10px;
-      }
-      .description{
-        margin-left: 35px;
-      }
-    }
-  }
-
-  .form-content-center {
-    width: 100%;
-    padding: 0;
-    .form-left {
-      width: 0;
-    }
-    .form-right {
-      width: 100%;
-    }
-  }
-}
-
-#dashboard_widgets {
-  label {
-    color: #747474;
-    line-height: 40px;
-  }
-  input[type=checkbox] + label:before {
-    color: lighten(@color-primary, 50%);
-  }
-  input[type=checkbox] + label:hover:before {
-    color: @color-primary;
-  }
-  input[type=checkbox]:checked + label:before {
-    color: @color-primary;
-  }
-  input[type=checkbox]:checked + label {
-    color: #303030;
-  }
-}
-
 #dashboard_expandedWidgets {
 
-  label {
-    position: static;
-    display: block;
-  }
+  /*********
+
+    Widget size switches
+    Their only use is here. They will likely be replaced when widgets are remade.
+
+  *********/
   .checkbox {
     position: relative;
-    display: block;
-    height: 36px;
-    width: 40px;
+    height: 37px;
+    cursor: pointer;
+
     label {
-      display: block;
       height: 36px;
       font-size: 20px;
 
-      &:before {
+      &:before, &:after {
         position: absolute;
         top: 8px;
         left: 0;
+        height: 19px;
+        border: 1px solid @color-border;
+      }
+
+      &:before {
         content: '';
-        display: block;
         width: 36px;
-        height: 18px;
-        border: 1px solid #b9b9b9;
         padding: 0;
       }
+
       &:after {
-        position: absolute;
-        top: 8px;
-        left: 0;
-        content: "\e90c";
-        font-family: trinity;
+        content: "\F055";
+        font-family: @icon-font;
         font-size: 13px;
         line-height: 20px;
-        display: block;
         width: 16px;
-        padding-left: 2px;
-        height: 18px;
-        border: 1px solid #3f3f3f;
+        padding-left: 1px;
         transition: left .3s;
       }
     }
-    &:last-child label {
-      border-bottom: none;
-    }
+
     input[type=checkbox]:checked + label {
       &:before {
         background: #fff;
-        border: 1px solid #3f3f3f;
       }
       &:after {
         padding: 0;
-        margin: 0 0 0 -1px;
         color: #303030;
-        top: 11px;
+        top: 8px;
         left: 20px;
         transform: rotate(180deg);
         border: none;
-        border-right: 1px solid #b9b9b9;
+        border-right: 1px solid @color-border;
       }
     }
     input[type=checkbox]:disabled + label {
-      &:before {
-        border: 1px solid #D6D6D6;
-      }
       &:after {
         content: '';
-        border: 1px solid #D6D6D6;
       }
     }
   }

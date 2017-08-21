@@ -120,6 +120,8 @@ label.button-success {
   background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #d0d2d9;
 }
 a.button-success:hover,
 input.button-success:hover,
@@ -521,6 +523,8 @@ body .button-success-success {
   background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
+  border: 1.5px solid #fff;
+  box-shadow: 0 0 0 1px #d0d2d9;
 }
 body .button-success-success:hover {
   background: #659330;
