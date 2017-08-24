@@ -51,6 +51,7 @@
 
   &-success {
     .green();
+    font-weight: @noto-bold;
 
     border: 1.5px solid @color-white;
     box-shadow: 0 0 0 1px @color-border;
@@ -69,7 +70,7 @@
     cursor: pointer;
     transition: all 0.5s ease;
     border: 1px solid @color-primary;
-    border-radius: 20px;
+    .radius(20px);
 
     &:hover {
       background: @color-primary-hover;
@@ -96,6 +97,44 @@
     &:hover {
       background: darken(@color-tertiary, 15%);
       border: none;
+    }
+  }
+
+  // Used in user profile for Facebook and Google login
+  &-social {
+    .radius(0);
+    padding: 0;
+    font-size: 13px;
+
+    i {
+      float: left;
+      font-size: 24px;
+      padding: 5px 10px;
+    }
+
+    div.text {
+      float: right;
+      display: block;
+      padding: 10px 16px;
+      margin: 0;
+    }
+
+    &.facebook {
+      background-color: @color-facebook;
+
+      &:hover {
+        background-color: darken(@color-facebook, 10%);
+      }
+    }
+
+    &.google {
+      background-color: #fff;
+      color: @color-google;
+
+      &:hover {
+        background-color: @color-google;
+        color: #fff;
+      }
     }
   }
 

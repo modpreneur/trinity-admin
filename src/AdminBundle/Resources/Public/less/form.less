@@ -27,7 +27,11 @@
     a {
       color: @color-primary;
       font-weight: @noto-light;
-      text-decoration: underline;
+      float: right;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
 
     &.required:after {
@@ -68,7 +72,7 @@
     }
   }
 
-  input, select, textarea, .rw-datetimepicker input {
+  input:not([type="submit"]), select, textarea, .rw-datetimepicker input {
     .select-clear;
     width: 100%;
     border: 1px solid @color-border;
