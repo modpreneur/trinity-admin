@@ -13,16 +13,16 @@
 
 #flash-message-container {
   width: 200px;
-  height: calc(~"100% - (" @navbar-height ~" + 15px)");
+  height: calc(~"100% - (" @navbar-height ~" + 20px)");
   will-change: contents;
   position: fixed;
-  top: @navbar-height + 15px;
+  top: @navbar-height + 20px;
   z-index: 999999;
   pointer-events: none;
   word-wrap: break-word;
   overflow: auto;
   right: 0;
-  padding: 0 10px 0 19px;
+  padding: 0 20px 0 20px;
   display: flex;
   flex-direction: column-reverse;
 
@@ -34,21 +34,20 @@
   }
 
   & > div.alert {
-    padding: 0 !important;
+    padding: 0;
     margin: 0 0 10px 0;
     opacity: 1;
     left: 0;
     position: relative;
     pointer-events: all;
-    color: #34708e;
+    color: @color-primary;
     border: none;
 
     -webkit-box-shadow: 0 12.5px 16.5px 2.5px rgba(0, 0, 0, 0.13);
     -moz-box-shadow: 0 12.5px 16.5px 2.5px rgba(0, 0, 0, 0.13);
     box-shadow: 0 12.5px 16.5px 2.5px rgba(0, 0, 0, 0.13);
 
-    background: #fff !important;
-    border-bottom: none !important;
+    background: #fff;
     border-radius: 10px;
 
     i.alert-close-icon:before {
@@ -56,7 +55,7 @@
     }
 
     .alert-label{
-      padding: 8px !important;
+      padding: 8px;
       cursor: pointer;
       font-size: 18px;
       width: 100%;
@@ -82,17 +81,16 @@
     }
 
     .message-text{
-      padding-top: 5px;
+      padding: 5px 10px 20px 10px;
       text-align: center;
-      font-size: 18px;
+      font-size: 16px;
       color: @color-primary;
-      padding-bottom: 20px;
-      font-weight: 800;
+      font-weight: @noto-bold;
     }
 
 
     &-danger, &-error{
-      .message-icon{
+      .message-icon {
         .mdi:before{
           content: "\F15C";
           color: @color-red;
@@ -104,13 +102,31 @@
       }
     }
 
+    &-warning {
+      .message-icon {
+        .mdi:before {
+          content: "\F026";
+          color: @color-warning;
+        }
+      }
+
+      .message-text{
+        color: @color-warning;
+      }
+    }
+
     &-success{
-      .alert-label{
+      .alert-label {
         visibility: hidden;
       }
 
-      .message-icon{
-        .mdi:before{
+      // Success messages usually consist of 1 or 2 words
+      .message-text {
+        font-size: 18px;
+      }
+
+      .message-icon {
+        .mdi:before {
           content: "\F12C";
         }
       }
@@ -127,57 +143,15 @@
       animation-play-state: paused;
     }
 
-    &.alert-info i.alert-icon {
-      &:before {
-        color: @color-primary;
-      }
-
-      &:after {
-        content: "\e68c";
-      }
-    }
-
-    &.alert-success i.alert-icon {
-      &:before {
-        color: @color-success;
-      }
-
-      &:after {
-        content: "\e933";
-        font-family: trinity !important;
-      }
-    }
-
-    &.alert-warning i.alert-icon {
-      &:before {
-        color: @color-warning;
-      }
-
-      &:after {
-        content: "\e65e";
-      }
-    }
-
-    &.alert-danger i.alert-icon {
-      &:before {
-        color: @color-danger;
-      }
-
-      &:after {
-        content: "\e64d";
-        font-weight: 600;
-      }
-    }
-
     .show-alert {
       p {
         word-wrap: break-word;
         font-size: 16px;
         margin: 25px 35px 25px 0;
-        color: #2d323e !important;
         font-weight: 400;
         line-height: 1.3;
       }
+
       i.alert-icon {
         cursor: default;
         font-style: normal;
@@ -194,11 +168,9 @@
         }
 
         &:after {
-          color: #fff !important;
+          color: #fff;
           font-size: 20px;
-          font-family: tiecons;
           margin-left: 12px;
-          line-height: 45px;
           display: inline-block;
           line-height: 1;
           top: -52px;
