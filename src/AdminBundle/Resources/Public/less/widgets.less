@@ -135,7 +135,6 @@
     bottom: 0;
     /* background: red; */
     z-index: 99;
-    box-shadow: 0 -25px 15px -15px #ffffff inset;
   }
 
   .content-box {
@@ -205,10 +204,8 @@
 .handle {
   cursor: move;
   height: 50px;
+  width: 60%;
   margin-top: -20px;
-  &:hover {
-    background: #f7f7f7;
-  }
 }
 
 #dashboard_expandedWidgets {
@@ -277,11 +274,6 @@
 
 .trinity-widget {
   padding: 20px;
-  .data-grid {
-    thead tr {
-      border-bottom: 2px solid #efefef;
-    }
-  }
 }
 
 .small-widgets {
@@ -308,7 +300,7 @@
     .widget-small-description {
       font-size: 14px;
       line-height: 1;
-      color: #b5b5b5;
+      color: @color-primary;
       font-weight: 400;
       margin-bottom: 10px;
       margin-left: 55px;
@@ -325,7 +317,7 @@
     }
     .widget-small-icon {
       display: block;
-      color: #d2d2d2;
+      color: @color-primary;
       font-size: 40px;
     }
   }
