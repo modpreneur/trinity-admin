@@ -26,10 +26,8 @@
     margin-bottom: 1px;
 
     background: transparent;
-    transition: all 0.2s ease;
     color: @color-primary;
     font-size: 14px;
-    font-weight: 300;
     text-align: left;
     padding: 10px 2px 2px 2px;
     margin-left: 25px;
@@ -44,9 +42,14 @@
     background: @background-color;
   }
 
-  & > input[name=tab]:checked+label{
-    border-top: 0 !important; // ???
+  & > input[name=tab]:checked + label{
+    // Tabs have an awfully long selector containing their numbers.
+    // If you find a more specific selector than that and lose !important, you'll win a golden bludišťák.
+    border-top: 0 !important;
+
     border-bottom: 3px solid @color-primary;
+
+    // If you change active tab header's font-weight to normal, consider removing the fix for FF down below
     font-weight: bold;
   }
 
@@ -83,4 +86,12 @@
 
 .body-wrapper > .tabs-wrapper > .tab-body-wrapper {
   padding: 14px 0;
+}
+
+
+// Firefox adds letter spacing to bold fonts for some reason
+@-moz-document url-prefix() {
+  .tabs-wrapper > input[name=tab]:checked + label {
+    letter-spacing: -0.07em;
+  }
 }

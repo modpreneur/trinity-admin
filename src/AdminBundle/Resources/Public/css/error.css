@@ -27,11 +27,10 @@
 }
 .select-clear {
   background: transparent;
-  outline: none !important;
+  outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 /**************************************
 
@@ -53,6 +52,7 @@
 /** Design palete Colors (primary, secondary, tertiary) **/
 /*  Used for e.g. button  */
 /** Gradients **/
+/* used for login buttons */
 /**************************************
   Global Element variables
 **************************************/
@@ -80,7 +80,7 @@ label.button {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  border: 1px #d0d2d9 solid;
+  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   color: #fff;
@@ -120,6 +120,7 @@ label.button-success {
   background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
+  font-weight: 700;
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
 }
@@ -147,6 +148,8 @@ label.button-primary {
   cursor: pointer;
   transition: all 0.5s ease;
   border: 1px solid #515974;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
 }
 a.button-primary:hover,
@@ -184,6 +187,59 @@ button.button-tertiary:hover,
 label.button-tertiary:hover {
   background: #117864;
   border: none;
+}
+a.button-social,
+input.button-social,
+button.button-social,
+label.button-social {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: 13px;
+}
+a.button-social i,
+input.button-social i,
+button.button-social i,
+label.button-social i {
+  float: left;
+  font-size: 24px;
+  padding: 5px 10px;
+}
+a.button-social div.text,
+input.button-social div.text,
+button.button-social div.text,
+label.button-social div.text {
+  float: left;
+  display: block;
+  padding: 10px 16px;
+  margin: 0;
+}
+a.button-social.facebook,
+input.button-social.facebook,
+button.button-social.facebook,
+label.button-social.facebook {
+  background-color: #3B5998;
+}
+a.button-social.facebook:hover,
+input.button-social.facebook:hover,
+button.button-social.facebook:hover,
+label.button-social.facebook:hover {
+  background-color: #2d4373;
+}
+a.button-social.google,
+input.button-social.google,
+button.button-social.google,
+label.button-social.google {
+  background-color: #fff;
+  color: #4285F4;
+}
+a.button-social.google:hover,
+input.button-social.google:hover,
+button.button-social.google:hover,
+label.button-social.google:hover {
+  background-color: #4285F4;
+  color: #fff;
 }
 a.button-danger,
 input.button-danger,
@@ -488,7 +544,7 @@ body .button-success {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  border: 1px #d0d2d9 solid;
+  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   color: #fff;
@@ -523,6 +579,7 @@ body .button-success-success {
   background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
+  font-weight: 700;
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
 }
@@ -544,6 +601,8 @@ body .button-success-primary {
   cursor: pointer;
   transition: all 0.5s ease;
   border: 1px solid #515974;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
 }
 body .button-success-primary:hover {
@@ -566,6 +625,38 @@ body .button-success-tertiary {
 body .button-success-tertiary:hover {
   background: #117864;
   border: none;
+}
+body .button-success-social {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: 13px;
+}
+body .button-success-social i {
+  float: left;
+  font-size: 24px;
+  padding: 5px 10px;
+}
+body .button-success-social div.text {
+  float: left;
+  display: block;
+  padding: 10px 16px;
+  margin: 0;
+}
+body .button-success-social.facebook {
+  background-color: #3B5998;
+}
+body .button-success-social.facebook:hover {
+  background-color: #2d4373;
+}
+body .button-success-social.google {
+  background-color: #fff;
+  color: #4285F4;
+}
+body .button-success-social.google:hover {
+  background-color: #4285F4;
+  color: #fff;
 }
 body .button-success-danger {
   background-color: #c93236;

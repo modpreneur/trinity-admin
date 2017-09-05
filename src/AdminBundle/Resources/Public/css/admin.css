@@ -18,11 +18,10 @@
 }
 .select-clear {
   background: transparent;
-  outline: none !important;
+  outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 /**************************************
   SHAME
@@ -39,6 +38,7 @@
 /** Design palete Colors (primary, secondary, tertiary) **/
 /*  Used for e.g. button  */
 /** Gradients **/
+/* used for login buttons */
 /**************************************
   Global Element variables
 **************************************/
@@ -187,6 +187,7 @@ header.main-header {
 .navbar #navbar-left #main-menu-button {
   background: #515974;
   border: none;
+  box-shadow: none;
   padding: 0;
   font-size: 22px;
   margin: 14px;
@@ -456,16 +457,16 @@ header.main-header {
 }
 #flash-message-container {
   width: 200px;
-  height: calc(100% - ( 50px  + 15px));
+  height: calc(100% - ( 50px  + 20px));
   will-change: contents;
   position: fixed;
-  top: 65px;
+  top: 70px;
   z-index: 999999;
   pointer-events: none;
   word-wrap: break-word;
   overflow: auto;
   right: 0;
-  padding: 0 10px 0 19px;
+  padding: 0 20px 0 20px;
   display: flex;
   flex-direction: column-reverse;
 }
@@ -476,19 +477,18 @@ header.main-header {
   margin: 0;
 }
 #flash-message-container > div.alert {
-  padding: 0 !important;
+  padding: 0;
   margin: 0 0 10px 0;
   opacity: 1;
   left: 0;
   position: relative;
   pointer-events: all;
-  color: #34708e;
+  color: #515974;
   border: none;
   -webkit-box-shadow: 0 12.5px 16.5px 2.5px rgba(0, 0, 0, 0.13);
   -moz-box-shadow: 0 12.5px 16.5px 2.5px rgba(0, 0, 0, 0.13);
   box-shadow: 0 12.5px 16.5px 2.5px rgba(0, 0, 0, 0.13);
-  background: #fff !important;
-  border-bottom: none !important;
+  background: #fff;
   border-radius: 10px;
 }
 #flash-message-container > div.alert i.alert-close-icon:before {
@@ -496,7 +496,7 @@ header.main-header {
   margin: -10px;
 }
 #flash-message-container > div.alert .alert-label {
-  padding: 8px !important;
+  padding: 8px;
   cursor: pointer;
   font-size: 18px;
   width: 100%;
@@ -517,12 +517,11 @@ header.main-header {
   line-height: 1;
 }
 #flash-message-container > div.alert .message-text {
-  padding-top: 5px;
+  padding: 5px 10px 20px 10px;
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   color: #515974;
-  padding-bottom: 20px;
-  font-weight: 800;
+  font-weight: 700;
 }
 #flash-message-container > div.alert-danger .message-icon .mdi:before,
 #flash-message-container > div.alert-error .message-icon .mdi:before {
@@ -533,8 +532,18 @@ header.main-header {
 #flash-message-container > div.alert-error .message-text {
   color: #fa4a28;
 }
+#flash-message-container > div.alert-warning .message-icon .mdi:before {
+  content: "\F026";
+  color: #fc5e17;
+}
+#flash-message-container > div.alert-warning .message-text {
+  color: #fc5e17;
+}
 #flash-message-container > div.alert-success .alert-label {
   visibility: hidden;
+}
+#flash-message-container > div.alert-success .message-text {
+  font-size: 18px;
 }
 #flash-message-container > div.alert-success .message-icon .mdi:before {
   content: "\F12C";
@@ -547,37 +556,10 @@ header.main-header {
   -webkit-animation-play-state: paused;
   animation-play-state: paused;
 }
-#flash-message-container > div.alert.alert-info i.alert-icon:before {
-  color: #515974;
-}
-#flash-message-container > div.alert.alert-info i.alert-icon:after {
-  content: "\e68c";
-}
-#flash-message-container > div.alert.alert-success i.alert-icon:before {
-  color: #5da423;
-}
-#flash-message-container > div.alert.alert-success i.alert-icon:after {
-  content: "\e933";
-  font-family: trinity !important;
-}
-#flash-message-container > div.alert.alert-warning i.alert-icon:before {
-  color: #fc5e17;
-}
-#flash-message-container > div.alert.alert-warning i.alert-icon:after {
-  content: "\e65e";
-}
-#flash-message-container > div.alert.alert-danger i.alert-icon:before {
-  color: #c93236;
-}
-#flash-message-container > div.alert.alert-danger i.alert-icon:after {
-  content: "\e64d";
-  font-weight: 600;
-}
 #flash-message-container > div.alert .show-alert p {
   word-wrap: break-word;
   font-size: 16px;
   margin: 25px 35px 25px 0;
-  color: #2d323e !important;
   font-weight: 400;
   line-height: 1.3;
 }
@@ -596,11 +578,9 @@ header.main-header {
   margin: 24px 0 20px 24px;
 }
 #flash-message-container > div.alert .show-alert i.alert-icon:after {
-  color: #fff !important;
+  color: #fff;
   font-size: 20px;
-  font-family: tiecons;
   margin-left: 12px;
-  line-height: 45px;
   display: inline-block;
   line-height: 1;
   top: -52px;
@@ -712,10 +692,8 @@ header.main-header {
   border-bottom: 3px solid transparent;
   margin-bottom: 1px;
   background: transparent;
-  transition: all 0.2s ease;
   color: #515974;
   font-size: 14px;
-  font-weight: 300;
   text-align: left;
   padding: 10px 2px 2px 2px;
   margin-left: 25px;
@@ -759,6 +737,11 @@ header.main-header {
 }
 .body-wrapper > .tabs-wrapper > .tab-body-wrapper {
   padding: 14px 0;
+}
+@-moz-document url-prefix() {
+  .tabs-wrapper > input[name=tab]:checked + label {
+    letter-spacing: -0.07em;
+  }
 }
 /**************************************
 
@@ -926,7 +909,6 @@ header.main-header {
   bottom: 0;
   /* background: red; */
   z-index: 99;
-  box-shadow: 0 -25px 15px -15px #ffffff inset;
 }
 .trinity-widget .content-box {
   height: 348px;
@@ -1038,10 +1020,8 @@ header.main-header {
 .handle {
   cursor: move;
   height: 50px;
+  width: 60%;
   margin-top: -20px;
-}
-.handle:hover {
-  background: #f7f7f7;
 }
 #dashboard_expandedWidgets {
   /*********
@@ -1100,9 +1080,6 @@ header.main-header {
 .trinity-widget {
   padding: 20px;
 }
-.trinity-widget .data-grid thead tr {
-  border-bottom: 2px solid #efefef;
-}
 .small-widgets .trinity-widget-wrapper {
   width: 100%;
   margin: 30px 0;
@@ -1124,7 +1101,7 @@ header.main-header {
 .small-widgets .trinity-widget .widget-small-description {
   font-size: 14px;
   line-height: 1;
-  color: #b5b5b5;
+  color: #515974;
   font-weight: 400;
   margin-bottom: 10px;
   margin-left: 55px;
@@ -1141,7 +1118,7 @@ header.main-header {
 }
 .small-widgets .trinity-widget .widget-small-icon {
   display: block;
-  color: #d2d2d2;
+  color: #515974;
   font-size: 40px;
 }
 .small-widgets .small-widget:first-child > div {
@@ -1239,6 +1216,10 @@ form label {
 form label a {
   color: #515974;
   font-weight: 300;
+  float: right;
+}
+.form label a:hover,
+form label a:hover {
   text-decoration: underline;
 }
 .form label.required:after,
@@ -1287,11 +1268,10 @@ form textarea,
 .form .rw-datetimepicker input,
 form .rw-datetimepicker input {
   background: transparent;
-  outline: none !important;
+  outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  box-shadow: none !important;
+  box-shadow: none;
   width: 100%;
   border: 1px solid #d0d2d9;
   padding: 8px 10px;
@@ -1375,6 +1355,7 @@ form textarea[disabled=disabled]:hover,
 .form .rw-datetimepicker input[disabled=disabled]:hover,
 form .rw-datetimepicker input[disabled=disabled]:hover {
   cursor: not-allowed;
+  color: #515974;
   border-color: #e1e7f0;
 }
 .form input[type=color],
@@ -1597,6 +1578,7 @@ body.body-sidebar main.main-content {
 }
 .modal-wrapper .button-close .mdi {
   font-size: 22px;
+  float: left;
 }
 .modal-wrapper .modal-content {
   border-radius: 5px;
@@ -1671,13 +1653,11 @@ body.body-sidebar main.main-content {
 .modal-wrapper.search-modal .search-select {
   border: none;
   width: 100%;
-  box-shadow: none;
   background: transparent;
-  outline: none !important;
+  outline: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;
-  box-shadow: none !important;
+  box-shadow: none;
 }
 .modal-wrapper.search-modal .modal-content {
   padding: 0;
@@ -2245,7 +2225,7 @@ label.button {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  border: 1px #d0d2d9 solid;
+  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   color: #fff;
@@ -2285,6 +2265,7 @@ label.button-success {
   background-image: -ms-linear-gradient(top, #7FB93D 0%, #038d4a 100%);
   background-image: linear-gradient(to bottom, #7FB93D 0%, #038d4a 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#7FB93D, endColorstr=#038d4a, GradientType=0);
+  font-weight: 700;
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
 }
@@ -2312,6 +2293,8 @@ label.button-primary {
   cursor: pointer;
   transition: all 0.5s ease;
   border: 1px solid #515974;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
   border-radius: 20px;
 }
 a.button-primary:hover,
@@ -2349,6 +2332,59 @@ button.button-tertiary:hover,
 label.button-tertiary:hover {
   background: #117864;
   border: none;
+}
+a.button-social,
+input.button-social,
+button.button-social,
+label.button-social {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  padding: 0;
+  font-size: 13px;
+}
+a.button-social i,
+input.button-social i,
+button.button-social i,
+label.button-social i {
+  float: left;
+  font-size: 24px;
+  padding: 5px 10px;
+}
+a.button-social div.text,
+input.button-social div.text,
+button.button-social div.text,
+label.button-social div.text {
+  float: left;
+  display: block;
+  padding: 10px 16px;
+  margin: 0;
+}
+a.button-social.facebook,
+input.button-social.facebook,
+button.button-social.facebook,
+label.button-social.facebook {
+  background-color: #3B5998;
+}
+a.button-social.facebook:hover,
+input.button-social.facebook:hover,
+button.button-social.facebook:hover,
+label.button-social.facebook:hover {
+  background-color: #2d4373;
+}
+a.button-social.google,
+input.button-social.google,
+button.button-social.google,
+label.button-social.google {
+  background-color: #fff;
+  color: #4285F4;
+}
+a.button-social.google:hover,
+input.button-social.google:hover,
+button.button-social.google:hover,
+label.button-social.google:hover {
+  background-color: #4285F4;
+  color: #fff;
 }
 a.button-danger,
 input.button-danger,
@@ -2999,7 +3035,7 @@ g {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  border: 1px #d0d2d9 solid;
+  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   color: #fff;
@@ -3102,7 +3138,7 @@ g {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  border: 1px #d0d2d9 solid;
+  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
