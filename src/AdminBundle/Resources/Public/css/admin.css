@@ -2309,7 +2309,7 @@ input.button-secondary,
 button.button-secondary,
 label.button-secondary {
   background-color: #6F68F9;
-  border: 1.5px solid #fff;
+  border: 1px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
 }
 a.button-secondary:hover,
