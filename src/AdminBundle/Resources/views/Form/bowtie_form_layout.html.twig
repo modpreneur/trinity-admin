@@ -251,3 +251,20 @@
 
     {{- form_errors(form) -}}
 {%- endblock form_row -%}
+
+{%- block form_label -%}
+    {{- parent() -}}
+
+    {% if label_attr.class is defined and 'tooltip' in label_attr.class %}
+        {% if label_attr["data-title"] is defined and label_attr["data-title"] is not empty %}
+            {% set data_title = label_attr["data-title"] %}
+        {% endif %}
+
+        <div class="tooltip-wrapper">
+            <i class="mdi mdi-information tooltip-icon"></i>
+            <div class="tooltip">
+                {{ data_title }}
+            </div>
+        </div>
+    {% endif %}
+{%- endblock form_label -%}

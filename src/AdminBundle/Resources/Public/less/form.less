@@ -42,32 +42,39 @@
 
     &.tooltip {
       display: inline;
-      position: relative;
 
-      &::after {
-        font-family: @icon-font;
-        content: "\F2FC";
-        font-size: 19px;
-        opacity: 0.5;
+      & + .tooltip-wrapper {
+        position: relative;
+        display: inline;
 
-        &:hover {
-          opacity: 1;
+        .tooltip-icon {
+          cursor: pointer;
+          font-size: 19px;
+          opacity: 0.5;
+
+          &:hover {
+            opacity: 1;
+
+            & + div.tooltip {
+              display: block;
+            }
+          }
+
+          & + div.tooltip {
+            display: none;
+            width: 243px;
+            right: -240px;
+            padding: 11px 13px;
+            position: absolute;
+            bottom: 28px;
+            background: lighten(@color-primary, 10%);
+            color: @color-white;
+            font-size: 12px;
+            font-weight: 400;
+            border-radius: 5px 5px 5px 0;
+            z-index: 98;
+          }
         }
-      }
-
-      &:hover:before {
-        content: attr(data-title);
-        width: 243px;
-        right: -240px;
-        padding: 11px 13px;
-        position: absolute;
-        bottom: 28px;
-        background: lighten(@color-primary, 10%);
-        color: @color-white;
-        font-size: 12px;
-        font-weight: 400;
-        border-radius: 5px 5px 5px 0;
-        z-index: 98;
       }
     }
   }

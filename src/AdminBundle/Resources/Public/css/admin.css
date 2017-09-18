@@ -1231,26 +1231,33 @@ form label.required:after {
 .form label.tooltip,
 form label.tooltip {
   display: inline;
-  position: relative;
 }
-.form label.tooltip::after,
-form label.tooltip::after {
-  font-family: "Material Design Icons";
-  content: "\F2FC";
+.form label.tooltip + .tooltip-wrapper,
+form label.tooltip + .tooltip-wrapper {
+  position: relative;
+  display: inline;
+}
+.form label.tooltip + .tooltip-wrapper .tooltip-icon,
+form label.tooltip + .tooltip-wrapper .tooltip-icon {
+  cursor: pointer;
   font-size: 19px;
   opacity: 0.5;
 }
-.form label.tooltip::after:hover,
-form label.tooltip::after:hover {
+.form label.tooltip + .tooltip-wrapper .tooltip-icon:hover,
+form label.tooltip + .tooltip-wrapper .tooltip-icon:hover {
   opacity: 1;
 }
-.form label.tooltip:hover:before,
-form label.tooltip:hover:before {
-  content: attr(data-title);
+.form label.tooltip + .tooltip-wrapper .tooltip-icon:hover + div.tooltip,
+form label.tooltip + .tooltip-wrapper .tooltip-icon:hover + div.tooltip {
+  display: block;
+}
+.form label.tooltip + .tooltip-wrapper .tooltip-icon + div.tooltip,
+form label.tooltip + .tooltip-wrapper .tooltip-icon + div.tooltip {
+  display: none;
   width: 243px;
+  right: -240px;
   padding: 11px 13px;
   position: absolute;
-  left: 50px;
   bottom: 28px;
   background: #667092;
   color: #fff;
@@ -1571,7 +1578,7 @@ body.body-sidebar main.main-content {
   background: #12141a;
 }
 .modal-wrapper .button-close span {
-  padding: 0 15px 0 15px;
+  padding: 0 15px 0 10px;
   margin-top: 5px;
   float: right;
   display: inline-block;
@@ -1597,7 +1604,7 @@ body.body-sidebar main.main-content {
 }
 .modal-wrapper .modal-content .modal-footer {
   margin: 10px -100px -30px -100px;
-  border-top: 1px solid #d0d2d9;
+  border-top: 1px solid #e1e7f0;
   padding: 25px 0;
 }
 .modal-wrapper .modal-content .grid {
@@ -2309,7 +2316,7 @@ input.button-secondary,
 button.button-secondary,
 label.button-secondary {
   background-color: #6F68F9;
-  border: 1px solid #fff;
+  border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
 }
 a.button-secondary:hover,
