@@ -252,6 +252,8 @@
     {{- form_errors(form) -}}
 {%- endblock form_row -%}
 
+
+{# Add tooltip icons and tooltips next to form labels #}
 {%- block form_label -%}
     {{- parent() -}}
 
@@ -260,11 +262,7 @@
             {% set data_title = label_attr["data-title"] %}
         {% endif %}
 
-        <div class="tooltip-wrapper">
-            <i class="mdi mdi-information tooltip-icon"></i>
-            <div class="tooltip">
-                {{ data_title }}
-            </div>
-        </div>
+        {% from '@TrinityAdmin/pageItems.html.twig' import tooltip %}
+        {{ tooltip(data_title) }}
     {% endif %}
 {%- endblock form_label -%}

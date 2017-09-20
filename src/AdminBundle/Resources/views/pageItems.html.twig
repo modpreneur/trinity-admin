@@ -51,6 +51,7 @@
     </div>
 {% endmacro %}
 
+
 {# Shortcuts: #}
 
 {#
@@ -63,6 +64,7 @@
     {{ page_items.tab_body(id, data_source, {width : 'narrow', class : class}) }}
 {% endmacro %}
 
+
 {#
     Create a tab body for grids
 
@@ -72,4 +74,22 @@
 {% macro tab_body_grid(id, data_source, class = '') %}
     {% import _self as page_items %}
     {{ page_items.tab_body(id, data_source, {width : 'wide', class: 'tab-grid ' ~ class}) }}
+{% endmacro %}
+
+{# End of shortcuts #}
+
+
+{#
+    Creates a tooltip icon. When hovered, a tooltip appears.
+    Used in forms.
+#}
+{% macro tooltip(text = '') %}
+    {% if text is not empty %}
+        <div class="tooltip-wrapper">
+            <i class="mdi mdi-information tooltip-icon"></i>
+            <div class="tooltip">
+                {{ text }}
+            </div>
+        </div>
+    {% endif %}
 {% endmacro %}
