@@ -82,6 +82,13 @@
 {#
     Creates a tooltip icon. When hovered, a tooltip appears.
     Used in forms.
+
+    It should be a next child to form label
+    To position it correctly, add a CSS rule display: inline to the label
+
+    Alternatively (when creating label manually), you can add tooltips using:
+    {{ form_label(..., null, {'tooltip': '...')  }}
+    In this case, labels will become inline automatically.
 #}
 {% macro tooltip(text = '') %}
     {% if text is not empty %}

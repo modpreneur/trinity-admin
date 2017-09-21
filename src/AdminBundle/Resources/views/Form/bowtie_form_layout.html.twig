@@ -255,14 +255,28 @@
 
 {# Add tooltip icons and tooltips next to form labels #}
 {%- block form_label -%}
-    {{- parent() -}}
 
-    {% if label_attr.class is defined and 'tooltip' in label_attr.class %}
-        {% if label_attr["data-title"] is defined and label_attr["data-title"] is not empty %}
-            {% set data_title = label_attr["data-title"] %}
-        {% endif %}
+    {% set tooltip_text = '' %}
+
+    {# If set as a variable in Twig #}
+    {% if tooltip is defined and tooltip is not empty %}
+        {% set tooltip_text = tooltip %}
+    {# If set in as an attribute FormBuilder #}
+    {% elseif label_attr.tooltip is defined and label_attr.tooltip is not empty %}
+        {% set tooltip_text = label_attr.tooltip %}
+    {% endif %}
+
+    {% if tooltip_text is not empty %}
+        {# Allows to position tooltips next to labels #}
+        {% set label_attr = label_attr|merge({'class': 'display-inline'}) %}
+
+        {# Render the form label #}
+        {{- parent() -}}
 
         {% from '@TrinityAdmin/pageItems.html.twig' import tooltip %}
-        {{ tooltip(data_title) }}
+        {{ tooltip(tooltip_text) }}
+    {% else %}
+        {{- parent() -}}
     {% endif %}
+
 {%- endblock form_label -%}

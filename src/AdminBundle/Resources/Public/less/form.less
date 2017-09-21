@@ -39,46 +39,54 @@
       color: @color-primary;
       font-weight: @noto-bold;
     }
+  }
 
-    &.tooltip {
-      display: inline;
+  .tooltip-wrapper {
+    position: relative;
+    display: inline;
 
-      & + .tooltip-wrapper {
-        position: relative;
-        display: inline;
+    .tooltip-icon {
+      cursor: pointer;
+      font-size: 19px;
+      opacity: 0.5;
+      line-height: 0;
 
-        .tooltip-icon {
-          cursor: pointer;
-          font-size: 19px;
-          opacity: 0.5;
+      // The MDI icon itself
+      &:before {
+          line-height: 1;
+          // Align inputs with others
+          margin-bottom: 8px;
+      }
 
-          &:hover {
-            opacity: 1;
+      &:hover {
+        opacity: 1;
 
-            & + div.tooltip {
-              display: block;
-            }
-          }
-
-          & + div.tooltip {
-            display: none;
-            width: 243px;
-            right: -240px;
-            padding: 11px 13px;
-            position: absolute;
-            bottom: 28px;
-            background: lighten(@color-primary, 10%);
-            color: @color-white;
-            font-size: 12px;
-            font-weight: 400;
-            border-radius: 5px 5px 5px 0;
-            z-index: 98;
-          }
+        & + div.tooltip {
+          display: block;
         }
+      }
+
+      & + div.tooltip {
+        display: none;
+        width: 243px;
+        right: -240px;
+        padding: 11px 13px;
+        position: absolute;
+        bottom: 28px;
+        background: lighten(@color-primary, 10%);
+        color: @color-white;
+        font-size: 12px;
+        font-weight: 400;
+        border-radius: 5px 5px 5px 0;
+        z-index: 98;
       }
     }
   }
 
+  a {
+    text-decoration: underline;
+  }
+  
   input:not([type="submit"]), select, textarea, .rw-datetimepicker input {
     .select-clear;
     width: 100%;
@@ -130,14 +138,15 @@
     .action {
       position: absolute;
       display: block;
+      top: 8px;
       right: 10px;
       padding: 3px 10px;
       border-radius: 20px;
       background: @color-border;
       color: @color-primary;
       font-weight: @noto-light;
+      text-decoration: none;
       font-size: 12px;
-      top: 5px;
 
       &:hover {
         background: darken(@color-border, 8%);
@@ -145,6 +154,11 @@
     }
   }
 
+  // Used for displaying text in place of inputs
+  div.text {
+    // Keep in line with inputs - same height
+    min-height: 39px;
+  }
 
   .select {
     cursor: pointer;
