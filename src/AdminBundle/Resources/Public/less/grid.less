@@ -266,6 +266,13 @@
   MENU DROPDOWN COMPONENT
   will be changed
  **************************/
+.item-menu {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  text-align: right;
+}
+
 // To show menu, it must be whole item absolute
 table.data-grid tbody tr {
   .item-menu-button {
@@ -326,7 +333,7 @@ th .item-menu-button {
     }
     // Menu list
     ~ .dropdown-item {
-      transform: translateX(-118px);
+      transform: translateX(-165px);
       z-index: 101;
     }
   }
@@ -334,23 +341,39 @@ th .item-menu-button {
 
   .ul-list {
     top: 7px;
-    border-radius: 5px;
     position: absolute;
     z-index: 99;
+    box-shadow: none;
+    min-width: 200px;
+    background: none;
   }
 
   .ul-list li {
     font-weight: @noto-regular;
+    background: #fff;
+
+    &:first-of-type {
+      border-top-left-radius: 5px;
+    }
+
+    &:last-of-type {
+      border-bottom-left-radius: 5px;
+      border-bottom-right-radius: 5px;
+    }
+
     &:hover {
-      background: none;
+      background: @color-grey-lighter;
     }
 
     a {
       color: @color-primary;
+      font-size: 13px;
+      padding: 18px;
+      text-decoration: none;
+      border-bottom: 1px solid @color-grey-light;
 
       &:hover {
         color: @color-primary;
-        text-decoration: underline;
       }
     }
   }
