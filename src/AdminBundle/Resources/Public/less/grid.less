@@ -53,12 +53,25 @@
     &:last-child{
       border-right: none;
     }
+
+    .item-menu-button .button-line {
+      background: transparent;
+
+      &:hover {
+        background: @color-primary;
+      }
+    }
   }
 
   th {
     text-align: left;
     color: @header-font-color;
     font-weight: @noto-bold;
+
+    .item-menu-button .button-line {
+      background: #fff;
+    }
+
     // padding 8px for tables without grid checkbox
     padding-top: 8px;
     padding-bottom: 8px;
@@ -104,79 +117,57 @@
       position: relative;
       min-width: 50px;
       cursor: pointer;
-      // TODO: do we need duplicate font-family 4 times?
 
-      &:before {
+      &:before, &:after {
         position: absolute;
         right: 10px;
-        top: 1px;
-        font-family: @icon-font;
-        content: "\F143";
         font-size: 20px;
+        font-family: @icon-font;
         color: @color-white;
         opacity: 0.5;
+      }
+
+      &:before {
+        top: 1px;
+        content: "\F143";
       }
 
       &:after {
-        position: absolute;
-        right: 10px;
         top: 13px;
-        font-family: @icon-font;
         content: "\F140";
-        font-size: 20px;
-        color: @color-white;
-        opacity: 0.5;
+      }
+
+      // Indicate
+      &:hover {
+        &:before {
+          opacity: 1;
+        }
       }
     }
 
+    // Indicate asc ordering when desc is active
     .order-by-asc, th.order-by-desc:hover {
       position: relative;
 
       &:before {
-        position: absolute;
-        right: 10px;
-        top: 1px;
-        font-family: @icon-font;
-        content: "\F143";
-        font-size: 20px;
-        color: @color-white;
         opacity: 1;
       }
 
       &:after {
-        position: absolute;
-        right: 10px;
-        top: 13px;
-        font-family: @icon-font;
-        content: "\F140";
-        font-size: 20px;
-        color: @color-white;
         opacity: 0.5;
       }
     }
 
+
+    // Indicate desc ordering when asc is active
     .order-by-desc, th.order-by-asc:hover {
-        position: relative;
+      position: relative;
 
       &:before {
-        position: absolute;
-        right: 10px;
-        top: 1px;
-        font-family: @icon-font;
-        content: "\F143";
-        font-size: 20px;
-        color: @color-white;
         opacity: 0.5;
       }
 
       &:after {
-        position: absolute;
-        right: 10px;
-        top: 13px;
-        font-family: @icon-font;
-        content: "\F140";
-        font-size: 20px;
-        color: @color-white;
         opacity: 1;
       }
     }
@@ -187,6 +178,7 @@
       background: #fff;
 
       // Table rows should at least have this height
+      // (to avoid inconsistency)
       td {
         height: @grid-row-min-height;
 
@@ -203,22 +195,12 @@
       .button-small.button-get-details {
         transition: none; // overrides <a> transition style
         margin-right: 10px;
-        margin-left: 5px;
         float: right;
-        padding: 5px 16px;
-        border: 1px solid @color-primary;
-        .radius(14px);
-        color: @color-primary;
-        visibility: hidden;
-        font-size: 10px;
-        &:hover {
-          background: @color-primary;
-          color: white;
-        }
+        visibility: visible;
       }
 
       &:hover {
-        .button-small.button-get-details{
+        .button-small.button-get-details {
           visibility: visible;
         }
       }
@@ -290,50 +272,29 @@ table.data-grid thead .item-menu-button label {
   visibility: visible;
 }
 
-th .item-menu-button {
-  label {
-    background-color: #fff;
-    &:hover,
-    &:focus,
-    &:active {
-      border-color: #fff;
-      background-color: transparent;
-    }
-  }
-}
 .item-menu-button {
-  label {
-    visibility: hidden;
+  label.button-line {
+    visibility: visible;
     position: relative;
-    border-radius: 36px;
-    -moz-border-radius: 36px;
-    -webkit-border-radius: 36px;
-    border: 1px solid @color-primary;
-    color: @color-primary;
-    background: none;
-    padding: 2px 10px;
     z-index: 100;
     .no-select();
 
-    &:hover,
-    &:focus,
-    &:active {
-      background: @color-primary;
-      color: #fff;
-    }
+    // Overriding button-line
+    padding: 2px 10px;
+    font-size: 14px;
   }
 
   input[type=checkbox]:checked {
     // label
     ~ label {
-      background: #525975;
+      background: @color-primary;
       color: #fff;
       z-index: 102;
       visibility: visible;
     }
     // Menu list
     ~ .dropdown-item {
-      transform: translateX(-165px);
+      transform: translateX(-172px);
       z-index: 101;
     }
   }
@@ -346,6 +307,7 @@ th .item-menu-button {
     box-shadow: none;
     min-width: 200px;
     background: none;
+    .no-select();
   }
 
   .ul-list li {

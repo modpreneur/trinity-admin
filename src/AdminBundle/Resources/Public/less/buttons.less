@@ -45,9 +45,11 @@
   }
 
   &-small {
-    padding: 6px 15px;
+    padding: 5px 16px;
     font-size: 10px;
     width: auto;
+    margin-top: 0;
+    margin-bottom: 0;
   }
 
   &-success {
@@ -172,6 +174,7 @@
     border: 1px solid @color-primary;
     background: transparent;
     color: @color-primary;
+    box-shadow: none;
 
     &:hover {
       background: @color-primary;
@@ -179,7 +182,7 @@
     }
   }
 
-  // For dark backgrounds
+  // For dark backgrounds (box-headers,...)
   &-line-inverse {
     border: 1px solid #fff;
     background: transparent;
