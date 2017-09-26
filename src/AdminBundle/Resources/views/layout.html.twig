@@ -125,9 +125,14 @@
 
                     {% block navbar_elements %}
                         <div class="navbar-items grid-auto">
-                            <div class="navbar-title pull-left">
-                                {% block navbar_title %}
-                                    Navbar title
+                            <div class="pull-left">
+                                <div class="navbar-title">
+                                    {% block navbar_title %}
+                                        Navbar title
+                                    {% endblock %}
+                                </div>
+                                {% block breadcrumbs %}
+                                    {{ wo_render_breadcrumbs() }}
                                 {% endblock %}
                             </div>
 
