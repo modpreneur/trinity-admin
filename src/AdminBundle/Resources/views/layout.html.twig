@@ -126,14 +126,16 @@
                     {% block navbar_elements %}
                         <div class="navbar-items grid-auto">
                             <div class="pull-left">
+                                {% if block('navbar_title') is defined %}
+                                    {% set title = block('navbar_title') %}
+                                {% else %}
+                                    {% set title = 'Navbar title' %}
+                                {% endif %}
                                 <div class="navbar-title">
-                                    {% block navbar_title %}
-                                        Navbar title
-                                    {% endblock %}
+                                    <span>{{ title|trim }}</span>
+                                    {% block breadcrumbs %}{{ wo_render_breadcrumbs() }}{% endblock %}
                                 </div>
-                                {% block breadcrumbs %}
-                                    {{ wo_render_breadcrumbs() }}
-                                {% endblock %}
+
                             </div>
 
                             {% block navbar_actions_wrapper %}

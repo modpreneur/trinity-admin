@@ -4,15 +4,23 @@
 .navbar-title {
   font-size: 16px;
   padding-left: 15px;
-  line-height: @navbar-height / 2;
+  display: table-cell;
+  vertical-align: middle;
+  height:@navbar-height;
+  max-height: @navbar-height;
 }
 
 .breadcrumb {
-  font-size:12px;
-  margin:0px;
-  padding-left: 15px;
+  font-size: 12px;
+  margin:0;
   li {
     display: inline;
+    a:hover {
+      text-decoration: underline;
+    }
+    &:last-of-type {
+      color: fadeout(@color-primary, 40%);
+    }
   }
   .separator:before {
     content: " / ";
