@@ -72,10 +72,6 @@
       background: #fff;
     }
 
-    // padding 8px for tables without grid checkbox
-    //padding-top: 8px;
-    //padding-bottom: 8px;
-
     min-height: 36px;
 
     &.grid-checkbox {
@@ -371,13 +367,18 @@ table.data-grid thead .item-menu-button label {
 
   thead {
     background: fadeout(@color-primary, 20%);
+
+    th {
+      padding-top: 8px;
+      padding-bottom: 8px;
+    }
   }
 
   &:only-child {
     margin: -@box-vertical-space -@box-horizontal-space;
   }
 
-  &:first-of-type {
+  &:first-child {
     margin-top: -@box-vertical-space;
   }
 }
