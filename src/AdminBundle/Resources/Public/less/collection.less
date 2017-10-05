@@ -2,35 +2,57 @@
 @import (once) "variables";
 
 .collection-widget {
-
-  padding: 20px 20%;
+  padding: 20px 10%;
   margin-bottom: 15px;
   border-radius: 4px;
   background: @color-grey-light;
-
-  // Collection children should be separated visually
-  .collection-child + .collection-child {
-    margin-top: 60px;
-  }
-
-  & > .form-row > label {
-    display: none;
-  }
 
   .form-row {
     // We want to position delete button relative to this
     position: relative;
   }
 
+  & > .form-row > label {
+    display: none;
+  }
+
+  /** START - separator for bigger collection children **/
+  .collection-child.separate {
+    margin-bottom: 40px;
+    padding-top: 10px;
+  }
+
+  .collection-child.separate + .separate {
+    border-top: solid 1px;
+  }
+
+  /** END - separator for bigger collection children **/
+
+  .collection-child-wrapper {
+    & > label {
+      display: none;
+    }
+  }
+
   // Delete button
   .delete-collection-item {
-
+    position: absolute;
+    top: 0;
+    right: -25px;
     font-size: 20px;
+    cursor: pointer;
+    padding-top: 2px;
 
-    span {
-      position: absolute;
-      right: -25px;
-      top: 30px;
+    &:hover .mdi {
+      color: darken(@color-primary, 20%);
+    }
+    &:hover + .collection-child-wrapper {
+      label, input, select, textarea {
+        text-decoration: line-through;
+      }
+      .rw-datetimepicker, input, select, textarea {
+        background-color: @color-grey;
+      }
     }
   }
 }
@@ -41,11 +63,6 @@
 }
 
 .modal-wrapper {
-  // A label for the entire collection
-  .collection > label {
-    display: none;
-  }
-
   .collection-widget {
     background: @color-grey;
   }

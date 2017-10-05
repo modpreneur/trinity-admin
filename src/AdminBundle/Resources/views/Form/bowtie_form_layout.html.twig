@@ -212,13 +212,19 @@
         {% endif %}
     {% endfor %}
 
-    {% set rowClass = "" %}
+    {% set rowClass = "form-row" %}
     {% if form.vars.attr.rowClass is defined %}
-        {% set rowClass = form.vars.attr.rowClass %}
+        {% set rowClass = rowClass ~ " " ~ form.vars.attr.rowClass %}
     {% endif %}
 
-    <div class="form-row{% if choice %} choice{% endif %} {{ rowClass }}" id="row_{{ id }}">
+    {% set rowId = "row_" ~ id  %}
 
+    {% if form.parent.vars.collection_template is defined %}
+        {% from form.parent.vars.collection_template import collection_child_start %}
+        {{  collection_child_start(rowId, rowClass) }}
+    {% else %}
+        <div class="{{ rowClass }}{% if choice %} choice{% endif %}" id="{{ rowId }}">
+    {% endif %}
         {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
 
             {% block form_row_content %}
@@ -247,7 +253,13 @@
 
         {% endembed %}
 
-    </div>
+
+    {% if form.parent.vars.collection_template is defined %}
+        {% from form.parent.vars.collection_template import collection_child_end %}
+        {{  collection_child_end(rowId) }}
+    {% else %}
+        </div>
+    {% endif %}
 
     {{- form_errors(form) -}}
 {%- endblock form_row -%}
