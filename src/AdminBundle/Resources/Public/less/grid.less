@@ -52,6 +52,7 @@
 
     &:last-child{
       border-right: none;
+      width: 145px; // size of "Details column"
     }
 
     .item-menu-button .button-line {
@@ -112,14 +113,18 @@
     }
 
     .order-by {
+      @right-icon-offset: 10px;
+      @icon-font-size: 20px;
+
       position: relative;
       min-width: 50px;
       cursor: pointer;
+      padding-right: @icon-font-size + @right-icon-offset + 5px; // font size of arrows + right space of arrows from cell + 5px correction
 
       &:before, &:after {
         position: absolute;
-        right: 10px;
-        font-size: 20px;
+        right: @right-icon-offset;
+        font-size: @icon-font-size;
         font-family: @icon-font;
         color: @color-white;
         opacity: 0.5;
