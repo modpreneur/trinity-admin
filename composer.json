@@ -19,16 +19,16 @@
     "symfony/symfony": "~3.3",
     "symfony/framework-bundle": "~2.8 | ~3.3",
     "symfony/form": "~2.8 | ~3.3",
-    "nette/utils": "~2.3",
+    "nette/utils": "~2.4",
     "modpreneur/bowtie": "dev-master",
     "whiteoctober/breadcrumbs-bundle": "~1.2",
-    "twig/twig": "~1.0|~2.0",
-    "symfony/twig-bundle": "^3.3",
+    "twig/twig": "~2.4",
+    "symfony/twig-bundle": "~3.3",
     "trinity/settings": "~1.2",
-    "symfony/monolog-bundle": "~3.0",
+    "symfony/monolog-bundle": "~3.1",
     "sensio/framework-extra-bundle": "^3.0",
-    "knplabs/knp-menu-bundle": "~2.0",
-    "knplabs/knp-gaufrette-bundle": "~0.3",
+    "knplabs/knp-menu-bundle": "~2.1",
+    "knplabs/knp-gaufrette-bundle": "~0.4",
     "symfony/assetic-bundle": "^2.8",
     "twig/extensions": "~1.5",
     "symfony/twig-bridge": "~3.3"
@@ -38,7 +38,7 @@
     "sensio/generator-bundle": "~3.0",
     "phpunit/phpunit": "~6.0",
     "mockery/mockery": "~0.9",
-    "phpstan/phpstan": "~0.7"
+    "phpstan/phpstan": "~0.8"
   },
 
   "suggest": {

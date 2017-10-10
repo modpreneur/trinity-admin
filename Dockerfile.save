@@ -1,8 +1,0 @@
-mnnFROM modpreneur/trinity-test analyse Controller/ DependencyInjection/ Event/ EventListener/ Exception/ Filter/ Grid/ Service/ Tests/ --level=4
-
-
-MAINTAINER Martin Kolek <kolek@modpreneur.com>
-
-WORKDIR /var/app
-
-ENTRYPOINT ["fish", "entrypoint.sh"]
