@@ -7,7 +7,8 @@
 @import (once) "helper";
 
 @search-box-height: 50px;
-@modal-padding: 100px;
+@modal-padding-vertical: 20px;
+@modal-padding-horizontal: 20px;
 
 .modal-wrapper {
   background: fade(@color-primary, 95%);
@@ -43,25 +44,24 @@
   .modal-content{
     border-radius: 5px;
     background: @color-grey-lighter;
-    padding: @modal-padding @modal-padding 30px @modal-padding;
+    padding: @modal-padding-vertical @modal-padding-horizontal;
 
     h3 {
       font-size: 20px;
-      margin-bottom: 2em;
+      margin-bottom: 1em;
       text-align: center;
       font-weight: @noto-bold;
 
       // Modal description
       & + p {
         text-align: center;
-        margin-bottom: 2em;
+        margin-bottom: 1em;
       }
     }
 
     .modal-footer {
-      margin: 10px -@modal-padding -30px -@modal-padding;
       border-top: 1px solid @color-grey;
-      padding: 25px 0;
+      padding: 20px 20px 20px - @modal-padding-vertical;
     }
 
     .grid {
