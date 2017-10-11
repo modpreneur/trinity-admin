@@ -44,7 +44,7 @@
     padding-top: 2px;
 
     &:hover .mdi {
-      color: darken(@color-primary, 20%);
+      color: @color-primary-hover-icon;
     }
     &:hover + .collection-child-wrapper {
       label, input, select, textarea {
@@ -62,9 +62,18 @@
   top: 4px;
 }
 
+// Collection in Modal
 .modal-wrapper {
   .collection-widget {
     background: @color-grey;
+
+    // disabled inputs in modal
+    input, select, textarea {
+      &[disabled],
+      &[disabled=disabled] {
+        border-color: @color-border;
+      }
+    }
   }
 }
 

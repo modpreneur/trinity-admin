@@ -12,6 +12,8 @@
 
 **************************************/
 
+@input-font-size: 13px;
+
 .form, form {
 
   .rw-input {
@@ -100,7 +102,7 @@
     border-radius: 4px;
     font-weight: @noto-light;
     background: #fff;
-    font-size: 13px;
+    font-size: @input-font-size;
 
     &:hover {
       border-color: darken(@color-border, 8%);
@@ -125,6 +127,11 @@
         border-color: @color-grey;
       }
     }
+  }
+
+  .rw-datetimepicker input {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
   }
 
   input[type=color] {
@@ -287,7 +294,7 @@
   border: 1px solid darken(@color-border, 10%);
   background: @color-border;
   padding: 10px;
-  font-size: 13px;
+  font-size: @input-font-size;
   width: 100%;
   margin-bottom: 10px;
 
@@ -309,6 +316,10 @@
 div.rw-widget {
 
   &.rw-datetimepicker {
+    &:hover {
+      background-color: @color-white;
+      border-color: darken(@color-border, 8%);
+    }
 
     &.rw-state-hover:hover, &.rw-state-focus {
       box-shadow: none;
@@ -323,8 +334,19 @@ div.rw-widget {
       box-shadow: none;
     }
 
+    button {
+      transition: .2s;
+      color: @color-primary;
+      &:hover {
+        margin-top: -5px;
+        color: @color-primary-hover-icon;
+      }
+    }
+
     [class*="rw-popup"] {
       background-color: white;
     }
+
+
   }
 }
