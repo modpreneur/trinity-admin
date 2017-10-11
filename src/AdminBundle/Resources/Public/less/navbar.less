@@ -50,33 +50,46 @@ header.main-header {
 
     #navbar-project {
       height: @navbar-height;
+      max-width: @sidebar-width - @navbar-height - @navbar-height; // - left icon and - menu button
+      padding: 8px 0 8px 1em;
 
       #project-select{
         color: #fff;
-        margin: (@navbar-height - 33px)/2 1em;
-        span {
+
+        // project label block (must selector ">" is because content of title should not be affected)
+        &> span {
           display: block;
           font-weight: 300;
           font-size: 12px;
         }
-        .title{
+
+        // title block
+        .title {
           font-size: 14px;
           font-weight: bold;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
-        a{
+        a {
           color: @color-white;
         }
       }
     }
 
     #main-menu-button {
+      // For computations to be clear
+      @main-menu-icon-font-size: 22px;
+
       background: @color-primary;
       border: none;
+      border-radius: 0;
       box-shadow: none;
-      padding: 0;
-      font-size: 22px;
-      margin: (@navbar-height - 22px) / 2;
+      padding: floor((@navbar-height - @main-menu-icon-font-size) / 2);
+      max-height: @navbar-height;
+      margin: 0;
+      font-size: @main-menu-icon-font-size;
     }
   }
 }

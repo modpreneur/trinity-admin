@@ -129,10 +129,6 @@
     }
   }
 
-  .rw-datetimepicker input {
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
-  }
 
   input[type=color] {
     padding: 0;
@@ -330,8 +326,23 @@ div.rw-widget {
       line-height: inherit;
     }
 
+    // Special datetime picker input style
     input {
       box-shadow: none;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      &[disabled] + .rw-select {
+        background: @color-grey;
+        border-color: @color-grey;
+
+        // invert style (no transition)
+        button:hover {
+          cursor: not-allowed;
+          margin-top: 0;
+          color: @color-primary;
+        }
+      }
     }
 
     button {
