@@ -402,7 +402,7 @@ table.data-grid thead .item-menu-button label {
 
   th {
     color: @color-primary;
-    width: 300px;
+    min-width: 100px;
   }
 
   td {
@@ -410,6 +410,10 @@ table.data-grid thead .item-menu-button label {
     white-space: normal;
     max-width: none;
     padding: 10px;
+
+    &:last-child {
+      width: initial;
+    }
   }
 
   tr:nth-of-type(2n) {
