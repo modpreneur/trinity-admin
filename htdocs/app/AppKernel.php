@@ -39,6 +39,7 @@ class AppKernel extends Kernel
             new KnpMenuBundle(),
             new WebProfilerBundle(),
             new TwigBundle(),
+            new \WhiteOctober\BreadcrumbsBundle\WhiteOctoberBreadcrumbsBundle(),
         ];
     }
 

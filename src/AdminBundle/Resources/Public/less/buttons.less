@@ -16,52 +16,71 @@
   margin-left: 5px;
 }
 
+// Unified button border for circular buttons
+@button-border-size: 1.5px;
+@white-border: @button-border-size solid @color-white;
+
+.circle-border() {
+  border: @white-border;
+  box-shadow: 0 0 0 1px @color-border;
+}
+
+// Common button properties
 .button-parameters() {
   text-align: center;
   font-weight: @noto-regular;
   text-decoration: none;
   line-height: 1;
-  //border: 1px @color-border solid; Using box-shadow instead
+  //border: 1px @color-border solid; // Using box-shadow instead
   box-shadow: 0 0 1px @color-border;
   margin: 5px;
   white-space: nowrap;
-
-  color: @color-white;
-
   cursor: pointer;
   transition: .3s;
+  color: @color-white;
+
+  // lets try
+  .circle-border();
 }
 
+// Default core button
 .button() {
   .button-parameters();
-  font-size: 14px;
-  padding: 9px 35px;
   .radius(20px);
 
+  // default font-size
+  font-size: 14px;
+
+  padding: 9px 16px;
+  min-width: 128px;
+
+  // SIZES
   &-medium{
-    padding: 8px 18px;
+    padding: 8px 16px;
+    min-width: 70px;
+
     font-size: 12px;
     width: auto;
   }
 
   &-small {
-    padding: 4px 16px;
+    padding: 5px 16px;
     font-size: 13px;
+    min-width: 35px;
     width: auto;
+
     margin-top: 0;
     margin-bottom: 0;
   }
 
+  // COLORS
   &-success {
     .green();
     font-weight: @noto-bold;
 
-    border: 1.5px solid @color-white;
-    box-shadow: 0 0 0 1px @color-border;
-
     &:hover {
       .green-darker();
-      border: 1px solid transparent;
+      border: @white-border; // need to override bowtie.css styles
     }
   }
 
@@ -69,37 +88,110 @@
     color: @color-white;
     background: @color-primary;
 
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.5s ease;
-    border: 1px solid @color-primary;
-    .radius(20px);
-
     &:hover {
       background: @color-primary-hover;
       color: @color-white;
+      border: @white-border;
     }
   }
 
   &-secondary {
     background-color: @color-secondary;
 
-    border: 1.5px solid @color-white;
-    box-shadow: 0 0 0 1px @color-border;
-
     &:hover {
       background-color: darken(@color-secondary, 10%);
+      border: @white-border; // need to override bowtie.css styles
     }
   }
 
   &-tertiary {
     background: @color-tertiary;
-    border: none;
-    box-shadow: none;
 
     &:hover {
       background: darken(@color-tertiary, 15%);
-      border: none;
+      border: @white-border;
+    }
+  }
+
+  &-danger,
+  &-delete {
+    background-color: @color-danger;
+
+    &:hover {
+      background-color: darken(@color-danger, 15%);
+      border: @white-border;
+    }
+  }
+
+  &-necktie {
+    .necktie();
+
+    &:hover {
+      background-image:
+              svg-gradient(to bottom, darken(@color-necktie-gradient1, 10%), darken(@color-necktie-gradient2, 10%));
+    }
+  }
+
+  // LINE BUTTON
+  &-line {
+    border: 1px solid @color-primary;
+    background: transparent;
+    color: @color-primary;
+    box-shadow: none;
+
+    &:hover {
+      background: @color-primary;
+      color: @color-white;
+    }
+  }
+
+  // For dark backgrounds (box-headers,...)
+  &-line-inverse {
+
+    border: 1px solid @color-white;
+    background: transparent;
+    color: @color-white;
+    box-shadow: none;
+
+    &:hover {
+      background: @color-white;
+      color: @color-primary;
+    }
+
+    // Special disabled style
+    &:disabled,
+    &.button-disabled {
+      border: 1px solid @color-white;
+      color: @color-white;
+
+      &.button-error {
+        opacity: 0.5;
+      }
+
+      &:hover {
+        opacity: 0.3;
+        border: 1px solid @color-white;
+        color: @color-white;
+        background: transparent;
+      }
+    }
+  }
+
+  // DISABLED style
+  &-disabled,
+  &:disabled {
+    box-shadow: none;
+    background: transparent;
+    color: @color-primary;
+    border-color: @color-primary;
+    opacity: 0.3;
+    cursor: not-allowed;
+    font-weight: @noto-regular;
+
+    &:hover {
+      background: transparent;
+      color: @color-primary;
+      border-color: @color-primary;
     }
   }
 
@@ -141,188 +233,47 @@
     }
   }
 
-  &-danger {
-    background-color: @color-danger;
-    box-shadow: none;
-    border: none;
-    &:hover {
-      background-color: darken(@color-danger, 15%);
-      border: none;
+  // FORM STATES
+  &.button-loading {
+    &:disabled {
+      opacity: 0.5;
     }
-  }
-
-  &-necktie {
-    .necktie();
-
-    border: 1.5px solid @color-white;
-    box-shadow: 0 0 0 1px @color-border;
-
-    &:hover {
-      background-image:
-              svg-gradient(to bottom, darken(@color-necktie-gradient1, 10%), darken(@color-necktie-gradient2, 10%));
-    }
-  }
-
-  &-delete {
-    &:hover {
-      background: @color-red !important;
-      border: 1px solid darken(@color-red, 10%) !important;
-    }
-  }
-
-  &-line {
-    border: 1px solid @color-primary;
-    background: transparent;
-    color: @color-primary;
-    box-shadow: none;
-
-    &:hover {
-      background: @color-primary;
-      color: @color-white;
-    }
-  }
-
-  // For dark backgrounds (box-headers,...)
-  &-line-inverse {
-    border: 1px solid #fff;
-    background: transparent;
-    color: #fff;
-
-    &:hover {
-      background: #fff;
-      color: @color-primary;
-    }
-  }
-
-  &-disabled, &:disabled {
-    border: 1px solid @color-primary;
-    background: transparent;
-    color: @color-primary;
-    opacity: 0.5;
-    cursor: not-allowed;
-
-    &:hover {
-      background: transparent;
-      color: @color-primary;
-    }
-  }
-
-  &-grey-gradient {
-
-    background-image:
-            svg-gradient(to bottom, @color-grey-gradient1, @color-grey-gradient2);
-
-    border: none;
-    color: @color-primary;
-
-    &:hover {
-      background-image:
-              svg-gradient(to bottom, darken(@color-grey-gradient1, 10%), darken(@color-grey-gradient2, 10%));
-      border: none;
-    }
-  }
-
-  &-grey-1 {
-    background: @color-grey-1;
-    color: @color-primary;
-    border: none;
-
-    &:hover {
-      background:  darken(@color-grey-1, 10%);
-      color: @color-primary;
-      border: none;
-    }
-  }
-
-  &-grey-2 {
-    background: @color-grey-2;
-    color: @color-primary;
-    border: none;
-
-    &:hover {
-      background: darken(@color-grey-2, 10%);
-      color: @color-primary;
-      border: none;
-    }
-  }
-
-  &-grey-3 {
-    background: @color-grey-3;
-    color: @color-primary;
-    border: none;
-
-    &:hover {
-      background: darken(@color-grey-3, 10%);
-      color: @color-primary;
-      border: none;
-    }
-  }
-
-  &-grey-4 {
-    background: @color-grey-4;
-    color: @color-primary;
-    border: none;
-
-    &:hover {
-      background: darken(@color-grey-4, 10%);
-      color: @color-primary;
-      border: none;
-    }
-  }
-
-  &-orange-gradient {
-    background-image: svg-gradient(to bottom, @color-orange-gradient1, @color-orange-gradient2);
-    border: none;
-
-    &:hover {
-      background-image:
-              svg-gradient(to bottom, darken(@color-orange-gradient1, 10%), darken(@color-orange-gradient2, 10%));
-      border: none;
-    }
-  }
-
-  // FORMS
-  &-loading {
-    background: @color-primary;
-
     &:after {
       .icon("\F450");
-      font-family: @icon-font;
       .animation(spin, 3s, linear, infinite);
-    }
-
-    &:hover {
-      background: darken(@color-primary, 20%);
     }
   }
 
-  &-error {
+  &.button-error {
+    color: @color-danger;
+    border-color: @color-danger;
+
+    &:disabled {
+      opacity: 0.5;
+    }
     &:after {
       .icon('\F02A');
     }
   }
 
-  &-ready {
-    &.button-save {
-      &:after {
-        .icon('\F193');
-      }
+  // ICONS
+  &-save {
+    &:after {
+      .icon('\F193');
     }
+  }
 
-    &.button-remove {
-      &:after {
-        .icon('\F1C0');
-      }
+  &-remove {
+    &:after {
+      .icon('\F1C0');
     }
   }
 }
 
-a.button, input.button, button.button, label.button {
+// Apply styles
+a.button,
+input.button,
+button.button,
+label.button {
   .button();
-}
-
-.btn-group.group-conditions {
-  label {
-    border: 1px solid @color-primary;
-  }
 }

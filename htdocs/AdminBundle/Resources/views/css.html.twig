@@ -51,13 +51,13 @@
 
 {% block page_body %}
 
-    <div class="box box-small">
+    <div class="box">
         <h3 class="box-header">
-            h3.box-header .box-small
+            h3.box-header
         </h3>
         <div class="box-body">
             <p>
-                .box.box-small
+                .box
             </p>
 
             <form action="#" class="form">
@@ -169,7 +169,7 @@
     </div>
 
 
-    <div class="box box-small">
+    <div class="box">
         <h3 class="box-header">
             Add
         </h3>
@@ -425,16 +425,15 @@
 
     <div class="margin-top-20"></div>
 
-    <div class="box">
-        <h3 class="box-header">
+    {% embed "@TrinityAdmin/box.html.twig" with {'width': 'narrow'} %}
+        {% block box_header %}
             Form
-        </h3>
+        {% endblock %}
 
-        <div class="box-form-body">
-            {{ block('form') }}
-        </div>
-
-    </div>
+        {% block box_body %}
+            There should be some form
+        {% endblock %}
+    {% endembed %}
 
     <div class="margin-top-20"></div>
 
@@ -539,33 +538,31 @@
                         <a href="#" class="button button-tertiary"> Tertiary </a>
                         <a href="#" class="button button-necktie">Necktie</a>
                         <a href="#" class="button button-line">Line</a>
-                        <a href="#" class="button button-disable">Disabled</a>
+                        <a href="#" class="button button-primary button-disabled">Disabled</a>
+                    </div>
+
+
+                    <div class="large-24">
+                        <button class="button button-success">success</button>
+                        <button class="button button-danger">warning/danger</button>
+                        <button class="button button-danger button-remove">.button-remove</button>
+                        <button class="button button-success button-loading" disabled>loading</button>
+                        <button class="button button-success button-error" disabled>error</button>
                     </div>
 
                     <div class="large-24">
-                        <button class="button button-loading trinity-form-loading" disabled="disabled"> loading</button>
-
-                        <input type="submit" class="button button-success" value="success">
-                        <button class="button button-success trinity-form-success">success</button>
-
-                        <button class="button button-warning" disabled="disabled">warning</button>
-                        <button class="button button-danger" disabled="disabled">error</button>
-                    </div>
-
-                    <div class="large-24">
-                        <input type="submit" class="button button-grey-1" value="button">
-                        <input type="submit" class="button button-grey-2" value="button">
-                        <input type="submit" class="button button-grey-3" value="button">
-                        <input type="submit" class="button button-grey-4" value="button">
-                        <input type="submit" class="button button-grey-gradient" value="button">
-                        <input type="submit" class="button button-orange-gradient" value="button">
-                    </div>
-
-                    <div class="large-24">
-                        <input type="submit" class="button button-medium" value="button-medium">
-                        <input type="submit" class="button button-small" value="button-small">
+                        <input type="submit" class="button button-secondary button-medium" value="button-medium">
+                        <input type="submit" class="button button-secondary button-small" value="button-small">
                         <input type="submit" class="button button-medium button-success" value="button-medium.button-success">
+                    </div>
 
+                    <div class="large-24" style="background: #515974; border-radius: 10px; padding: 10px; margin-top: 20px;">
+                        <a href="#" class="button button-line-inverse">Line inverse</a>
+                        <a href="#" class="button button-line-inverse button-disabled">disabled</a>
+                        <a href="#" class="button button-line-inverse button-loading">loading</a>
+                        <a href="#" class="button button-line-inverse button-loading button-disabled">loading and disabled</a>
+                        <a href="#" class="button button-line-inverse button-error">error</a>
+                        <a href="#" class="button button-line-inverse button-error button-disabled">error and disabled</a>
                     </div>
                 </div>
 

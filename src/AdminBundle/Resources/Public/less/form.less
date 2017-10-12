@@ -28,7 +28,7 @@
     .no-select();
     position: relative;
     cursor: pointer;
-    font-weight: 600;
+    font-weight: @noto-bold;
 
     a {
       color: @color-primary;
@@ -82,7 +82,7 @@
         background: lighten(@color-primary, 10%);
         color: @color-white;
         font-size: 12px;
-        font-weight: 400;
+        font-weight: @noto-regular;
         border-radius: 5px 5px 5px 0;
         z-index: 98;
       }
@@ -217,7 +217,7 @@
     }
 
     input[type=checkbox][disabled] + label,
-    input[type=radio][disabled] + label{
+    input[type=radio][disabled] + label {
       cursor: not-allowed;
     }
   }

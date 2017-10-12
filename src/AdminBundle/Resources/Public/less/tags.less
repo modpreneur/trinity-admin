@@ -7,6 +7,9 @@
 @import (once) "variables";
 
 .tags {
+  .clearfix;
+  margin: 0;
+
   li {
     width: auto;
     min-width: 60px;
@@ -14,8 +17,9 @@
     line-height: 20px !important;
     text-align: center;
     font-size: 11px;
-    font-weight: 500;
-    color: #fff;
+    font-weight: @noto-regular;
+    color: @color-white;
+    float:left;
     border-radius: 2px;
     padding: 0 4px;
     margin-right: 5px;
@@ -24,39 +28,50 @@
       margin: 0;
     }
 
+    &.stretch:only-of-type {
+      width: 100%;
+    }
+
     &:last-of-type {
       margin-right: 0;
     }
   }
-  .enabled {
+
+  // Colors of tags
+  .enabled,
+  .primary {
     background: @color-primary;
   }
-  .disabled {
-    background: #d2d7e3;
+  .secondary {
+    background: @color-secondary;
+  }
+  .disabled,
+  .locked {
+    background: @color-disabled;
   }
   .active {
-    background: #22baa0;
+    background: @color-tertiary;
   }
-  .changed, .update {
-    background: #24afc9;
+  .changed,
+  .update,
+  .info {
+    background: @color-blue;
   }
   .premium {
     background: @color-primary;
   }
-  .banned, .blocked, .danger, .delete {
+  .banned,
+  .blocked,
+  .danger,
+  .delete {
     background: @color-danger;
   }
-  .pending {
-    background: #62c500;
-    color: #fff; // todo useless?
-  }
-  .locked {
-    background: #b9ae86;
-  }
-  .create, .success {
-    background: #5DA423;
-  }
+  .pending,
   .warning {
     background: @color-warning;
+  }
+  .create,
+  .success {
+    background: @color-success;
   }
 }
