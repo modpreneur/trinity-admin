@@ -20,7 +20,7 @@
     "symfony/framework-bundle": "~2.8 | ~3.3",
     "symfony/form": "~2.8 | ~3.3",
     "nette/utils": "~2.4",
-    "modpreneur/bowtie": "dev-master",
+    "modpreneur/bowtie": "~2.0",
     "whiteoctober/breadcrumbs-bundle": "~1.2",
     "twig/twig": "~2.4",
     "symfony/twig-bundle": "~3.3",

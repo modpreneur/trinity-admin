@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "ce3fd04510c225add7d4ec51d38ee0ae",
+    "content-hash": "4a4b9b769d65dcef78c756fd7272f20a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1016,16 +1016,16 @@
         },
         {
             "name": "modpreneur/bowtie",
-            "version": "dev-master",
+            "version": "v2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/modpreneur/bowtie.git",
-                "reference": "59705c48724cca8c89fc5d3a05e4abede3f6d8c5"
+                "reference": "d1aa3675ad4d27aa33687ba1ea4260d50f39f215"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/modpreneur/bowtie/zipball/59705c48724cca8c89fc5d3a05e4abede3f6d8c5",
-                "reference": "59705c48724cca8c89fc5d3a05e4abede3f6d8c5",
+                "url": "https://api.github.com/repos/modpreneur/bowtie/zipball/d1aa3675ad4d27aa33687ba1ea4260d50f39f215",
+                "reference": "d1aa3675ad4d27aa33687ba1ea4260d50f39f215",
                 "shasum": ""
             },
             "type": "library",
@@ -1036,7 +1036,8 @@
                     "email": "hermann@webvalley.cz"
                 }
             ],
-            "time": "2015-09-15 14:48:11"
+            "description": "CSS framework",
+            "time": "2017-10-02T14:06:17+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -4546,9 +4547,7 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": {
-        "modpreneur/bowtie": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
