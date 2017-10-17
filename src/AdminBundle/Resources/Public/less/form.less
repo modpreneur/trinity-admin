@@ -193,27 +193,48 @@
       font-weight: @noto-light;
     }
 
+    &.text-bold label {
+      font-weight: @noto-bold;
+    }
+
+
     input {
       display: none;
     }
 
-    label:before {
+    label:before,
+    label:after {
       content: "\F12E"; // unchecked
       position: relative;
       vertical-align: middle;
       font-family: @icon-font;
       font-size: 20px;
-      margin-right: 5px;
       color: @color-grey-light;
     }
 
-    input:checked ~ label:before {
+    label:before {
+      margin-right: 5px;
+    }
+
+    label:after {
+      margin-left: 5px;
+      display:none;
+    }
+
+    input:checked ~ label:before,
+    input:checked ~ label:after {
       content: "\F132"; // checked
       color: @color-primary;
-      position: relative;
-      vertical-align: middle;
-      font-family: @icon-font;
       speak: none;
+    }
+
+    &.inverse {
+      label:after {
+        display: initial;
+      }
+      label:before {
+        display: none
+      }
     }
 
     input[type=checkbox][disabled] + label,

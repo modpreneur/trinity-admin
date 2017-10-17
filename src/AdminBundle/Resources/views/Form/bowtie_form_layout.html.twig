@@ -189,11 +189,29 @@
 
 
 {% block checkbox_widget -%}
-    <div class="checkbox">
+    <div
+        {% if form.vars.wrapper_attr is defined %}
+            {# Working with TrinityCheckboxType #}
+
+            {# Class insurance that it has checkbox#}
+            {% set wrapperClass = "checkbox" %}
+            {% if form.vars.wrapper_attr.class is defined %}
+                {% set wrapperClass = wrapperClass ~ " " ~ form.vars.wrapper_attr.class %}
+            {% endif %}
+
+            {# render other attributes #}
+            {% with { attr: form.vars.wrapper_attr|merge({class: wrapperClass}) } %}
+                {{ block('attributes') }}
+            {% endwith %}
+        {% else %}
+            {# Working with default CheckboxType #}
+            {{ 'class="checkbox' }}
+        {% endif %}
+    >
         {{- parent() -}}
         {# {{ form_label(form) }} for CheckBoxType displays label twice, inside form_label() and form_widget()#}
         {# setting attr => ['disable_widget_label' => true]#}
-        {% if attr.disable_widget_label is defined and attr.disable_widget_label %}
+        {% if form.vars.hide_widget_label is defined and form.vars.hide_widget_label %}
             <label for="{{ id }}"></label>
         {% else %}
             {{ form_label(form) }}
@@ -203,6 +221,7 @@
 {%- endblock checkbox_widget %}
 
 
+{# START - FORM_ROW #}
 {%- block form_row -%}
 
     {% set choice = false %}
@@ -235,7 +254,10 @@
             {% endblock form_row_content %}
 
             {% block form_row_label_content %}
-                {{- form_label(form) -}}
+                {# check for TrinityCheckboxType #}
+                {% if form.vars.is_inline is not defined or not form.vars.is_inline %}
+                    {{- form_label(form) -}}
+                {% endif %}
             {% endblock form_row_label_content %}
 
             {% block form_row_input %}
@@ -263,6 +285,7 @@
 
     {{- form_errors(form) -}}
 {%- endblock form_row -%}
+{# END - FORM_ROW #}
 
 
 {# Add tooltip icons and tooltips next to form labels #}
