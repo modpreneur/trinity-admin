@@ -32,21 +32,19 @@
   text-decoration: none;
   line-height: 1;
   //border: 1px @color-border solid; // Using box-shadow instead
-  box-shadow: 0 0 1px @color-border;
+  //box-shadow: 0 0 1px @color-border; // not neccessary
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: @color-white;
-
-  // lets try
-  .circle-border();
 }
 
 // Default core button
 .button() {
   .button-parameters();
   .radius(20px);
+  .circle-border();
 
   // default font-size
   font-size: 14px;

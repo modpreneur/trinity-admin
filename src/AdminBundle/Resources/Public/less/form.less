@@ -99,7 +99,7 @@
     border: 1px solid @color-border;
     padding: 8px 10px;
     color: @color-primary;
-    border-radius: 4px;
+    border-radius: @default-radius;
     font-weight: @noto-light;
     background: #fff;
     font-size: @input-font-size;
@@ -255,19 +255,38 @@
     margin-left: 10px;
   }
 
-  .image{
+  .image {
     border: 1px solid @color-border;
   }
 
-  .error-message, .form-msg-wrapper {
-    color: @color-warning;
+  /** START - FORM MESSAGES **/
+
+  .error-message {
     text-align: right;
     font-size: 12px;
   }
 
-  .form-error-wrapper:not(:empty) {
-    padding: 3px 0;
+  .form-msg-wrapper {
+    text-align: right;
+    font-size: @input-font-size;
+
+    &:not(:empty){
+      padding: 3px 0;
+    }
+
+    .control-info {
+      border: none;
+      background: none;
+      padding: 0;
+      margin: 0;
+    }
   }
+
+  .form-error-wrapper {
+    color: @color-warning;
+  }
+
+  /** END - FORM MESSAGES **/
 
   .upload-buttons-wrapper {
     text-align: center;
@@ -282,38 +301,17 @@
 }
 
 
-// move to button.less?
-.add-new-box {
-  .object-center;
-
-  padding: 5px 10px;
-  color: @color-primary;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: 1px solid @color-primary;
-  border-radius: 20px;
-
-  &:hover {
-    background: @color-primary;
-    color: @color-white;
-  }
-
-  max-width: 100px;
-  margin-bottom: 20px;
-}
-
-
 /*********************
   Information message box
  ********************/
 .control-info {
-  border: 1px solid darken(@color-border, 10%);
-  background: @color-border;
-  padding: 10px;
   font-size: @input-font-size;
   width: 100%;
   margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid darken(@color-border, 10%);
+  background: @color-border;
+  border-radius: @default-radius;
 
   .mdi {
     display: block;
