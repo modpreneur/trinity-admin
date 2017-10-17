@@ -65,6 +65,9 @@
   Spacing
 **************************************/
 /**************************************
+  RADIUS
+**************************************/
+/**************************************
   Widgets
 **************************************/
 /**
@@ -207,13 +210,17 @@ header.main-header {
 }
 .navbar #navbar-left #main-menu-button {
   background: #515974;
+  color: #fff;
   border: none;
   border-radius: 0;
   box-shadow: none;
   padding: 14px;
+  min-width: 50px;
   max-height: 50px;
   margin: 0;
   font-size: 22px;
+  line-height: 1;
+  cursor: pointer;
 }
 .white {
   color: #fff;
@@ -1221,6 +1228,11 @@ header.main-header {
     - user js control messages for edit, new
 
 **************************************/
+.form,
+form {
+  /** START - FORM MESSAGES **/
+  /** END - FORM MESSAGES **/
+}
 .form .rw-input,
 form .rw-input {
   height: inherit;
@@ -1415,9 +1427,10 @@ form .input-with-action {
 }
 .form .input-with-action .action,
 form .input-with-action .action {
+  cursor: pointer;
   position: absolute;
   display: block;
-  top: 8px;
+  top: 6px;
   right: 10px;
   padding: 3px 10px;
   border-radius: 20px;
@@ -1425,7 +1438,7 @@ form .input-with-action .action {
   color: #515974;
   font-weight: 300;
   text-decoration: none;
-  font-size: 12px;
+  font-size: 13px;
 }
 .form .input-with-action .action:hover,
 form .input-with-action .action:hover {
@@ -1460,28 +1473,49 @@ form .checkbox label {
   width: auto;
   font-weight: 300;
 }
+.form .checkbox.text-bold label,
+form .checkbox.text-bold label {
+  font-weight: 700;
+}
 .form .checkbox input,
 form .checkbox input {
   display: none;
 }
 .form .checkbox label:before,
-form .checkbox label:before {
+form .checkbox label:before,
+.form .checkbox label:after,
+form .checkbox label:after {
   content: "\F12E";
   position: relative;
   vertical-align: middle;
   font-family: "Material Design Icons";
   font-size: 20px;
-  margin-right: 5px;
   color: #e4ebf7;
 }
+.form .checkbox label:before,
+form .checkbox label:before {
+  margin-right: 5px;
+}
+.form .checkbox label:after,
+form .checkbox label:after {
+  margin-left: 5px;
+  display: none;
+}
 .form .checkbox input:checked ~ label:before,
-form .checkbox input:checked ~ label:before {
+form .checkbox input:checked ~ label:before,
+.form .checkbox input:checked ~ label:after,
+form .checkbox input:checked ~ label:after {
   content: "\F132";
   color: #515974;
-  position: relative;
-  vertical-align: middle;
-  font-family: "Material Design Icons";
   speak: none;
+}
+.form .checkbox.inverse label:after,
+form .checkbox.inverse label:after {
+  display: initial;
+}
+.form .checkbox.inverse label:before,
+form .checkbox.inverse label:before {
+  display: none;
 }
 .form .checkbox input[type=checkbox][disabled] + label,
 form .checkbox input[type=checkbox][disabled] + label,
@@ -1506,16 +1540,29 @@ form .image {
   border: 1px solid #d0d2d9;
 }
 .form .error-message,
-form .error-message,
-.form .form-msg-wrapper,
-form .form-msg-wrapper {
-  color: #fc5e17;
+form .error-message {
   text-align: right;
   font-size: 12px;
 }
-.form .form-error-wrapper:not(:empty),
-form .form-error-wrapper:not(:empty) {
+.form .form-msg-wrapper,
+form .form-msg-wrapper {
+  text-align: right;
+  font-size: 13px;
+}
+.form .form-msg-wrapper:not(:empty),
+form .form-msg-wrapper:not(:empty) {
   padding: 3px 0;
+}
+.form .form-msg-wrapper .control-info,
+form .form-msg-wrapper .control-info {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+.form .form-error-wrapper,
+form .form-error-wrapper {
+  color: #fc5e17;
 }
 .form .upload-buttons-wrapper,
 form .upload-buttons-wrapper {
@@ -1528,34 +1575,17 @@ form .upload-buttons-wrapper .upload-buttons {
   width: auto;
   display: inline-block;
 }
-.add-new-box {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5px 10px;
-  color: #515974;
-  text-align: center;
-  cursor: pointer;
-  transition: all 0.5s ease;
-  border: 1px solid #515974;
-  border-radius: 20px;
-  max-width: 100px;
-  margin-bottom: 20px;
-}
-.add-new-box:hover {
-  background: #515974;
-  color: #fff;
-}
 /*********************
   Information message box
  ********************/
 .control-info {
-  border: 1px solid #b4b7c2;
-  background: #d0d2d9;
-  padding: 10px;
   font-size: 13px;
   width: 100%;
   margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #b4b7c2;
+  background: #d0d2d9;
+  border-radius: 4px;
 }
 .control-info .mdi {
   display: block;
@@ -1650,7 +1680,7 @@ body.body-sidebar main.main-content {
   float: left;
 }
 .modal-wrapper .modal-content {
-  border-radius: 5px;
+  border-radius: 4px;
   background: #f6f8fc;
   padding: 20px 20px;
 }
@@ -2236,20 +2266,19 @@ label.button {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: #fff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
   font-size: 14px;
   padding: 9px 16px;
   min-width: 128px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 a.button-medium,
 input.button-medium,
@@ -2305,9 +2334,6 @@ button.button-primary,
 label.button-primary {
   color: #fff;
   background: #515974;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 a.button-primary:hover,
 input.button-primary:hover,
@@ -2458,6 +2484,7 @@ button.button:disabled,
 label.button:disabled {
   box-shadow: none;
   background: transparent;
+  background-color: transparent;
   color: #515974;
   border-color: #515974;
   opacity: 0.3;
@@ -3033,14 +3060,11 @@ g {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: #fff;
-  border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #d0d2d9;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;
@@ -3138,13 +3162,10 @@ g {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
-  border: 1.5px solid #fff;
-  box-shadow: 0 0 0 1px #d0d2d9;
   -moz-border-radius: 20px;
   -webkit-border-radius: 20px;
   border-radius: 20px;

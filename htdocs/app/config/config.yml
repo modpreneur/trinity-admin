@@ -43,22 +43,6 @@ assetic:
          necktie_icons:
            inputs:
               - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/css/necktie-icons.css"
-         ticones_eot:
-           inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.eot"
-           outpoutput: "fonts/tiecons/tiecons.eot"
-         ticones_svg:
-           inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.svg"
-           output: "fonts/tiecons/tiecons.svg"
-         ticones_ttf:
-           inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.ttf"
-           output: "fonts/tiecons/tiecons.ttf"
-         ticones_woff:
-           inputs:
-              - "%kernel.root_dir%/../vendor/modpreneur/bowtie/src/fonts/tiecons/tiecons.woff"
-           output: "fonts/tiecons/tiecons.woff"
          necktie_eot:
            inputs:
               - "%kernel.root_dir%/../../src/AdminBundle/Resources/Public/fonts/necktie.eot"

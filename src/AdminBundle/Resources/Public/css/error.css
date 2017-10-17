@@ -79,6 +79,9 @@
   Spacing
 **************************************/
 /**************************************
+  RADIUS
+**************************************/
+/**************************************
   Widgets
 **************************************/
 a.button,
@@ -89,20 +92,19 @@ label.button {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: #fff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
   font-size: 14px;
   padding: 9px 16px;
   min-width: 128px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 a.button-medium,
 input.button-medium,
@@ -158,9 +160,6 @@ button.button-primary,
 label.button-primary {
   color: #fff;
   background: #515974;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 a.button-primary:hover,
 input.button-primary:hover,
@@ -311,6 +310,7 @@ button.button:disabled,
 label.button:disabled {
   box-shadow: none;
   background: transparent;
+  background-color: transparent;
   color: #515974;
   border-color: #515974;
   opacity: 0.3;
@@ -499,20 +499,19 @@ body .button-success {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: #fff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
   border: 1.5px solid #fff;
   box-shadow: 0 0 0 1px #d0d2d9;
   font-size: 14px;
   padding: 9px 16px;
   min-width: 128px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
   display: inline-block;
   margin: 15px;
   border: none !important;
@@ -557,9 +556,6 @@ body .button-success-success:hover {
 body .button-success-primary {
   color: #fff;
   background: #515974;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 body .button-success-primary:hover {
   background: #3c4256;
@@ -641,6 +637,7 @@ body .button-success-disabled,
 body .button-success:disabled {
   box-shadow: none;
   background: transparent;
+  background-color: transparent;
   color: #515974;
   border-color: #515974;
   opacity: 0.3;
