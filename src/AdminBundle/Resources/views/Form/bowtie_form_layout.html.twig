@@ -205,12 +205,12 @@
             {% endwith %}
         {% else %}
             {# Working with default CheckboxType #}
-            {{ 'class="checkbox' }}
+            {{ 'class="checkbox"' }}
         {% endif %}
     >
         {{- parent() -}}
         {# {{ form_label(form) }} for CheckBoxType displays label twice, inside form_label() and form_widget()#}
-        {# setting attr => ['disable_widget_label' => true]#}
+        {# setting attr => ['hide_widget_label' => true]#}
         {% if form.vars.hide_widget_label is defined and form.vars.hide_widget_label %}
             <label for="{{ id }}"></label>
         {% else %}
