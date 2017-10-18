@@ -853,7 +853,7 @@ header.main-header {
 }
 .trinity-widget .box-header .box-header-actions {
   float: right;
-  margin-top: -8px;
+  margin-top: -3px;
 }
 .trinity-widget .box-header .box-header-actions .button {
   font-size: 10px;
@@ -1003,7 +1003,7 @@ header.main-header {
 }
 .box-widget .box-header .box-header-actions {
   float: right;
-  margin-top: -8px;
+  margin-top: -3px;
 }
 .box-widget .box-header .box-header-actions .button {
   font-size: 10px;
@@ -1657,7 +1657,7 @@ body.body-sidebar main.main-content {
   padding: 50px 0;
   z-index: 1002;
 }
-.modal-wrapper .button-close {
+.modal-wrapper .modal-close-button {
   position: absolute;
   right: 10px;
   top: 10px;
@@ -1666,16 +1666,17 @@ body.body-sidebar main.main-content {
   font-size: 12px;
   transition: all 0.5s ease;
 }
-.modal-wrapper .button-close:hover {
+.modal-wrapper .modal-close-button:hover {
   background: #12141a;
+  color: #fff;
 }
-.modal-wrapper .button-close span {
+.modal-wrapper .modal-close-button span {
   padding: 0 15px 0 10px;
   margin-top: 5px;
   float: right;
   display: inline-block;
 }
-.modal-wrapper .button-close .mdi {
+.modal-wrapper .modal-close-button .mdi {
   font-size: 22px;
   float: left;
 }
@@ -2429,8 +2430,8 @@ input.button-line-inverse,
 button.button-line-inverse,
 label.button-line-inverse {
   border: 1px solid #fff;
-  background: transparent;
   color: #fff;
+  background: transparent;
   box-shadow: none;
 }
 a.button-line-inverse:hover,
@@ -2439,6 +2440,44 @@ button.button-line-inverse:hover,
 label.button-line-inverse:hover {
   background: #fff;
   color: #515974;
+}
+a.button-line-inverse.button.button-error,
+input.button-line-inverse.button.button-error,
+button.button-line-inverse.button.button-error,
+label.button-line-inverse.button.button-error {
+  opacity: 1;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #c93236;
+}
+a.button-line-inverse.button.button-error:hover,
+input.button-line-inverse.button.button-error:hover,
+button.button-line-inverse.button.button-error:hover,
+label.button-line-inverse.button.button-error:hover {
+  opacity: 1;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #771e20;
+}
+a.button-line-inverse.button.button-error:disabled,
+input.button-line-inverse.button.button-error:disabled,
+button.button-line-inverse.button.button-error:disabled,
+label.button-line-inverse.button.button-error:disabled,
+a.button-line-inverse.button.button-error.button-disabled,
+input.button-line-inverse.button.button-error.button-disabled,
+button.button-line-inverse.button.button-error.button-disabled,
+label.button-line-inverse.button.button-error.button-disabled {
+  opacity: 0.5;
+}
+a.button-line-inverse.button.button-error:disabled:hover,
+input.button-line-inverse.button.button-error:disabled:hover,
+button.button-line-inverse.button.button-error:disabled:hover,
+label.button-line-inverse.button.button-error:disabled:hover,
+a.button-line-inverse.button.button-error.button-disabled:hover,
+input.button-line-inverse.button.button-error.button-disabled:hover,
+button.button-line-inverse.button.button-error.button-disabled:hover,
+label.button-line-inverse.button.button-error.button-disabled:hover {
+  opacity: 0.5;
 }
 a.button-line-inverse:disabled,
 input.button-line-inverse:disabled,
@@ -2450,16 +2489,6 @@ button.button-line-inverse.button-disabled,
 label.button-line-inverse.button-disabled {
   border: 1px solid #fff;
   color: #fff;
-}
-a.button-line-inverse:disabled.button-error,
-input.button-line-inverse:disabled.button-error,
-button.button-line-inverse:disabled.button-error,
-label.button-line-inverse:disabled.button-error,
-a.button-line-inverse.button-disabled.button-error,
-input.button-line-inverse.button-disabled.button-error,
-button.button-line-inverse.button-disabled.button-error,
-label.button-line-inverse.button-disabled.button-error {
-  opacity: 0.5;
 }
 a.button-line-inverse:disabled:hover,
 input.button-line-inverse:disabled:hover,
@@ -2484,7 +2513,6 @@ button.button:disabled,
 label.button:disabled {
   box-shadow: none;
   background: transparent;
-  background-color: transparent;
   color: #515974;
   border-color: #515974;
   opacity: 0.3;
@@ -2582,6 +2610,18 @@ button.button.button-error,
 label.button.button-error {
   color: #c93236;
   border-color: #c93236;
+  font-weight: 400;
+  background: transparent;
+  box-shadow: none;
+}
+a.button.button-error:hover,
+input.button.button-error:hover,
+button.button.button-error:hover,
+label.button.button-error:hover {
+  background: transparent;
+  color: #515974;
+  border-color: #515974;
+  opacity: 0.5;
 }
 a.button.button-error:disabled,
 input.button.button-error:disabled,
@@ -2833,7 +2873,7 @@ label.button-remove:after {
 }
 .box .box-header .box-header-actions {
   float: right;
-  margin-top: -8px;
+  margin-top: -3px;
 }
 .box .box-header .box-header-actions .button {
   font-size: 10px;

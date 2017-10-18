@@ -145,10 +145,9 @@
 
   // For dark backgrounds (box-headers,...)
   &-line-inverse {
-
     border: 1px solid @color-white;
-    background: transparent;
     color: @color-white;
+    background: transparent;
     box-shadow: none;
 
     &:hover {
@@ -156,15 +155,34 @@
       color: @color-primary;
     }
 
+    /** SPECIAL ERORR STYLES **/
+    &.button.button-error {
+      opacity: 1;
+      border: 1px solid @color-white;
+      color: @color-white;
+      background: @color-danger;
+
+      &:hover {
+        opacity: 1;
+        border: 1px solid @color-white;
+        color: @color-white;
+        background: darken(@color-danger, 20%);
+      }
+
+      &:disabled,
+      &.button-disabled {
+        opacity: 0.5;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
     // Special disabled style
     &:disabled,
     &.button-disabled {
       border: 1px solid @color-white;
       color: @color-white;
-
-      &.button-error {
-        opacity: 0.5;
-      }
 
       &:hover {
         opacity: 0.3;
@@ -180,7 +198,6 @@
   &:disabled {
     box-shadow: none;
     background: transparent;
-    background-color: transparent;
     color: @color-primary;
     border-color: @color-primary;
     opacity: 0.3;
@@ -246,10 +263,21 @@
   &.button-error {
     color: @color-danger;
     border-color: @color-danger;
+    font-weight: @noto-regular;
+    background: transparent;
+    box-shadow: none;
+
+    &:hover {
+      background: transparent;
+      color: @color-primary;
+      border-color: @color-primary;
+      opacity: 0.5;
+    }
 
     &:disabled {
       opacity: 0.5;
     }
+
     &:after {
       .icon('\F02A');
     }
