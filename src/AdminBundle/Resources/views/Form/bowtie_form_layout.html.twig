@@ -239,11 +239,12 @@
     {% set rowId = "row_" ~ id  %}
 
     {% if form.parent.vars.collection_template is defined %}
-        {% from form.parent.vars.collection_template import collection_child_start %}
-        {{  collection_child_start(rowId, rowClass) }}
+        {# COLLECTION CHILD #}
+        {% from form.parent.vars.collection_template import child_template %}
+        {{  child_template(form, id, rowClass) }}
     {% else %}
+        {# OTHER WIDGETS #}
         <div class="{{ rowClass }}{% if choice %} choice{% endif %}" id="{{ rowId }}">
-    {% endif %}
         {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
 
             {% block form_row_content %}
@@ -261,25 +262,12 @@
             {% endblock form_row_label_content %}
 
             {% block form_row_input %}
-                {% for attrname,attrvalue in attr %}
-                    {% if attrname == 'description' %}
-                        <span class="description">{{ attrvalue }}</span>
-                    {% endif %}
-                {% endfor %}
-
                 {% block form_row_input_content %}
                     {{- form_widget(form) -}}
                 {% endblock form_row_input_content %}
-
             {% endblock form_row_input %}
 
         {% endembed %}
-
-
-    {% if form.parent.vars.collection_template is defined %}
-        {% from form.parent.vars.collection_template import collection_child_end %}
-        {{  collection_child_end(rowId) }}
-    {% else %}
         </div>
     {% endif %}
 

@@ -71,6 +71,16 @@
     margin-bottom: 0;
   }
 
+  &-tiny {
+    padding: 5px 10px;
+    font-size: 13px;
+    min-width: 35px;
+    width: auto;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
   // COLORS
   &-success {
     .green();
@@ -213,7 +223,10 @@
 
   // Used in user profile for Facebook and Google login
   &-social {
+    // override button
     .radius(0);
+    box-shadow: 0 0 1px 0 @color-white;
+    border: none;
     padding: 0;
     font-size: 13px;
 
