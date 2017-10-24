@@ -96,12 +96,13 @@
   input:not([type="submit"]), select, textarea, .rw-datetimepicker input {
     .select-clear;
     width: 100%;
+    min-height: @input-min-height;
     border: 1px solid @color-border;
     padding: 8px 10px;
     color: @color-primary;
     border-radius: @default-radius;
     font-weight: @noto-light;
-    background: #fff;
+    background: @color-white;
     font-size: @input-font-size;
 
     &:hover {
@@ -131,7 +132,7 @@
 
 
   input[type=color] {
-    padding: 0;
+    padding: 2px;
   }
 
   .form-center {
