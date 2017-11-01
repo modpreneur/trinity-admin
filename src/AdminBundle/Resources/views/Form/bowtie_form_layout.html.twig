@@ -1,5 +1,15 @@
 {% extends "form_div_layout.html.twig" %}
 
+{# Pull attributes block macro out of template #}
+{% macro attributes(attr) %}
+    {% if attr is defined %}
+        {% with { attr: attr } %}
+        {{ block('attributes') }}
+        {% endwith %}
+    {% endif %}
+{% endmacro %}
+
+
 {%- block form_start -%}
     {{- parent() -}}
 {%- endblock form_start -%}
@@ -303,3 +313,4 @@
     {% endif %}
 
 {%- endblock form_label -%}
+

@@ -1,0 +1,17 @@
+
+{% macro loading_component(attr) %}
+    {% from "TrinityAdminBundle:Form:bowtie_form_layout.html.twig" import attributes %}
+    <div {{ attributes(attr) }}>
+        <div class="loading-container" >
+            <div class="loading">
+                <div class="dot left three"></div>
+                <div class="dot left two"></div>
+                <div class="dot left one"></div>
+                <i class="necktie necktielogo2" ></i>
+                <div class="dot right one"></div>
+                <div class="dot right two"></div>
+                <div class="dot right three"></div>
+            </div>
+        </div>
+    </div>
+{% endmacro %}

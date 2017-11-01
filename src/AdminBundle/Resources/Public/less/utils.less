@@ -1,0 +1,18 @@
+@import (once) "variables";
+
+.layout-margin {
+  margin-top: @navbar-height;
+  margin-left:  @sidebar-width;
+}
+
+.layout-margin-half {
+  margin-top: floor(@navbar-height / 2);
+  margin-left:  floor(@sidebar-width / 2);
+}
+
+.screen-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
