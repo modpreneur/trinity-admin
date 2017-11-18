@@ -333,15 +333,21 @@
 // React Widgets (date time picker and such)
 div.rw-widget {
 
-  &.rw-datetimepicker {
+  &.rw-datetime-picker {
     &:hover {
       background-color: @color-white;
       border-color: darken(@color-border, 8%);
     }
 
-    &.rw-state-hover:hover, &.rw-state-focus {
+    &.rw-state-hover:hover,
+    &.rw-state-focus,
+    &.rw-state-focus .rw-widget-picker{
       box-shadow: none;
       outline: none;
+    }
+
+    &.rw-state-focus .rw-widget-picker {
+      border-color: darken(@color-border, 8%)
     }
 
     .rw-input {
@@ -351,6 +357,7 @@ div.rw-widget {
     // Special datetime picker input style
     input {
       box-shadow: none;
+      border: none;
       border-top-right-radius: 0;
       border-bottom-right-radius: 0;
 
@@ -367,7 +374,7 @@ div.rw-widget {
       }
     }
 
-    button {
+    button, .rw-i {
       transition: .2s;
       color: @color-primary;
       &:hover {
