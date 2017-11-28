@@ -101,6 +101,8 @@ label.button {
   -webkit-border-radius: 20px;
   border-radius: 20px;
   border: 1.5px solid #fff;
+  -webkit-box-shadow: 0 0 0 1px #d0d2d9;
+  -moz-box-shadow: 0 0 0 1px #d0d2d9;
   box-shadow: 0 0 0 1px #d0d2d9;
   font-size: 14px;
   padding: 9px 16px;
@@ -120,6 +122,17 @@ input.button-small,
 button.button-small,
 label.button-small {
   padding: 5px 16px;
+  font-size: 13px;
+  min-width: 35px;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+a.button-tiny,
+input.button-tiny,
+button.button-tiny,
+label.button-tiny {
+  padding: 5px 10px;
   font-size: 13px;
   min-width: 35px;
   width: auto;
@@ -258,6 +271,7 @@ label.button-line-inverse {
   color: #fff;
   background: transparent;
   box-shadow: none;
+  /** SPECIAL ERORR STYLES **/
 }
 a.button-line-inverse:hover,
 input.button-line-inverse:hover,
@@ -363,6 +377,10 @@ label.button-social {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  -webkit-box-shadow: 0 0 1px 0 #fff;
+  -moz-box-shadow: 0 0 1px 0 #fff;
+  box-shadow: 0 0 1px 0 #fff;
+  border: none;
   padding: 0;
   font-size: 13px;
 }
@@ -547,6 +565,8 @@ body .button-success {
   -webkit-border-radius: 20px;
   border-radius: 20px;
   border: 1.5px solid #fff;
+  -webkit-box-shadow: 0 0 0 1px #d0d2d9;
+  -moz-box-shadow: 0 0 0 1px #d0d2d9;
   box-shadow: 0 0 0 1px #d0d2d9;
   font-size: 14px;
   padding: 9px 16px;
@@ -564,6 +584,14 @@ body .button-success-medium {
 }
 body .button-success-small {
   padding: 5px 16px;
+  font-size: 13px;
+  min-width: 35px;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body .button-success-tiny {
+  padding: 5px 10px;
   font-size: 13px;
   min-width: 35px;
   width: auto;
@@ -651,6 +679,7 @@ body .button-success-line-inverse {
   color: #fff;
   background: transparent;
   box-shadow: none;
+  /** SPECIAL ERORR STYLES **/
 }
 body .button-success-line-inverse:hover {
   background: #fff;
@@ -708,6 +737,10 @@ body .button-success-social {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  -webkit-box-shadow: 0 0 1px 0 #fff;
+  -moz-box-shadow: 0 0 1px 0 #fff;
+  box-shadow: 0 0 1px 0 #fff;
+  border: none;
   padding: 0;
   font-size: 13px;
 }
@@ -801,7 +834,7 @@ body .button-success:hover {
   display: block;
   background-size: contain;
   height: 100%;
-  background: #696969 url("../img/error.jpg") no-repeat center center fixed;
+  background: #696969 no-repeat center center fixed;
   background-size: cover;
   -webkit-filter: brightness(30%);
   -moz-filter: brightness(30%);
