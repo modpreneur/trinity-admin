@@ -79,6 +79,9 @@
   Spacing
 **************************************/
 /**************************************
+  RADIUS
+**************************************/
+/**************************************
   Widgets
 **************************************/
 a.button,
@@ -89,20 +92,21 @@ label.button {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: #fff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
   border: 1.5px solid #fff;
+  -webkit-box-shadow: 0 0 0 1px #d0d2d9;
+  -moz-box-shadow: 0 0 0 1px #d0d2d9;
   box-shadow: 0 0 0 1px #d0d2d9;
   font-size: 14px;
   padding: 9px 16px;
   min-width: 128px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 a.button-medium,
 input.button-medium,
@@ -118,6 +122,17 @@ input.button-small,
 button.button-small,
 label.button-small {
   padding: 5px 16px;
+  font-size: 13px;
+  min-width: 35px;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+a.button-tiny,
+input.button-tiny,
+button.button-tiny,
+label.button-tiny {
+  padding: 5px 10px;
   font-size: 13px;
   min-width: 35px;
   width: auto;
@@ -158,9 +173,6 @@ button.button-primary,
 label.button-primary {
   color: #fff;
   background: #515974;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 a.button-primary:hover,
 input.button-primary:hover,
@@ -256,9 +268,10 @@ input.button-line-inverse,
 button.button-line-inverse,
 label.button-line-inverse {
   border: 1px solid #fff;
-  background: transparent;
   color: #fff;
+  background: transparent;
   box-shadow: none;
+  /** SPECIAL ERORR STYLES **/
 }
 a.button-line-inverse:hover,
 input.button-line-inverse:hover,
@@ -266,6 +279,44 @@ button.button-line-inverse:hover,
 label.button-line-inverse:hover {
   background: #fff;
   color: #515974;
+}
+a.button-line-inverse.button.button-error,
+input.button-line-inverse.button.button-error,
+button.button-line-inverse.button.button-error,
+label.button-line-inverse.button.button-error {
+  opacity: 1;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #c93236;
+}
+a.button-line-inverse.button.button-error:hover,
+input.button-line-inverse.button.button-error:hover,
+button.button-line-inverse.button.button-error:hover,
+label.button-line-inverse.button.button-error:hover {
+  opacity: 1;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #771e20;
+}
+a.button-line-inverse.button.button-error:disabled,
+input.button-line-inverse.button.button-error:disabled,
+button.button-line-inverse.button.button-error:disabled,
+label.button-line-inverse.button.button-error:disabled,
+a.button-line-inverse.button.button-error.button-disabled,
+input.button-line-inverse.button.button-error.button-disabled,
+button.button-line-inverse.button.button-error.button-disabled,
+label.button-line-inverse.button.button-error.button-disabled {
+  opacity: 0.5;
+}
+a.button-line-inverse.button.button-error:disabled:hover,
+input.button-line-inverse.button.button-error:disabled:hover,
+button.button-line-inverse.button.button-error:disabled:hover,
+label.button-line-inverse.button.button-error:disabled:hover,
+a.button-line-inverse.button.button-error.button-disabled:hover,
+input.button-line-inverse.button.button-error.button-disabled:hover,
+button.button-line-inverse.button.button-error.button-disabled:hover,
+label.button-line-inverse.button.button-error.button-disabled:hover {
+  opacity: 0.5;
 }
 a.button-line-inverse:disabled,
 input.button-line-inverse:disabled,
@@ -277,16 +328,6 @@ button.button-line-inverse.button-disabled,
 label.button-line-inverse.button-disabled {
   border: 1px solid #fff;
   color: #fff;
-}
-a.button-line-inverse:disabled.button-error,
-input.button-line-inverse:disabled.button-error,
-button.button-line-inverse:disabled.button-error,
-label.button-line-inverse:disabled.button-error,
-a.button-line-inverse.button-disabled.button-error,
-input.button-line-inverse.button-disabled.button-error,
-button.button-line-inverse.button-disabled.button-error,
-label.button-line-inverse.button-disabled.button-error {
-  opacity: 0.5;
 }
 a.button-line-inverse:disabled:hover,
 input.button-line-inverse:disabled:hover,
@@ -336,6 +377,10 @@ label.button-social {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  -webkit-box-shadow: 0 0 1px 0 #fff;
+  -moz-box-shadow: 0 0 1px 0 #fff;
+  box-shadow: 0 0 1px 0 #fff;
+  border: none;
   padding: 0;
   font-size: 13px;
 }
@@ -408,6 +453,18 @@ button.button.button-error,
 label.button.button-error {
   color: #c93236;
   border-color: #c93236;
+  font-weight: 400;
+  background: transparent;
+  box-shadow: none;
+}
+a.button.button-error:hover,
+input.button.button-error:hover,
+button.button.button-error:hover,
+label.button.button-error:hover {
+  background: transparent;
+  color: #515974;
+  border-color: #515974;
+  opacity: 0.5;
 }
 a.button.button-error:disabled,
 input.button.button-error:disabled,
@@ -499,20 +556,21 @@ body .button-success {
   font-weight: 400;
   text-decoration: none;
   line-height: 1;
-  box-shadow: 0 0 1px #d0d2d9;
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: #fff;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
   border: 1.5px solid #fff;
+  -webkit-box-shadow: 0 0 0 1px #d0d2d9;
+  -moz-box-shadow: 0 0 0 1px #d0d2d9;
   box-shadow: 0 0 0 1px #d0d2d9;
   font-size: 14px;
   padding: 9px 16px;
   min-width: 128px;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
   display: inline-block;
   margin: 15px;
   border: none !important;
@@ -526,6 +584,14 @@ body .button-success-medium {
 }
 body .button-success-small {
   padding: 5px 16px;
+  font-size: 13px;
+  min-width: 35px;
+  width: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+body .button-success-tiny {
+  padding: 5px 10px;
   font-size: 13px;
   min-width: 35px;
   width: auto;
@@ -557,9 +623,6 @@ body .button-success-success:hover {
 body .button-success-primary {
   color: #fff;
   background: #515974;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
 }
 body .button-success-primary:hover {
   background: #3c4256;
@@ -613,22 +676,39 @@ body .button-success-line:hover {
 }
 body .button-success-line-inverse {
   border: 1px solid #fff;
-  background: transparent;
   color: #fff;
+  background: transparent;
   box-shadow: none;
+  /** SPECIAL ERORR STYLES **/
 }
 body .button-success-line-inverse:hover {
   background: #fff;
   color: #515974;
 }
+body .button-success-line-inverse.button.button-error {
+  opacity: 1;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #c93236;
+}
+body .button-success-line-inverse.button.button-error:hover {
+  opacity: 1;
+  border: 1px solid #fff;
+  color: #fff;
+  background: #771e20;
+}
+body .button-success-line-inverse.button.button-error:disabled,
+body .button-success-line-inverse.button.button-error.button-disabled {
+  opacity: 0.5;
+}
+body .button-success-line-inverse.button.button-error:disabled:hover,
+body .button-success-line-inverse.button.button-error.button-disabled:hover {
+  opacity: 0.5;
+}
 body .button-success-line-inverse:disabled,
 body .button-success-line-inverse.button-disabled {
   border: 1px solid #fff;
   color: #fff;
-}
-body .button-success-line-inverse:disabled.button-error,
-body .button-success-line-inverse.button-disabled.button-error {
-  opacity: 0.5;
 }
 body .button-success-line-inverse:disabled:hover,
 body .button-success-line-inverse.button-disabled:hover {
@@ -657,6 +737,10 @@ body .button-success-social {
   -moz-border-radius: 0;
   -webkit-border-radius: 0;
   border-radius: 0;
+  -webkit-box-shadow: 0 0 1px 0 #fff;
+  -moz-box-shadow: 0 0 1px 0 #fff;
+  box-shadow: 0 0 1px 0 #fff;
+  border: none;
   padding: 0;
   font-size: 13px;
 }
@@ -702,6 +786,15 @@ body .button-success.button-loading:after {
 body .button-success.button-error {
   color: #c93236;
   border-color: #c93236;
+  font-weight: 400;
+  background: transparent;
+  box-shadow: none;
+}
+body .button-success.button-error:hover {
+  background: transparent;
+  color: #515974;
+  border-color: #515974;
+  opacity: 0.5;
 }
 body .button-success.button-error:disabled {
   opacity: 0.5;
@@ -741,7 +834,7 @@ body .button-success:hover {
   display: block;
   background-size: contain;
   height: 100%;
-  background: #696969 url("../img/error.jpg") no-repeat center center fixed;
+  background: #696969 no-repeat center center fixed;
   background-size: cover;
   -webkit-filter: brightness(30%);
   -moz-filter: brightness(30%);

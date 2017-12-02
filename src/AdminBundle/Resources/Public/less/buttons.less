@@ -22,7 +22,7 @@
 
 .circle-border() {
   border: @white-border;
-  box-shadow: 0 0 0 1px @color-border;
+  .shadow(0, 0, 0, 1px, @color-border);
 }
 
 // Common button properties
@@ -32,21 +32,19 @@
   text-decoration: none;
   line-height: 1;
   //border: 1px @color-border solid; // Using box-shadow instead
-  box-shadow: 0 0 1px @color-border;
+  //box-shadow: 0 0 1px @color-border; // not neccessary
   margin: 5px;
   white-space: nowrap;
   cursor: pointer;
   transition: .3s;
   color: @color-white;
-
-  // lets try
-  .circle-border();
 }
 
 // Default core button
 .button() {
   .button-parameters();
   .radius(20px);
+  .circle-border();
 
   // default font-size
   font-size: 14px;
@@ -55,7 +53,7 @@
   min-width: 128px;
 
   // SIZES
-  &-medium{
+  &-medium {
     padding: 8px 16px;
     min-width: 70px;
 
@@ -65,6 +63,16 @@
 
   &-small {
     padding: 5px 16px;
+    font-size: 13px;
+    min-width: 35px;
+    width: auto;
+
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &-tiny {
+    padding: 5px 10px;
     font-size: 13px;
     min-width: 35px;
     width: auto;
@@ -147,10 +155,9 @@
 
   // For dark backgrounds (box-headers,...)
   &-line-inverse {
-
     border: 1px solid @color-white;
-    background: transparent;
     color: @color-white;
+    background: transparent;
     box-shadow: none;
 
     &:hover {
@@ -158,15 +165,34 @@
       color: @color-primary;
     }
 
+    /** SPECIAL ERORR STYLES **/
+    &.button.button-error {
+      opacity: 1;
+      border: 1px solid @color-white;
+      color: @color-white;
+      background: @color-danger;
+
+      &:hover {
+        opacity: 1;
+        border: 1px solid @color-white;
+        color: @color-white;
+        background: darken(@color-danger, 20%);
+      }
+
+      &:disabled,
+      &.button-disabled {
+        opacity: 0.5;
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+
     // Special disabled style
     &:disabled,
     &.button-disabled {
       border: 1px solid @color-white;
       color: @color-white;
-
-      &.button-error {
-        opacity: 0.5;
-      }
 
       &:hover {
         opacity: 0.3;
@@ -197,7 +223,10 @@
 
   // Used in user profile for Facebook and Google login
   &-social {
+    // override button
     .radius(0);
+    .shadow(0, 0, 1px, 0, @color-white);
+    border: none;
     padding: 0;
     font-size: 13px;
 
@@ -247,10 +276,21 @@
   &.button-error {
     color: @color-danger;
     border-color: @color-danger;
+    font-weight: @noto-regular;
+    background: transparent;
+    box-shadow: none;
+
+    &:hover {
+      background: transparent;
+      color: @color-primary;
+      border-color: @color-primary;
+      opacity: 0.5;
+    }
 
     &:disabled {
       opacity: 0.5;
     }
+
     &:after {
       .icon('\F02A');
     }

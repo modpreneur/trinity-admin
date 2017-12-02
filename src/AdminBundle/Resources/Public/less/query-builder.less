@@ -201,7 +201,7 @@
       font-size: 11px;
       font-weight: @noto-bold;
       padding: 5px 10px;
-      margin: 2px; // fix position
+      margin: 7px; // fix position
 
       // .button-orange-gradient styles
       color: @color-white;
@@ -231,8 +231,18 @@
     background: @color-primary;
     border-radius: 5px;
 
+    input[type=text], select {
+      height: 35px;
+      padding: 8px 10px;
+      line-height: 1.2;
+    }
+
+    select {
+      padding-right: 35px;
+    }
+
     .select:before {
-      padding: 2px 0; // small fix of icon position
+      padding: 5px 0; // small fix of icon position
     }
   }
   /** END RULE CONTAINER **/
@@ -245,7 +255,7 @@
   .rule-value-container {
     // border - the split line on the left of value input
     border-left: 1px solid #FFF;
-    padding-left: 5px;
+    padding-left: 10px;
 
     // Label - probably used in checkboxes
     label {
@@ -265,9 +275,6 @@
    */
   input.form-control {
     width: auto;
-    line-height: 26px;
-    height: 26px; /*ie fails here just with line-height*/
-    padding-left: 5px;
     //transition: .3s;
     border: 1px solid @color-border;
 

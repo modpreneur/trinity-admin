@@ -1,5 +1,15 @@
 {% extends "form_div_layout.html.twig" %}
 
+{# Pull attributes block macro out of template #}
+{% macro attributes(attr) %}
+    {% if attr is defined %}
+        {% with { attr: attr } %}
+        {{ block('attributes') }}
+        {% endwith %}
+    {% endif %}
+{% endmacro %}
+
+
 {%- block form_start -%}
     {{- parent() -}}
 {%- endblock form_start -%}
@@ -189,11 +199,29 @@
 
 
 {% block checkbox_widget -%}
-    <div class="checkbox">
+    <div
+        {% if form.vars.wrapper_attr is defined %}
+            {# Working with TrinityCheckboxType #}
+
+            {# Class insurance that it has checkbox#}
+            {% set wrapperClass = "checkbox" %}
+            {% if form.vars.wrapper_attr.class is defined %}
+                {% set wrapperClass = wrapperClass ~ " " ~ form.vars.wrapper_attr.class %}
+            {% endif %}
+
+            {# render other attributes #}
+            {% with { attr: form.vars.wrapper_attr|merge({class: wrapperClass}) } %}
+                {{ block('attributes') }}
+            {% endwith %}
+        {% else %}
+            {# Working with default CheckboxType #}
+            {{ 'class="checkbox"' }}
+        {% endif %}
+    >
         {{- parent() -}}
         {# {{ form_label(form) }} for CheckBoxType displays label twice, inside form_label() and form_widget()#}
-        {# setting attr => ['disable_widget_label' => true]#}
-        {% if attr.disable_widget_label is defined and attr.disable_widget_label %}
+        {# setting attr => ['hide_widget_label' => true]#}
+        {% if (form.vars.hide_widget_label is defined and form.vars.hide_widget_label) or (attr.disable_widget_label is defined and attr.disable_widget_label) %}
             <label for="{{ id }}"></label>
         {% else %}
             {{ form_label(form) }}
@@ -203,6 +231,7 @@
 {%- endblock checkbox_widget %}
 
 
+{# START - FORM_ROW #}
 {%- block form_row -%}
 
     {% set choice = false %}
@@ -220,11 +249,12 @@
     {% set rowId = "row_" ~ id  %}
 
     {% if form.parent.vars.collection_template is defined %}
-        {% from form.parent.vars.collection_template import collection_child_start %}
-        {{  collection_child_start(rowId, rowClass) }}
+        {# COLLECTION CHILD #}
+        {% from form.parent.vars.collection_template import child_template %}
+        {{  child_template(form, id, rowClass) }}
     {% else %}
+        {# OTHER WIDGETS #}
         <div class="{{ rowClass }}{% if choice %} choice{% endif %}" id="{{ rowId }}">
-    {% endif %}
         {% embed "@TrinityAdmin/Form/form_layout.html.twig" %}
 
             {% block form_row_content %}
@@ -235,34 +265,25 @@
             {% endblock form_row_content %}
 
             {% block form_row_label_content %}
-                {{- form_label(form) -}}
+                {# check for TrinityCheckboxType #}
+                {% if form.vars.is_inline is not defined or not form.vars.is_inline %}
+                    {{- form_label(form) -}}
+                {% endif %}
             {% endblock form_row_label_content %}
 
             {% block form_row_input %}
-                {% for attrname,attrvalue in attr %}
-                    {% if attrname == 'description' %}
-                        <span class="description">{{ attrvalue }}</span>
-                    {% endif %}
-                {% endfor %}
-
                 {% block form_row_input_content %}
                     {{- form_widget(form) -}}
                 {% endblock form_row_input_content %}
-
             {% endblock form_row_input %}
 
         {% endembed %}
-
-
-    {% if form.parent.vars.collection_template is defined %}
-        {% from form.parent.vars.collection_template import collection_child_end %}
-        {{  collection_child_end(rowId) }}
-    {% else %}
         </div>
     {% endif %}
 
     {{- form_errors(form) -}}
 {%- endblock form_row -%}
+{# END - FORM_ROW #}
 
 
 {# Add tooltip icons and tooltips next to form labels #}
@@ -292,3 +313,4 @@
     {% endif %}
 
 {%- endblock form_label -%}
+
