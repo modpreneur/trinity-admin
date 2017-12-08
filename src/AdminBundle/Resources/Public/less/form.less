@@ -206,8 +206,11 @@
       display: none;
     }
 
-    label:before,
-    label:after {
+    label:before, label:after {
+      line-height: 32px;
+    }
+
+    label:before {
       content: "\F12E"; // unchecked
       position: relative;
       vertical-align: middle;
@@ -220,24 +223,17 @@
       margin-right: 5px;
     }
 
-    label:after {
-      margin-left: 5px;
-      display:none;
-    }
 
-    input:checked ~ label:before,
-    input:checked ~ label:after {
+    input:checked ~ label:before {
       content: "\F132"; // checked
       color: @color-primary;
       speak: none;
     }
 
     &.inverse {
-      label:after {
-        display: initial;
-      }
       label:before {
-        display: none
+        float: right;
+        margin-left: 5px;
       }
     }
 

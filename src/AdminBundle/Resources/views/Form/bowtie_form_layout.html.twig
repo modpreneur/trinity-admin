@@ -224,7 +224,7 @@
         {% if (form.vars.hide_widget_label is defined and form.vars.hide_widget_label) or (attr.disable_widget_label is defined and attr.disable_widget_label) %}
             <label for="{{ id }}"></label>
         {% else %}
-            {{ form_label(form) }}
+            {{- form_label(form) -}}
         {% endif %}
     </div>
     {{- form_errors(form) -}}
